@@ -166,7 +166,7 @@ Operating System (one of the following)
 
 Geographic Information System (GIS)
 
-~	Quantum GIS (platform specific [download](http://www.qgis.org/wiki/Download))
+~	Quantum GIS (platform specific [download](http://qgis.org/en/site))
 
 ~	ArcGIS 10 (*optional* - request free student version installation code from Dr. Benedict - *Windows Only*)
 
