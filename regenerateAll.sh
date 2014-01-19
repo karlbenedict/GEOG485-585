@@ -1,5 +1,6 @@
 #!/bin/bash
 
+export PATH=${PATH}:/usr/texbin
 cd ~/Dropbox/Active/Repos/Teaching/GEOG485-585
 
 # Syllabus
