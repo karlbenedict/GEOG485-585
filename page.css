@@ -1,0 +1,61 @@
+body {
+	font-family: "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+	color: #ebebeb;
+	background-color: #0063b0;
+}
+
+dd p {
+	margin-top: 0;
+}
+
+dt {
+	font-weight: bold;
+}
+
+a {
+	color: #f7fb00;
+	text-decoration: none;
+}
+
+h1 a {
+	color: #ebebeb	;
+}
+
+
+h2 a {
+	color: #ebebeb	;
+}
+
+h3 a {
+	color: #ebebeb	;
+}
+
+img {
+	max-width: 600px;
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+	padding-top: 6px;
+	border-top: 1px solid #0089ff;
+}
+
+h1 {
+	background-color: #001f91;
+	padding: 12px;
+}
+
+h2 {
+	border-top-style: groove;
+	border-top-color: #0063ff;
+}
+
+p.caption {
+	font-style: italic;
+	margin-top: 3px;
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+	max-width: 600px;
+	border-bottom: 1px solid #0089ff;
+	padding-bottom: 6px;
+}
