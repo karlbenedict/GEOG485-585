@@ -1,3 +1,5 @@
+# Geography 485L/585L - Internet Mapping Syllabus #
+
 ## Course Instructor ##
 
 Karl Benedict

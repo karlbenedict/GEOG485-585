@@ -63,6 +63,7 @@ img {
 h1 {
 	background-color: #001f91;
 	padding: 12px;
+	display: none;
 }
 
 h2 {
