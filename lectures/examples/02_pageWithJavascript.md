@@ -19,3 +19,4 @@
 		<p id="clickMe" onclick="genericAlert();">What happens when you click me?</p>
 	</body>
 </html>
+
