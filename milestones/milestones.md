@@ -85,4 +85,96 @@ Step 2
 
 
 
+
+## Week 2 - Create a More Complex Web Page and Style It ##
+
+This week’s milestone activity takes you through the process of creating two more web pages in preparation for next week’s work with the Google Maps API in developing your first web mapping page. These pages will be:
+
+1. A *home page* for your portfolio that will be the access point for all of the materials you create ([template](../examples/homePageTemplate.html)), and
+2. Your first web page containing materials related to a *milestone* assignment ([template](../examples/assignmentTemplate.html)).  
+
+Open the *milestone* assignment template linked above and select "view Source" from the browser's menu to view the source code for the file. Create a new document in your GitHub `gh-pages` branch named `milestone_02.html`, copy the page code from the "view source", and paste it into your `milestone_02.html` document. Add your responses to the following questions to the `milestone_02.html` document. 
+
+Open the *home page* template linked above in your web browser and select “view source” from the browser’s menu to examine the source code for the page.
+
+
+Question 1
+:	From examining the display in your web browser and the structure of the source code in the page, what effect (if any) does the white space (i.e. tabs, blank lines, multiple spaces) have on what is displayed in the browser?
+
+Question 2
+:  How are the 
+
+		<h1>
+and 
+
+		<h2> 
+
+elements from the source code displayed differently in the browser?
+
+Question 3
+:	What type of element would you use to create additional list elements in either the “topic” or “data type” lists on the page.
+
+Log into your GitHub account, and create a new document in the `gh-pages` branch and name it `index.html`.
+
+Copy the source code from the “view source” information for the web page you opened in 1) above and paste it into `index.html` document in the GitHub editor. Save your changes
+
+Test your new page by trying the following web addresse (it may take a few minutes for your newly created page to become available):
+
+		http://<your GitHub username>.github.io/<your repository name>
+		
+		http://<your GitHub username>.github.io/<your repository name>/index.html
+
+
+Where `<your GitHub username>` is replaced by your username for GitHub, and `<your repository name>` is replaced with the name of the repository that you created your `helloworld.html` document in during last week's milestone exercise.
+
+The reason that the first web address works (without specifying the file name) is that if a file name is not provided in a web address, many web servers will deliver a file named “index.html” if it is found in the requested directory.
+ 
+Flesh out (using using the GitHub *edit* function) the `index.html` page that you created above with information specific to you based upon the content areas in the page. Add a link to your `milestone_02.html` file to the "milestones" section of your `index.html` page. 
+
+Make a copy of your `index.html` page by copying the content of the page and pasting it into a new document named `index_styled.html`.
+
+Experiment with some of the styling capabilities described in Dave Raggett’s “Adding a Touch of Style” page (<http://www.w3.org/MarkUp/Guide/Style.html>) on `index_styled.html` page you created above. Make at least three stylistic changes to the `index_styled.html` page.  
+
+
+
+
+
+## Week 3 - Creation of a Web Page with an Embedded Google Map ##
+
+In preparation for creating a web page with an embedded Google Map you should first answer the following questions about what and how you want to map. As you define the type of map you want to build, think about a specific problem or topic that you would like to address with your map. 
+
+In this exercise you will be generating the configuration for the base map (i.e. The Google Maps background layers). In  future assignments you will add your own custom content to free-standing web pages that include a mapper based upon the base map you define here.
+
+Create a web page (based upon the assignment [template](../examples/assignmentTemplate.html)) that contains your milestone writeup (including the embedded Google Map required by question 5), and link it to the home page (`index.html`) file you created last week. 
+
+Respond to Question 1-4 with an understanding that you are generating a web page that is publicly accessible, and should be both clear and complete. 
+
+Question 1
+:	What area do you want to depict in your map? Why?
+
+Question 2
+:	What is the center point (latitude and longitude) of your area of interest?
+
+Question 3
+:	What style of map (roads, satellite, hybrid, terrain) is appropriate for your map? Why?
+
+Question 4
+:	What is the scale of your map (local, regional, continental, global)? How will this translate into your selection of an appropriate default zoom level for your map?
+
+Now that you have answered these questions about the map that you want to create, refer to the examples in the lecture notes, the Google Maps Tutorial (http://code.google.com/apis/maps/documentation/javascript/tutorial.html), and this week's reading assignment to create a custom Google map.
+
+Question 5
+:	Embed a Google Map in your writeup that is based upon your responses to questions 1-4 above.
+
+
+
+
+
+
+
+
+
+
+
+
 <div class="license"><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />This work by <span xmlns:cc="http://creativecommons.org/ns#" property="cc:attributionName">Karl Benedict</span> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.</div>
