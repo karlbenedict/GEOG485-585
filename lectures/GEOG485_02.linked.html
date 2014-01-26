@@ -1,0 +1,310 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <style type="text/css">
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; }
+code > span.dt { color: #902000; }
+code > span.dv { color: #40a070; }
+code > span.bn { color: #40a070; }
+code > span.fl { color: #40a070; }
+code > span.ch { color: #4070a0; }
+code > span.st { color: #4070a0; }
+code > span.co { color: #60a0b0; font-style: italic; }
+code > span.ot { color: #007020; }
+code > span.al { color: #ff0000; font-weight: bold; }
+code > span.fu { color: #06287e; }
+code > span.er { color: #ff0000; font-weight: bold; }
+  </style>
+  <link rel="stylesheet" href="../page.css" type="text/css" />
+</head>
+<body>
+<h1 id="module-2.1---introduction-to-html-css-and-javascript">Module 2.1 - Introduction to HTML, CSS, and Javascript</h1>
+<h3 id="overview">Overview</h3>
+<ul>
+<li>Web Development</li>
+<li>Parts of a web page</li>
+<li>Web Site Components
+<ul>
+<li>Structure (X/HTML)</li>
+<li>Presentation (CSS)</li>
+<li>Behavior (Javascript)</li>
+</ul></li>
+<li>Simple Web Pages</li>
+<li>More Complete Web Page Example</li>
+</ul>
+<h3 id="web-development">Web Development</h3>
+<ul>
+<li>Requirements
+<ul>
+<li>Web Server</li>
+<li>File location that the web server accesses for requested content</li>
+<li>Files must be readable by all users</li>
+</ul></li>
+<li>General Process
+<ul>
+<li>Create basic content in HTML or XHTML (structure)</li>
+<li>Change appearance of content through the definitions of styles using CSS (presentation)</li>
+<li>Add dynamic capabilities to content through Javascript (behavior)</li>
+<li>REPEAT over and over and over and over again</li>
+</ul></li>
+</ul>
+<h3 id="parts-of-a-web-page">Parts of a Web Page</h3>
+<table class="sourceCode html numberLines"><tr class="sourceCode"><td class="lineNumbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+</pre></td><td class="sourceCode"><pre><code class="sourceCode html"><span class="kw">&lt;html&gt;</span>
+    <span class="co">&lt;!-- The HTML block is the container for all of your page content --&gt;</span>
+    <span class="kw">&lt;head&gt;</span>
+        <span class="co">&lt;!-- The head is where you include pointers to external resources </span>
+<span class="co">        (i.e. style sheets and javascript files), blocks of Javascript code</span>
+<span class="co">        , styles, etc.  --&gt;</span>
+        <span class="kw">&lt;title&gt;</span>The page title also goes in here<span class="kw">&lt;/title&gt;</span>
+    <span class="kw">&lt;/head&gt;</span>
+    <span class="kw">&lt;body&gt;</span>
+        <span class="co">&lt;!-- The body is where you put all of the content for the page </span>
+<span class="co">        (i.e. the material that will be displayed in the web browser)  --&gt;</span>
+        <span class="kw">&lt;h1&gt;</span>Headers<span class="kw">&lt;/h1&gt;</span>
+        <span class="kw">&lt;div&gt;</span>Generic blocks of content
+        <span class="kw">&lt;p&gt;</span>Paragraphs<span class="kw">&lt;/p&gt;</span>
+        <span class="kw">&lt;table&gt;</span>Tables<span class="kw">&lt;/table&gt;</span>
+        <span class="kw">&lt;img</span> <span class="er">...</span><span class="kw">&gt;</span>Images<span class="kw">&lt;/img&gt;</span>
+        <span class="kw">&lt;form</span> <span class="er">...</span><span class="kw">&gt;</span>Forms<span class="kw">&lt;/form&gt;</span>
+        <span class="kw">&lt;ul&gt;</span>Unordered Lists<span class="kw">&lt;/ul&gt;</span>
+        <span class="kw">&lt;ol&gt;</span>Ordered Lists<span class="kw">&lt;/ol&gt;</span>
+    <span class="kw">&lt;/body&gt;</span>
+<span class="kw">&lt;/html&gt;</span></code></pre></td></tr></table>
+<h3 id="web-site-components---structure">Web Site Components - Structure</h3>
+<p>Content is defined in terms of the structural elements available in HTML/XHTML</p>
+<ul>
+<li>Sample HTML/XHTML Tags
+<ul>
+<li>Paragraphs (i.e. blocks of text) are contained within <code>&lt;p&gt;...&lt;/p&gt;</code> tags</li>
+<li>Headings (i.e. section headings, sub-headings) are contained within numerically defined header tags: <code>&lt;h1&gt;...&lt;/h1&gt;, &lt;h2&gt;...&lt;/h2&gt;, &lt;h3&gt;...&lt;/h3&gt;</code>, etc.</li>
+<li>Tabular data are within <code>&lt;table&gt;...&lt;/table&gt;</code> tags</li>
+<li>List are specified within <code>&lt;ol&gt;...&lt;/ol&gt;</code> or <code>&lt;ul&gt;...&lt;/ul&gt;</code> tags, depending upon whether the list is ordered (numbered) or unordered (e.g. bulleted)</li>
+<li>User input elements are put within <code>&lt;form&gt;...&lt;/form&gt;</code> tags</li>
+<li>Blocks of content (i.e. sections or divisions) are defined within <code>&lt;div&gt;...&lt;/div&gt;</code> tags</li>
+</ul></li>
+<li>Structure is translated into the Document Object Model (DOM) for later use by CSS and Javascript</li>
+</ul>
+<h3 id="web-site-components---presentation">Web Site Components - Presentation</h3>
+<p>Modifications to default rendering of HTML/XHTML elements are made through styles defined in CSS</p>
+<ul>
+<li>Styles may be
+<ul>
+<li>defined in an external file that is referenced within the <code>&lt;head&gt;</code> block (the preferred method when doing “real” web development)</li>
+<li>directly defined within the <code>&lt;head&gt;</code> block of a web page directly embedded in the elements to which they apply (generally not a “Good Thing”)</li>
+</ul></li>
+<li>When not embedded within an element, a style definition consists of
+<ul>
+<li>A selector</li>
+<li>The style definition, enclosed in “curly-brackets”, separated by “semi-colons”</li>
+<li>For example: <code>h1 {color:red; font-size:18px;}</code></li>
+</ul></li>
+</ul>
+<h4 id="css-selectors">CSS Selectors</h4>
+<p>Selectors may be based on several criteria</p>
+<ul>
+<li>Element name: <code>h1</code>, <code>p</code>, <code>table</code>, <code>ul</code>, etc.
+<ul>
+<li>Element: <code>&lt;h1&gt;A top level heading&lt;/h1&gt;</code></li>
+<li>Selector: <code>h1 {color:red; font-size:18px}</code></li>
+</ul></li>
+<li>Element ID: a unique name assigned to HTML/XHTML elements within the structure of the document
+<ul>
+<li>Element: <code>&lt;p id=”para01”&gt;Some text goes here&lt;/p&gt;</code></li>
+<li>Selector: <code>#para01 {color:blue; font-size:12px}</code></li>
+</ul></li>
+</ul>
+<h4 id="css-selectors---cont.">CSS Selectors - cont.</h4>
+<ul>
+<li>Class ID: a name assigned to multiple elements which may be modified through reference to their class
+<ul>
+<li>Element: <code>&lt;p class=”instructions”&gt;Here are some instructions&lt;/p&gt;</code></li>
+<li>Another Element: <code>&lt;p class=”instructions”&gt;Here are some more instructions&lt;/p&gt;</code></li>
+<li>Selector: <code>.instructions {color:red; font-size:12px; text-decoration:blink}</code></li>
+</ul></li>
+<li>Selectors may be combined in a variety of ways</li>
+</ul>
+<h3 id="web-site-components---behavior">Web Site Components - Behavior</h3>
+<p>The most interoperable language for adding dynamic behavior to web sites is <em>Javascript</em> - supported by most browsers on most operating systems</p>
+<ul>
+<li>A full-fledged programming language
+<ul>
+<li>A non-trivial undertaking to become proficient in</li>
+<li>Experience in other programming languages can contribute to learning Javascript</li>
+</ul></li>
+<li><p>Defines actions that may be taken on/by DOM elements</p></li>
+<li>Allows for modification of existing DOM elements, creation of new DOM elements after the page has finished loading from the server, retrieval of new content after page loads
+<ul>
+<li>An interactive web page that may behave like a local desktop application</li>
+</ul></li>
+</ul>
+<h3 id="reference-links">Reference Links</h3>
+<ul>
+<li>w3schools.com
+<ul>
+<li><a href="http://www.w3schools.com/tags/default.asp">HTML 4.0 / XHTML 1.0 Tag Reference</a></li>
+<li><a href="http://www.w3schools.com/css/default.asp">Cascading Style Sheet (CSS) selectors and elements</a></li>
+<li><a href="http://www.w3schools.com/js/default.asp">Javascript reference</a></li>
+</ul></li>
+<li>World Wide Web Consortium (W3C)
+<ul>
+<li><a href="http://www.w3.org/standards/webdesign/htmlcss">HTML and CSS Background</a></li>
+<li><a href="http://www.w3.org/2002/03/tutorials.html#webdesign_htmlcss">HTML and CSS Tutorial Links Page</a></li>
+<li><a href="http://validator.w3.org/">Validators Page</a></li>
+</ul></li>
+<li>Webmonkey.com
+<ul>
+<li><a href="http://www.webmonkey.com/2010/02/html_cheatsheet/">HTML Cheat Sheet</a></li>
+<li><a href="http://www.webmonkey.com/2010/02/css-guide/">CSS Guide</a></li>
+</ul></li>
+</ul>
+<h3 id="simple-web-page">Simple Web Page</h3>
+<table class="sourceCode html numberLines"><tr class="sourceCode"><td class="lineNumbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+</pre></td><td class="sourceCode"><pre><code class="sourceCode html"><span class="dt">&lt;!DOCTYPE </span>html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Strict//EN&quot; 
+&quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd&quot;<span class="dt">&gt;</span>
+
+<span class="kw">&lt;html</span><span class="ot"> xmlns=</span><span class="st">&quot;http://www.w3.org/1999/xhtml&quot;</span><span class="kw">&gt;</span>
+    <span class="kw">&lt;head&gt;</span>
+        <span class="kw">&lt;meta</span><span class="ot"> http-equiv=</span><span class="st">&quot;Content-Type&quot;</span><span class="ot"> content=</span><span class="st">&quot;text/html;charset=utf-8&quot;</span> <span class="kw">/&gt;</span>
+        <span class="kw">&lt;title&gt;</span>This is a simple web page<span class="kw">&lt;/title&gt;</span>
+    <span class="kw">&lt;/head&gt;</span>
+    <span class="kw">&lt;body&gt;</span>
+        <span class="kw">&lt;h1&gt;</span>They don&#39;t get any simpler than this!<span class="kw">&lt;/h1&gt;</span>
+        <span class="kw">&lt;p&gt;</span>OK, not much simpler than this.<span class="kw">&lt;/p&gt;</span>
+        <span class="kw">&lt;p&gt;</span>Hello World?<span class="kw">&lt;/p&gt;</span>
+    <span class="kw">&lt;/body&gt;</span>
+<span class="kw">&lt;/html&gt;</span></code></pre></td></tr></table>
+<p><a href="./examples/02_simplePage.html">link to example</a></p>
+<h3 id="simple-web-page-with-css">Simple Web Page with CSS</h3>
+<table class="sourceCode html numberLines"><tr class="sourceCode"><td class="lineNumbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+</pre></td><td class="sourceCode"><pre><code class="sourceCode html"><span class="dt">&lt;!DOCTYPE </span>html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Strict//EN&quot; 
+&quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd&quot;<span class="dt">&gt;</span>
+
+<span class="kw">&lt;html</span><span class="ot"> xmlns=</span><span class="st">&quot;http://www.w3.org/1999/xhtml&quot;</span><span class="kw">&gt;</span>
+    <span class="kw">&lt;head&gt;</span>
+        <span class="kw">&lt;meta</span><span class="ot"> http-equiv=</span><span class="st">&quot;Content-Type&quot;</span><span class="ot"> content=</span><span class="st">&quot;text/html;charset=utf-8&quot;</span> <span class="kw">/&gt;</span>
+        <span class="kw">&lt;title&gt;</span>This is a simple web page - with styling<span class="kw">&lt;/title&gt;</span>
+        <span class="kw">&lt;style</span><span class="ot"> type=</span><span class="st">&quot;text/css&quot;</span><span class="kw">&gt;</span>
+            h1 <span class="kw">{color:</span><span class="dt">blue</span><span class="kw">;</span> <span class="kw">font-size:</span><span class="dt">large</span><span class="kw">}</span>
+            p<span class="fl">.para</span> <span class="kw">{color:</span><span class="dt">#777777</span><span class="kw">;</span> <span class="kw">font-size:</span><span class="dt">small</span><span class="kw">}</span>
+            <span class="fl">#annoying</span> <span class="kw">{color:</span><span class="dt">red</span><span class="kw">;</span> <span class="kw">text-decoration:</span><span class="dt">line-through</span><span class="kw">}</span>
+        <span class="kw">&lt;/style&gt;</span>
+    <span class="kw">&lt;/head&gt;</span>
+    <span class="kw">&lt;body&gt;</span>
+        <span class="kw">&lt;h1&gt;</span>They don&#39;t get any simpler than this!<span class="kw">&lt;/h1&gt;</span>
+        <span class="kw">&lt;p</span><span class="ot"> class=</span><span class="st">&quot;para&quot;</span><span class="kw">&gt;</span>OK, not much simpler than this.<span class="kw">&lt;/p&gt;</span>
+        <span class="kw">&lt;p</span><span class="ot"> id=</span><span class="st">&quot;annoying&quot;</span><span class="ot"> class=</span><span class="st">&quot;para&quot;</span><span class="kw">&gt;</span>Hello World?<span class="kw">&lt;/p&gt;</span>
+    <span class="kw">&lt;/body&gt;</span>
+<span class="kw">&lt;/html&gt;</span></code></pre></td></tr></table>
+<p><a href="./examples/02_pageWithCSS.html">link to example</a></p>
+<h3 id="simple-web-page-with-javascript">Simple Web Page with Javascript</h3>
+<table class="sourceCode html numberLines"><tr class="sourceCode"><td class="lineNumbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+</pre></td><td class="sourceCode"><pre><code class="sourceCode html"><span class="dt">&lt;!DOCTYPE </span>html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Strict//EN&quot; 
+&quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd&quot;<span class="dt">&gt;</span>
+
+<span class="kw">&lt;html</span><span class="ot"> xmlns=</span><span class="st">&quot;http://www.w3.org/1999/xhtml&quot;</span><span class="kw">&gt;</span>
+    <span class="kw">&lt;head&gt;</span>
+        <span class="kw">&lt;meta</span><span class="ot"> http-equiv=</span><span class="st">&quot;Content-Type&quot;</span><span class="ot"> content=</span><span class="st">&quot;text/html;charset=utf-8&quot;</span> <span class="kw">/&gt;</span>
+        <span class="kw">&lt;title&gt;</span>This is a simple web page with Javascript<span class="kw">&lt;/title&gt;</span>
+        <span class="kw">&lt;script</span><span class="ot"> type=</span><span class="st">&quot;text/javascript&quot;</span><span class="kw">&gt;</span>
+<span class="er">            function genericAlert() {</span>
+<span class="er">                alert(&quot;You just did something ...&quot;)</span>
+<span class="er">                document.getElementById(&quot;clickMe&quot;).style.color = &quot;red&quot;</span>
+            }
+        <span class="kw">&lt;/script&gt;</span>
+    <span class="kw">&lt;/head&gt;</span>
+    <span class="kw">&lt;body&gt;</span>
+        <span class="kw">&lt;h1&gt;</span>They don&#39;t get any simpler than this!<span class="kw">&lt;/h1&gt;</span>
+        <span class="kw">&lt;p&gt;</span>OK, not much simpler than this.<span class="kw">&lt;/p&gt;</span>
+        <span class="kw">&lt;p&gt;</span>Hello World?<span class="kw">&lt;/p&gt;</span>
+        <span class="kw">&lt;p</span><span class="ot"> id=</span><span class="st">&quot;clickMe&quot;</span><span class="ot"> onclick=</span><span class="st">&quot;genericAlert();&quot;</span><span class="kw">&gt;</span>What happens when you click me?<span class="kw">&lt;/p&gt;</span>
+    <span class="kw">&lt;/body&gt;</span>
+<span class="kw">&lt;/html&gt;</span></code></pre></td></tr></table>
+<p><a href="./examples/02_pageWithJavascript.html">link to example</a></p>
+<h3 id="more-complete-web-page-example">More Complete Web Page Example</h3>
+<div class="figure">
+<img src="images/www_nawrs_net.png" alt="NAWRS Mapper. HTML: 39 Lines; CSS: 136 Lines; core.js: 515 Lines + Google Maps API and JQuery Framework" /><p class="caption"><a href="http://www.nawrs.net">NAWRS Mapper</a>. <em>HTML</em>: 39 Lines; <em>CSS</em>: 136 Lines; <em>core.js</em>: 515 Lines + Google Maps API and JQuery Framework</p>
+</div>
+</body>
+</html>

@@ -66,6 +66,14 @@
     background-color: #F3F4F8;
     border-top: 1px solid #CCC;
   }
+  
+  table.sourceCode.html.numberLines {
+	font-size: medium;
+}
+
+ul li ul {
+	font-size: large;
+}
 
   /* Transition effect */
   /* Feel free to change the transition effect for original
@@ -96,3 +104,6 @@
 
   /* The items to-be-selected */
   .incremental > *[aria-selected] ~ * { opacity: 0.2; }
+  
+  
+  
