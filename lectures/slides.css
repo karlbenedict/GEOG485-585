@@ -71,8 +71,24 @@
 	font-size: medium;
 }
 
-ul li ul {
+ul {
+	padding-top: 0;
+	padding-bottom: 0;
+	margin-top: 0;
+	margin-bottom: 6px;
+}
+
+ul li ul li{
 	font-size: large;
+	padding-top: 0;
+	padding-bottom: 0;
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+ul li {
+	padding-top: 0;
+	padding-bottom: 0;
 }
 
   /* Transition effect */
