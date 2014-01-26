@@ -36,7 +36,7 @@ This week we will review the content and structure for the course and spend some
 
 This week's milestone is to set up your GitHub account so you can get started in creating your web portfolio that will be incrementally built over the course of the next sixteen weeks. As part of the process of getting all the parts and pieces into place you will create your first web page within the GitHub environment. 
 
-[Link to this week's milestone](../milestones/milestones.html#week-1---creating-your-first-web-page-in-github)
+[Link to this week's milestone](http://karlbenedict.com/GEOG485-585/milestones/milestones.html#week-1---creating-your-first-web-page-in-github)
 
 
 ### Readings ###
@@ -89,6 +89,7 @@ By the end of this class module you should understand the following:
 
 ### Weekly Milestone - Create a More Complex Web Page and Style It ###
 
+[Link to this week's milestone](http://karlbenedict.com/GEOG485-585/milestones/milestones.html#week-2---create-a-more-complex-web-page-and-style-it)
 
 ### Readings ###
 
@@ -130,6 +131,7 @@ By the end of this class module you should understand the following:
 
 ### Weekly Milestone - Creation of a Web Page with an Embedded Google Map ###
 
+[Link to this week's milestone](http://karlbenedict.com/GEOG485-585/milestones/milestones.html#week-3---creation-of-a-web-page-with-an-embedded-google-map)
 
 ### Readings ###
 
