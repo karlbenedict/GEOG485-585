@@ -1,0 +1,37 @@
+/* Module 2.2 part 2 */
+
+#getting-started-with-styled-maps---video figure {
+	margin-right: auto;
+	margin-left: auto;
+	width: 400px;
+	height:  300px;
+}
+
+#getting-started-with-styled-maps---video figure img{
+	margin-right: auto;
+	margin-left: auto;
+	width: 400px;
+	height: auto;
+}
+
+#getting-started-with-styled-maps---video figure figcaption {
+	width: 400px;
+}
+
+#google-io-2011-managing-and-visualizing-your-geospatial-data-with-fusion-tables---video figure {
+	margin-right: auto;
+	margin-left: auto;
+	width: 300px;
+	height:  200px;	
+}
+
+#google-io-2011-managing-and-visualizing-your-geospatial-data-with-fusion-tables---video figure img{
+	margin-right: auto;
+	margin-left: auto;
+	width: 300px;
+	height: auto;
+}
+
+#google-io-2011-managing-and-visualizing-your-geospatial-data-with-fusion-tables---video figure figcaption {
+	width: 300px;
+}
