@@ -10,11 +10,17 @@ var map
 // Define a global map type variable that is usable throughout the web page
 var mapType = google.maps.MapTypeId.ROADMAP
 
+// Markers and InfoBoxes
+var infoWindow = null
+
 
 // ================================ Functions ============================================
 
 // Define the function that sets up the initial map after the web page has completed loading
 function initialize() {
+	// define a generic infowindow object
+	infowindow = new google.maps.InfoWindow({content:"holding..."});
+
 	// set the initial map center to Albuquerque
 	var mapCenter = UScenter
 	
@@ -69,32 +75,30 @@ function initialize() {
     // initialize the map object with the map settings defined above
     map = new google.maps.Map(document.getElementById("event-map"), mapOptions);
     
-    buildMarkers()
+    buildMarkers(map, eventPlaces)
     addFusionTable()
 }
 
 
 // Separate the marker creation code from the map initialization code
-function buildMarkers() {
-	// clear out any markers and info windows that had been previously created
-	var myMarkers = [];
-	var myInfoWindows = []
-	
+function buildMarkers(map, markers) {
 	// loop through the set of places in the eventPlaces Array and create a marker for each based upon the their point and name
 	for(var i = 0; i < eventPlaces.length; i++) {
 		// Create a new marker object as part of the myMarkers array
-		myMarkers[i] = new google.maps.Marker ({
+		myMarker = new google.maps.Marker ({
 			position: eventPlaces[i].point,
-			title: eventPlaces[i].name
+			title: eventPlaces[i].name,
+			map: map,
+			html: eventPlaces[i].label
 		});
 		// Create a new Info Window object as part of the myInforWindows array
-		myInfoWindows[i] = new google.maps.InfoWindow({content:eventPlaces[i].label});
-		//alert(myInfoWindows[i])
-		// add the new marker to the map
-		myMarkers[i].setMap(map);
+		var myContent = eventPlaces[i].label
 		// Create the event listener for the marker that displays the Info Window when clicked
-		google.maps.event.addListener(myMarkers[i],'click', function() {
-			myInfoWindows[i].open(map,myMarkers[i])
+		// Thanks to this post for the clue on this one: http://you.arenot.me/2010/06/29/google-maps-api-v3-0-multiple-markers-multiple-infowindows/
+		google.maps.event.addListener(myMarker,'click', function() {
+			//alert(this.html);
+			infowindow.setContent(this.html);
+			infowindow.open(map,this)
 		});
 	}
 }
