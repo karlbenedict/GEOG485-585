@@ -17,6 +17,8 @@
 <li><a href="#create-your-first-web-page">Create Your First Web Page</a></li>
 <li><a href="#make-your-new-web-page-visible-to-the-world">Make Your New Web Page Visible to the World</a></li>
 </ul></li>
+<li><a href="#week-2---create-a-more-complex-web-page-and-style-it">Week 2 - Create a More Complex Web Page and Style It</a></li>
+<li><a href="#week-3---creation-of-a-web-page-with-an-embedded-google-map">Week 3 - Creation of a Web Page with an Embedded Google Map</a></li>
 </ul></li>
 </ul>
 </div>
@@ -104,6 +106,68 @@
 </dl>
 <div class="figure">
 <img src="images/Github_09.png" alt="Sample &quot;helloworld.html&quot; web page display." /><p class="caption">Sample &quot;helloworld.html&quot; web page display.</p>
+</div>
+<h2 id="week-2---create-a-more-complex-web-page-and-style-it"><a href="#week-2---create-a-more-complex-web-page-and-style-it">Week 2 - Create a More Complex Web Page and Style It</a></h2>
+<p>This week’s milestone activity takes you through the process of creating two more web pages in preparation for next week’s work with the Google Maps API in developing your first web mapping page. These pages will be:</p>
+<ol style="list-style-type: decimal">
+<li>A <em>home page</em> for your portfolio that will be the access point for all of the materials you create (<a href="../examples/homePageTemplate.html">template</a>), and</li>
+<li>Your first web page containing materials related to a <em>milestone</em> assignment (<a href="../examples/assignmentTemplate.html">template</a>).</li>
+</ol>
+<p>Open the <em>milestone</em> assignment template linked above and select &quot;view Source&quot; from the browser's menu to view the source code for the file. Create a new document in your GitHub <code>gh-pages</code> branch named <code>milestone_02.html</code>, copy the page code from the &quot;view source&quot;, and paste it into your <code>milestone_02.html</code> document. Add your responses to the following questions to the <code>milestone_02.html</code> document.</p>
+<p>Open the <em>home page</em> template linked above in your web browser and select “view source” from the browser’s menu to examine the source code for the page.</p>
+<dl>
+<dt>Question 1</dt>
+<dd>From examining the display in your web browser and the structure of the source code in the page, what effect (if any) does the white space (i.e. tabs, blank lines, multiple spaces) have on what is displayed in the browser?
+</dd>
+</dl>
+<p>Question 2 : How are the</p>
+<pre><code>    &lt;h1&gt;</code></pre>
+<p>and</p>
+<pre><code>    &lt;h2&gt; </code></pre>
+<p>elements from the source code displayed differently in the browser?</p>
+<dl>
+<dt>Question 3</dt>
+<dd>What type of element would you use to create additional list elements in either the “topic” or “data type” lists on the page.
+</dd>
+</dl>
+<p>Log into your GitHub account, and create a new document in the <code>gh-pages</code> branch and name it <code>index.html</code>.</p>
+<p>Copy the source code from the “view source” information for the web page you opened in 1) above and paste it into <code>index.html</code> document in the GitHub editor. Save your changes</p>
+<p>Test your new page by trying the following web addresse (it may take a few minutes for your newly created page to become available):</p>
+<pre><code>    http://&lt;your GitHub username&gt;.github.io/&lt;your repository name&gt;
+    
+    http://&lt;your GitHub username&gt;.github.io/&lt;your repository name&gt;/index.html</code></pre>
+<p>Where <code>&lt;your GitHub username&gt;</code> is replaced by your username for GitHub, and <code>&lt;your repository name&gt;</code> is replaced with the name of the repository that you created your <code>helloworld.html</code> document in during last week's milestone exercise.</p>
+<p>The reason that the first web address works (without specifying the file name) is that if a file name is not provided in a web address, many web servers will deliver a file named “index.html” if it is found in the requested directory.</p>
+<p>Flesh out (using using the GitHub <em>edit</em> function) the <code>index.html</code> page that you created above with information specific to you based upon the content areas in the page. Add a link to your <code>milestone_02.html</code> file to the &quot;milestones&quot; section of your <code>index.html</code> page.</p>
+<p>Make a copy of your <code>index.html</code> page by copying the content of the page and pasting it into a new document named <code>index_styled.html</code>.</p>
+<p>Experiment with some of the styling capabilities described in Dave Raggett’s “Adding a Touch of Style” page (<a href="http://www.w3.org/MarkUp/Guide/Style.html">http://www.w3.org/MarkUp/Guide/Style.html</a>) on <code>index_styled.html</code> page you created above. Make at least three stylistic changes to the <code>index_styled.html</code> page.</p>
+<h2 id="week-3---creation-of-a-web-page-with-an-embedded-google-map"><a href="#week-3---creation-of-a-web-page-with-an-embedded-google-map">Week 3 - Creation of a Web Page with an Embedded Google Map</a></h2>
+<p>In preparation for creating a web page with an embedded Google Map you should first answer the following questions about what and how you want to map. As you define the type of map you want to build, think about a specific problem or topic that you would like to address with your map.</p>
+<p>In this exercise you will be generating the configuration for the base map (i.e. The Google Maps background layers). In future assignments you will add your own custom content to free-standing web pages that include a mapper based upon the base map you define here.</p>
+<p>Create a web page (based upon the assignment <a href="../examples/assignmentTemplate.html">template</a>) that contains your milestone writeup (including the embedded Google Map required by question 5), and link it to the home page (<code>index.html</code>) file you created last week.</p>
+<p>Respond to Question 1-4 with an understanding that you are generating a web page that is publicly accessible, and should be both clear and complete.</p>
+<dl>
+<dt>Question 1</dt>
+<dd><p>What area do you want to depict in your map? Why?</p>
+</dd>
+<dt>Question 2</dt>
+<dd><p>What is the center point (latitude and longitude) of your area of interest?</p>
+</dd>
+<dt>Question 3</dt>
+<dd><p>What style of map (roads, satellite, hybrid, terrain) is appropriate for your map? Why?</p>
+</dd>
+<dt>Question 4</dt>
+<dd><p>What is the scale of your map (local, regional, continental, global)? How will this translate into your selection of an appropriate default zoom level for your map?</p>
+</dd>
+</dl>
+<p>Now that you have answered these questions about the map that you want to create, refer to the examples in the lecture notes, the Google Maps Tutorial (http://code.google.com/apis/maps/documentation/javascript/tutorial.html), and this week's reading assignment to create a custom Google map.</p>
+<dl>
+<dt>Question 5</dt>
+<dd>Embed a Google Map in your writeup that is based upon your responses to questions 1-4 above.
+</dd>
+</dl>
+<div class="license">
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />This work by <span xmlns:cc="http://creativecommons.org/ns#" property="cc:attributionName">Karl Benedict</span> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
 </div>
 </body>
 </html>

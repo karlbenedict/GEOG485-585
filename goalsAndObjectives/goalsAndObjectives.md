@@ -36,7 +36,7 @@ This week we will review the content and structure for the course and spend some
 
 This week's milestone is to set up your GitHub account so you can get started in creating your web portfolio that will be incrementally built over the course of the next sixteen weeks. As part of the process of getting all the parts and pieces into place you will create your first web page within the GitHub environment. 
 
-[Link to this week's milestone](../milestones/milestones.html#week-1---creating-your-first-web-page-in-github)
+[Link to this week's milestone](http://karlbenedict.com/GEOG485-585/milestones/milestones.html#week-1---creating-your-first-web-page-in-github)
 
 
 ### Readings ###
@@ -89,6 +89,7 @@ By the end of this class module you should understand the following:
 
 ### Weekly Milestone - Create a More Complex Web Page and Style It ###
 
+[Link to this week's milestone](http://karlbenedict.com/GEOG485-585/milestones/milestones.html#week-2---create-a-more-complex-web-page-and-style-it)
 
 ### Readings ###
 
@@ -130,6 +131,7 @@ By the end of this class module you should understand the following:
 
 ### Weekly Milestone - Creation of a Web Page with an Embedded Google Map ###
 
+[Link to this week's milestone](http://karlbenedict.com/GEOG485-585/milestones/milestones.html#week-3---creation-of-a-web-page-with-an-embedded-google-map)
 
 ### Readings ###
 
@@ -646,3 +648,7 @@ At the end of the class students will understand:
 
 
 ### Readings - none ###
+
+
+
+<div class="license"><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />This work by <span xmlns:cc="http://creativecommons.org/ns#" property="cc:attributionName">Karl Benedict</span> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.</div>

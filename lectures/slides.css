@@ -66,6 +66,30 @@
     background-color: #F3F4F8;
     border-top: 1px solid #CCC;
   }
+  
+  table.sourceCode.html.numberLines {
+	font-size: medium;
+}
+
+ul {
+	padding-top: 0;
+	padding-bottom: 0;
+	margin-top: 0;
+	margin-bottom: 6px;
+}
+
+ul li ul li{
+	font-size: large;
+	padding-top: 0;
+	padding-bottom: 0;
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+ul li {
+	padding-top: 0;
+	padding-bottom: 0;
+}
 
   /* Transition effect */
   /* Feel free to change the transition effect for original
@@ -96,3 +120,6 @@
 
   /* The items to-be-selected */
   .incremental > *[aria-selected] ~ * { opacity: 0.2; }
+  
+  
+  

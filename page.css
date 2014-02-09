@@ -1,7 +1,28 @@
 body {
 	font-family: "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
 	color: #ebebeb;
-	background-color: #0063b0;
+	background: #000 url(lectures/images/GEOG485_banner.jpg) no-repeat;
+}
+
+div#TOC {
+	margin-top: 200px;
+}
+
+div#TOC > ul:first-child > li:first-child   {
+	list-style-image: none;
+	list-style-type: none;
+	list-style-position: outside;
+	text-shadow: #000000 0 0 0;
+}
+
+div#TOC > ul:first-child > li:first-child > a:first-child  {
+	font-size: xx-large;
+	color: #ebebeb;
+}
+
+div.license {
+	margin-top: 30px;
+	border-top: 1px solid #001f91;
 }
 
 dd p {
@@ -13,7 +34,7 @@ dt {
 }
 
 a {
-	color: #f7fb00;
+	color: #85b8ff;
 	text-decoration: none;
 }
 
@@ -42,6 +63,7 @@ img {
 h1 {
 	background-color: #001f91;
 	padding: 12px;
+	display: none;
 }
 
 h2 {
