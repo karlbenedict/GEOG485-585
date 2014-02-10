@@ -178,9 +178,11 @@ You should also understand
 
 ### Weekly Milestone - Styling of an Embedded Google Map ###
 
+[Week 4 Milestone](http://tinyurl.com/kgpjl7x)
 
 ### Deep Dive - Creation of a a Google Maps Web Page with Custom Points and Labels ###
 
+[Week 4 Deep Dive Assignment](http://tinyurl.com/l9lxym2)
 
 ### Readings ###
 
@@ -229,6 +231,7 @@ By the end of this class module you should understand the following:
 
 ### Weekly Milestone - Proj4, GDAL, and OGR ###
 
+[Week 5 Milestone](http://tinyurl.com/kvvumx6)
 
 ### Readings ###
 
