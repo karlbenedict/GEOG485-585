@@ -1,0 +1,19 @@
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document>
+	<Placemark>
+		<Polygon>
+			<altitudeMode>clampToGround</altitudeMode>				<outerBoundaryIs>
+				<LinearRing>
+					<coordinates>
+							-135,78.5,300000 
+							-135,12.5,300000 
+							-45,12.5,300000 
+							-45,78.5,300000 
+							-135,78.5,300000
+						</coordinates>
+				</LinearRing>
+			</outerBoundaryIs>
+		</Polygon>
+	</Placemark>
+</Document>
+</kml>

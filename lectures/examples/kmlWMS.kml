@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<GroundOverlay>
+	<name>RGIS Counties WMS</name>
+	<Icon>
+		<href>http://gstore.unm.edu/apps/rgis/datasets/107046/services/ogc/wms?VERSION=1.1.1&amp;SERVICE=WMS&amp;REQUEST=GetMap&amp;BBOX=-109,31,-102.9,37.1&amp;LAYERS=tl_2010_35_state10&amp;WIDTH=800&amp;HEIGHT=800&amp;SRS=EPSG:4326&amp;FORMAT=image/png&amp;STYLES=</href>
+		<viewRefreshMode>onStop</viewRefreshMode>
+	</Icon>
+	<LatLonBox>
+		<north>37.32753828398865</north>
+		<south>30.86418272137246</south>
+		<east>-101.3630220689848</east>
+		<west>-110.6891149310152</west>
+	</LatLonBox>
+</GroundOverlay>
+</kml>

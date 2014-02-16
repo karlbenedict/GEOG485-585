@@ -1,0 +1,1318 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <style type="text/css">
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; }
+code > span.dt { color: #902000; }
+code > span.dv { color: #40a070; }
+code > span.bn { color: #40a070; }
+code > span.fl { color: #40a070; }
+code > span.ch { color: #4070a0; }
+code > span.st { color: #4070a0; }
+code > span.co { color: #60a0b0; font-style: italic; }
+code > span.ot { color: #007020; }
+code > span.al { color: #ff0000; font-weight: bold; }
+code > span.fu { color: #06287e; }
+code > span.er { color: #ff0000; font-weight: bold; }
+  </style>
+  <link rel="stylesheet" href="../page.css" type="text/css" />
+</head>
+<body>
+<div id="TOC">
+<ul>
+<li><a href="#module-4.1---interoperability-standards---wms-kml-and-xml">Module 4.1 - Interoperability Standards - WMS, KML, and XML</a><ul>
+<li><a href="#outline">Outline</a></li>
+<li><a href="#extensible-markup-language---xml">Extensible Markup Language - XML</a><ul>
+<li><a href="#xml-background">XML Background</a></li>
+<li><a href="#xml-design-goals">XML Design Goals</a></li>
+<li><a href="#xml-structure---well-formed-valid">XML Structure - Well Formed / Valid</a></li>
+<li><a href="#simple-xml-document">Simple XML Document</a></li>
+<li><a href="#simple-xml-document---prolog">Simple XML Document - Prolog</a></li>
+<li><a href="#simple-xml-document---elements">Simple XML Document - Elements</a></li>
+<li><a href="#simple-xml-document---root-element">Simple XML Document - Root Element</a></li>
+<li><a href="#simple-xml-document---content-elements">Simple XML Document - Content Elements</a></li>
+<li><a href="#simple-xml-document---attributes">Simple XML Document - Attributes</a></li>
+<li><a href="#simple-xml-document---element-content">Simple XML Document - Element Content</a></li>
+<li><a href="#simple-xml-document---valid">Simple XML Document - Valid?</a></li>
+<li><a href="#common-xml-constructs-that-will-be-encountered">Common XML Constructs That Will be Encountered</a></li>
+<li><a href="#common-xml-constructs-that-will-be-encountered---cont.">Common XML Constructs That Will be Encountered - cont.</a></li>
+</ul></li>
+<li><a href="#kml">KML</a><ul>
+<li><a href="#kml-background">KML Background</a></li>
+<li><a href="#kml-capabilities">KML Capabilities</a></li>
+<li><a href="#kml-content">KML Content</a></li>
+<li><a href="#d-and-3d-kml-sample">2D and 3D KML Sample</a></li>
+<li><a href="#high-level-kml-content-types">High-Level KML Content Types</a></li>
+<li><a href="#high-level-kml-content-types---cont.">High-Level KML Content Types - cont.</a></li>
+<li><a href="#kml-demonstration-and-references">KML Demonstration and References</a></li>
+</ul></li>
+<li><a href="#ogc-web-map-services---wms">OGC Web map Services - WMS</a></li>
+<li><a href="#wms---overview">WMS - Overview</a><ul>
+<li><a href="#wms-getcapabilities-request">WMS <em>GetCapabilities</em> Request</a></li>
+<li><a href="#wms-getmap-request-core">WMS <em>GetMap</em> Request (Core)</a></li>
+<li><a href="#wms-getmap-request-core---cont.">WMS GetMap Request (Core) - cont.</a></li>
+<li><a href="#wms-getfeatureinfo-request">WMS GetFeatureInfo Request</a></li>
+<li><a href="#wms-getfeatureinfo-request---cont.">WMS GetFeatureInfo Request - cont.</a></li>
+<li><a href="#wms-sample-requests---getcapabilities">WMS Sample Requests - GetCapabilities</a></li>
+<li><a href="#wms-sample-requests---getmap">WMS Sample Requests - GetMap</a></li>
+<li><a href="#integraton-of-wms-and-kml">Integraton of WMS and KML</a></li>
+<li><a href="#sample-wms-kml-integration">Sample WMS-KML Integration</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</div>
+<h1 id="module-4.1---interoperability-standards---wms-kml-and-xml"><a href="#module-4.1---interoperability-standards---wms-kml-and-xml">Module 4.1 - Interoperability Standards - WMS, KML, and XML</a></h1>
+<h3 id="outline"><a href="#outline">Outline</a></h3>
+<ul>
+<li>Extensible Markup Language - XML
+<ul>
+<li>Definition of a markup language</li>
+<li>Requirements</li>
+<li>Extensible ???</li>
+</ul></li>
+<li>KML - AKA Keyhole Markup Language
+<ul>
+<li>An XML Document Format</li>
+<li>Combined representation of spatial data and time</li>
+</ul></li>
+<li>OGC Web Map Services (WMS)
+<ul>
+<li>Requests and Results</li>
+<li>GetCapabilities, GetMap, GetFeatureInfo</li>
+</ul></li>
+<li>Integration of WMS into KML</li>
+</ul>
+<h2 id="extensible-markup-language---xml"><a href="#extensible-markup-language---xml">Extensible Markup Language - XML</a></h2>
+<h3 id="xml-background"><a href="#xml-background">XML Background</a></h3>
+<p><img src="./images/sgml_xml.png" alt="SGML Relationship with XML and HTML" /> </p>
+<ul>
+<li>Defined as a markup language profile of Standard Generalized Markup Language (SGML - ISO 8879:1986)</li>
+<li>XML 1.0 released as a W3C Recommendation in 1998
+<ul>
+<li>currently in 5th edition, released in 2008</li>
+<li>version 1.1 released in 2004, but not broadly used</li>
+<li>XML 1.0 (5th ed.) <a href="http://www.w3.org/TR/2008/REC-xml-20081126/">Recommendation</a></li>
+</ul></li>
+</ul>
+<h3 id="xml-design-goals"><a href="#xml-design-goals">XML Design Goals</a></h3>
+<ul>
+<li>XML shall be straightforwardly usable over the Internet.</li>
+<li>XML shall support a wide variety of applications.</li>
+<li>XML shall be compatible with SGML.</li>
+<li>It shall be easy to write programs which process XML documents.</li>
+<li>The number of optional features in XML is to be kept to the absolute minimum, ideally zero.</li>
+<li>XML documents should be human-legible and reasonably clear.</li>
+<li>The XML design should be prepared quickly.</li>
+<li>The design of XML shall be formal and concise.</li>
+<li>XML documents shall be easy to create.</li>
+<li>Terseness in XML markup is of minimal importance.</li>
+</ul>
+<p>From XML 1.0 (5th ed.) <a href="http://www.w3.org/TR/2008/REC-xml-20081126/">Recommendation</a></p>
+<h3 id="xml-structure---well-formed-valid"><a href="#xml-structure---well-formed-valid">XML Structure - Well Formed / Valid</a></h3>
+<ul>
+<li>Well Formed XML - a document that conforms to the structural definition of XML. Either well-formed, or not XML</li>
+<li>Valid XML - a document that is both well-formed and conforms to a specific content structure defined by
+<ul>
+<li>A Document Type Definition (DTD) - the original XML specification for the definition of the content of a specific XML document</li>
+<li>A Schema document - defined in a variety of languages (e.g. W3C Schema, RELAX NG, Schematron, ISO DSDL, etc.)</li>
+</ul></li>
+</ul>
+<p><a href="http://en.wikipedia.org/wiki/XML">XML Wikipedia Article</a></p>
+<h3 id="simple-xml-document"><a href="#simple-xml-document">Simple XML Document</a></h3>
+<table class="sourceCode xml numberLines" id="xmlSample"><tr class="sourceCode"><td class="lineNumbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+</pre></td><td class="sourceCode"><pre><code class="sourceCode xml"><span class="kw">&lt;?xml</span> version=&quot;1.0&quot; encoding=&quot;ISO-8859-1&quot;<span class="kw">?&gt;</span>
+<span class="co">&lt;!-- Edited by XMLSpy® --&gt;</span>
+<span class="kw">&lt;note&gt;</span>
+    <span class="kw">&lt;to&gt;</span>Tove<span class="kw">&lt;/to&gt;</span>
+    <span class="kw">&lt;from&gt;</span>Jani<span class="kw">&lt;/from&gt;</span>
+    <span class="kw">&lt;heading&gt;</span>Reminder<span class="kw">&lt;/heading&gt;</span>
+    <span class="kw">&lt;body</span><span class="ot"> type=</span><span class="st">&quot;instruction&quot;</span> <span class="kw">&gt;</span>Don&#39;t forget me this weekend!<span class="kw">&lt;/body&gt;</span>
+<span class="kw">&lt;/note&gt;</span></code></pre></td></tr></table>
+<p>XML Source (modified from original): <a href="http://www.w3schools.com/XML/note.xml">w3schools</a></p>
+<h3 id="simple-xml-document---prolog"><a href="#simple-xml-document---prolog">Simple XML Document - Prolog</a></h3>
+<table class="sourceCode xml numberLines" id="xmlSample_Prolog"><tr class="sourceCode"><td class="lineNumbers"><pre>1
+2
+</pre></td><td class="sourceCode"><pre><code class="sourceCode xml"><span class="kw">&lt;?xml</span> version=&quot;1.0&quot; encoding=&quot;ISO-8859-1&quot;<span class="kw">?&gt;</span>
+<span class="co">&lt;!-- Edited by XMLSpy® --&gt;</span></code></pre></td></tr></table>
+<p>Includes XML Declaration and Comment</p>
+<h3 id="simple-xml-document---elements"><a href="#simple-xml-document---elements">Simple XML Document - Elements</a></h3>
+<table class="sourceCode xml numberLines" id="xmlSample_Elements" startFrom="3"><tr class="sourceCode"><td class="lineNumbers"><pre>3
+4
+5
+6
+7
+8
+</pre></td><td class="sourceCode"><pre><code class="sourceCode xml"><span class="kw">&lt;note&gt;</span>
+    <span class="kw">&lt;to&gt;</span>Tove<span class="kw">&lt;/to&gt;</span>
+    <span class="kw">&lt;from&gt;</span>Jani<span class="kw">&lt;/from&gt;</span>
+    <span class="kw">&lt;heading&gt;</span>Reminder<span class="kw">&lt;/heading&gt;</span>
+    <span class="kw">&lt;body</span><span class="ot"> type=</span><span class="st">&quot;instruction&quot;</span> <span class="kw">&gt;</span>Don&#39;t forget me this weekend!<span class="kw">&lt;/body&gt;</span>
+<span class="kw">&lt;/note&gt;</span></code></pre></td></tr></table>
+<p>Define blocks of content</p>
+<h3 id="simple-xml-document---root-element"><a href="#simple-xml-document---root-element">Simple XML Document - Root Element</a></h3>
+<table class="sourceCode xml numberLines" id="xmlSample_RootElement" startFrom="3"><tr class="sourceCode"><td class="lineNumbers"><pre>3
+4
+5
+6
+7
+8
+</pre></td><td class="sourceCode"><pre><code class="sourceCode xml"><span class="kw">&lt;note&gt;</span>
+    ...
+    ...
+    ...
+    ...
+<span class="kw">&lt;/note&gt;</span></code></pre></td></tr></table>
+<ul>
+<li>Required</li>
+<li>There is only one</li>
+<li>It must be a pair of opening and closing tags</li>
+</ul>
+<h3 id="simple-xml-document---content-elements"><a href="#simple-xml-document---content-elements">Simple XML Document - Content Elements</a></h3>
+<table class="sourceCode xml numberLines" id="xmlSample_ContentElements" startFrom="4"><tr class="sourceCode"><td class="lineNumbers"><pre>4
+5
+6
+7
+</pre></td><td class="sourceCode"><pre><code class="sourceCode xml">    <span class="kw">&lt;to&gt;</span>Tove<span class="kw">&lt;/to&gt;</span>
+    <span class="kw">&lt;from&gt;</span>Jani<span class="kw">&lt;/from&gt;</span>
+    <span class="kw">&lt;heading&gt;</span>Reminder<span class="kw">&lt;/heading&gt;</span>
+    <span class="kw">&lt;body</span><span class="ot"> type=</span><span class="st">&quot;instruction&quot;</span> <span class="kw">&gt;</span>Don&#39;t forget me this weekend!<span class="kw">&lt;/body&gt;</span></code></pre></td></tr></table>
+<ul>
+<li>Contain all other document content</li>
+<li>May be paired opening and closing tags, <em>or</em></li>
+<li>May be self-closing with a terminal &quot;/&quot; in the element, e.g. <code>&lt;br /&gt;</code></li>
+</ul>
+<h3 id="simple-xml-document---attributes"><a href="#simple-xml-document---attributes">Simple XML Document - Attributes</a></h3>
+<table class="sourceCode xml numberLines" id="xmlSample_Attributes" startFrom="7"><tr class="sourceCode"><td class="lineNumbers"><pre>7
+</pre></td><td class="sourceCode"><pre><code class="sourceCode xml">    <span class="kw">&lt;body</span><span class="ot"> type=</span><span class="st">&quot;instruction&quot;</span> <span class="kw">&gt;</span>Don&#39;t forget me this weekend!<span class="kw">&lt;/body&gt;</span></code></pre></td></tr></table>
+<p>Define additional information about elements as <em>name</em>=<em>value</em> pairs.</p>
+<h3 id="simple-xml-document---element-content"><a href="#simple-xml-document---element-content">Simple XML Document - Element Content</a></h3>
+<table class="sourceCode xml numberLines" id="xmlSample_ElementContent" startFrom="7"><tr class="sourceCode"><td class="lineNumbers"><pre>7
+</pre></td><td class="sourceCode"><pre><code class="sourceCode xml">    <span class="kw">&lt;body</span><span class="ot"> type=</span><span class="st">&quot;instruction&quot;</span> <span class="kw">&gt;</span>Don&#39;t forget me this weekend!<span class="kw">&lt;/body&gt;</span></code></pre></td></tr></table>
+<p>The material contained between the opening and closing tags of an <em>Element</em>.</p>
+<h3 id="simple-xml-document---valid"><a href="#simple-xml-document---valid">Simple XML Document - Valid?</a></h3>
+<table class="sourceCode xml numberLines" id="xmlSample_valid"><tr class="sourceCode"><td class="lineNumbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+</pre></td><td class="sourceCode"><pre><code class="sourceCode xml"><span class="kw">&lt;?xml</span> version=&quot;1.0&quot; encoding=&quot;ISO-8859-1&quot;<span class="kw">?&gt;</span>
+<span class="co">&lt;!-- Edited by XMLSpy® --&gt;</span>
+<span class="kw">&lt;note&gt;</span>
+    <span class="kw">&lt;to&gt;</span>Tove<span class="kw">&lt;/to&gt;</span>
+    <span class="kw">&lt;from&gt;</span>Jani<span class="kw">&lt;/from&gt;</span>
+    <span class="kw">&lt;heading&gt;</span>Reminder<span class="kw">&lt;/heading&gt;</span>
+    <span class="kw">&lt;body</span><span class="ot"> type=</span><span class="st">&quot;instruction&quot;</span> <span class="kw">&gt;</span>Don&#39;t forget me this weekend!<span class="kw">&lt;/body&gt;</span>
+<span class="kw">&lt;/note&gt;</span></code></pre></td></tr></table>
+<p>Why is this XML <em>well-formed</em> but not <em>valid</em>?</p>
+<p><em>There is no DTD or Schema defined for the document against which it can be validated</em></p>
+<h3 id="common-xml-constructs-that-will-be-encountered"><a href="#common-xml-constructs-that-will-be-encountered">Common XML Constructs That Will be Encountered</a></h3>
+<dl>
+<dt>Document Type Declaration (DTD) references (PROLOG)</dt>
+<dd>definition, either by reference or by direct inclusion, the allowed structure of an XML document, for example: 
+</dd>
+</dl>
+<p><code>&lt;!DOCTYPE greeting SYSTEM &quot;hello.dtd&quot;&gt;</code></p>
+<dl>
+<dt>CDATA Sections</dt>
+<dd>blocks of XML that contain characters that would otherwise be recognized as XML markup, for example: 
+</dd>
+</dl>
+<p><code>&lt;![CDATA[&lt;greeting&gt;Hello, world!&lt;/greeting&gt;]]&gt;</code></p>
+<h3 id="common-xml-constructs-that-will-be-encountered---cont."><a href="#common-xml-constructs-that-will-be-encountered---cont.">Common XML Constructs That Will be Encountered - cont.</a></h3>
+<dl>
+<dt>XML Namespace Declarations</dt>
+<dd>additional information included in elements to distinguish between duplicate element names, for example (declared in lines 1-3, used in lines 5-17): 
+</dd>
+</dl>
+<table class="sourceCode xml numberLines" id="xmlNamespaceDeclarations"><tr class="sourceCode"><td class="lineNumbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+</pre></td><td class="sourceCode"><pre><code class="sourceCode xml"><span class="kw">&lt;root</span> 
+<span class="ot">    xmlns:h=</span><span class="st">&quot;http://www.w3.org/TR/html4/&quot;</span> 
+<span class="ot">    xmlns:f=</span><span class="st">&quot;http://www.w3schools.com/furniture&quot;</span><span class="kw">&gt;</span>
+
+<span class="kw">&lt;h:table&gt;</span>
+    <span class="kw">&lt;h:tr&gt;</span>
+        <span class="kw">&lt;h:td&gt;</span>Apples<span class="kw">&lt;/h:td&gt;</span>
+        <span class="kw">&lt;h:td&gt;</span>Bananas<span class="kw">&lt;/h:td&gt;</span>
+    <span class="kw">&lt;/h:tr&gt;</span>
+<span class="kw">&lt;/h:table&gt;</span>
+<span class="kw">&lt;f:table&gt;</span>
+    <span class="kw">&lt;f:legs&gt;</span>4<span class="kw">&lt;/f:legs&gt;</span>
+    <span class="kw">&lt;f:cost&gt;</span>300<span class="kw">&lt;/f:cost&gt;</span>
+    <span class="kw">&lt;f:width&gt;</span>3<span class="kw">&lt;/f:width&gt;</span>
+    <span class="kw">&lt;f:length&gt;</span>5<span class="kw">&lt;/f:length&gt;</span>
+    <span class="kw">&lt;f:height&gt;</span>4<span class="kw">&lt;/f:height&gt;</span>
+<span class="kw">&lt;/f:table&gt;</span>
+<span class="kw">&lt;/root&gt;</span></code></pre></td></tr></table>
+<h2 id="kml"><a href="#kml">KML</a></h2>
+<h3 id="kml-background"><a href="#kml-background">KML Background</a></h3>
+<ul>
+<li>An XML grammar originally developed as Keyhole Markup Language by Keyhole, Inc. for use in their Keyhole Earth Viewer.</li>
+<li>Google acquired Keyhole, Inc. in 2004</li>
+<li>KML version 2.2 became an OGC standard in 2008</li>
+<li>Two delivered KML file formats</li>
+</ul>
+<dl>
+<dt>KML</dt>
+<dd><p>an XML document, with a “.kml” extension that is directly readable and editable</p>
+</dd>
+<dt>KMZ</dt>
+<dd><p>a compressed (zipped) file with a “.kmz” extension, that contains at least a KML document, but may contain other files as well</p>
+</dd>
+</dl>
+<h3 id="kml-capabilities"><a href="#kml-capabilities">KML Capabilities</a></h3>
+<ul>
+<li>Annotate the Earth</li>
+<li>Specify icons and labels to identify locations on the surface of the planet</li>
+<li>Create different camera positions to define unique views for KML features</li>
+<li>Define image overlays to attach to the ground or screen</li>
+<li>Define styles to specify KML feature appearance</li>
+<li>Write HTML descriptions of KML features, including hyperlinks and embedded images</li>
+<li>Organize KML features into hierarchies</li>
+<li>Locate and update retrieved KML documents from local or remote network locations</li>
+<li>Define the location and orientation of textured 3D objects</li>
+</ul>
+<h3 id="kml-content"><a href="#kml-content">KML Content</a></h3>
+<ul>
+<li>Model for encoding 2- and 3-dimensional geometries for use in 2-D mappers and 3-D virtual globe applications</li>
+<li>Uses latitude-longitude (based upon WGS84 datum) for encoding horizontal position</li>
+<li>Represents altitude in Meters (based upon the WGS84 ellipsoid and EGM96 geoid)</li>
+</ul>
+<h3 id="d-and-3d-kml-sample"><a href="#d-and-3d-kml-sample">2D and 3D KML Sample</a></h3>
+<p><img src="./images/kmlExample.png" alt="Illustration of polygon in both planar and terrain surface" /> </p>
+<table class="sourceCode xml numberLines" id="sampleKML"><tr class="sourceCode"><td class="lineNumbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+</pre></td><td class="sourceCode"><pre><code class="sourceCode xml"><span class="kw">&lt;kml</span><span class="ot"> xmlns=</span><span class="st">&quot;http://www.opengis.net/kml/2.2&quot;</span><span class="kw">&gt;</span>
+<span class="kw">&lt;Document&gt;</span>
+    <span class="kw">&lt;Placemark&gt;</span>
+        <span class="kw">&lt;Polygon&gt;</span>
+            <span class="kw">&lt;altitudeMode&gt;</span>
+                clampToGround
+            <span class="kw">&lt;/altitudeMode&gt;</span>
+            <span class="kw">&lt;outerBoundaryIs&gt;</span>
+                <span class="kw">&lt;LinearRing&gt;</span>
+                    <span class="kw">&lt;coordinates&gt;</span>
+                        -135,78.5,300000 
+                        -135,12.5,300000 
+                        -45,12.5,300000 
+                        -45,78.5,300000 
+                        -135,78.5,300000
+                    <span class="kw">&lt;/coordinates&gt;</span>
+                <span class="kw">&lt;/LinearRing&gt;</span>
+            <span class="kw">&lt;/outerBoundaryIs&gt;</span>
+        <span class="kw">&lt;/Polygon&gt;</span>
+    <span class="kw">&lt;/Placemark&gt;</span>
+<span class="kw">&lt;/Document&gt;</span>
+<span class="kw">&lt;/kml&gt;</span></code></pre></td></tr></table>
+<p><a href="./examples/kmlExample.kml">KML Example</a></p>
+<p><a href="https://portal.opengeospatial.org/files/?artifact_id=27810l">Example from: KML 2.2 Specification (fig. 6)</a></p>
+<h3 id="high-level-kml-content-types"><a href="#high-level-kml-content-types">High-Level KML Content Types</a></h3>
+<dl>
+<dt>Features</dt>
+<dd><p>including documents, folders, placemarks, network links</p>
+</dd>
+<dt>Geometries</dt>
+<dd><p>including points, linestrings, polygons, models, locations</p>
+</dd>
+<dt>Overlays</dt>
+<dd><p>including ground overlays, lat-lon boxes, photo overlays, screen overlays</p>
+</dd>
+<dt>Styles</dt>
+<dd><p>styles, substyles, icons, label styles</p>
+</dd>
+</dl>
+<h3 id="high-level-kml-content-types---cont."><a href="#high-level-kml-content-types---cont.">High-Level KML Content Types - cont.</a></h3>
+<dl>
+<dt>Links</dt>
+<dd><p>read, update, create, delete, change</p>
+</dd>
+<dt>Views</dt>
+<dd><p>camera, look at</p>
+</dd>
+<dt>Time</dt>
+<dd><p>time span, timestamp</p>
+</dd>
+</dl>
+<h3 id="kml-demonstration-and-references"><a href="#kml-demonstration-and-references">KML Demonstration and References</a></h3>
+<p>New Mexico State Boundary <a href="./examples/tl_2010_35_state10.kml">KML File</a> | <a href="./examples/tl_2010_35_state10.kmz">KMZ File</a> (from <a href="http://rgis.unm.edu">NM RGIS</a>)</p>
+<dl>
+<dt>New Mexico State Boundary KML File</dt>
+<dd><a href="http://maps.google.com/maps?q=http://karlbenedict.com/GEOG485-585/lectures/examples/tl_2010_35_state10.kml">http://maps.google.com/maps?<em>q=http://karlbenedict.com/GEOG485-585/lectures/examples/tl_2010_35_state10.kml</em></a>
+</dd>
+</dl>
+<p><a href="http://code.google.com/apis/kml/documentation/">Google Code KML Documentation</a></p>
+<p><a href="http://www.opengeospatial.org/standards/kml">OGC KML Implementation specification</a></p>
+<h2 id="ogc-web-map-services---wms"><a href="#ogc-web-map-services---wms">OGC Web map Services - WMS</a></h2>
+<h2 id="wms---overview"><a href="#wms---overview">WMS - Overview</a></h2>
+<ul>
+<li>Open Geospatial Consortium standard for requesting
+<ul>
+<li>Service Metadata (<code>GetCapabilities</code>) - an XML file representing information about a specific WMS service and its component layers</li>
+<li>Map Images (<code>GetMap</code>) - graphic files representing one or more layers from a single WMS service for a specified area of interest, and, optionally, for a specified point in time</li>
+<li>Feature Information (<code>GetFeatureInfo</code>) - a basic representation (in a variety of formats) of the attributes associated with a specific pixel location in a map image</li>
+</ul></li>
+<li>A WMS will return to the requesting system one of the above products OR an error message (in XML by default)</li>
+<li>Related <a href="http://www.opengeospatial.org/standards/sld">Style Layer Descriptor</a> standard supports dynamic updating of visualization options</li>
+<li><a href="http://www.opengeospatial.org/standards/wms">OGC WMS Documentation Access Page</a></li>
+</ul>
+<h3 id="wms-getcapabilities-request"><a href="#wms-getcapabilities-request">WMS <em>GetCapabilities</em> Request</a></h3>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Request Parameter</th>
+<th align="left">1.0</th>
+<th align="left">1.1</th>
+<th align="left">1.1.1</th>
+<th align="left">1.3.0</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">WMTVER=1.0.0</td>
+<td align="left">R</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">Request version</td>
+</tr>
+<tr class="even">
+<td align="left">VERSION=version</td>
+<td align="left"></td>
+<td align="left">O</td>
+<td align="left">O</td>
+<td align="left">O</td>
+<td align="left">Request version</td>
+</tr>
+<tr class="odd">
+<td align="left">SERVICE=WMS</td>
+<td align="left">R</td>
+<td align="left">R</td>
+<td align="left">R</td>
+<td align="left">R</td>
+<td align="left">Service type</td>
+</tr>
+<tr class="even">
+<td align="left">REQUEST=capabilities</td>
+<td align="left">R</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">Request name</td>
+</tr>
+<tr class="odd">
+<td align="left">REQUEST=GetCapabilities</td>
+<td align="left"></td>
+<td align="left">R</td>
+<td align="left">R</td>
+<td align="left">R</td>
+<td align="left">Request name</td>
+</tr>
+<tr class="even">
+<td align="left">UPDATESEQUENCE=string</td>
+<td align="left"></td>
+<td align="left">O</td>
+<td align="left">O</td>
+<td align="left">O</td>
+<td align="left">Sequence number or string for cache control</td>
+</tr>
+<tr class="odd">
+<td align="left">Vendor-specific parameters</td>
+<td align="left">O</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">Vendor-specific parameters</td>
+</tr>
+</tbody>
+</table>
+<p>R=Required / O=Optional</p>
+<h3 id="wms-getmap-request-core"><a href="#wms-getmap-request-core">WMS <em>GetMap</em> Request (Core)</a></h3>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Request Parameter</th>
+<th align="left">1.0</th>
+<th align="left">1.1</th>
+<th align="left">1.1.1</th>
+<th align="left">1.3.0</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">WMTVER=1.0.0</td>
+<td align="left">R</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">Request version</td>
+</tr>
+<tr class="even">
+<td align="left">VERSION=version</td>
+<td align="left"></td>
+<td align="left">R</td>
+<td align="left">R</td>
+<td align="left">R</td>
+<td align="left">Request version.</td>
+</tr>
+<tr class="odd">
+<td align="left">REQUEST=map</td>
+<td align="left">R</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">Request name.</td>
+</tr>
+<tr class="even">
+<td align="left">REQUEST=GetMap</td>
+<td align="left"></td>
+<td align="left">R</td>
+<td align="left">R</td>
+<td align="left">R</td>
+<td align="left">Request name.</td>
+</tr>
+<tr class="odd">
+<td align="left">LAYERS=layer_list</td>
+<td align="left">R</td>
+<td align="left">R</td>
+<td align="left">R</td>
+<td align="left">R</td>
+<td align="left">Comma-separated list of one or more map</td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">layers. Optional (ver. 1.1, 1.1.1) if SLD</td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">parameter is present.</td>
+</tr>
+<tr class="even">
+<td align="left">STYLES=style_list</td>
+<td align="left">R</td>
+<td align="left">R</td>
+<td align="left">R</td>
+<td align="left">R</td>
+<td align="left">Comma-separated list of one rendering style</td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">per requested layer. Optional if SLD</td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">parameter is present.</td>
+</tr>
+<tr class="odd">
+<td align="left">SRS=namespace:identifier</td>
+<td align="left">R</td>
+<td align="left">R</td>
+<td align="left">R</td>
+<td align="left"></td>
+<td align="left">Spatial Reference System.</td>
+</tr>
+<tr class="even">
+<td align="left">CRS=namespace:identifier</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">R</td>
+<td align="left">Spatial Reference System.</td>
+</tr>
+<tr class="odd">
+<td align="left">BBOX=minx,miny,maxx,maxy</td>
+<td align="left">R</td>
+<td align="left">R</td>
+<td align="left">R</td>
+<td align="left">R</td>
+<td align="left">Bounding box corners (lower left, upper right)</td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">in SRS units.</td>
+</tr>
+<tr class="odd">
+<td align="left">WIDTH=output_width</td>
+<td align="left">R</td>
+<td align="left">R</td>
+<td align="left">R</td>
+<td align="left">R</td>
+<td align="left">Width in pixels of map picture.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="wms-getmap-request-core---cont."><a href="#wms-getmap-request-core---cont.">WMS GetMap Request (Core) - cont.</a></h3>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Request Parameter</th>
+<th align="left">1.0</th>
+<th align="left">1.1</th>
+<th align="left">1.1.1</th>
+<th align="left">1.3.0</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">HEIGHT=output_height</td>
+<td align="left">R</td>
+<td align="left">R</td>
+<td align="left">R</td>
+<td align="left">R</td>
+<td align="left">Height in pixels of map picture.</td>
+</tr>
+<tr class="even">
+<td align="left">FORMAT=output_format</td>
+<td align="left">R</td>
+<td align="left">R</td>
+<td align="left">R</td>
+<td align="left">R</td>
+<td align="left">Output format of map.</td>
+</tr>
+<tr class="odd">
+<td align="left">TRANSPARENT=TRUE or FALSE</td>
+<td align="left">O</td>
+<td align="left">O</td>
+<td align="left">O</td>
+<td align="left">O</td>
+<td align="left">Background transparency of map (default=FALSE).</td>
+</tr>
+<tr class="even">
+<td align="left">BGCOLOR=color_value</td>
+<td align="left">O</td>
+<td align="left">O</td>
+<td align="left">O</td>
+<td align="left">O</td>
+<td align="left">Hexadecimal red-green-blue color value for the</td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">background color (default=0xFFFFFF).</td>
+</tr>
+<tr class="even">
+<td align="left">EXCEPTIONS=exception_format</td>
+<td align="left">O</td>
+<td align="left">O</td>
+<td align="left">O</td>
+<td align="left">O</td>
+<td align="left">The format in which exceptions are to be reported</td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">by the WMS (default=XML).</td>
+</tr>
+<tr class="even">
+<td align="left">TIME=time</td>
+<td align="left"></td>
+<td align="left">O</td>
+<td align="left">O</td>
+<td align="left">O</td>
+<td align="left">Time value of layer desired.</td>
+</tr>
+<tr class="odd">
+<td align="left">ELEVATION=elevation</td>
+<td align="left"></td>
+<td align="left">O</td>
+<td align="left">O</td>
+<td align="left">O</td>
+<td align="left">Elevation of layer desired.</td>
+</tr>
+<tr class="even">
+<td align="left">Other sample dimensions</td>
+<td align="left"></td>
+<td align="left">O</td>
+<td align="left">O</td>
+<td align="left">O</td>
+<td align="left">Values of other dimensions as appropriate.</td>
+</tr>
+<tr class="odd">
+<td align="left">Vendor specific parameters</td>
+<td align="left">O</td>
+<td align="left">O</td>
+<td align="left">O</td>
+<td align="left">O</td>
+<td align="left">Vendor specific parameters</td>
+</tr>
+</tbody>
+</table>
+<h3 id="wms-getfeatureinfo-request"><a href="#wms-getfeatureinfo-request">WMS GetFeatureInfo Request</a></h3>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Request Parameter</th>
+<th align="left">1.0</th>
+<th align="left">1.1</th>
+<th align="left">1.1.1</th>
+<th align="left">1.3.0</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">WMTVER=1.0.0</td>
+<td align="left">R</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">Request version.</td>
+</tr>
+<tr class="even">
+<td align="left">VERSION=version</td>
+<td align="left"></td>
+<td align="left">R</td>
+<td align="left">R</td>
+<td align="left">R</td>
+<td align="left">Request version.</td>
+</tr>
+<tr class="odd">
+<td align="left">REQUEST=feature_info</td>
+<td align="left">R</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">Request name.</td>
+</tr>
+<tr class="even">
+<td align="left">REQUEST=GetFeatureInfo</td>
+<td align="left"></td>
+<td align="left">R</td>
+<td align="left">R</td>
+<td align="left">R</td>
+<td align="left">Request name.</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>&lt;map_request_copy&gt;</code></td>
+<td align="left">R</td>
+<td align="left">R</td>
+<td align="left">R</td>
+<td align="left">R</td>
+<td align="left">Partial copy of the Map request parameters that</td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">generated the map for which information is desired</td>
+</tr>
+<tr class="odd">
+<td align="left">QUERY_LAYERS=layer_list</td>
+<td align="left">R</td>
+<td align="left">R</td>
+<td align="left">R</td>
+<td align="left">R</td>
+<td align="left">Comma-separated list of one or more layers</td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">to be queried.</td>
+</tr>
+<tr class="odd">
+<td align="left">INFO_FORMAT=output_format</td>
+<td align="left">O</td>
+<td align="left">O</td>
+<td align="left">O</td>
+<td align="left">R</td>
+<td align="left">Return format of feature information (MIME type).</td>
+</tr>
+<tr class="even">
+<td align="left">FEATURE_COUNT=number</td>
+<td align="left">O</td>
+<td align="left">O</td>
+<td align="left">O</td>
+<td align="left">O</td>
+<td align="left">Number of features about which to return</td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">information (default=1).</td>
+</tr>
+</tbody>
+</table>
+<h3 id="wms-getfeatureinfo-request---cont."><a href="#wms-getfeatureinfo-request---cont.">WMS GetFeatureInfo Request - cont.</a></h3>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Request Parameter</th>
+<th align="left">1.0</th>
+<th align="left">1.1</th>
+<th align="left">1.1.1</th>
+<th align="left">1.3.0</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">X=pixel_column</td>
+<td align="left">R</td>
+<td align="left">R</td>
+<td align="left">R</td>
+<td align="left"></td>
+<td align="left">X coordinate in pixels of feature</td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">(measured from upper left corner=0)</td>
+</tr>
+<tr class="odd">
+<td align="left">I=pixel_column</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">R</td>
+<td align="left">i coordinate in pixels of feature in Map CS</td>
+</tr>
+<tr class="even">
+<td align="left">Y=pixel_row</td>
+<td align="left">R</td>
+<td align="left">R</td>
+<td align="left">R</td>
+<td align="left"></td>
+<td align="left">Y coordinate in pixels of feature</td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">(measured from upper left corner=0)</td>
+</tr>
+<tr class="even">
+<td align="left">J=pixel_row</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">R</td>
+<td align="left">j coordinate in pixels of feature in Map CS</td>
+</tr>
+<tr class="odd">
+<td align="left">EXCEPTIONS=exception_format</td>
+<td align="left"></td>
+<td align="left">O</td>
+<td align="left">O</td>
+<td align="left">O</td>
+<td align="left">The format in which exceptions are to be</td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">reported by the WMS (default=XML).</td>
+</tr>
+<tr class="odd">
+<td align="left">Vendor-specific parameters</td>
+<td align="left">O</td>
+<td align="left">O</td>
+<td align="left">O</td>
+<td align="left"></td>
+<td align="left">Optional experimental parameters.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="wms-sample-requests---getcapabilities"><a href="#wms-sample-requests---getcapabilities">WMS Sample Requests - GetCapabilities</a></h3>
+<table class="sourceCode xml numberLines" id="sampleCapabilitiesRequest"><tr class="sourceCode"><td class="lineNumbers"><pre>1
+2
+3
+4
+</pre></td><td class="sourceCode"><pre><code class="sourceCode xml">http://gstore.unm.edu/apps/rgis/datasets/6ca5428a-a78c-4c82-8120-da70dc92f2cc/services/ogc/wms?
+    SERVICE=wms<span class="er">&amp;</span>
+    REQUEST=GetCapabilities<span class="er">&amp;</span>
+    VERSION=1.1.1</code></pre></td></tr></table>
+<p><a href="http://gstore.unm.edu/apps/rgis/datasets/6ca5428a-a78c-4c82-8120-da70dc92f2cc/services/ogc/wms?SERVICE=wms&amp;REQUEST=GetCapabilities&amp;VERSION=1.1.1">Live Link</a></p>
+<div id="capabilitiesResponseDiv">
+<table class="sourceCode xml numberLines" id="sampleCapabilitiesResponse"><tr class="sourceCode"><td class="lineNumbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+</pre></td><td class="sourceCode"><pre><code class="sourceCode xml"><span class="kw">&lt;?xml</span> version=&#39;1.0&#39; encoding=&quot;ISO-8859-1&quot; standalone=&quot;no&quot; <span class="kw">?&gt;</span>
+<span class="dt">&lt;!DOCTYPE </span>WMT_MS_Capabilities SYSTEM &quot;http://schemas.opengis.net/wms/1.1.1/WMS_MS_Capabilities.dtd&quot;
+ <span class="dt">[</span>
+ <span class="dt">&lt;!ELEMENT</span> VendorSpecificCapabilities EMPTY<span class="dt">&gt;</span>
+ <span class="dt">]&gt;</span>  <span class="co">&lt;!-- end of DOCTYPE declaration --&gt;</span>
+
+<span class="kw">&lt;WMT_MS_Capabilities</span><span class="ot"> version=</span><span class="st">&quot;1.1.1&quot;</span><span class="kw">&gt;</span>
+
+<span class="co">&lt;!-- MapServer version 6.0.3 OUTPUT=GIF OUTPUT=PNG OUTPUT=JPEG OUTPUT=KML SUPPORTS=PROJ SUPPORTS=AGG SUPPORTS=FREETYPE SUPPORTS=ICONV SUPPORTS=WMS_SERVER SUPPORTS=WMS_CLIENT SUPPORTS=WFS_SERVER SUPPORTS=WFS_CLIENT SUPPORTS=WCS_SERVER SUPPORTS=SOS_SERVER INPUT=POSTGIS INPUT=OGR INPUT=GDAL INPUT=SHAPEFILE --&gt;</span>
+
+<span class="kw">&lt;Service&gt;</span>
+  <span class="kw">&lt;Name&gt;</span>OGC:WMS<span class="kw">&lt;/Name&gt;</span>
+  <span class="kw">&lt;Title&gt;</span>rgis Dataset (6ca5428a-a78c-4c82-8120-da70dc92f2cc)<span class="kw">&lt;/Title&gt;</span>
+  <span class="kw">&lt;Abstract&gt;</span>WMS Service for rgis dataset State Boundary - 2010<span class="kw">&lt;/Abstract&gt;</span>
+        <span class="kw">&lt;KeywordList&gt;</span>
+          <span class="kw">&lt;Keyword&gt;</span>rgis<span class="kw">&lt;/Keyword&gt;</span>
+          <span class="kw">&lt;Keyword&gt;</span> New Mexico<span class="kw">&lt;/Keyword&gt;</span>
+        <span class="kw">&lt;/KeywordList&gt;</span>
+  <span class="kw">&lt;OnlineResource</span><span class="ot"> xmlns:xlink=</span><span class="st">&quot;http://www.w3.org/1999/xlink&quot;</span><span class="ot"> xlink:href=</span><span class="st">&quot;http://gstore.unm.edu/apps/rgis/datasets/6ca5428a-a78c-4c82-8120-da70dc92f2cc/services/ogc/wms&quot;</span><span class="kw">/&gt;</span>
+  <span class="kw">&lt;ContactInformation&gt;</span>
+    <span class="kw">&lt;ContactPersonPrimary&gt;</span>
+      <span class="kw">&lt;ContactPerson&gt;</span>GStore Support<span class="kw">&lt;/ContactPerson&gt;</span>
+      <span class="kw">&lt;ContactOrganization&gt;</span>Earth Data Analysis Center<span class="kw">&lt;/ContactOrganization&gt;</span>
+    <span class="kw">&lt;/ContactPersonPrimary&gt;</span>
+      <span class="kw">&lt;ContactPosition&gt;</span>technical support<span class="kw">&lt;/ContactPosition&gt;</span>
+    <span class="kw">&lt;ContactAddress&gt;</span>
+        <span class="kw">&lt;AddressType&gt;</span>Mailing address<span class="kw">&lt;/AddressType&gt;</span>
+        <span class="kw">&lt;Address&gt;</span>Earth Data Analysis Center, MSC01 1110, 1 University of New Mexico<span class="kw">&lt;/Address&gt;</span>
+        <span class="kw">&lt;City&gt;</span>Albuquerque<span class="kw">&lt;/City&gt;</span>
+        <span class="kw">&lt;StateOrProvince&gt;</span>NM<span class="kw">&lt;/StateOrProvince&gt;</span>
+        <span class="kw">&lt;PostCode&gt;</span>87131<span class="kw">&lt;/PostCode&gt;</span>
+        <span class="kw">&lt;Country&gt;</span>US<span class="kw">&lt;/Country&gt;</span>
+    <span class="kw">&lt;/ContactAddress&gt;</span>
+      <span class="kw">&lt;ContactVoiceTelephone&gt;</span>(505) 277-3622<span class="kw">&lt;/ContactVoiceTelephone&gt;</span>
+      <span class="kw">&lt;ContactFacsimileTelephone&gt;</span>(505) 277-3614<span class="kw">&lt;/ContactFacsimileTelephone&gt;</span>
+  <span class="kw">&lt;ContactElectronicMailAddress&gt;</span>devteam@edac.unm.edu<span class="kw">&lt;/ContactElectronicMailAddress&gt;</span>
+  <span class="kw">&lt;/ContactInformation&gt;</span>
+  <span class="kw">&lt;Fees&gt;</span>None<span class="kw">&lt;/Fees&gt;</span>
+  <span class="kw">&lt;AccessConstraints&gt;</span>none<span class="kw">&lt;/AccessConstraints&gt;</span>
+<span class="kw">&lt;/Service&gt;</span>
+
+<span class="kw">&lt;Capability&gt;</span>
+  <span class="kw">&lt;Request&gt;</span>
+    <span class="kw">&lt;GetCapabilities&gt;</span>
+      <span class="kw">&lt;Format&gt;</span>application/vnd.ogc.wms_xml<span class="kw">&lt;/Format&gt;</span>
+      <span class="kw">&lt;DCPType&gt;</span>
+        <span class="kw">&lt;HTTP&gt;</span>
+          <span class="kw">&lt;Get&gt;&lt;OnlineResource</span><span class="ot"> xmlns:xlink=</span><span class="st">&quot;http://www.w3.org/1999/xlink&quot;</span><span class="ot"> xlink:href=</span><span class="st">&quot;http://gstore.unm.edu/apps/rgis/datasets/6ca5428a-a78c-4c82-8120-da70dc92f2cc/services/ogc/wms?&quot;</span><span class="kw">/&gt;&lt;/Get&gt;</span>
+          <span class="kw">&lt;Post&gt;&lt;OnlineResource</span><span class="ot"> xmlns:xlink=</span><span class="st">&quot;http://www.w3.org/1999/xlink&quot;</span><span class="ot"> xlink:href=</span><span class="st">&quot;http://gstore.unm.edu/apps/rgis/datasets/6ca5428a-a78c-4c82-8120-da70dc92f2cc/services/ogc/wms?&quot;</span><span class="kw">/&gt;&lt;/Post&gt;</span>
+        <span class="kw">&lt;/HTTP&gt;</span>
+      <span class="kw">&lt;/DCPType&gt;</span>
+    <span class="kw">&lt;/GetCapabilities&gt;</span>
+    <span class="kw">&lt;GetMap&gt;</span>
+      <span class="kw">&lt;Format&gt;</span>image/png<span class="kw">&lt;/Format&gt;</span>
+      <span class="kw">&lt;Format&gt;</span>image/gif<span class="kw">&lt;/Format&gt;</span>
+      <span class="kw">&lt;Format&gt;</span>image/jpeg<span class="kw">&lt;/Format&gt;</span>
+      <span class="kw">&lt;Format&gt;</span>image/png; mode=8bit<span class="kw">&lt;/Format&gt;</span>
+      <span class="kw">&lt;Format&gt;</span>image/tiff<span class="kw">&lt;/Format&gt;</span>
+      <span class="kw">&lt;Format&gt;</span>application/vnd.google-earth.kml+xml<span class="kw">&lt;/Format&gt;</span>
+      <span class="kw">&lt;Format&gt;</span>application/vnd.google-earth.kmz<span class="kw">&lt;/Format&gt;</span>
+      <span class="kw">&lt;DCPType&gt;</span>
+        <span class="kw">&lt;HTTP&gt;</span>
+          <span class="kw">&lt;Get&gt;&lt;OnlineResource</span><span class="ot"> xmlns:xlink=</span><span class="st">&quot;http://www.w3.org/1999/xlink&quot;</span><span class="ot"> xlink:href=</span><span class="st">&quot;http://gstore.unm.edu/apps/rgis/datasets/6ca5428a-a78c-4c82-8120-da70dc92f2cc/services/ogc/wms?&quot;</span><span class="kw">/&gt;&lt;/Get&gt;</span>
+          <span class="kw">&lt;Post&gt;&lt;OnlineResource</span><span class="ot"> xmlns:xlink=</span><span class="st">&quot;http://www.w3.org/1999/xlink&quot;</span><span class="ot"> xlink:href=</span><span class="st">&quot;http://gstore.unm.edu/apps/rgis/datasets/6ca5428a-a78c-4c82-8120-da70dc92f2cc/services/ogc/wms?&quot;</span><span class="kw">/&gt;&lt;/Post&gt;</span>
+        <span class="kw">&lt;/HTTP&gt;</span>
+      <span class="kw">&lt;/DCPType&gt;</span>
+    <span class="kw">&lt;/GetMap&gt;</span>
+    <span class="kw">&lt;GetFeatureInfo&gt;</span>
+      <span class="kw">&lt;Format&gt;</span>text/plain<span class="kw">&lt;/Format&gt;</span>
+      <span class="kw">&lt;Format&gt;</span>application/vnd.ogc.gml<span class="kw">&lt;/Format&gt;</span>
+      <span class="kw">&lt;DCPType&gt;</span>
+        <span class="kw">&lt;HTTP&gt;</span>
+          <span class="kw">&lt;Get&gt;&lt;OnlineResource</span><span class="ot"> xmlns:xlink=</span><span class="st">&quot;http://www.w3.org/1999/xlink&quot;</span><span class="ot"> xlink:href=</span><span class="st">&quot;http://gstore.unm.edu/apps/rgis/datasets/6ca5428a-a78c-4c82-8120-da70dc92f2cc/services/ogc/wms?&quot;</span><span class="kw">/&gt;&lt;/Get&gt;</span>
+          <span class="kw">&lt;Post&gt;&lt;OnlineResource</span><span class="ot"> xmlns:xlink=</span><span class="st">&quot;http://www.w3.org/1999/xlink&quot;</span><span class="ot"> xlink:href=</span><span class="st">&quot;http://gstore.unm.edu/apps/rgis/datasets/6ca5428a-a78c-4c82-8120-da70dc92f2cc/services/ogc/wms?&quot;</span><span class="kw">/&gt;&lt;/Post&gt;</span>
+        <span class="kw">&lt;/HTTP&gt;</span>
+      <span class="kw">&lt;/DCPType&gt;</span>
+    <span class="kw">&lt;/GetFeatureInfo&gt;</span>
+    <span class="kw">&lt;DescribeLayer&gt;</span>
+      <span class="kw">&lt;Format&gt;</span>text/xml<span class="kw">&lt;/Format&gt;</span>
+      <span class="kw">&lt;DCPType&gt;</span>
+        <span class="kw">&lt;HTTP&gt;</span>
+          <span class="kw">&lt;Get&gt;&lt;OnlineResource</span><span class="ot"> xmlns:xlink=</span><span class="st">&quot;http://www.w3.org/1999/xlink&quot;</span><span class="ot"> xlink:href=</span><span class="st">&quot;http://gstore.unm.edu/apps/rgis/datasets/6ca5428a-a78c-4c82-8120-da70dc92f2cc/services/ogc/wms?&quot;</span><span class="kw">/&gt;&lt;/Get&gt;</span>
+          <span class="kw">&lt;Post&gt;&lt;OnlineResource</span><span class="ot"> xmlns:xlink=</span><span class="st">&quot;http://www.w3.org/1999/xlink&quot;</span><span class="ot"> xlink:href=</span><span class="st">&quot;http://gstore.unm.edu/apps/rgis/datasets/6ca5428a-a78c-4c82-8120-da70dc92f2cc/services/ogc/wms?&quot;</span><span class="kw">/&gt;&lt;/Post&gt;</span>
+        <span class="kw">&lt;/HTTP&gt;</span>
+      <span class="kw">&lt;/DCPType&gt;</span>
+    <span class="kw">&lt;/DescribeLayer&gt;</span>
+    <span class="kw">&lt;GetLegendGraphic&gt;</span>
+      <span class="kw">&lt;Format&gt;</span>image/png<span class="kw">&lt;/Format&gt;</span>
+      <span class="kw">&lt;Format&gt;</span>image/gif<span class="kw">&lt;/Format&gt;</span>
+      <span class="kw">&lt;Format&gt;</span>image/jpeg<span class="kw">&lt;/Format&gt;</span>
+      <span class="kw">&lt;Format&gt;</span>image/png; mode=8bit<span class="kw">&lt;/Format&gt;</span>
+      <span class="kw">&lt;DCPType&gt;</span>
+        <span class="kw">&lt;HTTP&gt;</span>
+          <span class="kw">&lt;Get&gt;&lt;OnlineResource</span><span class="ot"> xmlns:xlink=</span><span class="st">&quot;http://www.w3.org/1999/xlink&quot;</span><span class="ot"> xlink:href=</span><span class="st">&quot;http://gstore.unm.edu/apps/rgis/datasets/6ca5428a-a78c-4c82-8120-da70dc92f2cc/services/ogc/wms?&quot;</span><span class="kw">/&gt;&lt;/Get&gt;</span>
+          <span class="kw">&lt;Post&gt;&lt;OnlineResource</span><span class="ot"> xmlns:xlink=</span><span class="st">&quot;http://www.w3.org/1999/xlink&quot;</span><span class="ot"> xlink:href=</span><span class="st">&quot;http://gstore.unm.edu/apps/rgis/datasets/6ca5428a-a78c-4c82-8120-da70dc92f2cc/services/ogc/wms?&quot;</span><span class="kw">/&gt;&lt;/Post&gt;</span>
+        <span class="kw">&lt;/HTTP&gt;</span>
+      <span class="kw">&lt;/DCPType&gt;</span>
+    <span class="kw">&lt;/GetLegendGraphic&gt;</span>
+    <span class="kw">&lt;GetStyles&gt;</span>
+      <span class="kw">&lt;Format&gt;</span>text/xml<span class="kw">&lt;/Format&gt;</span>
+      <span class="kw">&lt;DCPType&gt;</span>
+        <span class="kw">&lt;HTTP&gt;</span>
+          <span class="kw">&lt;Get&gt;&lt;OnlineResource</span><span class="ot"> xmlns:xlink=</span><span class="st">&quot;http://www.w3.org/1999/xlink&quot;</span><span class="ot"> xlink:href=</span><span class="st">&quot;http://gstore.unm.edu/apps/rgis/datasets/6ca5428a-a78c-4c82-8120-da70dc92f2cc/services/ogc/wms?&quot;</span><span class="kw">/&gt;&lt;/Get&gt;</span>
+          <span class="kw">&lt;Post&gt;&lt;OnlineResource</span><span class="ot"> xmlns:xlink=</span><span class="st">&quot;http://www.w3.org/1999/xlink&quot;</span><span class="ot"> xlink:href=</span><span class="st">&quot;http://gstore.unm.edu/apps/rgis/datasets/6ca5428a-a78c-4c82-8120-da70dc92f2cc/services/ogc/wms?&quot;</span><span class="kw">/&gt;&lt;/Post&gt;</span>
+        <span class="kw">&lt;/HTTP&gt;</span>
+      <span class="kw">&lt;/DCPType&gt;</span>
+    <span class="kw">&lt;/GetStyles&gt;</span>
+  <span class="kw">&lt;/Request&gt;</span>
+  <span class="kw">&lt;Exception&gt;</span>
+    <span class="kw">&lt;Format&gt;</span>application/vnd.ogc.se_xml<span class="kw">&lt;/Format&gt;</span>
+    <span class="kw">&lt;Format&gt;</span>application/vnd.ogc.se_inimage<span class="kw">&lt;/Format&gt;</span>
+    <span class="kw">&lt;Format&gt;</span>application/vnd.ogc.se_blank<span class="kw">&lt;/Format&gt;</span>
+  <span class="kw">&lt;/Exception&gt;</span>
+  <span class="kw">&lt;VendorSpecificCapabilities</span> <span class="kw">/&gt;</span>
+  <span class="kw">&lt;UserDefinedSymbolization</span><span class="ot"> SupportSLD=</span><span class="st">&quot;1&quot;</span><span class="ot"> UserLayer=</span><span class="st">&quot;0&quot;</span><span class="ot"> UserStyle=</span><span class="st">&quot;1&quot;</span><span class="ot"> RemoteWFS=</span><span class="st">&quot;0&quot;</span><span class="kw">/&gt;</span>
+  <span class="kw">&lt;Layer&gt;</span>
+    <span class="kw">&lt;Name&gt;</span>RGIS_Dataset<span class="kw">&lt;/Name&gt;</span>
+    <span class="kw">&lt;Title&gt;</span>rgis Dataset (6ca5428a-a78c-4c82-8120-da70dc92f2cc)<span class="kw">&lt;/Title&gt;</span>
+    <span class="kw">&lt;Abstract&gt;</span>WMS Service for rgis dataset State Boundary - 2010<span class="kw">&lt;/Abstract&gt;</span>
+    <span class="kw">&lt;KeywordList&gt;</span>
+     <span class="kw">&lt;Keyword&gt;</span>rgis<span class="kw">&lt;/Keyword&gt;</span>
+     <span class="kw">&lt;Keyword&gt;</span> New Mexico<span class="kw">&lt;/Keyword&gt;</span>
+    <span class="kw">&lt;/KeywordList&gt;</span>
+    <span class="kw">&lt;SRS&gt;</span>EPSG:4269<span class="kw">&lt;/SRS&gt;</span>
+    <span class="kw">&lt;SRS&gt;</span>EPSG:4326<span class="kw">&lt;/SRS&gt;</span>
+    <span class="kw">&lt;SRS&gt;</span>EPSG:4267<span class="kw">&lt;/SRS&gt;</span>
+    <span class="kw">&lt;SRS&gt;</span>EPSG:26913<span class="kw">&lt;/SRS&gt;</span>
+    <span class="kw">&lt;SRS&gt;</span>EPSG:26912<span class="kw">&lt;/SRS&gt;</span>
+    <span class="kw">&lt;SRS&gt;</span>EPSG:26914<span class="kw">&lt;/SRS&gt;</span>
+    <span class="kw">&lt;SRS&gt;</span>EPSG:26713<span class="kw">&lt;/SRS&gt;</span>
+    <span class="kw">&lt;SRS&gt;</span>EPSG:26712<span class="kw">&lt;/SRS&gt;</span>
+    <span class="kw">&lt;SRS&gt;</span>EPSG:26714<span class="kw">&lt;/SRS&gt;</span>
+    <span class="kw">&lt;SRS&gt;</span>EPSG:3857<span class="kw">&lt;/SRS&gt;</span>
+    <span class="kw">&lt;LatLonBoundingBox</span><span class="ot"> minx=</span><span class="st">&quot;-109.05&quot;</span><span class="ot"> miny=</span><span class="st">&quot;31.3322&quot;</span><span class="ot"> maxx=</span><span class="st">&quot;-103.002&quot;</span><span class="ot"> maxy=</span><span class="st">&quot;37.0003&quot;</span> <span class="kw">/&gt;</span>
+    <span class="kw">&lt;BoundingBox</span><span class="ot"> SRS=</span><span class="st">&quot;EPSG:4326&quot;</span>
+<span class="ot">                minx=</span><span class="st">&quot;-109.05&quot;</span><span class="ot"> miny=</span><span class="st">&quot;31.3322&quot;</span><span class="ot"> maxx=</span><span class="st">&quot;-103.002&quot;</span><span class="ot"> maxy=</span><span class="st">&quot;37.0003&quot;</span> <span class="kw">/&gt;</span>
+    <span class="kw">&lt;Layer</span><span class="ot"> queryable=</span><span class="st">&quot;0&quot;</span><span class="ot"> opaque=</span><span class="st">&quot;0&quot;</span><span class="ot"> cascaded=</span><span class="st">&quot;0&quot;</span><span class="kw">&gt;</span>
+        <span class="kw">&lt;Name&gt;</span>tl_2010_35_state10<span class="kw">&lt;/Name&gt;</span>
+        <span class="kw">&lt;Title&gt;</span>tl_2010_35_state10<span class="kw">&lt;/Title&gt;</span>
+        <span class="kw">&lt;Abstract&gt;</span>State Boundary - 2010<span class="kw">&lt;/Abstract&gt;</span>
+        <span class="kw">&lt;KeywordList&gt;</span>
+          <span class="kw">&lt;Keyword&gt;&lt;/Keyword&gt;</span>
+        <span class="kw">&lt;/KeywordList&gt;</span>
+        <span class="kw">&lt;SRS&gt;</span>epsg:4326<span class="kw">&lt;/SRS&gt;</span>
+        <span class="kw">&lt;LatLonBoundingBox</span><span class="ot"> minx=</span><span class="st">&quot;-109.05&quot;</span><span class="ot"> miny=</span><span class="st">&quot;31.3322&quot;</span><span class="ot"> maxx=</span><span class="st">&quot;-103.002&quot;</span><span class="ot"> maxy=</span><span class="st">&quot;37.0003&quot;</span> <span class="kw">/&gt;</span>
+        <span class="kw">&lt;BoundingBox</span><span class="ot"> SRS=</span><span class="st">&quot;epsg:4326&quot;</span>
+<span class="ot">                    minx=</span><span class="st">&quot;-109.05&quot;</span><span class="ot"> miny=</span><span class="st">&quot;31.3322&quot;</span><span class="ot"> maxx=</span><span class="st">&quot;-103.002&quot;</span><span class="ot"> maxy=</span><span class="st">&quot;37.0003&quot;</span> <span class="kw">/&gt;</span>
+        <span class="kw">&lt;MetadataURL</span><span class="ot"> type=</span><span class="st">&quot;FGDC-STD-001-1998&quot;</span><span class="kw">&gt;</span>
+          <span class="kw">&lt;Format&gt;</span>text/xml<span class="kw">&lt;/Format&gt;</span>
+          <span class="kw">&lt;OnlineResource</span><span class="ot"> xmlns:xlink=</span><span class="st">&quot;http://www.w3.org/1999/xlink&quot;</span><span class="ot"> xlink:type=</span><span class="st">&quot;simple&quot;</span><span class="ot"> xlink:href=</span><span class="st">&quot;http://gstore.unm.edu/apps/rgis/datasets/6ca5428a-a78c-4c82-8120-da70dc92f2cc/metadata/FGDC-STD-001-1998.xml&quot;</span><span class="kw">/&gt;</span>
+        <span class="kw">&lt;/MetadataURL&gt;</span>
+    <span class="kw">&lt;/Layer&gt;</span>
+  <span class="kw">&lt;/Layer&gt;</span>
+<span class="kw">&lt;/Capability&gt;</span>
+<span class="kw">&lt;/WMT_MS_Capabilities&gt;</span></code></pre></td></tr></table>
+</div>
+<h3 id="wms-sample-requests---getmap"><a href="#wms-sample-requests---getmap">WMS Sample Requests - GetMap</a></h3>
+<p><img src="./images/wms_01.jpeg" alt="Sample WMS response #1" /> </p>
+<pre id="sampleGetMap01" class="numberLines"><code>http://gstore.unm.edu/apps/rgis/datasets/
+6ca5428a-a78c-4c82-8120-da70dc92f2cc/
+services/ogc/wms?
+    VERSION=1.1.1&amp;
+    SERVICE=WMS&amp;
+    REQUEST=GetMap&amp;
+    BBOX=-109,31,-102.9,37.1&amp;
+    LAYERS=tl_2010_35_state10&amp;
+    WIDTH=200&amp;
+    HEIGHT=200&amp;
+    SRS=EPSG:4326&amp;
+    FORMAT=image/jpeg&amp;
+    STYLES=</code></pre>
+<p><a href="http://gstore.unm.edu/apps/rgis/datasets/6ca5428a-a78c-4c82-8120-da70dc92f2cc/services/ogc/wms?VERSION=1.1.1&amp;SERVICE=WMS&amp;REQUEST=GetMap&amp;BBOX=-109,31,-102.9,37.1&amp;LAYERS=tl_2010_35_state10&amp;WIDTH=200&amp;HEIGHT=200&amp;SRS=EPSG:4326&amp;FORMAT=image/jpeg&amp;STYLES=">link</a></p>
+<p><img src="./images/wms_02.png" alt="Sample WMS response #2" /> </p>
+<pre id="sampleGetMap02" class="numberLines"><code>http://gstore.unm.edu/apps/rgis/datasets/
+6ca5428a-a78c-4c82-8120-da70dc92f2cc/
+services/ogc/wms?
+    VERSION=1.1.1&amp;
+    SERVICE=WMS&amp;
+    REQUEST=GetMap&amp;
+    BBOX=-109,31,-102.9,37.1&amp;
+    LAYERS=tl_2010_35_state10&amp;
+    WIDTH=300&amp;
+    HEIGHT=300&amp;
+    SRS=EPSG:4326&amp;
+    TRANSPARENT=TRUE&amp;
+    FORMAT=image/png&amp;
+    STYLES=</code></pre>
+<p><a href="http://gstore.unm.edu/apps/rgis/datasets/6ca5428a-a78c-4c82-8120-da70dc92f2cc/services/ogc/wms?VERSION=1.1.1&amp;SERVICE=WMS&amp;REQUEST=GetMap&amp;BBOX=-109,31,-102.9,37.1&amp;LAYERS=tl_2010_35_state10&amp;WIDTH=300&amp;HEIGHT=300&amp;SRS=EPSG:4326&amp;TRANSPARENT=TRUE&amp;FORMAT=image/png&amp;STYLES=">link</a></p>
+<h3 id="integraton-of-wms-and-kml"><a href="#integraton-of-wms-and-kml">Integraton of WMS and KML</a></h3>
+<ul>
+<li>The KML GroundOverlay element may be used to integrate a network accessible map image into a client</li>
+<li>A WMS service may be used to as the source of a KML GroundOverlay element</li>
+<li>KML includes parameterizations that allow for dynamic generation of WMS requests using client bounding box information</li>
+<li>Time-enabled WMS may be accessed through use of manually configured time parameters in WMS URLs and TimeStamp or TimeSpan KML elements</li>
+</ul>
+<h3 id="sample-wms-kml-integration"><a href="#sample-wms-kml-integration">Sample WMS-KML Integration</a></h3>
+<table class="sourceCode xml numberLines" id="sampleKMLwWMS"><tr class="sourceCode"><td class="lineNumbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+</pre></td><td class="sourceCode"><pre><code class="sourceCode xml"><span class="kw">&lt;?xml</span> version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;<span class="kw">?&gt;</span>
+<span class="kw">&lt;kml</span><span class="ot"> xmlns=</span><span class="st">&quot;http://www.opengis.net/kml/2.2&quot;</span><span class="ot"> xmlns:gx=</span><span class="st">&quot;http://www.google.com/kml/ext/2.2&quot;</span> 
+<span class="ot">    xmlns:kml=</span><span class="st">&quot;http://www.opengis.net/kml/2.2&quot;</span><span class="ot"> xmlns:atom=</span><span class="st">&quot;http://www.w3.org/2005/Atom&quot;</span><span class="kw">&gt;</span>
+    <span class="kw">&lt;GroundOverlay&gt;</span>
+        <span class="kw">&lt;name&gt;</span>RGIS Counties WMS<span class="kw">&lt;/name&gt;</span>
+        <span class="kw">&lt;Icon&gt;</span>
+            <span class="kw">&lt;href&gt;</span>http://gstore.unm.edu/apps/rgis/datasets/107046/services/ogc/wms?
+            VERSION=1.1.1<span class="dv">&amp;amp;</span>SERVICE=WMS<span class="dv">&amp;amp;</span>REQUEST=GetMap<span class="dv">&amp;amp;</span>BBOX=-109,31,-102.9,37.1
+            <span class="dv">&amp;amp;</span>LAYERS=tl_2010_35_state10<span class="dv">&amp;amp;</span>WIDTH=800<span class="dv">&amp;amp;</span>HEIGHT=800<span class="dv">&amp;amp;</span>SRS=EPSG:4326
+            <span class="dv">&amp;amp;</span>FORMAT=image/png<span class="dv">&amp;amp;</span>STYLES=<span class="kw">&lt;/href&gt;</span>
+            <span class="kw">&lt;viewRefreshMode&gt;</span>onStop<span class="kw">&lt;/viewRefreshMode&gt;</span>
+        <span class="kw">&lt;/Icon&gt;</span>
+        <span class="kw">&lt;LatLonBox&gt;</span>
+            <span class="kw">&lt;north&gt;</span>37.32753828398865<span class="kw">&lt;/north&gt;</span>
+            <span class="kw">&lt;south&gt;</span>30.86418272137246<span class="kw">&lt;/south&gt;</span>
+            <span class="kw">&lt;east&gt;</span>-101.3630220689848<span class="kw">&lt;/east&gt;</span>
+            <span class="kw">&lt;west&gt;</span>-110.6891149310152<span class="kw">&lt;/west&gt;</span>
+        <span class="kw">&lt;/LatLonBox&gt;</span>
+    <span class="kw">&lt;/GroundOverlay&gt;</span>
+<span class="kw">&lt;/kml&gt;</span></code></pre></td></tr></table>
+<p><a href="./examples/kmlWMS.kml">Sample KML File</a></p>
+</body>
+</html>

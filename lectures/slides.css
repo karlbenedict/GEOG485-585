@@ -99,10 +99,10 @@ ul li {
      https://developer.mozilla.org/en/CSS/CSS_transitions
      How to use CSS3 Transitions: */
   section {
-      -moz-transition: left 400ms linear 0s;
-      -webkit-transition: left 400ms linear 0s;
-      -ms-transition: left 400ms linear 0s;
-      transition: left 400ms linear 0s;
+      -moz-transition: opacity 1s ease-in 1s;
+      -webkit-transition: opacity 1s ease-in 1s;
+      -ms-transition: opacity 1s ease-in 1s;
+      transition: opacity 1s ease-in 1s;
   }
 
   /* Before */
@@ -128,8 +128,19 @@ ul li {
   a {
   	font-size: medium;
   }
-  
-  div.codeTable {
+
+ p code {
+ 	background-color: #ffffff;
+ 	color: #0d23c9;
+ 	font-size: x-small;
+ 	padding: 8px;
+ }
+ 
+ td.lineNumbers {
+ 	width: 20px;
+ }
+ 
+ div.codeTable {
   	background-color: #c4c2c2;
   	display: block;
   	height: 400px;
@@ -142,5 +153,24 @@ ul li {
   	font-size: x-small;
   }
   
+  table.sourceCode.bash.numberLines {
+  	font-size: x-small;
+  }
+  
+  table.sourceCode.xml.numberLines {
+  	font-size: x-small;
+  }
+  
+  table {
+  	font-size: small;
+  	width: 90%;
+  }
+  
+  pre.numberLines {
+  	font-size: x-small;
+  	padding: 20xp;
+  	background-color: #ffffff;
+  	color: #0e0fe1;
+  }
   
   

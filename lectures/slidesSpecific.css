@@ -35,3 +35,156 @@
 #google-io-2011-managing-and-visualizing-your-geospatial-data-with-fusion-tables---video figure figcaption {
 	width: 300px;
 }
+
+
+
+/* Module 3.0 */
+
+#where-have-we-come-from---eniac-1946 {
+	text-align: center;
+}
+
+#where-have-we-come-from---eniac-1946 p {
+	display: inline;
+	padding: 0px;
+}
+
+#where-have-we-come-from---early-client-server-computing-1960s p {
+	display: inline;
+	padding: 0px;
+}
+
+#where-have-we-come-from---early-client-server-computing-1960s img {
+	height: 190px;
+}
+
+#where-have-we-come-from---personal-computers-1970s {
+	text-align: center;
+}
+
+#where-have-we-come-from---personal-computers-1970s p {
+	display: inline;
+	padding: 0px;
+}
+
+#where-have-we-come-from---personal-computers-1970s img {
+	height: 190px;;
+}
+
+#now---network-computing {
+	text-align: center;
+}
+
+#now---network-computing p {
+	display: inline;
+	padding: 0px;	
+}
+
+#now---network-computing p img {
+	height: 190px;
+	float: right;
+	padding-right: 40px;
+}
+
+#the-big-picture---services-oriented-architectures p {
+	display: inline;
+	padding: 0px;		
+}
+
+#the-big-picture---services-oriented-architectures p img {
+	height: 400px;
+	float: right;
+	margin-right: 40px;
+}
+
+#comparison-of-ogc-service-models p {
+	display: inline;
+	padding: 0px;		
+}
+
+#comparison-of-ogc-service-models p img {
+	height: 425px;
+}
+
+#ogc-web-map-services-wms pre.numberlines {
+	display: block;
+	font-size: medium;
+	background-color: #f7f7f7;
+	color: #3225d6;
+	margin-bottom: 20px;
+}
+
+#comparison-of-ogc-service-models {
+	text-align: center;
+}
+
+#ogc-web-map-services-wms p {
+	display: inline;
+	padding: 0px;
+	position: absolute;
+	top: 138px;		
+	left: 348px;
+}
+
+#ogc-web-map-services-wms p img {
+	width: 521px;
+	border: 1px solid #f72626;
+}
+
+#implementation-of-the-ogc-standards-1 ul li {
+	font-size: 80%;
+}
+
+#implementation-of-the-ogc-standards ul li {
+	font-size: 80%;
+}
+
+/* Module 4.1 */
+
+#xml-background p {
+	display: inline;
+	padding: 0px;		
+}
+
+#xml-background p img {
+	height: 425px;
+	float: right;
+	padding-right: 40px;;
+}
+
+#d-and-3d-kml-sample p {
+	display: inline;
+	padding: 0px;			
+}
+
+#d-and-3d-kml-sample p img {
+	height: 425px;
+	float: right;
+	padding-right: 40px;
+}
+
+#sampleKML {
+	width: 400px;
+	padding-left: 40px;
+}
+
+#capabilitiesResponseDiv {
+	overflow: scroll;
+	margin: 20px;
+	height: 280px;
+}
+
+#sampleGetMap01,#sampleGetMap02 {
+	width: 45%;
+	margin-left: 40px;;
+	}
+
+#wms-sample-requests---getmap p {
+ display: inline;
+ padding: 0px;				
+}
+
+#wms-sample-requests---getmap p img {
+	float: right;
+	padding-right: 40px;
+}
