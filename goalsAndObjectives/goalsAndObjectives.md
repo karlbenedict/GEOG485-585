@@ -290,9 +290,11 @@ At the end of this class students should have an understanding of the following:
 
 ### Weekly Milestone - WMS & KML ###
 
+[Week 6 Milestone](http://tinyurl.com/oautuc5)
 
 ### Deep Dive - OGC Service Concepts  ###
 
+[Week 6 Deep Dive Assignment](http://tinyurl.com/o6ugg4c)
 
 ### Readings ###
 
