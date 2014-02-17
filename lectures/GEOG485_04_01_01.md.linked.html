@@ -1077,15 +1077,50 @@ code > span.er { color: #ff0000; font-weight: bold; }
 153
 154
 155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
 </pre></td><td class="sourceCode"><pre><code class="sourceCode xml"><span class="kw">&lt;?xml</span> version=&#39;1.0&#39; encoding=&quot;ISO-8859-1&quot; standalone=&quot;no&quot; <span class="kw">?&gt;</span>
-<span class="dt">&lt;!DOCTYPE </span>WMT_MS_Capabilities SYSTEM &quot;http://schemas.opengis.net/wms/1.1.1/WMS_MS_Capabilities.dtd&quot;
+<span class="dt">&lt;!DOCTYPE </span>WMT_MS_Capabilities SYSTEM &quot;http://schemas.opengis.net/wms/1.1.1/
+WMS_MS_Capabilities.dtd&quot;
  <span class="dt">[</span>
  <span class="dt">&lt;!ELEMENT</span> VendorSpecificCapabilities EMPTY<span class="dt">&gt;</span>
  <span class="dt">]&gt;</span>  <span class="co">&lt;!-- end of DOCTYPE declaration --&gt;</span>
 
 <span class="kw">&lt;WMT_MS_Capabilities</span><span class="ot"> version=</span><span class="st">&quot;1.1.1&quot;</span><span class="kw">&gt;</span>
 
-<span class="co">&lt;!-- MapServer version 6.0.3 OUTPUT=GIF OUTPUT=PNG OUTPUT=JPEG OUTPUT=KML SUPPORTS=PROJ SUPPORTS=AGG SUPPORTS=FREETYPE SUPPORTS=ICONV SUPPORTS=WMS_SERVER SUPPORTS=WMS_CLIENT SUPPORTS=WFS_SERVER SUPPORTS=WFS_CLIENT SUPPORTS=WCS_SERVER SUPPORTS=SOS_SERVER INPUT=POSTGIS INPUT=OGR INPUT=GDAL INPUT=SHAPEFILE --&gt;</span>
+<span class="co">&lt;!-- MapServer version 6.0.3 OUTPUT=GIF OUTPUT=PNG OUTPUT=JPEG OUTPUT=KML SUPPORTS=PROJ </span>
+<span class="co">SUPPORTS=AGG SUPPORTS=FREETYPE SUPPORTS=ICONV SUPPORTS=WMS_SERVER SUPPORTS=WMS_CLIENT </span>
+<span class="co">SUPPORTS=WFS_SERVER SUPPORTS=WFS_CLIENT SUPPORTS=WCS_SERVER SUPPORTS=SOS_SERVER </span>
+<span class="co">INPUT=POSTGIS INPUT=OGR INPUT=GDAL INPUT=SHAPEFILE --&gt;</span>
 
 <span class="kw">&lt;Service&gt;</span>
   <span class="kw">&lt;Name&gt;</span>OGC:WMS<span class="kw">&lt;/Name&gt;</span>
@@ -1095,7 +1130,8 @@ code > span.er { color: #ff0000; font-weight: bold; }
           <span class="kw">&lt;Keyword&gt;</span>rgis<span class="kw">&lt;/Keyword&gt;</span>
           <span class="kw">&lt;Keyword&gt;</span> New Mexico<span class="kw">&lt;/Keyword&gt;</span>
         <span class="kw">&lt;/KeywordList&gt;</span>
-  <span class="kw">&lt;OnlineResource</span><span class="ot"> xmlns:xlink=</span><span class="st">&quot;http://www.w3.org/1999/xlink&quot;</span><span class="ot"> xlink:href=</span><span class="st">&quot;http://gstore.unm.edu/apps/rgis/datasets/6ca5428a-a78c-4c82-8120-da70dc92f2cc/services/ogc/wms&quot;</span><span class="kw">/&gt;</span>
+  <span class="kw">&lt;OnlineResource</span><span class="ot"> xmlns:xlink=</span><span class="st">&quot;http://www.w3.org/1999/xlink&quot;</span><span class="ot"> xlink:href=</span><span class="st">&quot;http://</span>
+<span class="st">  gstore.unm.edu/apps/rgis/datasets/6ca5428a-a78c-4c82-8120-da70dc92f2cc/services/ogc/wms&quot;</span><span class="kw">/&gt;</span>
   <span class="kw">&lt;ContactInformation&gt;</span>
     <span class="kw">&lt;ContactPersonPrimary&gt;</span>
       <span class="kw">&lt;ContactPerson&gt;</span>GStore Support<span class="kw">&lt;/ContactPerson&gt;</span>
@@ -1124,8 +1160,12 @@ code > span.er { color: #ff0000; font-weight: bold; }
       <span class="kw">&lt;Format&gt;</span>application/vnd.ogc.wms_xml<span class="kw">&lt;/Format&gt;</span>
       <span class="kw">&lt;DCPType&gt;</span>
         <span class="kw">&lt;HTTP&gt;</span>
-          <span class="kw">&lt;Get&gt;&lt;OnlineResource</span><span class="ot"> xmlns:xlink=</span><span class="st">&quot;http://www.w3.org/1999/xlink&quot;</span><span class="ot"> xlink:href=</span><span class="st">&quot;http://gstore.unm.edu/apps/rgis/datasets/6ca5428a-a78c-4c82-8120-da70dc92f2cc/services/ogc/wms?&quot;</span><span class="kw">/&gt;&lt;/Get&gt;</span>
-          <span class="kw">&lt;Post&gt;&lt;OnlineResource</span><span class="ot"> xmlns:xlink=</span><span class="st">&quot;http://www.w3.org/1999/xlink&quot;</span><span class="ot"> xlink:href=</span><span class="st">&quot;http://gstore.unm.edu/apps/rgis/datasets/6ca5428a-a78c-4c82-8120-da70dc92f2cc/services/ogc/wms?&quot;</span><span class="kw">/&gt;&lt;/Post&gt;</span>
+          <span class="kw">&lt;Get&gt;&lt;OnlineResource</span><span class="ot"> xmlns:xlink=</span><span class="st">&quot;http://www.w3.org/1999/xlink&quot;</span><span class="ot"> xlink:href=</span>
+          <span class="st">&quot;http://gstore.unm.edu/apps/rgis/datasets/6ca5428a-a78c-4c82-8120-da70dc92f2cc/</span>
+<span class="st">          services/ogc/wms?&quot;</span><span class="kw">/&gt;&lt;/Get&gt;</span>
+          <span class="kw">&lt;Post&gt;&lt;OnlineResource</span><span class="ot"> xmlns:xlink=</span><span class="st">&quot;http://www.w3.org/1999/xlink&quot;</span><span class="ot"> xlink:href=</span>
+          <span class="st">&quot;http://gstore.unm.edu/apps/rgis/datasets/6ca5428a-a78c-4c82-8120-da70dc92f2cc/</span>
+<span class="st">          services/ogc/wms?&quot;</span><span class="kw">/&gt;&lt;/Post&gt;</span>
         <span class="kw">&lt;/HTTP&gt;</span>
       <span class="kw">&lt;/DCPType&gt;</span>
     <span class="kw">&lt;/GetCapabilities&gt;</span>
@@ -1139,8 +1179,12 @@ code > span.er { color: #ff0000; font-weight: bold; }
       <span class="kw">&lt;Format&gt;</span>application/vnd.google-earth.kmz<span class="kw">&lt;/Format&gt;</span>
       <span class="kw">&lt;DCPType&gt;</span>
         <span class="kw">&lt;HTTP&gt;</span>
-          <span class="kw">&lt;Get&gt;&lt;OnlineResource</span><span class="ot"> xmlns:xlink=</span><span class="st">&quot;http://www.w3.org/1999/xlink&quot;</span><span class="ot"> xlink:href=</span><span class="st">&quot;http://gstore.unm.edu/apps/rgis/datasets/6ca5428a-a78c-4c82-8120-da70dc92f2cc/services/ogc/wms?&quot;</span><span class="kw">/&gt;&lt;/Get&gt;</span>
-          <span class="kw">&lt;Post&gt;&lt;OnlineResource</span><span class="ot"> xmlns:xlink=</span><span class="st">&quot;http://www.w3.org/1999/xlink&quot;</span><span class="ot"> xlink:href=</span><span class="st">&quot;http://gstore.unm.edu/apps/rgis/datasets/6ca5428a-a78c-4c82-8120-da70dc92f2cc/services/ogc/wms?&quot;</span><span class="kw">/&gt;&lt;/Post&gt;</span>
+          <span class="kw">&lt;Get&gt;&lt;OnlineResource</span><span class="ot"> xmlns:xlink=</span><span class="st">&quot;http://www.w3.org/1999/xlink&quot;</span><span class="ot"> xlink:href=</span>
+          <span class="st">&quot;http://gstore.unm.edu/apps/rgis/datasets/6ca5428a-a78c-4c82-8120-da70dc92f2cc/</span>
+<span class="st">          services/ogc/wms?&quot;</span><span class="kw">/&gt;&lt;/Get&gt;</span>
+          <span class="kw">&lt;Post&gt;&lt;OnlineResource</span><span class="ot"> xmlns:xlink=</span><span class="st">&quot;http://www.w3.org/1999/xlink&quot;</span><span class="ot"> xlink:href=</span>
+          <span class="st">&quot;http://gstore.unm.edu/apps/rgis/datasets/6ca5428a-a78c-4c82-8120-da70dc92f2cc/</span>
+<span class="st">          services/ogc/wms?&quot;</span><span class="kw">/&gt;&lt;/Post&gt;</span>
         <span class="kw">&lt;/HTTP&gt;</span>
       <span class="kw">&lt;/DCPType&gt;</span>
     <span class="kw">&lt;/GetMap&gt;</span>
@@ -1149,8 +1193,12 @@ code > span.er { color: #ff0000; font-weight: bold; }
       <span class="kw">&lt;Format&gt;</span>application/vnd.ogc.gml<span class="kw">&lt;/Format&gt;</span>
       <span class="kw">&lt;DCPType&gt;</span>
         <span class="kw">&lt;HTTP&gt;</span>
-          <span class="kw">&lt;Get&gt;&lt;OnlineResource</span><span class="ot"> xmlns:xlink=</span><span class="st">&quot;http://www.w3.org/1999/xlink&quot;</span><span class="ot"> xlink:href=</span><span class="st">&quot;http://gstore.unm.edu/apps/rgis/datasets/6ca5428a-a78c-4c82-8120-da70dc92f2cc/services/ogc/wms?&quot;</span><span class="kw">/&gt;&lt;/Get&gt;</span>
-          <span class="kw">&lt;Post&gt;&lt;OnlineResource</span><span class="ot"> xmlns:xlink=</span><span class="st">&quot;http://www.w3.org/1999/xlink&quot;</span><span class="ot"> xlink:href=</span><span class="st">&quot;http://gstore.unm.edu/apps/rgis/datasets/6ca5428a-a78c-4c82-8120-da70dc92f2cc/services/ogc/wms?&quot;</span><span class="kw">/&gt;&lt;/Post&gt;</span>
+          <span class="kw">&lt;Get&gt;&lt;OnlineResource</span><span class="ot"> xmlns:xlink=</span><span class="st">&quot;http://www.w3.org/1999/xlink&quot;</span><span class="ot"> xlink:href=</span>
+          <span class="st">&quot;http://gstore.unm.edu/apps/rgis/datasets/6ca5428a-a78c-4c82-8120-da70dc92f2cc/</span>
+<span class="st">          services/ogc/wms?&quot;</span><span class="kw">/&gt;&lt;/Get&gt;</span>
+          <span class="kw">&lt;Post&gt;&lt;OnlineResource</span><span class="ot"> xmlns:xlink=</span><span class="st">&quot;http://www.w3.org/1999/xlink&quot;</span><span class="ot"> xlink:href=</span>
+          <span class="st">&quot;http://gstore.unm.edu/apps/rgis/datasets/6ca5428a-a78c-4c82-8120-da70dc92f2cc/</span>
+<span class="st">          services/ogc/wms?&quot;</span><span class="kw">/&gt;&lt;/Post&gt;</span>
         <span class="kw">&lt;/HTTP&gt;</span>
       <span class="kw">&lt;/DCPType&gt;</span>
     <span class="kw">&lt;/GetFeatureInfo&gt;</span>
@@ -1158,8 +1206,12 @@ code > span.er { color: #ff0000; font-weight: bold; }
       <span class="kw">&lt;Format&gt;</span>text/xml<span class="kw">&lt;/Format&gt;</span>
       <span class="kw">&lt;DCPType&gt;</span>
         <span class="kw">&lt;HTTP&gt;</span>
-          <span class="kw">&lt;Get&gt;&lt;OnlineResource</span><span class="ot"> xmlns:xlink=</span><span class="st">&quot;http://www.w3.org/1999/xlink&quot;</span><span class="ot"> xlink:href=</span><span class="st">&quot;http://gstore.unm.edu/apps/rgis/datasets/6ca5428a-a78c-4c82-8120-da70dc92f2cc/services/ogc/wms?&quot;</span><span class="kw">/&gt;&lt;/Get&gt;</span>
-          <span class="kw">&lt;Post&gt;&lt;OnlineResource</span><span class="ot"> xmlns:xlink=</span><span class="st">&quot;http://www.w3.org/1999/xlink&quot;</span><span class="ot"> xlink:href=</span><span class="st">&quot;http://gstore.unm.edu/apps/rgis/datasets/6ca5428a-a78c-4c82-8120-da70dc92f2cc/services/ogc/wms?&quot;</span><span class="kw">/&gt;&lt;/Post&gt;</span>
+          <span class="kw">&lt;Get&gt;&lt;OnlineResource</span><span class="ot"> xmlns:xlink=</span><span class="st">&quot;http://www.w3.org/1999/xlink&quot;</span><span class="ot"> xlink:href=</span>
+          <span class="st">&quot;http://gstore.unm.edu/apps/rgis/datasets/6ca5428a-a78c-4c82-8120-da70dc92f2cc/</span>
+<span class="st">          services/ogc/wms?&quot;</span><span class="kw">/&gt;&lt;/Get&gt;</span>
+          <span class="kw">&lt;Post&gt;&lt;OnlineResource</span><span class="ot"> xmlns:xlink=</span><span class="st">&quot;http://www.w3.org/1999/xlink&quot;</span><span class="ot"> xlink:href=</span>
+          <span class="st">&quot;http://gstore.unm.edu/apps/rgis/datasets/6ca5428a-a78c-4c82-8120-da70dc92f2cc/</span>
+<span class="st">          services/ogc/wms?&quot;</span><span class="kw">/&gt;&lt;/Post&gt;</span>
         <span class="kw">&lt;/HTTP&gt;</span>
       <span class="kw">&lt;/DCPType&gt;</span>
     <span class="kw">&lt;/DescribeLayer&gt;</span>
@@ -1170,8 +1222,12 @@ code > span.er { color: #ff0000; font-weight: bold; }
       <span class="kw">&lt;Format&gt;</span>image/png; mode=8bit<span class="kw">&lt;/Format&gt;</span>
       <span class="kw">&lt;DCPType&gt;</span>
         <span class="kw">&lt;HTTP&gt;</span>
-          <span class="kw">&lt;Get&gt;&lt;OnlineResource</span><span class="ot"> xmlns:xlink=</span><span class="st">&quot;http://www.w3.org/1999/xlink&quot;</span><span class="ot"> xlink:href=</span><span class="st">&quot;http://gstore.unm.edu/apps/rgis/datasets/6ca5428a-a78c-4c82-8120-da70dc92f2cc/services/ogc/wms?&quot;</span><span class="kw">/&gt;&lt;/Get&gt;</span>
-          <span class="kw">&lt;Post&gt;&lt;OnlineResource</span><span class="ot"> xmlns:xlink=</span><span class="st">&quot;http://www.w3.org/1999/xlink&quot;</span><span class="ot"> xlink:href=</span><span class="st">&quot;http://gstore.unm.edu/apps/rgis/datasets/6ca5428a-a78c-4c82-8120-da70dc92f2cc/services/ogc/wms?&quot;</span><span class="kw">/&gt;&lt;/Post&gt;</span>
+          <span class="kw">&lt;Get&gt;&lt;OnlineResource</span><span class="ot"> xmlns:xlink=</span><span class="st">&quot;http://www.w3.org/1999/xlink&quot;</span><span class="ot"> xlink:href=</span>
+          <span class="st">&quot;http://gstore.unm.edu/apps/rgis/datasets/6ca5428a-a78c-4c82-8120-da70dc92f2cc/</span>
+<span class="st">          services/ogc/wms?&quot;</span><span class="kw">/&gt;&lt;/Get&gt;</span>
+          <span class="kw">&lt;Post&gt;&lt;OnlineResource</span><span class="ot"> xmlns:xlink=</span><span class="st">&quot;http://www.w3.org/1999/xlink&quot;</span><span class="ot"> xlink:href=</span>
+          <span class="st">&quot;http://gstore.unm.edu/apps/rgis/datasets/6ca5428a-a78c-4c82-8120-da70dc92f2cc/</span>
+<span class="st">          services/ogc/wms?&quot;</span><span class="kw">/&gt;&lt;/Post&gt;</span>
         <span class="kw">&lt;/HTTP&gt;</span>
       <span class="kw">&lt;/DCPType&gt;</span>
     <span class="kw">&lt;/GetLegendGraphic&gt;</span>
@@ -1179,8 +1235,12 @@ code > span.er { color: #ff0000; font-weight: bold; }
       <span class="kw">&lt;Format&gt;</span>text/xml<span class="kw">&lt;/Format&gt;</span>
       <span class="kw">&lt;DCPType&gt;</span>
         <span class="kw">&lt;HTTP&gt;</span>
-          <span class="kw">&lt;Get&gt;&lt;OnlineResource</span><span class="ot"> xmlns:xlink=</span><span class="st">&quot;http://www.w3.org/1999/xlink&quot;</span><span class="ot"> xlink:href=</span><span class="st">&quot;http://gstore.unm.edu/apps/rgis/datasets/6ca5428a-a78c-4c82-8120-da70dc92f2cc/services/ogc/wms?&quot;</span><span class="kw">/&gt;&lt;/Get&gt;</span>
-          <span class="kw">&lt;Post&gt;&lt;OnlineResource</span><span class="ot"> xmlns:xlink=</span><span class="st">&quot;http://www.w3.org/1999/xlink&quot;</span><span class="ot"> xlink:href=</span><span class="st">&quot;http://gstore.unm.edu/apps/rgis/datasets/6ca5428a-a78c-4c82-8120-da70dc92f2cc/services/ogc/wms?&quot;</span><span class="kw">/&gt;&lt;/Post&gt;</span>
+          <span class="kw">&lt;Get&gt;&lt;OnlineResource</span><span class="ot"> xmlns:xlink=</span><span class="st">&quot;http://www.w3.org/1999/xlink&quot;</span><span class="ot"> xlink:href=</span>
+          <span class="st">&quot;http://gstore.unm.edu/apps/rgis/datasets/6ca5428a-a78c-4c82-8120-da70dc92f2cc/</span>
+<span class="st">          services/ogc/wms?&quot;</span><span class="kw">/&gt;&lt;/Get&gt;</span>
+          <span class="kw">&lt;Post&gt;&lt;OnlineResource</span><span class="ot"> xmlns:xlink=</span><span class="st">&quot;http://www.w3.org/1999/xlink&quot;</span><span class="ot"> xlink:href=</span>
+          <span class="st">&quot;http://gstore.unm.edu/apps/rgis/datasets/6ca5428a-a78c-4c82-8120-da70dc92f2cc/</span>
+<span class="st">          services/ogc/wms?&quot;</span><span class="kw">/&gt;&lt;/Post&gt;</span>
         <span class="kw">&lt;/HTTP&gt;</span>
       <span class="kw">&lt;/DCPType&gt;</span>
     <span class="kw">&lt;/GetStyles&gt;</span>
@@ -1226,7 +1286,9 @@ code > span.er { color: #ff0000; font-weight: bold; }
 <span class="ot">                    minx=</span><span class="st">&quot;-109.05&quot;</span><span class="ot"> miny=</span><span class="st">&quot;31.3322&quot;</span><span class="ot"> maxx=</span><span class="st">&quot;-103.002&quot;</span><span class="ot"> maxy=</span><span class="st">&quot;37.0003&quot;</span> <span class="kw">/&gt;</span>
         <span class="kw">&lt;MetadataURL</span><span class="ot"> type=</span><span class="st">&quot;FGDC-STD-001-1998&quot;</span><span class="kw">&gt;</span>
           <span class="kw">&lt;Format&gt;</span>text/xml<span class="kw">&lt;/Format&gt;</span>
-          <span class="kw">&lt;OnlineResource</span><span class="ot"> xmlns:xlink=</span><span class="st">&quot;http://www.w3.org/1999/xlink&quot;</span><span class="ot"> xlink:type=</span><span class="st">&quot;simple&quot;</span><span class="ot"> xlink:href=</span><span class="st">&quot;http://gstore.unm.edu/apps/rgis/datasets/6ca5428a-a78c-4c82-8120-da70dc92f2cc/metadata/FGDC-STD-001-1998.xml&quot;</span><span class="kw">/&gt;</span>
+          <span class="kw">&lt;OnlineResource</span><span class="ot"> xmlns:xlink=</span><span class="st">&quot;http://www.w3.org/1999/xlink&quot;</span><span class="ot"> xlink:type=</span><span class="st">&quot;simple&quot;</span> 
+<span class="ot">          xlink:href=</span><span class="st">&quot;http://gstore.unm.edu/apps/rgis/datasets/</span>
+<span class="st">          6ca5428a-a78c-4c82-8120-da70dc92f2cc/metadata/FGDC-STD-001-1998.xml&quot;</span><span class="kw">/&gt;</span>
         <span class="kw">&lt;/MetadataURL&gt;</span>
     <span class="kw">&lt;/Layer&gt;</span>
   <span class="kw">&lt;/Layer&gt;</span>

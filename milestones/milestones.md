@@ -174,7 +174,7 @@ Make a free-standing web page based upon the Google Map that you created as part
 
 ## Week 5 - Proj4, GDAL, and OGR ##
 
-This week's lab concentrates on some command line tools that are useful in working with raster and vector data sets. These tools should be available on your personal computers (through the installation of the FW-Tools package for Windows (use the [*mirror site*](http://fwtools.loskot.net/) from the FW-Tools website to download the "FWTools247.exe" package to install on your system), or the GDAL, OGR, and Proj4 frameworks on the Mac) 
+This week's milestone concentrates on some command line tools that are useful in working with raster and vector data sets. These tools should be available on your personal computers (through the installation of the FW-Tools package for Windows (use the [*mirror site*](http://fwtools.loskot.net/) from the FW-Tools website to download the "FWTools247.exe" package to install on your system), or the GDAL, OGR, and Proj4 frameworks on the Mac) 
 
 Here are some useful links to documentation and information about the tools that you will be working with.
 
@@ -212,7 +212,7 @@ Question 2
 
 * What is the projection/coordinate system for the data product? If it is undefined, note it.
 
-* What is the spatial extent of the data product?
+* What is the spatial extent (i.e. bounding box) of the data product?
 
 * If it is a vector dataset, how many features does it have? 
 
@@ -222,6 +222,61 @@ Question 3
 :	Use proj or cs2cs (I suggest you use cs2cs) to calculate the coordinates of the spatial extent of the datasets that you downloaded in UTM Zone 13N, NAD27. Paste the input and output of the command(s) into your writeup.
 
 
+
+## Week 6 - WMS & KML ##
+
+As with the previous milestones, please link your web page with your writeup from your homepage in GitHub. 
+
+There are a large number of WMS services available on the web. One way to find interesting services is to search for them using standard search engines such as Google. Try searching for the following search phrase: 
+
+`“REQUEST=GetCapabilities” and “SERVICE=WMS”`
+
+as a single search phrase
+
+Question 1
+:	What search engine did you use?
+
+Question 2
+:	How many ‘hits’ did you get?
+
+Question 3
+:	How useful (generally in terms of getting a pointers to live WMS services [defined as a functioning GetCapabilities request]) were the ‘hits’?
+
+Pick two of the services that included live "GetCapabilities" requests that you found above, and answer the following questions about each.
+
+Question 4 (service #1)
+:	What is the URL for the full GetCapabilities request to the service?
+:	What is the Name of the service?
+:	What Format(s) are available for GetMap requests from the service?
+:	How many layers are included in the service (including nesting layers)?
+
+Question 4 (service #2)
+:	What is the URL for the full GetCapabilities request to the service?
+:	What is the Name of the service?
+:	What Format(s) are available for GetMap requests from the service?
+:	How many layers are included in the service (including nesting layers)?
+
+
+Question 5: For one of the layers in the first service, 
+:	What is the name of the layer?
+:	What is the SRS of the layer?
+:	What is the name of the projection that matches the SRS EPSG code?
+:	What is the LatLonBoundingBox of the layer?
+
+Open the following GetCapabilities request in your browser. Select “View Source” from the browser menu to see the delivered XML document (it may appear as an unformatted string of text by default in your browser - if that is the case, save the file to your hard drive and view it in a text editor). Use the information in the XML capabilities document to formulate `GetMap` requests for the following map images. Include the requests and resulting images in your write-up. Comment on anything unusual that you notice in the images that are returned. 
+
+[http://gstore.unm.edu/apps/rgis/datasets/92403ebf-aec5-404b-ae8a-6db41f388737/services/ogc/wms?SERVICE=wms&REQUEST=GetCapabilities&VERSION=1.1.1](http://gstore.unm.edu/apps/rgis/datasets/92403ebf-aec5-404b-ae8a-6db41f388737/services/ogc/wms?SERVICE=wms&REQUEST=GetCapabilities&VERSION=1.1.1)
+
+Question 6
+:	for the area surrounding Bernalillo County (-107.2,34.7,-106,35.25) as a 200x200 pixel JPEG
+:	for the same area as a 500x500 pixel PNG
+
+Open the following (linked) KML file in Google Earth, uncompress it, and save the contained KML file on your computer. Open the KML file in a text editor (e.g. Text Wrangler [Mac], Notepad/Notepad++ [Windows]). 
+
+[http://rgis.unm.edu/gstore/datasets/3f0a85aa-b7f8-47bd-8db6-1c0e66becf72/nm_state_bdy_00.derived.kml](http://rgis.unm.edu/gstore/datasets/3f0a85aa-b7f8-47bd-8db6-1c0e66becf72/nm_state_bdy_00.derived.kml)
+
+Question 7
+: Add a second _Placemark_ element to the KML file that represents a _square_ region that is completely contained within the state boundary. Save the KML file and open it in Google Earth (download from http://www.google.com/earth/index.html) or view it in Google Maps (by adding it to your GitHub `gh-pages` branch) as demonstrated in the lecture to verify that you have successfully created the file. Submit the KML file (as a link in your writeup) as part of your writeup for the milestone. 
 
 
 
