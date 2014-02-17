@@ -53,21 +53,21 @@ Question 6 - What are the EPSG codes of the following Spatial Reference Systems
 Use the `cs2cs` utility to convert the following WGS84 Geographic Coordinates into UTM Zone 13, NAD83 coordinates. Include your `cs2cs` command and output in your writeup. 
 
 Question 7
-: 35°14′19.29″ N, 107°36′30.67″ W (Mount Taylor Summit)
-: 34°16′40.34″ N, 103°19′28.49″ W (Blackwater Draw)
+:	35°14′19.29″ N, 107°36′30.67″ W (Mount Taylor Summit)
+:	34°16′40.34″ N, 103°19′28.49″ W (Blackwater Draw)
 
 Retrieve the GetCapabilities XML response from the following WMS, and answer the following questions.
 
 [http://gstore.unm.edu/apps/rgis/datasets/715663ba-c1c3-414c-84a7-c671526f8316/services/ogc/wms?SERVICE=wms&REQUEST=GetCapabilities&VERSION=1.1.1](http://gstore.unm.edu/apps/rgis/datasets/715663ba-c1c3-414c-84a7-c671526f8316/services/ogc/wms?SERVICE=wms&REQUEST=GetCapabilities&VERSION=1.1.1)
 
 Question 8
-: What is the Title of the service?
-: Who is the Contact Person for questions about the service?
-: What are the available image formats for the GetMap request for this service?
-: What are the SRS/CRS’s for which layers from this service are available (remember that nested layers inherit the SRS/CRS of their parent layers). 
+:	What is the Title of the service?
+:	Who is the Contact Person for questions about the service?
+:	What are the available image formats for the GetMap request for this service?
+:	What are the SRS/CRS’s for which layers from this service are available (remember that nested layers inherit the SRS/CRS of their parent layers). 
 
 Question 9
-: Formulate a GetMap request for the “tl_2010_35_bg10” layer from this service, for a 500x500 pixel map image that is 0.05-degrees wide and 0.05-degress high, with the SW corner of the map image located at  35°N and -106°45'E. Include in your write-up the complete GetMap request and the returned map image.  
+:	Formulate a GetMap request for the “tl_2010_35_bg10” layer from this service, for a 500x500 pixel map image that is 0.05-degrees wide and 0.05-degress high, with the SW corner of the map image located at  35°N and -106°45'E. Include in your write-up the complete GetMap request and the returned map image.  
 
 
 ## Week 11: Problem Definition and Data Acquisition ##
