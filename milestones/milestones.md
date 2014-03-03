@@ -282,4 +282,125 @@ Question 7
 
 
 
+
+
+## Week 7 - WMS GetMap Requests, Map Scale and Aspect Ratio Calculations ##
+
+You might have noticed in the WMS requests that you generated in the previous lab returned images that didn’t look “quite right” relative to what you may know of the shape of familiar features. 
+
+For example, a WMS request for a 200x200 pixel PNG file for an area surrounding Bernalillo County (-107.2,34.7,-106,35.25) from the previous lab would be ([link](http://gstore.unm.edu/apps/rgis/datasets/97810/services/ogc/wms?VERSION=1.1.1&SERVICE=WMS&REQUEST=GetMap&BBOX=-107.2,34.7,-106,35.25&LAYERS=2007fe_35_county00&FORMAT=image/png&TRANSPARENT=TRUE&STYLES=&SRS=EPSG:4326&WIDTH=200&HEIGHT=200)):
+
+	http://gstore.unm.edu/apps/rgis/datasets/92403ebf-aec5-404b-ae8a-6db41f388737/
+	services/ogc/wms?VERSION=1.1.1&SERVICE=WMS&REQUEST=GetMap&BBOX=-107.2,34.7,-106,35.25&
+	LAYERS=2007fe_35_county00&FORMAT=image/png&TRANSPARENT=TRUE&STYLES=&
+	SRS=EPSG:4326&WIDTH=200&HEIGHT=200
+
+![](images/bernalillo_01.png) \ 
+
+this request results in a map image that does not agree with the standard shape of Bernalillo county (depicted in the Google Map below) that we are accustomed to, regardless of the specific map projection being used.
+	
+![](images/bernalillo_county_-_Google_Maps.png) \ 
+
+This discrepancy is the result of a difference in the aspect ratio of the requested BBOX (-107.2,34.7,-106,35.25) and the requested image dimensions (200x200 pixels). _When you compose a WMS GetMap request, you need to make sure that the aspect ratio of both the image size and BBOX match._ 
+
+For example, if we calculate the aspect ratio of the BBOX we obtain the following values (remember that the BBOX is specified as a comma separated list of x,y coordinates: minx,miny,maxx,maxy):
+
+	BBOX width = (maxx) - (minx) = (-106) - (-107.2) = 1.2 degrees
+	BBOX height = (maxy) - (miny) = (35.25) - (34.7) = 0.55 degrees
+	BBOX aspect ratio = (BBOX width) / (BBOX height) = (1.2) / (0.55) = 2.1818
+
+If we want to retrieve a map image that is 200 pixels wide, we need to calculate an image height that yields an aspect ratio that matches the BBOX aspect ratio. Harking back to basic algebra:
+
+	width = 200
+	aspect ratio = width / height = 200 / height = 2.1818
+	height = (width) / (aspect ratio) = 200 / 2.1818 = 91.667
+
+So, if we request an image that is 200x92 (we have to request pixel dimensions in integers, so rounding to the nearest integer) we should get a representation that closely approximates the proper shape of features. The modified WMS request with the new images size is the following ([link](http://gstore.unm.edu/apps/rgis/datasets/97810/services/ogc/wms?VERSION=1.1.1&SERVICE=WMS&REQUEST=GetMap&BBOX=-107.2,34.7,-106,35.25&LAYERS=2007fe_35_county00&FORMAT=image/png&TRANSPARENT=TRUE&STYLES=&SRS=EPSG:4326&WIDTH=200&HEIGHT=92)):
+
+	http://gstore.unm.edu/apps/rgis/datasets/92403ebf-aec5-404b-ae8a-6db41f388737/
+	services/ogc/wms?VERSION=1.1.1&SERVICE=WMS&REQUEST=GetMap&BBOX=-107.2,34.7,-106,35.25&
+	LAYERS=2007fe_35_county00&FORMAT=image/png&TRANSPARENT=TRUE&STYLES=&
+	SRS=EPSG:4326&WIDTH=200&HEIGHT=92
+
+![](images/bernalillo_02.png) \ 
+
+
+This process may be reversed to request images of a fixed size for use in a client interface, with the requested BBOX modified to match the aspect ratio of the target image. If, for example, images are being requested for a client interface with a fixed map size of 600x400 pixels, a corresponding BBOX can be derived using the same calculation. 
+
+If, for example, the area of interest for a map is 2 degrees wide, we can calculate the target height (in degrees) using the aspect ratio of the desired image.
+
+	image aspect ratio = (width) / (height) = (600) / (400) = 1.5
+	BBOX aspect ratio = (width) / (height) = (2) / (height in degrees) = 1.5
+	BBOX height = (width) / (BBOX aspect ratio) = (2) / (1.5) = 1.3333
+
+If our area of interest extends from -106 to -108 degrees East Longitude, we can use the known target height of 1.3333 to generate a WMS BBOX  of the appropriate aspect ratio. If the minimum Latitude of interest is 34.7 degrees North Latitude, the maximum BBOX Y value would be 
+
+	BBOX Max Y = (BBOX Min Y) + (BBOX height) = (34.7) + (1.3333) = 36.0333
+
+This set of calculations may be used to compose the following WMS request ([link](http://gstore.unm.edu/apps/rgis/datasets/97810/services/ogc/wms?VERSION=1.1.1&SERVICE=WMS&REQUEST=GetMap&BBOX=-108,34.7,-106,36.0333&LAYERS=2007fe_35_county00&FORMAT=image/png&TRANSPARENT=TRUE&STYLES=&SRS=EPSG:4326&WIDTH=600&HEIGHT=400)):
+
+	http://gstore.unm.edu/apps/rgis/datasets/92403ebf-aec5-404b-ae8a-6db41f388737/
+	services/ogc/wms?VERSION=1.1.1&SERVICE=WMS&REQUEST=GetMap&BBOX=-108,34.7,-106,36.0333&
+	LAYERS=2007fe_35_county00&FORMAT=image/png&TRANSPARENT=TRUE&STYLES=&
+	SRS=EPSG:4326&WIDTH=600&HEIGHT=400
+
+
+![](images/bernalillo_03.png) \ 
+
+
+
+Given that McKinley County NM is contained within the following BBOX: -109.5, 34.5, -106.5, 36.5
+
+Question 1
+:	What is the aspect ratio of this geographic region?
+
+Question 2
+:	What would be the height (in whole pixels) for a map image for this region that is 600 pixels wide?
+
+Question 3
+:	Formulate a WMS request that reflects the values determined in 1.1 and 1.2 above for the WMS service used above in the examples. Include in your answer both the actual WMS request and the returned map image.
+ 
+Question 4
+:	Formulate a WMS request for a 900x600 pixel map image that represents the full 3-degree width of the geographic region, and is based upon the minimum Y value of 34.5 degrees North Latitude. Include in your answer both the WMS request and the returned map image. 
+
+Question 5
+:	Given a WMS that is represented by the following GetCapabilities request, formulate _individual_ GetMap requests using the following parameters:
+
+	BBOX=-106.639,35.074,-106.609,35.094
+	WIDTH=600
+	HEIGHT=400
+
+for each of the following layers: 0 (TNM_Large_Scale_Imagery) and 1 (1_foot_imagery) - *yes - USGS just gave numbers as the layer names*
+
+[Link](http://raster.nationalmap.gov/ArcGIS/services/TNM_Large_Scale_Imagery/MapServer/WMSServer?request=GetCapabilities&service=WMS)
+
+	http://raster.nationalmap.gov/ArcGIS/services/TNM_Large_Scale_Imagery/
+	MapServer/WMSServer?request=GetCapabilities&service=WMS  
+
+<!-- http://raster.nationalmap.gov/ArcGIS/services/TNM_Large_Scale_Imagery/MapServer/WMSServer?request=GetMap&service=WMS&VERSION=1.1.0&SRS=EPSG:4326&BBOX=-106.639,35.074,-106.609,35.094&LAYERS=0&FORMAT=image/jpeg&TRANSPARENT=FALSE&STYLES=&WIDTH=600&HEIGHT=400
+
+http://raster.nationalmap.gov/ArcGIS/services/TNM_Large_Scale_Imagery/MapServer/WMSServer?request=GetMap&service=WMS&VERSION=1.1.0&SRS=EPSG:4326&BBOX=-106.639,35.074,-106.609,35.094&LAYERS=0&FORMAT=image/jpeg&TRANSPARENT=FALSE&STYLES=&WIDTH=1200&HEIGHT=800
+
+-->
+
+
+Question 6
+:	Which layers return map images that display image content (i.e. return a non-blank image)? 
+
+Sometimes when WMS layers are accessed, there is a limit on the map scales for which the map image will be returned. If a request is submitted for a map scale that is outside the range specified for a given layer, typically, a blank map image will be returned. 
+
+Questions 7
+:	From examining the information for these layers in the GetCapabilities XML document - which element in each layer’s service metadata do you think provides information about the scales for which the layer will return map images containing data?
+
+You can effectively change the scale of a map image by changing the pixel dimensions of the requested image. 
+
+Question 8
+:	Which map images contain data for each of the following map image widths (remember to adjust the image height to match the BBOX of the request)
+:	30 pixels
+:	1200 pixels
+
+
+
+
+
 <div class="license"><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />This work by <span xmlns:cc="http://creativecommons.org/ns#" property="cc:attributionName">Karl Benedict</span> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.</div>

@@ -188,3 +188,111 @@
 	float: right;
 	padding-right: 40px;
 }
+
+
+/* Module 4.2 */
+
+#WFS_background,#WCS_background blockquote p {
+	font-size: small;
+	margin: 0;
+	padding: 0;
+}
+
+#wfs-requestsoperations dl dd p {
+	font-size: small;
+}
+
+#wfs_requests_operations_continued dl dd p {
+	font-size: small;
+}
+
+#request-composition dl dd p {
+	font-size: small;
+}
+
+#sample-getcapabilities-requests pre code {
+	font-size: x-small;
+	background-color: #ffffff;
+	color: #0e0fe1;
+	margin: 0;
+	padding: 8px;
+	display: block;
+}
+
+#sample-describefeaturetype-requests pre code {
+font-size: x-small;
+background-color: #ffffff;
+color: #0e0fe1;
+margin: 0;
+padding: 8px;
+	display: block;
+}
+
+#kvp-for-getfeature-request---ad-hoc-query-parameters p img {
+	height: 400px
+}
+
+#kvp-for-getfeature-request---ad-hoc-query-parameters p  {
+	width: 500px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#sample-getfeature-requests pre code {
+font-size: x-small;
+background-color: #ffffff;
+color: #0e0fe1;
+margin: 0;
+padding: 8px;
+	display: block;
+}
+
+#wcs-requestsoperations dl dd p {
+	font-size: small;
+}
+
+#request-composition-1 dl dd {
+	font-size: small;
+}
+
+#sample-wcs-getcapabilities-requests pre code {
+font-size: x-small;
+background-color: #ffffff;
+color: #0e0fe1;
+margin: 0;
+padding: 8px;
+	display: block;
+}
+
+#sample-describecoverage-request pre code {
+font-size: x-small;
+background-color: #ffffff;
+color: #0e0fe1;
+margin: 0;
+padding: 8px;
+	display: block;
+	
+}
+
+#subset-definition-for-getcoverage-request p img {
+	height: 180px;
+}
+
+#subset-definition-for-getcoverage-request pre code {
+font-size: x-small;
+background-color: #ffffff;
+color: #0e0fe1;
+margin: 0;
+padding: 8px;
+	display: block;
+}
+
+#sample-getcoverage-request pre code {
+font-size: x-small;
+background-color: #ffffff;
+color: #0e0fe1;
+margin: 0;
+padding: 8px;
+	display: block;
+}
+

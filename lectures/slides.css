@@ -132,8 +132,8 @@ ul li {
  p code {
  	background-color: #ffffff;
  	color: #0d23c9;
- 	font-size: x-small;
- 	padding: 8px;
+ 	font-size: medium;
+ 	padding: 0 4px;
  }
  
  td.lineNumbers {
