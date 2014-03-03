@@ -345,14 +345,15 @@ At the end of this class students should have an understanding of the following:
 
 ### Weekly Milestone - WMS and KML in Google Earth###
 
+[Week 7 Milestone](http://tinyurl.com/ptpc9rt)
 
 ### Readings ###
 
 *For Reference*
 
-* [OGC WFS Implementation Specification][http://www.opengeospatial.org/standards/wfs]
+* [OGC WFS Implementation Specification](http://www.opengeospatial.org/standards/wfs)
 
-* [OGC WCS Implementation Specification][http://www.opengeospatial.org/standards/wfs]
+* [OGC WCS Implementation Specification](http://www.opengeospatial.org/standards/wfs)
 
 
 
