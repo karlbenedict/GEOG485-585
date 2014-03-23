@@ -410,6 +410,7 @@ At the end of this class students will understand that
 
 ### Weekly Milestone - OpenLayers Mapping###
 
+[Week 10 Milestone](http://tinyurl.com/ovzz74m)
 
 ### Readings ###
 
