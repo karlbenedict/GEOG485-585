@@ -420,21 +420,21 @@ _Peer Review:_ This week's assignment will include a peer review component. Spec
 2. Provide a _substantive_, _constructive_, and _civil_ comment to _two_ of the posted discussion items posted for peer-review. Please complete the peer-review as soon as possible so that your colleagues can benefit most from your input. Complete the peer-review no later than the required end-of-term portfolio review deadline. Think about the following ideas for your review: _what did I learn from this page_, _what was done well_, _what could be improved_
 
 Question 1
-: What area do you want to depict in your map? Why?
+:	What area do you want to depict in your map? Why?
 
 Question 2
-: What is the center point (latitude and longitude) of your area of interest?
+:	What is the center point (latitude and longitude) of your area of interest?
 
 Question 3
-:  What base map(s) did you select for use in your map? Why?
+:	What base map(s) did you select for use in your map? Why?
 
 Question 4
-:  What is the scale of your map (local, regional, continental, global)? How will this translate into your selection of an appropriate default zoom level for your map?
+:	What is the scale of your map (local, regional, continental, global)? How will this translate into your selection of an appropriate default zoom level for your map?
 
 Now that you have answered these questions about the map that you want to create, refer to the examples in the lecture notes, the OpenLayers Examples ([http://openlayers.org/dev/examples/](http://openlayers.org/dev/examples/)), and this week's reading assignment to create a custom OpenLayers map.
 
 Question 5
-: Embed the OpenLayers Map in your writeup (included with the answers to questions 1-4 above) that is based upon your responses to questions 1-4 above.
+:	Embed the OpenLayers Map in your writeup (included with the answers to questions 1-4 above) that is based upon your responses to questions 1-4 above.
 
 
 
