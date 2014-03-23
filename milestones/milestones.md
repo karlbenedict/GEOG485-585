@@ -431,7 +431,7 @@ Question 3
 Question 4
 :  What is the scale of your map (local, regional, continental, global)? How will this translate into your selection of an appropriate default zoom level for your map?
 
-Now that you have answered these questions about the map that you want to create, refer to the examples in the lecture notes, the OpenLayers Examples (http://openlayers.org/dev/examples/), and this week's reading assignment to create a custom OpenLayers map.
+Now that you have answered these questions about the map that you want to create, refer to the examples in the lecture notes, the OpenLayers Examples ([http://openlayers.org/dev/examples/](http://openlayers.org/dev/examples/)), and this week's reading assignment to create a custom OpenLayers map.
 
 Question 5
 : Embed the OpenLayers Map in your writeup (included with the answers to questions 1-4 above) that is based upon your responses to questions 1-4 above.
