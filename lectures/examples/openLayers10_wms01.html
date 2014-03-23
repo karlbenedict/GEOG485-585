@@ -1,0 +1,76 @@
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <script type="text/javascript" src="http://openlayers.org/api/OpenLayers.js"></script>
+    <script type="text/javascript">
+        
+        // define global variables
+        var lon = -106.5;
+        var lat = 36;
+        var zoom = 3;
+        var map;
+        var bmngLayer, countiesLayer, indlandLayer, federallandsLayer;
+
+        // =============== Initialization function ===================
+        function init(){
+             
+            map = new OpenLayers.Map('map');
+            
+			// =========== BMNG Base Map ====================
+            bmngLayer = new OpenLayers.Layer.WMS( 
+            	"NASA BMNG", 
+            	"http://edacwms.unm.edu/cgi-bin/mapfiles/edacimagery?",
+            	{layers: "bmng8km,bmng2km,bmng500mA1,bmng500mA2,bmng500mB1,bmng500mB2,bmng500mC1,bmng500mC2,bmng500mD1,bmng500mD2,landsat,doqq06_gaps,doqq06,doqq05,mrcog_2008_rast", version: '1.3.0', transparent: 'TRUE'},
+            	{isBaseLayer: true, displayInLayerSwitcher: false, attribution: "Imagery Courtesy of: NASA Blue Marble Next Generation, NM RGIS, MRCoG"}
+            );
+            map.addLayer(bmngLayer);
+            
+            // =========== USGS National Atlas WMS ====
+            // from USGS National Atlas: http://webservices.nationalatlas.gov/wms/boundaries?SERVICE=WMS&REQUEST=GetCapabilities
+            countiesLayer = new OpenLayers.Layer.WMS( 
+            	"US Counties", 
+            	"http://webservices.nationalatlas.gov/wms?",
+            	{layers: "counties", version: '1.3.0', transparent: 'TRUE'},
+            	{isBaseLayer: false}
+            );
+            map.addLayer(countiesLayer);
+			
+            indlanLayer = new OpenLayers.Layer.WMS( 
+            	"Indian Lands", 
+            	"http://webservices.nationalatlas.gov/wms?",
+            	{layers: "indlan", version: '1.3.0', transparent: 'TRUE'},
+            	{isBaseLayer: false, visibility: false}
+            );
+            map.addLayer(indlanLayer);
+			
+            federallandsLayer = new OpenLayers.Layer.WMS( 
+            	"US Federal Lands", 
+            	"http://webservices.nationalatlas.gov/wms?",
+            	{layers: "federallands", version: '1.3.0', transparent: 'TRUE'},
+            	{isBaseLayer: false, visibility: false}
+            );
+            map.addLayer(federallandsLayer);
+			
+			map.setCenter(
+                new OpenLayers.LonLat(lon, lat), zoom
+            );
+
+            map.addControl(new OpenLayers.Control.LayerSwitcher() );
+                
+        }
+        // =============== End of Initialization Function ============
+        
+	</script>
+	<style type="text/css">
+		#map {width:90%; height:500px}
+	</style>
+  </head>
+  <body onload="init()">
+    <h1>Basic OpenLayers Map</h1>
+    <p>Shows the basic use of OpenLayers with a set of WMS layers</p>
+	
+	<!-- Map DIV -->
+	<div id="map"></div>
+	
+  </body>
+</html>

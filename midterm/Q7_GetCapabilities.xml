@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WCS_Capabilities xmlns="http://www.opengis.net/wcs" xmlns:gml="http://www.opengis.net/gml" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.0.0">
+  <Service>
+    <fees>NONE</fees>
+    <accessConstraints>NONE</accessConstraints>
+  </Service>
+  <Capability>
+    <Request>
+      <GetCapabilities>
+        <DCPType>
+          <HTTP>
+            <Get>
+              <OnlineResource xlink:href="http://sdf.ndbc.noaa.gov/thredds/wcs/hfradar_uswc_500m" />
+            </Get>
+          </HTTP>
+        </DCPType>
+      </GetCapabilities>
+      <DescribeCoverage>
+        <DCPType>
+          <HTTP>
+            <Get>
+              <OnlineResource xlink:href="http://sdf.ndbc.noaa.gov/thredds/wcs/hfradar_uswc_500m" />
+            </Get>
+          </HTTP>
+        </DCPType>
+      </DescribeCoverage>
+      <GetCoverage>
+        <DCPType>
+          <HTTP>
+            <Get>
+              <OnlineResource xlink:href="http://sdf.ndbc.noaa.gov/thredds/wcs/hfradar_uswc_500m" />
+            </Get>
+          </HTTP>
+        </DCPType>
+      </GetCoverage>
+    </Request>
+    <Exception>
+      <Format>application/vnd.ogc.se_xml</Format>
+    </Exception>
+  </Capability>
+  <ContentMetadata>
+    <CoverageOfferingBrief>
+      <description>v                             m s-1                         true  surface_northward_sea_water_velocity</description>
+      <name>v</name>
+      <label>surface_northward_sea_water_velocity</label>
+      <lonLatEnvelope srsName="urn:ogc:def:crs:OGC:1.3:CRS84">
+        <gml:pos>-122.59346771240234 37.45548629760742</gml:pos>
+        <gml:pos>-122.0468978881836 38.13872528076172</gml:pos>
+        <gml:timePosition>2014-03-15T00:00:00Z</gml:timePosition>
+        <gml:timePosition>2014-03-19T00:00:00Z</gml:timePosition>
+      </lonLatEnvelope>
+    </CoverageOfferingBrief>
+    <CoverageOfferingBrief>
+      <description>u                             m s-1                         true  surface_eastward_sea_water_velocity</description>
+      <name>u</name>
+      <label>surface_eastward_sea_water_velocity</label>
+      <lonLatEnvelope srsName="urn:ogc:def:crs:OGC:1.3:CRS84">
+        <gml:pos>-122.59346771240234 37.45548629760742</gml:pos>
+        <gml:pos>-122.0468978881836 38.13872528076172</gml:pos>
+        <gml:timePosition>2014-03-15T00:00:00Z</gml:timePosition>
+        <gml:timePosition>2014-03-19T00:00:00Z</gml:timePosition>
+      </lonLatEnvelope>
+    </CoverageOfferingBrief>
+    <CoverageOfferingBrief>
+      <description>DOPy                                                        true  latitudinal dilution of precision</description>
+      <name>DOPy</name>
+      <label>latitudinal dilution of precision</label>
+      <lonLatEnvelope srsName="urn:ogc:def:crs:OGC:1.3:CRS84">
+        <gml:pos>-122.59346771240234 37.45548629760742</gml:pos>
+        <gml:pos>-122.0468978881836 38.13872528076172</gml:pos>
+        <gml:timePosition>2014-03-15T00:00:00Z</gml:timePosition>
+        <gml:timePosition>2014-03-19T00:00:00Z</gml:timePosition>
+      </lonLatEnvelope>
+    </CoverageOfferingBrief>
+    <CoverageOfferingBrief>
+      <description>DOPx                                                        true  longitudinal dilution of precision</description>
+      <name>DOPx</name>
+      <label>longitudinal dilution of precision</label>
+      <lonLatEnvelope srsName="urn:ogc:def:crs:OGC:1.3:CRS84">
+        <gml:pos>-122.59346771240234 37.45548629760742</gml:pos>
+        <gml:pos>-122.0468978881836 38.13872528076172</gml:pos>
+        <gml:timePosition>2014-03-15T00:00:00Z</gml:timePosition>
+        <gml:timePosition>2014-03-19T00:00:00Z</gml:timePosition>
+      </lonLatEnvelope>
+    </CoverageOfferingBrief>
+  </ContentMetadata>
+</WCS_Capabilities>
+

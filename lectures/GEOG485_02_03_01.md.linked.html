@@ -1,0 +1,163 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <style type="text/css">
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; }
+code > span.dt { color: #902000; }
+code > span.dv { color: #40a070; }
+code > span.bn { color: #40a070; }
+code > span.fl { color: #40a070; }
+code > span.ch { color: #4070a0; }
+code > span.st { color: #4070a0; }
+code > span.co { color: #60a0b0; font-style: italic; }
+code > span.ot { color: #007020; }
+code > span.al { color: #ff0000; font-weight: bold; }
+code > span.fu { color: #06287e; }
+code > span.er { color: #ff0000; font-weight: bold; }
+  </style>
+  <link rel="stylesheet" href="../page.css" type="text/css" />
+</head>
+<body>
+<div id="TOC">
+<ul>
+<li><a href="#module-2.3---web-based-mapping-clients-openlayers-javascript-framework---part-i">Module 2.3 - Web-based Mapping Clients: OpenLayers Javascript Framework - Part I</a><ul>
+<li><a href="#outline">Outline</a></li>
+<li><a href="#openlayers-capabilities">OpenLayers Capabilities</a></li>
+<li><a href="#distinguishing-characteristics-between-openlayers-and-google-maps">Distinguishing Characteristics Between OpenLayers and Google Maps</a></li>
+<li><a href="#resources">Resources</a></li>
+<li><a href="#demonstrations-and-examples">Demonstrations and Examples</a></li>
+<li><a href="#demonstration-and-examples---online-resources">Demonstration and Examples - Online Resources</a></li>
+<li><a href="#next-week---custom-features-and-wms-layers">Next Week - Custom Features and WMS Layers</a></li>
+</ul></li>
+</ul>
+</div>
+<h1 id="module-2.3---web-based-mapping-clients-openlayers-javascript-framework---part-i"><a href="#module-2.3---web-based-mapping-clients-openlayers-javascript-framework---part-i">Module 2.3 - Web-based Mapping Clients: OpenLayers Javascript Framework - Part I</a></h1>
+<h3 id="outline"><a href="#outline">Outline</a></h3>
+<ul>
+<li><p>Capabilities</p></li>
+<li><p>OpenLayers = Javascript (by example)</p></li>
+</ul>
+<h3 id="openlayers-capabilities"><a href="#openlayers-capabilities">OpenLayers Capabilities</a></h3>
+<ul>
+<li>Support for Multiple basemaps: <em>Google</em>, <em>Yahoo</em>, <em>Bing</em>, <em>OpenStreetMap</em></li>
+<li>Model for interaction with multiple map server platforms: <em>ArcGIS</em> (REST &amp; cache), <em>ArcIMS</em>, <em>KaMap</em>, <em>MapServer</em></li>
+<li>Support for key OGC standards: <em>WMS</em>, <em>WMTS</em>, <em>WFS</em>, <em>GML</em>, <em>KML</em>, <em>SLD</em></li>
+<li>Multiple control types: <em>Navigation</em>, <em>Pan</em>, <em>Zoom</em>, <em>Overview</em>, <em>Scale</em>, <em>Feature Creation &amp; Editing</em>, <em>Graticle</em>, <em>Layer Switcher</em></li>
+<li>Custom styled features with associated attributes: <em>Curve</em>, <em>LinearRing</em>, <em>LineString</em>, <em>MultiLineString</em>, <em>MultiPoint</em>, <em>MultiPolygon</em>, <em>Point</em>, <em>Polygon</em>, <em>Rectangle</em></li>
+<li>Support for many formats for data read and write: <em>ArcXML</em>, <em>ATOM</em>, <em>GeoRSS</em>, <em>GPX</em>, <em>KML</em>, <em>WKT</em>, any many others</li>
+<li>Open Source, enabling modification and integration into other systems (e.g. <a href="http://geoext.org/">GeoExt</a>)</li>
+</ul>
+<h3 id="distinguishing-characteristics-between-openlayers-and-google-maps"><a href="#distinguishing-characteristics-between-openlayers-and-google-maps">Distinguishing Characteristics Between OpenLayers and Google Maps</a></h3>
+<ul>
+<li>Greater emphasis on client-side processing - Client access and rendering of data files that Google's servers otherwise take care of (pros &amp; cons to this approach)</li>
+<li>Integrated support for OGC services and their products</li>
+<li>Support for different projections (adds complexity)</li>
+<li>API more rich in options ==&gt; more complexity</li>
+</ul>
+<h3 id="resources"><a href="#resources">Resources</a></h3>
+<p><a href="http://openlayers.org/">OpenLayers Home Page</a></p>
+<p><a href="http://dev.openlayers.org/apidocs/files/OpenLayers-js.html">Application Programming Interface (API) Reference</a></p>
+<p><a href="http://openlayers.org/dev/examples/">Examples</a></p>
+<h3 id="demonstrations-and-examples"><a href="#demonstrations-and-examples">Demonstrations and Examples</a></h3>
+<ul>
+<li><a href="examples/openLayers01_osm.html">Basic Mapper</a> (with OpenStreetMaps [OSM] base map)</li>
+</ul>
+<table class="sourceCode html numberLines" id="OpenLayers_01_demo"><tr class="sourceCode"><td class="lineNumbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+</pre></td><td class="sourceCode"><pre><code class="sourceCode html"><span class="kw">&lt;html</span><span class="ot"> xmlns=</span><span class="st">&quot;http://www.w3.org/1999/xhtml&quot;</span><span class="kw">&gt;</span>
+  <span class="kw">&lt;head&gt;</span>
+    <span class="kw">&lt;script</span><span class="ot"> type=</span><span class="st">&quot;text/javascript&quot;</span><span class="ot"> src=</span><span class="st">&quot;http://openlayers.org/api/OpenLayers.js&quot;</span><span class="kw">&gt;&lt;/script&gt;</span>
+    <span class="kw">&lt;script</span><span class="ot"> type=</span><span class="st">&quot;text/javascript&quot;</span><span class="kw">&gt;</span>        
+        <span class="co">// define global variables</span>
+        <span class="kw">var</span> lon = -<span class="fl">106.5</span>;
+        <span class="kw">var</span> lat = <span class="dv">36</span>;
+        <span class="kw">var</span> zoom = <span class="dv">3</span>;
+        <span class="kw">var</span> map;
+        <span class="kw">var</span> layer;
+
+        <span class="co">// =============== Initialization function ===================</span>
+<span class="er">        function init(){</span>
+<span class="er">            map = new OpenLayers.Map( &#39;map&#39; );</span>
+            
+            <span class="co">// =========== OSM Map ====================</span>
+<span class="er">            layer = new OpenLayers.Layer.OSM( &quot;Open Street Map&quot;);</span>
+<span class="er">            map.addLayer(layer);</span>
+            
+<span class="er">            map.setCenter(</span>
+<span class="er">                new OpenLayers.LonLat(lon, lat).transform(</span>
+<span class="er">                    new OpenLayers.Projection(&quot;EPSG:4326&quot;),</span>
+<span class="er">                    map.getProjectionObject()</span>
+                ), zoom
+            );                
+        }
+        <span class="co">// =============== End of Initialization Function ============</span>
+        
+    <span class="kw">&lt;/script&gt;</span>
+    <span class="kw">&lt;style</span><span class="ot"> type=</span><span class="st">&quot;text/css&quot;</span><span class="kw">&gt;</span>
+        <span class="fl">#map</span> <span class="kw">{width:</span><span class="dt">90%</span><span class="kw">;</span> <span class="kw">height:</span><span class="dt">500px</span><span class="kw">}</span>
+    <span class="kw">&lt;/style&gt;</span>
+  <span class="kw">&lt;/head&gt;</span>
+  <span class="kw">&lt;body</span><span class="ot"> onload=</span><span class="st">&quot;init()&quot;</span><span class="kw">&gt;</span>
+    <span class="kw">&lt;h1&gt;</span>Basic OpenLayers Map<span class="kw">&lt;/h1&gt;</span>
+    <span class="kw">&lt;p&gt;</span>Shows the basic use of OpenLayers with the <span class="kw">&lt;a</span><span class="ot"> href=</span><span class="st">&quot;http://www.openstreetmap.org/&quot;</span><span class="kw">&gt;</span>OpenStreetmap<span class="kw">&lt;/a&gt;</span> basemap<span class="kw">&lt;/p&gt;</span> 
+    <span class="co">&lt;!-- Map DIV --&gt;</span>
+    <span class="kw">&lt;div</span><span class="ot"> id=</span><span class="st">&quot;map&quot;</span><span class="kw">&gt;&lt;/div&gt;</span>    
+  <span class="kw">&lt;/body&gt;</span>
+<span class="kw">&lt;/html&gt;</span></code></pre></td></tr></table>
+<h3 id="demonstration-and-examples---online-resources"><a href="#demonstration-and-examples---online-resources">Demonstration and Examples - Online Resources</a></h3>
+<ul>
+<li><a href="examples/openLayers02_proprietary.html">Mapper</a> with a variety of base maps (Google, Bing, Yahoo, OSM)</li>
+<li>Basic Mapper with Controls: <a href="examples/openLayers03_none.html">No Controls</a>, <a href="examples/openLayers03_layerSwitcher.html">Layer Switcher</a>, <a href="examples/openLayers03_controlArray.html">Control Array</a>, <a href="examples/openLayers03_Overlay.html">Overlay Map</a>, <a href="examples/openLayers03_Scale.html">Scale Information</a></li>
+<li>Positioning Controls with the <code>moveTo</code> function: <a href="examples/openLayers04_MovedControls.html">two controls moved</a></li>
+</ul>
+<h2 id="next-week---custom-features-and-wms-layers"><a href="#next-week---custom-features-and-wms-layers">Next Week - Custom Features and WMS Layers</a></h2>
+</body>
+</html>

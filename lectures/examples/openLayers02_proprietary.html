@@ -1,0 +1,105 @@
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <link rel="stylesheet" href="../styles/olGoogleStyles.css" type="text/css">
+    <script type="text/javascript" src="http://openlayers.org/api/OpenLayers.js"></script>
+    <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
+    <script type="text/javascript">
+
+        // Bing Maps API key - request your own key from - http://www.bingmapsportal.com/
+        var apiKey = "AgQRwdWCKHZjOU-fQDBXp1sy8t3AJcjhvGeI4FCBMomdQ8wHBHnGsFdhZLD24cUR"
+        
+       // define global variables
+        var lon = -106.5;
+        var lat = 36;
+        var zoom = 3;
+        var map;
+        var gphy, gmap, ghyb, gsat;                    // Google Maps Layers	
+        var bingroad, binghybrid, bingaerial;          // Bing Maps Layers
+        var OSMlayer;                                  // OpenStreetMap Layer  
+        
+        
+        // =============== Initialization function ===================
+        function init(){
+            map = new OpenLayers.Map( 'map',{
+            maxExtent: new OpenLayers.Bounds(
+                -128 * 156543.0339,
+                -128 * 156543.0339,
+                128 * 156543.0339,
+                128 * 156543.0339),
+                maxResolution: 156543.0339,                
+                units: 'm',
+                projection: new OpenLayers.Projection('EPSG:3857'),
+                displayProjection: new OpenLayers.Projection("EPSG:4326"),
+            } );
+            
+            // ================= Google Maps ====================            
+            gphy = new OpenLayers.Layer.Google(
+                "Google Physical",
+                {type: google.maps.MapTypeId.TERRAIN}
+            );
+            gmap = new OpenLayers.Layer.Google(
+                "Google Streets", // the default
+                {numZoomLevels: 20}
+            );
+            ghyb = new OpenLayers.Layer.Google(
+                "Google Hybrid",
+                {type: google.maps.MapTypeId.HYBRID, numZoomLevels: 20}
+            );
+            gsat = new OpenLayers.Layer.Google(
+                "Google Satellite",
+                {type: google.maps.MapTypeId.SATELLITE, numZoomLevels: 22}
+            );
+
+            map.addLayers([gphy, gmap, ghyb, gsat]);
+
+            
+            // ================= Bing layers ====================
+            bingroad = new OpenLayers.Layer.Bing({
+                name: "Bing Roads",
+                key: apiKey,
+                type: "Road"
+            });
+            binghybrid = new OpenLayers.Layer.Bing({
+                name: "Bing Hybrid",
+                key: apiKey,
+                type: "AerialWithLabels"
+            });
+            bingaerial = new OpenLayers.Layer.Bing({
+                name: "Bing Aerial Imagery",
+                key: apiKey,
+                type: "Aerial"
+            });
+
+            map.addLayers([bingroad, binghybrid, bingaerial]);
+
+            // ================= OSM Map ====================
+            OSMlayer = new OpenLayers.Layer.OSM( "Simple OSM Map");
+            map.addLayer(OSMlayer);
+
+            
+            // Google.v3 uses EPSG:900913 as projection, so we have to
+            // transform our coordinates
+            map.setCenter(new OpenLayers.LonLat(lon,lat).transform(
+                new OpenLayers.Projection("EPSG:4326"),
+                map.getProjectionObject()
+             ), zoom);
+                
+            map.addControl(new OpenLayers.Control.LayerSwitcher() );
+        }
+        // =============== End of Initialization Function ============
+        
+    </script>
+    <style type="text/css">
+        #map {width:90%; height:500px}
+    </style>
+  </head>
+  <body onload="init()">
+    <h1>Basic OpenLayers Map</h1>
+    <p>Shows the basic use of openlayers with a variety of basemaps</p>
+
+    <!-- Map DIV -->
+    <div id="map"></div>
+    
+  </body>
+</html>
