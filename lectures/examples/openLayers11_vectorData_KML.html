@@ -8,6 +8,7 @@
         var lon = -106.624899;
         var lat = 35.084506;
         var zoom = 18;
+        var myProjection = new OpenLayers.Projection("EPSG:4326")
         var map;
         var Layers = new Object();
         var bmngLayer, countiesLayer, indlandLayer, federallandsLayer;
@@ -20,15 +21,16 @@
             		numZoomLevels: 20 // default=16
             	});
             
-			// =========== BMNG Base Map ====================
-			// From http://edacwms.unm.edu/cgi-bin/mapfiles/edacimagery?service=wms&request=GetCapabilities
-            Layers.bmngLayer = new OpenLayers.Layer.WMS( 
-            	"Background Imagery", 
-            	"http://edacwms.unm.edu/cgi-bin/mapfiles/edacimagery?",
-            	{layers: "bmng8km,bmng2km,bmng500mA1,bmng500mA2,bmng500mB1,bmng500mB2,bmng500mC1,bmng500mC2,bmng500mD1,bmng500mD2,landsat,doqq06_gaps,doqq06,doqq05,mrcog_2008_rast", version: '1.3.0', transparent: 'TRUE'},
-            	{isBaseLayer: true, displayInLayerSwitcher: false, attribution: "Imagery Courtesy of: NASA Blue Marble Next Generation, NM RGIS, MRCoG"}
+			// =========== USGS National Map WMS ====== 
+
+            // from http://basemap.nationalmap.gov/ArcGIS/services/USGSImageryTopo/MapServer/WMSServer?request=GetCapabilities&service=WMS
+			Layers.usImagery = new OpenLayers.Layer.WMS( 
+            	"US Imagery Tile Service - USGS", 
+            	"http://basemap.nationalmap.gov/arcgis/services/USGSImageryTopo/MapServer/WmsServer?",
+            	{layers: "0", version: '1.3.0', transparent: 'TRUE'},
+            	{isBaseLayer: true}
             );
-            map.addLayer(Layers.bmngLayer);
+            map.addLayer(Layers.usImagery)
 
 
 			// =========== Create and add a Vector layer to the map that that will contain the created features ====
@@ -116,7 +118,7 @@
                 style: myStatesStyle,
                 strategies: [new OpenLayers.Strategy.Fixed()],
                 protocol: new OpenLayers.Protocol.HTTP({
-                    url: "NMBoundary.kml",
+                    url: "data/NMBoundary.kml",
                     format: new OpenLayers.Format.KML({
                         extractAttributes: true
                     })
@@ -130,7 +132,7 @@
                 style: myCountiesStyle,
                 strategies: [new OpenLayers.Strategy.Fixed()],
                 protocol: new OpenLayers.Protocol.HTTP({
-                    url: "NMCounties.kml",
+                    url: "data/NMCounties.kml",
                     format: new OpenLayers.Format.KML({
                         extractAttributes: true
                     })
@@ -144,7 +146,7 @@
                 style:  myCitiesStyle,
                 strategies: [new OpenLayers.Strategy.Fixed()],
                 protocol: new OpenLayers.Protocol.HTTP({
-                    url: "NMCities.kml",
+                    url: "data/NMCities.kml",
                     format: new OpenLayers.Format.KML({
                         extractAttributes: true
                     })
@@ -166,7 +168,7 @@
         
 	</script>
 	<style type="text/css">
-		#map {width:90%; height:500px}
+		#map {width:800px; height:500px}
 		.olControlAttribution {
 			font-size: smaller; 
 			left: 3px !important; 
@@ -186,7 +188,7 @@
   </head>
   <body onload="init()">
     <h1>Basic OpenLayers Map</h1>
-    <p>Shows the basic use of OpenLayers with a set of WMS layers</p>
+    <p>Shows the basic use of OpenLayers with a set of WMS layers with vector overlays and KML layers</p>
 	
 	<!-- Map DIV -->
 	<div id="map"></div>
