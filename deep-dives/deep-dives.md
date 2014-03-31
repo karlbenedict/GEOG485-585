@@ -72,7 +72,46 @@ Question 9
 
 ## Week 11: Problem Definition and Data Acquisition ##
 
-TBA
+This deep dive is the first of two (plus milestones) that are related to a common theme of taking an online mapping problem from start to finish - from the definition of a problem, through the implementation of services and a basic client interface for the display of data for the specific problem.
+
+Before beginning to work on any mapping problem (online or otherwise), some basic questions need to asked and answered. Please consider and answer (in 2-4 sentences as appropriate for the question) the following questions relating to the problem that you will be working on for the forthcoming assignments:
+
+* What is the high-level description of the problem/question you want to help answer through the presentation of a collection of geographic data over the internet? Please answer in a short paragraph.
+
+* Who is the target audience for the information you want to provide?
+
+* What geographic region does your problem area represent? Please describe it in words (e.g. New Mexico, Alberta Canada, etc.) and define it in terms of a geographic (WGS84) (latitude and longitude) bounding box. 
+
+* What types of data do you want to include in your project? Include a description (data content: e.g. elevation data, hydrographic survey, etc.) and types (i.e. raster, vector).
+
+* What projection will you use for the presentation of your project data? Again, describe it, provide your reasoning for selection, and provide the corresponding EPSG code. 
+
+* Where do you anticipate acquiring data for the project from?
+
+* What barriers to acquiring and processing the needed data do you anticipate?
+
+While you are going to continue to acquire additional data for the project over the next couple of assignments, begin acquiring data for your selected project now. Specifically, find 5 datasets that are consistent with your description of the problem you are going to work on, and use `ogrinfo` or `gdalinfo` and any associated metadata to describe them in brief by answering the following questions:
+
+* What is the name of the dataset?
+
+* What type of data (raster/vector) are in the dataset?
+
+* What is its format?
+
+* What is its coordinate reference system?
+
+* What are the spatial extents of the dataset?
+
+For a dataset to be useful, you should be able to answer all five of these questions about it. Furthermore, you should seek out datasets that are in common formats that you know you can work with in a variety of applications (i.e. QGIS, ArcGIS, gdalinfo, ogrinfo, etc.). If you can’t access and use a dataset in one of these applications, you will probably have problems trying to use it in your project. As a point of reference you can execute the following commands to obtain a list of the supported vector and raster file formats supported by `gdal` and `ogr` on your computer:
+
+	ogrinfo --formats
+	gdalinfo --formats
+
+Also, below are links to the documentation for GeoServer - the platform that we will work with in a couple of weeks for publishing data - relating to the supported raster and vector formats in the default GeoServer installation. 
+
+Vector Data: [http://docs.geoserver.org/stable/en/user/data/vector/index.html](http://docs.geoserver.org/stable/en/user/data/vector/index.html)
+
+Raster Data [http://docs.geoserver.org/stable/en/user/data/raster/index.html](http://docs.geoserver.org/stable/en/user/data/raster/index.html)
 
 
 ## Week 14: Data Integration and Styling in GeoServer ##
