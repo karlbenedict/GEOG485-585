@@ -118,7 +118,7 @@
                 style: myStatesStyle,
                 strategies: [new OpenLayers.Strategy.Fixed()],
                 protocol: new OpenLayers.Protocol.HTTP({
-                    url: "data/NMBoundary.kml",
+                    url: "http://kkb-web.s3.amazonaws.com/data/tl_2010_35_state10.kml",
                     format: new OpenLayers.Format.KML({
                         extractAttributes: true
                     })
@@ -132,7 +132,7 @@
                 style: myCountiesStyle,
                 strategies: [new OpenLayers.Strategy.Fixed()],
                 protocol: new OpenLayers.Protocol.HTTP({
-                    url: "data/NMCounties.kml",
+                    url: "http://kkb-web.s3.amazonaws.com/data/NMCounties.kml",
                     format: new OpenLayers.Format.KML({
                         extractAttributes: true
                     })
@@ -146,7 +146,7 @@
                 style:  myCitiesStyle,
                 strategies: [new OpenLayers.Strategy.Fixed()],
                 protocol: new OpenLayers.Protocol.HTTP({
-                    url: "data/NMCities.kml",
+                    url: "http://kkb-web.s3.amazonaws.com/data/NMCities.kml",
                     format: new OpenLayers.Format.KML({
                         extractAttributes: true
                     })
