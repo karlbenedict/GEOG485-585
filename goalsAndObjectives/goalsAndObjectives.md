@@ -450,9 +450,11 @@ At the end of this class students will understand that
 
 ### Weekly Milestone - A Customized OpenLayers Mapping Client ###
 
+[Week 11 Milestone](http://tinyurl.com/px7eomw)
 
 ### Deep Dive - Problem Definition and Data Acquisition ###
 
+[Week 11 Deep Dive](http://tinyurl.com/pasojrn)
 
 ### Readings ###
 
