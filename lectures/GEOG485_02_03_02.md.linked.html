@@ -1,0 +1,335 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <style type="text/css">
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; }
+code > span.dt { color: #902000; }
+code > span.dv { color: #40a070; }
+code > span.bn { color: #40a070; }
+code > span.fl { color: #40a070; }
+code > span.ch { color: #4070a0; }
+code > span.st { color: #4070a0; }
+code > span.co { color: #60a0b0; font-style: italic; }
+code > span.ot { color: #007020; }
+code > span.al { color: #ff0000; font-weight: bold; }
+code > span.fu { color: #06287e; }
+code > span.er { color: #ff0000; font-weight: bold; }
+  </style>
+  <link rel="stylesheet" href="../page.css" type="text/css" />
+</head>
+<body>
+<div id="TOC">
+<ul>
+<li><a href="#module-2.3---web-based-mapping-clients-openlayers-javascript-framework---part-ii">Module 2.3 - Web-based Mapping Clients: OpenLayers Javascript Framework - Part II</a><ul>
+<li><a href="#outline">Outline</a></li>
+<li><a href="#map-object-options">Map Object Options</a></li>
+<li><a href="#map-object-options---continued">Map Object Options - continued</a></li>
+<li><a href="#map-object-options---continued-1">Map Object Options - continued</a></li>
+<li><a href="#map-object-options---continued-2">Map Object Options - continued</a></li>
+<li><a href="#map-object-options---continued-3">Map Object Options - continued</a></li>
+<li><a href="#layer-object-options">Layer Object Options</a></li>
+<li><a href="#layer-object-options---continued">Layer Object Options - continued</a></li>
+<li><a href="#layer-object-options---continued-1">Layer Object Options - continued</a></li>
+<li><a href="#layer-object-options---continued-2">Layer Object Options - continued</a></li>
+<li><a href="#layer-object-options---continued-3">Layer Object Options - continued</a></li>
+<li><a href="#additional-map-and-layer-object-functions-events">Additional Map and Layer Object Functions &amp; Events</a></li>
+<li><a href="#wms-layer-configuration">WMS Layer Configuration</a></li>
+<li><a href="#vector-layer-configuration">Vector Layer Configuration</a></li>
+<li><a href="#vector-layer-configuration---continued">Vector Layer Configuration - Continued</a></li>
+<li><a href="#vector-layer-configuration---continued-1">Vector Layer Configuration - Continued</a></li>
+</ul></li>
+</ul>
+</div>
+<h1 id="module-2.3---web-based-mapping-clients-openlayers-javascript-framework---part-ii"><a href="#module-2.3---web-based-mapping-clients-openlayers-javascript-framework---part-ii">Module 2.3 - Web-based Mapping Clients: OpenLayers Javascript Framework - Part II</a></h1>
+<h3 id="outline"><a href="#outline">Outline</a></h3>
+<ul>
+<li><p>More detailed Map Object Options</p></li>
+<li><p>More detailed Layer Object Options</p></li>
+<li><p>Additional Map Layer Types - With Examples</p></li>
+</ul>
+<h3 id="map-object-options"><a href="#map-object-options">Map Object Options</a></h3>
+<p>Map Object Options <a href="http://dev.openlayers.org/releases/OpenLayers-2.13/doc/apidocs/files/OpenLayers/Map-js.html">API Reference</a></p>
+<p>Two methods for constructing a new <code>OpenLayers.Map</code> object</p>
+<table class="sourceCode html numberLines" id="OpenLayers_02_Map_options"><tr class="sourceCode"><td class="lineNumbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+</pre></td><td class="sourceCode"><pre><code class="sourceCode html">    // create a map with default options in an element with the id &quot;map1&quot;
+    var map = new OpenLayers.Map(&quot;map1&quot;);
+    
+    // create a map with non-default options in an element with id &quot;map2&quot;
+    var options = {
+        maxExtent: new OpenLayers.Bounds(-200000, -200000, 200000, 200000),
+        maxResolution: 156543,
+        units: &#39;m&#39;,
+        projection: &quot;EPSG:41001&quot;
+    };
+    var map = new OpenLayers.Map(&quot;map2&quot;, options);
+    
+    // map with non-default options - same as above but with a single argument
+    var map = new OpenLayers.Map({
+        div: &quot;map_id&quot;,
+        maxExtent: new OpenLayers.Bounds(-200000, -200000, 200000, 200000),
+        maxResolution: 156543,
+        units: &#39;m&#39;,
+        projection: &quot;EPSG:41001&quot;
+    });</code></pre></td></tr></table>
+<h3 id="map-object-options---continued"><a href="#map-object-options---continued">Map Object Options - continued</a></h3>
+<p>Excerpts from the API documentation</p>
+<dl>
+<dt><code>allOverlays</code></dt>
+<dd><p>{Boolean} Allow the map to function with “overlays” only. Defaults to false. If true, the lowest layer in the draw order will act as the base layer. In addition, if set to true, all layers will have isBaseLayer set to false when they are added to the map.</p>
+</dd>
+<dt><code>div</code></dt>
+<dd><p>{DOMElement|String} The element that contains the map (or an id for that element). If the OpenLayers.Map constructor is called with two arguments, this should be provided as the first argument. Alternatively, the map constructor can be called with the options object as the only argument. In this case (one argument), a div property may or may not be provided. If the div property is not provided, the map can be rendered to a container later using the render method.</p>
+</dd>
+</dl>
+<h3 id="map-object-options---continued-1"><a href="#map-object-options---continued-1">Map Object Options - continued</a></h3>
+<dl>
+<dt><code>layers</code></dt>
+<dd><p>{Array(OpenLayers.Layer)} Ordered list of layers in the map</p>
+</dd>
+<dt><code>tileSize</code></dt>
+<dd><p>{OpenLayers.Size} Set in the map options to override the default tile size for this map.</p>
+</dd>
+<dt><code>projection</code></dt>
+<dd><p>{String} Set in the map options to override the default projection string this map - also set <code>maxExtent</code>, <code>maxResolution</code>, and <code>units</code> if appropriate. Default is &quot;EPSG:4326&quot;.</p>
+</dd>
+<dt><code>units</code></dt>
+<dd><p>{String} The map units. Defaults to 'degrees'. Possible values are 'degrees' (or 'dd'), 'm', 'ft', 'km', 'mi', 'inches'.</p>
+</dd>
+</dl>
+<h3 id="map-object-options---continued-2"><a href="#map-object-options---continued-2">Map Object Options - continued</a></h3>
+<dl>
+<dt><code>resolutions</code></dt>
+<dd><p>{Array(Float)} A list of map resolutions (map units per pixel) in descending order. If this is not set in the layer constructor, it will be set based on other resolution related properties (maxExtent, maxResolution, maxScale, etc.).</p>
+</dd>
+<dt><code>maxResolution</code></dt>
+<dd><p>{Float} Default max is 360 deg / 256 px, which corresponds to zoom level 0 on gmaps. Specify a different value in the map options if you are not using a geographic projection and displaying the whole world.</p>
+</dd>
+<dt><code>minResolution</code></dt>
+<dd><p>{Float}</p>
+</dd>
+<dt><code>maxScale</code></dt>
+<dd><p>{Float}</p>
+</dd>
+<dt><code>minScale</code></dt>
+<dd><p>{Float}</p>
+</dd>
+</dl>
+<h3 id="map-object-options---continued-3"><a href="#map-object-options---continued-3">Map Object Options - continued</a></h3>
+<dl>
+<dt><code>maxExtent</code></dt>
+<dd><p>{OpenLayers.Bounds} The maximum extent for the map. Defaults to the whole world in decimal degrees (-180, -90, 180, 90). Specify a different extent in the map options if you are not using a geographic projection and displaying the whole world.</p>
+</dd>
+<dt><code>minExtent</code></dt>
+<dd><p>{OpenLayers.Bounds}</p>
+</dd>
+<dt><code>restrictedExtent</code></dt>
+<dd><p>{OpenLayers.Bounds} Limit map navigation to this extent where possible. If a non-null restrictedExtent is set, panning will be restricted to the given bounds. In addition, zooming to a resolution that displays more than the restricted extent will center the map on the restricted extent. If you wish to limit the zoom level or resolution, use maxResolution.</p>
+</dd>
+<dt><code>numZoomLevels</code></dt>
+<dd><p>{Integer} Number of zoom levels for the map. Defaults to 16. Set a different value in the map options if needed.</p>
+</dd>
+</dl>
+<h3 id="layer-object-options"><a href="#layer-object-options">Layer Object Options</a></h3>
+<p>Layer Object Options <a href="http://dev.openlayers.org/releases/OpenLayers-2.13/doc/apidocs/files/OpenLayers/Layer-js.html">API Reference</a></p>
+<p>Common Pattern of Layer Object Creation (varies some depending upon the specific layer type)</p>
+<table class="sourceCode html numberLines" id="OpenLayers_02_Layer_options"><tr class="sourceCode"><td class="lineNumbers"><pre>1
+2
+3
+4
+5
+6
+</pre></td><td class="sourceCode"><pre><code class="sourceCode html">    new OpenLayers.Layer.*** (
+        &#39;layer name&#39;,
+        &#39;layer URL&#39;,
+        {server-related options}, 
+        {OpenLayers Layer Object options}
+    )</code></pre></td></tr></table>
+<h3 id="layer-object-options---continued"><a href="#layer-object-options---continued">Layer Object Options - continued</a></h3>
+<dl>
+<dt><code>id</code></dt>
+<dd><p>{String}</p>
+</dd>
+<dt><code>name</code></dt>
+<dd><p>{String}</p>
+</dd>
+<dt><code>isBaseLayer</code></dt>
+<dd><p>{Boolean} Whether or not the layer is a base layer. This should be set individually by all subclasses. Default is false</p>
+</dd>
+<dt><code>displayInLayerSwitcher</code></dt>
+<dd><p>{Boolean} Display the layer’s name in the layer switcher. Default is true.</p>
+</dd>
+<dt><code>visibility</code></dt>
+<dd><p>{Boolean} The layer should be displayed in the map. Default is true.</p>
+</dd>
+</dl>
+<h3 id="layer-object-options---continued-1"><a href="#layer-object-options---continued-1">Layer Object Options - continued</a></h3>
+<dl>
+<dt><code>attribution</code></dt>
+<dd><p>{String} Attribution string, displayed when an OpenLayers.Control.Attribution has been added to the map.</p>
+</dd>
+<dt><code>projection</code></dt>
+<dd><p>{OpenLayers.Projection} or {String} Set in the layer options to override the default projection string this layer - also set maxExtent, maxResolution, and units if appropriate. Can be either a string or an OpenLayers.Projection object when created -- will be converted to an object when setMap is called if a string is passed.</p>
+</dd>
+<dt><code>units</code></dt>
+<dd><p>{String} The layer map units. Defaults to 'degrees'. Possible values are 'degrees'’ (or 'dd'), 'm', 'ft', 'km', 'mi', 'inches'.</p>
+</dd>
+<dt><code>scales</code></dt>
+<dd><p>{Array} An array of map scales in descending order. The values in the array correspond to the map scale denominator. Note that these values only make sense if the display (monitor) resolution of the client is correctly guessed by whomever is configuring the application. In addition, the units property must also be set. Use resolutions instead wherever possible.</p>
+</dd>
+</dl>
+<h3 id="layer-object-options---continued-2"><a href="#layer-object-options---continued-2">Layer Object Options - continued</a></h3>
+<dl>
+<dt><code>resolutions</code></dt>
+<dd><p>{Array} A list of map resolutions (map units per pixel) in descending order. If this is not set in the layer constructor, it will be set based on other resolution related properties (maxExtent, maxResolution, maxScale, etc.).</p>
+</dd>
+<dt><code>maxExtent</code></dt>
+<dd><p>{OpenLayers.Bounds} The center of these bounds will not stray outside of the viewport extent during panning. In addition, if displayOutsideMaxExtent is set to false, data will not be requested that falls completely outside of these bounds.</p>
+</dd>
+<dt><code>minExtent</code></dt>
+<dd><p>{OpenLayers.Bounds}</p>
+</dd>
+<dt><code>maxResolution</code></dt>
+<dd><p>{Float} Default max is 360 deg / 256 px, which corresponds to zoom level 0 on gmaps. Specify a different value in the layer options if you are not using a geographic projection and displaying the whole world.</p>
+</dd>
+<dt><code>minResolution</code></dt>
+<dd><p>{Float}</p>
+</dd>
+</dl>
+<h3 id="layer-object-options---continued-3"><a href="#layer-object-options---continued-3">Layer Object Options - continued</a></h3>
+<dl>
+<dt><code>numZoomLevels</code></dt>
+<dd><p>{Integer}</p>
+</dd>
+<dt><code>minScale</code></dt>
+<dd><p>{Float}</p>
+</dd>
+<dt><code>maxScale</code></dt>
+<dd><p>{Float}</p>
+</dd>
+<dt><code>displayOutsideMaxExtent</code></dt>
+<dd><p>{Boolean} Request map tiles that are completely outside of the max extent for this layer. Defaults to false.</p>
+</dd>
+<dt><code>transitionEffect</code></dt>
+<dd><p>{String} The transition effect to use when the map is panned or zoomed.</p>
+</dd>
+<dt>There are currently two supported values</dt>
+<dd><p><code>null</code> No transition effect (the default).</p>
+</dd>
+<dd><p><code>resize</code> Existing tiles are resized on zoom to provide a visual effect of the zoom having taken place immediately. As the new tiles become available, they are drawn over top of the resized tiles.</p>
+</dd>
+</dl>
+<h3 id="additional-map-and-layer-object-functions-events"><a href="#additional-map-and-layer-object-functions-events">Additional Map and Layer Object Functions &amp; Events</a></h3>
+<p>Both Map and Layer Objects have a number of associated functions as well</p>
+<ul>
+<li>Retrieving object properties programmatically with <code>Get</code> functions.</li>
+<li>Modifying existing object properties with <code>Set</code> functions</li>
+<li>Map destruction, and reconfiguration</li>
+<li>Linkage of object events with Javascript functions</li>
+</ul>
+<h3 id="wms-layer-configuration"><a href="#wms-layer-configuration">WMS Layer Configuration</a></h3>
+<p>Some key issues to be aware of when using the <a href="http://dev.openlayers.org/releases/OpenLayers-2.13/doc/apidocs/files/OpenLayers/Layer/WMS-js.html">WMS Layer Class</a>:</p>
+<ul>
+<li>The <em>projection</em> of the map object must be supported by the included WMS service (review the WMS GetCapabilities response to see what projections are supported by the service)</li>
+<li>The <em>layers</em> parameter/property must be provided as part of the server-related property list (the layer names also come from the GetCapabilities response)</li>
+<li>Other WMS parameters may be provided as well to &quot;adjust&quot; the request automatically generated by OpenLayers</li>
+</ul>
+<p>Sample WMS Layer Object Creation</p>
+<table class="sourceCode html numberLines" id="OpenLayers_02_WmsLayer_options"><tr class="sourceCode"><td class="lineNumbers"><pre>1
+2
+3
+4
+5
+6
+7
+</pre></td><td class="sourceCode"><pre><code class="sourceCode html">    countiesLayer = new OpenLayers.Layer.WMS( 
+        &quot;US Counties&quot;, 
+        &quot;http://webservices.nationalatlas.gov/wms?&quot;,
+        {layers: &quot;counties&quot;, version: &#39;1.3.0&#39;, transparent: &#39;TRUE&#39;},
+        {isBaseLayer: false, visibility: false, opacity: .8}
+    );
+    map.addLayer(countiesLayer);</code></pre></td></tr></table>
+<p><a href="http://karlbenedict.com/GEOG485-585/lectures/examples/openLayers10_wms01.html">Example</a></p>
+<h3 id="vector-layer-configuration"><a href="#vector-layer-configuration">Vector Layer Configuration</a></h3>
+<p>Vector layers support</p>
+<ul>
+<li>External Data in a Variety of supported <a href="http://dev.openlayers.org/releases/OpenLayers-2.13/doc/apidocs/files/OpenLayers/Format-js.html">formats</a> for both <em>reading</em> and <em>writing</em> (just a sample): ArcXML.Features, GeoJSON, GeoRSS, GPX, JSON, KML, WFS, WKT</li>
+<li>Directly encoded [geometries][OpenLayers.Geometry API Link]: Collection, Curve, LinearRing, LineString, MultiLineString, MultiPoint, MultiPolygon, Point, Polygon, Rectangle</li>
+<li>User created features, including support for interactive editing of features</li>
+<li><a href="http://dev.openlayers.org/releases/OpenLayers-2.13/doc/apidocs/files/OpenLayers/Feature/Vector-js.html#OpenLayers.Feature.Vector.style">Styling</a> of Vector features</li>
+</ul>
+<h3 id="vector-layer-configuration---continued"><a href="#vector-layer-configuration---continued">Vector Layer Configuration - Continued</a></h3>
+<p>Vector Layer Objects are Typically Defined using three OpenLayers classes</p>
+<dl>
+<dt><code>Protocol</code></dt>
+<dd><p>Connection protocol for requesting the data that would be provided from an external source</p>
+</dd>
+<dt><code>Format</code></dt>
+<dd><p>The OpenLayers supported format of the vector data object</p>
+</dd>
+<dt><code>Strategy</code></dt>
+<dd><p>A specification of how OpenLayers should request the data from the server, and also handle the data within the client (browser).</p>
+</dd>
+</dl>
+<h3 id="vector-layer-configuration---continued-1"><a href="#vector-layer-configuration---continued-1">Vector Layer Configuration - Continued</a></h3>
+<p>Sample Point Feature Object creation</p>
+<table class="sourceCode html numberLines" id="OpenLayers_02_VectorLayer_options01"><tr class="sourceCode"><td class="lineNumbers"><pre>1
+2
+3
+</pre></td><td class="sourceCode"><pre><code class="sourceCode html">    var Coord_classroom = new OpenLayers.Geometry.Point(-106.624073,35.084280);
+    var Point_classroom = new OpenLayers.Feature.Vector(Coord_classroom);
+    Layers[&quot;localFeatures&quot;].addFeatures([Point_classroom])</code></pre></td></tr></table>
+<p>Sample KML Layer Object creation</p>
+<table class="sourceCode html numberLines" id="OpenLayers_02_KMLayer_options01"><tr class="sourceCode"><td class="lineNumbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+</pre></td><td class="sourceCode"><pre><code class="sourceCode html">    Layers.counties = new OpenLayers.Layer.Vector(&quot;KML - Counties&quot;, {
+        projection: map.displayProjection,
+        strategies: [new OpenLayers.Strategy.Fixed()],
+        protocol: new OpenLayers.Protocol.HTTP({
+            url: &quot;NMCounties.kml&quot;,
+            format: new OpenLayers.Format.KML({
+                extractAttributes: true
+            })
+        })
+    });
+    map.addLayer(Layers.counties)</code></pre></td></tr></table>
+<p><a href="http://karlbenedict.com/GEOG485-585/lectures/examples/openLayers11_vectorData_KML.html">Example</a></p>
+</body>
+</html>
