@@ -69,6 +69,14 @@ h1 {
 h2 {
 	background-color: #1d1f6d;
 	padding: 8px;
+	
+}
+
+h3 {
+	padding: 8px;
+	border-style: none;
+	border-color: #1d1f6d;
+	border-top-style: solid;
 }
 
 p.caption {

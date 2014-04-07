@@ -456,4 +456,37 @@ _Peer Review:_ This week's assignment will include a peer review component. Spec
 2. Provide a _substantive_, _constructive_, and _civil_ comment to _two_ of the posted discussion items posted for peer-review. Please complete the peer-review as soon as possible so that your colleagues can benefit most from your input. Complete the peer-review no later than the required end-of-term portfolio review deadline. Think about the following ideas for your review: _what did I learn from this page_, _what was done well_, _what could be improved_
 
 
+## Week 12: WMS and WFS Access in Quantum GIS (QGIS) ##
+
+Add three WMS layers to a new map project in QGIS, with one coming from each of the following collections of WMS services.
+
+Some things to keep an eye out for:
+
+* Any scale limits described for the various layers
+* Layer names can sometimes be a bit confusing
+* You can double-check the base URL advertised for the service by reviewing the content of the `GetCapabilities` area of the `service` metadata provided as part of the `GetCapabilities` request. 
+
+_USGS's National Maps Service Endpoints Page_: [http://viewer.nationalmap.gov/example/services/serviceList.html](http://viewer.nationalmap.gov/example/services/serviceList.html)
+
+_NRCS Soil Data Mart WMS Service_: [http://SDMDataAccess.nrcs.usda.gov/Spatial/SDM.wms?SERVICE=WMS&REQUEST=GetCapabilities](http://SDMDataAccess.nrcs.usda.gov/Spatial/SDM.wms?SERVICE=WMS&REQUEST=GetCapabilities)
+
+In your write-up include the names of the layers you added, which service they came from, and screen shots (one for for each of the added layers) showing each of them in the QGIS client interface.
+
+Add three WFS layers to the same QGIS project, two based upon data available from the RGIS data browser (http://rgis.unm.edu/browsedata), and one based on the USGS GeoNames WFS service ([http://services.nationalmap.gov/arcgis/services/WFS/geonames/MapServer/WFSServer?request=GetCapabilities&service=WFS](http://services.nationalmap.gov/arcgis/services/WFS/geonames/MapServer/WFSServer?request=GetCapabilities&service=WFS).   In RGIS you can see the available services for a specific data layer by 
+
+1. Selecting the collection you want to view by selecting from the directory tree on the left side of the page; 
+
+2. Identifying the data sets that have available OGC WMS and/or WFS services as indicated by the "Services" entry for each dataset, where the provided links are for the GetCapabilities requests for the provided services:
+
+![](images/RGIS_OGCLinkScreenshot.jpg)\ 
+
+_Important_: Before adding the GeoNames layer, you may need to go into the preferences for QGIS and under the "Network" options increase the "Timeout for Network Requests(ms)" value to a larger number than the default 60000 (1 minute) (300000 worked for me for accessing the Historic and Administrative feature types). If you don't do this, QGIS might give up on the request before it has been fulfilled by the server.  
+
+![](images/QGIS_TimeoutSetting.png)\ 
+
+
+In your write-up include the names of the layers you added, and the GetCapabilities requests related to those layers. Also include screen shots (again, one for each added layer) showing each layer in your QGIS project.  
+
+
+
 <div class="license"><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />This work by <span xmlns:cc="http://creativecommons.org/ns#" property="cc:attributionName">Karl Benedict</span> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.</div>

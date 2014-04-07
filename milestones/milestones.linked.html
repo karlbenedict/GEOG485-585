@@ -25,6 +25,7 @@
 <li><a href="#week-7---wms-getmap-requests-map-scale-and-aspect-ratio-calculations">Week 7 - WMS GetMap Requests, Map Scale and Aspect Ratio Calculations</a></li>
 <li><a href="#week-10---openlayers-mapping">Week 10 - OpenLayers Mapping</a></li>
 <li><a href="#week-11---a-customized-openlayers-mapping-client">Week 11 - A Customized OpenLayers Mapping Client</a></li>
+<li><a href="#week-12-wms-and-wfs-access-in-quantum-gis-qgis">Week 12: WMS and WFS Access in Quantum GIS (QGIS)</a></li>
 </ul></li>
 </ul>
 </div>
@@ -415,6 +416,26 @@ http://raster.nationalmap.gov/ArcGIS/services/TNM_Large_Scale_Imagery/MapServer/
 <li><p>Create a new Discussion Item in Learn entitled: &quot;Page for Peer-Review &lt;Your Name&gt;&quot; at the same time you link your milestone to your homepage. Include in the post the web address of your web page that you created for this assignment.</p></li>
 <li><p>Provide a <em>substantive</em>, <em>constructive</em>, and <em>civil</em> comment to <em>two</em> of the posted discussion items posted for peer-review. Please complete the peer-review as soon as possible so that your colleagues can benefit most from your input. Complete the peer-review no later than the required end-of-term portfolio review deadline. Think about the following ideas for your review: <em>what did I learn from this page</em>, <em>what was done well</em>, <em>what could be improved</em></p></li>
 </ol>
+<h2 id="week-12-wms-and-wfs-access-in-quantum-gis-qgis"><a href="#week-12-wms-and-wfs-access-in-quantum-gis-qgis">Week 12: WMS and WFS Access in Quantum GIS (QGIS)</a></h2>
+<p>Add three WMS layers to a new map project in QGIS, with one coming from each of the following collections of WMS services.</p>
+<p>Some things to keep an eye out for:</p>
+<ul>
+<li>Any scale limits described for the various layers</li>
+<li>Layer names can sometimes be a bit confusing</li>
+<li>You can double-check the base URL advertised for the service by reviewing the content of the <code>GetCapabilities</code> area of the <code>service</code> metadata provided as part of the <code>GetCapabilities</code> request.</li>
+</ul>
+<p><em>USGS's National Maps Service Endpoints Page</em>: <a href="http://viewer.nationalmap.gov/example/services/serviceList.html">http://viewer.nationalmap.gov/example/services/serviceList.html</a></p>
+<p><em>NRCS Soil Data Mart WMS Service</em>: <a href="http://SDMDataAccess.nrcs.usda.gov/Spatial/SDM.wms?SERVICE=WMS&amp;REQUEST=GetCapabilities">http://SDMDataAccess.nrcs.usda.gov/Spatial/SDM.wms?SERVICE=WMS&amp;REQUEST=GetCapabilities</a></p>
+<p>In your write-up include the names of the layers you added, which service they came from, and screen shots (one for for each of the added layers) showing each of them in the QGIS client interface.</p>
+<p>Add three WFS layers to the same QGIS project, two based upon data available from the RGIS data browser (http://rgis.unm.edu/browsedata), and one based on the USGS GeoNames WFS service (<a href="http://services.nationalmap.gov/arcgis/services/WFS/geonames/MapServer/WFSServer?request=GetCapabilities&amp;service=WFS">http://services.nationalmap.gov/arcgis/services/WFS/geonames/MapServer/WFSServer?request=GetCapabilities&amp;service=WFS</a>.   In RGIS you can see the available services for a specific data layer by</p>
+<ol style="list-style-type: decimal">
+<li><p>Selecting the collection you want to view by selecting from the directory tree on the left side of the page;</p></li>
+<li><p>Identifying the data sets that have available OGC WMS and/or WFS services as indicated by the &quot;Services&quot; entry for each dataset, where the provided links are for the GetCapabilities requests for the provided services:</p></li>
+</ol>
+<p><img src="images/RGIS_OGCLinkScreenshot.jpg" /> </p>
+<p><em>Important</em>: Before adding the GeoNames layer, you may need to go into the preferences for QGIS and under the &quot;Network&quot; options increase the &quot;Timeout for Network Requests(ms)&quot; value to a larger number than the default 60000 (1 minute) (300000 worked for me for accessing the Historic and Administrative feature types). If you don't do this, QGIS might give up on the request before it has been fulfilled by the server.</p>
+<p><img src="images/QGIS_TimeoutSetting.png" /> </p>
+<p>In your write-up include the names of the layers you added, and the GetCapabilities requests related to those layers. Also include screen shots (again, one for each added layer) showing each layer in your QGIS project.  </p>
 <div class="license">
 <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />This work by <span xmlns:cc="http://creativecommons.org/ns#" property="cc:attributionName">Karl Benedict</span> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
 </div>
