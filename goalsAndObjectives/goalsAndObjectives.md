@@ -486,13 +486,14 @@ At the end of this class students will understand that
 
 * The key to configuring a desktop client application is the GetCapabilities request for the needed service
 * The GetCapabilities request required by a particular client may consist of a base URL or a complete URL. 
-* Quantum GIS uses a base URL request model for self-configuration of WMS and WFS services
+* Quantum GIS uses a base URL request model for self-configuration of WMS, WFS and WCS services
 * ArcGIS uses a base URL request model for self-configuration of WMS, WCS, and WFS services
-* Both Quantum GIS and ArcGIS require additional configuration to enable WFS access 
+* ArcGIS requires additional configuration to enable WFS access 
 
 
 ### Weekly Milestone - WMS, WFS and WCS Access in Quantum GIS ###
 
+[Week 12 Milestone](http://tinyurl.com/q3pm646)
 
 ### Readings ###
 
@@ -500,9 +501,15 @@ At the end of this class students will understand that
 
 * Quantum GIS [User's Manual](http://www.qgis.org/en/docs/user_manual/), particularly the ["Working with OGC Services"](http://www.qgis.org/en/docs/user_manual/working_with_ogc/index.html) section.  
 
-* ArcGIS Desktop 10.1 [Overview of OGC and ISO TC211 Support](http://resources.arcgis.com/en/help/main/10.1/index.html#//003700000002000000)
+* ArcGIS Desktop 10.2 [About Using OGC Service Layers](http://resources.arcgis.com/en/help/main/10.2/index.html#/About_using_OGC_service_layers/00sp0000000n000000/)
 
-* ArcGIS Desktop 10.1 [About Using OGC Service Layers](http://resources.arcgis.com/en/help/main/10.1/index.html#//00sp0000000n000000)
+* ArcGIS Desktop 10.2 [Adding WMS Services](http://resources.arcgis.com/en/help/main/10.2/index.html#/Adding_WMS_services/00sp0000000s000000/)
+
+* ArcGIS Desktop 10.2 [Adding WCS Services to ArcMap 10.2](http://resources.arcgis.com/en/help/main/10.2/index.html#/Adding_a_WCS_service_to_ArcMap/00sp0000000z000000/)
+
+* ArcGIS Desktop 10.2 [Steps for connecting to an OGC WFS from within ArcCatalog](http://resources.arcgis.com/en/help/main/10.2/index.html#//00370000000p000000)
+
+* ArcGIS Desktop 10.2 [Steps for adding a WFS service to ArcMap](http://resources.arcgis.com/en/help/main/10.2/index.html#/Adding_a_WFS_service_to_ArcMap/00sp0000001m000000/)
 
 
 
