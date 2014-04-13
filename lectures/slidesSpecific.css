@@ -340,3 +340,327 @@ section#qgis---adding-services-and-layers---start.slide.level3 #imageBlock{
 	height:  320px;
 }
 
+
+
+/* Module 5.1 */
+
+#soa-review p {
+	display: inline;
+	padding: 0px;		
+}
+
+#soa-review p img {
+	height: 400px;
+	float: right;
+	margin-right: 40px;
+}
+
+#what-is-happening-behind-the-scenes p {
+	display:inline;
+	padding: 0px;
+	width: 800px;
+}
+
+#what-is-happening-behind-the-scenes p img {
+	height: 400px;
+	margin-right: auto;
+	margin-left: 190px;
+	background-color: rgba(255, 255, 255, 0.24);
+	
+}
+
+#server-configuration-options div {
+	display: inline;
+	padding: 0px;		
+}
+
+#server-configuration-options div img {
+	height: 400px;
+	float: right;
+	margin-right: 40px;
+	margin-left: 40px;
+}
+
+
+#serverConfigOptions_02 div {
+	display: inline;
+	padding: 0px;		
+}
+
+#serverConfigOptions_02 div img {
+	height: 400px;
+	float: right;
+	margin-right: 40px;
+	margin-left: 40px;
+}
+
+#wxs-service-configuration-options div {
+	display: inline;
+	padding: 0px;		
+}
+
+#wxs-service-configuration-options div img {
+height: 400px;
+float: left;
+margin-right: 40px;
+margin-left: 40px;
+}
+
+
+#WXSServerConfigOptions_02 div {
+	display: inline;
+	padding: 0px;		
+}
+
+#WXSServerConfigOptions_02 div img {
+	height: 400px;
+	float: left;
+	margin-right: 40px;
+	margin-left: 40px;
+}
+
+#data-component-configuration-options div {
+	display: inline;
+	padding: 0px;		
+}
+
+#data-component-configuration-options div img {
+	height: 400px;
+	float: right;
+	margin-right: 40px;
+	margin-left: 40px;
+}
+
+#dataConfigOptions_02 div {
+	display: inline;
+	padding: 0px;		
+}
+
+#dataConfigOptions_02 div img {
+	height: 400px;
+	float: right;
+	margin-right: 40px;
+	margin-left: 40px;
+}
+
+#data-integration-process p img {
+	background-color: rgba(255, 255, 255, 0.5);
+	margin-left: 100px;
+}
+
+#security-settings div {
+	display: inline;
+	padding: 0px;		
+}
+
+#security-settings div img {
+	height: 400px;
+	float: right;
+	margin-right: 40px;
+	margin-left: 40px;
+}
+
+#demonstration-of-geoserver-interface p {
+	display: inline;
+	padding: 0px;
+	margin-left: 85px;;	
+}
+
+#demonstration-of-geoserver-interface p img {
+	height: 400px;
+	float: right;
+	margin-right: 40px;
+	margin-left: 40px;
+}
+
+
+/* Module 5.2.1 */
+
+#SLD-header-styles_01 code.sourceCode.xml {
+font-size: medium;
+margin: 0;
+padding: 10px;
+display: block;
+overflow: scroll;
+height: 400px;
+background-color: rgba(255, 255, 255, 0.15);
+}
+
+#sampleSLD code.sourceCode.xml {
+font-size: medium;
+margin: 0;
+padding: 10px;
+display: block;
+overflow: scroll;
+height: 400px;
+background-color: rgba(255, 255, 255, 0.15);
+}
+
+#simple-geoserver-point-style p {
+display: inline;
+padding: 0px;
+margin-left: 10px;;	
+	
+}
+
+#simple-geoserver-point-style p img {
+	height: 200px;
+	float: right;
+	margin-right: 40px;
+	margin-left: 20px;
+	margin-top: 150px;
+}
+
+#sampleSLD_simplePoint code.sourceCode.xml {
+font-size: medium;
+margin: 0;
+padding: 10px;
+display: block;
+overflow: scroll;
+height: 400px;
+background-color: rgba(255, 255, 255, 0.15);
+width: 450px;	
+}
+
+#simple-geoserver-line-style p img {
+	margin-left: 75px;
+	px
+}
+
+#simple-geoserver-polygon-style p img {
+	margin-left: 75px;
+	px
+}
+
+#simple-geoserver-raster-style p {
+display: inline;
+padding: 0px;
+margin-left: 10px;;	
+	
+}
+
+#simple-geoserver-raster-style p img {
+	height: 130px;
+	float: right;
+	margin-right: 40px;
+	margin-left: 20px;
+	margin-top: 150px;
+	font-size: medium;
+}
+
+#simple-geoserver-raster-style code.sourceCode.xml {
+font-size: medium;
+margin: 0;
+padding: 10px;
+display: block;
+overflow: scroll;
+height: 400px;
+background-color: rgba(255, 255, 255, 0.15);
+width: 450px;	
+}
+
+#rasterSymbolizer code.sourceCode.xml {
+font-size: large;
+margin: 0;
+padding: 10px;
+display: block;
+overflow: scroll;
+height: 400px;
+background-color: rgba(255, 255, 255, 0.15);
+width: 700px;	
+}
+
+#SLDrulesVectorSymbolization_01 pre {
+	margin-left: 50px;
+	font-size: large;
+}
+
+#SLDrulesVectorSymbolization_02 pre {
+margin-left: 50px;
+font-size: large;
+	
+}
+
+#attributeFilterExample_01 ul li {
+	font-size: large;
+}
+
+#attributeFilterExample_01 pre code {
+	font-size: large;
+}
+
+#attributeFilterExample_02 p img {
+	height: 400px;
+	margin-left: 45px;
+}
+
+#styledNMRoads code.sourceCode.xml {
+font-size: large;
+margin: 0;
+padding: 10px;
+display: block;
+overflow: scroll;
+height: 400px;
+background-color: rgba(255, 255, 255, 0.15);
+width: 700px;	
+}
+
+#styledNMRoadsUShighways_01 code.sourceCode.xml {
+font-size: large;
+margin: 0;
+padding: 10px;
+display: block;
+overflow: scroll;
+height: 400px;
+background-color: rgba(255, 255, 255, 0.15);
+width: 700px;		
+}
+
+#styledNMRoadsInterstates_01 code.sourceCode.xml {
+font-size: large;
+margin: 0;
+padding: 10px;
+display: block;
+overflow: scroll;
+height: 400px;
+background-color: rgba(255, 255, 255, 0.15);
+width: 700px;		
+}
+
+#attributeFilterWscaleFactor_02 p img {
+height: 400px;
+margin-left: 45px;
+}
+
+#attributeFilterWscaleFactor_03 p img {
+height: 400px;
+margin-left: 45px;	
+}
+
+#attributeFilterWscaleFactor_04 p img {
+height: 400px;
+margin-left: 45px;		
+}
+
+#attributeFilterWscale_highways code.sourceCode.xml {
+font-size: large;
+margin: 0;
+padding: 10px;
+display: block;
+overflow: scroll;
+height: 400px;
+background-color: rgba(255, 255, 255, 0.15);
+width: 700px;			
+}
+
+#attributeFilterWscale_interstates code.sourceCode.xml {
+font-size: large;
+margin: 0;
+padding: 10px;
+display: block;
+overflow: scroll;
+height: 330px;
+background-color: rgba(255, 255, 255, 0.15);
+width: 700px;			
+	
+}

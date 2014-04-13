@@ -3802,3 +3802,789 @@ The addition of OGC WMS and WCS layers to ArcMap is through the same process of
 * The specific way in which the GetCapabilities request is given to the client varies from client to client
 * Clients can auto/_mis_-configure themselves based upon the GetCapabilities XML response - when troubleshooting problems with an advertised service, try the manual request approach for the GetCapabilities, data and maps that you have learned about to determine if the service is functioning as advertised. 
 
+# Module 5.1 - Platforms and GeoServer Introduction #
+
+
+###Overview ###
+
+* SOA Review
+* Server Platform
+* Online Mapping Server Applications: COTS & Open Source
+* What is GeoServer
+* Working with GeoServer
+* Demonstration
+
+
+### SOA Review ###
+
+![SOA Illustration](./images/SOAillustration.png)\ 
+
+
+* Services Oriented Architecture (SOA) for Geospatial Data and Processing
+	* Data, Processing & Client Tiers
+* Open Geospatial Consortium Interoperability Standards
+	* WMS, WFS, WCS
+* Geospatial Metadata Standards
+	* ISO 19115, FGDC
+* Internet Standards
+	* Web: HTML, CSS, JavaScript, XML
+	* SOAP - Simple Object Access Protocol
+	* REST - Representation State Transformation
+
+
+### Server Platform ###
+
+In the context of server platforms for online mapping with OGC services, there are several components that are of interest
+
+* The operating system - the software environment in which all applications on a computer operate (e.g. Windows, Mac OS X, Linux)
+* The web server - the application that listens for incoming requests from the Internet (e.g. Apache, IIS)
+* The mapping server - the application (that may also include the web server) that enables online mapping applications, that may include support for one or more OGC service interfaces (e.g. GeoServer, MapServer, CubeWerx, ArcGIS Server)
+
+
+### Online Mapping Server Applications ###
+
+Sample Commercial Off-the-Shelf (COTS)
+
+* ArcGIS Server ([info](http://www.esri.com/software/arcgis/arcgisserver))
+* CubeWerx SDI Suite ([info](http://www.cubewerx.com/solutions/sdi/))
+* ERDAS APOLLO ([info](http://www.erdas.com/products/ERDASAPOLLO/ERDASAPOLLO/Details.aspx))
+
+Sample Open Source
+
+* MapServer ([info](http://mapserver.org/))
+* GeoServer ([info](http://geoserver.org/display/GEOS/What+is+Geoserver))
+
+
+### What is GeoServer ###
+
+GeoServer is an Open Source, Open Standards supporting geospatial web services platform
+
+* GNU General Public License
+* WMS, WFS, WCS
+* Written in Java as a web application commonly hosted on the Jetty HTTP server and Java servlet engine
+* An appropriate version of Java must already be installed
+
+
+### Working with GeoServer ###
+
+OS-Independent Binaries are Available for Multiple Platforms (these are just ‘run’ to start the server)
+
+* Includes the Jetty HTTP server
+* Windows, Mac OS X, Linux
+* There are OS-specific configuration instructions for each operating system
+
+GeoServer may be integrated into existing Java web servlet applications (such as Apache Tomcat) using the available Web Archive (WAR) file. 
+
+OS-Specific Installers are also Available
+
+* Include an integrated HTTP server
+* Windows and Mac OS X
+
+
+### What is Happening Behind the Scenes ###
+
+![](images/GeoServerInteraction.png)\ 
+
+
+### Setup and Configuration ###
+
+* After the initial setup as part of the installation process, other setup and configuration is performed through the web interface
+* All configuration activities require that you are logged in as an administrator
+* Default username and password for a new GeoServer are `admin:geoserver`
+* After logging in you can view and modify the configuration of the server and services - some of the configuration elements inform the OGC service capabilities
+
+
+### Server Configuration Options ###
+
+<div id="geoserverConfigMenu_05_01_01_01">
+![GeoserverConfigMenu](images/GeoServer_ServerConfig.jpg)\ 
+</div>
+
+* Server Status - summary information about the status of the currently running server
+* GeoServer Logs - access to the application logs for diagnosing issues with the server
+* Contact Information - contact information for the person responsible for providing support for the server and services. This information is used to build parts of the Capabilities XML metadata returned by the services
+* About GeoServer - links to information about GeoServer
+
+### Server Configuration Options - cont.  ### {#serverConfigOptions_02}
+
+<div id="geoserverConfigMenu_05_01_01_02">
+![GeoserverConfigMenu](images/GeoServer_ServerConfig.jpg)\ 
+</div>
+
+* Global Settings - settings that apply to the whole server - primarily focussed on options for logging
+* JAI Settings - settings related to the Java Advanced Imagery engine within GeoServer
+* Coverage Access - configuration information for the tuning of processing resources for the server
+
+
+### WxS Service Configuration Options ###
+
+<div id="GeoserverServiceConfigMenu_05_01_01_01" >
+![GeoserverServiceConfigMenu](images/GeoServer_ServiceConfig.jpg)\ 
+</div>
+
+Options Common to all WxS services
+
+* Enable/disable the service, with or without strict CITE compliance
+* Maintainer and Online Resource URLs
+* Title/Abstract
+* Fees/Access Constraints
+* Keywords
+
+
+### WxS Service Configuration Options - cont. ###  {#WXSServerConfigOptions_02}
+
+<div id="GeoserverServiceConfigMenu_05_01_01_01" >
+![GeoserverServiceConfigMenu](images/GeoServer_ServiceConfig.jpg)\ 
+</div>
+
+
+Options specific to individual services
+
+* WFS - max. no. features, service type (basic/transactional/complete), GML-specific styles, other options
+* WMS - SRS subset specification, interpolation method, resource consumption limits, KML options, map image watermarking, PNG/JPEG/SVG format options, and others
+* WCS - SRS subset specification, policies for overviews to be used, subsampling, and resource consumption limits, other options
+
+
+### Data Component Configuration Options ###
+
+<div id="GeoserverDataConfigMenu_05_01_01_01" >
+![](images/GeoServer_DataConfig.jpg)\ 
+</div>
+
+* _Layer Preview_ -  An interface through which a _Layers_ may be previewed in a variety of formats
+* _Workspaces_ - Defined containers for related data products
+* _Stores_ - Specific data sources (file or service based) with required data type and connection information provided in the _Store_ configuration
+
+
+
+### Data Component Configuration Options - cont. ### {#dataConfigOptions_02}
+
+<div id="GeoserverDataConfigMenu_05_01_01_01" >
+![](images/GeoServer_DataConfig.jpg)\ 
+</div>
+
+* _Layers_ - Defined layers that are published by the server, with the layers based upon data provided by a _Store_, but with additional layer-specific settings (such as bounding box, applied and available styles,and attribution).
+* _Layer Groups_ - Collections of _Layers_ for specific projects/applications or other logical groupings.
+* _Styles_ - A listing of defined layer styles for the server through which those styles may be accessed and managed. 
+
+
+### Data Integration Process ###
+
+![Data integration workflow](images/GeoServer_DataWorkflow.png)\ 
+
+
+### Security Settings ###
+
+<div id="GeoserverSecurityConfigMenu_05_01_01_01" >
+![](images/GeoServer_SecurityConfig.jpg)\ 
+</div>
+
+* _Settings_ - Basic security configuration settings: role service, encryption options
+* _Authentication_ - Configuration settings for authentication providers for users
+* _Passwords_ - Settings related to underlying password providers and policies
+* _Users, Groups, Roles_ - Management of system users, groups and defined roles
+* _Data_ - Settings for read/write access to data products within the server, settings for the system's *catalog mode*
+* _Service_ - Settings for managing service-level (i.e. WMS, WFS, WCS and related request types) access privileges by user role. 
+
+
+### Demonstration of GeoServer Interface ###
+
+[Class GeoServer Instance]()
+
+![GeoServer Home Page](images/GeoServer_Home.jpg)\ 
+
+
+#  Module 5.2 - Developing and Hosting OGC Services - OGC Services and Styling in GeoServer - Part I #
+
+
+### Overview ###
+
+* GeoServer Styled Layer Descriptor (SLD) Foundation: OGC Specification
+* Creation and Management of Styles in GeoServer
+	* Definition of Styles
+	* Base Styles
+	* Basic New Styles
+	* Basic Filters
+
+
+### OGC Styled Layer Descriptor (SLD) ###
+
+* GeoServer uses the OGC standard for definition of symbolization both for user and server definition ([OGC SLD Standard](http://www.opengeospatial.org/standards/sld)) 
+* Most, but not all of the OGC standard has been implemented with GeoServer
+* The materials presented here are based upon the SLD reference distributed as part of the [GeoServer 2.1 HTML documentation](http://docs.geoserver.org/stable/en/user/index.html), and in particular the [GeoServer SLD Cookbook](http://docs.geoserver.org/stable/en/user/styling/sld-cookbook/index.html).
+
+
+### Definition of Styles ###  {#definitionOfStyles_01}
+
+Styles are XML documents that conform to the OGC SLD standard, and consist of four major components
+
+Symbolizers
+:	SLD components that define the rendering style of specific types of content
+
+* [Point](http://docs.geoserver.org/stable/en/user/styling/sld-reference/pointsymbolizer.html)
+* [Line](http://docs.geoserver.org/stable/en/user/styling/sld-reference/linesymbolizer.html)
+* [Polygon](http://docs.geoserver.org/stable/en/user/styling/sld-reference/polygonsymbolizer.html)
+* [Raster](http://docs.geoserver.org/stable/en/user/styling/sld-reference/rastersymbolizer.html)
+* [Text](http://docs.geoserver.org/stable/en/user/styling/sld-reference/textsymbolizer.html)
+
+
+### Definition of Styles - cont. ### {#definitionOfStyles_02}
+
+
+Labels
+:	Defining the placement of [labels](http://docs.geoserver.org/stable/en/user/styling/sld-reference/labeling.html)
+
+Filters
+:	Allow for the application different symbolizers to [defined sets](http://docs.geoserver.org/stable/en/user/styling/sld-reference/filters.html) of features
+
+Scale Elements
+:	Allow for the application of different symbolizers at different map scales (no documentation at the moment)
+
+
+### Definition of Styles - Header Content ###  {#definitionOfStyles_03}
+
+~~~~~~~~~~ {#SLD-header-styles_01 .xml}
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<StyledLayerDescriptor version="1.0.0" 
+  xsi:schemaLocation="http://www.opengis.net/sld StyledLayerDescriptor.xsd" 
+  xmlns="http://www.opengis.net/sld" 
+  xmlns:ogc="http://www.opengis.net/ogc" 
+  xmlns:xlink="http://www.w3.org/1999/xlink" 
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+one or more <NamedLayer> ...  </NamedLayer> elements
+
+</StyledLayerDescriptor>
+~~~~~~~~~~
+
+
+### Definition of Styles - Sample SLD File ###   {#definitionOfStyles_04}
+
+~~~~~~~~~~ {#sampleSLD .xml }
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<StyledLayerDescriptor version="1.0.0" 
+  xsi:schemaLocation="http://www.opengis.net/sld StyledLayerDescriptor.xsd" 
+  xmlns="http://www.opengis.net/sld" 
+  xmlns:ogc="http://www.opengis.net/ogc" 
+  xmlns:xlink="http://www.w3.org/1999/xlink" 
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NamedLayer>
+    <Name>Simple Point</Name>
+    <UserStyle>
+      <Title>SLD Cook Book: Simple Point With Stroke</Title>
+      <FeatureTypeStyle>
+        <Rule>
+          <PointSymbolizer>
+            <Graphic>
+              <Mark>
+                <WellKnownName>circle</WellKnownName>
+                <Fill>
+                  <CssParameter name="fill">#FF0000</CssParameter>
+                </Fill>
+              </Mark>
+              <Size>6</Size>
+            </Graphic>
+          </PointSymbolizer>
+        </Rule>
+      </FeatureTypeStyle>
+    </UserStyle>
+  </NamedLayer>
+</StyledLayerDescriptor>
+~~~~~~~~~~
+
+
+### Simple GeoServer Point Style ###
+
+![Sample simple styled point layer](images/point_simplepoint.png)\ 
+
+
+SLD Snippet ([Full SLD](http://karlbenedict.com/GEOG485-585/lectures/examples/sld_cookbook/point_simplepoint.sld))
+
+~~~~~~~~~~ {#sampleSLD_simplePoint .xml }
+<NamedLayer>
+  <Name>Simple Point</Name>
+  <UserStyle>
+	<Title>SLD Cook Book: Simple Point With Stroke</Title>
+	<FeatureTypeStyle>
+	  <Rule>
+		<PointSymbolizer>
+		  <Graphic>
+			<Mark>
+			  <WellKnownName>circle</WellKnownName>
+			  <Fill>
+				<CssParameter name="fill">#FF0000</CssParameter>
+			  </Fill>
+			</Mark>
+			<Size>6</Size>
+		  </Graphic>
+		</PointSymbolizer>
+	  </Rule>
+	</FeatureTypeStyle>
+  </UserStyle>
+</NamedLayer>
+~~~~~~~~~~
+
+
+### Simple GeoServer Line Style ###
+
+![Sample simple styled line layer](images/line_simpleline.png)\ 
+
+SLD Snippet ([Full SLD](http://karlbenedict.com/GEOG485-585/lectures/examples/sld_cookbook/line_simpleline.sld))
+
+~~~~~~~~~~ {#sampleSLD_simpleLine .xml }
+<NamedLayer>
+  <Name>Simple Line</Name>
+  <UserStyle>
+	<Title>SLD Cook Book: Simple Line</Title>
+	<FeatureTypeStyle>
+	  <Rule>
+		<LineSymbolizer>
+		  <Stroke>
+			<CssParameter name="stroke">#000000</CssParameter>
+			<CssParameter name="stroke-width">3</CssParameter>    
+		  </Stroke>
+		</LineSymbolizer>
+	  </Rule>
+	</FeatureTypeStyle>
+  </UserStyle>
+</NamedLayer>
+~~~~~~~~~~
+
+
+### Simple GeoServer Polygon Style ###
+
+![Sample simple styled polygon layer](images/polygon_simplepolygon.png)\ 
+
+SLD Snippet ([Full SLD](http://karlbenedict.com/GEOG485-585/lectures/examples/sld_cookbook/polygon_simplepolygon.sld))
+
+~~~~~~~~~~ {#sampleSLD_simplepoly .xml }
+<NamedLayer>
+  <Name>Simple polygon</Name>
+  <UserStyle>
+	<Title>SLD Cook Book: Simple polygon</Title>
+	<FeatureTypeStyle>
+	  <Rule>
+		<PolygonSymbolizer>
+		  <Fill>
+			<CssParameter name="fill">#000080</CssParameter>
+		  </Fill>
+		</PolygonSymbolizer>
+	  </Rule>
+	</FeatureTypeStyle>
+  </UserStyle>
+</NamedLayer>
+~~~~~~~~~~
+
+
+### Simple GeoServer Raster Style ###
+
+![Sample simple styled raster layer](images/raster_twocolorgradient.png)\ 
+
+SLD Snippet ([Full SLD](http://karlbenedict.com/GEOG485-585/lectures/examples/sld_cookbook/raster_twocolorgradient.sld))
+
+~~~~~~~~~~ {#sampleSLD_simpleraster .xml }
+<NamedLayer>
+  <Name>Two color gradient</Name>
+  <UserStyle>
+	<Title>SLD Cook Book: Two color gradient</Title>
+	  <FeatureTypeStyle>
+		<Rule>
+		  <RasterSymbolizer>
+			<ColorMap>
+			  <ColorMapEntry color="#008000" 
+			    quantity="70" />
+			  <ColorMapEntry color="#663333" 
+			    quantity="256" />
+			</ColorMap>
+		  </RasterSymbolizer>
+		</Rule>
+	  </FeatureTypeStyle>
+  </UserStyle>
+</NamedLayer>
+~~~~~~~~~~
+
+
+### PointSymbolizer ###
+
+~~~~~~~~~~ {#pointSymbolizer .xml }
+<Graphic>
+  <ExternalGraphic>
+    <OnlineResource> (Required)
+    <Format>
+  <Mark>
+    <WellKnownName> (Required)
+    <Fill>
+    <Stroke>
+    <Opacity>
+    <Size>
+    <Rotation>
+~~~~~~~~~~
+
+
+### LineSybolizer ###
+
+~~~~~~~~~~ {#lineSymbolizer .xml }
+<Stroke>
+  <GraphicFill>
+    <Graphic> contents same as PointSymbolizer
+  <GraphicStroke>
+    <Graphic> contents same as PointSymbolizer
+  <CssParameter name="...">
+    name="stroke"
+    name="stroke-width"
+    name="stroke-opacity"
+    name="stroke-linejoin"
+    name="stroke-linecap"
+    name="stroke-dasharray"
+    name="stroke-dashoffset"
+~~~~~~~~~~
+
+
+### PolygonSymbolizer ###
+
+~~~~~~~~~~ {#polySymbolizer .xml }
+<Fill>
+  <GraphicFill>
+	<Graphic> contents same as PointSymbolizer
+  <CssParameter name="...">
+	name="fill"
+	name="fill-opacity"
+  <Stroke> same as the LineSymbolizer
+~~~~~~~~~~
+
+
+
+### Raster Symbolizer ###
+
+~~~~~~~~~~ {#rasterSymbolizer .xml }
+<Opacity>
+<ColorMap type=ramp|values|intervals extended=true|false>
+  <ColorMapEntry color="" quantity="" label="" opacity=""/>
+<ChannelSelection>
+  <RedChannel> <GreenChannel> <BlueChannel>
+	<SourceChannelName>
+  <GrayChannel>
+	<SourceChannelName>
+<ContrastEnhancement>
+<ShadedRelief> (not implemented in ver 2.0)
+<OverlapBehavior> (not implemented in ver 2.0)
+<ImageOutline> (not implemented in ver 2.0)
+~~~~~~~~~~
+
+
+## Filters ##
+
+
+
+
+### SLD Filter Rules and Vector Symbolization ### {#SLDrulesVectorSymbolization_01}
+
+Filters based upon Attribute Values
+
+~~~~~~~~~~
+<PropertyIsEqualTo>
+<PropertyIsNotEqualTo>
+<PropertyIsLessThan>
+<PropertyIsLessThanOrEqualTo>
+<PropertyIsGreaterThan>
+<PropertyIsGreaterThanOrEqualTo>
+<PropertyIsBetween>
+~~~~~~~~~~
+
+Logical Filters - for combining multiple filters
+
+~~~~~~~~~~
+<And>
+<Or>
+<Not>
+~~~~~~~~~~
+
+
+### SLD Filter Rules and Vector Symbolization - cont. ### {#SLDrulesVectorSymbolization_02}
+
+Spatial Filters
+
+~~~~~~~~~~
+<Intersects>
+<Equals>
+<Disjoint>
+<Within>
+<Overlaps>
+<Crosses>
+<DWithin>
+<Beyond>
+<Distance>
+~~~~~~~~~~
+
+Scale-based selection
+
+~~~~~~~~~~
+<MaxScaleDenominator>
+<MinScaleDenominator>
+~~~~~~~~~~
+
+
+### Attribute Filter Example ### {#attributeFilterExample_01}
+
+To define an _Attribute Filter_ you need to know both the _Attribute Name_ of the layer(s) that will use the filter and the _value(s)_ of that field that will be used for the filter. _How do you determine the attribute name and values?_
+
+* If available, this information should be available through the documentation (metadata) for the data that is published by the data provider. 
+* In GeoServer you can view a list of attribute names in the _data_ tab of the layer information under the _Feature Type Details_ at the bottom of the web page, but you can't view the actual field values. 
+* For vector data you can view both the attribute names and their values using the `ogrinfo` command from the command line. 
+
+For example:
+
+~~~~~~~~~~
+ogrinfo -fields=YES -geom=NO kb_gpsrdsdd.shp kb_gpsrdsdd
+~~~~~~~~~~
+
+Where this command requests that the fields and their values be displayed, but that the detailed geometry information (i.e. all of the nodes associated with each feature)
+
+
+
+### Attribute Filter Example - Styled NM Roads ### {#attributeFilterExample_02}
+
+![Screenshot of the GeoServer OpenLayers Preview of the Styled Layer](images/styledRoads.jpg)\ 
+
+[Full SLD](examples/SimpleRoads.sld)
+
+
+
+### Attribute Filter Example - Styled NM Roads - NM Highways ###  {#attributeFilterExample_03}
+
+~~~~~~~~~~ {#styledNMRoads .xml }
+<!-- New Mexico Highways -->
+<Rule>
+  <Title>NM Highways</Title>
+  <ogc:Filter>
+    <ogc:PropertyIsEqualTo>
+      <ogc:PropertyName>TYPE</ogc:PropertyName>
+      <ogc:Literal>State Highway</ogc:Literal>
+    </ogc:PropertyIsEqualTo>
+  </ogc:Filter>
+  <LineSymbolizer>
+    <Stroke>
+      <CssParameter name="stroke">
+        <ogc:Literal>#CCCCCC</ogc:Literal>
+      </CssParameter>
+      <CssParameter name="stroke-width">
+        <ogc:Literal>2</ogc:Literal>
+      </CssParameter>
+    </Stroke>
+  </LineSymbolizer>
+</Rule>
+~~~~~~~~~~
+
+
+
+### Attribute Filter Example - Styled NM Roads - US Highways### {#attributeFilterExample_04}
+
+~~~~~~~~~~ {#styledNMRoadsUShighways_01 .xml }
+<!-- US Highways -->
+<Rule>
+  <Title>US Highways</Title>
+  <ogc:Filter>
+	<ogc:PropertyIsEqualTo>
+		<ogc:PropertyName>TYPE</ogc:PropertyName>
+		<ogc:Literal>US Highway</ogc:Literal>
+	</ogc:PropertyIsEqualTo>
+  </ogc:Filter>
+  <LineSymbolizer>
+	<Stroke>
+	  <CssParameter name="stroke">
+		<ogc:Literal>#ff0000</ogc:Literal>
+	  </CssParameter>
+	  <CssParameter name="stroke-width">
+		<ogc:Literal>3</ogc:Literal>
+	  </CssParameter>
+	</Stroke>
+  </LineSymbolizer>
+  <LineSymbolizer>
+	<Stroke>
+	  <CssParameter name="stroke">
+		<ogc:Literal>#CCCCCC</ogc:Literal>
+	  </CssParameter>
+	  <CssParameter name="stroke-width">
+		<ogc:Literal>1</ogc:Literal>
+	  </CssParameter>
+	</Stroke>
+  </LineSymbolizer>
+</Rule>
+~~~~~~~~~~
+
+
+### Attribute Filter Example  - Styled NM Roads - Interstates### {#attributeFilterExample_04}
+
+~~~~~~~~~~ {#styledNMRoadsInterstates_01 .xml }
+<!-- Interstate Highways -->
+<Rule>
+  <Title>Interstates</Title>
+  <ogc:Filter>
+	<ogc:PropertyIsEqualTo>
+	  <ogc:PropertyName>TYPE</ogc:PropertyName>
+	  <ogc:Literal>Interstate</ogc:Literal>
+	</ogc:PropertyIsEqualTo>
+  </ogc:Filter>
+  <LineSymbolizer>
+	<Stroke>
+	  <CssParameter name="stroke">
+		<ogc:Literal>#fcff00</ogc:Literal>
+	  </CssParameter>
+	  <CssParameter name="stroke-width">
+		<ogc:Literal>5</ogc:Literal>
+	  </CssParameter>
+	</Stroke>
+  </LineSymbolizer>
+  <LineSymbolizer>
+	<Stroke>
+	  <CssParameter name="stroke">
+		<ogc:Literal>#222222</ogc:Literal>
+	  </CssParameter>
+	  <CssParameter name="stroke-width">
+		<ogc:Literal>3</ogc:Literal>
+	  </CssParameter>
+	</Stroke>
+  </LineSymbolizer>
+</Rule>
+~~~~~~~~~~
+
+
+
+
+### Attribute Filter with Scale Factor ### {#attributeFilterWscaleFactor_01}
+
+The only change needed to introduce scale-dependencies into styles is to include `<MaxScaleDenominator>` or `<MinScaleDenominator>` elements within a rule where they should be applied. These elements should be placed just before the symbolizer element so that GeoServer can properly validate the provided SLD. 
+
+[Full SLD](examples/SimpleRoadsScaled.sld)\ 
+
+
+
+### Attribute Filter with Scale Factor - 1 to 9,000,000 Scale Map ###  {#attributeFilterWscaleFactor_02}
+
+![Screenshot of the GeoServer OpenLayers Layer Preview at 1:9000000 scale](images/styledRoads_9M.jpg)\ 
+
+
+
+### Attribute Filter with Scale Factor - 1 to 2,000,000 Scale Map ### {#attributeFilterWscaleFactor_03}
+
+![Screenshot of the GeoServer OpenLayers Layer Preview at 1:2000000 scale](images/styledRoads_2M.jpg)\ 
+
+
+### Attribute Filter with Scale Factor - 1 to 586,000 Scale Map ### {#attributeFilterWscaleFactor_04}
+
+![Screenshot of the GeoServer OpenLayers Layer Preview at 1:586000 scale](images/styledRoads_586k.jpg)\ 
+
+
+
+### Attribute Filter with Scale Factor - Scaled NM Roads - NM Highways### {#attributeFilterWscaleFactor_05}
+
+~~~~~~~~~~ {#attributeFilterWscale_highways .xml }
+<!-- New Mexico Highways -->
+<Rule>
+  <Title>NM Highways</Title>
+  <ogc:Filter>
+    <ogc:PropertyIsEqualTo>
+      <ogc:PropertyName>TYPE</ogc:PropertyName>
+      <ogc:Literal>State Highway</ogc:Literal>
+    </ogc:PropertyIsEqualTo>
+  </ogc:Filter>
+  <MaxScaleDenominator>1000000</MaxScaleDenominator>
+  <LineSymbolizer>
+    <Stroke>
+      <CssParameter name="stroke">
+        <ogc:Literal>#CCCCCC</ogc:Literal>
+      </CssParameter>
+      <CssParameter name="stroke-width">
+        <ogc:Literal>2</ogc:Literal>
+      </CssParameter>
+    </Stroke>
+  </LineSymbolizer>
+</Rule>
+~~~~~~~~~~
+
+
+
+### Attribute Filter with Scale Factor - Scaled NM Roads - US Highways### {#attributeFilterWscaleFactor_06}
+
+~~~~~~~~~~ {#attributeFilterWscale_highways .xml }
+<!-- US Highways -->
+<Rule>
+  <Title>US Highways</Title>
+  <ogc:Filter>
+	<ogc:PropertyIsEqualTo>
+		<ogc:PropertyName>TYPE</ogc:PropertyName>
+		<ogc:Literal>US Highway</ogc:Literal>
+	</ogc:PropertyIsEqualTo>
+  </ogc:Filter>
+  <MaxScaleDenominator>5000000</MaxScaleDenominator>
+  <LineSymbolizer>
+	<Stroke>
+	  <CssParameter name="stroke">
+		<ogc:Literal>#ff0000</ogc:Literal>
+	  </CssParameter>
+	  <CssParameter name="stroke-width">
+		<ogc:Literal>3</ogc:Literal>
+	  </CssParameter>
+	</Stroke>
+  </LineSymbolizer>
+  <LineSymbolizer>
+	<Stroke>
+	  <CssParameter name="stroke">
+		<ogc:Literal>#CCCCCC</ogc:Literal>
+	  </CssParameter>
+	  <CssParameter name="stroke-width">
+		<ogc:Literal>1</ogc:Literal>
+	  </CssParameter>
+	</Stroke>
+  </LineSymbolizer>
+</Rule>
+~~~~~~~~~~
+
+
+
+
+### Attribute Filter with Scale Factor - Scaled NM Roads - Interstates### {#attributeFilterWscaleFactor_07}
+
+This is unchanged from the previous example as the Interstates are visible at all scales. 
+
+~~~~~~~~~~ {#attributeFilterWscale_interstates .xml }
+<!-- Interstate Highways -->
+<Rule>
+  <Title>Interstates</Title>
+  <ogc:Filter>
+	<ogc:PropertyIsEqualTo>
+	  <ogc:PropertyName>TYPE</ogc:PropertyName>
+	  <ogc:Literal>Interstate</ogc:Literal>
+	</ogc:PropertyIsEqualTo>
+  </ogc:Filter>
+  <LineSymbolizer>
+	<Stroke>
+	  <CssParameter name="stroke">
+		<ogc:Literal>#fcff00</ogc:Literal>
+	  </CssParameter>
+	  <CssParameter name="stroke-width">
+		<ogc:Literal>5</ogc:Literal>
+	  </CssParameter>
+	</Stroke>
+  </LineSymbolizer>
+  <LineSymbolizer>
+	<Stroke>
+	  <CssParameter name="stroke">
+		<ogc:Literal>#222222</ogc:Literal>
+	  </CssParameter>
+	  <CssParameter name="stroke-width">
+		<ogc:Literal>3</ogc:Literal>
+	  </CssParameter>
+	</Stroke>
+  </LineSymbolizer>
+</Rule>
+~~~~~~~~~~
+
+
+
+### Demonstration of GeoServer Interface ###
+
+Class GeoServer Instance: [http://geog485.unm.edu:8080/geoserver/web/](http://geog485.unm.edu:8080/geoserver/web/)
+
+![GeoServer Home Page](images/GeoServer_Home.jpg)\ 
+

@@ -489,4 +489,47 @@ In your write-up include the names of the layers you added, and the GetCapabilit
 
 
 
+## Week 13: GeoServer Data Import##
+
+To add data to GeoServer you must have a file location on the server where data files must be stored and accessible by the GeoServer. 
+
+Question 1
+: Create a directory called `data` in your `public_html` directory on the class server. Perform an `ls` command in your `public_html` directory and include the output of the command in your lab write-up - displaying the data directory location within your `public_html` directory. 
+
+Question 2
+: Copy all of the data files located in the `data` directory in my `public_html` directory (`/home/kbene/public_html/data`) into your data directory, and rename all of the files, folders and their contents with a prefix of your initials instead of the current `kb` prefix that I have added. Perform an `ls` command in your `data` directory and include the output in your write-up - displaying the modified file and folder names. The file renaming is _required_ because of issues that arise within GeoServer when there are multiple data stores within the server that are based upon similarly named files. 
+
+Here are some format-specific points to keep in mind when renaming geospatial data:
+
+* When renaming a shapefile, make sure to rename all of the files in the set so that they all have the same file prefix
+
+When renaming a GeoTiff
+
+* If the projection information is available from gdalinfo, you can just change the name of the file ending in .tif
+
+* If there is a .tfw file associated with the file, it is a good idea to change its name as well
+
+* If there is a .aux or .rrd file, you should rename it as well. 
+
+Question 3
+: Log into the Geoserver on the class server ([http://129.24.63.138:8080/geoserver/web/](http://129.24.63.138:8080/geoserver/web/)) using the administrative username and password provided for the class server. 
+
+* Create a _workspace_ for yourself, using a name that will be unique to you (your username would be a good candidate for this). 
+
+* Create a new _store_ for each of the datasets listed from 3 above. Assign the new store to your workspace that you created above. When specifying the the `Connection Parameters` for pointing to the file, the format is: `file:/home/<your username>/public_html/data/<filename>` 
+for example
+
+	file:/home/kbene/public_html/data/kb_world_8km.jpg
+
+* Create a new _layer_ for each of the _stores_ added above. Here are some things to keep in mind:
+
+You may need to designate the SRS for a layer if it can’t be read directly from the dataset. Your specify the _designated_ SRS using the standard EPSG:XXXX format. 
+
+The EPSG code for `GCS_North_American_1983` is EPSG:4269
+
+Preview each of your added layers, using the _Layer Preview_ tool and the _Open Layers_ option to display the data. Include screen grabs of the previews in your write-up.
+
+
+ 
+
 <div class="license"><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />This work by <span xmlns:cc="http://creativecommons.org/ns#" property="cc:attributionName">Karl Benedict</span> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.</div>
