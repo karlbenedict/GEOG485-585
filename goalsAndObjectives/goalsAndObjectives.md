@@ -543,6 +543,7 @@ By the end of this class, students should understand:
 
 ### Weekly Milestone - GeoServer Data Import ###
 
+[Week 13 Milestone](http://tinyurl.com/po6bnx3)
 
 ### Readings ###
 
