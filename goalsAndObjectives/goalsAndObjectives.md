@@ -582,9 +582,11 @@ At the end of this class, students will understand:
 
 ### Weekly Milestone - Styling of Layers in GeoServer###
 
+[Week 14 Milestone](http://tinyurl.com/lndunmu)
 
 ### Deep Dive - Data Integration and Styling in GeoServer ###
 
+[Week 14 Deep Dive](http://tinyurl.com/nez5pym)
 
 ### Readings ###
 
