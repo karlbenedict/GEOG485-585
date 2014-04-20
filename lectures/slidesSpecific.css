@@ -512,7 +512,7 @@ margin-left: 10px;;
 }
 
 #sampleSLD_simplePoint code.sourceCode.xml {
-font-size: medium;
+font-size: x-small;
 margin: 0;
 padding: 10px;
 display: block;
@@ -522,15 +522,61 @@ background-color: rgba(255, 255, 255, 0.15);
 width: 450px;	
 }
 
+#simple-geoserver-line-style p {
+display: inline;
+padding: 0px;
+margin-left: 10px;;	
+	
+}
+
 #simple-geoserver-line-style p img {
-	margin-left: 75px;
-	px
+	height: 200px;
+	float: right;
+	margin-right: 40px;
+	margin-left: 20px;
+	margin-top: 150px;
+}
+
+#sampleSLD_simpleLine code.sourceCode.xml {
+font-size: x-small;
+margin: 0;
+padding: 10px;
+display: block;
+overflow: scroll;
+height: 400px;
+background-color: rgba(255, 255, 255, 0.15);
+width: 450px;	
+}
+
+
+#simple-geoserver-polygon-style p {
+display: inline;
+padding: 0px;
+margin-left: 10px;;	
+	
 }
 
 #simple-geoserver-polygon-style p img {
-	margin-left: 75px;
-	px
+	height: 200px;
+	float: right;
+	margin-right: 40px;
+	margin-left: 20px;
+	margin-top: 150px;
 }
+
+#sampleSLD_simplepoly code.sourceCode.xml {
+font-size: x-small;
+margin: 0;
+padding: 10px;
+display: block;
+overflow: scroll;
+height: 400px;
+background-color: rgba(255, 255, 255, 0.15);
+width: 450px;	
+}
+
+
+
 
 #simple-geoserver-raster-style p {
 display: inline;
@@ -549,7 +595,7 @@ margin-left: 10px;;
 }
 
 #simple-geoserver-raster-style code.sourceCode.xml {
-font-size: medium;
+font-size: x-small;
 margin: 0;
 padding: 10px;
 display: block;
@@ -558,6 +604,45 @@ height: 400px;
 background-color: rgba(255, 255, 255, 0.15);
 width: 450px;	
 }
+
+#pointSymbolizer code.sourceCode.xml {
+font-size: large;
+margin: 0;
+padding: 10px;
+display: block;
+overflow: scroll;
+height: 400px;
+background-color: rgba(255, 255, 255, 0.15);
+width: 700px;	
+}
+
+#lineSymbolizer code.sourceCode.xml {
+font-size: large;
+margin: 0;
+padding: 10px;
+display: block;
+overflow: scroll;
+height: 400px;
+background-color: rgba(255, 255, 255, 0.15);
+width: 700px;	
+}
+
+
+#polySymbolizer code.sourceCode.xml {
+font-size: large;
+margin: 0;
+padding: 10px;
+display: block;
+overflow: scroll;
+height: 400px;
+background-color: rgba(255, 255, 255, 0.15);
+width: 700px;	
+}
+
+
+
+
+
 
 #rasterSymbolizer code.sourceCode.xml {
 font-size: large;
@@ -590,8 +675,8 @@ font-size: large;
 }
 
 #attributeFilterExample_02 p img {
-	height: 400px;
-	margin-left: 45px;
+	height: 350px;
+	margin-left: 80px;
 }
 
 #styledNMRoads code.sourceCode.xml {
@@ -628,8 +713,8 @@ width: 700px;
 }
 
 #attributeFilterWscaleFactor_02 p img {
-height: 400px;
-margin-left: 45px;
+height: 350px;
+margin-left: 80px;
 }
 
 #attributeFilterWscaleFactor_03 p img {
@@ -663,4 +748,12 @@ height: 330px;
 background-color: rgba(255, 255, 255, 0.15);
 width: 700px;			
 	
+}
+
+#attributeFilterWscaleFactor_07 p {
+	font-size: small;
+}
+
+#demonstration-of-geoserver-interface p img {
+	margin-right: 180px;
 }

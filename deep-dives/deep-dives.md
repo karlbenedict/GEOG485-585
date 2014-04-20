@@ -116,4 +116,5 @@ Raster Data [http://docs.geoserver.org/stable/en/user/data/raster/index.html](ht
 
 ## Week 14: Data Integration and Styling in GeoServer ##
 
-TBA
+Add each of the  datasets that you acquired for Deep Dive 3 to GeoServer and style at least three of the layers with a custom style designed to best display the data for your envisioned map. Include in your writeup the names of the datasets, associated styles, and screenshots of the layers in the OpenLayers previewer, with the style name displayed in the OpenLayers preview tool set. 
+

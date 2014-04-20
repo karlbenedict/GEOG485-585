@@ -38,12 +38,12 @@ code > span.er { color: #ff0000; font-weight: bold; }
 <li>Basic Filters</li>
 </ul></li>
 </ul>
-</section><section id="ogc-styled-layer-descriptor-sld" class="slide level3">
+</section><section id="ogc-styled-layer-descriptor-sld" class="titleslide slide level2"><h1>OGC Styled Layer Descriptor (SLD)</h1></section><section id="ogc-styled-layer-descriptor-sld-1" class="slide level3">
 <h1>OGC Styled Layer Descriptor (SLD)</h1>
 <ul>
 <li>GeoServer uses the OGC standard for definition of symbolization both for user and server definition (<a href="http://www.opengeospatial.org/standards/sld">OGC SLD Standard</a>)</li>
 <li>Most, but not all of the OGC standard has been implemented with GeoServer</li>
-<li>The materials presented here are based upon the SLD reference distributed as part of the <a href="http://docs.geoserver.org/stable/en/user/index.html">GeoServer 2.1 HTML documentation</a>, and in particular the <a href="http://docs.geoserver.org/stable/en/user/styling/sld-cookbook/index.html">GeoServer SLD Cookbook</a>.</li>
+<li>The materials presented here are based upon the SLD reference distributed as part of the <a href="http://docs.geoserver.org/stable/en/user/index.html">Current GeoServer HTML documentation</a>, and in particular the <a href="http://docs.geoserver.org/stable/en/user/styling/sld-cookbook/index.html">GeoServer SLD Cookbook</a>.</li>
 </ul>
 </section><section id="definitionOfStyles_01" class="slide level3">
 <h1>Definition of Styles</h1>
@@ -70,7 +70,7 @@ code > span.er { color: #ff0000; font-weight: bold; }
 <dd><p>Allow for the application different symbolizers to <a href="http://docs.geoserver.org/stable/en/user/styling/sld-reference/filters.html">defined sets</a> of features</p>
 </dd>
 <dt>Scale Elements</dt>
-<dd><p>Allow for the application of different symbolizers at different map scales (no documentation at the moment)</p>
+<dd><p>Allow for the application of different symbolizers at different map scales through the definition of <a href="http://docs.geoserver.org/stable/en/user/styling/sld-reference/rules.html">styling rules</a></p>
 </dd>
 </dl>
 </section><section id="definitionOfStyles_03" class="slide level3">
@@ -243,8 +243,8 @@ one or more <span class="kw">&lt;NamedLayer&gt;</span> ...  <span class="kw">&lt
 </section><section id="raster-symbolizer" class="slide level3">
 <h1>Raster Symbolizer</h1>
 <pre class="sourceCode xml" id="rasterSymbolizer"><code class="sourceCode xml"><span class="kw">&lt;Opacity&gt;</span>
-<span class="kw">&lt;ColorMap</span><span class="ot"> type=</span><span class="er">ramp|values|intervals</span> <span class="er">extended=true|false&gt;</span>
-  <span class="er">&lt;ColorMapEntry</span> <span class="er">color=</span><span class="st">&quot;&quot;</span><span class="ot"> quantity=</span><span class="st">&quot;&quot;</span><span class="ot"> label=</span><span class="st">&quot;&quot;</span><span class="ot"> opacity=</span><span class="st">&quot;&quot;</span><span class="kw">/&gt;</span>
+<span class="kw">&lt;ColorMap</span><span class="ot"> type=</span><span class="st">&quot;ramp | values | intervals&quot;</span><span class="ot"> extended=</span><span class="st">&quot;true | false&quot;</span><span class="kw">&gt;</span>
+  <span class="kw">&lt;ColorMapEntry</span><span class="ot"> color=</span><span class="st">&quot;&quot;</span><span class="ot"> quantity=</span><span class="st">&quot;&quot;</span><span class="ot"> label=</span><span class="st">&quot;&quot;</span><span class="ot"> opacity=</span><span class="st">&quot;&quot;</span><span class="kw">/&gt;</span>
 <span class="kw">&lt;ChannelSelection&gt;</span>
   <span class="kw">&lt;RedChannel&gt;</span> <span class="kw">&lt;GreenChannel&gt;</span> <span class="kw">&lt;BlueChannel&gt;</span>
     <span class="kw">&lt;SourceChannelName&gt;</span>
@@ -296,8 +296,8 @@ one or more <span class="kw">&lt;NamedLayer&gt;</span> ...  <span class="kw">&lt
 <p>Where this command requests that the fields and their values be displayed, but that the detailed geometry information (i.e. all of the nodes associated with each feature)</p>
 </section><section id="attributeFilterExample_02" class="slide level3">
 <h1>Attribute Filter Example - Styled NM Roads</h1>
-<p><img src="images/styledRoads.jpg" alt="Screenshot of the GeoServer OpenLayers Preview of the Styled Layer" /> </p>
 <p><a href="examples/SimpleRoads.sld">Full SLD</a></p>
+<p><img src="images/styledRoads.jpg" alt="Screenshot of the GeoServer OpenLayers Preview of the Styled Layer" /> </p>
 </section><section id="attributeFilterExample_03" class="slide level3">
 <h1>Attribute Filter Example - Styled NM Roads - NM Highways</h1>
 <pre class="sourceCode xml" id="styledNMRoads"><code class="sourceCode xml"><span class="co">&lt;!-- New Mexico Highways --&gt;</span>
@@ -387,9 +387,9 @@ one or more <span class="kw">&lt;NamedLayer&gt;</span> ...  <span class="kw">&lt
 </section><section id="attributeFilterWscaleFactor_01" class="slide level3">
 <h1>Attribute Filter with Scale Factor</h1>
 <p>The only change needed to introduce scale-dependencies into styles is to include <code>&lt;MaxScaleDenominator&gt;</code> or <code>&lt;MinScaleDenominator&gt;</code> elements within a rule where they should be applied. These elements should be placed just before the symbolizer element so that GeoServer can properly validate the provided SLD.</p>
-<p><a href="examples/SimpleRoadsScaled.sld">Full SLD</a> </p>
 </section><section id="attributeFilterWscaleFactor_02" class="slide level3">
 <h1>Attribute Filter with Scale Factor - 1 to 9,000,000 Scale Map</h1>
+<p><a href="examples/SimpleRoadsScaled.sld">Full SLD</a> </p>
 <p><img src="images/styledRoads_9M.jpg" alt="Screenshot of the GeoServer OpenLayers Layer Preview at 1:9000000 scale" /> </p>
 </section><section id="attributeFilterWscaleFactor_03" class="slide level3">
 <h1>Attribute Filter with Scale Factor - 1 to 2,000,000 Scale Map</h1>
@@ -486,10 +486,10 @@ one or more <span class="kw">&lt;NamedLayer&gt;</span> ...  <span class="kw">&lt
     <span class="kw">&lt;/Stroke&gt;</span>
   <span class="kw">&lt;/LineSymbolizer&gt;</span>
 <span class="kw">&lt;/Rule&gt;</span></code></pre>
-</section><section id="demonstration-of-geoserver-interface" class="slide level3">
-<h1>Demonstration of GeoServer Interface</h1>
+</section><section id="demonstrations" class="slide level3">
+<h1>Demonstrations</h1>
 <p>Class GeoServer Instance: <a href="http://geog485.unm.edu:8080/geoserver/web/">http://geog485.unm.edu:8080/geoserver/web/</a></p>
-<p><img src="images/GeoServer_Home.jpg" alt="GeoServer Home Page" /> </p>
+<p>SLD Creation Using QGIS: Link to the <a href="http://www.qgis.org/en/docs/user_manual/working_with_vector/vector_properties.html?highlight=sld">QGIS Vector Properties Dialog</a> Documentation.</p>
 </section>
 <!-- {{{{ dzslides core
 #

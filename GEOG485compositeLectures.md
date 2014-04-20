@@ -3989,7 +3989,7 @@ Options specific to individual services
 
 ### Demonstration of GeoServer Interface ###
 
-[Class GeoServer Instance]()
+[Class GeoServer Instance](http://geog485.unm.edu:8080/geoserver/web/)
 
 ![GeoServer Home Page](images/GeoServer_Home.jpg)\ 
 
@@ -4007,11 +4007,14 @@ Options specific to individual services
 	* Basic Filters
 
 
+## OGC Styled Layer Descriptor (SLD) ##
+
+
 ### OGC Styled Layer Descriptor (SLD) ###
 
 * GeoServer uses the OGC standard for definition of symbolization both for user and server definition ([OGC SLD Standard](http://www.opengeospatial.org/standards/sld)) 
 * Most, but not all of the OGC standard has been implemented with GeoServer
-* The materials presented here are based upon the SLD reference distributed as part of the [GeoServer 2.1 HTML documentation](http://docs.geoserver.org/stable/en/user/index.html), and in particular the [GeoServer SLD Cookbook](http://docs.geoserver.org/stable/en/user/styling/sld-cookbook/index.html).
+* The materials presented here are based upon the SLD reference distributed as part of the [Current GeoServer HTML documentation](http://docs.geoserver.org/stable/en/user/index.html), and in particular the [GeoServer SLD Cookbook](http://docs.geoserver.org/stable/en/user/styling/sld-cookbook/index.html).
 
 
 ### Definition of Styles ###  {#definitionOfStyles_01}
@@ -4038,7 +4041,7 @@ Filters
 :	Allow for the application different symbolizers to [defined sets](http://docs.geoserver.org/stable/en/user/styling/sld-reference/filters.html) of features
 
 Scale Elements
-:	Allow for the application of different symbolizers at different map scales (no documentation at the moment)
+:	Allow for the application of different symbolizers at different map scales through the definition of [styling rules](http://docs.geoserver.org/stable/en/user/styling/sld-reference/rules.html)
 
 
 ### Definition of Styles - Header Content ###  {#definitionOfStyles_03}
@@ -4258,7 +4261,7 @@ SLD Snippet ([Full SLD](http://karlbenedict.com/GEOG485-585/lectures/examples/sl
 
 ~~~~~~~~~~ {#rasterSymbolizer .xml }
 <Opacity>
-<ColorMap type=ramp|values|intervals extended=true|false>
+<ColorMap type="ramp | values | intervals" extended="true | false">
   <ColorMapEntry color="" quantity="" label="" opacity=""/>
 <ChannelSelection>
   <RedChannel> <GreenChannel> <BlueChannel>
@@ -4344,9 +4347,10 @@ Where this command requests that the fields and their values be displayed, but t
 
 ### Attribute Filter Example - Styled NM Roads ### {#attributeFilterExample_02}
 
+[Full SLD](examples/SimpleRoads.sld)
+
 ![Screenshot of the GeoServer OpenLayers Preview of the Styled Layer](images/styledRoads.jpg)\ 
 
-[Full SLD](examples/SimpleRoads.sld)
 
 
 
@@ -4455,11 +4459,12 @@ Where this command requests that the fields and their values be displayed, but t
 
 The only change needed to introduce scale-dependencies into styles is to include `<MaxScaleDenominator>` or `<MinScaleDenominator>` elements within a rule where they should be applied. These elements should be placed just before the symbolizer element so that GeoServer can properly validate the provided SLD. 
 
-[Full SLD](examples/SimpleRoadsScaled.sld)\ 
 
 
 
 ### Attribute Filter with Scale Factor - 1 to 9,000,000 Scale Map ###  {#attributeFilterWscaleFactor_02}
+
+[Full SLD](examples/SimpleRoadsScaled.sld)\ 
 
 ![Screenshot of the GeoServer OpenLayers Layer Preview at 1:9000000 scale](images/styledRoads_9M.jpg)\ 
 
@@ -4582,9 +4587,10 @@ This is unchanged from the previous example as the Interstates are visible at al
 
 
 
-### Demonstration of GeoServer Interface ###
+### Demonstrations ###
 
 Class GeoServer Instance: [http://geog485.unm.edu:8080/geoserver/web/](http://geog485.unm.edu:8080/geoserver/web/)
 
-![GeoServer Home Page](images/GeoServer_Home.jpg)\ 
+SLD Creation Using QGIS:
+Link to the [QGIS Vector Properties Dialog](http://www.qgis.org/en/docs/user_manual/working_with_vector/vector_properties.html?highlight=sld) Documentation. 
 
