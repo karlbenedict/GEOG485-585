@@ -701,16 +701,6 @@ background-color: rgba(255, 255, 255, 0.15);
 width: 700px;		
 }
 
-#styledNMRoadsInterstates_01 code.sourceCode.xml {
-font-size: large;
-margin: 0;
-padding: 10px;
-display: block;
-overflow: scroll;
-height: 400px;
-background-color: rgba(255, 255, 255, 0.15);
-width: 700px;		
-}
 
 #attributeFilterWscaleFactor_02 p img {
 height: 350px;
@@ -757,3 +747,160 @@ width: 700px;
 #demonstration-of-geoserver-interface p img {
 	margin-right: 180px;
 }
+
+
+/* Module 5.2.2 */
+
+
+#rasterSymbolizerElements code.sourceCode.xml {
+font-size: medium;
+margin: 0;
+padding: 10px;
+display: block;
+overflow: scroll;
+background-color: rgba(255, 255, 255, 0.15);
+width: 750px;		
+}
+
+#simpleRasterSymbolizer code.sourceCode.xml {
+font-size: medium;
+margin: 0;
+padding: 10px;
+display: block;
+overflow: scroll;
+height: 400px;
+background-color: rgba(255, 255, 255, 0.15);
+width: 750px;			
+}
+
+#default-ramp-raster-color-map p img {
+	height: 400px;
+	margin-left: 130px;
+}
+
+#intervals-raster-color-map p img {
+	height: 400px;
+	margin-left: 130px;
+}
+
+#values-raster-color-map p img {
+	height: 400px;
+	margin-left: 130px;
+}
+
+#getLegendGraphicRequest code {
+	font-size: medium;
+	margin: 0;
+	padding: 0;
+}
+
+#legend-graphics-for-the-three-styes p img {
+	height: 200px;
+}
+
+#extendedRamp code.sourceCode.xml {
+font-size: medium;
+margin: 0;
+padding: 10px;
+display: block;
+overflow: scroll;
+background-color: rgba(255, 255, 255, 0.15);
+width: 750px;			
+}
+
+#extend-or-not-to-extend p img {
+	height: 350px;
+	margin-left: 2px;
+}
+
+#opacityColorMapEntry code.sourceCode.xml {
+font-size: medium;
+margin: 0;
+padding: 10px;
+display: block;
+overflow: scroll;
+background-color: rgba(255, 255, 255, 0.15);
+width: 750px;			
+	
+}
+
+#opacityRasterSymbolizerElement code.sourceCode.xml {
+font-size: medium;
+margin: 0;
+padding: 10px;
+display: block;
+overflow: scroll;
+background-color: rgba(255, 255, 255, 0.15);
+width: 750px;			
+}
+
+#channelSelection code.sourceCode.xml {
+font-size: medium;
+margin: 0;
+padding: 10px;
+display: block;
+overflow: scroll;
+background-color: rgba(255, 255, 255, 0.15);
+width: 750px;			
+}
+
+#channel-selection---illustration p img {
+	height: 350px;
+	margin-left: 20px;
+}
+
+#contrastEnhancement code.sourceCode.xml {
+font-size: medium;
+margin: 0;
+padding: 10px;
+display: block;
+overflow: scroll;
+background-color: rgba(255, 255, 255, 0.15);
+width: 750px;			
+}
+
+#contrastEnhancementNormalize code.sourceCode.xml {
+font-size: medium;
+margin: 0;
+padding: 10px;
+display: block;
+overflow: scroll;
+background-color: rgba(255, 255, 255, 0.15);
+width: 750px;			
+}
+
+#default---normalize p img {
+height: 350px;
+margin-left: 20px;
+}
+
+#contrastEnhancementHistogram code.sourceCode.xml {
+font-size: medium;
+margin: 0;
+padding: 10px;
+display: block;
+overflow: scroll;
+background-color: rgba(255, 255, 255, 0.15);
+width: 750px;			
+}
+
+#default---histogram p img {
+height: 350px;
+margin-left: 20px;
+}
+
+#contrastEnhancementGamma code.sourceCode.xml {
+font-size: medium;
+margin: 0;
+padding: 10px;
+display: block;
+overflow: scroll;
+background-color: rgba(255, 255, 255, 0.15);
+width: 750px;			
+}
+
+#default---gamma p img {
+height: 350px;
+margin-left: 20px;
+}
+
