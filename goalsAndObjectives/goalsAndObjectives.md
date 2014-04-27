@@ -623,8 +623,9 @@ At the end of the class, students will understand:
 * Two methods for defining opacity for a raster dataset as a whole or for individual values
 * The options for and potential effects of contrast enhancement on raster map images. 
 
-### Weekly Milestone - none ###
+### Weekly Milestone - A Final OpenLayers Mapping Client ###
 
+[Week 15 Milestone](http://tinyurl.com/mx624ma)
 
 ### Readings ###
 
@@ -663,7 +664,7 @@ At the end of the class students will understand:
 * the roles of open interoperability standards such as those from the Open Geospatial Consortium (WMS, WFS, WCS, SLD, KML), W3C (HTML, CSS) and EMCA (Javascript) in enabling connectivity between and capabilities within each tier 
 
 
-### Weekly Milestone - A Final OpenLayers Mapping Client ###
+### Weekly Milestone - none ###
 
 
 ### Readings - none ###
