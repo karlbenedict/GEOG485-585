@@ -1,0 +1,132 @@
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <script type="text/javascript" src="http://openlayers.org/api/OpenLayers.js"></script>
+    <script type="text/javascript">
+        
+        // define global variables
+        var lon = -106.5;
+        var lat = 36;
+        var zoom = 3;
+        var myProjection = new OpenLayers.Projection("EPSG:4326")
+        var map;
+        var bmngLayer, countiesLayer, indlandLayer, federallandsLayer;
+
+        // =============== Initialization function ===================
+        function init(){
+             
+            map = new OpenLayers.Map('map',
+            	{projection:myProjection}
+            );
+            
+
+			// =========== USGS National Map WMS ====== 
+
+            // from http://basemap.nationalmap.gov/ArcGIS/services/USGSImageryTopo/MapServer/WMSServer?request=GetCapabilities&service=WMS
+			usImagery = new OpenLayers.Layer.WMS( 
+            	"US Imagery Tile Service - USGS", 
+            	"http://basemap.nationalmap.gov/arcgis/services/USGSImageryTopo/MapServer/WmsServer?",
+            	{layers: "0", version: '1.3.0', transparent: 'TRUE'},
+            	{isBaseLayer: true}
+            );
+            map.addLayer(usImagery)
+            
+			// from http://services.nationalmap.gov/ArcGIS/services/TNM_Blank_US/MapServer/WMSServer?request=GetCapabilities&service=WMS
+            
+            countriesLayer = new OpenLayers.Layer.WMS( 
+            	"Global Countries and Oceans", 
+            	"http://services.nationalmap.gov/arcgis/services/TNM_Blank_US/MapServer/WmsServer?",
+            	{layers: "2,3,5,8,9,11,15,16,18,22,23,25", version: '1.3.0', transparent: 'TRUE'},
+            	{isBaseLayer: true}
+            );
+            map.addLayer(countriesLayer)
+
+			globalLabelsLayer = new OpenLayers.Layer.WMS( 
+            	"Global Labels", 
+            	"http://services.nationalmap.gov/arcgis/services/TNM_Blank_US/MapServer/WmsServer?",
+            	{layers: "12,19,26", version: '1.3.0', transparent: 'TRUE'},
+            	{isBaseLayer: false, singleTile: true, visibility: false}
+            );
+            map.addLayer(globalLabelsLayer)
+            
+ 			// =========== GEBCO Grid =================
+			gebcoLayer = new OpenLayers.Layer.WMS( 
+            	"General Bathymetric Chart of the Oceans (GEBCO)", 
+            	"http://www.gebco.net/data_and_products/gebco_web_services/web_map_service/mapserv?",
+            	{layers: "GEBCO_08_Grid", version: '1.3.0', transparent: 'TRUE'},
+            	{isBaseLayer: true}
+            );
+            map.addLayer(gebcoLayer)
+            
+           
+            
+// 			=========== NASA Earth Observations WMS (non-responsive) =====
+// 				from http://neowms.sci.gsfc.nasa.gov/wms/wms?version=1.3.0&service=WMS&request=GetCapabilities
+//             globalImageryLayer = new OpenLayers.Layer.WMS( 
+//             	"Global Imagery - Blue Marble NG", 
+//             	"http://neowms.sci.gsfc.nasa.gov/wms/wms",
+//             	{layers: "BlueMarbleNG", version: '1.3.0', transparent: 'TRUE'},
+//             	{isBaseLayer: true}
+//             );
+//             map.addLayer(globalImageryLayer)
+//             
+//             globalImageryTBLayer = new OpenLayers.Layer.WMS( 
+//             	"Global Imagery - Blue Marble NG w. Topography and Bathymetry", 
+//             	"http://neowms.sci.gsfc.nasa.gov/wms/wms",
+//             	{layers: "BlueMarbleNG-TB", version: '1.3.0', transparent: 'TRUE'},
+//             	{isBaseLayer: true}
+//             );
+//             map.addLayer(globalImageryTBLayer)
+
+
+            // =========== USGS National Atlas WMS ====
+
+            // from USGS National Atlas: http://webservices.nationalatlas.gov/wms/boundaries?SERVICE=WMS&REQUEST=GetCapabilities
+            countiesLayer = new OpenLayers.Layer.WMS( 
+            	"US Counties", 
+            	"http://webservices.nationalatlas.gov/wms?",
+            	{layers: "counties", version: '1.3.0', transparent: 'TRUE'},
+            	{isBaseLayer: false, visibility: false, opacity: .8}
+            );
+            map.addLayer(countiesLayer);
+			
+            indlanLayer = new OpenLayers.Layer.WMS( 
+            	"Indian Lands", 
+            	"http://webservices.nationalatlas.gov/wms?",
+            	{layers: "indlan", version: '1.3.0', transparent: 'TRUE'},
+            	{isBaseLayer: false, visibility: false, opacity: .5}
+            );
+            map.addLayer(indlanLayer);
+			
+            federallandsLayer = new OpenLayers.Layer.WMS( 
+            	"US Federal Lands", 
+            	"http://webservices.nationalatlas.gov/wms?",
+            	{layers: "federallands", version: '1.3.0', transparent: 'TRUE'},
+            	{isBaseLayer: false, visibility: false, opacity: .5}
+            );
+            map.addLayer(federallandsLayer);
+			
+			map.setCenter(
+                new OpenLayers.LonLat(lon, lat), zoom
+            );
+
+            map.addControl(new OpenLayers.Control.LayerSwitcher() );
+            map.addControl(new OpenLayers.Control.Scale() );
+                
+        }
+        // =============== End of Initialization Function ============
+        
+	</script>
+	<style type="text/css">
+		#map {width:800px; height:500px}
+	</style>
+  </head>
+  <body onload="init()">
+    <h1>Basic OpenLayers Map</h1>
+    <p>Shows the basic use of OpenLayers with a set of WMS layers</p>
+	
+	<!-- Map DIV -->
+	<div id="map"></div>
+	
+  </body>
+</html>

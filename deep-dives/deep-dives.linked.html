@@ -20,14 +20,114 @@
 </ul>
 </div>
 <h1 id="geography-485l585l-deep-dive-assignments"><a href="#geography-485l585l-deep-dive-assignments">Geography 485L/585L &quot;Deep Dive&quot; Assignments</a></h1>
-<p>The four assignments that constitute the class's &quot;Deep Dives&quot; consist of a series of activities that build upon each other and the smaller assignments accomplished as <a href="../milestones/milestones.html">&quot;Milestones&quot;</a> in the development of your course portfolio. These assignments will be added to your portfolio content and evaluated in conjunction with the mid-term and end-of-term portfolio assessment and grading. The approximate timing of these assignments is provided below, though may be subject to change as progress through the class material continues.</p>
+<p>The four assignments that constitute the class's &quot;Deep Dives&quot; consist of a series of activities that build upon each other and the smaller assignments accomplished as <a href="http://karlbenedict.com/GEOG485-585/milestones/milestones.html">&quot;Milestones&quot;</a> in the development of your course portfolio. These assignments will be added to your portfolio content and evaluated in conjunction with the mid-term and end-of-term portfolio assessment and grading. The approximate timing of these assignments is provided below, though may be subject to change as progress through the class material continues.</p>
 <h2 id="week-4-creation-of-a-a-google-maps-web-page-with-custom-points-and-labels"><a href="#week-4-creation-of-a-a-google-maps-web-page-with-custom-points-and-labels">Week 4: Creation of a a Google Maps Web Page with Custom Points and Labels</a></h2>
-<p>TBA</p>
+<p>In your milestone for Week 4 you built a styled Google Maps base map for a particular region of interest. For this <em>deep dive</em> assignment create a new free-standing web page that includes a brief description of the topical focus of your mapper:</p>
+<ul>
+<li>The type of information that you want to depict in your map</li>
+<li>Your reasons for selecting the specific area shown in the map</li>
+<li>A description of what you are trying to communicate with the map</li>
+</ul>
+<p>Embed the base map that you initially created for your lab assignment into this new web page.</p>
+<ul>
+<li>Add 5 overlay objects to the map that relate to specific items of interest or importance. These overlay objects may be <em>markers</em>, <em>polylines</em>, or <em>polygons</em>. Make sure to include descriptive titles for each object.</li>
+<li>Add an <em>infobox</em> to each object that contains additional detailed information about the object</li>
+</ul>
 <h2 id="week-6-ogc-service-concepts"><a href="#week-6-ogc-service-concepts">Week 6: OGC Service Concepts</a></h2>
-<p>TBA</p>
+<dl>
+<dt>Question 1</dt>
+<dd>What request type is common across all three (WMS, WFS, WCS) OGC web services that we have learned about?
+</dd>
+</dl>
+<p>Answer the following questions about a WMS GetCapabilities request</p>
+<dl>
+<dt>Question 2</dt>
+<dd>What are the required parameters, and what do they represent?
+</dd>
+<dd>What is returned in response to a WMS GetCapabilities request?
+</dd>
+</dl>
+<p>Answer the following questions about a WMS GetMap request</p>
+<dl>
+<dt>Question 3</dt>
+<dd>What are the required parameters, and what do they represent?
+</dd>
+<dd>What is returned in response to a WMS GetMap request?
+</dd>
+<dd><p>What is the significance of transparency in WMS requests?</p>
+</dd>
+<dt>Question 4</dt>
+<dd><p>What OGC request would you use to inform the configuration of a client application (like ArcGIS) about an OGC service that you want to add layers from?</p>
+</dd>
+</dl>
+<p>Which OGC request would you submit under the following circumstances (include both the service type [e.g. WMS, WFS, WCS], and the request [e.g. GetMap, GetCapabilities, GetCoverage, etc.] in your answer)</p>
+<dl>
+<dt>Question 5</dt>
+<dd>You want a map image representing three layers of data in a single JPEG for a specified area of interest.
+</dd>
+<dd>You want to retrieve data representing geometries and associated attributes for a road network, with the returned data in GML.
+</dd>
+<dd><p>You want to retrieve data representing a digital elevation model (a raster dataset) in the form of a GeoTIFF.</p>
+</dd>
+<dt>Question 6 - What are the EPSG codes of the following Spatial Reference Systems</dt>
+<dd>WGS 84 (Geodetic CRS [geographic 2d])
+</dd>
+<dd>NAD83 / UTM zone 13N
+</dd>
+<dd><p>NAD27 / UTM zone 13N</p>
+</dd>
+</dl>
+<p>Use the <code>cs2cs</code> utility to convert the following WGS84 Geographic Coordinates into UTM Zone 13, NAD83 coordinates. Include your <code>cs2cs</code> command and output in your writeup.</p>
+<dl>
+<dt>Question 7</dt>
+<dd>35°14′19.29″ N, 107°36′30.67″ W (Mount Taylor Summit)
+</dd>
+<dd>34°16′40.34″ N, 103°19′28.49″ W (Blackwater Draw)
+</dd>
+</dl>
+<p>Retrieve the GetCapabilities XML response from the following WMS, and answer the following questions.</p>
+<p><a href="http://gstore.unm.edu/apps/rgis/datasets/715663ba-c1c3-414c-84a7-c671526f8316/services/ogc/wms?SERVICE=wms&amp;REQUEST=GetCapabilities&amp;VERSION=1.1.1">http://gstore.unm.edu/apps/rgis/datasets/715663ba-c1c3-414c-84a7-c671526f8316/services/ogc/wms?SERVICE=wms&amp;REQUEST=GetCapabilities&amp;VERSION=1.1.1</a></p>
+<dl>
+<dt>Question 8</dt>
+<dd>What is the Title of the service?
+</dd>
+<dd>Who is the Contact Person for questions about the service?
+</dd>
+<dd>What are the available image formats for the GetMap request for this service?
+</dd>
+<dd><p>What are the SRS/CRS’s for which layers from this service are available (remember that nested layers inherit the SRS/CRS of their parent layers).</p>
+</dd>
+<dt>Question 9</dt>
+<dd><p>Formulate a GetMap request for the “tl_2010_35_bg10” layer from this service, for a 500x500 pixel map image that is 0.05-degrees wide and 0.05-degress high, with the SW corner of the map image located at 35°N and -106°45'E. Include in your write-up the complete GetMap request and the returned map image.  </p>
+</dd>
+</dl>
 <h2 id="week-11-problem-definition-and-data-acquisition"><a href="#week-11-problem-definition-and-data-acquisition">Week 11: Problem Definition and Data Acquisition</a></h2>
-<p>TBA</p>
+<p>This deep dive is the first of two (plus milestones) that are related to a common theme of taking an online mapping problem from start to finish - from the definition of a problem, through the implementation of services and a basic client interface for the display of data for the specific problem.</p>
+<p>Before beginning to work on any mapping problem (online or otherwise), some basic questions need to asked and answered. Please consider and answer (in 2-4 sentences as appropriate for the question) the following questions relating to the problem that you will be working on for the forthcoming assignments:</p>
+<ul>
+<li><p>What is the high-level description of the problem/question you want to help answer through the presentation of a collection of geographic data over the internet? Please answer in a short paragraph.</p></li>
+<li><p>Who is the target audience for the information you want to provide?</p></li>
+<li><p>What geographic region does your problem area represent? Please describe it in words (e.g. New Mexico, Alberta Canada, etc.) and define it in terms of a geographic (WGS84) (latitude and longitude) bounding box.</p></li>
+<li><p>What types of data do you want to include in your project? Include a description (data content: e.g. elevation data, hydrographic survey, etc.) and types (i.e. raster, vector).</p></li>
+<li><p>What projection will you use for the presentation of your project data? Again, describe it, provide your reasoning for selection, and provide the corresponding EPSG code.</p></li>
+<li><p>Where do you anticipate acquiring data for the project from?</p></li>
+<li><p>What barriers to acquiring and processing the needed data do you anticipate?</p></li>
+</ul>
+<p>While you are going to continue to acquire additional data for the project over the next couple of assignments, begin acquiring data for your selected project now. Specifically, find 5 datasets that are consistent with your description of the problem you are going to work on, and use <code>ogrinfo</code> or <code>gdalinfo</code> and any associated metadata to describe them in brief by answering the following questions:</p>
+<ul>
+<li><p>What is the name of the dataset?</p></li>
+<li><p>What type of data (raster/vector) are in the dataset?</p></li>
+<li><p>What is its format?</p></li>
+<li><p>What is its coordinate reference system?</p></li>
+<li><p>What are the spatial extents of the dataset?</p></li>
+</ul>
+<p>For a dataset to be useful, you should be able to answer all five of these questions about it. Furthermore, you should seek out datasets that are in common formats that you know you can work with in a variety of applications (i.e. QGIS, ArcGIS, gdalinfo, ogrinfo, etc.). If you can’t access and use a dataset in one of these applications, you will probably have problems trying to use it in your project. As a point of reference you can execute the following commands to obtain a list of the supported vector and raster file formats supported by <code>gdal</code> and <code>ogr</code> on your computer:</p>
+<pre><code>ogrinfo --formats
+gdalinfo --formats</code></pre>
+<p>Also, below are links to the documentation for GeoServer - the platform that we will work with in a couple of weeks for publishing data - relating to the supported raster and vector formats in the default GeoServer installation.</p>
+<p>Vector Data: <a href="http://docs.geoserver.org/stable/en/user/data/vector/index.html">http://docs.geoserver.org/stable/en/user/data/vector/index.html</a></p>
+<p>Raster Data <a href="http://docs.geoserver.org/stable/en/user/data/raster/index.html">http://docs.geoserver.org/stable/en/user/data/raster/index.html</a></p>
 <h2 id="week-14-data-integration-and-styling-in-geoserver"><a href="#week-14-data-integration-and-styling-in-geoserver">Week 14: Data Integration and Styling in GeoServer</a></h2>
-<p>TBA</p>
+<p>Add each of the datasets that you acquired for Deep Dive 3 to GeoServer and style at least three of the layers with a custom style designed to best display the data for your envisioned map. Include in your writeup the names of the datasets, associated styles, and screenshots of the layers in the OpenLayers previewer, with the style name displayed in the OpenLayers preview tool set.</p>
 </body>
 </html>

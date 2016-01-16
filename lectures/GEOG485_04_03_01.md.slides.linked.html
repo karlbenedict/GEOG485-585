@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<head>
+<meta charset="utf-8">
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <link rel="stylesheet" href="slides.css" />
+  <link rel="stylesheet" href="slidesSpecific.css" />
+</head>
+<body>
+<section id="module-4.3---interoperability-standards---desktop-gis-integration" class="titleslide slide level1"><h1>Module 4.3 - Interoperability Standards - Desktop GIS Integration</h1></section><section id="overview" class="slide level3">
+<h1>Overview</h1>
+<ul>
+<li>Common Model for Client Configuration for Connections to Remote OGC Services</li>
+<li>Specific Client Examples</li>
+</ul>
+<p>Quantum GIS (QGIS)</p>
+<ul>
+<li>WMS</li>
+<li>WFS</li>
+<li>WCS</li>
+</ul>
+<p>ArcGIS</p>
+<ul>
+<li>WMS</li>
+<li>WFS</li>
+<li>WCS</li>
+</ul>
+</section><section id="common-model" class="slide level3">
+<h1>Common Model</h1>
+<p>Based upon the results of a GetCapabilities request against a remote service. GetCapabilities request information provided as either:</p>
+<ul>
+<li>The base URL to which the OGC service parameters would be added</li>
+<li>A complete GetCapabilities request against the service</li>
+</ul>
+</section><section id="full-getcapabilities-request" class="slide level3">
+<h1>Full GetCapabilities Request</h1>
+<p>NASA Earth Observations (NEO) Imagery WMS</p>
+<p><a href="http://neowms.sci.gsfc.nasa.gov/wms/wms?version=1.3.0&amp;service=WMS&amp;request=GetCapabilities"><code>http://neowms.sci.gsfc.nasa.gov/wms/wms?version=1.3.0&amp;service=WMS&amp;request=GetCapabilities</code></a></p>
+<p>USGS <a href="http://viewer.nationalmap.gov/example/services/serviceList.html">Framework Services</a></p>
+<p><a href="http://frameworkwfs.usgs.gov/framework/wms/wms.cgi?SERVICE=wms&amp;REQUEST=GetCapabilities"><code>http://frameworkwfs.usgs.gov/framework/wms/wms.cgi?SERVICE=wms&amp;REQUEST=GetCapabilities</code></a></p>
+</section><section id="base-url-for-getcapabilities" class="slide level3">
+<h1>Base URL for GetCapabilities</h1>
+<p>NASA Earth Observations (NEO) Imagery WMS</p>
+<p><a href="http://neowms.sci.gsfc.nasa.gov/wms/wms?version=1.3.0&amp;service=WMS&amp;request=GetCapabilities"><code>http://neowms.sci.gsfc.nasa.gov/wms/wms?</code></a></p>
+<p>USGS <a href="http://viewer.nationalmap.gov/example/services/serviceList.html">Framework Services</a></p>
+<p><a href="http://frameworkwfs.usgs.gov/framework/wms/wms.cgi?SERVICE=wms&amp;REQUEST=GetCapabilities"><code>http://frameworkwfs.usgs.gov/framework/wms/wms.cgi?</code></a></p>
+</section><section id="quantum-gis-qgis" class="slide level3">
+<h1>Quantum GIS (QGIS)</h1>
+<p>QGIS uses the Base URL approach for adding WMS, WFS or WCS layers to a project.</p>
+<p>The General Process:</p>
+<ol type="1">
+<li>Add service, or select existing service</li>
+<li>Connect to the service to retrieve the information from the GetCapabilities response for the service</li>
+<li>Select layer(s)</li>
+<li>Modify settings for layer(s)</li>
+<li>Add layer(s)</li>
+</ol>
+<p><a href="http://www.qgis.org/en/docs/user_manual/working_with_ogc/index.html">QGIS OGC Documentation</a></p>
+</section><section id="qgis---adding-services-and-layers---start" class="slide level3">
+<h1>QGIS - Adding Services and Layers - start</h1>
+<div id="imageBlock">
+<div id="qgis00">
+<img src="images/QGIS_2_0_1-OGCDemo-00.png" alt="Layer selection in the QGIS Layer menu" /> 
+</div>
+<div id="qgis01">
+<img src="images/QGIS_2_0_1-OGCDemo-01.png" alt="Layer selection from a button in the interface" /> 
+</div>
+</div>
+<p>You need to know the GetCapabilities request for the service you want to add, for example one of the USGS Framework WMS services</p>
+<pre><code>http://frameworkwfs.usgs.gov/framework/wms/wms.cgi?
+SERVICE=wms&amp;REQUEST=GetCapabilities</code></pre>
+<p>determine the base URL -</p>
+<p><code>http://frameworkwfs.usgs.gov/framework/wms/wms.cgi</code></p>
+<p>in this case</p>
+<p>If in doubt, check the information in the metadata</p>
+<p>Select the layer type you would like to from &quot;Layer&quot; menu, or click the button in the interface to add a specific layer type.</p>
+</section><section id="qgis---adding-services-and-layers---adding-a-service" class="slide level3">
+<h1>QGIS - Adding Services and Layers - adding a service</h1>
+<p>Add a service to the list of services in the menu (if necessary - QGIS retains information about previously added services) by selecting the &quot;New&quot; option under the service list in the &quot;Add Layer(s) from a Server&quot; dialog</p>
+<p><img src="images/QGIS_2_0_1-OGCDemo-02.png" alt="&quot;Add Layer(s) from a Server&quot; dialog" /> </p>
+</section><section id="qgis---adding-services-and-layers---adding-connection-information" class="slide level3">
+<h1>QGIS - Adding Services and Layers - adding connection information</h1>
+<p>Add the name, base URL and any additional information about the service to the connection dialog box</p>
+<p><img src="images/QGIS_2_0_1-OGCDemo-03.png" alt="Connection dialog box" /> </p>
+</section><section id="qgis---adding-services-and-layers---connecting-to-and-adding-layers-from-the-service" class="slide level3">
+<h1>QGIS - Adding Services and Layers - connecting to and adding layers from the service</h1>
+<p>After adding the service, you can select it from the service list in the &quot;Add Layer(s) from a Server&quot; dialog box, connect to the service to retrieve the GetCapabilities response from the service, select the layers and other options advertised by the service through its response, and add them to your map.</p>
+<p><img src="images/QGIS_2_0_1-OGCDemo-04.png" alt="&quot;Add Layer(s) from a Server&quot; dialog with service connection and layer selection process" /> </p>
+</section><section id="qgis---adding-services-and-layers---the-final-added-layer" class="slide level3">
+<h1>QGIS - Adding Services and Layers - the final added layer</h1>
+<p>After adding the layer, it appears as an available layer in the table of contents for your map.</p>
+<p><img src="images/QGIS_2_0_1-OGCDemo-05.png" alt="QGIS map with added WMS layer in the TOC" /> </p>
+</section><section id="qgis-demonstration-with-wms-wfs-and-wcs-services" class="slide level3">
+<h1>QGIS Demonstration with WMS, WFS and WCS Services</h1>
+<p>WMS, WFS and WCS in QGIS</p>
+<p><a href="http://karlbenedict.com/GEOG485-585/lectures/examples/QGIS_OGC_Demo.qgs">Example</a></p>
+<p><img src="images/QGIS_2_0_1-OGCDemo-06.png" alt="Screenshot of the QGIS interface with demonstration data." /> </p>
+</section><section id="arcgis" class="slide level3">
+<h1>ArcGIS</h1>
+<p>Based upon the results of a GetCapabilities request against a remote service. GetCapabilities request information provided as either:</p>
+<ul>
+<li>The base URL to which the OGC service parameters would be added</li>
+<li>A complete GetCapabilities request against the service</li>
+</ul>
+<p>This model applies to ArcGIS just as it did for Quantum GIS - the base URL is provided to the various ArcGIS components that support the addition of OGC services to the client interface.</p>
+<p><a href="http://resources.arcgis.com/en/help/main/10.2/index.html#/About_using_OGC_service_layers/00sp0000000n000000/">ArcGIS OGC Support Documentation</a></p>
+</section><section id="arcgis-wms-and-wcs-configuration" class="slide level3">
+<h1>ArcGIS WMS and WCS Configuration</h1>
+<p>The addition of OGC WMS and WCS layers to ArcMap is through the same process of</p>
+<ul>
+<li>Select the &quot;add data&quot; button</li>
+<li>WMS/WCS services are added through the &quot;GIS Servers&quot; option in the &quot;Add Data&quot; dialog</li>
+<li>If you have not previously added the service from which you want to add layers, you select &quot;Add WMS Server&quot; or &quot;Add WCS Server&quot; from the list of options in the &quot;Add Data&quot; dialog
+<ul>
+<li>You then provide the BASE GetCapabilities URL to the &quot;ADD WMS/WCS Server&quot; dialog that appears</li>
+<li>Click &quot;OK&quot;, and the new WMS/WCS service is added to the list of services that is available when you choose to add a WMS service.</li>
+</ul></li>
+<li>You then select the layer(s) from the service that you want to add to your map and click the &quot;add&quot; button in the dialog.</li>
+</ul>
+</section><section id="arcgis-wms-and-wcs-configuration-resources" class="slide level3">
+<h1>ArcGIS WMS and WCS Configuration Resources</h1>
+<ul>
+<li>Adding WMS Services to ArcMap 10.2</li>
+</ul>
+<p><a href="http://resources.arcgis.com/en/help/main/10.2/index.html#/Adding_WMS_services/00sp0000000s000000/">ESRI Documentation</a></p>
+<ul>
+<li>Adding WCS Services to ArcMap 10.2</li>
+</ul>
+<p><a href="http://resources.arcgis.com/en/help/main/10.2/index.html#/Adding_a_WCS_service_to_ArcMap/00sp0000000z000000/">ESRI Documentation</a></p>
+</section><section id="arcgis-wfs-configuration" class="slide level3">
+<h1>ArcGIS WFS Configuration</h1>
+<ul>
+<li>WFS support in ArcGIS 10.0 and beyond requires that the &quot;Data Interoperability Extension&quot; be installed (though it doesn’t have to be enabled)</li>
+<li>Connections to WFS services are defined through ArcCatalog's &quot;Interoperabilty Connections&quot; &quot;Add Interoperability Connection&quot; option</li>
+<li>After defining the connection in ArcCatalog (including the specification of the interoperabilty connection type, desired feature types, and maximum number of features to return), its feature types are available through that Interoperability Connection that may be added to ArcMap and other ArcGIS components</li>
+<li>Once the connection is created, WFS data may be added through the &quot;Add Data&quot; dialog in ArcMap</li>
+</ul>
+</section><section id="arcgis-wfs-configuration-resources" class="slide level3">
+<h1>ArcGIS WFS Configuration Resources</h1>
+<ul>
+<li>Steps for connecting to an OGC WFS from within ArcCatalog 10.2</li>
+</ul>
+<p><a href="http://resources.arcgis.com/en/help/main/10.2/index.html#//00370000000p000000">ESRI Documentation</a></p>
+<ul>
+<li>Steps for adding a WFS service to ArcMap 10.2</li>
+</ul>
+<p><a href="http://resources.arcgis.com/en/help/main/10.2/index.html#/Adding_a_WFS_service_to_ArcMap/00sp0000001m000000/">ESRI Documentation</a></p>
+</section><section id="conclusions" class="slide level3">
+<h1>Conclusions</h1>
+<ul>
+<li>A GetCapabilities request is the key for configuring most OGC client applications to access remote services</li>
+<li>The specific way in which the GetCapabilities request is given to the client varies from client to client</li>
+<li>Clients can auto/<em>mis</em>-configure themselves based upon the GetCapabilities XML response - when troubleshooting problems with an advertised service, try the manual request approach for the GetCapabilities, data and maps that you have learned about to determine if the service is functioning as advertised.</li>
+</ul>
+</section>
+<!-- {{{{ dzslides core
+#
+#
+#     __  __  __       .  __   ___  __
+#    |  \  / /__` |    | |  \ |__  /__`
+#    |__/ /_ .__/ |___ | |__/ |___ .__/ core :€
+#
+#
+# The following block of code is not supposed to be edited.
+# But if you want to change the behavior of these slides,
+# feel free to hack it!
+#
+-->
+
+<div id="progress-bar"></div>
+
+<!-- Default Style -->
+<style>
+  * { margin: 0; padding: 0; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+  details { display: none; }
+  body {
+    width: 800px; height: 600px;
+    margin-left: -400px; margin-top: -300px;
+    position: absolute; top: 50%; left: 50%;
+    overflow: hidden;
+  }
+  section {
+    position: absolute;
+    pointer-events: none;
+    width: 100%; height: 100%;
+  }
+  section[aria-selected] { pointer-events: auto; }
+  html { overflow: hidden; }
+  body { display: none; }
+  body.loaded { display: block; }
+  .incremental {visibility: hidden; }
+  .incremental[active] {visibility: visible; }
+  #progress-bar{
+    bottom: 0;
+    position: absolute;
+    -moz-transition: width 400ms linear 0s;
+    -webkit-transition: width 400ms linear 0s;
+    -ms-transition: width 400ms linear 0s;
+    transition: width 400ms linear 0s;
+  }
+  figure {
+    width: 100%;
+    height: 100%;
+  }
+  figure > * {
+    position: absolute;
+  }
+  figure > img, figure > video {
+    width: 100%; height: 100%;
+  }
+</style>
+
+<script>
+  var Dz = {
+    remoteWindows: [],
+    idx: -1,
+    step: 0,
+    slides: null,
+    progressBar : null,
+    params: {
+      autoplay: "1"
+    }
+  };
+
+  Dz.init = function() {
+    document.body.className = "loaded";
+    this.slides = $$("body > section");
+    this.progressBar = $("#progress-bar");
+    this.setupParams();
+    this.onhashchange();
+    this.setupTouchEvents();
+    this.onresize();
+  }
+  
+  Dz.setupParams = function() {
+    var p = window.location.search.substr(1).split('&');
+    p.forEach(function(e, i, a) {
+      var keyVal = e.split('=');
+      Dz.params[keyVal[0]] = decodeURIComponent(keyVal[1]);
+    });
+  // Specific params handling
+    if (!+this.params.autoplay)
+      $$.forEach($$("video"), function(v){ v.controls = true });
+  }
+
+  Dz.onkeydown = function(aEvent) {
+    // Don't intercept keyboard shortcuts
+    if (aEvent.altKey
+      || aEvent.ctrlKey
+      || aEvent.metaKey
+      || aEvent.shiftKey) {
+      return;
+    }
+    if ( aEvent.keyCode == 37 // left arrow
+      || aEvent.keyCode == 38 // up arrow
+      || aEvent.keyCode == 33 // page up
+    ) {
+      aEvent.preventDefault();
+      this.back();
+    }
+    if ( aEvent.keyCode == 39 // right arrow
+      || aEvent.keyCode == 40 // down arrow
+      || aEvent.keyCode == 34 // page down
+    ) {
+      aEvent.preventDefault();
+      this.forward();
+    }
+    if (aEvent.keyCode == 35) { // end
+      aEvent.preventDefault();
+      this.goEnd();
+    }
+    if (aEvent.keyCode == 36) { // home
+      aEvent.preventDefault();
+      this.goStart();
+    }
+    if (aEvent.keyCode == 32) { // space
+      aEvent.preventDefault();
+      this.toggleContent();
+    }
+    if (aEvent.keyCode == 70) { // f
+      aEvent.preventDefault();
+      this.goFullscreen();
+    }
+  }
+
+  /* Touch Events */
+
+  Dz.setupTouchEvents = function() {
+    var orgX, newX;
+    var tracking = false;
+
+    var db = document.body;
+    db.addEventListener("touchstart", start.bind(this), false);
+    db.addEventListener("touchmove", move.bind(this), false);
+
+    function start(aEvent) {
+      aEvent.preventDefault();
+      tracking = true;
+      orgX = aEvent.changedTouches[0].pageX;
+    }
+
+    function move(aEvent) {
+      if (!tracking) return;
+      newX = aEvent.changedTouches[0].pageX;
+      if (orgX - newX > 100) {
+        tracking = false;
+        this.forward();
+      } else {
+        if (orgX - newX < -100) {
+          tracking = false;
+          this.back();
+        }
+      }
+    }
+  }
+
+  /* Adapt the size of the slides to the window */
+
+  Dz.onresize = function() {
+    var db = document.body;
+    var sx = db.clientWidth / window.innerWidth;
+    var sy = db.clientHeight / window.innerHeight;
+    var transform = "scale(" + (1/Math.max(sx, sy)) + ")";
+
+    db.style.MozTransform = transform;
+    db.style.WebkitTransform = transform;
+    db.style.OTransform = transform;
+    db.style.msTransform = transform;
+    db.style.transform = transform;
+  }
+
+
+  Dz.getDetails = function(aIdx) {
+    var s = $("section:nth-of-type(" + aIdx + ")");
+    var d = s.$("details");
+    return d ? d.innerHTML : "";
+  }
+
+  Dz.onmessage = function(aEvent) {
+    var argv = aEvent.data.split(" "), argc = argv.length;
+    argv.forEach(function(e, i, a) { a[i] = decodeURIComponent(e) });
+    var win = aEvent.source;
+    if (argv[0] === "REGISTER" && argc === 1) {
+      this.remoteWindows.push(win);
+      this.postMsg(win, "REGISTERED", document.title, this.slides.length);
+      this.postMsg(win, "CURSOR", this.idx + "." + this.step);
+      return;
+    }
+    if (argv[0] === "BACK" && argc === 1)
+      this.back();
+    if (argv[0] === "FORWARD" && argc === 1)
+      this.forward();
+    if (argv[0] === "START" && argc === 1)
+      this.goStart();
+    if (argv[0] === "END" && argc === 1)
+      this.goEnd();
+    if (argv[0] === "TOGGLE_CONTENT" && argc === 1)
+      this.toggleContent();
+    if (argv[0] === "SET_CURSOR" && argc === 2)
+      window.location.hash = "#" + argv[1];
+    if (argv[0] === "GET_CURSOR" && argc === 1)
+      this.postMsg(win, "CURSOR", this.idx + "." + this.step);
+    if (argv[0] === "GET_NOTES" && argc === 1)
+      this.postMsg(win, "NOTES", this.getDetails(this.idx));
+  }
+
+  Dz.toggleContent = function() {
+    // If a Video is present in this new slide, play it.
+    // If a Video is present in the previous slide, stop it.
+    var s = $("section[aria-selected]");
+    if (s) {
+      var video = s.$("video");
+      if (video) {
+        if (video.ended || video.paused) {
+          video.play();
+        } else {
+          video.pause();
+        }
+      }
+    }
+  }
+
+  Dz.setCursor = function(aIdx, aStep) {
+    // If the user change the slide number in the URL bar, jump
+    // to this slide.
+    aStep = (aStep != 0 && typeof aStep !== "undefined") ? "." + aStep : ".0";
+    window.location.hash = "#" + aIdx + aStep;
+  }
+
+  Dz.onhashchange = function() {
+    var cursor = window.location.hash.split("#"),
+        newidx = 1,
+        newstep = 0;
+    if (cursor.length == 2) {
+      newidx = ~~cursor[1].split(".")[0];
+      newstep = ~~cursor[1].split(".")[1];
+      if (newstep > Dz.slides[newidx - 1].$$('.incremental > *').length) {
+        newstep = 0;
+        newidx++;
+      }
+    }
+    this.setProgress(newidx, newstep);
+    if (newidx != this.idx) {
+      this.setSlide(newidx);
+    }
+    if (newstep != this.step) {
+      this.setIncremental(newstep);
+    }
+    for (var i = 0; i < this.remoteWindows.length; i++) {
+      this.postMsg(this.remoteWindows[i], "CURSOR", this.idx + "." + this.step);
+    }
+  }
+
+  Dz.back = function() {
+    if (this.idx == 1 && this.step == 0) {
+      return;
+    }
+    if (this.step == 0) {
+      this.setCursor(this.idx - 1,
+                     this.slides[this.idx - 2].$$('.incremental > *').length);
+    } else {
+      this.setCursor(this.idx, this.step - 1);
+    }
+  }
+
+  Dz.forward = function() {
+    if (this.idx >= this.slides.length &&
+        this.step >= this.slides[this.idx - 1].$$('.incremental > *').length) {
+        return;
+    }
+    if (this.step >= this.slides[this.idx - 1].$$('.incremental > *').length) {
+      this.setCursor(this.idx + 1, 0);
+    } else {
+      this.setCursor(this.idx, this.step + 1);
+    }
+  }
+
+  Dz.goStart = function() {
+    this.setCursor(1, 0);
+  }
+
+  Dz.goEnd = function() {
+    var lastIdx = this.slides.length;
+    var lastStep = this.slides[lastIdx - 1].$$('.incremental > *').length;
+    this.setCursor(lastIdx, lastStep);
+  }
+
+  Dz.setSlide = function(aIdx) {
+    this.idx = aIdx;
+    var old = $("section[aria-selected]");
+    var next = $("section:nth-of-type("+ this.idx +")");
+    if (old) {
+      old.removeAttribute("aria-selected");
+      var video = old.$("video");
+      if (video) {
+        video.pause();
+      }
+    }
+    if (next) {
+      next.setAttribute("aria-selected", "true");
+      var video = next.$("video");
+      if (video && !!+this.params.autoplay) {
+        video.play();
+      }
+    } else {
+      // That should not happen
+      this.idx = -1;
+      // console.warn("Slide doesn't exist.");
+    }
+  }
+
+  Dz.setIncremental = function(aStep) {
+    this.step = aStep;
+    var old = this.slides[this.idx - 1].$('.incremental > *[aria-selected]');
+    if (old) {
+      old.removeAttribute('aria-selected');
+    }
+    var incrementals = $$('.incremental');
+    if (this.step <= 0) {
+      $$.forEach(incrementals, function(aNode) {
+        aNode.removeAttribute('active');
+      });
+      return;
+    }
+    var next = this.slides[this.idx - 1].$$('.incremental > *')[this.step - 1];
+    if (next) {
+      next.setAttribute('aria-selected', true);
+      next.parentNode.setAttribute('active', true);
+      var found = false;
+      $$.forEach(incrementals, function(aNode) {
+        if (aNode != next.parentNode)
+          if (found)
+            aNode.removeAttribute('active');
+          else
+            aNode.setAttribute('active', true);
+        else
+          found = true;
+      });
+    } else {
+      setCursor(this.idx, 0);
+    }
+    return next;
+  }
+
+  Dz.goFullscreen = function() {
+    var html = $('html'),
+        requestFullscreen = html.requestFullscreen || html.requestFullScreen || html.mozRequestFullScreen || html.webkitRequestFullScreen;
+    if (requestFullscreen) {
+      requestFullscreen.apply(html);
+    }
+  }
+  
+  Dz.setProgress = function(aIdx, aStep) {
+    var slide = $("section:nth-of-type("+ aIdx +")");
+    if (!slide)
+      return;
+    var steps = slide.$$('.incremental > *').length + 1,
+        slideSize = 100 / (this.slides.length - 1),
+        stepSize = slideSize / steps;
+    this.progressBar.style.width = ((aIdx - 1) * slideSize + aStep * stepSize) + '%';
+  }
+  
+  Dz.postMsg = function(aWin, aMsg) { // [arg0, [arg1...]]
+    aMsg = [aMsg];
+    for (var i = 2; i < arguments.length; i++)
+      aMsg.push(encodeURIComponent(arguments[i]));
+    aWin.postMessage(aMsg.join(" "), "*");
+  }
+  
+  function init() {
+    Dz.init();
+    window.onkeydown = Dz.onkeydown.bind(Dz);
+    window.onresize = Dz.onresize.bind(Dz);
+    window.onhashchange = Dz.onhashchange.bind(Dz);
+    window.onmessage = Dz.onmessage.bind(Dz);
+  }
+
+  window.onload = init;
+</script>
+
+
+<script> // Helpers
+  if (!Function.prototype.bind) {
+    Function.prototype.bind = function (oThis) {
+
+      // closest thing possible to the ECMAScript 5 internal IsCallable
+      // function 
+      if (typeof this !== "function")
+      throw new TypeError(
+        "Function.prototype.bind - what is trying to be fBound is not callable"
+      );
+
+      var aArgs = Array.prototype.slice.call(arguments, 1),
+          fToBind = this,
+          fNOP = function () {},
+          fBound = function () {
+            return fToBind.apply( this instanceof fNOP ? this : oThis || window,
+                   aArgs.concat(Array.prototype.slice.call(arguments)));
+          };
+
+      fNOP.prototype = this.prototype;
+      fBound.prototype = new fNOP();
+
+      return fBound;
+    };
+  }
+
+  var $ = (HTMLElement.prototype.$ = function(aQuery) {
+    return this.querySelector(aQuery);
+  }).bind(document);
+
+  var $$ = (HTMLElement.prototype.$$ = function(aQuery) {
+    return this.querySelectorAll(aQuery);
+  }).bind(document);
+
+  $$.forEach = function(nodeList, fun) {
+    Array.prototype.forEach.call(nodeList, fun);
+  }
+
+</script>
+<!-- vim: set fdm=marker: }}} -->
+</body>
+</html>

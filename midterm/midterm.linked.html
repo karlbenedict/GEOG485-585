@@ -1,0 +1,129 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <link rel="stylesheet" href="../page.css" type="text/css" />
+</head>
+<body>
+<h1 id="geog-485l585l-midterm-exam">GEOG 485L/585L Midterm Exam</h1>
+<h2 id="due-wednesday-march-12-2014-before-midnight">Due Wednesday, March 12, 2014 before Midnight</h2>
+<p><em>Late Exams will be penalized</em></p>
+<p>Just as you have done for your milestones and deep-dives, create a web page with your answers to the exam questions and link to the page from your homepage (index.html) in GitHub.</p>
+<p>Make sure to <em>clearly format</em> your writeup so that your answer's are understandable.</p>
+<p>100 pts</p>
+<dl>
+<dt>Question 1</dt>
+<dd>Which command line utility would you use to determine the following (4 pts each)
+</dd>
+</dl>
+<p>The spatial extent of a GML file (choose one)?</p>
+<ul>
+<li>proj</li>
+<li>cs2cs</li>
+<li>gdalinfo</li>
+<li>ogrinfo</li>
+</ul>
+<p>The spatial reference system of a raster file in the format of a GeoTIFF (choose one)?</p>
+<ul>
+<li>proj</li>
+<li>cs2cs</li>
+<li>gdalinfo</li>
+<li>ogrinfo</li>
+</ul>
+<dl>
+<dt>Question 2</dt>
+<dd>What combination of OGC Service and Request (e.g. SERVICE=WMS&amp;REQUEST=GetFeatureInfo) would you use to perform the following? (3 pts each)
+</dd>
+</dl>
+<ol style="list-style-type: decimal">
+<li>Determine the spatial extent of an available layer from a Web Map Service.</li>
+<li>Obtain a list of coverages from a Web Coverage service.</li>
+<li>Determine what file formats are supported by a Web Feature Service for the delivery of available data types (i.e. layers)</li>
+<li>Retrieve a map image from a Web Map Service</li>
+<li>Retrieve data from an available coverage from a Web Coverage Service </li>
+</ol>
+<dl>
+<dt>Question 3</dt>
+<dd>Use the cs2cs command line utility to convert the following latitude-longitude coordinates (WGS84) to UTM, Zone 13N, NAD83 coordinates (5 pts each)
+</dd>
+</dl>
+<ol style="list-style-type: decimal">
+<li>35.682180 North Latitude -105.939670 East Longitude (New Mexico State Capitol)</li>
+<li>34.891983 North Latitude -107.930153 East Longitude (El Malpais National Monument)</li>
+</ol>
+<dl>
+<dt>Question 4</dt>
+<dd>Perform the following WMS GetCapabilities request (<a href="http://neowms.sci.gsfc.nasa.gov/wms/wms?version=1.1.1&amp;service=WMS&amp;request=GetCapabilities">Link</a>)
+</dd>
+</dl>
+<pre><code>http://neowms.sci.gsfc.nasa.gov/wms/wms?version=1.1.1&amp;service=WMS&amp;request=GetCapabilities </code></pre>
+<p>And answer the following questions (4 pts each)</p>
+<ol style="list-style-type: decimal">
+<li>What is the name of the service?</li>
+<li>What file formats are supported by the GetMap request?</li>
+<li>What are the <em>names</em> of three of the layers included in the service?</li>
+</ol>
+<dl>
+<dt>Question 5</dt>
+<dd>Compose a GetMap request for the WMS referenced in Question 4 that includes the following characteristics:
+</dd>
+</dl>
+<ul>
+<li>JPEG image format</li>
+<li>1200 pixels wide (you will need to calculate the height based upon the aspect ratio of the bounding box)</li>
+<li>Bounding Box (EPSG:4326): <code>Min X = -128 East Longitude, Min Y = 21.5 North Latitude, Max X = -62 East Longitude, Max Y = 54.5 North Latitude</code></li>
+<li>Layer to be mapped = “MOD_LSTD_CLIM_M”</li>
+</ul>
+<p>Include in your answer both the complete WMS GetMap request and the resulting map image that is returned. (15 pts) </p>
+<!-- http://neowms.sci.gsfc.nasa.gov/wms/wms?VERSION=1.1.1&SERVICE=WMS&REQUEST=GetMap&LAYERS=MOD_LSTD_CLIM_M&WIDTH=1200&HEIGHT=600&BBOX=-128,21.5,-62,54.5&STYLE=&SRS=EPSG:4326&FORMAT=image/jpeg -->
+
+<dl>
+<dt>Question 6</dt>
+<dd>From the XML GetCapabilities returned by the following WFS request (<a href="http://services.nationalmap.gov/arcgis/services/WFS/transportation/MapServer/WFSServer?request=GetCapabilities&amp;service=WFS">Link</a>) answer the following questions (4 pts each) 
+</dd>
+</dl>
+<pre><code>http://services.nationalmap.gov/arcgis/services/WFS/transportation/MapServer/WFSServer?
+request=GetCapabilities&amp;service=WFS</code></pre>
+<ol style="list-style-type: decimal">
+<li>What is the title for this service?</li>
+<li>What file format(s) are supported by this service’s GetFeature request?</li>
+<li>What is the DefaultSRS or the FeatureType named “WFS_transportation:Interstate”?</li>
+<li>What is the WGS84BoundingBox of the FeatureType named “WFS_transportation:Interstate”?</li>
+</ol>
+<dl>
+<dt>Question 7</dt>
+<dd>From the XML GetCapabilities returned by the following WCS request (<a href="http://sdf.ndbc.noaa.gov/thredds/wcs/hfradar_uswc_500m?request=GetCapabilities&amp;version=1.0.0&amp;service=WCS">Link</a>) answer the following questions (4 pts each)
+</dd>
+</dl>
+<pre><code>http://sdf.ndbc.noaa.gov/thredds/wcs/hfradar_uswc_500m?request=GetCapabilities
+&amp;version=1.0.0&amp;service=WCS</code></pre>
+<ol style="list-style-type: decimal">
+<li>What is the description of the <code>v</code> coverage?</li>
+<li>How many coverages are available from this service?</li>
+</ol>
+<dl>
+<dt>Question 8a</dt>
+<dd>Formulate a complete DescribeCoverage request for the <code>v</code> coverage for the WCS service referenced in Question 7. (4 pts)
+</dd>
+</dl>
+<ol style="list-style-type: decimal">
+<li>DescribeCoverage request</li>
+</ol>
+<!-- http://sdf.ndbc.noaa.gov/thredds/wcs/hfradar_uswc_500m?request=DescribeCoverage&version=1.0.0&service=WCS&COVERAGE=v -->
+
+<dl>
+<dt>Question 8b</dt>
+<dd>From the returned XML document answer the following questions. (4 pts each)
+</dd>
+</dl>
+<ol style="list-style-type: decimal">
+<li>What is the spatial domain for the ‘v‘ coverage?</li>
+<li>What file formats are available for ‘v‘ data delivered by this service?</li>
+<li>What SRS(s) are supported by this service for requested data delivery?</li>
+</ol>
+</body>
+</html>

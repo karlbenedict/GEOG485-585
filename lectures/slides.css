@@ -17,9 +17,11 @@
 	color: white;
 	font: 18pt "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
 }
-  address, blockquote, dl, fieldset, form, h1, h2, h3, h4, h5, h6, hr, ol, p, pre, table, ul, dl { padding: 10px 20px 10px 20px; }
+  address, blockquote, dl, fieldset, form, h1, h2, h3, h4, h5, h6, hr, ol, p, pre, table, ul, dl { padding: 10px 20px 10px 20px;
+  	text-align: left;
+  }
   h1, h2, h3 {
-    text-align: center;
+    text-align: left;
     margin: 10pt 10pt 20pt 10pt;
   }
   ul, ol {
@@ -97,10 +99,10 @@ ul li {
      https://developer.mozilla.org/en/CSS/CSS_transitions
      How to use CSS3 Transitions: */
   section {
-      -moz-transition: left 400ms linear 0s;
-      -webkit-transition: left 400ms linear 0s;
-      -ms-transition: left 400ms linear 0s;
-      transition: left 400ms linear 0s;
+      -moz-transition: opacity 1s ease-in 1s;
+      -webkit-transition: opacity 1s ease-in 1s;
+      -ms-transition: opacity 1s ease-in 1s;
+      transition: opacity 1s ease-in 1s;
   }
 
   /* Before */
@@ -121,5 +123,58 @@ ul li {
   /* The items to-be-selected */
   .incremental > *[aria-selected] ~ * { opacity: 0.2; }
   
+  /* My VERY SPECIAL styles */
+  
+  a {
+  	font-size: medium;
+  }
+
+ p code {
+ 	background-color: #ffffff;
+ 	color: #0d23c9;
+ 	font-size: medium;
+ 	padding: 0 4px;
+ }
+ 
+ td.lineNumbers {
+ 	width: 20px;
+ }
+ 
+ div.codeTable {
+  	background-color: #c4c2c2;
+  	display: block;
+  	height: 400px;
+  	width: 700px;
+  	overflow: scroll;
+  	margin-left: 50px;
+  }
+  
+  table.sourceCode.html.numberLines {
+  	font-size: x-small;
+  }
+  
+  table.sourceCode.bash.numberLines {
+  	font-size: x-small;
+  }
+  
+  table.sourceCode.xml.numberLines {
+  	font-size: x-small;
+  }
+  
+  table {
+  	font-size: small;
+  	width: 90%;
+  }
+  
+  pre.numberLines {
+  	font-size: x-small;
+  	padding: 20xp;
+  	background-color: #ffffff;
+  	color: #0e0fe1;
+  }
+  
+  dd {
+  	font-size: medium;
+  }
   
   

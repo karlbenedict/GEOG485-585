@@ -1,26 +1,27 @@
 #!/bin/bash
 
-find . -iname "*.md" -exec /usr/local/bin/pandoc --slide-level 3 -c slides.css --self-contained --standalone -t dzslides \{\} -o \{\}.slides.html \;
-find . -iname "*.md" -exec /usr/local/bin/pandoc --slide-level 3 -c slides.css --standalone -t dzslides \{\} -o \{\}.slides.linked.html \;
-find . -iname "*.md" -exec /usr/local/bin/pandoc --toc -c ../page.css --self-contained --standalone \{\} -o \{\}.html \;
-find . -iname "*.md" -exec /usr/local/bin/pandoc --toc -c ../page.css --standalone \{\} -o \{\}.linked.html \;
-find . -iname "*.md" -exec /usr/local/bin/pandoc --template ~/Dropbox/Active/Repos/Pandoc\ Templates/default_endFloat.latex --latex-engine=xelatex --self-contained --standalone \{\} -o \{\}.pdf \;
+echo
+echo "Generating Lecture Materials"
+date
 
+cat *.md > ../GEOG485compositeLectures.md
 
-# Week 01
-# /usr/local/bin/pandoc --slide-level 3 -c slides.css --self-contained --standalone -t dzslides geog485_sp2014_01.md -o geog485_sp2014_01.slides.html
-# /usr/local/bin/pandoc --slide-level 3 -c slides.css --standalone -t dzslides geog485_sp2014_01.md -o geog485_sp2014_01.slides.linked.html
+echo "Lecture slides.html";find . -iname "*.md" | sort -r | xargs -I \{\} /usr/local/bin/pandoc --slide-level 3 -c slides.css -c slidesSpecific.css --self-contained --standalone -t dzslides \{\} -o \{\}.slides.html
+echo "Lecture slides.linked.html";find . -iname "*.md" | sort -r | xargs -I \{\} /usr/local/bin/pandoc --slide-level 3 -c slides.css -c slidesSpecific.css --standalone -t dzslides \{\} -o \{\}.slides.linked.html
+echo "Lecture webpage.html";find . -iname "*.md" | sort -r | xargs -I \{\} /usr/local/bin/pandoc --toc -c ../page.css --self-contained --standalone \{\} -o \{\}.html
+echo "Lecture webpage.linked.html";find . -iname "*.md" | sort -r | xargs -I \{\} /usr/local/bin/pandoc --toc -c ../page.css --standalone \{\} -o \{\}.linked.html
+echo "Lecture PDF";find . -iname "*.md" | sort -r | xargs -I \{\} /usr/local/bin/pandoc --toc --template ~/Dropbox/Active/Repos/Pandoc\ Templates/default_endFloat.latex --latex-engine=xelatex --self-contained --standalone \{\} -o \{\}.pdf
+
+echo "Composite Lecture Notes"
+/usr/local/bin/pandoc --toc -c ../page.css --self-contained --standalone ../GEOG485compositeLectures.md -o ../GEOG485compositeLectures.md.html
+/usr/local/bin/pandoc --toc --template ~/Dropbox/Active/Repos/Pandoc\ Templates/default_endFloat.latex --latex-engine=xelatex --self-contained --standalone ../GEOG485compositeLectures.md -o ../GEOG485compositeLectures.md.pdf
+
+# find . -iname "*.md" -exec /usr/local/bin/pandoc --slide-level 3 -c slides.css -c slidesSpecific.css --self-contained --standalone -t dzslides \{\} -o \{\}.slides.html \;
+# find . -iname "*.md" -exec /usr/local/bin/pandoc --slide-level 3 -c slides.css -c slidesSpecific.css --standalone -t dzslides \{\} -o \{\}.slides.linked.html \;
+# find . -iname "*.md" -exec /usr/local/bin/pandoc --toc -c ../page.css --self-contained --standalone \{\} -o \{\}.html \;
+# find . -iname "*.md" -exec /usr/local/bin/pandoc --toc -c ../page.css --standalone \{\} -o \{\}.linked.html \;
+# find . -iname "*.md" -exec /usr/local/bin/pandoc --toc --template ~/Dropbox/Active/Repos/Pandoc\ Templates/default_endFloat.latex --latex-engine=xelatex --self-contained --standalone \{\} -o \{\}.pdf \;
 # 
-# /usr/local/bin/pandoc --toc -c ../page.css --self-contained --standalone geog485_sp2014_01.md -o geog485_sp2014_01.html
-# /usr/local/bin/pandoc --toc -c ../page.css --standalone geog485_sp2014_01.md -o geog485_sp2014_01.linked.html
-# 
-# /usr/local/bin/pandoc --template ~/Dropbox/Active/Repos/Pandoc\ Templates/default_endFloat.latex --self-contained --standalone geog485_sp2014_01.md -o geog485_sp2014_01.pdf
-# 
-# Week 02
-# /usr/local/bin/pandoc --slide-level 3 -c slides.css --self-contained --standalone -t dzslides GEOG485_02.md -o GEOG485_02.slides.html
-# /usr/local/bin/pandoc --slide-level 3 -c slides.css --standalone -t dzslides GEOG485_02.md -o GEOG485_02.slides.linked.html
-# 
-# /usr/local/bin/pandoc --toc -c ../page.css --self-contained --standalone GEOG485_02.md -o GEOG485_02.html
-# /usr/local/bin/pandoc --toc -c ../page.css --standalone GEOG485_02.md -o GEOG485_02.linked.html
-# 
-# /usr/local/bin/pandoc --template ~/Dropbox/Active/Repos/Pandoc\ Templates/default_endFloat.latex --self-contained --standalone GEOG485_02.md -o GEOG485_02.pdf
+
+date
+echo

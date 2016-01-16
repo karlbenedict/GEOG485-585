@@ -36,7 +36,7 @@ This week we will review the content and structure for the course and spend some
 
 This week's milestone is to set up your GitHub account so you can get started in creating your web portfolio that will be incrementally built over the course of the next sixteen weeks. As part of the process of getting all the parts and pieces into place you will create your first web page within the GitHub environment. 
 
-[http://karlbenedict.com/GEOG485-585/milestones/milestones.html#week-1---creating-your-first-web-page-in-github](http://karlbenedict.com/GEOG485-585/milestones/milestones.html#week-1---creating-your-first-web-page-in-github)
+[Week 1 Milestone](http://tinyurl.com/mt5v8ve)
 
 
 ### Readings ###
@@ -89,7 +89,7 @@ By the end of this class module you should understand the following:
 
 ### Weekly Milestone - Create a More Complex Web Page and Style It ###
 
-[http://karlbenedict.com/GEOG485-585/milestones/milestones.html#week-2---create-a-more-complex-web-page-and-style-it](http://karlbenedict.com/GEOG485-585/milestones/milestones.html#week-2---create-a-more-complex-web-page-and-style-it)
+[Week 2 Milestone](http://tinyurl.com/n437dtt)
 
 ### Readings ###
 
@@ -131,7 +131,7 @@ By the end of this class module you should understand the following:
 
 ### Weekly Milestone - Creation of a Web Page with an Embedded Google Map ###
 
-[http://karlbenedict.com/GEOG485-585/milestones/milestones.html#week-3---creation-of-a-web-page-with-an-embedded-google-map](http://karlbenedict.com/GEOG485-585/milestones/milestones.html#week-3---creation-of-a-web-page-with-an-embedded-google-map)
+[Week 3 Milestone](http://tinyurl.com/n8ef9dq)
 
 ### Readings ###
 
@@ -178,9 +178,11 @@ You should also understand
 
 ### Weekly Milestone - Styling of an Embedded Google Map ###
 
+[Week 4 Milestone](http://tinyurl.com/kgpjl7x)
 
 ### Deep Dive - Creation of a a Google Maps Web Page with Custom Points and Labels ###
 
+[Week 4 Deep Dive Assignment](http://tinyurl.com/l9lxym2)
 
 ### Readings ###
 
@@ -229,6 +231,7 @@ By the end of this class module you should understand the following:
 
 ### Weekly Milestone - Proj4, GDAL, and OGR ###
 
+[Week 5 Milestone](http://tinyurl.com/kvvumx6)
 
 ### Readings ###
 
@@ -287,9 +290,11 @@ At the end of this class students should have an understanding of the following:
 
 ### Weekly Milestone - WMS & KML ###
 
+[Week 6 Milestone](http://tinyurl.com/oautuc5)
 
 ### Deep Dive - OGC Service Concepts  ###
 
+[Week 6 Deep Dive Assignment](http://tinyurl.com/o6ugg4c)
 
 ### Readings ###
 
@@ -340,14 +345,15 @@ At the end of this class students should have an understanding of the following:
 
 ### Weekly Milestone - WMS and KML in Google Earth###
 
+[Week 7 Milestone](http://tinyurl.com/ptpc9rt)
 
 ### Readings ###
 
 *For Reference*
 
-* [OGC WFS Implementation Specification][http://www.opengeospatial.org/standards/wfs]
+* [OGC WFS Implementation Specification](http://www.opengeospatial.org/standards/wfs)
 
-* [OGC WCS Implementation Specification][http://www.opengeospatial.org/standards/wfs]
+* [OGC WCS Implementation Specification](http://www.opengeospatial.org/standards/wfs)
 
 
 
@@ -404,6 +410,7 @@ At the end of this class students will understand that
 
 ### Weekly Milestone - OpenLayers Mapping###
 
+[Week 10 Milestone](http://tinyurl.com/ovzz74m)
 
 ### Readings ###
 
@@ -443,9 +450,11 @@ At the end of this class students will understand that
 
 ### Weekly Milestone - A Customized OpenLayers Mapping Client ###
 
+[Week 11 Milestone](http://tinyurl.com/px7eomw)
 
 ### Deep Dive - Problem Definition and Data Acquisition ###
 
+[Week 11 Deep Dive](http://tinyurl.com/pasojrn)
 
 ### Readings ###
 
@@ -477,13 +486,14 @@ At the end of this class students will understand that
 
 * The key to configuring a desktop client application is the GetCapabilities request for the needed service
 * The GetCapabilities request required by a particular client may consist of a base URL or a complete URL. 
-* Quantum GIS uses a base URL request model for self-configuration of WMS and WFS services
+* Quantum GIS uses a base URL request model for self-configuration of WMS, WFS and WCS services
 * ArcGIS uses a base URL request model for self-configuration of WMS, WCS, and WFS services
-* Both Quantum GIS and ArcGIS require additional configuration to enable WFS access 
+* ArcGIS requires additional configuration to enable WFS access 
 
 
 ### Weekly Milestone - WMS, WFS and WCS Access in Quantum GIS ###
 
+[Week 12 Milestone](http://tinyurl.com/q3pm646)
 
 ### Readings ###
 
@@ -491,9 +501,15 @@ At the end of this class students will understand that
 
 * Quantum GIS [User's Manual](http://www.qgis.org/en/docs/user_manual/), particularly the ["Working with OGC Services"](http://www.qgis.org/en/docs/user_manual/working_with_ogc/index.html) section.  
 
-* ArcGIS Desktop 10.1 [Overview of OGC and ISO TC211 Support](http://resources.arcgis.com/en/help/main/10.1/index.html#//003700000002000000)
+* ArcGIS Desktop 10.2 [About Using OGC Service Layers](http://resources.arcgis.com/en/help/main/10.2/index.html#/About_using_OGC_service_layers/00sp0000000n000000/)
 
-* ArcGIS Desktop 10.1 [About Using OGC Service Layers](http://resources.arcgis.com/en/help/main/10.1/index.html#//00sp0000000n000000)
+* ArcGIS Desktop 10.2 [Adding WMS Services](http://resources.arcgis.com/en/help/main/10.2/index.html#/Adding_WMS_services/00sp0000000s000000/)
+
+* ArcGIS Desktop 10.2 [Adding WCS Services to ArcMap 10.2](http://resources.arcgis.com/en/help/main/10.2/index.html#/Adding_a_WCS_service_to_ArcMap/00sp0000000z000000/)
+
+* ArcGIS Desktop 10.2 [Steps for connecting to an OGC WFS from within ArcCatalog](http://resources.arcgis.com/en/help/main/10.2/index.html#//00370000000p000000)
+
+* ArcGIS Desktop 10.2 [Steps for adding a WFS service to ArcMap](http://resources.arcgis.com/en/help/main/10.2/index.html#/Adding_a_WFS_service_to_ArcMap/00sp0000001m000000/)
 
 
 
@@ -527,6 +543,7 @@ By the end of this class, students should understand:
 
 ### Weekly Milestone - GeoServer Data Import ###
 
+[Week 13 Milestone](http://tinyurl.com/po6bnx3)
 
 ### Readings ###
 
@@ -565,9 +582,11 @@ At the end of this class, students will understand:
 
 ### Weekly Milestone - Styling of Layers in GeoServer###
 
+[Week 14 Milestone](http://tinyurl.com/lndunmu)
 
 ### Deep Dive - Data Integration and Styling in GeoServer ###
 
+[Week 14 Deep Dive](http://tinyurl.com/nez5pym)
 
 ### Readings ###
 
@@ -604,8 +623,9 @@ At the end of the class, students will understand:
 * Two methods for defining opacity for a raster dataset as a whole or for individual values
 * The options for and potential effects of contrast enhancement on raster map images. 
 
-### Weekly Milestone - none ###
+### Weekly Milestone - A Final OpenLayers Mapping Client ###
 
+[Week 15 Milestone](http://tinyurl.com/mx624ma)
 
 ### Readings ###
 
@@ -644,7 +664,7 @@ At the end of the class students will understand:
 * the roles of open interoperability standards such as those from the Open Geospatial Consortium (WMS, WFS, WCS, SLD, KML), W3C (HTML, CSS) and EMCA (Javascript) in enabling connectivity between and capabilities within each tier 
 
 
-### Weekly Milestone - A Final OpenLayers Mapping Client ###
+### Weekly Milestone - none ###
 
 
 ### Readings - none ###

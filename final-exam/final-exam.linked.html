@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <link rel="stylesheet" href="../page.css" type="text/css" />
+</head>
+<body>
+<h2 id="due-wednesday-may-14-2014-before-midnight">Due Wednesday, May 14, 2014 before midnight</h2>
+<p><em>Due to Grade Submission Requirements NO Late Examinations Will be Accepted - 0 pts will be given for submissions after midnight on Wednesday May 14th.</em></p>
+<p>Make sure to <em>clearly format</em> your writeup so that your answer's are understandable.</p>
+<p>100 pts (20 pts./question)</p>
+<p>As with your milestone and deep dive assignments - write up your midterm as a web page and submit the URL of your web page as your submission for the Final Exam &quot;assignment&quot; in addition to linking it from your class home page.</p>
+<ol style="list-style-type: decimal">
+<li>Acquire, process, and understand the data for the exam:
+<ol style="list-style-type: lower-roman">
+<li>Download the final exam data collection from (<a href="http://karlbenedict.com/GEOG485-585/final-exam/final_data.zip">http://karlbenedict.com/GEOG485-585/final-exam/final_data.zip</a>).</li>
+<li>Unzip the archive.</li>
+<li>Run ogrinfo or gdalinfo (as appropriate) for each of the datasets. <strong>Include the first 5 lines of the output from gdalinfo or ogrinfo for each of the datasets in your writeup</strong>.</li>
+<li>Place the data in your data directory on the class server.</li>
+</ol></li>
+<li>Add the data to GeoServer, create <em>stores</em> and <em>layers</em>:
+<ol style="list-style-type: lower-roman">
+<li>Add each of the layers to GeoServer through the creation of a new “store” (in your <em>workspace</em>) for each of the datasets</li>
+<li>Create one new “layer” for each of the stores. <strong>Include a screenshot of each of the five new layers from the GeoServer “Layer Preview” tool in your writeup</strong>.</li>
+</ol></li>
+<li>Display any three of the GeoServer hosted layers in QGIS or ArcGIS (<em>as a WMS layer</em>) and <strong>include screenshots of each of the three layers in your writeup</strong>.</li>
+</ol>
+<p>The GetCapabilities request for your workspace on the GeoServer instance we are using for the class is (ignore the line break):</p>
+<pre><code>http://geog485.unm.edu:8080/geoserver/&lt;your workspace name&gt;
+/wms?service=WMS&amp;version=1.1.1&amp;request=GetCapabilities</code></pre>
+<p>For example (again, ignore the line break):</p>
+<pre><code>http://geog485.unm.edu:8080/geoserver/s_teststudent/wms?
+service=WMS&amp;version=1.1.1&amp;request=GetCapabilities</code></pre>
+<p>for the &quot;s_teststudent&quot; workspace</p>
+<ol start="4" style="list-style-type: decimal">
+<li>Create a new OpenLayers web mapping client:
+<ol style="list-style-type: lower-roman">
+<li>Include each of the five layers that you created in GeoServer in the layer picker in your mapping client</li>
+<li><strong>Embed the client in your final exam web page</strong>.</li>
+</ol></li>
+<li>Create and add styled layers to your OpenLayers client:
+<ol style="list-style-type: lower-roman">
+<li>Create two new layers based on two of the <em>stores</em> added in 2) above.</li>
+<li>Create two custom styles, one for each of the two layers and make those the default style for the two new layers</li>
+<li>Add these two styled layers to the mapping client generated for question 4. Provide the layer names for your customized layers in your writeup.</li>
+</ol></li>
+</ol>
+</body>
+</html>

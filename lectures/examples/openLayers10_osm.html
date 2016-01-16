@@ -1,0 +1,45 @@
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <script type="text/javascript" src="http://openlayers.org/api/OpenLayers.js"></script>
+    <script type="text/javascript">
+        
+        // define global variables
+        var lon = -106.5;
+        var lat = 36;
+        var zoom = 3;
+        var map;
+        var layer;
+
+        // =============== Initialization function ===================
+        function init(){
+            map = new OpenLayers.Map( 'map' );
+            
+			// =========== OSM Map ====================
+            layer = new OpenLayers.Layer.OSM( "Open Street Map");
+            map.addLayer(layer);
+			
+			map.setCenter(
+                new OpenLayers.LonLat(lon, lat).transform(
+                    new OpenLayers.Projection("EPSG:4326"),
+                    map.getProjectionObject()
+                ), zoom
+            );
+                
+        }
+        // =============== End of Initialization Function ============
+        
+	</script>
+	<style type="text/css">
+		#map {width:90%; height:500px}
+	</style>
+  </head>
+  <body onload="init()">
+    <h1>Basic OpenLayers Map</h1>
+    <p>Shows the basic use of OpenLayers with the <a href="http://www.openstreetmap.org/">OpenStreetmap</a> basemap</p>
+	
+	<!-- Map DIV -->
+	<div id="map"></div>
+	
+  </body>
+</html>

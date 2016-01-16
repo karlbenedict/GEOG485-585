@@ -1,0 +1,209 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <style type="text/css">
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; }
+code > span.dt { color: #902000; }
+code > span.dv { color: #40a070; }
+code > span.bn { color: #40a070; }
+code > span.fl { color: #40a070; }
+code > span.ch { color: #4070a0; }
+code > span.st { color: #4070a0; }
+code > span.co { color: #60a0b0; font-style: italic; }
+code > span.ot { color: #007020; }
+code > span.al { color: #ff0000; font-weight: bold; }
+code > span.fu { color: #06287e; }
+code > span.er { color: #ff0000; font-weight: bold; }
+  </style>
+  <link rel="stylesheet" href="../page.css" type="text/css" />
+</head>
+<body>
+<div id="TOC">
+<ul>
+<li><a href="#module-5.2---developing-and-hosting-ogc-services---ogc-services-and-styling-in-geoserver---part-ii">Module 5.2 - Developing and Hosting OGC Services - OGC Services and Styling in GeoServer - Part II</a><ul>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#raster-symbolizer---review">Raster Symbolizer - Review</a></li>
+<li><a href="#sample-raster-sld-for-color-map-examples">Sample Raster SLD for Color Map Examples</a></li>
+<li><a href="#default-ramp-raster-color-map">Default &quot;Ramp&quot; Raster Color Map</a></li>
+<li><a href="#intervals-raster-color-map">&quot;intervals&quot; Raster Color Map</a></li>
+<li><a href="#values-raster-color-map">&quot;values&quot; Raster Color Map</a></li>
+<li><a href="#legend-graphics-for-the-three-styes">Legend Graphics for the Three Styes</a></li>
+<li><a href="#extend-or-not-to-extend">Extend or Not To Extend?</a></li>
+<li><a href="#opacity">Opacity</a></li>
+<li><a href="#channel-selection">Channel Selection</a></li>
+<li><a href="#channel-selection---illustration">Channel Selection - illustration</a></li>
+<li><a href="#contrast-enhancement">Contrast Enhancement</a></li>
+<li><a href="#sample-contrast-enhancement-sld-for-examples">Sample Contrast Enhancement SLD for Examples</a></li>
+<li><a href="#default---normalize">Default - Normalize</a></li>
+<li><a href="#default---histogram">Default - Histogram</a></li>
+<li><a href="#default---gamma">Default - Gamma</a></li>
+<li><a href="#geoserver-demoqa">GeoServer Demo/Q&amp;A</a></li>
+</ul></li>
+</ul>
+</div>
+<h1 id="module-5.2---developing-and-hosting-ogc-services---ogc-services-and-styling-in-geoserver---part-ii"><a href="#module-5.2---developing-and-hosting-ogc-services---ogc-services-and-styling-in-geoserver---part-ii">Module 5.2 - Developing and Hosting OGC Services - OGC Services and Styling in GeoServer - Part II</a></h1>
+<h3 id="overview"><a href="#overview">Overview</a></h3>
+<ul>
+<li><p>Review of Raster Styling in GeoServer</p></li>
+<li><p>Raster Styling Demonstration</p></li>
+</ul>
+<h3 id="raster-symbolizer---review"><a href="#raster-symbolizer---review">Raster Symbolizer - Review</a></h3>
+<pre class="sourceCode xml" id="rasterSymbolizerElements"><code class="sourceCode xml"><span class="kw">&lt;Opacity&gt;</span>
+<span class="kw">&lt;ColorMap</span><span class="ot"> type=</span><span class="er">ramp|values|intervals</span> <span class="er">extended=true|false&gt;</span>
+  <span class="er">&lt;ColorMapEntry</span> <span class="er">color=</span><span class="st">&quot;&quot;</span><span class="ot"> quantity=</span><span class="st">&quot;&quot;</span><span class="ot"> label=</span><span class="st">&quot;&quot;</span><span class="ot"> opacity=</span><span class="st">&quot;&quot;</span><span class="kw">/&gt;</span>
+<span class="kw">&lt;ChannelSelection&gt;</span>
+  <span class="kw">&lt;RedChannel&gt;</span> <span class="kw">&lt;GreenChannel&gt;</span> <span class="kw">&lt;BlueChannel&gt;</span>
+    <span class="kw">&lt;SourceChannelName&gt;</span>
+  <span class="kw">&lt;GrayChannel&gt;</span>
+    <span class="kw">&lt;SourceChannelName&gt;</span>
+<span class="kw">&lt;ContrastEnhancement&gt;</span>
+<span class="kw">&lt;ShadedRelief&gt;</span> (not implemented in ver 2.0)
+<span class="kw">&lt;OverlapBehavior&gt;</span> (not implemented in ver 2.0)
+<span class="kw">&lt;ImageOutline&gt;</span> (not implemented in ver 2.0)</code></pre>
+<h3 id="sample-raster-sld-for-color-map-examples"><a href="#sample-raster-sld-for-color-map-examples">Sample Raster SLD for Color Map Examples</a></h3>
+<pre class="sourceCode xml" id="simpleRasterSymbolizer"><code class="sourceCode xml"><span class="kw">&lt;NamedLayer&gt;</span>
+  <span class="kw">&lt;Name&gt;</span>gtopo<span class="kw">&lt;/Name&gt;</span>
+  <span class="kw">&lt;UserStyle&gt;</span>
+    <span class="kw">&lt;Name&gt;</span>dem<span class="kw">&lt;/Name&gt;</span>
+    <span class="kw">&lt;Title&gt;</span>Simple DEM style<span class="kw">&lt;/Title&gt;</span>
+    <span class="kw">&lt;Abstract&gt;</span>Classic elevation color progression<span class="kw">&lt;/Abstract&gt;</span>
+    <span class="kw">&lt;FeatureTypeStyle&gt;</span>
+      <span class="kw">&lt;Rule&gt;</span>
+        <span class="kw">&lt;RasterSymbolizer&gt;</span>
+          <span class="kw">&lt;Opacity&gt;</span>1.0<span class="kw">&lt;/Opacity&gt;</span>
+          <span class="kw">&lt;ColorMap&gt;</span>
+            <span class="kw">&lt;ColorMapEntry</span><span class="ot"> color=</span><span class="st">&quot;#000000&quot;</span><span class="ot"> quantity=</span><span class="st">&quot;-500&quot;</span><span class="ot"> label=</span><span class="st">&quot;nodata&quot;</span><span class="ot"> opacity=</span><span class="st">&quot;0.0&quot;</span> <span class="kw">/&gt;</span>
+            <span class="kw">&lt;ColorMapEntry</span><span class="ot"> color=</span><span class="st">&quot;#AAFFAA&quot;</span><span class="ot"> quantity=</span><span class="st">&quot;0&quot;</span><span class="ot"> label=</span><span class="st">&quot;0&quot;</span> <span class="kw">/&gt;</span>
+            <span class="kw">&lt;ColorMapEntry</span><span class="ot"> color=</span><span class="st">&quot;#00FF00&quot;</span><span class="ot"> quantity=</span><span class="st">&quot;1000&quot;</span><span class="ot"> label=</span><span class="st">&quot;1000&quot;</span><span class="kw">/&gt;</span>
+            <span class="kw">&lt;ColorMapEntry</span><span class="ot"> color=</span><span class="st">&quot;#FFFF00&quot;</span><span class="ot"> quantity=</span><span class="st">&quot;1200&quot;</span><span class="ot"> label=</span><span class="st">&quot;1200&quot;</span> <span class="kw">/&gt;</span>
+            <span class="kw">&lt;ColorMapEntry</span><span class="ot"> color=</span><span class="st">&quot;#FF7F00&quot;</span><span class="ot"> quantity=</span><span class="st">&quot;1400&quot;</span><span class="ot"> label=</span><span class="st">&quot;1400&quot;</span> <span class="kw">/&gt;</span>
+            <span class="kw">&lt;ColorMapEntry</span><span class="ot"> color=</span><span class="st">&quot;#BF7F3F&quot;</span><span class="ot"> quantity=</span><span class="st">&quot;1600&quot;</span><span class="ot"> label=</span><span class="st">&quot;1600&quot;</span> <span class="kw">/&gt;</span>
+            <span class="kw">&lt;ColorMapEntry</span><span class="ot"> color=</span><span class="st">&quot;#99CC66&quot;</span><span class="ot"> quantity=</span><span class="st">&quot;2000&quot;</span><span class="ot"> label=</span><span class="st">&quot;2000&quot;</span> <span class="kw">/&gt;</span>
+            <span class="kw">&lt;ColorMapEntry</span><span class="ot"> color=</span><span class="st">&quot;#336633&quot;</span><span class="ot"> quantity=</span><span class="st">&quot;2500&quot;</span><span class="ot"> label=</span><span class="st">&quot;2500&quot;</span> <span class="kw">/&gt;</span>
+            <span class="kw">&lt;ColorMapEntry</span><span class="ot"> color=</span><span class="st">&quot;#006600&quot;</span><span class="ot"> quantity=</span><span class="st">&quot;3000&quot;</span><span class="ot"> label=</span><span class="st">&quot;3000&quot;</span> <span class="kw">/&gt;</span>
+            <span class="kw">&lt;ColorMapEntry</span><span class="ot"> color=</span><span class="st">&quot;#FFFFFF&quot;</span><span class="ot"> quantity=</span><span class="st">&quot;3500&quot;</span><span class="ot"> label=</span><span class="st">&quot;3500&quot;</span> <span class="kw">/&gt;</span>
+          <span class="kw">&lt;/ColorMap&gt;</span>
+        <span class="kw">&lt;/RasterSymbolizer&gt;</span>
+      <span class="kw">&lt;/Rule&gt;</span>
+    <span class="kw">&lt;/FeatureTypeStyle&gt;</span>
+  <span class="kw">&lt;/UserStyle&gt;</span>
+<span class="kw">&lt;/NamedLayer&gt;</span></code></pre>
+<h3 id="default-ramp-raster-color-map"><a href="#default-ramp-raster-color-map">Default &quot;Ramp&quot; Raster Color Map</a></h3>
+<pre><code>&lt;ColorMap&gt; or &lt;ColorMap type=&quot;ramp&quot;&gt;</code></pre>
+<p><img src="images/rasterSLD_01.jpg" alt="Sample default &#39;ramp&#39; color map type" /> </p>
+<h3 id="intervals-raster-color-map"><a href="#intervals-raster-color-map">&quot;intervals&quot; Raster Color Map</a></h3>
+<pre><code>&lt;ColorMap type=&quot;intervals&quot;&gt;</code></pre>
+<p><img src="images/rasterSLD_intervals.jpg" alt="&#39;intervals&#39; color map type" /> </p>
+<h3 id="values-raster-color-map"><a href="#values-raster-color-map">&quot;values&quot; Raster Color Map</a></h3>
+<pre><code>&lt;ColorMap type=&quot;values&quot;&gt;</code></pre>
+<p><img src="images/rasterSLD_values.jpg" alt="&#39;values&#39; color map type" /> </p>
+<h3 id="legend-graphics-for-the-three-styes"><a href="#legend-graphics-for-the-three-styes">Legend Graphics for the Three Styes</a></h3>
+<pre id="getLegendGraphicRequest"><code>http://geog485.unm.edu:8080/geoserver/wms?
+  service=WMS&amp;
+  version=1.1.0&amp;
+  request=GetLegendGraphic&amp;
+  layer=Karl:kb_nm_ned09_30m_nw_qtr2&amp;
+  style=dem-value&amp;
+  format=image/png</code></pre>
+<p><img src="images/rasterSLD_ramp_legend.png" alt="style= or style=dem-ramp" />  <img src="images/rasterSLD_intervals_legend.png" alt="style=dem-interval" />  <img src="images/rasterSLD_values_legend.png" alt="style=dem-value" /> </p>
+<p><a href="http://docs.geoserver.org/stable/en/user/services/wms/get_legend_graphic/legendgraphic.html">GeoServer GetLegendGraphic Documentation</a></p>
+<h3 id="extend-or-not-to-extend"><a href="#extend-or-not-to-extend">Extend or Not To Extend?</a></h3>
+<pre class="sourceCode xml" id="extendedRamp"><code class="sourceCode xml"><span class="kw">&lt;ColorMap</span><span class="ot"> type=</span><span class="st">&quot;ramp&quot;</span><span class="ot"> extended=</span><span class="st">&quot;false&quot;</span><span class="kw">&gt;</span>  = 256 colors in ramp 
+<span class="kw">&lt;ColorMap</span><span class="ot"> type=</span><span class="st">&quot;ramp&quot;</span><span class="ot"> extended=</span><span class="st">&quot;true&quot;</span><span class="kw">&gt;</span> = 65536 colors in ramp</code></pre>
+<p><img src="images/OpenLayers_map_preview_Default.jpg" alt="Non-Extended Color Ramp example" />  <img src="images/OpenLayers_map_preview_Extended.jpg" alt="Extended Color Ramp example" /> </p>
+<h3 id="opacity"><a href="#opacity">Opacity</a></h3>
+<p>Options for defining <code>opacity</code> appear in two places in the <em>raster symbolizer</em>.</p>
+<p>At the level of the entire raster dataset</p>
+<pre class="sourceCode xml" id="opacityRasterSymbolizerElement"><code class="sourceCode xml"><span class="kw">&lt;Opacity&gt;</span>0.5<span class="kw">&lt;/Opacity&gt;</span></code></pre>
+<p>Within a <code>ColorMapEntry</code> for a specific color definition within a <code>ColorMap</code></p>
+<pre class="sourceCode xml" id="opacityColorMapEntry"><code class="sourceCode xml"><span class="kw">&lt;ColorMap&gt;</span>
+   <span class="kw">&lt;ColorMapEntry</span><span class="ot"> color=</span><span class="st">&quot;#000000&quot;</span><span class="ot"> quantity=</span><span class="st">&quot;-500&quot;</span><span class="ot"> label=</span><span class="st">&quot;nodata&quot;</span><span class="ot"> opacity=</span><span class="st">&quot;0.0&quot;</span> <span class="kw">/&gt;</span>
+   <span class="kw">&lt;ColorMapEntry</span><span class="ot"> color=</span><span class="st">&quot;#AAFFAA&quot;</span><span class="ot"> quantity=</span><span class="st">&quot;0&quot;</span><span class="ot"> label=</span><span class="st">&quot;0&quot;</span> <span class="kw">/&gt;</span>
+   <span class="kw">&lt;ColorMapEntry</span><span class="ot"> color=</span><span class="st">&quot;#00FF00&quot;</span><span class="ot"> quantity=</span><span class="st">&quot;1000&quot;</span><span class="ot"> label=</span><span class="st">&quot;1000&quot;</span><span class="kw">/&gt;</span>
+   ...
+   <span class="kw">&lt;ColorMapEntry</span><span class="ot"> color=</span><span class="st">&quot;#FFFFFF&quot;</span><span class="ot"> quantity=</span><span class="st">&quot;3500&quot;</span><span class="ot"> label=</span><span class="st">&quot;3500&quot;</span> <span class="kw">/&gt;</span>
+<span class="kw">&lt;/ColorMap&gt;</span></code></pre>
+<h3 id="channel-selection"><a href="#channel-selection">Channel Selection</a></h3>
+<p>Many raster datasets contain multiple <em>bands</em> of values which may be viewed individually or assigned to the colors <em>red</em>, <em>green</em>, and <em>blue</em> to generate a color image representing a combination of band values. GeoServer allows for the specification of a single band for display as a <code>GrayChannel</code> or three bands as <code>RedChannel</code>, <code>GreenChannel</code>, and <code>BlueChannel</code>.</p>
+<pre class="sourceCode xml" id="channelSelection"><code class="sourceCode xml"><span class="kw">&lt;RasterSymbolizer&gt;</span>
+ <span class="kw">&lt;Opacity&gt;</span>1.0<span class="kw">&lt;/Opacity&gt;</span>
+ <span class="kw">&lt;ChannelSelection&gt;</span>
+  <span class="kw">&lt;RedChannel&gt;</span>
+    <span class="kw">&lt;SourceChannelName&gt;</span>3<span class="kw">&lt;/SourceChannelName&gt;</span>
+  <span class="kw">&lt;/RedChannel&gt;</span>
+  <span class="kw">&lt;GreenChannel&gt;</span>
+    <span class="kw">&lt;SourceChannelName&gt;</span>2<span class="kw">&lt;/SourceChannelName&gt;</span>
+  <span class="kw">&lt;/GreenChannel&gt;</span>
+  <span class="kw">&lt;BlueChannel&gt;</span>
+    <span class="kw">&lt;SourceChannelName&gt;</span>1<span class="kw">&lt;/SourceChannelName&gt;</span>
+  <span class="kw">&lt;/BlueChannel&gt;</span>
+ <span class="kw">&lt;/ChannelSelection&gt;</span>
+<span class="kw">&lt;/RasterSymbolizer&gt;</span></code></pre>
+<h3 id="channel-selection---illustration"><a href="#channel-selection---illustration">Channel Selection - illustration</a></h3>
+<p><img src="images/rasterSLD_channel123.jpg" alt="Standard (default) RGB Assignment" />  <img src="images/rasterSLD_channel321.jpg" alt="321 RGB Assignment" /> </p>
+<h3 id="contrast-enhancement"><a href="#contrast-enhancement">Contrast Enhancement</a></h3>
+<p>Some raster data may need adjustment to increase the contrast (the range between the darkest and lightest values) displayed. GeoServer provides three options for contrast enhancement, each of which have a different effect on the resulting image.</p>
+<dl>
+<dt>Histogram</dt>
+<dd><p>The values are stretched so that an equal number of pixels fall into each color in the range</p>
+</dd>
+<dt>Normalize</dt>
+<dd><p>The minimum and maximum brightness values are mapped to the minimum and maximum raster values</p>
+</dd>
+<dt>Gamma</dt>
+<dd><p>The image is brightened or darkened by a specified factor (negative numbers darken, positive numbers brighten)</p>
+</dd>
+</dl>
+<h3 id="sample-contrast-enhancement-sld-for-examples"><a href="#sample-contrast-enhancement-sld-for-examples">Sample Contrast Enhancement SLD for Examples</a></h3>
+<pre class="sourceCode xml" id="contrastEnhancement"><code class="sourceCode xml"><span class="kw">&lt;RasterSymbolizer&gt;</span>
+  <span class="kw">&lt;Opacity&gt;</span>1.0<span class="kw">&lt;/Opacity&gt;</span>
+  <span class="kw">&lt;ChannelSelection&gt;</span>
+    <span class="kw">&lt;RedChannel&gt;</span>
+      <span class="kw">&lt;SourceChannelName&gt;</span>1<span class="kw">&lt;/SourceChannelName&gt;</span>
+      <span class="kw">&lt;ContrastEnhancement&gt;</span>
+      <span class="kw">&lt;Histogram/&gt;</span>
+      <span class="kw">&lt;/ContrastEnhancement&gt;</span>
+    <span class="kw">&lt;/RedChannel&gt;</span>
+    <span class="kw">&lt;GreenChannel&gt;</span>
+      <span class="kw">&lt;SourceChannelName&gt;</span>2<span class="kw">&lt;/SourceChannelName&gt;</span>
+      <span class="kw">&lt;ContrastEnhancement&gt;</span>
+      <span class="kw">&lt;Histogram/&gt;</span>
+      <span class="kw">&lt;/ContrastEnhancement&gt;</span>
+    <span class="kw">&lt;/GreenChannel&gt;</span>
+    <span class="kw">&lt;BlueChannel&gt;</span>
+      <span class="kw">&lt;SourceChannelName&gt;</span>3<span class="kw">&lt;/SourceChannelName&gt;</span>
+      <span class="kw">&lt;ContrastEnhancement&gt;</span>
+      <span class="kw">&lt;Histogram/&gt;</span>
+      <span class="kw">&lt;/ContrastEnhancement&gt;</span>
+    <span class="kw">&lt;/BlueChannel&gt;</span>
+  <span class="kw">&lt;/ChannelSelection&gt;</span>
+<span class="kw">&lt;/RasterSymbolizer&gt;</span></code></pre>
+<h3 id="default---normalize"><a href="#default---normalize">Default - Normalize</a></h3>
+<pre class="sourceCode xml" id="contrastEnhancementNormalize"><code class="sourceCode xml"><span class="kw">&lt;ContrastEnhancement&gt;</span>
+  <span class="kw">&lt;Normalize/&gt;</span>
+<span class="kw">&lt;/ContrastEnhancement&gt;</span></code></pre>
+<p><img src="images/rasterSLD_default.jpg" alt="Default" />  <img src="images/rasterSLD_normalize.jpg" alt="Normalized" /> </p>
+<h3 id="default---histogram"><a href="#default---histogram">Default - Histogram</a></h3>
+<pre class="sourceCode xml" id="contrastEnhancementHistogram"><code class="sourceCode xml"><span class="kw">&lt;ContrastEnhancement&gt;</span>
+  <span class="kw">&lt;Histogram/&gt;</span>
+<span class="kw">&lt;/ContrastEnhancement&gt;</span></code></pre>
+<p><img src="images/rasterSLD_default.jpg" alt="Default" />  <img src="images/rasterSLD_histogram.jpg" alt="Histogram Stretched" /> </p>
+<h3 id="default---gamma"><a href="#default---gamma">Default - Gamma</a></h3>
+<pre class="sourceCode xml" id="contrastEnhancementGamma"><code class="sourceCode xml"><span class="kw">&lt;ContrastEnhancement&gt;</span>
+  <span class="kw">&lt;GammaValue&gt;</span>.5<span class="kw">&lt;/GammaValue&gt;</span>
+<span class="kw">&lt;/ContrastEnhancement&gt;</span></code></pre>
+<p><img src="images/rasterSLD_default.jpg" alt="Default" />  <img src="images/rasterSLD_gamma.jpg" alt="Normalized" /> </p>
+<h3 id="geoserver-demoqa"><a href="#geoserver-demoqa">GeoServer Demo/Q&amp;A</a></h3>
+<p>Class GeoServer Instance: <a href="http://geog485.unm.edu:8080/geoserver/web/">http://geog485.unm.edu:8080/geoserver/web/</a></p>
+</body>
+</html>

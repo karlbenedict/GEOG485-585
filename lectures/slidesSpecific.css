@@ -1,0 +1,906 @@
+/* Module 2.2 part 2 */
+
+#getting-started-with-styled-maps---video figure {
+	margin-right: auto;
+	margin-left: auto;
+	width: 400px;
+	height:  300px;
+}
+
+#getting-started-with-styled-maps---video figure img{
+	margin-right: auto;
+	margin-left: auto;
+	width: 400px;
+	height: auto;
+}
+
+#getting-started-with-styled-maps---video figure figcaption {
+	width: 400px;
+}
+
+#google-io-2011-managing-and-visualizing-your-geospatial-data-with-fusion-tables---video figure {
+	margin-right: auto;
+	margin-left: auto;
+	width: 300px;
+	height:  200px;	
+}
+
+#google-io-2011-managing-and-visualizing-your-geospatial-data-with-fusion-tables---video figure img{
+	margin-right: auto;
+	margin-left: auto;
+	width: 300px;
+	height: auto;
+}
+
+#google-io-2011-managing-and-visualizing-your-geospatial-data-with-fusion-tables---video figure figcaption {
+	width: 300px;
+}
+
+
+
+/* Module 3.0 */
+
+#where-have-we-come-from---eniac-1946 {
+	text-align: center;
+}
+
+#where-have-we-come-from---eniac-1946 p {
+	display: inline;
+	padding: 0px;
+}
+
+#where-have-we-come-from---early-client-server-computing-1960s p {
+	display: inline;
+	padding: 0px;
+}
+
+#where-have-we-come-from---early-client-server-computing-1960s img {
+	height: 190px;
+}
+
+#where-have-we-come-from---personal-computers-1970s {
+	text-align: center;
+}
+
+#where-have-we-come-from---personal-computers-1970s p {
+	display: inline;
+	padding: 0px;
+}
+
+#where-have-we-come-from---personal-computers-1970s img {
+	height: 190px;;
+}
+
+#now---network-computing {
+	text-align: center;
+}
+
+#now---network-computing p {
+	display: inline;
+	padding: 0px;	
+}
+
+#now---network-computing p img {
+	height: 190px;
+	float: right;
+	padding-right: 40px;
+}
+
+#the-big-picture---services-oriented-architectures p {
+	display: inline;
+	padding: 0px;		
+}
+
+#the-big-picture---services-oriented-architectures p img {
+	height: 400px;
+	float: right;
+	margin-right: 40px;
+}
+
+#comparison-of-ogc-service-models p {
+	display: inline;
+	padding: 0px;		
+}
+
+#comparison-of-ogc-service-models p img {
+	height: 425px;
+}
+
+#ogc-web-map-services-wms pre.numberlines {
+	display: block;
+	font-size: medium;
+	background-color: #f7f7f7;
+	color: #3225d6;
+	margin-bottom: 20px;
+}
+
+#comparison-of-ogc-service-models {
+	text-align: center;
+}
+
+#ogc-web-map-services-wms p {
+	display: inline;
+	padding: 0px;
+	position: absolute;
+	top: 138px;		
+	left: 348px;
+}
+
+#ogc-web-map-services-wms p img {
+	width: 521px;
+	border: 1px solid #f72626;
+}
+
+#implementation-of-the-ogc-standards-1 ul li {
+	font-size: 80%;
+}
+
+#implementation-of-the-ogc-standards ul li {
+	font-size: 80%;
+}
+
+/* Module 4.1 */
+
+#xml-background p {
+	display: inline;
+	padding: 0px;		
+}
+
+#xml-background p img {
+	height: 425px;
+	float: right;
+	padding-right: 40px;;
+}
+
+#d-and-3d-kml-sample p {
+	display: inline;
+	padding: 0px;			
+}
+
+#d-and-3d-kml-sample p img {
+	height: 425px;
+	float: right;
+	padding-right: 40px;
+}
+
+#sampleKML {
+	width: 400px;
+	padding-left: 40px;
+}
+
+#capabilitiesResponseDiv {
+	overflow: scroll;
+	margin: 20px;
+	height: 280px;
+}
+
+#sampleGetMap01,#sampleGetMap02 {
+	width: 45%;
+	margin-left: 40px;;
+	}
+
+#wms-sample-requests---getmap p {
+ display: inline;
+ padding: 0px;				
+}
+
+#wms-sample-requests---getmap p img {
+	float: right;
+	padding-right: 40px;
+}
+
+
+/* Module 4.2 */
+
+#WFS_background,#WCS_background blockquote p {
+	font-size: small;
+	margin: 0;
+	padding: 0;
+}
+
+#wfs-requestsoperations dl dd p {
+	font-size: small;
+}
+
+#wfs_requests_operations_continued dl dd p {
+	font-size: small;
+}
+
+#request-composition dl dd p {
+	font-size: small;
+}
+
+#sample-getcapabilities-requests pre code {
+	font-size: x-small;
+	background-color: #ffffff;
+	color: #0e0fe1;
+	margin: 0;
+	padding: 8px;
+	display: block;
+}
+
+#sample-describefeaturetype-requests pre code {
+font-size: x-small;
+background-color: #ffffff;
+color: #0e0fe1;
+margin: 0;
+padding: 8px;
+	display: block;
+}
+
+#kvp-for-getfeature-request---ad-hoc-query-parameters p img {
+	height: 400px
+}
+
+#kvp-for-getfeature-request---ad-hoc-query-parameters p  {
+	width: 500px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#sample-getfeature-requests pre code {
+font-size: x-small;
+background-color: #ffffff;
+color: #0e0fe1;
+margin: 0;
+padding: 8px;
+	display: block;
+}
+
+#wcs-requestsoperations dl dd p {
+	font-size: small;
+}
+
+#request-composition-1 dl dd {
+	font-size: small;
+}
+
+#sample-wcs-getcapabilities-requests pre code {
+font-size: x-small;
+background-color: #ffffff;
+color: #0e0fe1;
+margin: 0;
+padding: 8px;
+	display: block;
+}
+
+#sample-describecoverage-request pre code {
+font-size: x-small;
+background-color: #ffffff;
+color: #0e0fe1;
+margin: 0;
+padding: 8px;
+	display: block;
+	
+}
+
+#subset-definition-for-getcoverage-request p img {
+	height: 180px;
+}
+
+#subset-definition-for-getcoverage-request pre code {
+font-size: x-small;
+background-color: #ffffff;
+color: #0e0fe1;
+margin: 0;
+padding: 8px;
+	display: block;
+}
+
+#sample-getcoverage-request pre code {
+font-size: x-small;
+background-color: #ffffff;
+color: #0e0fe1;
+margin: 0;
+padding: 8px;
+	display: block;
+}
+
+
+
+/* Module 4.3 */
+
+
+section#qgis---adding-services-and-layers---start.slide.level3 #imageBlock{
+	float: right;
+	width: 300px;
+	margin-right: 50px;
+}
+
+
+#qgis---adding-services-and-layers---adding-a-service p img {
+	height: 280px;
+	margin-left: auto;
+	margin-rignt:auto
+}
+
+#qgis---adding-services-and-layers---start p {
+	font-size: med;
+}
+
+#qgis---adding-services-and-layers---start pre code {
+	font-size: medium;
+}
+
+#qgis00 {
+	width: 150px;
+	margin: 0 auto;
+	padding: 0;
+}
+
+#qgis---adding-services-and-layers---adding-connection-information p img {
+	height: 340px;
+}
+
+#qgis---adding-services-and-layers---connecting-to-and-adding-layers-from-the-service p img {
+	height:  200px;
+}
+
+#qgis---adding-services-and-layers---the-final-added-layer p img {
+	height:  320px;
+}
+
+
+
+/* Module 5.1 */
+
+#soa-review p {
+	display: inline;
+	padding: 0px;		
+}
+
+#soa-review p img {
+	height: 400px;
+	float: right;
+	margin-right: 40px;
+}
+
+#what-is-happening-behind-the-scenes p {
+	display:inline;
+	padding: 0px;
+	width: 800px;
+}
+
+#what-is-happening-behind-the-scenes p img {
+	height: 400px;
+	margin-right: auto;
+	margin-left: 190px;
+	background-color: rgba(255, 255, 255, 0.24);
+	
+}
+
+#server-configuration-options div {
+	display: inline;
+	padding: 0px;		
+}
+
+#server-configuration-options div img {
+	height: 400px;
+	float: right;
+	margin-right: 40px;
+	margin-left: 40px;
+}
+
+
+#serverConfigOptions_02 div {
+	display: inline;
+	padding: 0px;		
+}
+
+#serverConfigOptions_02 div img {
+	height: 400px;
+	float: right;
+	margin-right: 40px;
+	margin-left: 40px;
+}
+
+#wxs-service-configuration-options div {
+	display: inline;
+	padding: 0px;		
+}
+
+#wxs-service-configuration-options div img {
+height: 400px;
+float: left;
+margin-right: 40px;
+margin-left: 40px;
+}
+
+
+#WXSServerConfigOptions_02 div {
+	display: inline;
+	padding: 0px;		
+}
+
+#WXSServerConfigOptions_02 div img {
+	height: 400px;
+	float: left;
+	margin-right: 40px;
+	margin-left: 40px;
+}
+
+#data-component-configuration-options div {
+	display: inline;
+	padding: 0px;		
+}
+
+#data-component-configuration-options div img {
+	height: 400px;
+	float: right;
+	margin-right: 40px;
+	margin-left: 40px;
+}
+
+#dataConfigOptions_02 div {
+	display: inline;
+	padding: 0px;		
+}
+
+#dataConfigOptions_02 div img {
+	height: 400px;
+	float: right;
+	margin-right: 40px;
+	margin-left: 40px;
+}
+
+#data-integration-process p img {
+	background-color: rgba(255, 255, 255, 0.5);
+	margin-left: 100px;
+}
+
+#security-settings div {
+	display: inline;
+	padding: 0px;		
+}
+
+#security-settings div img {
+	height: 400px;
+	float: right;
+	margin-right: 40px;
+	margin-left: 40px;
+}
+
+#demonstration-of-geoserver-interface p {
+	display: inline;
+	padding: 0px;
+	margin-left: 85px;;	
+}
+
+#demonstration-of-geoserver-interface p img {
+	height: 400px;
+	float: right;
+	margin-right: 40px;
+	margin-left: 40px;
+}
+
+
+/* Module 5.2.1 */
+
+#SLD-header-styles_01 code.sourceCode.xml {
+font-size: medium;
+margin: 0;
+padding: 10px;
+display: block;
+overflow: scroll;
+height: 400px;
+background-color: rgba(255, 255, 255, 0.15);
+}
+
+#sampleSLD code.sourceCode.xml {
+font-size: medium;
+margin: 0;
+padding: 10px;
+display: block;
+overflow: scroll;
+height: 400px;
+background-color: rgba(255, 255, 255, 0.15);
+}
+
+#simple-geoserver-point-style p {
+display: inline;
+padding: 0px;
+margin-left: 10px;;	
+	
+}
+
+#simple-geoserver-point-style p img {
+	height: 200px;
+	float: right;
+	margin-right: 40px;
+	margin-left: 20px;
+	margin-top: 150px;
+}
+
+#sampleSLD_simplePoint code.sourceCode.xml {
+font-size: x-small;
+margin: 0;
+padding: 10px;
+display: block;
+overflow: scroll;
+height: 400px;
+background-color: rgba(255, 255, 255, 0.15);
+width: 450px;	
+}
+
+#simple-geoserver-line-style p {
+display: inline;
+padding: 0px;
+margin-left: 10px;;	
+	
+}
+
+#simple-geoserver-line-style p img {
+	height: 200px;
+	float: right;
+	margin-right: 40px;
+	margin-left: 20px;
+	margin-top: 150px;
+}
+
+#sampleSLD_simpleLine code.sourceCode.xml {
+font-size: x-small;
+margin: 0;
+padding: 10px;
+display: block;
+overflow: scroll;
+height: 400px;
+background-color: rgba(255, 255, 255, 0.15);
+width: 450px;	
+}
+
+
+#simple-geoserver-polygon-style p {
+display: inline;
+padding: 0px;
+margin-left: 10px;;	
+	
+}
+
+#simple-geoserver-polygon-style p img {
+	height: 200px;
+	float: right;
+	margin-right: 40px;
+	margin-left: 20px;
+	margin-top: 150px;
+}
+
+#sampleSLD_simplepoly code.sourceCode.xml {
+font-size: x-small;
+margin: 0;
+padding: 10px;
+display: block;
+overflow: scroll;
+height: 400px;
+background-color: rgba(255, 255, 255, 0.15);
+width: 450px;	
+}
+
+
+
+
+#simple-geoserver-raster-style p {
+display: inline;
+padding: 0px;
+margin-left: 10px;;	
+	
+}
+
+#simple-geoserver-raster-style p img {
+	height: 130px;
+	float: right;
+	margin-right: 40px;
+	margin-left: 20px;
+	margin-top: 150px;
+	font-size: medium;
+}
+
+#simple-geoserver-raster-style code.sourceCode.xml {
+font-size: x-small;
+margin: 0;
+padding: 10px;
+display: block;
+overflow: scroll;
+height: 400px;
+background-color: rgba(255, 255, 255, 0.15);
+width: 450px;	
+}
+
+#pointSymbolizer code.sourceCode.xml {
+font-size: large;
+margin: 0;
+padding: 10px;
+display: block;
+overflow: scroll;
+height: 400px;
+background-color: rgba(255, 255, 255, 0.15);
+width: 700px;	
+}
+
+#lineSymbolizer code.sourceCode.xml {
+font-size: large;
+margin: 0;
+padding: 10px;
+display: block;
+overflow: scroll;
+height: 400px;
+background-color: rgba(255, 255, 255, 0.15);
+width: 700px;	
+}
+
+
+#polySymbolizer code.sourceCode.xml {
+font-size: large;
+margin: 0;
+padding: 10px;
+display: block;
+overflow: scroll;
+height: 400px;
+background-color: rgba(255, 255, 255, 0.15);
+width: 700px;	
+}
+
+
+
+
+
+
+#rasterSymbolizer code.sourceCode.xml {
+font-size: large;
+margin: 0;
+padding: 10px;
+display: block;
+overflow: scroll;
+height: 400px;
+background-color: rgba(255, 255, 255, 0.15);
+width: 700px;	
+}
+
+#SLDrulesVectorSymbolization_01 pre {
+	margin-left: 50px;
+	font-size: large;
+}
+
+#SLDrulesVectorSymbolization_02 pre {
+margin-left: 50px;
+font-size: large;
+	
+}
+
+#attributeFilterExample_01 ul li {
+	font-size: large;
+}
+
+#attributeFilterExample_01 pre code {
+	font-size: large;
+}
+
+#attributeFilterExample_02 p img {
+	height: 350px;
+	margin-left: 80px;
+}
+
+#styledNMRoads code.sourceCode.xml {
+font-size: large;
+margin: 0;
+padding: 10px;
+display: block;
+overflow: scroll;
+height: 400px;
+background-color: rgba(255, 255, 255, 0.15);
+width: 700px;	
+}
+
+#styledNMRoadsUShighways_01 code.sourceCode.xml {
+font-size: large;
+margin: 0;
+padding: 10px;
+display: block;
+overflow: scroll;
+height: 400px;
+background-color: rgba(255, 255, 255, 0.15);
+width: 700px;		
+}
+
+
+#attributeFilterWscaleFactor_02 p img {
+height: 350px;
+margin-left: 80px;
+}
+
+#attributeFilterWscaleFactor_03 p img {
+height: 400px;
+margin-left: 45px;	
+}
+
+#attributeFilterWscaleFactor_04 p img {
+height: 400px;
+margin-left: 45px;		
+}
+
+#attributeFilterWscale_highways code.sourceCode.xml {
+font-size: large;
+margin: 0;
+padding: 10px;
+display: block;
+overflow: scroll;
+height: 400px;
+background-color: rgba(255, 255, 255, 0.15);
+width: 700px;			
+}
+
+#attributeFilterWscale_interstates code.sourceCode.xml {
+font-size: large;
+margin: 0;
+padding: 10px;
+display: block;
+overflow: scroll;
+height: 330px;
+background-color: rgba(255, 255, 255, 0.15);
+width: 700px;			
+	
+}
+
+#attributeFilterWscaleFactor_07 p {
+	font-size: small;
+}
+
+#demonstration-of-geoserver-interface p img {
+	margin-right: 180px;
+}
+
+
+/* Module 5.2.2 */
+
+
+#rasterSymbolizerElements code.sourceCode.xml {
+font-size: medium;
+margin: 0;
+padding: 10px;
+display: block;
+overflow: scroll;
+background-color: rgba(255, 255, 255, 0.15);
+width: 750px;		
+}
+
+#simpleRasterSymbolizer code.sourceCode.xml {
+font-size: medium;
+margin: 0;
+padding: 10px;
+display: block;
+overflow: scroll;
+height: 400px;
+background-color: rgba(255, 255, 255, 0.15);
+width: 750px;			
+}
+
+#default-ramp-raster-color-map p img {
+	height: 400px;
+	margin-left: 130px;
+}
+
+#intervals-raster-color-map p img {
+	height: 400px;
+	margin-left: 130px;
+}
+
+#values-raster-color-map p img {
+	height: 400px;
+	margin-left: 130px;
+}
+
+#getLegendGraphicRequest code {
+	font-size: medium;
+	margin: 0;
+	padding: 0;
+}
+
+#legend-graphics-for-the-three-styes p img {
+	height: 200px;
+}
+
+#extendedRamp code.sourceCode.xml {
+font-size: medium;
+margin: 0;
+padding: 10px;
+display: block;
+overflow: scroll;
+background-color: rgba(255, 255, 255, 0.15);
+width: 750px;			
+}
+
+#extend-or-not-to-extend p img {
+	height: 350px;
+	margin-left: 2px;
+}
+
+#opacityColorMapEntry code.sourceCode.xml {
+font-size: medium;
+margin: 0;
+padding: 10px;
+display: block;
+overflow: scroll;
+background-color: rgba(255, 255, 255, 0.15);
+width: 750px;			
+	
+}
+
+#opacityRasterSymbolizerElement code.sourceCode.xml {
+font-size: medium;
+margin: 0;
+padding: 10px;
+display: block;
+overflow: scroll;
+background-color: rgba(255, 255, 255, 0.15);
+width: 750px;			
+}
+
+#channelSelection code.sourceCode.xml {
+font-size: medium;
+margin: 0;
+padding: 10px;
+display: block;
+overflow: scroll;
+background-color: rgba(255, 255, 255, 0.15);
+width: 750px;			
+}
+
+#channel-selection---illustration p img {
+	height: 350px;
+	margin-left: 20px;
+}
+
+#contrastEnhancement code.sourceCode.xml {
+font-size: medium;
+margin: 0;
+padding: 10px;
+display: block;
+overflow: scroll;
+background-color: rgba(255, 255, 255, 0.15);
+width: 750px;			
+}
+
+#contrastEnhancementNormalize code.sourceCode.xml {
+font-size: medium;
+margin: 0;
+padding: 10px;
+display: block;
+overflow: scroll;
+background-color: rgba(255, 255, 255, 0.15);
+width: 750px;			
+}
+
+#default---normalize p img {
+height: 350px;
+margin-left: 20px;
+}
+
+#contrastEnhancementHistogram code.sourceCode.xml {
+font-size: medium;
+margin: 0;
+padding: 10px;
+display: block;
+overflow: scroll;
+background-color: rgba(255, 255, 255, 0.15);
+width: 750px;			
+}
+
+#default---histogram p img {
+height: 350px;
+margin-left: 20px;
+}
+
+#contrastEnhancementGamma code.sourceCode.xml {
+font-size: medium;
+margin: 0;
+padding: 10px;
+display: block;
+overflow: scroll;
+background-color: rgba(255, 255, 255, 0.15);
+width: 750px;			
+}
+
+#default---gamma p img {
+height: 350px;
+margin-left: 20px;
+}
+
