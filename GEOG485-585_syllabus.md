@@ -66,7 +66,7 @@ Readings
 ~	Background and reference materials that should be reviewed in conjunction with each week's materials. 
 
 
-## Course Readings ##
+## Course Readings and Other Materials##
 
 Readings for the class are derived from a combination of designated course texts (available in digital form through the library) and online resources. While the specific readings for each week will be provided as part of the information about each class module, they will fall into two broad categories:
 
@@ -83,6 +83,8 @@ Duckett, Jon, and Larsen, Rob. *Beginning HTML and CSS*. Somerset, NJ, USA: John
 Svennerberg, Gabriel. *Beginning Google Maps API 3*. Apress, © 2010. Books24x7. Web. Dec. 28, 2015. AKA *Google Maps API* in reading assignments. Available through the [*Books 24x7 Library Database*](http://library.books24x7.com.libproxy.unm.edu/toc.aspx?bookid=36390&refid=SVA3S). You will need to create a login for Books 24x7 to access this for the first time. After that you can login using the username and password you created from on- or off-campus. 
 
 Gratier, T., Spencer, P., & Hazzard, E. (2015). *Openlayers 3 beginner's guide : Get started with openlayers 3 and enhance your web pages by creating and displaying dynamic maps*. Birmingham, England: Packt Publishing.  AKA *OpenLayers Beginner's Guide* in reading assignments. Available as an ebook through the [University Libraries](https://unm-on-worldcat-org.libproxy.unm.edu/oclc/903963849?databaseList=1271,143,1487,1533,1540,1672,1708,173,1925,2006,2007,203,2201,2237,2259,2260,2261,2262,2263,2264,2267,2268,2281,2328,3036,3201,638). 
+
+In addition to the reading materials for the course, some course content is also provided through a selection of Lynda.com tutorials. Access to Lynda.com is free to all UNM students and the tutorials that will be used in the class can be found in an online playlist created for the course. The playlist can be found [here](http://www.lynda.com/SharedPlaylist/2b710369c9ec4d8c964467225c6610ad?org=unm.edu). In some cases specific sections of the tutorials that are not relevant to the course have been excluded from the playlist. 
 
 
 ## Evaluation and Grading ##
