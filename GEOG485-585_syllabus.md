@@ -78,11 +78,11 @@ Reference
 
 There are three texts that are being used in the course as core resources and are therefore listed as *required* texts.
 
-Duckett, Jon, and Larsen, Rob. *Beginning HTML and CSS*. Somerset, NJ, USA: John Wiley & Sons, 2013. ProQuest ebrary. Web. 28 December 2015. http://site.ebrary.com.libproxy.unm.edu/lib/unma/detail.action?docID=10667426 (you will be asked to login using your UNM NetID and password to access this book if accessing it from off campus)
+Duckett, Jon, and Larsen, Rob. *Beginning HTML and CSS*. Somerset, NJ, USA: John Wiley & Sons, 2013. ProQuest ebrary. Web. 28 December 2015. This book is available online through the [University Library](http://site.ebrary.com.libproxy.unm.edu/lib/unma/detail.action?docID=10667426) (you will be asked to login using your UNM NetID and password to access this book if accessing it from off campus)
 
-Svennerberg, Gabriel. *Beginning Google Maps API 3*. Apress, © 2010. Books24x7. Web. Dec. 28, 2015. <http://common.books24x7.com.libproxy.unm.edu/toc.aspx?bookid=36390> AKA *Google Maps API* in reading assignments. Available through the [*Books 24x7 Library Database*](http://library.unm.edu/applications/dam/plink.php?db_id=238). 
+Svennerberg, Gabriel. *Beginning Google Maps API 3*. Apress, © 2010. Books24x7. Web. Dec. 28, 2015. AKA *Google Maps API* in reading assignments. Available through the [*Books 24x7 Library Database*](http://library.books24x7.com.libproxy.unm.edu/toc.aspx?bookid=36390&refid=SVA3S). You will need to create a login for Books 24x7 to access this for the first time. After that you can login using the username and password you created from on- or off-campus. 
 
-Gratier, T., Spencer, P., & Hazzard, E. (2015). *Openlayers 3 beginner's guide : Get started with openlayers 3 and enhance your web pages by creating and displaying dynamic maps*. Birmingham, England: Packt Publishing.  AKA *OpenLayers Beginner's Guide* in reading assignments. Available as an ebook through the [University Libraries](https://unm-on-worldcat-org.libproxy.unm.edu/oclc/903963849?databaseList=1271,143,1487,1533,1540,1672,1708,173,1925,2006,2007,203,2201,2237,2259,2260,2261,2262,2263,2264,2267,2268,2281,2328,3036,3201,638. 
+Gratier, T., Spencer, P., & Hazzard, E. (2015). *Openlayers 3 beginner's guide : Get started with openlayers 3 and enhance your web pages by creating and displaying dynamic maps*. Birmingham, England: Packt Publishing.  AKA *OpenLayers Beginner's Guide* in reading assignments. Available as an ebook through the [University Libraries](https://unm-on-worldcat-org.libproxy.unm.edu/oclc/903963849?databaseList=1271,143,1487,1533,1540,1672,1708,173,1925,2006,2007,203,2201,2237,2259,2260,2261,2262,2263,2264,2267,2268,2281,2328,3036,3201,638). 
 
 
 ## Evaluation and Grading ##
@@ -108,7 +108,7 @@ Points for the class will be earned through a combination of portfolio milestone
  
 As an ongoing exercise in working with the web-based technologies upon which the course is based, all milestone and deep dive activities *(after the first week's exercise)* will be completed as individual web pages within your web portfolio developed in the class. 
 
-You will use the GitHub [https://github.com](https://github.com) as the collaborative platform for developing and hosting your portfolio as you develop it over the term. We will review the process for setting up your GitHub accounts during the first class session.  
+You will use locally hosted [LoboGit](http://lobogit.unm.edu) platform for developing and sharing your portfolio with the instructor and the other students in the class. Optionally, you can use GitHub [https://github.com](https://github.com) to publicly share your web content. We will review the process for using LoboGit and setting up your GitHub account during the first class session.  
  
 Portfolio Milestones
 ~	There will be 13 weekly milestones. While there are no formal weekly due dates for the milestones, you *must keep up* if you expect to successfully complete the course. *If you fall behind it will be very difficult to catch up*. I will evaluate your portfolio milestones at mid-term (40 points) and at the end of the term (40 points) for completeness, functionality, creativity and accuracy (i.e. correct answers for milestone questions when asked). 
@@ -148,104 +148,92 @@ As an hybrid in-person/online course that is focused on the integration of onlin
 
 Operating System (one of the following)
 
-~	Microsoft Windows Vista or above
-
-~	Mac OS 10.6 or above
-
-~	Linux (*speak to Dr. Benedict*)
+*	Microsoft Windows Vista or above
+*	Mac OS 10.6 or above
+*	Linux (*speak to Dr. Benedict*)
 
 Geographic Information System (GIS) (one or both)
 
-~	Quantum GIS (platform specific [download](http://qgis.org/en/site))
-
-~	ArcGIS
+*	Quantum GIS (platform specific [download](http://qgis.org/en/site))
+*	ArcGIS
 
 
 You will need the following types of software, check with Dr. Benedict if you would like to use an alternative to the ones suggested below.
 
 Text Editor 
 
-~	Notepad (*Windows* - included with operating system)
-
-~	Notapad++ (*Windows* - [free download](http://notepad-plus-plus.org/))
-
-~	TextEdit (*Mac* - included with operating system)
-
-~	TextWrangler (*Mac* - [free download](http://www.barebones.com/products/TextWrangler/))
+*	Notepad (*Windows* - included with operating system)
+*	Notapad++ (*Windows* - [free download](http://notepad-plus-plus.org/))
+*	TextEdit (*Mac* - included with operating system)
+*	TextWrangler (*Mac* - [free download](http://www.barebones.com/products/TextWrangler/))
 
 Secure File Transfer Protocol Client
 
-~	WinSCP (*Windows* - [free download](http://winscp.net/eng/index.php))
-
-~	CyberDuck (*Mac* & *Windows*- [free download - with voluntary contribution](https://cyberduck.io/?l=en))
+*	WinSCP (*Windows* - [free download](http://winscp.net/eng/index.php))
+*	CyberDuck (*Mac* & *Windows*- [free download - with voluntary contribution](https://cyberduck.io/?l=en))
 
 Secure Shell (SSH) Client
 
-~	PuTTY (*Windows* - [free download](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html))
-
-~	Terminal (*Mac* - included with operating system)
+*	PuTTY (*Windows* - [free download](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html))
+*	Terminal (*Mac* - included with operating system)
 
 Web Browser (at least one of the following)
 
-~	Firefox (*All Operating Systems* - [free download](http://www.mozilla.org/en-US/firefox/new/))
-
-~	Chrome (*All Operating Systems* - [free download](http://www.google.com/chrome))
+*	Firefox (*All Operating Systems* - [free download](http://www.mozilla.org/en-US/firefox/new/))
+*	Chrome (*All Operating Systems* - [free download](http://www.google.com/chrome))
 
 A desktop Git/GitHub client for your operating system of choice
 
-~	SourceTree [http://www.sourcetreeapp.com](http://www.sourcetreeapp.com)
+*	SourceTree [http://www.sourcetreeapp.com](http://www.sourcetreeapp.com)
 
 ## Course Outline ##
 
 Module 1 - *Introduction and Outline*
 
-~	Week 1 - January 19-22. 
+*	Week 1 - January 19-22. 
 
 Module 2a - *Web-based Mapping Clients*
 
-~	Week 2 - January 25-29. Introduction to HTML, CSS, and Javascript
-
-~	Weeks 3, 4 - February 1-12. Google Maps API 
+*	Week 2 - January 25-29. Introduction to HTML, CSS, and Javascript
+*	Weeks 3, 4 - February 1-12. Google Maps API 
 
 Module 3 - *GIS and Services Oriented Architectures (SOA)*
 
-~	Week 5 - February 15-19. 
+*	Week 5 - February 15-19. 
 
 Module 4a - *Interoperability Standards*
 
-~	Week 6 - February 22-26. WMS, KML, and XML
-
-~	Week 7 - February 29-March 4. WFS & WCS
+*	Week 6 - February 22-26. WMS, KML, and XML
+*	Week 7 - February 29-March 4. WFS & WCS
 
 *Mid-term Exam* and *Portfolio Review* - Portfolio must be ready for review before March 7
 
-~	Week 8 - March 7-11 (*Exam Due by 5:00 pm on March 11*)
+*	Week 8 - March 7-11 (*Exam Due by 5:00 pm on March 11*)
 
 *Spring Break - No Class*
 
-~	Week 9 - March 21-25. 
+*	Week 9 - March 21-25. 
 
 Module 2b - *Web-based Mapping Clients*
 
-~	Weeks 10, 11 - March 28 - April 8. OpenLayers Javascript Framework
+*	Weeks 10, 11 - March 28 - April 8. OpenLayers Javascript Framework
 
 Module 4b - *Interoperability Standards*
 
-~	Week 12 - April 11-15. Desktop GIS Integration
+*	Week 12 - April 11-15. Desktop GIS Integration
 
 Module 5 - *Developing and Hosting OGC Services*
 
-~	Week 13 - April 18-22. Platforms and GeoServer Introduction
-
-~	Week 14 - April 25-29. OGC services and styling in GeoServer
+*	Week 13 - April 18-22. Platforms and GeoServer Introduction
+*	Week 14 - April 25-29. OGC services and styling in GeoServer
 
 Module 2c - *Web-based Mapping Clients*
 
-~	Week 15 - May 2-6. Integrating GeoServer OGC Services into OpenLayers clients 
+*	Week 15 - May 2-6. Integrating GeoServer OGC Services into OpenLayers clients 
 
 *Final Exam* and *Portfolio Review* - Portfolio must be ready for review before May 9
 
-~	Week 16 - May 9-13 (*Exam due by 5:00 pm May 11*)
+*	Week 16 - May 9-13 (*Exam due by 5:00 pm May 11*)
 
 
 <div class="license"><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />This work by <span xmlns:cc="http://creativecommons.org/ns#" property="cc:attributionName">Karl Benedict</span> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.</div>
