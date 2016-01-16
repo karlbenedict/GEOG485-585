@@ -30,7 +30,7 @@ Internet mapping technologies are an important component of geospatial data capt
 
 * The deployment of standards-based geospatial map and data services that other systems and users may make use of
 
-The specific class objectives that relate to these activities and departmental curriculum objectives for undergraduate and graduate students in the Geography Department include the following:
+The specific class objectives that relate to these activities and departmental learning outcomes for [undergraduate](http://geography.unm.edu/academics/Undergraduate%20Program/under_outcome.html) and [graduate students](http://geography.unm.edu/academics/Graduate%20Program/learning-outcome.html) in the Geography & Environmental Studies Department include the following:
 
 * Students will understand the concepts geospatial data and service interoperability
 
@@ -236,6 +236,16 @@ Module 2c - *Web-based Mapping Clients*
 *Final Exam* and *Portfolio Review* - Portfolio must be ready for review before May 9
 
 *	Week 16 - May 9-13 (*Exam due by 5:00 pm May 11*)
+
+## Additional Information ##
+
+Accommodation
+~   Accessibility Services (Mesa Vista Hall 2021, 277-3506) provides academic support to students who have disabilities. If you think you need alternative accessible formats for undertaking and completing coursework, you should contact this service right away to assure your needs are met in a timely manner. If you need local assistance in contacting Accessibility Services, see the Bachelor and Graduate Programs office.
+
+Undergraduate Course Fee Information
+~   The Department of Geography & Environmental Studies assesses a curriculum fee of $50 on every undergraduate class (excluding independent study and internship credits). Because you have enrolled in this course and have paid a curriculum fee, you are entitled to access a variety of departmental resources and facilities, as detailed on our website:
+[http://geography.unm.edu/resources/for-students/how-are-course-fees-spent.html](http://geography.unm.edu/resources/for-students/how-are-course-fees-spent.html)
+
 
 
 <div class="license"><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />This work by <span xmlns:cc="http://creativecommons.org/ns#" property="cc:attributionName">Karl Benedict</span> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.</div>
