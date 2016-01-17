@@ -110,7 +110,7 @@ Points for the class will be earned through a combination of portfolio milestone
  
 As an ongoing exercise in working with the web-based technologies upon which the course is based, all milestone and deep dive activities *(after the first week's exercise)* will be completed as individual web pages within your web portfolio developed in the class. 
 
-You will use locally hosted [LoboGit](http://lobogit.unm.edu) platform for developing and sharing your portfolio with the instructor and the other students in the class. Optionally, you can use GitHub [https://github.com](https://github.com) to publicly share your web content. We will review the process for using LoboGit and setting up your GitHub account during the first class session.  
+You will use a private GitHub [https://github.com](https://github.com) repository to share your portfolio with members of the class and you can optionally publicly share your web content through making your work public. We will review the process for setting up your GitHub account and working repository during the first class session.  
  
 Portfolio Milestones
 ~	There will be 13 weekly milestones. While there are no formal weekly due dates for the milestones, you *must keep up* if you expect to successfully complete the course. *If you fall behind it will be very difficult to catch up*. I will evaluate your portfolio milestones at mid-term (40 points) and at the end of the term (40 points) for completeness, functionality, creativity and accuracy (i.e. correct answers for milestone questions when asked). 
