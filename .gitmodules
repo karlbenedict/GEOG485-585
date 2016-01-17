@@ -1,0 +1,4 @@
+[submodule "project-template-and-sample-files"]
+	path = project-template-and-sample-files
+	url = git@lobogit.unm.edu:geog-485-585-spring-2016/project-template-and-sample-files.git
+	branch = master

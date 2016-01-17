@@ -30,7 +30,7 @@ Internet mapping technologies are an important component of geospatial data capt
 
 * The deployment of standards-based geospatial map and data services that other systems and users may make use of
 
-The specific class objectives that relate to these activities and departmental curriculum objectives for undergraduate and graduate students in the Geography Department include the following:
+The specific class objectives that relate to these activities and departmental learning outcomes for [undergraduate](http://geography.unm.edu/academics/Undergraduate%20Program/under_outcome.html) and [graduate students](http://geography.unm.edu/academics/Graduate%20Program/learning-outcome.html) in the Geography & Environmental Studies Department include the following:
 
 * Students will understand the concepts geospatial data and service interoperability
 
@@ -66,7 +66,7 @@ Readings
 ~	Background and reference materials that should be reviewed in conjunction with each week's materials. 
 
 
-## Course Readings ##
+## Course Readings and Other Materials##
 
 Readings for the class are derived from a combination of designated course texts (available in digital form through the library) and online resources. While the specific readings for each week will be provided as part of the information about each class module, they will fall into two broad categories:
 
@@ -83,6 +83,8 @@ Duckett, Jon, and Larsen, Rob. *Beginning HTML and CSS*. Somerset, NJ, USA: John
 Svennerberg, Gabriel. *Beginning Google Maps API 3*. Apress, © 2010. Books24x7. Web. Dec. 28, 2015. AKA *Google Maps API* in reading assignments. Available through the [*Books 24x7 Library Database*](http://library.books24x7.com.libproxy.unm.edu/toc.aspx?bookid=36390&refid=SVA3S). You will need to create a login for Books 24x7 to access this for the first time. After that you can login using the username and password you created from on- or off-campus. 
 
 Gratier, T., Spencer, P., & Hazzard, E. (2015). *Openlayers 3 beginner's guide : Get started with openlayers 3 and enhance your web pages by creating and displaying dynamic maps*. Birmingham, England: Packt Publishing.  AKA *OpenLayers Beginner's Guide* in reading assignments. Available as an ebook through the [University Libraries](https://unm-on-worldcat-org.libproxy.unm.edu/oclc/903963849?databaseList=1271,143,1487,1533,1540,1672,1708,173,1925,2006,2007,203,2201,2237,2259,2260,2261,2262,2263,2264,2267,2268,2281,2328,3036,3201,638). 
+
+In addition to the reading materials for the course, some course content is also provided through a selection of Lynda.com tutorials. Access to Lynda.com is free to all UNM students and the tutorials that will be used in the class can be found in an online playlist created for the course. The playlist can be found [here](http://www.lynda.com/SharedPlaylist/2b710369c9ec4d8c964467225c6610ad?org=unm.edu). In some cases specific sections of the tutorials that are not relevant to the course have been excluded from the playlist. 
 
 
 ## Evaluation and Grading ##
@@ -108,7 +110,7 @@ Points for the class will be earned through a combination of portfolio milestone
  
 As an ongoing exercise in working with the web-based technologies upon which the course is based, all milestone and deep dive activities *(after the first week's exercise)* will be completed as individual web pages within your web portfolio developed in the class. 
 
-You will use locally hosted [LoboGit](http://lobogit.unm.edu) platform for developing and sharing your portfolio with the instructor and the other students in the class. Optionally, you can use GitHub [https://github.com](https://github.com) to publicly share your web content. We will review the process for using LoboGit and setting up your GitHub account during the first class session.  
+You will use a private GitHub [https://github.com](https://github.com) repository to share your portfolio with members of the class and you can optionally publicly share your web content through making your work public. We will review the process for setting up your GitHub account and working repository during the first class session.  
  
 Portfolio Milestones
 ~	There will be 13 weekly milestones. While there are no formal weekly due dates for the milestones, you *must keep up* if you expect to successfully complete the course. *If you fall behind it will be very difficult to catch up*. I will evaluate your portfolio milestones at mid-term (40 points) and at the end of the term (40 points) for completeness, functionality, creativity and accuracy (i.e. correct answers for milestone questions when asked). 
@@ -234,6 +236,16 @@ Module 2c - *Web-based Mapping Clients*
 *Final Exam* and *Portfolio Review* - Portfolio must be ready for review before May 9
 
 *	Week 16 - May 9-13 (*Exam due by 5:00 pm May 11*)
+
+## Additional Information ##
+
+Accommodation
+~   Accessibility Services (Mesa Vista Hall 2021, 277-3506) provides academic support to students who have disabilities. If you think you need alternative accessible formats for undertaking and completing coursework, you should contact this service right away to assure your needs are met in a timely manner. If you need local assistance in contacting Accessibility Services, see the Bachelor and Graduate Programs office.
+
+Undergraduate Course Fee Information
+~   The Department of Geography & Environmental Studies assesses a curriculum fee of $50 on every undergraduate class (excluding independent study and internship credits). Because you have enrolled in this course and have paid a curriculum fee, you are entitled to access a variety of departmental resources and facilities, as detailed on our website:
+[http://geography.unm.edu/resources/for-students/how-are-course-fees-spent.html](http://geography.unm.edu/resources/for-students/how-are-course-fees-spent.html)
+
 
 
 <div class="license"><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />This work by <span xmlns:cc="http://creativecommons.org/ns#" property="cc:attributionName">Karl Benedict</span> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.</div>

@@ -24,26 +24,38 @@ The weekly goals, objectives and reading assignments are outlined below
 
 
 
-## Week 1 - Introductions, Course Outline and Introduction to Web and Internet Concepts ## {.#Week01}
+## Week 1 - Introductions, Course Outline and Introduction to Web and Internet Concepts ## {#week01}
 
-This week we will review the content and structure for the course and spend some time getting to know each other. 
+This week we will review the content and structure for the course and spend some time getting to know each other. Following this we will spend some time setting up some of the tools that we will be using for the course in developing our portfolio of materials. 
 
 
 ### Class Prep ###
 
 * [Wikipedia article - History of the World Wide web](http://en.wikipedia.org/wiki/History_of_the_World_Wide_Web)
 
+* [Lynda.com tutorials](http://www.lynda.com/SharedPlaylist/2b710369c9ec4d8c964467225c6610ad?org=unm.edu)
+
+	* *Web Design Fundamentals*
+		* Introduction
+		* 1. Exploring Web Design
+	* *Version Control for Everyone*
+		* Introduction
+		* 1. Introducing Version Control
+		* 2. Version Control Basics
+		* 3. Setting Up Your First Project 
+
 
 
 ### Reference Materials ###
 
+[Class Syllabus](https://github.com/karlbenedict/GEOG485-585/raw/gh-pages/GEOG485-585_syllabus.pdf)
 
 
-### Weekly Milestone - Creating Your First Web Page in GitHub###
+### Weekly Milestone - Creating Your GitLab Project and First Web Page###
 
-This week's milestone is to set up your GitHub account so you can get started in creating your web portfolio that will be incrementally built over the course of the next sixteen weeks. As part of the process of getting all the parts and pieces into place you will create your first web page within the GitHub environment. 
+This week's milestone is to set up your class *project* in GitLab so you can get started in creating your web portfolio that will be incrementally built over the course of the next sixteen weeks. As part of the process of getting all the parts and pieces into place you will create your first web page within your project. 
 
-[http://karlbenedict.com/GEOG485-585/milestones/milestones.html#week-1---creating-your-first-web-page-in-github](http://karlbenedict.com/GEOG485-585/milestones/milestones.html#week-1---creating-your-first-web-page-in-github)
+[http://karlbenedict.com/GEOG485-585/milestones/milestones.html#week01](http://karlbenedict.com/GEOG485-585/milestones/milestones.html#week01)
 
 
 
