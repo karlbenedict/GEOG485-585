@@ -4,8 +4,10 @@
 <!-- Web-based Mapping Clients------------------------------------------------>
 <!-- OpenLayers Javascript Framework------------------------------------------>
 <!---------------------------------------------------------------------------->
+<!-- 
 
 # GEOG 485L/585L Module 2b - Web-based Mapping Clients. Part 1: OpenLayers Javascript Framework# {.module02b01b}
 
 ### Overview ###  {.module02b01b}
 
+ -->

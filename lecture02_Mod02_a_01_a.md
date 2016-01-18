@@ -4,8 +4,10 @@
 <!-- Web-based Mapping Clients------------------------------------------------>
 <!-- Introduction to HTML, CSS and Javascript--------------------------------->
 <!---------------------------------------------------------------------------->
+<!-- 
 
 # GEOG 485L/585L Module 2a - Web-based Mapping Clients. Part 1: Introduction to HTML, CSS and Javascript# {.module02a01}
 
 ### Overview ###  {.module02a01}
 
+ -->

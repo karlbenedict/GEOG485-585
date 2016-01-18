@@ -4,8 +4,10 @@
 <!-- Interoperability Standards----------------------------------------------->
 <!-- Desktop GIS Integration-------------------------------------------------->
 <!---------------------------------------------------------------------------->
+<!-- 
 
 # GEOG 485L/585L Module 4b - Interoperability Standards - Desktop GIS Integration# {.module04b01a}
 
 ### Overview ###  {.module04b01a}
 
+ -->
