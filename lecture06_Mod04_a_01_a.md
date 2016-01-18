@@ -4,8 +4,10 @@
 <!-- Interoperability Standards----------------------------------------------->
 <!-- WMS, KML and XML--------------------------------------------------------->
 <!---------------------------------------------------------------------------->
+<!-- 
 
 # GEOG 485L/585L Module 4a - Interoperability Standards. Part 1: WMS, KML and XML# {.module04a01a}
 
 ### Overview ###  {.module04a01a}
 
+ -->

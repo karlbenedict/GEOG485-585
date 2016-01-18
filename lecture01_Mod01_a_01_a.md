@@ -21,7 +21,7 @@
 
 * What brought you here?
 
-## Syllabus Review ## {.module01}
+## Syllabus Review ([link](https://github.com/UNM-GEOG-485-585/class-materials/raw/master/syllabus.pdf)) ## {.module01}
 
 ### Class Topics ###  {.module01}
 

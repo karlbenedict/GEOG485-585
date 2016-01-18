@@ -4,17 +4,23 @@
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta http-equiv="Content-Style-Type" content="text/css" />
   <meta name="generator" content="pandoc" />
-  <title></title>
+  <meta name="author" content="Karl Benedict - kbene@unm.edu" />
+  <title>Geography 485L/585L - Internet Mapping</title>
   <style type="text/css">code{white-space: pre;}</style>
   <link rel="stylesheet" href="page.css" type="text/css" />
 </head>
 <body>
+<div id="header">
+<h1 class="title">Geography 485L/585L - Internet Mapping</h1>
+<h2 class="author">Karl Benedict - kbene@unm.edu</h2>
+<h3 class="date">Spring 2016</h3>
+</div>
 <div id="TOC">
 <ul>
 <li><a href="#geog-485l585l-module-1---introduction-and-outline">GEOG 485L/585L Module 1 - Introduction and Outline</a><ul>
 <li><a href="#overview">Overview</a></li>
 <li><a href="#introductions">Introductions</a></li>
-<li><a href="#syllabus-review">Syllabus Review</a><ul>
+<li><a href="#syllabus-review-link">Syllabus Review (<a href="https://github.com/UNM-GEOG-485-585/class-materials/raw/master/syllabus.pdf">link</a>)</a><ul>
 <li><a href="#class-topics">Class Topics</a></li>
 </ul></li>
 <li><a href="#basics">Basics</a><ul>
@@ -29,42 +35,6 @@
 <li><a href="#computer-hardware-requirements">Computer Hardware Requirements</a></li>
 <li><a href="#software-requirements">Software Requirements</a></li>
 </ul></li>
-</ul></li>
-<li><a href="#geog-485l585l-module-2a---web-based-mapping-clients.-part-1-introduction-to-html-css-and-javascript">GEOG 485L/585L Module 2a - Web-based Mapping Clients. Part 1: Introduction to HTML, CSS and Javascript</a><ul>
-<li><a href="#overview-1">Overview</a></li>
-</ul></li>
-<li><a href="#geog-485l585l-module-2a---web-based-mapping-clients.-part-2a-google-maps-api">GEOG 485L/585L Module 2a - Web-based Mapping Clients. Part 2a: Google Maps API</a><ul>
-<li><a href="#overview-2">Overview</a></li>
-</ul></li>
-<li><a href="#geog-485l585l-module-2a---web-based-mapping-clients.-part-2b-google-maps-api">GEOG 485L/585L Module 2a - Web-based Mapping Clients. Part 2b: Google Maps API</a><ul>
-<li><a href="#overview-3">Overview</a></li>
-</ul></li>
-<li><a href="#geog-485l585l-module-3---gis-and-services-oriented-architectures">GEOG 485L/585L Module 3 - GIS and Services Oriented Architectures</a><ul>
-<li><a href="#overview-4">Overview</a></li>
-</ul></li>
-<li><a href="#geog-485l585l-module-4a---interoperability-standards.-part-1-wms-kml-and-xml">GEOG 485L/585L Module 4a - Interoperability Standards. Part 1: WMS, KML and XML</a><ul>
-<li><a href="#overview-5">Overview</a></li>
-</ul></li>
-<li><a href="#geog-485l585l-module-4a---interoperability-standards.-part-2-wfs-wcs">GEOG 485L/585L Module 4a - Interoperability Standards. Part 2: WFS &amp; WCS</a><ul>
-<li><a href="#overview-6">Overview</a></li>
-</ul></li>
-<li><a href="#geog-485l585l-module-2b---web-based-mapping-clients.-part-1-openlayers-javascript-framework">GEOG 485L/585L Module 2b - Web-based Mapping Clients. Part 1: OpenLayers Javascript Framework</a><ul>
-<li><a href="#overview-7">Overview</a></li>
-</ul></li>
-<li><a href="#geog-485l585l-module-2b---web-based-mapping-clients.-part-1-openlayers-javascript-framework-1">GEOG 485L/585L Module 2b - Web-based Mapping Clients. Part 1: OpenLayers Javascript Framework</a><ul>
-<li><a href="#overview-8">Overview</a></li>
-</ul></li>
-<li><a href="#geog-485l585l-module-4b---interoperability-standards---desktop-gis-integration">GEOG 485L/585L Module 4b - Interoperability Standards - Desktop GIS Integration</a><ul>
-<li><a href="#overview-9">Overview</a></li>
-</ul></li>
-<li><a href="#geog-485l585l-module-5---developing-and-hosting-ogc-services.-part-1-platforms-and-geoserver-introduction">GEOG 485L/585L Module 5 - Developing and Hosting OGC Services. Part 1: Platforms and GeoServer Introduction</a><ul>
-<li><a href="#overview-10">Overview</a></li>
-</ul></li>
-<li><a href="#geog-485l585l-module-5---developing-and-hosting-ogc-services.-part-2-ogc-services-and-styling-in-geoserver">GEOG 485L/585L Module 5 - Developing and Hosting OGC Services. Part 2: OGC Services and Styling in GeoServer</a><ul>
-<li><a href="#overview-11">Overview</a></li>
-</ul></li>
-<li><a href="#geog-485l585l-module-2c---web-based-mapping-clients---integrating-geoserver-ogc-services-into-openlayers-clients">GEOG 485L/585L Module 2c - Web-based Mapping Clients - Integrating GeoServer OGC Services into OpenLayers Clients</a><ul>
-<li><a href="#overview-12">Overview</a></li>
 </ul></li>
 </ul>
 </div>
@@ -87,7 +57,7 @@
 <li><p>Who are you?</p></li>
 <li><p>What brought you here?</p></li>
 </ul>
-<h2 id="syllabus-review" class="module01">Syllabus Review</h2>
+<h2 id="syllabus-review-link" class="module01">Syllabus Review (<a href="https://github.com/UNM-GEOG-485-585/class-materials/raw/master/syllabus.pdf">link</a>)</h2>
 <h3 id="class-topics" class="module01">Class Topics</h3>
 <ul>
 <li><p>Internet Mapping Clients: Basic HTML, Javascript, CSS; Google Maps API; OpenLayers javascript library</p></li>
@@ -184,96 +154,156 @@
 <!-- Web-based Mapping Clients------------------------------------------------>
 <!-- Introduction to HTML, CSS and Javascript--------------------------------->
 <!---------------------------------------------------------------------------->
-<h1 id="geog-485l585l-module-2a---web-based-mapping-clients.-part-1-introduction-to-html-css-and-javascript" class="module02a01">GEOG 485L/585L Module 2a - Web-based Mapping Clients. Part 1: Introduction to HTML, CSS and Javascript</h1>
-<h3 id="overview-1" class="module02a01">Overview</h3>
+<!-- 
+
+# GEOG 485L/585L Module 2a - Web-based Mapping Clients. Part 1: Introduction to HTML, CSS and Javascript# {.module02a01}
+
+### Overview ###  {.module02a01}
+
+ -->
 <!---------------------------------------------------------------------------->
 <!-- Week 03 ----------------------------------------------------------------->
 <!-- Lecture 02 a 02 a ------------------------------------------------------->
 <!-- Web-based Mapping Clients------------------------------------------------>
 <!-- Google Maps API---------------------------------------------------------->
 <!---------------------------------------------------------------------------->
-<h1 id="geog-485l585l-module-2a---web-based-mapping-clients.-part-2a-google-maps-api" class="module02a02a">GEOG 485L/585L Module 2a - Web-based Mapping Clients. Part 2a: Google Maps API</h1>
-<h3 id="overview-2" class="module02a02a">Overview</h3>
+<!-- 
+
+# GEOG 485L/585L Module 2a - Web-based Mapping Clients. Part 2a: Google Maps API# {.module02a02a}
+
+### Overview ###  {.module02a02a}
+
+ -->
 <!---------------------------------------------------------------------------->
 <!-- Week 04 ----------------------------------------------------------------->
 <!-- Lecture 02 a 02 b ------------------------------------------------------->
 <!-- Web-based Mapping Clients------------------------------------------------>
 <!-- Google Maps API---------------------------------------------------------->
 <!---------------------------------------------------------------------------->
-<h1 id="geog-485l585l-module-2a---web-based-mapping-clients.-part-2b-google-maps-api" class="module02a02b">GEOG 485L/585L Module 2a - Web-based Mapping Clients. Part 2b: Google Maps API</h1>
-<h3 id="overview-3" class="module02a02b">Overview</h3>
+<!-- 
+
+# GEOG 485L/585L Module 2a - Web-based Mapping Clients. Part 2b: Google Maps API# {.module02a02b}
+
+### Overview ###  {.module02a02b}
+
+ -->
 <!---------------------------------------------------------------------------->
 <!-- Week 05 ----------------------------------------------------------------->
 <!-- Lecture 03 a 01 a ------------------------------------------------------->
 <!-- GIS and Services Oriented Architectures---------------------------------->
 <!---------------------------------------------------------------------------->
 <!---------------------------------------------------------------------------->
-<h1 id="geog-485l585l-module-3---gis-and-services-oriented-architectures" class="module03a01a">GEOG 485L/585L Module 3 - GIS and Services Oriented Architectures</h1>
-<h3 id="overview-4" class="module03a01a">Overview</h3>
+<!-- 
+
+# GEOG 485L/585L Module 3 - GIS and Services Oriented Architectures# {.module03a01a}
+
+### Overview ###  {.module03a01a}
+
+ -->
 <!---------------------------------------------------------------------------->
 <!-- Week 06 ----------------------------------------------------------------->
 <!-- Lecture 04 a 01 a ------------------------------------------------------->
 <!-- Interoperability Standards----------------------------------------------->
 <!-- WMS, KML and XML--------------------------------------------------------->
 <!---------------------------------------------------------------------------->
-<h1 id="geog-485l585l-module-4a---interoperability-standards.-part-1-wms-kml-and-xml" class="module04a01a">GEOG 485L/585L Module 4a - Interoperability Standards. Part 1: WMS, KML and XML</h1>
-<h3 id="overview-5" class="module04a01a">Overview</h3>
+<!-- 
+
+# GEOG 485L/585L Module 4a - Interoperability Standards. Part 1: WMS, KML and XML# {.module04a01a}
+
+### Overview ###  {.module04a01a}
+
+ -->
 <!---------------------------------------------------------------------------->
 <!-- Week 07 ----------------------------------------------------------------->
 <!-- Lecture 04 a 02 a ------------------------------------------------------->
 <!-- Interoperability Standards----------------------------------------------->
 <!-- WFS and WCS ------------------------------------------------------------->
 <!---------------------------------------------------------------------------->
-<h1 id="geog-485l585l-module-4a---interoperability-standards.-part-2-wfs-wcs" class="module04a02a">GEOG 485L/585L Module 4a - Interoperability Standards. Part 2: WFS &amp; WCS</h1>
-<h3 id="overview-6" class="module04a02a">Overview</h3>
+<!-- 
+
+# GEOG 485L/585L Module 4a - Interoperability Standards. Part 2: WFS & WCS# {.module04a02a}
+
+### Overview ###  {.module04a02a}
+
+ -->
 <!---------------------------------------------------------------------------->
 <!-- Week 10 ----------------------------------------------------------------->
 <!-- Lecture 02 b 01 a ------------------------------------------------------->
 <!-- Web-based Mapping Clients------------------------------------------------>
 <!-- OpenLayers Javascript Framework------------------------------------------>
 <!---------------------------------------------------------------------------->
-<h1 id="geog-485l585l-module-2b---web-based-mapping-clients.-part-1-openlayers-javascript-framework" class="module02b01a">GEOG 485L/585L Module 2b - Web-based Mapping Clients. Part 1: OpenLayers Javascript Framework</h1>
-<h3 id="overview-7" class="module02b01a">Overview</h3>
+<!-- 
+
+# GEOG 485L/585L Module 2b - Web-based Mapping Clients. Part 1: OpenLayers Javascript Framework# {.module02b01a}
+
+### Overview ###  {.module02b01a}
+
+ -->
 <!---------------------------------------------------------------------------->
 <!-- Week 11 ----------------------------------------------------------------->
 <!-- Lecture 02 b 01 b ------------------------------------------------------->
 <!-- Web-based Mapping Clients------------------------------------------------>
 <!-- OpenLayers Javascript Framework------------------------------------------>
 <!---------------------------------------------------------------------------->
-<h1 id="geog-485l585l-module-2b---web-based-mapping-clients.-part-1-openlayers-javascript-framework-1" class="module02b01b">GEOG 485L/585L Module 2b - Web-based Mapping Clients. Part 1: OpenLayers Javascript Framework</h1>
-<h3 id="overview-8" class="module02b01b">Overview</h3>
+<!-- 
+
+# GEOG 485L/585L Module 2b - Web-based Mapping Clients. Part 1: OpenLayers Javascript Framework# {.module02b01b}
+
+### Overview ###  {.module02b01b}
+
+ -->
 <!---------------------------------------------------------------------------->
 <!-- Week 12 ----------------------------------------------------------------->
 <!-- Lecture 04 b 01 a ------------------------------------------------------->
 <!-- Interoperability Standards----------------------------------------------->
 <!-- Desktop GIS Integration-------------------------------------------------->
 <!---------------------------------------------------------------------------->
-<h1 id="geog-485l585l-module-4b---interoperability-standards---desktop-gis-integration" class="module04b01a">GEOG 485L/585L Module 4b - Interoperability Standards - Desktop GIS Integration</h1>
-<h3 id="overview-9" class="module04b01a">Overview</h3>
+<!-- 
+
+# GEOG 485L/585L Module 4b - Interoperability Standards - Desktop GIS Integration# {.module04b01a}
+
+### Overview ###  {.module04b01a}
+
+ -->
 <!---------------------------------------------------------------------------->
 <!-- Week 13 ----------------------------------------------------------------->
 <!-- Lecture 05 a 01 a ------------------------------------------------------->
 <!-- Developing and Hosting OGC Services-------------------------------------->
 <!-- Platforms and GeoServer Introduction------------------------------------->
 <!---------------------------------------------------------------------------->
-<h1 id="geog-485l585l-module-5---developing-and-hosting-ogc-services.-part-1-platforms-and-geoserver-introduction" class="module05a01a">GEOG 485L/585L Module 5 - Developing and Hosting OGC Services. Part 1: Platforms and GeoServer Introduction</h1>
-<h3 id="overview-10" class="module05a01a">Overview</h3>
+<!-- 
+
+# GEOG 485L/585L Module 5 - Developing and Hosting OGC Services. Part 1: Platforms and GeoServer Introduction# {.module05a01a}
+
+### Overview ###  {.module05a01a}
+
+ -->
 <!---------------------------------------------------------------------------->
 <!-- Week 14 ----------------------------------------------------------------->
 <!-- Lecture 05 a 02 a ------------------------------------------------------->
 <!-- Developing and Hosting OGC Services-------------------------------------->
 <!-- OGC Services and Styling in GeoServer------------------------------------>
 <!---------------------------------------------------------------------------->
-<h1 id="geog-485l585l-module-5---developing-and-hosting-ogc-services.-part-2-ogc-services-and-styling-in-geoserver" class="module05a02a">GEOG 485L/585L Module 5 - Developing and Hosting OGC Services. Part 2: OGC Services and Styling in GeoServer</h1>
-<h3 id="overview-11" class="module05a02a">Overview</h3>
+<!-- 
+
+# GEOG 485L/585L Module 5 - Developing and Hosting OGC Services. Part 2: OGC Services and Styling in GeoServer# {.module05a02a}
+
+### Overview ###  {.module05a02a}
+
+ -->
 <!---------------------------------------------------------------------------->
 <!-- Week 15 ----------------------------------------------------------------->
 <!-- Lecture 02 c 01 a ------------------------------------------------------->
 <!-- Web-based Mapping Clients------------------------------------------------>
 <!-- Integrating GeoServer OGC Services into OpenLayers Clients--------------->
 <!---------------------------------------------------------------------------->
-<h1 id="geog-485l585l-module-2c---web-based-mapping-clients---integrating-geoserver-ogc-services-into-openlayers-clients" class="module02c01a">GEOG 485L/585L Module 2c - Web-based Mapping Clients - Integrating GeoServer OGC Services into OpenLayers Clients</h1>
-<h3 id="overview-12" class="module02c01a">Overview</h3>
+<!-- 
+
+# GEOG 485L/585L Module 2c - Web-based Mapping Clients - Integrating GeoServer OGC Services into OpenLayers Clients# {.module02c01a}
+
+### Overview ###  {.module02c01a}
+
+ -->
 <hr />
 <div class="license">
 <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />This work by <span xmlns:cc="http://creativecommons.org/ns#" property="cc:attributionName">Karl Benedict</span> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.

@@ -4,8 +4,10 @@
 <!-- Web-based Mapping Clients------------------------------------------------>
 <!-- Google Maps API---------------------------------------------------------->
 <!---------------------------------------------------------------------------->
+<!-- 
 
 # GEOG 485L/585L Module 2a - Web-based Mapping Clients. Part 2a: Google Maps API# {.module02a02a}
 
 ### Overview ###  {.module02a02a}
 
+ -->
