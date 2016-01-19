@@ -2,6 +2,7 @@ body {
 	font-family: "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
 	color: #ebebeb;
 	background: #000 url(images/GEOG485_banner.jpg) no-repeat;
+	padding: 25px;
 }
 
 div#TOC {
@@ -15,10 +16,7 @@ div#TOC > ul:first-child > li:first-child   {
 	text-shadow: #000000 0 0 0;
 }
 
-div#TOC > ul:first-child > li:first-child > a:first-child  {
-	font-size: xx-large;
-	color: #ebebeb;
-}
+
 
 div.license {
 	margin-top: 30px;
@@ -62,8 +60,12 @@ img {
 
 h1 {
 	background-color: #001f91;
-	padding: 12px;
-	display: none;
+	padding: 8px;
+}
+
+#header h1.title {
+	position: absolute;
+	top: 150px;
 }
 
 h2 {
@@ -88,4 +90,14 @@ p.caption {
 	max-width: 600px;
 	border-bottom: 1px solid #0089ff;
 	padding-bottom: 6px;
+}
+
+#header h2.author {
+	position: absolute;
+	top: 100px;
+}
+
+#header h3.date {
+	position: absolute;
+	top: 50px;
 }

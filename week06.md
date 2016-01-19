@@ -2,15 +2,15 @@
 <!-- Week 06 ----------------------------------------------------------------->
 <!---------------------------------------------------------------------------->
 <!--
-## Week 6 -  ## {#week06}
+# Week 6 -  # {#week06}
 
-### Class Prep ### {#week06-prep}
+## Class Prep ## {#week06-prep}
 
-### Reference Materials ### {#week06-reference}
+## Reference Materials ## {#week06-reference}
 
-### Weekly Milestone - ### {#week06-milestone}
+## Weekly Milestone - ## {#week06-milestone}
 
-### Deep Dive - ### {#week06-deepDive}
+## Deep Dive - ## {#week06-deepDive}
 
-### Peer Review - ### {#week06-peerReview}
+## Peer Review - ## {#week06-peerReview}
 -->

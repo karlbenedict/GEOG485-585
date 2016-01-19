@@ -2,11 +2,11 @@
 <!-- Week 01 ----------------------------------------------------------------->
 <!---------------------------------------------------------------------------->
 
-## Week 1 - Introductions, Course Outline and Introduction to Web and Internet Concepts ## {#week01}
+# Week 1 - Introductions, Course Outline & Web Concepts # {#week01}
 
 This week we will review the content and structure for the course and spend some time getting to know each other. Following this we will spend some time setting up some of the tools that you will be using for the course in developing your portfolio of materials. 
 
-### Class Prep ### {#week01-prep}
+## Class Prep ## {#week01-prep}
 
 * [Wikipedia article - History of the World Wide web](http://en.wikipedia.org/wiki/History_of_the_World_Wide_Web)
 
@@ -21,12 +21,12 @@ This week we will review the content and structure for the course and spend some
 		* 2. Version Control Basics
 		* 3. Setting Up Your First Project 
 
-### Reference Materials ### {#week01-reference}
+## Reference Materials ## {#week01-reference}
 
-[Class Syllabus](https://github.com/karlbenedict/GEOG485-585/raw/gh-pages/GEOG485-585_syllabus.pdf)
+[Class Syllabus](https://github.com/UNM-GEOG-485-585/class-materials/raw/master/syllabus.pdf)
 
 
-### Weekly Milestone - Creating Your GitLab Project and First Web Page### {#week01-milestone}
+## Weekly Milestone - Creating Your GitLab Project and First Web Page## {#week01-milestone}
 
 Developing content to go onto the web has evolved from a solitary effort to one where teams work together in developing components of larger web sites. These teams need to have a variety of tools to enable their work. Some of the most important tools enable code sharing with the team, and in projects based on the [Open Source](http://opensource.org/osd-annotated) software model the rest of the world. The [GitHub](https://github.com/) web platform uses the [Git](http://git-scm.com/) distributed [version control](http://en.wikipedia.org/wiki/Revision_control) system to enable sharing of code and hosting static web pages based on that shared code. 
 
