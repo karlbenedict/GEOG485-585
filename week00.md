@@ -1,6 +1,8 @@
-# Geography 485L/585L Weekly Breakdown #
+% Geography 485L/585L Weekly Breakdown
+% Karl Benedict
+% Spring 2016
 
-## Goals and Objectives ## {#goals}
+# Goals and Objectives # {#goals}
 
 Internet mapping technologies are an important component of geospatial data capture, sharing, visualization, and delivery. This course provides a survey of current and emerging internet and geospatial interoperability standards, technologies, and capabilities. The emphasis of the work in this class will be hands-on experience in four critical aspects of Internet-enabled mapping:
 
