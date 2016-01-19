@@ -23,7 +23,7 @@ This week we will review the content and structure for the course and spend some
 
 ## Reference Materials ## {#week01-reference}
 
-[Class Syllabus](https://github.com/karlbenedict/GEOG485-585/raw/gh-pages/GEOG485-585_syllabus.pdf)
+[Class Syllabus](https://github.com/UNM-GEOG-485-585/class-materials/raw/master/syllabus.pdf)
 
 
 ## Weekly Milestone - Creating Your GitLab Project and First Web Page## {#week01-milestone}
