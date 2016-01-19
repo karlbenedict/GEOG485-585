@@ -58,6 +58,12 @@ By the end of this class module you should understand the following:
 
 *  Duckett, Jon, and Larsen, Rob. *Beginning HTML and CSS*. Somerset, NJ, USA: John Wiley & Sons, 2013. ProQuest ebrary. Web. 28 December 2015. This book is available online through the [University Library](http://site.ebrary.com.libproxy.unm.edu/lib/unma/detail.action?docID=10667426) - Chapters 2,3,4 and 8
 
+* [Lynda.com tutorials](http://www.lynda.com/SharedPlaylist/2b710369c9ec4d8c964467225c6610ad?org=unm.edu)
+
+	* *CSS Fundamentals*
+	* *Javascript for Web Designers*
+
+
 
 ## Weekly Milestone - Create a More Complex Web Page and Style It ## {#week02-milestone}
 
