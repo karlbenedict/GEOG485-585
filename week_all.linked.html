@@ -58,12 +58,17 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li><a href="#week01">Week 1 - Introductions, Course Outline &amp; Web Concepts</a><ul>
 <li><a href="#week01-prep">Class Prep</a></li>
 <li><a href="#week01-reference">Reference Materials</a></li>
-<li><a href="#week01-milestone">Weekly Milestone - Creating Your GitLab Project and First Web Page</a></li>
+<li><a href="#week01-milestone">Weekly Milestone - Creating Your GitHub Repository and First Web Page</a></li>
 </ul></li>
 <li><a href="#week02">Week 2 - Module 2a - Web-based Mapping Clients: HTML, CSS &amp; Javascript</a><ul>
 <li><a href="#week02-prep">Class Prep</a></li>
 <li><a href="#week02-reference">Reference Materials</a></li>
 <li><a href="#week02-milestone">Weekly Milestone - Create a More Complex Web Page and Style It</a></li>
+</ul></li>
+<li><a href="#week03">Week 3 - Module 2a - Web-based Mapping Clients. Google Maps API</a><ul>
+<li><a href="#week03-prep">Class Prep</a></li>
+<li><a href="#week03-reference">Reference Materials</a></li>
+<li><a href="#week03-milestone">Weekly Milestone -</a></li>
 </ul></li>
 </ul>
 </div>
@@ -117,7 +122,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </ul>
 <h2 id="week01-reference">Reference Materials</h2>
 <p><a href="https://github.com/UNM-GEOG-485-585/class-materials/raw/master/syllabus.pdf">Class Syllabus</a></p>
-<h2 id="week01-milestone">Weekly Milestone - Creating Your GitLab Project and First Web Page</h2>
+<h2 id="week01-milestone">Weekly Milestone - Creating Your GitHub Repository and First Web Page</h2>
 <p>Developing content to go onto the web has evolved from a solitary effort to one where teams work together in developing components of larger web sites. These teams need to have a variety of tools to enable their work. Some of the most important tools enable code sharing with the team, and in projects based on the <a href="http://opensource.org/osd-annotated">Open Source</a> software model the rest of the world. The <a href="https://github.com/">GitHub</a> web platform uses the <a href="http://git-scm.com/">Git</a> distributed <a href="http://en.wikipedia.org/wiki/Revision_control">version control</a> system to enable sharing of code and hosting static web pages based on that shared code.</p>
 <p>You will be using a private <a href="http://github.com">GitHub</a> repository to build your class portfolio during the course. If you would like to make your portfolio available publicly you can also use GitHub as the platform for providing that public access. Regardless of your decision about providing public access to your portfolio, you will learn how version control operates, and how to provide comments and keep notes on your work and comment on the work of others (this will be part of our peer review process).</p>
 <p>While the work we do this and next week will be directly through the editor integrated into the GitHub system, you will eventually need to install a desktop application (such as the <a href="https://www.sourcetreeapp.com/">SourceTree</a> application recommended for the class) that allows you to develop your web pages on your local computer and then update the files on the GitHub system when you want to share a new version. Also, you can't add things like images to your web pages until you are adding them to a local repository on your computer and then sending them GitHub.</p>
@@ -213,7 +218,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li>Getting Started</li>
 </ol></li>
 <li><ol start="4" style="list-style-type: decimal">
-<li>Getting Started</li>
+<li>Exploring Tools</li>
 </ol></li>
 </ul></li>
 <li><em>Version Control for Everyone</em>
@@ -279,20 +284,73 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <!-- ## Peer Review - ## {#week02-peerReview} -->
 <!---------------------------------------------------------------------------->
 <!-- Week 03 ----------------------------------------------------------------->
+<!-- Lecture 02 a 02 a ------------------------------------------------------->
+<!-- Web-based Mapping Clients------------------------------------------------>
+<!-- Google Maps API---------------------------------------------------------->
 <!---------------------------------------------------------------------------->
-<!--
-# Week 3 -  # {#week03}
-
-## Class Prep ## {#week03-prep}
-
-## Reference Materials ## {#week03-reference}
-
-## Weekly Milestone - ## {#week03-milestone}
-
-## Deep Dive - ## {#week03-deepDive}
-
-## Peer Review - ## {#week03-peerReview}
--->
+<h1 id="week03">Week 3 - Module 2a - Web-based Mapping Clients. Google Maps API</h1>
+<p>This week we will begin our work with the popular Google Maps <em>Application Programming Interface</em> (API) in developing an interactive web-based mapping client. This development activity will build upon the the work you've done over the last couple of weeks in developing basic web pages by using the capabilities that Google has made available for building mapping interfaces based upon their Maps platform. You will begin working with javascript as a client programming language to both interact with Google's servers and to provide the needed information for Google's mapping tool in your web page.</p>
+<p><em>Expected Outcomes</em></p>
+<p>By the end of this class module you should understand the following:</p>
+<ul>
+<li><p>What an Application Programming Interface (API) is</p></li>
+<li><p>How Javascript can be used to define the behavior of elements in a web page</p></li>
+<li><p>What the basic structure of a javascript code block for defining a Google Maps - enabled page looks like</p></li>
+<li><p>How to write a basic web page that includes an interactive Google Map</p></li>
+</ul>
+<p><em>Key Concepts</em></p>
+<ul>
+<li><p>Application Programming Interface (API)</p></li>
+<li><p>Javascript and its location within an HTML page</p></li>
+<li><p>The interaction between javascript behaviors and structural elements in a web page</p></li>
+</ul>
+<h2 id="week03-prep">Class Prep</h2>
+<ul>
+<li><p><a href="http://www.lynda.com/SharedPlaylist/2b710369c9ec4d8c964467225c6610ad?org=unm.edu">Lynda.com tutorials</a></p>
+<ul>
+<li><em>Javascript for Web Designers</em> (included as a reference source last week)
+<ul>
+<li><ol start="5" style="list-style-type: decimal">
+<li>Using the Google Maps API</li>
+</ol></li>
+</ul></li>
+</ul></li>
+<li><p>Svennerberg, Gabriel. <em>Beginning Google Maps API 3</em>. Apress, © 2010. Books24x7. Web. Dec. 28, 2015. <a href="http://library.books24x7.com.libproxy.unm.edu/toc.aspx?bookid=36390&amp;refid=SVA3S"><em>Books 24x7 Library Database</em></a> - if this direct link to the book doesn't work for you, try <a href="http://library.unm.edu/applications/dam/plink.php?db_id=238">logging in first</a> and searching for <code>Google Maps API</code> - the Svennerberg book will be the first item on the list. 1-3 (skim chapter 2)</p></li>
+</ul>
+<p>Continue reviewing:</p>
+<ul>
+<li>Duckett, Jon, and Larsen, Rob. <em>Beginning HTML and CSS</em>. Somerset, NJ, USA: John Wiley &amp; Sons, 2013. ProQuest ebrary. Web. 28 December 2015. This book is available online through the <a href="http://site.ebrary.com.libproxy.unm.edu/lib/unma/detail.action?docID=10667426">University Library</a> - Chapters 1, 7, 10</li>
+</ul>
+<h2 id="week03-reference">Reference Materials</h2>
+<ul>
+<li><p>Duckett, Jon, and Larsen, Rob. <em>Beginning HTML and CSS</em>. Somerset, NJ, USA: John Wiley &amp; Sons, 2013. ProQuest ebrary. Web. 28 December 2015. This book is available online through the <a href="http://site.ebrary.com.libproxy.unm.edu/lib/unma/detail.action?docID=10667426">University Library</a> - Chapters 2,3,4 and 8</p></li>
+<li><p><a href="http://code.google.com/apis/maps/documentation/javascript/tutorial.html">Google Maps API Tutorial</a></p></li>
+</ul>
+<h2 id="week03-milestone">Weekly Milestone -</h2>
+<p>In preparation for creating a web page with an embedded Google Map you should first answer the following questions about what and how you want to map. As you define the type of map you want to build, think about a specific problem or topic that you would like to address with your map.</p>
+<p>In this exercise you will be generating the configuration for the base map (i.e. The Google Maps background layers). In future assignments you will add your own custom content to free-standing web pages that include a mapper based upon the base map you define here.</p>
+<p>Create a web page (based upon the assignment <a href="https://github.com/UNM-GEOG-485-585/class-materials/blob/master/sample-files/assignmentTemplate.txt">template</a>) that contains your milestone writeup (including the embedded Google Map required by question 5), and link it to the home page (<code>index.html</code>) file you created last week.</p>
+<p>Respond to Question 1-4 with an understanding that you are generating a web page that is designed for public viewing (even if you don't choose to make it public at this time), and should be both clear and complete.</p>
+<dl>
+<dt>Question 1</dt>
+<dd>What area do you want to depict in your map? Why?
+</dd>
+<dt>Question 2</dt>
+<dd>What is the center point (latitude and longitude) of your area of interest?
+</dd>
+<dt>Question 3</dt>
+<dd>What style of map (roads, satellite, hybrid, terrain) is appropriate for your map? Why?
+</dd>
+<dt>Question 4</dt>
+<dd>What is the scale of your map (local, regional, continental, global)? How will this translate into your selection of an appropriate default zoom level for your map?
+</dd>
+</dl>
+<p>Now that you have answered these questions about the map that you want to create, refer to the examples in the lecture notes, the <a href="http://code.google.com/apis/maps/documentation/javascript/tutorial.html">Google Maps Tutorial</a>, and this week's reading (<a href="https://github.com/UNM-GEOG-485-585/class-materials/tree/master/sample-files/Svennerberg_Ch3_Example">link to the code for Svennerberg's Chapter 3 example</a>) and video tutorial assignment to create a custom Google map.</p>
+<dl>
+<dt>Question 5</dt>
+<dd>Embed a Google Map in your writeup that is based upon your responses to questions 1-4 above.
+</dd>
+</dl>
 <!---------------------------------------------------------------------------->
 <!-- Week 04 ----------------------------------------------------------------->
 <!---------------------------------------------------------------------------->
