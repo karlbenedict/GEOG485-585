@@ -26,7 +26,7 @@ This week we will review the content and structure for the course and spend some
 [Class Syllabus](https://github.com/UNM-GEOG-485-585/class-materials/raw/master/syllabus.pdf)
 
 
-## Weekly Milestone - Creating Your GitLab Project and First Web Page## {#week01-milestone}
+## Weekly Milestone - Creating Your GitHub Repository and First Web Page## {#week01-milestone}
 
 Developing content to go onto the web has evolved from a solitary effort to one where teams work together in developing components of larger web sites. These teams need to have a variety of tools to enable their work. Some of the most important tools enable code sharing with the team, and in projects based on the [Open Source](http://opensource.org/osd-annotated) software model the rest of the world. The [GitHub](https://github.com/) web platform uses the [Git](http://git-scm.com/) distributed [version control](http://en.wikipedia.org/wiki/Revision_control) system to enable sharing of code and hosting static web pages based on that shared code. 
 

@@ -46,7 +46,7 @@ By the end of this class module you should understand the following:
 
 	* *Web Design Fundamentals*
 		* 3. Getting Started
-		* 4. Getting Started
+		* 4. Exploring Tools
 	* *Version Control for Everyone*
 		* 5. Basic Project Sharing
 		* Conclusion
