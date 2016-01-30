@@ -51,6 +51,8 @@ You should also understand
 
 * [Google Maps API Tutorial](http://code.google.com/apis/maps/documentation/javascript/tutorial.html)
 
+* [Google Maps Styling Reference](https://developers.google.com/maps/documentation/javascript/styling)
+
 * Svennerberg, Gabriel. *Beginning Google Maps API 3*. Apress, © 2010. Books24x7. Web. Dec. 28, 2015.  [*Books 24x7 Library Database*](http://library.books24x7.com.libproxy.unm.edu/toc.aspx?bookid=36390&refid=SVA3S) - if this direct link to the book doesn't work for you, try [logging in first](http://library.unm.edu/applications/dam/plink.php?db_id=238) and searching for `Google Maps API` - the Svennerberg book will be the first item on the list. 4-8
 
 * [Google Maps Fusion Mapper](http://earth.google.com/outreach/tutorial_fusion_yourowndata.html)
