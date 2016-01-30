@@ -52,7 +52,7 @@ Continue reviewing:
 
 * [Google Maps API Tutorial](http://code.google.com/apis/maps/documentation/javascript/tutorial.html)
 
-## Weekly Milestone - ## {#week03-milestone}
+## Weekly Milestone - Creation of a Web Page with an Embedded Google Map## {#week03-milestone}
 
 In preparation for creating a web page with an embedded Google Map you should first answer the following questions about what and how you want to map. As you define the type of map you want to build, think about a specific problem or topic that you would like to address with your map. 
 
