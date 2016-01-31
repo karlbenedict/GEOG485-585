@@ -2,6 +2,8 @@
 <html>
 	<head>
 		<style type="text/css">
+			/* You must set the height of either the 'html' or 'body' elements for some 
+				browsers to properly render the map with a hight taller than 0px */
 			html { height: 100% }
 			body { height: 100%; 
 				margin: 0px; 
@@ -14,26 +16,34 @@
 				margin-left:auto; 
 				margin-right: auto }
 		</style>
-		<script type="text/javascript"
-			src="http://maps.google.com/maps/api/js?sensor=false">
-		</script>
+	</head>
+
+	<body>
+		<h1>Sample Map</h1>
+		<div id="map_canvas"></div>
+
+	<!-- Let's put our JavaScript down here --------------------------------------------->
 		<script type="text/javascript">
 			function initialize() {
 			var classroom = new google.maps.LatLng(35.084280,-106.624073)
-			var myOptions = {
+			var mapOptions = {
 				zoom: 8,
 				center: classroom,
 				mapTypeId: google.maps.MapTypeId.ROADMAP
 			};
 			var map = new google.maps.Map(
 				document.getElementById("map_canvas"),
-				myOptions);
+				mapOptions);
 			}
 		</script>
-	</head>
+		
+		<!-- Load the API in asynchronous mode and execute the initialize function when done -->
+		<!-- The optional 'key-<API Key>' parameter is not used here but should be for a production map -->
+		<script async defer 
+			src="https://maps.googleapis.com/maps/api/js?callback=initialize">
+    	</script>
+		
 
-	<body onload="initialize()">
-		<h1>Sample Map</h1>
-		<div id="map_canvas"></div>
+
 	</body>
 </html>
