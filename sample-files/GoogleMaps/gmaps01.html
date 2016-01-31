@@ -1,21 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<style type="text/css">
-			/* You must set the height of either the 'html' or 'body' elements for some 
-				browsers to properly render the map with a hight taller than 0px */
-			html { height: 100% }
-			body { height: 100%; 
-				margin: 0px; 
-				padding: 0px; 
-				background-color: black; 
-				color: #CCCCCC;
-				text-align: center}
-			#map_canvas { width:90%; 
-				height:80%; 
-				margin-left:auto; 
-				margin-right: auto }
-		</style>
+		<link rel="stylesheet" type="text/css" href="css/mapPage.css">
 	</head>
 
 	<body>
@@ -23,27 +9,13 @@
 		<div id="map_canvas"></div>
 
 	<!-- Let's put our JavaScript down here --------------------------------------------->
-		<script type="text/javascript">
-			function initialize() {
-			var classroom = new google.maps.LatLng(35.084280,-106.624073)
-			var mapOptions = {
-				zoom: 8,
-				center: classroom,
-				mapTypeId: google.maps.MapTypeId.ROADMAP
-			};
-			var map = new google.maps.Map(
-				document.getElementById("map_canvas"),
-				mapOptions);
-			}
-		</script>
+		<!-- Load the external JavaScript file with the map definition code -->
+		<script src="js/mapPage_01.js"></script>
 		
 		<!-- Load the API in asynchronous mode and execute the initialize function when done -->
 		<!-- The optional 'key-<API Key>' parameter is not used here but should be for a production map -->
 		<script async defer 
 			src="https://maps.googleapis.com/maps/api/js?callback=initialize">
     	</script>
-		
-
-
 	</body>
 </html>
