@@ -1,0 +1,24 @@
+footer {
+	background-color: #010101;
+	opacity: 0.7;
+}
+
+section#TOC {
+	display: ;
+	overflow: scroll;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+section#TOC ul li ul {
+	display: none;
+}
+
+section#TOC ul li {
+	font-size: 18px;
+	padding: 5px;
+}
+
+#simple---zoomed---modified-controls-code div.codeTable{
+ 	height: 450px;	
+}

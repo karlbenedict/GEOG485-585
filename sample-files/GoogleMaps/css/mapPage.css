@@ -1,0 +1,21 @@
+/* You must set the height of either the 'html' or 'body' elements for some 
+	browsers to properly render the map with a hight taller than 0px */
+html { 
+	height: 100% }
+
+body { 
+	height: 100%; 
+	margin: 0px; 
+	padding: 0px; 
+	background-color: black; 
+	color: #CCCCCC;
+	text-align: center}
+	
+#map_canvas { 
+	width:90%; 
+	height:80%; 
+	margin-left:auto; 
+	margin-right: auto }
+	
+.infoBox { 
+	color:black }

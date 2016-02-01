@@ -4,7 +4,7 @@
 <!-- Introduction and Outline ------------------------------------------------>
 <!---------------------------------------------------------------------------->
 
-# GEOG 485L/585L Module 1 - Introduction and Outline # {.module01}
+# Week 1 - Module 1 - Introduction and Outline # {.module01}
 
 ### Overview ### {.module01}
 

@@ -17,7 +17,9 @@
 	color: white;
 	font: 18pt "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
 }
-  address, blockquote, dl, fieldset, form, h1, h2, h3, h4, h5, h6, hr, ol, p, pre, table, ul, dl { padding: 10px 20px 10px 20px; }
+  address, blockquote, fieldset, form, h1, h2, h3, h4, h5, h6, hr, ol, p, pre, table, ul, { 
+  	padding: 10px 20px 10px 20px;
+  }
   h1, h2, h3 {
     text-align: center;
     margin: 10pt 10pt 20pt 10pt;
@@ -32,8 +34,9 @@
   h3 { font-size: 100%; }
   q { quotes: "“" "”" "‘" "’"; }
   a {
-	color: #6c77ff;
-}
+	color: #FFFFFF;
+	font-size: smaller;
+	}
   blockquote { font-style: italic }
   /* Figures are displayed full-page, with the caption on
      top of the image/video */
@@ -121,5 +124,49 @@ ul li {
   /* The items to-be-selected */
   .incremental > *[aria-selected] ~ * { opacity: 0.2; }
   
+  p {
+  	margin-left: 20px;
+  }
   
+  blockquote p {
+  	margin-left: 60px;
+  	margin-right: 60px;
+  	font-size: smaller;
+  }
+  
+  dl {
+  	font-weight: bold;
+  }
+  
+  dd {
+  	margin-left: 40px;
+  	font-weight: normal;
+  }
+  
+  dt {
+  margin-left: 20px;
+  }
+  
+ div.codeTable {
+ 	overflow: scroll;
+ 	font-size: 12pt;
+ 	background-color: white;
+ 	width: 95%;
+ 	margin-left: 3%;
+ 	height: 500px;
+ } 
+ 
+ div.codeTable p {
+ 	margin-top: 10px;
+ 	margin-right: 30px;
+ 	background-color: black;
+ 	font-size: 18pt;
+ 	padding: 5px;
+ }
+ 
+ div.codeTable code.sourceCode {
+ 	color: black;
+ }
+ 
+
   

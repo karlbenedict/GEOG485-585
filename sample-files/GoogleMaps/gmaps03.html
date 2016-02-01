@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="css/mapPage.css">
+	</head>
+
+	<body>
+		<h1>Sample Map</h1>
+		<div id="map_canvas"></div>
+
+	<!-- Let's put our JavaScript down here --------------------------------------------->
+		<!-- Load the external JavaScript file with the map definition code -->
+		<script src="js/mapPage_03.js"></script>
+		
+		<!-- Load the API in asynchronous mode and execute the initialize function when done -->
+		<!-- The optional 'key-<API Key>' parameter is not used here but should be for a production map -->
+		<script async defer 
+			src="https://maps.googleapis.com/maps/api/js?callback=initialize">
+    	</script>
+	</body>
+</html>
