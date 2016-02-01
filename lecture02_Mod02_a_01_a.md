@@ -6,7 +6,7 @@
 <!---------------------------------------------------------------------------->
 
 
-# GEOG 485L/585L Module 2a - Web-based Mapping Clients. HTML, CSS & Javascript# {.module02a01}
+# Week 2 - Module 2a - Web-based Mapping Clients. HTML, CSS & Javascript# {.module02a01}
 
 ### Overview ###  {.module02a01}
 

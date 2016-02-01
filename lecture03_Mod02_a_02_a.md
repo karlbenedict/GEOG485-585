@@ -6,7 +6,9 @@
 <!---------------------------------------------------------------------------->
 
 
-# GEOG 485L/585L Module 2a - Web-based Mapping Clients. Part 2a: Google Maps API# {.module02a02a}
+# Week 3- Module 2a - Web-based Mapping Clients. Google Maps API# {.module02a02a}
+
+### Outline ### {.module02a02a}
 
 * What is an API
 
@@ -46,9 +48,6 @@ Google Maps API Family
 Javascript API Home Page
 :	[http://code.google.com/apis/maps/documentation/javascript/](http://code.google.com/apis/maps/documentation/javascript/)
 
-Javascript Basics Entry Page
-:	[http://code.google.com/apis/maps/documentation/javascript/basics.html](http://code.google.com/apis/maps/documentation/javascript/basics.html)
-
 Javascript API v3 Tutorial Page
 :	[http://code.google.com/apis/maps/documentation/javascript/tutorial.html](http://code.google.com/apis/maps/documentation/javascript/tutorial.html)
 
@@ -60,11 +59,8 @@ Javascript API v3 Tutorial Page
 
 Types (required)
 :	ROADMAP
-
 :	SATELLITE
-
 :	HYBRID
-
 :	TERRAIN
 
 Latitude and Longitude (required)
@@ -83,6 +79,7 @@ Zoom Level (required)
 	* Scale Control
 	* MapType Control
 	* Street View Control
+	* Rotate (for maps that contain 45-degree imagery)
 * Different control styles may be defined
 * Controls may be positioned [positioning options](http://code.google.com/apis/maps/documentation/javascript/controls.html#ControlPositioning)
 * Custom controls may be defined and attached to fixed location in the map
@@ -116,7 +113,7 @@ Info Windows
 :	floating content windows for displaying content defined as HTML, a DOM element, or text string
 
 Layers
-:	Grouped display content assigned to a specific layer: KmlLayer, FusionTablesLayer, TrafficLayer, BicyclingLayer
+:	Grouped display content assigned to a specific layer type: Data (including GeoJSON), KmlLayer (& GeoRSS), Heatmap, FusionTablesLayer, TrafficLayer, TransitLayer BicyclingLayer
 
 Custom Overlays
 :	definition of programmatically controlled layers
@@ -132,6 +129,8 @@ Custom Overlays
 * Directions
 	* Based upon an origin, destination, and a variety of additional options
 	* Available directions and rendered route
+* Distance Matrix
+	* Travel distance and duration given a specific mode of travel
 
 
 
@@ -151,7 +150,7 @@ Custom Overlays
 	* Changing items in the interface as the user zooms in on a map
 	* Displaying additional information outside the map when the user clicks a location in the map
 	* Synchronizing the behavior of multiple maps as the user interacts with one map
-* Requires higher-level Javascript that we will cover in this course
+* Requires higher-level Javascript than we will cover in this course
 
 
 
@@ -161,650 +160,724 @@ Custom Overlays
 
 ### Simple - Roadmap ### {.module02a02a} 
 
+![gmaps01.html preview](images/gmaps01.png)\ 
+
+### Simple - Roadmap Code ### {.module02a02a} 
+
 <div class="codeTable">
+
+gmaps01.html
 
 ~~~~~~~~~~ {.html .numberLines}
 <!DOCTYPE html>
 <html>
 	<head>
-		<style type="text/css">
-			html { height: 100% }
-			body { height: 100%; 
-				margin: 0px; 
-				padding: 0px; 
-				background-color: black; 
-				color: #CCCCCC;
-				text-align: center}
-			#map_canvas { width:90%; 
-				height:80%; 
-				margin-left:auto; 
-				margin-right: auto }
-		</style>
-		<script type="text/javascript"
-			src="http://maps.google.com/maps/api/js?sensor=false">
-		</script>
-		<script type="text/javascript">
-			function initialize() {
-			var classroom = new google.maps.LatLng(35.084280,-106.624073)
-			var myOptions = {
-				zoom: 8,
-				center: classroom,
-				mapTypeId: google.maps.MapTypeId.ROADMAP
-			};
-			var map = new google.maps.Map(
-				document.getElementById("map_canvas"),
-				myOptions);
-			}
-		</script>
+		<link rel="stylesheet" type="text/css" href="css/mapPage.css">
 	</head>
 
-	<body onload="initialize()">
+	<body>
 		<h1>Sample Map</h1>
 		<div id="map_canvas"></div>
+
+	<!-- Let's put our JavaScript down here --------------------------------------------->
+		<!-- Load the external JavaScript file with the map definition code -->
+		<script src="js/mapPage_01.js"></script>
+		
+		<!-- Load the API in asynchronous mode and execute the initialize 
+			function when done -->
+		<!-- The optional 'key-<API Key>' parameter is not used here but should be 
+			for a production map -->
+		<script async defer 
+			src="https://maps.googleapis.com/maps/api/js?callback=initialize">
+    	</script>
 	</body>
 </html>
 ~~~~~~~~~~
 
-</div>
+mapPage.css
 
-[http://karlbenedict.com/GEOG485-585/lectures/examples/gmaps01.html](http://karlbenedict.com/GEOG485-585/lectures/examples/gmaps01.html)
+~~~~~~~~~~ {.css .numberLines}
+/* You must set the height of either the 'html' or 'body' elements for some 
+	browsers to properly render the map with a hight taller than 0px */
+html { 
+	height: 100% }
+
+body { 
+	height: 100%; 
+	margin: 0px; 
+	padding: 0px; 
+	background-color: black; 
+	color: #CCCCCC;
+	text-align: center}
+	
+#map_canvas { 
+	width:90%; 
+	height:80%; 
+	margin-left:auto; 
+	margin-right: auto }
+	
+.infoBox { 
+	color:black }
+~~~~~~~~~~
+
+mapPage_01.js
+
+~~~~~~~~~~ {.js .numberLines}
+function initialize() {
+	var classroom = new google.maps.LatLng(35.084280,-106.624073)
+	var mapOptions = {
+		zoom: 8,
+		center: classroom,
+		mapTypeId: google.maps.MapTypeId.ROADMAP
+	};
+	var map = new google.maps.Map(
+		document.getElementById("map_canvas"),
+		mapOptions);
+}
+
+
+~~~~~~~~~~
+
+</div>
 
 
 ### Simple - Satellite ### {.module02a02a} 
 
+![gmaps02.html preview](images/gmaps02.png)\ 
+
+### Simple - Satellite Code ### {.module02a02a} 
+
+
 <div class="codeTable">
+
+gmaps02.html
 
 ~~~~~~~~~~ {.html .numberLines}
 <!DOCTYPE html>
-
 <html>
 	<head>
-		<style type="text/css">
-			html { height: 100% }
-			body { height: 100%; 
-				margin: 0px; 
-				padding: 0px; 
-				background-color: black; 
-				color: #CCCCCC;
-				text-align: center}
-			#map_canvas { width:90%; 
-				height:80%; 
-				margin-left: auto; 
-				margin-right: auto }
-		</style>
-		<script type="text/javascript"
-			src="http://maps.google.com/maps/api/js?sensor=false">
-		</script>
-		<script type="text/javascript">
-			function initialize() {
-				var classroom = new google.maps.LatLng(35.084280,-106.624073)
-				var myOptions = {
-					zoom: 8,
-					center: classroom,
-					mapTypeId: google.maps.MapTypeId.SATELLITE
-				};
-				var map = new google.maps.Map(
-					document.getElementById("map_canvas"), 
-					myOptions);
-			}
-		</script>
+		<link rel="stylesheet" type="text/css" href="css/mapPage.css">
 	</head>
-	
-	<body onload="initialize()">
+
+	<body>
 		<h1>Sample Map</h1>
 		<div id="map_canvas"></div>
+
+	<!-- Let's put our JavaScript down here --------------------------------------------->
+		<!-- Load the external JavaScript file with the map definition code -->
+		<script src="js/mapPage_02.js"></script>
+		
+		<!-- Load the API in asynchronous mode and execute the initialize 
+			function when done -->
+		<!-- The optional 'key-<API Key>' parameter is not used here but should be 
+			for a production map -->
+		<script async defer 
+			src="https://maps.googleapis.com/maps/api/js?callback=initialize">
+    	</script>
 	</body>
 </html>
 ~~~~~~~~~~
 
+mapPage_02.js
+
+~~~~~~~~~~ {.js .numberLines}
+function initialize() {
+	var classroom = new google.maps.LatLng(35.084280,-106.624073)
+	var mapOptions = {
+		zoom: 8,
+		center: classroom,
+		mapTypeId: google.maps.MapTypeId.SATELLITE
+	};
+	var map = new google.maps.Map(
+		document.getElementById("map_canvas"),
+		mapOptions);
+}
+
+
+~~~~~~~~~~
+
 </div>
-
-
-[http://karlbenedict.com/GEOG485-585/lectures/examples/gmaps02.html](http://karlbenedict.com/GEOG485-585/lectures/examples/gmaps02.html)
 
 
 ### Simple - Hybrid ### {.module02a02a} 
 
+![gmaps03.html preview](images/gmaps03.png)\ 
+
+### Simple - Hybrid Code ### {.module02a02a} 
+
+
 <div class="codeTable">
+
+gmaps03.html
 
 ~~~~~~~~~~ {.html .numberLines}
 <!DOCTYPE html>
 <html>
 	<head>
-		<style type="text/css">
-		  html { height: 100% }
-		  body { height: 100%; 
-			margin: 0px; 
-			padding: 0px; 
-			background-color: black; 
-			color: #CCCCCC;
-			text-align: center}
-		  #map_canvas { width:90%; 
-			height:80%; 
-			margin-left: auto; 
-			margin-right: auto }
-		</style>
-		<script type="text/javascript"
-			src="http://maps.google.com/maps/api/js?sensor=false">
-		</script>
-		<script type="text/javascript">
-		  function initialize() {
-			var classroom = new google.maps.LatLng(35.084280,-106.624073)
-			var myOptions = {
-			  zoom: 8,
-			  center: classroom,
-			  mapTypeId: google.maps.MapTypeId.HYBRID
-			};
-			var map = new google.maps.Map(
-				document.getElementById("map_canvas"),
-				myOptions);
-		  }
-		</script>
+		<link rel="stylesheet" type="text/css" href="css/mapPage.css">
 	</head>
-	
-	<body onload="initialize()">
-	  <h1>Sample Map</h1>
-	  <div id="map_canvas"></div>
-	</body>
 
+	<body>
+		<h1>Sample Map</h1>
+		<div id="map_canvas"></div>
+
+	<!-- Let's put our JavaScript down here --------------------------------------------->
+		<!-- Load the external JavaScript file with the map definition code -->
+		<script src="js/mapPage_03.js"></script>
+		
+		<!-- Load the API in asynchronous mode and execute the initialize 
+			function when done -->
+		<!-- The optional 'key-<API Key>' parameter is not used here but should be 
+			for a production map -->
+		<script async defer 
+			src="https://maps.googleapis.com/maps/api/js?callback=initialize">
+    	</script>
+	</body>
 </html>
 ~~~~~~~~~~
 
-</div>
+mapPage_03.js
 
-[http://karlbenedict.com/GEOG485-585/lectures/examples/gmaps03.html](http://karlbenedict.com/GEOG485-585/lectures/examples/gmaps03.html)
+~~~~~~~~~~ {.js .numberLines}
+function initialize() {
+	var classroom = new google.maps.LatLng(35.084280,-106.624073)
+	var mapOptions = {
+		zoom: 8,
+		center: classroom,
+		mapTypeId: google.maps.MapTypeId.HYBRID
+	};
+	var map = new google.maps.Map(
+		document.getElementById("map_canvas"),
+		mapOptions);
+}
+
+
+~~~~~~~~~~
+
+</div>
 
 
 
 ### Simple - Terrain ### {.module02a02a} 
 
+![gmaps04.html preview](images/gmaps04.png)\ 
+
+### Simple - Terrain Code ### {.module02a02a} 
+
+
 <div class="codeTable">
+
+gmaps04.html
 
 ~~~~~~~~~~ {.html .numberLines}
 <!DOCTYPE html>
 <html>
 	<head>
-		<style type="text/css">
-		  html { height: 100% }
-		  body { height: 100%; 
-			margin: 0px; 
-			padding: 0px; 
-			background-color: black; 
-			color: #CCCCCC;
-			text-align: center}
-		  #map_canvas { width:90%; 
-			height:80%; 
-			margin-left: auto; 
-			margin-right: auto }
-		</style>
-		<script type="text/javascript"
-			src="http://maps.google.com/maps/api/js?sensor=false">
-		</script>
-		<script type="text/javascript">
-		  function initialize() {
-			var classroom = new google.maps.LatLng(35.084280,-106.624073)
-			var myOptions = {
-			  zoom: 8,
-			  center: classroom,
-			  mapTypeId: google.maps.MapTypeId.TERRAIN
-			};
-			var map = new google.maps.Map(
-				document.getElementById("map_canvas"),
-				myOptions);
-		  }
-		</script>
+		<link rel="stylesheet" type="text/css" href="css/mapPage.css">
 	</head>
-	
-	<body onload="initialize()">
-	  <h1>Sample Map</h1>
-	  <div id="map_canvas"></div>
-	</body>
 
+	<body>
+		<h1>Sample Map</h1>
+		<div id="map_canvas"></div>
+
+	<!-- Let's put our JavaScript down here --------------------------------------------->
+		<!-- Load the external JavaScript file with the map definition code -->
+		<script src="js/mapPage_04.js"></script>
+		
+		<!-- Load the API in asynchronous mode and execute the initialize 
+			function when done -->
+		<!-- The optional 'key-<API Key>' parameter is not used here but should be 
+			for a production map -->
+		<script async defer 
+			src="https://maps.googleapis.com/maps/api/js?callback=initialize">
+    	</script>
+	</body>
 </html>
 ~~~~~~~~~~
 
+mapPage_04.js
+
+~~~~~~~~~~ {.js .numberLines}
+function initialize() {
+	var classroom = new google.maps.LatLng(35.084280,-106.624073)
+	var mapOptions = {
+		zoom: 8,
+		center: classroom,
+		mapTypeId: google.maps.MapTypeId.TERRAIN
+	};
+	var map = new google.maps.Map(
+		document.getElementById("map_canvas"),
+		mapOptions);
+}
+
+
+~~~~~~~~~~
+
 </div>
-
-[http://karlbenedict.com/GEOG485-585/lectures/examples/gmaps04.html](http://karlbenedict.com/GEOG485-585/lectures/examples/gmaps04.html)
-
 
 ### Simple - Hybrid - Zoomed ### {.module02a02a} 
 
+![gmaps05.html preview](images/gmaps05.png)\ 
+
+### Simple - Hybrid - Zoomed Code ### {.module02a02a} 
+
 <div class="codeTable">
+
+gmaps05.html
 
 ~~~~~~~~~~ {.html .numberLines}
 <!DOCTYPE html>
 <html>
 	<head>
-		<style type="text/css">
-		  html { height: 100% }
-		  body { height: 100%; 
-			margin: 0px; 
-			padding: 0px; 
-			background-color: black; 
-			color: #CCCCCC;
-			text-align: center}
-		  #map_canvas { width:90%; 
-			height:80%; 
-			margin-left: auto; 
-			margin-right: auto }
-		</style>
-		<script type="text/javascript"
-			src="http://maps.google.com/maps/api/js?sensor=false">
-		</script>
-		<script type="text/javascript">
-		  function initialize() {
-			var classroom = new google.maps.LatLng(35.084280,-106.624073)
-			var myOptions = {
-			  zoom: 18,
-			  center: classroom,
-			  mapTypeId: google.maps.MapTypeId.HYBRID
-			};
-			var map = new google.maps.Map(
-				document.getElementById("map_canvas"),
-				myOptions);
-		  }
-		</script>
+		<link rel="stylesheet" type="text/css" href="css/mapPage.css">
 	</head>
-	
-	<body onload="initialize()">
-	  <h1>Sample Map</h1>
-	  <div id="map_canvas"></div>
-	</body>
 
+	<body>
+		<h1>Sample Map</h1>
+		<div id="map_canvas"></div>
+
+	<!-- Let's put our JavaScript down here --------------------------------------------->
+		<!-- Load the external JavaScript file with the map definition code -->
+		<script src="js/mapPage_05.js"></script>
+		
+		<!-- Load the API in asynchronous mode and execute the initialize 
+			function when done -->
+		<!-- The optional 'key-<API Key>' parameter is not used here but should be 
+			for a production map -->
+		<script async defer 
+			src="https://maps.googleapis.com/maps/api/js?callback=initialize">
+    	</script>
+	</body>
 </html>
+~~~~~~~~~~
+
+mapPage_05.js
+
+~~~~~~~~~~ {.js .numberLines}
+function initialize() {
+	var classroom = new google.maps.LatLng(35.084280,-106.624073)
+	var mapOptions = {
+		zoom: 18,
+		center: classroom,
+		mapTypeId: google.maps.MapTypeId.TERRAIN
+	};
+	var map = new google.maps.Map(
+		document.getElementById("map_canvas"),
+		mapOptions);
+}
+
+
 ~~~~~~~~~~
 
 </div>
 
-[http://karlbenedict.com/GEOG485-585/lectures/examples/gmaps05.html](http://karlbenedict.com/GEOG485-585/lectures/examples/gmaps05.html)
 
 
 
 ### Simple - Zoomed - Modified Controls ### {.module02a02a} 
 
+![gmaps06.html preview](images/gmaps06.png)\ 
+
+### Simple - Zoomed - Modified Controls Code ### {.module02a02a} 
+
 <div class="codeTable">
+
+gmaps06.html
 
 ~~~~~~~~~~ {.html .numberLines}
 <!DOCTYPE html>
 <html>
 	<head>
-		<style type="text/css">
-		  html { height: 100% }
-		  body { height: 100%; 
-			margin: 0px; 
-			padding: 0px; 
-			background-color: black; 
-			color: #CCCCCC;
-			text-align: center}
-		  #map_canvas { width:90%; 
-			height:80%; 
-			margin-left: auto; 
-			margin-right: auto }
-		</style>
-		<script type="text/javascript"
-			src="http://maps.google.com/maps/api/js?sensor=false">
-		</script>
-		<script type="text/javascript">
-		  function initialize() {
-			var classroom = new google.maps.LatLng(35.084280,-106.624073)
-			var myOptions = {
-			  zoom: 18,
-			  center: classroom,
-			  mapTypeId: google.maps.MapTypeId.HYBRID,
-			  zoomControl: true,
-			  zoomControlOptions: {style: google.maps.ZoomControlStyle.SMALL},
-			  mapTypeControl: true,
-			  mapTypeControlOptions: {
-				style: google.maps.MapTypeControlStyle.DROPDOWN_MENU},
-			  streetViewControl: false
-			};
-			var map = new google.maps.Map(
-				document.getElementById("map_canvas"),
-				myOptions);
-		  }
-		</script>
+		<link rel="stylesheet" type="text/css" href="css/mapPage.css">
 	</head>
 
-	<body onload="initialize()">
-	  <h1>Sample Map</h1>
-	  <div id="map_canvas"></div>
-	</body>
+	<body>
+		<h1>Sample Map</h1>
+		<div id="map_canvas"></div>
 
+	<!-- Let's put our JavaScript down here --------------------------------------------->
+		<!-- Load the external JavaScript file with the map definition code -->
+		<script src="js/mapPage_06.js"></script>
+		
+		<!-- Load the API in asynchronous mode and execute the initialize 
+			function when done -->
+		<!-- The optional 'key-<API Key>' parameter is not used here but should be 
+			for a production map -->
+		<script async defer 
+			src="https://maps.googleapis.com/maps/api/js?callback=initialize">
+    	</script>
+	</body>
 </html>
+~~~~~~~~~~
+
+mapPage_06.js
+
+~~~~~~~~~~ {.js .numberLines}
+function initialize() {
+var classroom = new google.maps.LatLng(35.084280,-106.624073)
+var myOptions = {
+	zoom: 18,
+	center: classroom,
+	mapTypeId: google.maps.MapTypeId.HYBRID,
+	zoomControl: true,
+	zoomControlOptions: {style: google.maps.ZoomControlStyle.SMALL},
+	mapTypeControl: true,
+	mapTypeControlOptions: {
+	style: google.maps.MapTypeControlStyle.DROPDOWN_MENU},
+	streetViewControl: false
+};
+var map = new google.maps.Map(
+	document.getElementById("map_canvas"),
+	myOptions);
+}
+
+
 ~~~~~~~~~~
 
 </div>
 
-[http://karlbenedict.com/GEOG485-585/lectures/examples/gmaps06.html](http://karlbenedict.com/GEOG485-585/lectures/examples/gmaps06.html)
 
 
 ### Markers ### {.module02a02a} 
 
+![gmaps07.html preview](images/gmaps07.png)\ 
+
+### Markers Code ### {.module02a02a} 
+
 <div class="codeTable">
+
+gmaps07.html
 
 ~~~~~~~~~~ {.html .numberLines}
 <!DOCTYPE html>
 <html>
 	<head>
-		<style type="text/css">
-		  html { height: 100% }
-		  body { height: 100%; 
-			margin: 0px; 
-			padding: 0px; 
-			background-color: black; 
-			color: #CCCCCC;
-			text-align: center}
-		  #map_canvas { width:90%; 
-			height:80%; 
-			margin-left: auto; 
-			margin-right: auto }
-		</style>
-		<script type="text/javascript"
-			src="http://maps.google.com/maps/api/js?sensor=false">
-		</script>
-		<script type="text/javascript">
-		  function initialize() {
-			var classroom = new google.maps.LatLng(35.084280,-106.624073)
-			var office = new google.maps.LatLng(35.084506,-106.624899)
-			var myOptions = {
-			  zoom: 18,
-			  center: classroom,
-			  mapTypeId: google.maps.MapTypeId.HYBRID
-			  };
-			var map = new google.maps.Map(
-			  document.getElementById("map_canvas"), 
-			  myOptions);
-			
-			var classroomMarker = new google.maps.Marker({
-			  position: classroom,
-			  title:"Geography 485L/585L Classroom, Bandelier East, Room 106"
-			  });
-			classroomMarker.setMap(map);
-			
-			var officeMarker = new google.maps.Marker({
-			  position: office,
-			  title:"Office, Bandelier West, Room 107"
-			  });
-			officeMarker.setMap(map); 
-		  }
-		</script>
+		<link rel="stylesheet" type="text/css" href="css/mapPage.css">
 	</head>
-	
-	<body onload="initialize()">
-	  <h1>Sample Map</h1>
-	  <div id="map_canvas"></div>
-	</body>
 
+	<body>
+		<h1>Sample Map</h1>
+		<div id="map_canvas"></div>
+
+	<!-- Let's put our JavaScript down here --------------------------------------------->
+		<!-- Load the external JavaScript file with the map definition code -->
+		<script src="js/mapPage_07.js"></script>
+		
+		<!-- Load the API in asynchronous mode and execute the initialize 
+			function when done -->
+		<!-- The optional 'key-<API Key>' parameter is not used here but should be 
+			for a production map -->
+		<script async defer 
+			src="https://maps.googleapis.com/maps/api/js?callback=initialize">
+    	</script>
+	</body>
 </html>
 ~~~~~~~~~~
 
+mapPage_07.js
+
+~~~~~~~~~~ {.js .numberLines}
+function initialize() {
+	var classroom = new google.maps.LatLng(35.084280,-106.624073)
+	var office = new google.maps.LatLng(35.084506,-106.624899)
+	var myOptions = {
+		zoom: 18,
+		center: classroom,
+		mapTypeId: google.maps.MapTypeId.HYBRID
+		};
+	var map = new google.maps.Map(
+		document.getElementById("map_canvas"), 
+		myOptions);
+
+	var classroomMarker = new google.maps.Marker({
+		position: classroom,
+		title:"Geography 485L/585L Classroom, Bandelier East, Room 106"
+		});
+	classroomMarker.setMap(map);
+
+	var officeMarker = new google.maps.Marker({
+		position: office,
+		title:"Office, Bandelier West, Room 107"
+		});
+	officeMarker.setMap(map);
+}
+
+
+~~~~~~~~~~
+
 </div>
-
-[http://karlbenedict.com/GEOG485-585/lectures/examples/gmaps07.html](http://karlbenedict.com/GEOG485-585/lectures/examples/gmaps07.html)
-
 
 
 
 ### Polyline ### {.module02a02a} 
 
+![gmaps08.html preview](images/gmaps08.png)\ 
+
+### Polyline Code ### {.module02a02a} 
+
 <div class="codeTable">
+
+gmaps08.html
 
 ~~~~~~~~~~ {.html .numberLines}
 <!DOCTYPE html>
 <html>
 	<head>
-		<style type="text/css">
-		  html { height: 100% }
-		  body { height: 100%; 
-			margin: 0px; 
-			padding: 0px; 
-			background-color: black; 
-			color: #CCCCCC;
-			text-align: center}
-		  #map_canvas { width:90%; 
-			height:80%; 
-			margin-left: 
-			auto; 
-			margin-right: auto }
-		</style>
-		<script type="text/javascript"
-			src="http://maps.google.com/maps/api/js?sensor=false">
-		</script>
-		<script type="text/javascript">
-		  function initialize() {
-			var classroom = new google.maps.LatLng(35.084280,-106.624073)
-			var office = new google.maps.LatLng(35.084506,-106.624899)
-			var myOptions = {
-			  zoom: 18,
-			  center: classroom,
-			  mapTypeId: google.maps.MapTypeId.HYBRID
-			  };
-			var map = new google.maps.Map(
-			  document.getElementById("map_canvas"), 
-			  myOptions);
-		
-			var classroomMarker = new google.maps.Marker({
-			  position: classroom,
-			  title:"Geography 485L/585L Classroom, Bandelier East, Room 106"
-			  });
-			classroomMarker.setMap(map);
-		
-			var officeMarker = new google.maps.Marker({
-			  position: office,
-			  title:"Office, Bandelier West, Room 107"
-			  });
-			officeMarker.setMap(map); 
-		
-			var officeVisitCoordinates = [
-			  office,
-			  new google.maps.LatLng(35.084445,-106.624327),
-			  new google.maps.LatLng(35.084309,-106.624308),
-			  classroom
-			  ];
-			var officePath = new google.maps.Polyline({
-			  path: officeVisitCoordinates,
-			  strokeColor: "#FF0000",
-			  strokeOpacity: 1.0,
-			  strokeWeight: 2
-			});
-			officePath.setMap(map)
-		  }
-		</script>
+		<link rel="stylesheet" type="text/css" href="css/mapPage.css">
 	</head>
 
-	<body onload="initialize()">
-	  <h1>Sample Map</h1>
-	  <div id="map_canvas"></div>
-	</body>
+	<body>
+		<h1>Sample Map</h1>
+		<div id="map_canvas"></div>
 
+	<!-- Let's put our JavaScript down here --------------------------------------------->
+		<!-- Load the external JavaScript file with the map definition code -->
+		<script src="js/mapPage_08.js"></script>
+		
+		<!-- Load the API in asynchronous mode and execute the initialize 
+			function when done -->
+		<!-- The optional 'key-<API Key>' parameter is not used here but should be 
+			for a production map -->
+		<script async defer 
+			src="https://maps.googleapis.com/maps/api/js?callback=initialize">
+    	</script>
+	</body>
 </html>
 ~~~~~~~~~~
 
-</div>
+mapPage_08.js
 
-[http://karlbenedict.com/GEOG485-585/lectures/examples/gmaps08.html](http://karlbenedict.com/GEOG485-585/lectures/examples/gmaps08.html)
+~~~~~~~~~~ {.js .numberLines}
+	var classroom = new google.maps.LatLng(35.084280,-106.624073)
+	var office = new google.maps.LatLng(35.084506,-106.624899)
+	var myOptions = {
+		zoom: 18,
+		center: classroom,
+		mapTypeId: google.maps.MapTypeId.HYBRID
+		};
+	var map = new google.maps.Map(
+		document.getElementById("map_canvas"), 
+		myOptions);
+
+	var classroomMarker = new google.maps.Marker({
+		position: classroom,
+		title:"Geography 485L/585L Classroom, Bandelier East, Room 106"
+		});
+	classroomMarker.setMap(map);
+
+	var officeMarker = new google.maps.Marker({
+		position: office,
+		title:"Office, Bandelier West, Room 107"
+		});
+	officeMarker.setMap(map); 
+
+	var officeVisitCoordinates = [
+		office,
+		new google.maps.LatLng(35.084445,-106.624327),
+		new google.maps.LatLng(35.084309,-106.624308),
+		classroom
+		];
+	var officePath = new google.maps.Polyline({
+		path: officeVisitCoordinates,
+		strokeColor: "#FF0000",
+		strokeOpacity: 1.0,
+		strokeWeight: 2
+	});
+	officePath.setMap(map)
+}
+
+
+~~~~~~~~~~
+
+</div>
 
 
 
 
 ### Polygon ### {.module02a02a} 
 
+![gmaps09.html preview](images/gmaps09.png)\ 
+
+### Polygon Code ### {.module02a02a} 
+
 <div class="codeTable">
+
+gmaps09.html
 
 ~~~~~~~~~~ {.html .numberLines}
 <!DOCTYPE html>
 <html>
 	<head>
-		<style type="text/css">
-		  html { height: 100% }
-		  body { height: 100%; 
-			margin: 0px; 
-			padding: 0px; 
-			background-color: black; 
-			color: #CCCCCC;
-			text-align: center}
-		  #map_canvas { width:90%; 
-			height:80%; 
-			margin-left: auto; 
-			margin-right: auto }
-		</style>
-		<script type="text/javascript"
-			src="http://maps.google.com/maps/api/js?sensor=false">
-		</script>
-		<script type="text/javascript">
-		  function initialize() {
-			var classroom = new google.maps.LatLng(35.084280,-106.624073)
-			var office = new google.maps.LatLng(35.084506,-106.624899)
-			var myOptions = {
-			  zoom: 18,
-			  center: classroom,
-			  mapTypeId: google.maps.MapTypeId.HYBRID
-			  };
-			var map = new google.maps.Map(
-			  document.getElementById("map_canvas"), 
-			  myOptions);
-			var classroomMarker = new google.maps.Marker({
-			  position: classroom,
-			  title:"Geography 485L/585L Classroom, Bandelier East, Room 106"
-			  });
-			classroomMarker.setMap(map);
-			var officeMarker = new google.maps.Marker({
-			  position: office,
-			  title:"Office, Bandelier West, Room 107"
-			  });
-			officeMarker.setMap(map); 
-			var buildingCoordinates = [
-			  new google.maps.LatLng(35.084498,-106.624921),
-			  new google.maps.LatLng(35.084558,-106.624911),
-			  new google.maps.LatLng(35.084566,-106.624970),
-			  new google.maps.LatLng(35.084609,-106.624966),
-			  new google.maps.LatLng(35.084544,-106.624383),
-			  new google.maps.LatLng(35.084438,-106.624317),
-			  new google.maps.LatLng(35.084384,-106.623922),
-			  new google.maps.LatLng(35.084164,-106.623970),
-			  new google.maps.LatLng(35.084214,-106.624324),
-			  new google.maps.LatLng(35.084214,-106.624324),
-			  new google.maps.LatLng(35.084391,-106.624284)
-			  ];
-			var bldgPoly = new google.maps.Polygon({
-			  paths: buildingCoordinates,
-			  strokeColor: "#FF0000",
-			  strokeOpacity: 0.8,
-			  strokeWeight: 2,
-			  fillColor: "#FF0000",
-			  fillOpacity: 0.35
-			});
-			bldgPoly.setMap(map)
-		  }
-		</script>
+		<link rel="stylesheet" type="text/css" href="css/mapPage.css">
 	</head>
-	
-	<body onload="initialize()">
-	  <h1>Sample Map</h1>
-	  <div id="map_canvas"></div>
-	</body>
 
+	<body>
+		<h1>Sample Map</h1>
+		<div id="map_canvas"></div>
+
+	<!-- Let's put our JavaScript down here --------------------------------------------->
+		<!-- Load the external JavaScript file with the map definition code -->
+		<script src="js/mapPage_09.js"></script>
+		
+		<!-- Load the API in asynchronous mode and execute the initialize 
+			function when done -->
+		<!-- The optional 'key-<API Key>' parameter is not used here but should be 
+			for a production map -->
+		<script async defer 
+			src="https://maps.googleapis.com/maps/api/js?callback=initialize">
+    	</script>
+	</body>
 </html>
 ~~~~~~~~~~
 
+mapPage_09.js
+
+~~~~~~~~~~ {.js .numberLines}
+function initialize() {
+	var classroom = new google.maps.LatLng(35.084280,-106.624073)
+	var office = new google.maps.LatLng(35.084506,-106.624899)
+	var myOptions = {
+		zoom: 18,
+		center: classroom,
+		mapTypeId: google.maps.MapTypeId.HYBRID
+		};
+	var map = new google.maps.Map(
+		document.getElementById("map_canvas"), 
+		myOptions);
+	var classroomMarker = new google.maps.Marker({
+		position: classroom,
+		title:"Geography 485L/585L Classroom, Bandelier East, Room 106"
+		});
+	classroomMarker.setMap(map);
+	var officeMarker = new google.maps.Marker({
+		position: office,
+		title:"Office, Bandelier West, Room 107"
+		});
+	officeMarker.setMap(map); 
+	var buildingCoordinates = [
+		new google.maps.LatLng(35.084498,-106.624921),
+		new google.maps.LatLng(35.084558,-106.624911),
+		new google.maps.LatLng(35.084566,-106.624970),
+		new google.maps.LatLng(35.084609,-106.624966),
+		new google.maps.LatLng(35.084544,-106.624383),
+		new google.maps.LatLng(35.084438,-106.624317),
+		new google.maps.LatLng(35.084384,-106.623922),
+		new google.maps.LatLng(35.084164,-106.623970),
+		new google.maps.LatLng(35.084214,-106.624324),
+		new google.maps.LatLng(35.084214,-106.624324),
+		new google.maps.LatLng(35.084391,-106.624284)
+		];
+	var bldgPoly = new google.maps.Polygon({
+		paths: buildingCoordinates,
+		strokeColor: "#FF0000",
+		strokeOpacity: 0.8,
+		strokeWeight: 2,
+		fillColor: "#FF0000",
+		fillOpacity: 0.35
+	});
+	bldgPoly.setMap(map)
+}
+
+
+~~~~~~~~~~
+
 </div>
-
-[http://karlbenedict.com/GEOG485-585/lectures/examples/gmaps09.html](http://karlbenedict.com/GEOG485-585/lectures/examples/gmaps09.html)
-
-
 
 
 ### Adding an Info Window ### {.module02a02a} 
 
+![gmaps10.html preview](images/gmaps10.png)\ 
+
+### Adding an Info Window Code ### {.module02a02a} 
+
 <div class="codeTable">
+
+gmaps10.html
 
 ~~~~~~~~~~ {.html .numberLines}
 <!DOCTYPE html>
 <html>
 	<head>
-		<style type="text/css">
-		  html { height: 100% }
-		  body { height: 100%; 
-			margin: 0px; 
-			padding: 0px; 
-			background-color: black; 
-			color: #CCCCCC;
-			text-align: center}
-		  #map_canvas { width:90%; 
-			height:80%; 
-			margin-left: auto; 
-			margin-right: auto }
-		  .infoBox { color:black }
-		</style>
-		<script type="text/javascript"
-			src="http://maps.google.com/maps/api/js?sensor=false">
-		</script>
-		<script type="text/javascript">
-		  function initialize() {
-			var classroom = new google.maps.LatLng(35.084280,-106.624073)
-			var office = new google.maps.LatLng(35.084506,-106.624899)
-			var myOptions = {
-			  zoom: 18,
-			  center: classroom,
-			  mapTypeId: google.maps.MapTypeId.HYBRID
-			  };
-			var map = new google.maps.Map(
-			  document.getElementById("map_canvas"), 
-			  myOptions);
-			var classroomMarker = new google.maps.Marker({
-			  position: classroom,
-			  title:"Geography 485L/585L Classroom, Bandelier East, Room 106"
-			  });
-			classroomMarker.setMap(map);
-			var officeMarker = new google.maps.Marker({
-			  position: office,
-			  title:"Office, Bandelier West, Room 107"
-			  });
-			officeMarker.setMap(map); 
-			var buildingCoordinates = [
-			  new google.maps.LatLng(35.084498,-106.624921),
-			  new google.maps.LatLng(35.084558,-106.624911),
-			  new google.maps.LatLng(35.084566,-106.624970),
-			  new google.maps.LatLng(35.084609,-106.624966),
-			  new google.maps.LatLng(35.084544,-106.624383),
-			  new google.maps.LatLng(35.084438,-106.624317),
-			  new google.maps.LatLng(35.084384,-106.623922),
-			  new google.maps.LatLng(35.084164,-106.623970),
-			  new google.maps.LatLng(35.084214,-106.624324),
-			  new google.maps.LatLng(35.084214,-106.624324),
-			  new google.maps.LatLng(35.084391,-106.624284)
-			  ];
-			var bldgPoly = new google.maps.Polygon({
-			  paths: buildingCoordinates,
-			  strokeColor: "#FF0000",
-			  strokeOpacity: 0.8,
-			  strokeWeight: 2,
-			  fillColor: "#FF0000",
-			  fillOpacity: 0.35
-			});
-			bldgPoly.setMap(map);
-			var classInfoContent = '<div class="infoBox">' +
-			  '<p>This is the location for the Geography 485L/585L class</p>' +
-			  '</div>'
-			var classInfoWindow = new google.maps.InfoWindow({
-			  content: classInfoContent
-			  });
-			google.maps.event.addListener(classroomMarker, 'click', function() {
-			  classInfoWindow.open(map,classroomMarker);
-			  });
-		  }
-		</script>
+		<link rel="stylesheet" type="text/css" href="css/mapPage.css">
 	</head>
-	
-	<body onload="initialize()">
-	  <h1>Sample Map</h1>
-	  <div id="map_canvas"></div>
-	</body>
 
+	<body>
+		<h1>Sample Map</h1>
+		<div id="map_canvas"></div>
+
+	<!-- Let's put our JavaScript down here --------------------------------------------->
+		<!-- Load the external JavaScript file with the map definition code -->
+		<script src="js/mapPage_10.js"></script>
+		
+		<!-- Load the API in asynchronous mode and execute the initialize 
+			function when done -->
+		<!-- The optional 'key-<API Key>' parameter is not used here but should be 
+			for a production map -->
+		<script async defer 
+			src="https://maps.googleapis.com/maps/api/js?callback=initialize">
+    	</script>
+	</body>
 </html>
 ~~~~~~~~~~
 
-</div>
+mapPage_10.js
 
-[http://karlbenedict.com/GEOG485-585/lectures/examples/gmaps10.html](http://karlbenedict.com/GEOG485-585/lectures/examples/gmaps10.html)
+~~~~~~~~~~ {.js .numberLines}
+function initialize() {
+	var classroom = new google.maps.LatLng(35.084280,-106.624073)
+	var office = new google.maps.LatLng(35.084506,-106.624899)
+	var myOptions = {
+		zoom: 18,
+		center: classroom,
+		mapTypeId: google.maps.MapTypeId.HYBRID
+		};
+	var map = new google.maps.Map(
+		document.getElementById("map_canvas"), 
+		myOptions);
+	var classroomMarker = new google.maps.Marker({
+		position: classroom,
+		title:"Geography 485L/585L Classroom, Bandelier East, Room 106"
+		});
+	classroomMarker.setMap(map);
+	var officeMarker = new google.maps.Marker({
+		position: office,
+		title:"Office, Bandelier West, Room 107"
+		});
+	officeMarker.setMap(map); 
+	var buildingCoordinates = [
+		new google.maps.LatLng(35.084498,-106.624921),
+		new google.maps.LatLng(35.084558,-106.624911),
+		new google.maps.LatLng(35.084566,-106.624970),
+		new google.maps.LatLng(35.084609,-106.624966),
+		new google.maps.LatLng(35.084544,-106.624383),
+		new google.maps.LatLng(35.084438,-106.624317),
+		new google.maps.LatLng(35.084384,-106.623922),
+		new google.maps.LatLng(35.084164,-106.623970),
+		new google.maps.LatLng(35.084214,-106.624324),
+		new google.maps.LatLng(35.084214,-106.624324),
+		new google.maps.LatLng(35.084391,-106.624284)
+		];
+	var bldgPoly = new google.maps.Polygon({
+		paths: buildingCoordinates,
+		strokeColor: "#FF0000",
+		strokeOpacity: 0.8,
+		strokeWeight: 2,
+		fillColor: "#FF0000",
+		fillOpacity: 0.35
+		});
+	bldgPoly.setMap(map);
+	var classInfoContent = '<div class="infoBox">' +
+		'<p>This is the location for the Geography 485L/585L class</p>' +
+		'</div>'
+	var classInfoWindow = new google.maps.InfoWindow({
+		content: classInfoContent
+		});
+	google.maps.event.addListener(classroomMarker, 'click', function() {
+		classInfoWindow.open(map,classroomMarker);
+		});
+}
+
+
+~~~~~~~~~~
+
+</div>

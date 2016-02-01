@@ -9,3 +9,5 @@ function initialize() {
 		document.getElementById("map_canvas"),
 		mapOptions);
 }
+
+
