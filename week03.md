@@ -58,7 +58,7 @@ In preparation for creating a web page with an embedded Google Map you should fi
 
 In this exercise you will be generating the configuration for the base map (i.e. The Google Maps background layers). In  future assignments you will add your own custom content to free-standing web pages that include a mapper based upon the base map you define here.
 
-Create a web page (based upon the assignment [template](https://github.com/UNM-GEOG-485-585/class-materials/blob/master/sample-files/assignmentTemplate.txt)) that contains your milestone writeup (including the embedded Google Map required by question 5), and link it to the home page (`index.html`) file you created last week. 
+Create a web page (based upon the assignment [template](https://github.com/UNM-GEOG-485-585/class-materials/blob/master/sample-files/assignmentTemplate.html)) that contains your milestone writeup (including the embedded Google Map required by question 5), and link it to the home page (`index.html`) file you created last week. 
 
 Respond to Question 1-4 with an understanding that you are generating a web page that is designed for public viewing (even if you don't choose to make it public at this time), and should be both clear and complete. 
 

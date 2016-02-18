@@ -74,9 +74,9 @@ This week’s milestone activity takes you through the process of creating two m
 2. Your first web page containing materials related to this *milestone* assignment ([template](https://github.com/UNM-GEOG-485-585/class-materials/blob/master/sample-files/assignmentTemplate.html){target="_blank"}/[preview](http://htmlpreview.github.io/?https://github.com/UNM-GEOG-485-585/class-materials/blob/master/sample-files/assignmentTemplate.html){target="_blank"}).  
 
 
-*Step 1* - Open the *home page* [template](https://github.com/UNM-GEOG-485-585/class-materials/blob/master/sample-files/assignmentTemplate.html){target="_blank"} linked above in your web browser and open the [preview](http://htmlpreview.github.io/?https://github.com/UNM-GEOG-485-585/class-materials/blob/master/sample-files/assignmentTemplate.html){target="_blank"} in a second tab or window so that you can view both at the same time. 
+*Step 1* - Open the *home page* [template](https://github.com/UNM-GEOG-485-585/class-materials/blob/master/sample-files/homePageTemplate.html){target="_blank"} linked above in your web browser and open the [preview](http://htmlpreview.github.io/?https://github.com/UNM-GEOG-485-585/class-materials/blob/master/sample-files/homePageTemplate.html){target="_blank"} in a second tab or window so that you can view both at the same time. 
 
-*Step 2* - Copy the code in the home page [template](https://github.com/UNM-GEOG-485-585/class-materials/blob/master/sample-files/assignmentTemplate.html){target="_blank"} into a new text file named `index.html` on your computer. 
+*Step 2* - Copy the code in the home page [template](https://github.com/UNM-GEOG-485-585/class-materials/blob/master/sample-files/homePageTemplate.html){target="_blank"} into a new text file named `index.html` on your computer. 
 
 *Step 3* - Open the *milestone* assignment [template](https://github.com/UNM-GEOG-485-585/class-materials/blob/master/sample-files/assignmentTemplate.html){target="_blank"} linked above.
 
