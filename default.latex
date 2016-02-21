@@ -6,6 +6,12 @@
 \usepackage{fixltx2e} % provides \textsubscript
 \usepackage{booktabs}
 
+% Added by KB to handle generation of tables with tiny font
+\usepackage{floatrow}
+\DeclareFloatFont{tiny}{\tiny}% "scriptsize" is defined by floatrow, "tiny" not
+\floatsetup[table]{font=tiny}
+
+
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 
