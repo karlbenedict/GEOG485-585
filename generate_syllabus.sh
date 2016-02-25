@@ -4,4 +4,4 @@
 
 /usr/local/bin/pandoc --toc -c page.css --standalone syllabus.md -o syllabus.linked.html
 
-/usr/local/bin/pandoc --template ../pandoc-templates/default.latex --self-contained --standalone syllabus.md -o syllabus.pdf
+/usr/local/bin/pandoc --template default.latex --self-contained --standalone syllabus.md -o syllabus.pdf
