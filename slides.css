@@ -299,26 +299,26 @@ td.lineNumbers{
 	width:40px;
 }
 
-table {
+.bigtable table {
 	font-size: 80%;
 	margin-bottom: 15px;
 }
 
-th {
+.bigtable th {
 	padding-right: 15px;
 	padding-bottom: 5px;;
 }
 
-td {
+.bigtable td {
 	padding: 3px;
 }
 
-tr:nth-child(even) {
+.bigtable tr:nth-child(even) {
 	background: #ccc;
 	color: black;
 }
 
-tr:nth-child(odd) {
+.bigtable tr:nth-child(odd) {
 	background: #000;
 	color: white;
 }
