@@ -6,6 +6,12 @@
 \usepackage{fixltx2e} % provides \textsubscript
 \usepackage{booktabs}
 
+% Added by KB to handle generation of tables with tiny font
+\usepackage{floatrow}
+\DeclareFloatFont{tiny}{\tiny}% "scriptsize" is defined by floatrow, "tiny" not
+\floatsetup[table]{font=tiny}
+
+
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 
@@ -570,13 +576,13 @@ Maps API in developing your first web mapping page. These pages will be:
 \end{enumerate}
 
 \emph{Step 1} - Open the \emph{home page}
-\href{https://github.com/UNM-GEOG-485-585/class-materials/blob/master/sample-files/assignmentTemplate.html}{template}
+\href{https://github.com/UNM-GEOG-485-585/class-materials/blob/master/sample-files/homePageTemplate.html}{template}
 linked above in your web browser and open the
-\href{http://htmlpreview.github.io/?https://github.com/UNM-GEOG-485-585/class-materials/blob/master/sample-files/assignmentTemplate.html}{preview}
+\href{http://htmlpreview.github.io/?https://github.com/UNM-GEOG-485-585/class-materials/blob/master/sample-files/homePageTemplate.html}{preview}
 in a second tab or window so that you can view both at the same time.
 
 \emph{Step 2} - Copy the code in the home page
-\href{https://github.com/UNM-GEOG-485-585/class-materials/blob/master/sample-files/assignmentTemplate.html}{template}
+\href{https://github.com/UNM-GEOG-485-585/class-materials/blob/master/sample-files/homePageTemplate.html}{template}
 into a new text file named \texttt{index.html} on your computer.
 
 \emph{Step 3} - Open the \emph{milestone} assignment
@@ -801,7 +807,7 @@ will add your own custom content to free-standing web pages that include
 a mapper based upon the base map you define here.
 
 Create a web page (based upon the assignment
-\href{https://github.com/UNM-GEOG-485-585/class-materials/blob/master/sample-files/assignmentTemplate.txt}{template})
+\href{https://github.com/UNM-GEOG-485-585/class-materials/blob/master/sample-files/assignmentTemplate.html}{template})
 that contains your milestone writeup (including the embedded Google Map
 required by question 5), and link it to the home page
 (\texttt{index.html}) file you created last week.
@@ -1373,6 +1379,254 @@ this service, for a 500x500 pixel map image that is 0.05-degrees wide
 and 0.05-degress high, with the SW corner of the map image located at
 35°N and -106°45'E (EPSG:4326). Include in your write-up the complete
 GetMap request and the returned map image.
+\end{description}
+
+\chapter{Week 7 - Module 4.2 - Interoperability Standards - WFS \&
+WCS}\label{week07}
+
+This week's class focuses on two other key Open Geospatial Consortium
+standards that were created to enable access to geospatial \emph{data}
+of a variety of types.
+
+\begin{description}
+\item[Web Feature Service (WFS)]
+A standard designed for providing on-demand access to features
+(typically points, lines, and polygons and more complex combinations of
+these feature types) and their associated attributes, in a variety of
+formats, and optionally filtered by spatial and other query parameters.
+\item[Web Coverage Services (WCS)]
+A standard focused on providing access to \emph{coverages} representing
+a variety of data types, but particularly optimized for dynamic delivery
+of data based upon multi-dimensional gridded data.
+\end{description}
+
+\emph{Expected Outcomes}
+
+At the end of this class students should have an understanding of the
+following:
+
+\begin{itemize}
+\item
+  The request-response model for OGC WFS, including the required and
+  optional request parameters for the \emph{GetCapabilities},
+  \emph{DescribeFeatureType}, and \emph{GetFeature} requests; and the
+  response types generated in response to those requests.
+\item
+  The request-response model for OGC WCS, including the required and
+  optional request parameters for the \emph{GetCapabilities},
+  \emph{DescribeCoverage}, and \emph{GetCoverage} requests; and the
+  response types generated in response to those requests.
+\item
+  An understanding of the distinction between WMS, WFS, and WCS for use
+  in different usage scenarios (e.g.~map images, vector, raster data
+  access)
+\end{itemize}
+
+\emph{Key Concepts}
+
+\begin{itemize}
+\item
+  OGC WFS as a data access standard for \emph{features} and their
+  attributes with support for a variety of query methods including
+  spatial and parameter values.
+\item
+  OGC WCS as a data access standard for \emph{coverages} representing
+  spatio-temporal gridded data represented in 1- or more dimensions.
+\end{itemize}
+
+\section{Class Prep}\label{week07-prep}
+
+\section{Reference Materials}\label{week07-reference}
+
+\begin{itemize}
+\item
+  {[}OGC WFS Implementation
+  Specification{]}{[}http://www.opengeospatial.org/standards/wfs{]}
+\item
+  {[}OGC WCS Implementation
+  Specification{]}{[}http://www.opengeospatial.org/standards/wcs{]}
+\end{itemize}
+
+\section{Weekly Milestone - WMS GetMap Requests, Map Scale and Aspect
+Ratio Calculations}\label{week07-milestone}
+
+You might have noticed in the WMS requests that you generated in the
+previous lab returned images that didn't look ``quite right'' relative
+to what you may know of the shape of familiar features.
+
+For example, a WMS request for a 200x200 pixel PNG file (Figure
+\ref{fig:bernalillo-01} for an area surrounding Bernalillo County
+(-107.2,34.7,-106,35.25) from the previous lab would be
+(\href{http://gstore.unm.edu/apps/rgis/datasets/92403ebf-aec5-404b-ae8a-6db41f388737/services/ogc/wms?VERSION=1.1.1\&SERVICE=WMS\&REQUEST=GetMap\&BBOX=-107.2,34.7,-106,35.25\&LAYERS=g_2007fe_35_county\&FORMAT=image/png\&TRANSPARENT=TRUE\&STYLES=\&SRS=EPSG:4326\&WIDTH=200\&HEIGHT=200}{link}):
+
+\begin{verbatim}
+http://gstore.unm.edu/apps/rgis/datasets/92403ebf-aec5-404b-ae8a-6db41f388737/
+services/ogc/wms?VERSION=1.1.1&SERVICE=WMS&REQUEST=GetMap&BBOX=-107.2,34.7,
+-106,35.25&LAYERS=g_2007fe_35_county&FORMAT=image/png&TRANSPARENT=TRUE&
+STYLES=&SRS=EPSG:4326&WIDTH=200&HEIGHT=200
+\end{verbatim}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics{images/bernalillo_01.png}
+\caption{Returned map image for the region surrounding Bernalillo County
+for a WMS request with \texttt{BBOX=-107.2,34.7,-106,35.25},
+\texttt{WIDTH=200} and \texttt{HEIGHT=200}\label{fig:bernalillo-01}}
+\end{figure}
+
+this request results in a map image that does not agree with the
+standard shape of Bernalillo county (depicted in QGIS - Figure
+\ref{fig:bernalillo-qgis}) that we are accustomed to, regardless of the
+specific map projection being used.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics{images/bernalillo_qgis.png}
+\caption{Area around Bernalillo County as viewed in QGIS based on the
+OGC WCS based on the same data source used for the WMS request
+illustrated above\}\label{fig:bernalillo-qgis}}
+\end{figure}
+
+This discrepancy is the result of a difference in the aspect ratio of
+the requested BBOX (-107.2,34.7,-106,35.25) and the requested image
+dimensions (200x200 pixels). \emph{When you compose a WMS GetMap
+request, you need to make sure that the aspect ratio of both the image
+size and BBOX match.}
+
+For example, if we calculate the aspect ratio of the BBOX we obtain the
+following values (remember that the BBOX is specified as a comma
+separated list of x,y coordinates: minx,miny,maxx,maxy):
+
+\(BBOX_{width} = x_{max} - x_{min} = (-106) - (-107.2) = 1.2^{\circ}\)
+
+\(BBOX_{height} = y_{max} - y_{min} = 35.25 - 34.7 = 0.55^{\circ}\)
+
+\(BBOX_{aspect-ratio} = BBOX_{width} / BBOX_{height} = 1.2^{\circ} / 0.55^{\circ} = 2.1818\)
+
+If we want to retrieve a map image that is 200 pixels wide, we need to
+calculate an image height that yields an aspect ratio that matches the
+BBOX aspect ratio. Harking back to basic algebra:
+
+\(Image_{width} = 200px\)
+
+\(Image_{aspect-ratio} = Image_{width} / Image_{height} = 200px / Image_{height} = 2.1818\)
+
+\(Image_{height} = Image_{width} / {aspect-ratio} = 200px / 2.1818 = 91.667px\)
+
+So, if we request an image that is 200x92 (we have to request pixel
+dimensions in integers, so rounding to the nearest integer) we should
+get a representation that closely approximates the proper shape of
+features. The modified WMS request with the new image's size is the
+following
+(\href{http://gstore.unm.edu/apps/rgis/datasets/92403ebf-aec5-404b-ae8a-6db41f388737/services/ogc/wms?VERSION=1.1.1\&SERVICE=WMS\&REQUEST=GetMap\&BBOX=-107.2,34.7,-106,35.25\&LAYERS=g_2007fe_35_county\&FORMAT=image/png\&TRANSPARENT=TRUE\&STYLES=\&SRS=EPSG:4326\&WIDTH=200\&HEIGHT=92}{link}):
+
+\begin{verbatim}
+http://gstore.unm.edu/apps/rgis/datasets/92403ebf-aec5-404b-ae8a-6db41f388737/
+services/ogc/wms?VERSION=1.1.1&SERVICE=WMS&REQUEST=GetMap&BBOX=-107.2,34.7,-106,35.25&
+LAYERS=g_2007fe_35_county&FORMAT=image/png&TRANSPARENT=TRUE&STYLES=&
+SRS=EPSG:4326&WIDTH=200&HEIGHT=92
+\end{verbatim}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics{images/bernalillo_02.png}
+\caption{Returned map image for the region surrounding Bernalillo County
+for a WMS request with \texttt{BBOX=-107.2,34.7,-106,35.25},
+\texttt{WIDTH=200} and \texttt{HEIGHT=92}}
+\end{figure}
+
+This process may be reversed to request images of a fixed size for use
+in a client interface, with the requested BBOX modified to match the
+aspect ratio of the target image. If, for example, images are being
+requested for a client interface with a fixed map size of 600x400
+pixels, a corresponding BBOX can be derived using the same calculation.
+
+If, for example, the area of interest for a map is 2 degrees wide, we
+can calculate the target height (in degrees) using the aspect ratio of
+the desired image.
+
+\(Image_{aspect-ratio} = Image_{width} / Image_{height} = (600px) / (400px) = 1.5\)
+
+\(BBOX_{aspect-ratio} = BBOX_{width} / BBOX_{height} = 2^{\circ} / BBOX_{height} = 1.5\)
+
+\(BBOX_{height} = BBOX_{width} / BBOX_{aspect-ratio} = 2^{\circ} / 1.5 = 1.3333^{\circ}\)
+
+If our area of interest extends from -106 to -108 degrees East
+Longitude, we can use the known target height of 1.3333 to generate a
+WMS BBOX of the appropriate aspect ratio. If the minimum Latitude of
+interest is 34.7 degrees North Latitude, the maximum BBOX Y value would
+be
+
+\(y_{max} = y_{min} + BBOX_{height} = 34.7^{\circ} + 1.3333 = 36.0333\)
+
+This set of calculations may be used to compose the following WMS
+request
+(\href{http://gstore.unm.edu/apps/rgis/datasets/92403ebf-aec5-404b-ae8a-6db41f388737/services/ogc/wms?VERSION=1.1.1\&SERVICE=WMS\&REQUEST=GetMap\&BBOX=-108,34.7,-106,36.0333\&LAYERS=g_2007fe_35_county\&FORMAT=image/png\&TRANSPARENT=TRUE\&STYLES=\&SRS=EPSG:4326\&WIDTH=600\&HEIGHT=400}{link}):
+
+\begin{verbatim}
+http://gstore.unm.edu/apps/rgis/datasets/92403ebf-aec5-404b-ae8a-6db41f388737/
+services/ogc/wms?VERSION=1.1.1&SERVICE=WMS&REQUEST=GetMap&BBOX=-108,34.7,-106,36.0333&
+LAYERS=2007fe_35_county&FORMAT=image/png&TRANSPARENT=TRUE&STYLES=&
+SRS=EPSG:4326&WIDTH=600&HEIGHT=400
+\end{verbatim}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics{images/bernalillo_03.png}
+\caption{Returned map image for the region surrounding Bernalillo County
+for a WMS request with \texttt{BBOX=-108,34.7,-106,36.0333},
+\texttt{WIDTH=600} and \texttt{HEIGHT=400}}
+\end{figure}
+
+Given that McKinley County NM is contained within the following BBOX:
+-109.5, 34.5, -106.5, 36.5
+
+\begin{description}
+\tightlist
+\item[Question 1]
+What is the aspect ratio (\(BBOX_{width}/BBOX_{height}\)) of this
+geographic region?
+\item[Question 2]
+What would be the height (in whole pixels - round up) for a map image
+for this region that is 600 pixels wide?
+\item[Question 3]
+Formulate a WMS request that reflects the values determined in 1.1 and
+1.2 above for the WMS service used above in the examples and for the
+\texttt{g\_2007fe\_35\_county} layer. Include in your answer both the
+complete WMS request and the returned map image (either as a static
+image, or an image that is linked to the live WMS).
+\item[Question 4]
+Formulate a WMS request for a 900x600 pixel map image that represents
+the full 3-degree width of the geographic region, and is based upon the
+minimum Y value of 34.5 degrees North Latitude. Include in your answer
+both the WMS request and the returned map image (either as a static
+image, or an image that is linked to the live WMS).
+\end{description}
+
+Given the following set of \texttt{GetMap} requests against the
+\emph{\href{http://raster.nationalmap.gov/arcgis/rest/services/Orthoimagery/USGS_EROS_Ortho_SCALE/ImageServer}{USGS/EROS
+Ortho Imagery Service}} answer the following questions
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\item
+  \url{http://raster.nationalmap.gov/arcgis/services/Orthoimagery/USGS_EROS_Ortho_SCALE/ImageServer/WMSServer?request=GetMap\&service=WMS\&VERSION=1.1.0\&SRS=EPSG:4326\&LAYERS=0\&FORMAT=image/jpeg\&TRANSPARENT=FALSE\&STYLES=\&WIDTH=1200\&HEIGHT=800\&BBOX=-107.1242070,34.7509960,-106.1242070,35.4176960}
+\item
+  \url{http://raster.nationalmap.gov/arcgis/services/Orthoimagery/USGS_EROS_Ortho_SCALE/ImageServer/WMSServer?request=GetMap\&service=WMS\&VERSION=1.1.0\&SRS=EPSG:4326\&LAYERS=0\&FORMAT=image/jpeg\&TRANSPARENT=FALSE\&STYLES=\&WIDTH=1200\&HEIGHT=800\&BBOX=-106.6867070,35.0426773,-106.5617070,35.1260148}
+\item
+  \url{http://raster.nationalmap.gov/arcgis/services/Orthoimagery/USGS_EROS_Ortho_SCALE/ImageServer/WMSServer?request=GetMap\&service=WMS\&VERSION=1.1.0\&SRS=EPSG:4326\&LAYERS=0\&FORMAT=image/jpeg\&TRANSPARENT=FALSE\&STYLES=\&WIDTH=1200\&HEIGHT=800\&BBOX=-106.6281133,35.0817417,-106.6203008,35.0869503}
+\item
+  \url{http://raster.nationalmap.gov/arcgis/services/Orthoimagery/USGS_EROS_Ortho_SCALE/ImageServer/WMSServer?request=GetMap\&service=WMS\&VERSION=1.1.0\&SRS=EPSG:4326\&LAYERS=0\&FORMAT=image/jpeg\&TRANSPARENT=FALSE\&STYLES=\&WIDTH=1200\&HEIGHT=800\&BBOX=-106.6246953,35.0840205,-106.6237187,35.0846715}
+\end{enumerate}
+
+\begin{description}
+\tightlist
+\item[Question 6]
+Which layer(s) return map images that display image content (i.e.~return
+a non-blank image)?
+\item[Questions 7]
+What is the difference between these requests? How might this difference
+influence whether or not a map image with content is being returned?
 \end{description}
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
