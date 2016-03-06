@@ -1,0 +1,221 @@
+\documentclass[]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\usepackage{booktabs}
+
+% Added by KB to handle generation of tables with tiny font
+\usepackage{floatrow}
+\DeclareFloatFont{tiny}{\tiny}% "scriptsize" is defined by floatrow, "tiny" not
+\floatsetup[table]{font=tiny}
+
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[utf8]{inputenc}
+\else % if luatex or xelatex
+  \ifxetex
+    \usepackage{mathspec}
+    \usepackage{xltxtra,xunicode}
+  \else
+    \usepackage{fontspec}
+  \fi
+  \defaultfontfeatures{Mapping=tex-text,Scale=MatchLowercase}
+  \newcommand{\euro}{€}
+\fi
+% use microtype if available
+\IfFileExists{microtype.sty}{\usepackage{microtype}}{}
+\ifxetex
+  \usepackage[setpagesize=false, % page size defined by xetex
+              unicode=false, % unicode breaks when used with xetex
+              xetex]{hyperref}
+\else
+  \usepackage[unicode=true]{hyperref}
+\fi
+\hypersetup{breaklinks=true,
+            bookmarks=true,
+            pdfauthor={},
+            pdftitle={},
+            colorlinks=true,
+            citecolor=blue,
+            urlcolor=blue,
+            linkcolor=magenta,
+            pdfborder={0 0 0}}
+\urlstyle{same}  % don't use monospace font for urls
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+
+\oddsidemargin = 0pt
+\evensidemargin = 0pt
+\topmargin = -36pt
+\textwidth = 468pt
+\textheight = 648pt
+
+\setcounter{secnumdepth}{0}
+
+\author{}
+\date{}
+
+\begin{document}
+
+\section{GEOG 485L/585L Midterm Exam}\label{geog-485l585l-midterm-exam}
+
+\subsection{Due Friday, March 11, 2016 before 5:00
+pm}\label{due-friday-march-11-2016-before-500-pm}
+
+\emph{Late Exams (determined by when the exam page is posted to your
+GitHub repo) will be penalized 10 points (10\%) for each 24-hours or
+fraction thereof}
+
+Just as you have done for your milestones and deep-dives, create a web
+page with your answers to the exam questions and link to the page from
+your homepage (index.html) in GitHub.
+
+Make sure to \emph{clearly format} your writeup so that your answer's
+are understandable.
+
+100 pts
+
+\begin{enumerate}
+\item
+  Add a Google Map to your writeup that has the following
+  characteristics (34 pts total):
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Based on the Satellite base map (10 pts)
+  \item
+    Centered at 36.060574,-107.961692 (5 pts)
+  \item
+    400 px wide by 300 px high (5 pts)
+  \item
+    Zoom level 18 (5 pts)
+  \item
+    With a single marker positioned at the center point (5 pts)
+  \item
+    With an InfoWindow (with content of your choice) that is displayed
+    when the user clicks on it (4 pts)
+  \end{itemize}
+\item
+  What combination of OGC Service and Request
+  (e.g.~SERVICE=WMS\&REQUEST=GetFeatureInfo) would you use to perform
+  the following? (3 pts each)
+
+  \begin{enumerate}
+  \def\labelenumii{\alph{enumii}.}
+  \tightlist
+  \item
+    Determine the spatial extent of an available layer from a Web Map
+    Service.
+  \item
+    Obtain a list of coverages from a Web Coverage service.
+  \item
+    Determine what file formats are supported by a Web Feature Service
+    for the delivery of available data types (i.e.~layers)
+  \item
+    Retrieve a map image from a Web Map Service
+  \item
+    Retrieve data from an available coverage from a Web Coverage
+    Service 
+  \end{enumerate}
+\item
+  Perform the following WMS GetCapabilities request
+  (\href{http://neowms.sci.gsfc.nasa.gov/wms/wms?version=1.1.1\&service=WMS\&request=GetCapabilities}{Link\footnote{\texttt{http://neowms.sci.gsfc.nasa.gov/wms/wms?version=1.1.1\&service=WMS\&request=GetCapabilities}}})
+  and answer the following questions (3 pts each)
+
+  \begin{enumerate}
+  \def\labelenumii{\alph{enumii}.}
+  \tightlist
+  \item
+    What is the name of the service?
+  \item
+    What file formats are supported by the GetMap request?
+  \item
+    What are the \emph{names} of three of the layers included in the
+    service?
+  \end{enumerate}
+\item
+  Compose a GetMap request for the WMS referenced in the previous
+  question that includes the following characteristics. Include in your
+  answer both the complete WMS GetMap request and the resulting map
+  image that is returned. (15 pts)
+
+  \begin{itemize}
+  \tightlist
+  \item
+    JPEG image format
+  \item
+    1200 pixels wide (you will need to calculate the height based upon
+    the aspect ratio of the bounding box)
+  \item
+    Bounding Box (EPSG:4326):
+    \texttt{Min\ X\ =\ -128\ East\ Longitude,\ Min\ Y\ =\ 21.5\ North\ Latitude,\ Max\ X\ =\ -62\ East\ Longitude,\ Max\ Y\ =\ 54.5\ North\ Latitude}
+  \item
+    Layer to be mapped = ``MOD\_LSTD\_CLIM\_M''
+  \end{itemize}
+\item
+  From the XML GetCapabilities returned by the following WFS request
+  (\href{http://services.nationalmap.gov/arcgis/services/WFS/transportation/MapServer/WFSServer?request=GetCapabilities\&service=WFS}{Link\footnote{\texttt{http://services.nationalmap.gov/arcgis/services/WFS/transportation/MapServer/WFSServer?\ request=GetCapabilities\&service=WFS}}})
+  answer the following questions (3 pts each) 
+
+  \begin{enumerate}
+  \def\labelenumii{\alph{enumii}.}
+  \tightlist
+  \item
+    What is the title for this service?
+  \item
+    What file format(s) are supported by this service's GetFeature
+    request?
+  \item
+    What is the DefaultSRS or the FeatureType named
+    ``WFS\_transportation:Interstate''?
+  \item
+    What is the WGS84BoundingBox of the FeatureType named
+    ``WFS\_transportation:Interstate''?
+  \end{enumerate}
+\item
+  From the XML GetCapabilities returned by the following WCS request
+  (\href{http://sdf.ndbc.noaa.gov/thredds/wcs/hfradar_uswc_500m?request=GetCapabilities\&version=1.0.0\&service=WCS}{Link\footnote{\texttt{http://sdf.ndbc.noaa.gov/thredds/wcs/hfradar\_uswc\_500m?request=GetCapabilities\&version=1.0.0\&service=WCS}}})
+  answer the following questions (3 pts each)
+
+  \begin{enumerate}
+  \def\labelenumii{\alph{enumii}.}
+  \tightlist
+  \item
+    What is the description of the \texttt{v} coverage?
+  \item
+    How many coverages are available from this service?
+  \end{enumerate}
+\item
+  Formulate a complete DescribeCoverage request for the \texttt{v}
+  coverage for the WCS service referenced in the previous question and
+  provide a link in your writeup for that request (i.e.~I should be able
+  to click the link and get the XML returned in response to your well
+  formed request). (3 pts)
+\item
+  From the returned XML document from the DescribeCoverage request in
+  the previous question answer the following questions. (3 pts each)
+
+  \begin{enumerate}
+  \def\labelenumii{\alph{enumii}.}
+  \tightlist
+  \item
+    What is the spatial domain for the `v` coverage?
+  \item
+    What file formats are available for `v` data delivered by this
+    service?
+  \item
+    What SRS(s) are supported by this service for requested data
+    delivery?
+  \end{enumerate}
+\end{enumerate}
+
+\end{document}
