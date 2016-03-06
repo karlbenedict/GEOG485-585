@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			html {
+				height:100%;
+				width:100%
+			}
+			body {
+				height:100%;
+				width:100%
+			}
+			#map_canvas {
+				width:400px;
+				height:300px
+			}
+			.infoBox {
+				color:#DC3D24;
+				background-color: black;
+				padding:5px;
+				font-style:italic;
+				font-size: 18pt
+			}
+		</style>
+	</head>
+
+	<body>
+		<h1>Sample Map</h1>
+		<div id="map_canvas"></div>
+
+	<!-- Let's put our JavaScript down here --------------------------------------------->
+		<!-- for simplicity I'm adding the javascript here -->
+		<script>
+			function initialize() {
+				var puebloBonito = new google.maps.LatLng(36.060574,-107.961692)
+				var mapOptions = {
+					zoom: 18,
+					center: puebloBonito,
+					mapTypeId: google.maps.MapTypeId.SATELLITE
+				};
+				var map = new google.maps.Map(
+					document.getElementById("map_canvas"),
+					mapOptions);
+				
+				var publoBonitoMarker = new google.maps.Marker (
+					{
+						position: puebloBonito,
+						title:"Pueblo Bonito at Chaco Canyon",
+						map: map
+					}
+				)
+				
+				var pubeloBonitoInfoContent = '<div class="infoBox">' +
+					'<p>This is Pueblo Bonito at Chaco Canyon</p>' +
+					'</div>'
+				var puebloBonitoInfoWindow = new google.maps.InfoWindow({
+					content: pubeloBonitoInfoContent
+					});
+				google.maps.event.addListener(publoBonitoMarker, 'click', function() {
+					puebloBonitoInfoWindow.open(map,publoBonitoMarker);
+					});
+			}
+		
+		
+		</script>
+		
+		<!-- Load the API in asynchronous mode and execute the initialize function when done -->
+		<!-- The optional 'key-<API Key>' parameter is not used here but should be for a production map -->
+		<script async defer 
+			src="https://maps.googleapis.com/maps/api/js?callback=initialize">
+    	</script>
+	</body>
+</html>
