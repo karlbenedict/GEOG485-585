@@ -1629,6 +1629,181 @@ What is the difference between these requests? How might this difference
 influence whether or not a map image with content is being returned?
 \end{description}
 
+\chapter{Week 10 - Web-based Mapping Clients: OpenLayers Javascript
+Framework}\label{week10}
+
+The Google Maps API provides one method for presenting an interactive
+mapping tool within a web browser, but there are restrictions for free
+use based upon Google's
+\href{https://developers.google.com/maps/licensing}{license} agreement,
+and the API is completely controlled by Google - changes are limited to
+those that Google enables. The \href{http://openlayers.org/}{OpenLayers}
+Javascript framework which (as quoted from the OpenLayers 2 project home
+page)
+
+\begin{quote}
+has been developed to further the use of geographic information of all
+kinds. OpenLayers is completely free, Open Source JavaScript, released
+under the 2-clause BSD License (also known as the FreeBSD).
+\end{quote}
+
+Given its Open Source model, OpenLayers is managed as a community
+software project, with the development of specific capabilities driven
+by particular project or functionality needs that come out of the
+community.
+
+This week's class focuses on the basics of designing an OpenLayers
+interactive mapping client, including
+
+\begin{itemize}
+\tightlist
+\item
+  The required structural (HTML) and behavioral (Javascript) components
+\item
+  Examples of creating and adding layer objects to a map
+\item
+  Examples of a variety of base maps that can be added to a map
+\item
+  The controls that may be added to a map, and the methods for managing
+  and positioning those controls
+\end{itemize}
+
+\subsection{Expected Outcomes}\label{expected-outcomes}
+
+At the end of this class the students will be able to:
+
+\begin{itemize}
+\tightlist
+\item
+  Create a new web page that includes an interactive OpenLayers mapper
+\item
+  Define one or more base map layers as part of the mapper
+\item
+  Define an appropriate map center and zoom level for the desired map
+\item
+  Enable and position controls within the map
+\end{itemize}
+
+\subsection{Key Concepts}\label{key-concepts}
+
+At the end of this class students will understand that
+
+\begin{itemize}
+\tightlist
+\item
+  OpenLayers is a Javascript framework that enables web-based
+  interactive mapping
+\item
+  The OpenLayers framework supports the integration of a variety of
+  proprietary and open source base map services
+\item
+  Map size, center, zoom level, and layers may all be defined through
+  the Javascript API
+\item
+  A wide variety of map controls (informational and interactive) may be
+  added to maps
+\end{itemize}
+
+\section{Class Prep}\label{week10-prep}
+
+\href{http://openlayers.org/en/v3.14.2/doc/quickstart.html}{OpenLayers
+Quick Start Page}
+
+\href{http://openlayers.org/en/v3.14.2/doc/tutorials/concepts.html}{OpenLayers
+Basic Concepts}
+
+Gratier, T., Spencer, P., \& Hazzard, E. (2015). \emph{Openlayers 3
+beginner's guide : Get started with openlayers 3 and enhance your web
+pages by creating and displaying dynamic maps}. Birmingham, England:
+Packt Publishing.
+\href{https://unm-on-worldcat-org.libproxy.unm.edu/oclc/903963849?databaseList=1271,143,1487,1533,1540,1672,1708,173,1925,2006,2007,203,2201,2237,2259,2260,2261,2262,2263,2264,2267,2268,2281,2328,3036,3201,638}{eBook}
+Chapters 1-3.
+
+\section{Reference Materials}\label{week10-reference}
+
+\href{http://openlayers.org/en/v3.14.2/apidoc/}{OpenLayers API
+Reference}
+
+\href{http://openlayers.org/en/v3.2.1/examples/}{OpenLayers Sample Maps}
+
+\section{Weekly Milestone - OpenLayers Mapping}\label{week10-milestone}
+
+Following the model used in Milestone 3 for your first Google Map web
+page, you should first answer the following questions about what and how
+you want to map - \emph{relating to a different focus than you have used
+in your previous assignments}. As you define the type of map you want to
+build, think about a specific problem or topic that you would like to
+address with your map.
+
+In this exercise you will be generating the configuration for the base
+map (i.e.~including one or more OpenLayer enabled background layers),
+adding controls, and defining an appropriate map center and zoom level
+for the map. You will add your own custom content (i.e.~the answers to
+the following questions) to a free-standing web page that include an
+interactive mapper and the reasoning behind the design of the map.
+
+Create a web page that contains your milestone assignment writeup
+(\emph{including} the embedded OpenLayers map required by question 5),
+and link it to your home page (index.html).
+
+Respond to Question 1-4 with an understanding that you are generating a
+web page that should be clear, complete, well-formatted, and reasonably
+styled.
+
+\emph{Peer Review:} This week's assignment will include a peer review
+component. Specifically, 5-points of your 20-point assignment score will
+be based upon \emph{your} peer-review of \emph{two} other web pages
+generated by the students in the class. The required peer-review will
+consist of two steps:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Create a new Discussion Thread in Learn entitled: ``Page for
+  Peer-Review \textless{}Your Name\textgreater{}'' at the same time you
+  link your milestone to your homepage. Include in the post the GitHub
+  address of your Week 10 milestone that you created for this
+  assignment.
+\item
+  Provide a \emph{substantive}, \emph{constructive}, and \emph{civil}
+  comment (through the ``reply'' option for a posted thread) to
+  \emph{two} of the posted discussion threads posted for peer-review.
+  Please complete the peer-review as soon as possible so that your
+  colleagues can benefit most from your input. Complete the peer-review
+  no later than the required end-of-term portfolio review deadline.
+  Think about the following ideas for your review: \emph{what did I
+  learn from this page}, \emph{what was done well}, \emph{what could be
+  improved}
+\end{enumerate}
+
+\begin{description}
+\tightlist
+\item[Question 1]
+What area do you want to depict in your map? Why?
+\item[Question 2]
+What is the center point (latitude and longitude) of your area of
+interest?
+\item[Question 3]
+What base map(s) did you select for use in your map? Why?
+\item[Question 4]
+What is the scale of your map (local, regional, continental, global)?
+How will this translate into your selection of an appropriate default
+zoom level for your map?
+\end{description}
+
+Now that you have answered these questions about the map that you want
+to create, refer to the examples in the lecture notes, the OpenLayers
+Examples (\url{http://openlayers.org/en/v3.2.1/examples/}), and this
+week's reading assignment to create a custom OpenLayers map.
+
+\begin{description}
+\tightlist
+\item[Question 5]
+Embed the OpenLayers Map in your writeup (included with the answers to
+questions 1-4 above) that is based upon your responses to questions 1-4
+above.
+\end{description}
+
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
 This work by {Karl Benedict} is licensed under a Creative Commons
