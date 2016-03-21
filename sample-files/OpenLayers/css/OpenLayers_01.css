@@ -1,0 +1,11 @@
+/* OpenLayers_01.css */
+
+body {
+	width:100%;
+	hwight:100%
+}
+
+#map {
+	width:600px;
+	height:400px
+}
