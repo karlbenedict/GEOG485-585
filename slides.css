@@ -194,6 +194,7 @@ ul li {
  
  div.codeTable code.sourceCode {
  	color: black;
+ 	font-size: 14px;
  }
  
  div.codeTable.short {

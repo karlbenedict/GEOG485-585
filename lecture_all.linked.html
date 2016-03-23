@@ -237,6 +237,15 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li><a href="#sample-getcoverage-request">Sample GetCoverage Request</a></li>
 </ul></li>
 </ul></li>
+<li><a href="#week-10---module-2b---openlayers-3-javascript-framework">Week 10 - Module 2b - OpenLayers 3 Javascript Framework</a><ul>
+<li><a href="#overview-6">Overview</a></li>
+<li><a href="#openlayers-capabilities">OpenLayers Capabilities</a></li>
+<li><a href="#distinguishing-characteristics-between-openlayers-and-google-maps">Distinguishing Characteristics Between OpenLayers and Google Maps</a></li>
+<li><a href="#resources">Resources</a></li>
+<li><a href="#demonstrations-and-examples">Demonstrations and Examples</a></li>
+<li><a href="#demonstration-and-examples---online-resources">Demonstration and Examples - Online Resources</a></li>
+<li><a href="#next-week---custom-features-and-wms-layers">Next Week - Custom Features and WMS Layers</a></li>
+</ul></li>
 </ul>
 </div>
 <!---------------------------------------------------------------------------->
@@ -4692,13 +4701,138 @@ gfs_4_20160228_0000_384.grb2?
 <!-- Web-based Mapping Clients------------------------------------------------>
 <!-- OpenLayers Javascript Framework------------------------------------------>
 <!---------------------------------------------------------------------------->
-<!-- 
+<h1 id="week-10---module-2b---openlayers-3-javascript-framework" class="module02b01a">Week 10 - Module 2b - OpenLayers 3 Javascript Framework</h1>
+<h3 id="overview-6" class="module02b01a">Overview</h3>
+<ul>
+<li><p>Capabilities</p></li>
+<li><p>OpenLayers = Javascript (by example)</p></li>
+</ul>
+<h3 id="openlayers-capabilities" class="module02b01a">OpenLayers Capabilities</h3>
+<ul>
+<li>Support for Multiple basemaps: <em>BingMaps</em>, <em>MapQuest</em>, <em>OpenStreetMap</em>, <em>Stamen</em></li>
+<li>Model for interaction with multiple map server platforms: <em>ArcGIS</em> (REST), <em>MapServer</em>, <em>GeoServer</em></li>
+<li>Support for key OGC standards: <em>WMS</em>, <em>WMTS</em>, <em>WFS</em>, <em>GML</em>, <em>KML</em></li>
+<li>Multiple control types: <em>Attribution</em>, <em>Zoom</em>, <em>Overview</em>, <em>Scale</em>, <em>FullScreen</em>, <em>Graticule</em></li>
+<li>Custom styled features with associated attributes: <em>Curve</em>, <em>LinearRing</em>, <em>LineString</em>, <em>MultiLineString</em>, <em>MultiPoint</em>, <em>MultiPolygon</em>, <em>Point</em>, <em>Polygon</em></li>
+<li>Support for many formats for data read and write: <em>ATOM</em>, <em>GML</em> (1, 2, 3), <em>GeoJSON</em>, <em>GPX</em>, <em>KML</em>, <em>WKT</em>, any many others</li>
+<li>Open Source, enabling modification and integration into other systems (e.g. <a href="http://geoext.org/">GeoExt</a>)</li>
+</ul>
+<h3 id="distinguishing-characteristics-between-openlayers-and-google-maps" class="module02b01a">Distinguishing Characteristics Between OpenLayers and Google Maps</h3>
+<ul>
+<li>Greater emphasis on client-side processing - Client access and rendering of data files that Google's servers otherwise take care of (pros &amp; cons to this approach)</li>
+<li>Integrated support for OGC services and their products</li>
+<li>Support for different projections (adds complexity)</li>
+<li>API more rich in options ==&gt; more complexity</li>
+</ul>
+<h3 id="resources" class="module02b01a">Resources</h3>
+<p><a href="http://openlayers.org/">OpenLayers Home Page</a></p>
+<p><a href="http://openlayers.org/en/v3.14.2/apidoc/index.html">Application Programming Interface (API) Reference</a></p>
+<p><a href="http://openlayers.org/en/v3.14.2/examples/">Examples</a></p>
+<h3 id="demonstrations-and-examples" class="module02b01a">Demonstrations and Examples</h3>
+<ul>
+<li><a href="sample-files/OpenLayers/OpenLayers_01.html">Basic Mapper</a> (with MapQuest base map)</li>
+</ul>
+<div class="codeTable">
+<p>OpenLayers_01.html</p>
+<div class="sourceCode" id="OpenLayers_01_demo"><table class="sourceCode html numberLines"><tr class="sourceCode"><td class="lineNumbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+</pre></td><td class="sourceCode"><pre><code class="sourceCode html"><span class="kw">&lt;html&gt;</span>
 
-# GEOG 485L/585L Module 2b - Web-based Mapping Clients. Part 1: OpenLayers Javascript Framework# {.module02b01a}
+<span class="kw">&lt;head&gt;</span>
+    <span class="kw">&lt;link</span><span class="ot"> rel=</span><span class="st">&quot;stylesheet&quot;</span><span class="ot"> href=</span><span class="st">&quot;css/OpenLayers_01.css&quot;</span><span class="ot"> type=</span><span class="st">&quot;text/css&quot;</span><span class="kw">&gt;</span>
+    <span class="kw">&lt;link</span><span class="ot"> rel=</span><span class="st">&quot;stylesheet&quot;</span><span class="ot"> href=</span><span class="st">&quot;http://openlayers.org/en/v3.14.2/css/ol.css&quot;</span><span class="ot"> type=</span><span class="st">&quot;text/css&quot;</span><span class="kw">&gt;</span>
+    <span class="co">&lt;!-- you can use this line if you want to use the hosted version instead of the local copy --&gt;</span>
+    <span class="co">&lt;!-- &lt;script src=&quot;http://openlayers.org/en/v3.14.2/build/ol.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt; --&gt;</span>
+    <span class="kw">&lt;script</span><span class="ot"> src=</span><span class="st">&quot;js/v3.14.2/build/ol.js&quot;</span><span class="ot"> type=</span><span class="st">&quot;text/javascript&quot;</span><span class="kw">&gt;&lt;/script&gt;</span>
+<span class="kw">&lt;/head&gt;</span>
 
-### Overview ###  {.module02b01a}
+<span class="kw">&lt;body&gt;</span>
+    <span class="kw">&lt;h1&gt;</span>This is a very simple OpenLayers 3 sample map page<span class="kw">&lt;/h1&gt;</span>
 
- -->
+    <span class="kw">&lt;div</span><span class="ot"> id=</span><span class="st">&#39;map&#39;</span><span class="kw">&gt;</span><span class="co">&lt;!-- This is where the map will be displayed --&gt;</span><span class="kw">&lt;/div&gt;</span>
+
+    <span class="co">&lt;!-- import the external Javascript file with the map configuration code --&gt;</span>
+    <span class="kw">&lt;script</span><span class="ot"> src=</span><span class="st">&quot;js/OpenLayers_01.js&quot;</span><span class="ot"> type=</span><span class="st">&quot;text/javascript&quot;</span><span class="kw">&gt;&lt;/script&gt;</span>
+<span class="kw">&lt;/body&gt;</span>
+
+<span class="kw">&lt;/html&gt;</span></code></pre></td></tr></table></div>
+<p>OpenLayers_01.js</p>
+<div class="sourceCode"><table class="sourceCode html numberLines"><tr class="sourceCode"><td class="lineNumbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+</pre></td><td class="sourceCode"><pre><code class="sourceCode html">// OpenLayers_01.js
+
+var myMap = new ol.Map({
+    target: &#39;map&#39;,
+    layers: [
+        new ol.layer.Tile({
+        source: new ol.source.MapQuest({layer: &#39;sat&#39;})
+        })
+    ],
+    view: new ol.View({
+        center: ol.proj.fromLonLat([-106.624083,35.08427]),
+        zoom: 18
+        })
+    });</code></pre></td></tr></table></div>
+<p>OpenLayers_01.css</p>
+<div class="sourceCode"><table class="sourceCode html numberLines"><tr class="sourceCode"><td class="lineNumbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+</pre></td><td class="sourceCode"><pre><code class="sourceCode html">/* OpenLayers_01.css */
+
+body {
+    width:100%;
+    hwight:100%
+}
+
+#map {
+    width:600px;
+    height:400px
+}</code></pre></td></tr></table></div>
+</div>
+<h3 id="demonstration-and-examples---online-resources" class="module02b01a">Demonstration and Examples - Online Resources</h3>
+<ul>
+<li><a href="sample-files/OpenLayers/OpenLayers_02_basemaps.html">Mapper</a> with a variety of base maps (MapQuest, Stamen, OSM) and basic layer selection</li>
+<li>Basic Mapper with Controls: <a href="sample-files/OpenLayers/OpenLayers_01_noControls.html">No Controls</a>, <a href="sample-files/OpenLayers/OpenLayers_01_controlArray.html">Customized Controls</a></li>
+</ul>
+<h2 id="next-week---custom-features-and-wms-layers" class="module02b01a">Next Week - Custom Features and WMS Layers</h2>
 <!---------------------------------------------------------------------------->
 <!-- Week 11 ----------------------------------------------------------------->
 <!-- Lecture 02 b 01 b ------------------------------------------------------->
