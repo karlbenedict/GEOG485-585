@@ -44,7 +44,7 @@
 
 ### Demonstrations and Examples ###  {.module02b01a}
 
-* [Basic Mapper](sample-files/OpenLayers/OpenLayers_01.html) (with MapQuest base map)
+* [Basic Mapper](sample-files/OpenLayers/OpenLayers_01.html) (with MapQuest base map ([source](https://github.com/UNM-GEOG-485-585/class-materials/blob/master/sample-files/OpenLayers/OpenLayers_01.html)))
 
 <div class="codeTable">
 
@@ -113,8 +113,8 @@ body {
 
 
 ### Demonstration and Examples - Online Resources ###  {.module02b01a}
-* [Mapper](sample-files/OpenLayers/OpenLayers_02_basemaps.html) with a variety of base maps (MapQuest, Stamen, OSM) and basic layer selection
-* Basic Mapper with Controls: [No Controls](sample-files/OpenLayers/OpenLayers_01_noControls.html), [Customized Controls](sample-files/OpenLayers/OpenLayers_01_controlArray.html)
+* [Mapper](sample-files/OpenLayers/OpenLayers_02_basemaps.html) ([source](https://github.com/UNM-GEOG-485-585/class-materials/blob/master/sample-files/OpenLayers/OpenLayers_02_basemaps.html)) with a variety of base maps (MapQuest, Stamen, OSM) and basic layer selection
+* Basic Mapper with Controls: [No Controls](sample-files/OpenLayers/OpenLayers_01_noControls.html) ([source](https://github.com/UNM-GEOG-485-585/class-materials/blob/master/sample-files/OpenLayers/OpenLayers_01_noControls.html)), [Customized Controls](sample-files/OpenLayers/OpenLayers_01_controlArray.html) ([source](https://github.com/UNM-GEOG-485-585/class-materials/blob/master/sample-files/OpenLayers/OpenLayers_01_controlArray.html))
 
 
 ## Next Week - Custom Features and WMS Layers ##  {.module02b01a}
