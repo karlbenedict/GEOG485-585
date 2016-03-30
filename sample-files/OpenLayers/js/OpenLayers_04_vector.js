@@ -19,13 +19,6 @@ var county_style = new ol.style.Style({
 	}),
 });
 
-var state_style = new ol.style.Style({
-	stroke: new ol.style.Stroke({
-	  color: block_color,
-	  width: 1
-	}),
-});
-
 
 ///////////////////////////////////////////////////////////////////////////////
 // define some geometries
@@ -121,7 +114,6 @@ var blocks_kml = new ol.layer.Vector({
 
 var counties_kml = new ol.layer.Vector({
 	source: new ol.source.Vector({
-		//url: 'data/2007fe_35_county00.kml',
 		url: 'https://s3.amazonaws.com/kkb-web/data/2007fe_35_county00.kml',
 		projection: projection,
 		format: new ol.format.KML()
@@ -129,7 +121,7 @@ var counties_kml = new ol.layer.Vector({
 })
 
 
-// some styled layers 
+// a styled layers 
 
 var counties_kml_styled = new ol.layer.Vector({
 	source: new ol.source.Vector({

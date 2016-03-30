@@ -206,59 +206,64 @@ var singleMap = new ol.Map({
 
 </div>
 
-[Example]()
+Example: [HTML](https://github.com/UNM-GEOG-485-585/class-materials/blob/master/sample-files/OpenLayers/OpenLayers_03_wms.html), [Javascript](https://github.com/UNM-GEOG-485-585/class-materials/blob/master/sample-files/OpenLayers/js/OpenLayers_03_wms.js)
 
 
 ### Vector Layer Configuration ###
 
 Vector layers support
 
-* External Data in a Variety of supported [formats](http://dev.openlayers.org/releases/OpenLayers-2.13/doc/apidocs/files/OpenLayers/Format-js.html) for both _reading_ and _writing_ (just a sample): ArcXML.Features, GeoJSON, GeoRSS, GPX, JSON, KML, WFS, WKT
-* Directly encoded [geometries][OpenLayers.Geometry API Link]: Collection, Curve, LinearRing, LineString, MultiLineString, MultiPoint, MultiPolygon, Point, Polygon, Rectangle 
+* External Data in a Variety of supported [formats](http://openlayers.org/en/v3.14.2/apidoc/ol.format.html) for both _reading_ and _writing_ (just a sample): [GML](http://openlayers.org/en/v3.14.2/apidoc/ol.format.GMLBase.html), [GPX](http://openlayers.org/en/v3.14.2/apidoc/ol.format.GPX.html), [GeoJSON](http://openlayers.org/en/v3.14.2/apidoc/ol.format.GeoJSON.html), [JSON](http://openlayers.org/en/v3.14.2/apidoc/ol.format.JSONFeature.html), [KML](http://openlayers.org/en/v3.14.2/apidoc/ol.format.KML.html), [WFS](http://openlayers.org/en/v3.14.2/apidoc/ol.format.WFS.html), [WKT](http://openlayers.org/en/v3.14.2/apidoc/ol.format.WKT.html), [Open Streetmap](http://openlayers.org/en/v3.14.2/apidoc/ol.format.OSMXML.html)
+* Directly encoded [geometries](http://openlayers.org/en/v3.14.2/apidoc/ol.geom.html): Circle, Geometry, GeometryCollection, LinearRing, LineString, MultiLineString, MultiPoint, MultiPolygon, Point, Polygon, SimpleGeometry 
 * User created features, including support for interactive editing of features
-* [Styling](http://dev.openlayers.org/releases/OpenLayers-2.13/doc/apidocs/files/OpenLayers/Feature/Vector-js.html#OpenLayers.Feature.Vector.style) of Vector features
+* [Styling](http://openlayers.org/en/v3.14.2/apidoc/ol.style.html) of Vector features
 
-
-### Vector Layer Configuration - Continued ###
-
-
-Vector Layer Objects are Typically Defined using three OpenLayers classes
-
-`Protocol`
-:	Connection protocol for requesting the data that would be provided from an external source
-
-`Format`
-:	The OpenLayers supported format of the vector data object
-
-`Strategy`
-:	A specification of how OpenLayers should request the data from the server, and also handle the data within the client (browser). 
-
-
-### Vector Layer Configuration - Continued ###
+<div class="codeTable inflow">
 
 Sample Point Feature Object creation
 
 ~~~~~~~~~~  {#OpenLayers_02_VectorLayer_options01 .html .numberLines}
-	var Coord_classroom = new OpenLayers.Geometry.Point(-106.624073,35.084280);
-	var Point_classroom = new OpenLayers.Feature.Vector(Coord_classroom);
-	Layers["localFeatures"].addFeatures([Point_classroom])
+var classroomCoord = [-106.624073,35.084280]
+var officeCoord = [-106.624899,35.084506]
+
+var classroomPoint = new ol.geom.Point(classroomCoord);
+var officePoint = new ol.geom.Point(officeCoord);
 ~~~~~~~~~~
 
-Sample KML Layer Object creation 
+Sample KML Layer Object creation with style
 
 ~~~~~~~~~~  {#OpenLayers_02_KMLayer_options01 .html .numberLines}
-	Layers.counties = new OpenLayers.Layer.Vector("KML - Counties", {
-     	projection: map.displayProjection,
-		strategies: [new OpenLayers.Strategy.Fixed()],
-		protocol: new OpenLayers.Protocol.HTTP({
-			url: "NMCounties.kml",
-			format: new OpenLayers.Format.KML({
-				extractAttributes: true
-			})
-		})
-	});
-	map.addLayer(Layers.counties)
+var blocks_kml = new ol.layer.Vector({
+	source: new ol.source.Vector({
+		url: 'https://s3.amazonaws.com/kkb-web/data/tl_2010_35001_tabblock10.kml',
+		projection: projection,
+		format: new ol.format.KML()
+	})
+})
+
+var county_style = new ol.style.Style({
+	fill: new ol.style.Fill({
+	  color: county_color
+	}),
+	stroke: new ol.style.Stroke({
+	  color: county_color,
+	  width: 1
+	}),
+});
+
+var counties_kml_styled = new ol.layer.Vector({
+	source: new ol.source.Vector({
+		url: 'https://s3.amazonaws.com/kkb-web/data/2007fe_35_county00.kml',
+		projection: projection,
+		format: new ol.format.KML({'extractStyles':false}),
+		style: county_style
+	})
+})
+
+
 ~~~~~~~~~~
-		
-[Example](http://karlbenedict.com/GEOG485-585/lectures/examples/openLayers11_vectorData_KML.html)
+
+</div>
+
+Example: [HTML](https://github.com/UNM-GEOG-485-585/class-materials/blob/master/sample-files/OpenLayers/OpenLayers_04_vector.html), [Javascript](https://github.com/UNM-GEOG-485-585/class-materials/blob/master/sample-files/OpenLayers/js/OpenLayers_04_vector.js)
 
