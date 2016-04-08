@@ -128,7 +128,7 @@ var counties_kml_styled = new ol.layer.Vector({
 		url: 'https://s3.amazonaws.com/kkb-web/data/2007fe_35_county00.kml',
 		projection: projection,
 		format: new ol.format.KML({'extractStyles':false}),
-		style: state_style
+		style: county_style
 	})
 })
 
@@ -147,6 +147,7 @@ var local_geoms = new ol.layer.Vector({
 var kmlMap = new ol.Map({
 	target: 'map_kml',
 	layers: [basemap_tiled,basemap_bern_tiled,blocks_kml,counties_kml],
+	//layers: [basemap_tiled,basemap_bern_tiled,counties_kml],
 	view: new ol.View({
 		center: ol.proj.fromLonLat([-106.6224,35.0849]), // the approximate geographic center of the continental US
 		zoom:5,

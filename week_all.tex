@@ -1455,7 +1455,7 @@ previous lab returned images that didn't look ``quite right'' relative
 to what you may know of the shape of familiar features.
 
 For example, a WMS request for a 200x200 pixel PNG file (Figure
-\ref{fig:bernalillo-01} for an area surrounding Bernalillo County
+\{@fig:bernalillo-01\} for an area surrounding Bernalillo County
 (-107.2,34.7,-106,35.25) from the previous lab would be
 (\href{http://gstore.unm.edu/apps/rgis/datasets/92403ebf-aec5-404b-ae8a-6db41f388737/services/ogc/wms?VERSION=1.1.1\&SERVICE=WMS\&REQUEST=GetMap\&BBOX=-107.2,34.7,-106,35.25\&LAYERS=g_2007fe_35_county\&FORMAT=image/png\&TRANSPARENT=TRUE\&STYLES=\&SRS=EPSG:4326\&WIDTH=200\&HEIGHT=200}{link}):
 
@@ -1471,12 +1471,12 @@ STYLES=&SRS=EPSG:4326&WIDTH=200&HEIGHT=200
 \includegraphics{images/bernalillo_01.png}
 \caption{Returned map image for the region surrounding Bernalillo County
 for a WMS request with \texttt{BBOX=-107.2,34.7,-106,35.25},
-\texttt{WIDTH=200} and \texttt{HEIGHT=200}\label{fig:bernalillo-01}}
+\texttt{WIDTH=200} and \texttt{HEIGHT=200}}
 \end{figure}
 
 this request results in a map image that does not agree with the
 standard shape of Bernalillo county (depicted in QGIS - Figure
-\ref{fig:bernalillo-qgis}) that we are accustomed to, regardless of the
+\{@fig:bernalillo-qgis\}) that we are accustomed to, regardless of the
 specific map projection being used.
 
 \begin{figure}[htbp]
@@ -1484,7 +1484,7 @@ specific map projection being used.
 \includegraphics{images/bernalillo_qgis.png}
 \caption{Area around Bernalillo County as viewed in QGIS based on the
 OGC WCS based on the same data source used for the WMS request
-illustrated above\}\label{fig:bernalillo-qgis}}
+illustrated above\}}
 \end{figure}
 
 This discrepancy is the result of a difference in the aspect ratio of
@@ -2012,6 +2012,176 @@ Vector Data:
 
 Raster Data
 \url{http://docs.geoserver.org/stable/en/user/data/raster/index.html}
+
+\chapter{Week 12 - Module 4.3 - Interoperability Standards - Desktop GIS
+Integration}\label{week12}
+
+As we've discussed the components of the client tier of our tiered
+geospatial services oriented architecture we have concentrated on the
+open standards that can support client applications and the web-based
+clients that can consume them. Desktop GIS applications can also consume
+standards-based services, specifically OGC services. This week's class
+concentrates on the methods for integrating OGC services into two GIS
+client applications Quantum GIS and ArcGIS, demonstrating the utility of
+using external standards-based services as a data and map image source
+within desktop applications.
+
+\emph{Expected Outcomes}
+
+At the end of this class, students should be able to:
+
+\begin{itemize}
+\tightlist
+\item
+  Add a WMS service to Quantum GIS
+\item
+  Add a WFS service to Quantum GIS
+\item
+  Add WMS, WFS, and WCS services to ArcGIS (if they have access to the
+  required software)
+\end{itemize}
+
+\emph{Key Concepts}
+
+At the end of this class students will understand that
+
+\begin{itemize}
+\tightlist
+\item
+  The key to configuring a desktop client application is the
+  GetCapabilities request for the needed service
+\item
+  The GetCapabilities request required by a particular client may
+  consist of a base URL or a complete URL.
+\item
+  Quantum GIS uses a base URL request model for self-configuration of
+  WMS and WFS services
+\item
+  ArcGIS uses a base URL request model for self-configuration of WMS,
+  WCS, and WFS services
+\item
+  Both Quantum GIS and ArcGIS require additional configuration to enable
+  WFS access
+\end{itemize}
+
+\section{Class Prep}\label{week12-prep}
+
+\begin{itemize}
+\tightlist
+\item
+  Quantum GIS
+  \href{http://docs.qgis.org/2.8/en/docs/user_manual/}{documentation},
+  especially
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \href{http://docs.qgis.org/2.8/en/docs/user_manual/working_with_ogc/index.html}{Working
+    with OGC Data}
+  \end{itemize}
+\item
+  ArcGIS \href{}{}, especially
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \href{http://desktop.arcgis.com/en/arcmap/10.3/map/web-maps-and-services/about-using-ogc-service-layers.htm}{About
+    using OGC service layers}
+  \item
+    \href{http://desktop.arcgis.com/en/arcmap/10.3/manage-data/using-arccatalog/connecting-to-gis-servers.htm}{Connecting
+    to GIS servers}
+  \item
+    \href{http://desktop.arcgis.com/en/arcmap/10.3/map/web-maps-and-services/adding-wms-services.htm}{Adding
+    WMS services}
+  \item
+    \href{http://desktop.arcgis.com/en/arcmap/10.3/map/web-maps-and-services/adding-a-wcs-service-to-arcmap.htm}{Adding
+    a WCS service to ArcMap}
+  \item
+    \href{http://desktop.arcgis.com/en/arcmap/10.3/map/web-maps-and-services/adding-a-wfs-service-to-arcmap.htm}{Adding
+    a WFS service to ArcMap}
+  \end{itemize}
+\end{itemize}
+
+\section{Weekly Milestone - WMS, WFS and WCS Access in Quantum
+GIS}\label{week12-milestone}
+
+\emph{While the focus of these instructions is on using QGIS to interact
+with remote OGC services you may use ArcGIS instead of QGIS if you
+prefer.}
+
+Add three WMS layers to a new map project in QGIS, with at least one
+coming from each of the following collections of WMS services.
+
+Some things to keep an eye out for:
+
+\begin{itemize}
+\tightlist
+\item
+  Any scale limits described for the various layers
+\item
+  Layer names can sometimes be a bit confusing
+\item
+  You can double-check the base URL advertised for the service by
+  reviewing the content of the \texttt{GetCapabilities} area of the
+  \texttt{service} metadata provided as part of the
+  \texttt{GetCapabilities} request. If you can't manually request and
+  review the GetCapabilities XML file for the service, your desktop
+  client may not be able to connect to and retrieve the file for its
+  configuration.
+\end{itemize}
+
+\emph{USGS's National Maps \emph{Small-Scale Web Services} Page}:
+\url{http://nationalmap.gov/small_scale/infodocs/webservices.html}
+
+\emph{NASA Earth Observation System}:
+\url{http://neowms.sci.gsfc.nasa.gov/wms/wms?service=WMS\&request=GetCapabilities}
+
+In your write-up include the names of the layers you added, which
+service they came from, and screen shots (one for for each of the added
+layers) showing each of them in the QGIS client interface.
+
+Add three WFS layers to the same QGIS project, two based upon data
+available from the RGIS data browser
+(\url{http://rgis.unm.edu/getdata/}), and one based on the GeoServer
+sample WFS service
+(\url{http://demo.boundlessgeo.com/geoserver/wfs?service=wfs\&request=GetCapabilities}.
+  In RGIS you can see the available services for a specific data layer
+by
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Selecting the collection you want to view by selecting from the
+  directory tree on the left side of the page;
+\item
+  Identifying the data sets that have available OGC WMS and/or WFS
+  services as indicated by the ``Services'' entry for each dataset,
+  where the provided links are for the GetCapabilities requests for the
+  provided services:
+\end{enumerate}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics{images/RGIS_OGCLinkScreenshot.jpg}
+\caption{Illustration highlighting where to see if a spacific dataset
+has an available OGC service}
+\end{figure}
+
+\emph{Important}: When adding any WFS layer, you may need to go into the
+preferences for QGIS and under the ``Network'' options increase the
+``Timeout for Network Requests(ms)'' value to a larger number than the
+default 60000 (1 minute). If you don't do this, QGIS might give up on
+the request before it has been fulfilled by the server. You may also
+want to zoom into a limited area and check the box in the QGIS ``Add WFS
+Layer \ldots{}'' dialog for ``Only Request Features Overlapping the
+Current View Extent'' as this will reduce the number of features
+recovered - a significant issue if the WFS service is publishing a large
+number of features.
+
+In your write-up include the names of the layers you added, and the
+GetCapabilities requests related to those layers. Also include screen
+shots (again, one for each added layer) showing each layer in your QGIS
+project.  
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
