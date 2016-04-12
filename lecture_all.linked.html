@@ -8,23 +8,41 @@
   <title>Geography 485L/585L - Internet Mapping</title>
   <style type="text/css">code{white-space: pre;}</style>
   <style type="text/css">
+div.sourceCode { overflow-x: auto; }
 table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
   margin: 0; padding: 0; vertical-align: baseline; border: none; }
 table.sourceCode { width: 100%; line-height: 100%; }
 td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
 td.sourceCode { padding-left: 5px; }
-code > span.kw { color: #007020; font-weight: bold; }
-code > span.dt { color: #902000; }
-code > span.dv { color: #40a070; }
-code > span.bn { color: #40a070; }
-code > span.fl { color: #40a070; }
-code > span.ch { color: #4070a0; }
-code > span.st { color: #4070a0; }
-code > span.co { color: #60a0b0; font-style: italic; }
-code > span.ot { color: #007020; }
-code > span.al { color: #ff0000; font-weight: bold; }
-code > span.fu { color: #06287e; }
-code > span.er { color: #ff0000; font-weight: bold; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
   </style>
   <link rel="stylesheet" href="page.css" type="text/css" />
 </head>
@@ -236,6 +254,25 @@ code > span.er { color: #ff0000; font-weight: bold; }
 <li><a href="#wms-layer-configuration">WMS Layer Configuration</a></li>
 <li><a href="#vector-layer-configuration">Vector Layer Configuration</a></li>
 </ul></li>
+<li><a href="#module-4b---interoperability-standards---desktop-gis-integration">Module 4b - Interoperability Standards - Desktop GIS Integration</a><ul>
+<li><a href="#overview-8">Overview</a></li>
+<li><a href="#common-model">Common Model</a></li>
+<li><a href="#full-getcapabilities-request">Full GetCapabilities Request</a></li>
+<li><a href="#base-url-for-getcapabilities">Base URL for GetCapabilities</a></li>
+<li><a href="#quantum-gis-qgis">Quantum GIS (QGIS)</a></li>
+<li><a href="#qgis---adding-services-and-layers---start">QGIS - Adding Services and Layers - start</a></li>
+<li><a href="#qgis---adding-services-and-layers---adding-a-service">QGIS - Adding Services and Layers - adding a service</a></li>
+<li><a href="#qgis---adding-services-and-layers---adding-connection-information">QGIS - Adding Services and Layers - adding connection information</a></li>
+<li><a href="#qgis---adding-services-and-layers---connecting-to-and-adding-layers-from-the-service">QGIS - Adding Services and Layers - connecting to and adding layers from the service</a></li>
+<li><a href="#qgis---adding-services-and-layers---the-final-added-layer">QGIS - Adding Services and Layers - the final added layer</a></li>
+<li><a href="#qgis-demonstration-with-wms-wfs-and-wcs-services">QGIS Demonstration with WMS, WFS and WCS Services</a></li>
+<li><a href="#arcgis">ArcGIS</a></li>
+<li><a href="#arcgis-wms-and-wcs-configuration">ArcGIS WMS and WCS Configuration</a></li>
+<li><a href="#arcgis-wms-and-wcs-configuration-resources">ArcGIS WMS and WCS Configuration Resources</a></li>
+<li><a href="#arcgis-wfs-configuration">ArcGIS WFS Configuration</a></li>
+<li><a href="#arcgis-wfs-configuration-resources">ArcGIS WFS Configuration Resources</a></li>
+<li><a href="#conclusions">Conclusions</a></li>
+</ul></li>
 </ul>
 </div>
 <!---------------------------------------------------------------------------->
@@ -385,7 +422,7 @@ code > span.er { color: #ff0000; font-weight: bold; }
 </ul></li>
 </ul>
 <h3 id="parts-of-a-web-page" class="module02a01">Parts of a Web Page</h3>
-<table class="sourceCode html numberLines"><tr class="sourceCode"><td class="lineNumbers"><pre>1
+<div class="sourceCode"><table class="sourceCode html numberLines"><tr class="sourceCode"><td class="lineNumbers"><pre>1
 2
 3
 4
@@ -432,7 +469,7 @@ code > span.er { color: #ff0000; font-weight: bold; }
         
         <span class="co">&lt;!-- Javascript can go here as well --&gt;</span>
     <span class="kw">&lt;/body&gt;</span>
-<span class="kw">&lt;/html&gt;</span></code></pre></td></tr></table>
+<span class="kw">&lt;/html&gt;</span></code></pre></td></tr></table></div>
 <p><a href="https://github.com/UNM-GEOG-485-585/class-materials/blob/master/sample-files/example02_01_01.html">Link to example</a>/<a href="http://htmlpreview.github.io/?https://github.com/UNM-GEOG-485-585/class-materials/blob/master/sample-files/example02_01_01.html">Preview</a></p>
 <h3 id="web-site-components---structure" class="module02a01">Web Site Components - Structure</h3>
 <p>Content is defined in terms of the structural elements available in HTML/XHTML</p>
@@ -520,7 +557,7 @@ code > span.er { color: #ff0000; font-weight: bold; }
 </ul></li>
 </ul>
 <h3 id="simple-web-page" class="module02a01">Simple Web Page</h3>
-<table class="sourceCode html numberLines"><tr class="sourceCode"><td class="lineNumbers"><pre>1
+<div class="sourceCode"><table class="sourceCode html numberLines"><tr class="sourceCode"><td class="lineNumbers"><pre>1
 2
 3
 4
@@ -541,10 +578,10 @@ code > span.er { color: #ff0000; font-weight: bold; }
         <span class="kw">&lt;p&gt;</span>OK, not much simpler than this.<span class="kw">&lt;/p&gt;</span>
         <span class="kw">&lt;p&gt;</span>Hello World?<span class="kw">&lt;/p&gt;</span>
     <span class="kw">&lt;/body&gt;</span>
-<span class="kw">&lt;/html&gt;</span></code></pre></td></tr></table>
+<span class="kw">&lt;/html&gt;</span></code></pre></td></tr></table></div>
 <p><a href="https://github.com/UNM-GEOG-485-585/class-materials/blob/master/sample-files/example02_01_02.html">link to example</a>/<a href="http://htmlpreview.github.io/?https://github.com/UNM-GEOG-485-585/class-materials/blob/master/sample-files/example02_01_02.html">Preview</a></p>
 <h3 id="simple-web-page-with-css">Simple Web Page with CSS</h3>
-<table class="sourceCode html numberLines"><tr class="sourceCode"><td class="lineNumbers"><pre>1
+<div class="sourceCode"><table class="sourceCode html numberLines"><tr class="sourceCode"><td class="lineNumbers"><pre>1
 2
 3
 4
@@ -575,10 +612,10 @@ code > span.er { color: #ff0000; font-weight: bold; }
         <span class="kw">&lt;p</span><span class="ot"> class=</span><span class="st">&quot;para&quot;</span><span class="kw">&gt;</span>OK, not much simpler than this.<span class="kw">&lt;/p&gt;</span>
         <span class="kw">&lt;p</span><span class="ot"> id=</span><span class="st">&quot;annoying&quot;</span><span class="ot"> class=</span><span class="st">&quot;para&quot;</span><span class="kw">&gt;</span>Hello World?<span class="kw">&lt;/p&gt;</span>
     <span class="kw">&lt;/body&gt;</span>
-<span class="kw">&lt;/html&gt;</span></code></pre></td></tr></table>
+<span class="kw">&lt;/html&gt;</span></code></pre></td></tr></table></div>
 <p><a href="https://github.com/UNM-GEOG-485-585/class-materials/blob/master/sample-files/example02_01_03.html">link to example</a>/<a href="http://htmlpreview.github.io/?https://github.com/UNM-GEOG-485-585/class-materials/blob/master/sample-files/example02_01_03.html">Preview</a></p>
 <h3 id="simple-web-page-with-javascript">Simple Web Page with Javascript</h3>
-<table class="sourceCode html numberLines"><tr class="sourceCode"><td class="lineNumbers"><pre>1
+<div class="sourceCode"><table class="sourceCode html numberLines"><tr class="sourceCode"><td class="lineNumbers"><pre>1
 2
 3
 4
@@ -601,23 +638,24 @@ code > span.er { color: #ff0000; font-weight: bold; }
         <span class="kw">&lt;meta</span><span class="ot"> http-equiv=</span><span class="st">&quot;Content-Type&quot;</span><span class="ot"> content=</span><span class="st">&quot;text/html;charset=utf-8&quot;</span> <span class="kw">/&gt;</span>
         <span class="kw">&lt;title&gt;</span>This is a simple web page with Javascript<span class="kw">&lt;/title&gt;</span>
         <span class="kw">&lt;script</span><span class="ot"> type=</span><span class="st">&quot;text/javascript&quot;</span><span class="kw">&gt;</span>
-            <span class="kw">function</span> <span class="fu">genericAlert</span>() {
-                <span class="fu">alert</span>(<span class="st">&quot;You just did something ...&quot;</span>)
-                <span class="ot">document</span>.<span class="fu">getElementById</span>(<span class="st">&quot;clickMe&quot;</span>).<span class="ot">style</span>.<span class="fu">color</span> = <span class="st">&quot;red&quot;</span>
-            }
-        &lt;<span class="ot">/script&gt;</span>
-<span class="ot">    &lt;/head</span>&gt;
-    &lt;body&gt;
-        &lt;h1&gt;They don<span class="st">&#39;t get any simpler than this!&lt;/h1&gt;</span>
-        &lt;p&gt;OK, not much simpler than <span class="kw">this</span>.&lt;<span class="ot">/p&gt;</span>
-<span class="ot">        &lt;p&gt;Hello World</span><span class="fl">?</span><span class="ot">&lt;/p</span>&gt;
-        &lt;p id=<span class="st">&quot;clickMe&quot;</span> onclick=<span class="st">&quot;genericAlert();&quot;</span>&gt;What happens when you click me?&lt;<span class="ot">/p&gt;</span>
-<span class="ot">    &lt;/body</span>&gt;
-&lt;<span class="ot">/html&gt;</span></code></pre></td></tr></table>
+            <span class="kw">function</span> <span class="at">genericAlert</span>() <span class="op">{</span>
+                <span class="at">alert</span>(<span class="st">&quot;You just did something ...&quot;</span>)
+                <span class="va">document</span>.<span class="at">getElementById</span>(<span class="st">&quot;clickMe&quot;</span>).<span class="va">style</span>.<span class="at">color</span> <span class="op">=</span> <span class="st">&quot;red&quot;</span>
+            <span class="op">}</span>
+        <span class="op">&lt;</span><span class="ss">/script&gt;</span>
+<span class="ss">    &lt;/head</span><span class="op">&gt;</span>
+    <span class="op">&lt;</span>body<span class="op">&gt;</span>
+        <span class="op">&lt;</span>h1<span class="op">&gt;</span>They don<span class="st">&#39;t get any simpler than this!&lt;/h1&gt;</span>
+        <span class="op">&lt;</span>p<span class="op">&gt;</span>OK<span class="op">,</span> not much simpler than <span class="kw">this</span>.<span class="op">&lt;</span><span class="ss">/p&gt;</span>
+<span class="ss">        &lt;p&gt;Hello World</span><span class="sc">?</span><span class="ss">&lt;/p</span><span class="op">&gt;</span>
+        <span class="op">&lt;</span>p id<span class="op">=</span><span class="st">&quot;clickMe&quot;</span> onclick<span class="op">=</span><span class="st">&quot;genericAlert();&quot;</span><span class="op">&gt;</span>What happens when you click me<span class="op">?&lt;</span><span class="ss">/p&gt;</span>
+<span class="ss">    &lt;/body</span><span class="op">&gt;</span>
+<span class="op">&lt;</span><span class="ss">/html&gt;</span></code></pre></td></tr></table></div>
 <p><a href="https://github.com/UNM-GEOG-485-585/class-materials/blob/master/sample-files/example02_01_04.html">link to example</a>/<a href="http://htmlpreview.github.io/?https://github.com/UNM-GEOG-485-585/class-materials/blob/master/sample-files/example02_01_04.html">Preview</a></p>
 <h3 id="more-complete-web-page-example">More Complete Web Page Example</h3>
 <div class="figure">
-<img src="images/www_nawrs_net.png" alt="NAWRS Mapper. HTML: 39 Lines; CSS: 136 Lines; core.js: 515 Lines + Google Maps API and JQuery Framework" /><p class="caption"><a href="http://www.nawrs.net">NAWRS Mapper</a>. <em>HTML</em>: 39 Lines; <em>CSS</em>: 136 Lines; <em>core.js</em>: 515 Lines + Google Maps API and JQuery Framework</p>
+<img src="images/www_nawrs_net.png" alt="NAWRS Mapper. HTML: 39 Lines; CSS: 136 Lines; core.js: 515 Lines + Google Maps API and JQuery Framework" />
+<p class="caption"><a href="http://www.nawrs.net">NAWRS Mapper</a>. <em>HTML</em>: 39 Lines; <em>CSS</em>: 136 Lines; <em>core.js</em>: 515 Lines + Google Maps API and JQuery Framework</p>
 </div>
 <!---------------------------------------------------------------------------->
 <!-- Week 03 ----------------------------------------------------------------->
@@ -789,7 +827,7 @@ code > span.er { color: #ff0000; font-weight: bold; }
 <h3 id="simple---roadmap-code" class="module02a02a">Simple - Roadmap Code</h3>
 <div class="codeTable">
 <p>gmaps01.html</p>
-<table class="sourceCode html numberLines"><tr class="sourceCode"><td class="lineNumbers"><pre>1
+<div class="sourceCode"><table class="sourceCode html numberLines"><tr class="sourceCode"><td class="lineNumbers"><pre>1
 2
 3
 4
@@ -834,9 +872,9 @@ code > span.er { color: #ff0000; font-weight: bold; }
 <span class="ot">            src=</span><span class="st">&quot;https://maps.googleapis.com/maps/api/js?callback=initialize&quot;</span><span class="kw">&gt;</span>
         <span class="kw">&lt;/script&gt;</span>
     <span class="kw">&lt;/body&gt;</span>
-<span class="kw">&lt;/html&gt;</span></code></pre></td></tr></table>
+<span class="kw">&lt;/html&gt;</span></code></pre></td></tr></table></div>
 <p>mapPage.css</p>
-<table class="sourceCode css numberLines"><tr class="sourceCode"><td class="lineNumbers"><pre>1
+<div class="sourceCode"><table class="sourceCode css numberLines"><tr class="sourceCode"><td class="lineNumbers"><pre>1
 2
 3
 4
@@ -877,9 +915,9 @@ body <span class="kw">{</span>
     <span class="kw">margin-right:</span> <span class="dt">auto</span> <span class="kw">}</span>
     
 <span class="fl">.infoBox</span> <span class="kw">{</span> 
-    <span class="kw">color:</span><span class="dt">black</span> <span class="kw">}</span></code></pre></td></tr></table>
+    <span class="kw">color:</span><span class="dt">black</span> <span class="kw">}</span></code></pre></td></tr></table></div>
 <p>mapPage_01.js</p>
-<table class="sourceCode js numberLines"><tr class="sourceCode"><td class="lineNumbers"><pre>1
+<div class="sourceCode"><table class="sourceCode js numberLines"><tr class="sourceCode"><td class="lineNumbers"><pre>1
 2
 3
 4
@@ -902,14 +940,14 @@ body <span class="kw">{</span>
         document.getElementById(&quot;map_canvas&quot;),
         mapOptions);
 }
-</code></pre></td></tr></table>
+</code></pre></td></tr></table></div>
 </div>
 <h3 id="simple---satellite" class="module02a02a">Simple - Satellite</h3>
 <p><img src="images/gmaps02.png" alt="gmaps02.html preview" /> </p>
 <h3 id="simple---satellite-code" class="module02a02a">Simple - Satellite Code</h3>
 <div class="codeTable">
 <p>gmaps02.html</p>
-<table class="sourceCode html numberLines"><tr class="sourceCode"><td class="lineNumbers"><pre>1
+<div class="sourceCode"><table class="sourceCode html numberLines"><tr class="sourceCode"><td class="lineNumbers"><pre>1
 2
 3
 4
@@ -954,9 +992,9 @@ body <span class="kw">{</span>
 <span class="ot">            src=</span><span class="st">&quot;https://maps.googleapis.com/maps/api/js?callback=initialize&quot;</span><span class="kw">&gt;</span>
         <span class="kw">&lt;/script&gt;</span>
     <span class="kw">&lt;/body&gt;</span>
-<span class="kw">&lt;/html&gt;</span></code></pre></td></tr></table>
+<span class="kw">&lt;/html&gt;</span></code></pre></td></tr></table></div>
 <p>mapPage_02.js</p>
-<table class="sourceCode js numberLines"><tr class="sourceCode"><td class="lineNumbers"><pre>1
+<div class="sourceCode"><table class="sourceCode js numberLines"><tr class="sourceCode"><td class="lineNumbers"><pre>1
 2
 3
 4
@@ -979,14 +1017,14 @@ body <span class="kw">{</span>
         document.getElementById(&quot;map_canvas&quot;),
         mapOptions);
 }
-</code></pre></td></tr></table>
+</code></pre></td></tr></table></div>
 </div>
 <h3 id="simple---hybrid" class="module02a02a">Simple - Hybrid</h3>
 <p><img src="images/gmaps03.png" alt="gmaps03.html preview" /> </p>
 <h3 id="simple---hybrid-code" class="module02a02a">Simple - Hybrid Code</h3>
 <div class="codeTable">
 <p>gmaps03.html</p>
-<table class="sourceCode html numberLines"><tr class="sourceCode"><td class="lineNumbers"><pre>1
+<div class="sourceCode"><table class="sourceCode html numberLines"><tr class="sourceCode"><td class="lineNumbers"><pre>1
 2
 3
 4
@@ -1031,9 +1069,9 @@ body <span class="kw">{</span>
 <span class="ot">            src=</span><span class="st">&quot;https://maps.googleapis.com/maps/api/js?callback=initialize&quot;</span><span class="kw">&gt;</span>
         <span class="kw">&lt;/script&gt;</span>
     <span class="kw">&lt;/body&gt;</span>
-<span class="kw">&lt;/html&gt;</span></code></pre></td></tr></table>
+<span class="kw">&lt;/html&gt;</span></code></pre></td></tr></table></div>
 <p>mapPage_03.js</p>
-<table class="sourceCode js numberLines"><tr class="sourceCode"><td class="lineNumbers"><pre>1
+<div class="sourceCode"><table class="sourceCode js numberLines"><tr class="sourceCode"><td class="lineNumbers"><pre>1
 2
 3
 4
@@ -1056,14 +1094,14 @@ body <span class="kw">{</span>
         document.getElementById(&quot;map_canvas&quot;),
         mapOptions);
 }
-</code></pre></td></tr></table>
+</code></pre></td></tr></table></div>
 </div>
 <h3 id="simple---terrain" class="module02a02a">Simple - Terrain</h3>
 <p><img src="images/gmaps04.png" alt="gmaps04.html preview" /> </p>
 <h3 id="simple---terrain-code" class="module02a02a">Simple - Terrain Code</h3>
 <div class="codeTable">
 <p>gmaps04.html</p>
-<table class="sourceCode html numberLines"><tr class="sourceCode"><td class="lineNumbers"><pre>1
+<div class="sourceCode"><table class="sourceCode html numberLines"><tr class="sourceCode"><td class="lineNumbers"><pre>1
 2
 3
 4
@@ -1108,9 +1146,9 @@ body <span class="kw">{</span>
 <span class="ot">            src=</span><span class="st">&quot;https://maps.googleapis.com/maps/api/js?callback=initialize&quot;</span><span class="kw">&gt;</span>
         <span class="kw">&lt;/script&gt;</span>
     <span class="kw">&lt;/body&gt;</span>
-<span class="kw">&lt;/html&gt;</span></code></pre></td></tr></table>
+<span class="kw">&lt;/html&gt;</span></code></pre></td></tr></table></div>
 <p>mapPage_04.js</p>
-<table class="sourceCode js numberLines"><tr class="sourceCode"><td class="lineNumbers"><pre>1
+<div class="sourceCode"><table class="sourceCode js numberLines"><tr class="sourceCode"><td class="lineNumbers"><pre>1
 2
 3
 4
@@ -1133,14 +1171,14 @@ body <span class="kw">{</span>
         document.getElementById(&quot;map_canvas&quot;),
         mapOptions);
 }
-</code></pre></td></tr></table>
+</code></pre></td></tr></table></div>
 </div>
 <h3 id="simple---hybrid---zoomed" class="module02a02a">Simple - Hybrid - Zoomed</h3>
 <p><img src="images/gmaps05.png" alt="gmaps05.html preview" /> </p>
 <h3 id="simple---hybrid---zoomed-code" class="module02a02a">Simple - Hybrid - Zoomed Code</h3>
 <div class="codeTable">
 <p>gmaps05.html</p>
-<table class="sourceCode html numberLines"><tr class="sourceCode"><td class="lineNumbers"><pre>1
+<div class="sourceCode"><table class="sourceCode html numberLines"><tr class="sourceCode"><td class="lineNumbers"><pre>1
 2
 3
 4
@@ -1185,9 +1223,9 @@ body <span class="kw">{</span>
 <span class="ot">            src=</span><span class="st">&quot;https://maps.googleapis.com/maps/api/js?callback=initialize&quot;</span><span class="kw">&gt;</span>
         <span class="kw">&lt;/script&gt;</span>
     <span class="kw">&lt;/body&gt;</span>
-<span class="kw">&lt;/html&gt;</span></code></pre></td></tr></table>
+<span class="kw">&lt;/html&gt;</span></code></pre></td></tr></table></div>
 <p>mapPage_05.js</p>
-<table class="sourceCode js numberLines"><tr class="sourceCode"><td class="lineNumbers"><pre>1
+<div class="sourceCode"><table class="sourceCode js numberLines"><tr class="sourceCode"><td class="lineNumbers"><pre>1
 2
 3
 4
@@ -1210,14 +1248,14 @@ body <span class="kw">{</span>
         document.getElementById(&quot;map_canvas&quot;),
         mapOptions);
 }
-</code></pre></td></tr></table>
+</code></pre></td></tr></table></div>
 </div>
 <h3 id="simple---zoomed---modified-controls" class="module02a02a">Simple - Zoomed - Modified Controls</h3>
 <p><img src="images/gmaps06.png" alt="gmaps06.html preview" /> </p>
 <h3 id="simple---zoomed---modified-controls-code" class="module02a02a">Simple - Zoomed - Modified Controls Code</h3>
 <div class="codeTable">
 <p>gmaps06.html</p>
-<table class="sourceCode html numberLines"><tr class="sourceCode"><td class="lineNumbers"><pre>1
+<div class="sourceCode"><table class="sourceCode html numberLines"><tr class="sourceCode"><td class="lineNumbers"><pre>1
 2
 3
 4
@@ -1262,9 +1300,9 @@ body <span class="kw">{</span>
 <span class="ot">            src=</span><span class="st">&quot;https://maps.googleapis.com/maps/api/js?callback=initialize&quot;</span><span class="kw">&gt;</span>
         <span class="kw">&lt;/script&gt;</span>
     <span class="kw">&lt;/body&gt;</span>
-<span class="kw">&lt;/html&gt;</span></code></pre></td></tr></table>
+<span class="kw">&lt;/html&gt;</span></code></pre></td></tr></table></div>
 <p>mapPage_06.js</p>
-<table class="sourceCode js numberLines"><tr class="sourceCode"><td class="lineNumbers"><pre>1
+<div class="sourceCode"><table class="sourceCode js numberLines"><tr class="sourceCode"><td class="lineNumbers"><pre>1
 2
 3
 4
@@ -1299,14 +1337,14 @@ var map = new google.maps.Map(
     document.getElementById(&quot;map_canvas&quot;),
     myOptions);
 }
-</code></pre></td></tr></table>
+</code></pre></td></tr></table></div>
 </div>
 <h3 id="markers" class="module02a02a">Markers</h3>
 <p><img src="images/gmaps07.png" alt="gmaps07.html preview" /> </p>
 <h3 id="markers-code" class="module02a02a">Markers Code</h3>
 <div class="codeTable">
 <p>gmaps07.html</p>
-<table class="sourceCode html numberLines"><tr class="sourceCode"><td class="lineNumbers"><pre>1
+<div class="sourceCode"><table class="sourceCode html numberLines"><tr class="sourceCode"><td class="lineNumbers"><pre>1
 2
 3
 4
@@ -1351,9 +1389,9 @@ var map = new google.maps.Map(
 <span class="ot">            src=</span><span class="st">&quot;https://maps.googleapis.com/maps/api/js?callback=initialize&quot;</span><span class="kw">&gt;</span>
         <span class="kw">&lt;/script&gt;</span>
     <span class="kw">&lt;/body&gt;</span>
-<span class="kw">&lt;/html&gt;</span></code></pre></td></tr></table>
+<span class="kw">&lt;/html&gt;</span></code></pre></td></tr></table></div>
 <p>mapPage_07.js</p>
-<table class="sourceCode js numberLines"><tr class="sourceCode"><td class="lineNumbers"><pre>1
+<div class="sourceCode"><table class="sourceCode js numberLines"><tr class="sourceCode"><td class="lineNumbers"><pre>1
 2
 3
 4
@@ -1402,14 +1440,14 @@ var map = new google.maps.Map(
         });
     officeMarker.setMap(map);
 }
-</code></pre></td></tr></table>
+</code></pre></td></tr></table></div>
 </div>
 <h3 id="polyline" class="module02a02a">Polyline</h3>
 <p><img src="images/gmaps08.png" alt="gmaps08.html preview" /> </p>
 <h3 id="polyline-code" class="module02a02a">Polyline Code</h3>
 <div class="codeTable">
 <p>gmaps08.html</p>
-<table class="sourceCode html numberLines"><tr class="sourceCode"><td class="lineNumbers"><pre>1
+<div class="sourceCode"><table class="sourceCode html numberLines"><tr class="sourceCode"><td class="lineNumbers"><pre>1
 2
 3
 4
@@ -1454,9 +1492,9 @@ var map = new google.maps.Map(
 <span class="ot">            src=</span><span class="st">&quot;https://maps.googleapis.com/maps/api/js?callback=initialize&quot;</span><span class="kw">&gt;</span>
         <span class="kw">&lt;/script&gt;</span>
     <span class="kw">&lt;/body&gt;</span>
-<span class="kw">&lt;/html&gt;</span></code></pre></td></tr></table>
+<span class="kw">&lt;/html&gt;</span></code></pre></td></tr></table></div>
 <p>mapPage_08.js</p>
-<table class="sourceCode js numberLines"><tr class="sourceCode"><td class="lineNumbers"><pre>1
+<div class="sourceCode"><table class="sourceCode js numberLines"><tr class="sourceCode"><td class="lineNumbers"><pre>1
 2
 3
 4
@@ -1531,14 +1569,14 @@ var map = new google.maps.Map(
     });
     officePath.setMap(map)
 }
-</code></pre></td></tr></table>
+</code></pre></td></tr></table></div>
 </div>
 <h3 id="polygon" class="module02a02a">Polygon</h3>
 <p><img src="images/gmaps09.png" alt="gmaps09.html preview" /> </p>
 <h3 id="polygon-code" class="module02a02a">Polygon Code</h3>
 <div class="codeTable">
 <p>gmaps09.html</p>
-<table class="sourceCode html numberLines"><tr class="sourceCode"><td class="lineNumbers"><pre>1
+<div class="sourceCode"><table class="sourceCode html numberLines"><tr class="sourceCode"><td class="lineNumbers"><pre>1
 2
 3
 4
@@ -1583,9 +1621,9 @@ var map = new google.maps.Map(
 <span class="ot">            src=</span><span class="st">&quot;https://maps.googleapis.com/maps/api/js?callback=initialize&quot;</span><span class="kw">&gt;</span>
         <span class="kw">&lt;/script&gt;</span>
     <span class="kw">&lt;/body&gt;</span>
-<span class="kw">&lt;/html&gt;</span></code></pre></td></tr></table>
+<span class="kw">&lt;/html&gt;</span></code></pre></td></tr></table></div>
 <p>mapPage_09.js</p>
-<table class="sourceCode js numberLines"><tr class="sourceCode"><td class="lineNumbers"><pre>1
+<div class="sourceCode"><table class="sourceCode js numberLines"><tr class="sourceCode"><td class="lineNumbers"><pre>1
 2
 3
 4
@@ -1674,14 +1712,14 @@ var map = new google.maps.Map(
     });
     bldgPoly.setMap(map)
 }
-</code></pre></td></tr></table>
+</code></pre></td></tr></table></div>
 </div>
 <h3 id="adding-an-info-window" class="module02a02a">Adding an Info Window</h3>
 <p><img src="images/gmaps10.png" alt="gmaps10.html preview" /> </p>
 <h3 id="adding-an-info-window-code" class="module02a02a">Adding an Info Window Code</h3>
 <div class="codeTable">
 <p>gmaps10.html</p>
-<table class="sourceCode html numberLines"><tr class="sourceCode"><td class="lineNumbers"><pre>1
+<div class="sourceCode"><table class="sourceCode html numberLines"><tr class="sourceCode"><td class="lineNumbers"><pre>1
 2
 3
 4
@@ -1726,9 +1764,9 @@ var map = new google.maps.Map(
 <span class="ot">            src=</span><span class="st">&quot;https://maps.googleapis.com/maps/api/js?callback=initialize&quot;</span><span class="kw">&gt;</span>
         <span class="kw">&lt;/script&gt;</span>
     <span class="kw">&lt;/body&gt;</span>
-<span class="kw">&lt;/html&gt;</span></code></pre></td></tr></table>
+<span class="kw">&lt;/html&gt;</span></code></pre></td></tr></table></div>
 <p>mapPage_10.js</p>
-<table class="sourceCode js numberLines"><tr class="sourceCode"><td class="lineNumbers"><pre>1
+<div class="sourceCode"><table class="sourceCode js numberLines"><tr class="sourceCode"><td class="lineNumbers"><pre>1
 2
 3
 4
@@ -1835,7 +1873,7 @@ var map = new google.maps.Map(
         classInfoWindow.open(map,classroomMarker);
         });
 }
-</code></pre></td></tr></table>
+</code></pre></td></tr></table></div>
 </div>
 <!---------------------------------------------------------------------------->
 <!-- Week 04 ----------------------------------------------------------------->
@@ -1856,12 +1894,13 @@ var map = new google.maps.Map(
 <h3 id="getting-started-with-styled-maps---video"><em>Getting Started with Styled Maps</em> - Video</h3>
 <p><a href="https://developers.google.com/maps/documentation/javascript/styling">Styled Maps Documentation</a> | <a href="http://gmaps-samples-v3.googlecode.com/svn/trunk/styledmaps/wizard/index.html">Styled Maps Wizard</a></p>
 <div class="figure">
-<img src="./images/styledMapsWizard.png" alt="Google Maps Styled Maps Wizard link" /><p class="caption">Google Maps Styled Maps Wizard <a href="http://youtu.be/0hhiEjf7_NA">link</a></p>
+<img src="./images/styledMapsWizard.png" alt="Google Maps Styled Maps Wizard link" />
+<p class="caption">Google Maps Styled Maps Wizard <a href="http://youtu.be/0hhiEjf7_NA">link</a></p>
 </div>
 <h3 id="map-example-simple---styled">Map Example: Simple - Styled</h3>
 <div class="codeTable">
 <p>gmap_styled.html</p>
-<table class="sourceCode html numberLines"><tr class="sourceCode"><td class="lineNumbers"><pre>1
+<div class="sourceCode"><table class="sourceCode html numberLines"><tr class="sourceCode"><td class="lineNumbers"><pre>1
 2
 3
 4
@@ -1902,9 +1941,9 @@ var map = new google.maps.Map(
 <span class="ot">            src=</span><span class="st">&quot;https://maps.googleapis.com/maps/api/js?callback=initialize&quot;</span><span class="kw">&gt;</span>
         <span class="kw">&lt;/script&gt;</span>
     <span class="kw">&lt;/body&gt;</span>
-<span class="kw">&lt;/html&gt;</span></code></pre></td></tr></table>
+<span class="kw">&lt;/html&gt;</span></code></pre></td></tr></table></div>
 <p>mapPage_styled.js</p>
-<table class="sourceCode html numberLines"><tr class="sourceCode"><td class="lineNumbers"><pre>1
+<div class="sourceCode"><table class="sourceCode html numberLines"><tr class="sourceCode"><td class="lineNumbers"><pre>1
 2
 3
 4
@@ -2009,18 +2048,19 @@ var map = new google.maps.Map(
     var map = new google.maps.Map(
         document.getElementById(&quot;map_canvas&quot;), 
         myOptions);
-}</code></pre></td></tr></table>
+}</code></pre></td></tr></table></div>
 </div>
 <h3 id="google-io-2011-managing-and-visualizing-your-geospatial-data-with-fusion-tables---video"><em>Google I/O 2011: Managing and visualizing your geospatial data with Fusion Tables</em> - Video</h3>
 <p>Some particularly relevant sections: <a href="http://youtu.be/Z2o0mtnF1Bg">Introduction (0:00 - 10:30)</a> | <a href="http://youtu.be/Z2o0mtnF1Bg?t=21m40s">Google Maps API Integration (21:40 - 34:42)</a> | <a href="http://youtu.be/Z2o0mtnF1Bg?t=52m">Summary and Links (52:00 52:40)</a></p>
 <p><a href="https://support.google.com/fusiontables/?hl=en#topic=1652595">Fusion Tables Documentation/Help</a></p>
 <div class="figure">
-<img src="./images/fusionTablesVideo.png" alt="Google Fusion Tables Introduction Video link" /><p class="caption">Google Fusion Tables Introduction Video <a href="http://youtu.be/Z2o0mtnF1Bg">link</a></p>
+<img src="./images/fusionTablesVideo.png" alt="Google Fusion Tables Introduction Video link" />
+<p class="caption">Google Fusion Tables Introduction Video <a href="http://youtu.be/Z2o0mtnF1Bg">link</a></p>
 </div>
 <h3 id="bringing-it-all-together">Bringing It All Together</h3>
 <div class="codeTable">
 <p>gmaps_events.html</p>
-<table class="sourceCode html numberLines"><tr class="sourceCode"><td class="lineNumbers"><pre>1
+<div class="sourceCode"><table class="sourceCode html numberLines"><tr class="sourceCode"><td class="lineNumbers"><pre>1
 2
 3
 4
@@ -2415,9 +2455,9 @@ var map = new google.maps.Map(
 <span class="ot">            src=</span><span class="st">&quot;https://maps.googleapis.com/maps/api/js?callback=initialize&quot;</span><span class="kw">&gt;</span>
         <span class="kw">&lt;/script&gt;</span>
     <span class="kw">&lt;/body&gt;</span>
-<span class="kw">&lt;/html&gt;</span></code></pre></td></tr></table>
+<span class="kw">&lt;/html&gt;</span></code></pre></td></tr></table></div>
 <p>gmaps_events.js</p>
-<table class="sourceCode html numberLines"><tr class="sourceCode"><td class="lineNumbers"><pre>1
+<div class="sourceCode"><table class="sourceCode html numberLines"><tr class="sourceCode"><td class="lineNumbers"><pre>1
 2
 3
 4
@@ -2558,7 +2598,7 @@ function addMarkers(mapName, markerArray) {
         });
         myMarker.setMap(mapName)
     }
-}</code></pre></td></tr></table>
+}</code></pre></td></tr></table></div>
 </div>
 <!---------------------------------------------------------------------------->
 <!-- Week 05 ----------------------------------------------------------------->
@@ -2650,28 +2690,49 @@ function addMarkers(mapName, markerArray) {
 </dl>
 <h2 id="services-oriented-architectures" class="module03a01a">Services Oriented Architectures</h2>
 <h3 id="where-have-we-come-from---eniac-1946" class="module03a01a oneUp">Where have we come from - ENIAC (1946)</h3>
-<p><img src="./images/Eniac.jpg" alt="ENIAC Computer" />{.oneUp}</p>
+<div class="figure">
+<img src="./images/Eniac.jpg" alt="ENIAC Computer" class="oneUp" />
+<p class="caption">ENIAC Computer</p>
+</div>
 <ul>
 <li>First general purpose electronic computer</li>
 <li>Programmable, but could not store programs</li>
 </ul>
 <h3 id="where-have-we-come-from---early-client-server-computing-1960s" class="module03a01a threeUp">Where have we come from - Early Client-Server Computing (1960s)</h3>
-<p><img src="./images/IBM_704_mainframe.jpg" alt="IBM 704 Mainframe Computer" />{.threeUp}</p>
-<p><img src="./images/Model33_ASR_Teletype.jpg" alt="Model 33 ASR Teletype" />{.threeUp}</p>
-<p><img src="./images/279px-Televideo925Terminal.jpg" alt="TeleVideo 925 ASCII Terminal" />{.threeUp}</p>
+<div class="figure">
+<img src="./images/IBM_704_mainframe.jpg" alt="IBM 704 Mainframe Computer" class="threeUp" />
+<p class="caption">IBM 704 Mainframe Computer</p>
+</div>
+<div class="figure">
+<img src="./images/Model33_ASR_Teletype.jpg" alt="Model 33 ASR Teletype" class="threeUp" />
+<p class="caption">Model 33 ASR Teletype</p>
+</div>
+<div class="figure">
+<img src="./images/279px-Televideo925Terminal.jpg" alt="TeleVideo 925 ASCII Terminal" class="threeUp" />
+<p class="caption">TeleVideo 925 ASCII Terminal</p>
+</div>
 <ul>
 <li>Mainframe computers to which client terminals connected over a local network</li>
 <li>Computing performed by server, client purely a display device</li>
 </ul>
 <h3 id="where-have-we-come-from---personal-computers-1970s" class="module03a01a twoUp">Where have we come from - Personal Computers (1970s)</h3>
-<p><img src="./images/ibm_pc_5150.jpg" alt="IBM 5150 Personal Computer" />{.twoUp}</p>
-<p><img src="./images/Apple_I_Computer.jpg" alt="Apple I Personal Computer" />{.twoUp}</p>
+<div class="figure">
+<img src="./images/ibm_pc_5150.jpg" alt="IBM 5150 Personal Computer" class="twoUp" />
+<p class="caption">IBM 5150 Personal Computer</p>
+</div>
+<div class="figure">
+<img src="./images/Apple_I_Computer.jpg" alt="Apple I Personal Computer" class="twoUp" />
+<p class="caption">Apple I Personal Computer</p>
+</div>
 <ul>
 <li>Desktop computers capable of running a variety of operating systems and applications</li>
 <li>In some environments can be interconnected to a central local server</li>
 </ul>
 <h3 id="now---network-computing" class="module03a01a oneUp">Now - Network computing</h3>
-<p><img src="./images/hosts.png" alt="World Internet Hosts 1/94-1/13. Image courtesy IWS - http://www.isc.org/services/survey/" />{.oneUP}</p>
+<div class="figure">
+<img src="./images/hosts.png" alt="World Internet Hosts 1/94-1/13. Image courtesy IWS - http://www.isc.org/services/survey/" class="oneUP" />
+<p class="caption">World Internet Hosts 1/94-1/13. Image courtesy <a href="http://www.isc.org/services/survey/">IWS - http://www.isc.org/services/survey/</a></p>
+</div>
 <h3 id="network-computing-timeline" class="module03a01a">Network Computing Timeline</h3>
 <ul>
 <li>Predecessor to the Internet - ARPANET (1969). Interconnection between UCLA and SRI (Menlo Park)</li>
@@ -2687,7 +2748,8 @@ function addMarkers(mapName, markerArray) {
 <p>What does it mean to interact?</p>
 <h3 id="the-big-picture---services-oriented-architectures" class="module03a01a floatLeft">The Big Picture - Services Oriented Architectures</h3>
 <div class="figure">
-<img src="./images/SOAillustration.png" alt="SOA Illustration" /><p class="caption">SOA Illustration</p>
+<img src="./images/SOAillustration.png" alt="SOA Illustration" />
+<p class="caption">SOA Illustration</p>
 </div>
 <ul>
 <li>Services Oriented Architecture (SOA) for Geospatial Data and Processing
@@ -2792,11 +2854,13 @@ function addMarkers(mapName, markerArray) {
 </ul>
 <h3 id="comparison-of-ogc-service-models" class="module03a01a center">Comparison of OGC Service Models</h3>
 <div class="figure">
-<img src="./images/ogcComparison.png" alt="Comparison of OGC Service Models" /><p class="caption">Comparison of OGC Service Models</p>
+<img src="./images/ogcComparison.png" alt="Comparison of OGC Service Models" />
+<p class="caption">Comparison of OGC Service Models</p>
 </div>
 <h3 id="ogc-web-map-services-wms" class="module03a01a oneUp">OGC Web Map Services (WMS)</h3>
 <div class="figure">
-<img src="./images/wms_landsat_BernCo.jpeg" alt="WMS request result for Bernalillo County Landsat Mosaic from NM RGIS link" /><p class="caption">WMS request result for Bernalillo County Landsat Mosaic from NM RGIS <a href="http://tinyurl.com/nue486n">link</a></p>
+<img src="./images/wms_landsat_BernCo.jpeg" alt="WMS request result for Bernalillo County Landsat Mosaic from NM RGIS link" />
+<p class="caption">WMS request result for Bernalillo County Landsat Mosaic from NM RGIS <a href="http://tinyurl.com/nue486n">link</a></p>
 </div>
 <div class="codeTable short">
 <pre class="numberlines"><code>http://gstore.unm.edu/apps/rgis/datasets/
@@ -2986,7 +3050,8 @@ services/ogc/wms?
 <h2 id="extensible-markup-language---xml" class="module04a01a">Extensible Markup Language - XML</h2>
 <h3 id="xml-background" class="module04a01a oneUp">XML Background</h3>
 <div class="figure">
-<img src="images/sgml_xml.png" alt="SGML Relationship with XML and HTML" /><p class="caption">SGML Relationship with XML and HTML</p>
+<img src="images/sgml_xml.png" alt="SGML Relationship with XML and HTML" />
+<p class="caption">SGML Relationship with XML and HTML</p>
 </div>
 <ul>
 <li>Defined as a markup language profile of Standard Generalized Markup Language (SGML - ISO 8879:1986)</li>
@@ -3022,7 +3087,7 @@ services/ogc/wms?
 <p><a href="http://en.wikipedia.org/wiki/XML">XML Wikipedia Article</a></p>
 <h3 id="simple-xml-document" class="module04a01a">Simple XML Document</h3>
 <div class="codeTable medium">
-<table class="sourceCode xml numberLines" id="xmlSample"><tr class="sourceCode"><td class="lineNumbers"><pre>1
+<div class="sourceCode" id="xmlSample"><table class="sourceCode xml numberLines"><tr class="sourceCode"><td class="lineNumbers"><pre>1
 2
 3
 4
@@ -3037,21 +3102,21 @@ services/ogc/wms?
     <span class="kw">&lt;from&gt;</span>Jani<span class="kw">&lt;/from&gt;</span>
     <span class="kw">&lt;heading&gt;</span>Reminder<span class="kw">&lt;/heading&gt;</span>
     <span class="kw">&lt;body</span><span class="ot"> type=</span><span class="st">&quot;instruction&quot;</span> <span class="kw">&gt;</span>Don&#39;t forget me this weekend!<span class="kw">&lt;/body&gt;</span>
-<span class="kw">&lt;/note&gt;</span></code></pre></td></tr></table>
+<span class="kw">&lt;/note&gt;</span></code></pre></td></tr></table></div>
 <p>XML Source (modified from original): <a href="http://www.w3schools.com/XML/note.xml">w3schools</a></p>
 </div>
 <h3 id="xml-prolog" class="module04a01a">XML Prolog</h3>
 <p>Includes XML Declaration and Comment</p>
 <div class="codeTable medium">
-<table class="sourceCode xml numberLines" id="xmlSample_Prolog"><tr class="sourceCode"><td class="lineNumbers"><pre>1
+<div class="sourceCode" id="xmlSample_Prolog"><table class="sourceCode xml numberLines"><tr class="sourceCode"><td class="lineNumbers"><pre>1
 2
 </pre></td><td class="sourceCode"><pre><code class="sourceCode xml"><span class="kw">&lt;?xml</span> version=&quot;1.0&quot; encoding=&quot;ISO-8859-1&quot;<span class="kw">?&gt;</span>
-<span class="co">&lt;!-- Some comment would go here to describe this document ... --&gt;</span></code></pre></td></tr></table>
+<span class="co">&lt;!-- Some comment would go here to describe this document ... --&gt;</span></code></pre></td></tr></table></div>
 </div>
 <h3 id="xml-elements" class="module04a01a">XML Elements</h3>
 <p>Define blocks of content</p>
 <div class="codeTable medium">
-<table class="sourceCode xml numberLines" id="xmlSample_Elements" startFrom="3"><tr class="sourceCode"><td class="lineNumbers"><pre>3
+<div class="sourceCode" id="xmlSample_Elements" startFrom="3"><table class="sourceCode xml numberLines"><tr class="sourceCode"><td class="lineNumbers"><pre>3
 4
 5
 6
@@ -3062,7 +3127,7 @@ services/ogc/wms?
     <span class="kw">&lt;from&gt;</span>Jani<span class="kw">&lt;/from&gt;</span>
     <span class="kw">&lt;heading&gt;</span>Reminder<span class="kw">&lt;/heading&gt;</span>
     <span class="kw">&lt;body</span><span class="ot"> type=</span><span class="st">&quot;instruction&quot;</span> <span class="kw">&gt;</span>Don&#39;t forget me this weekend!<span class="kw">&lt;/body&gt;</span>
-<span class="kw">&lt;/note&gt;</span></code></pre></td></tr></table>
+<span class="kw">&lt;/note&gt;</span></code></pre></td></tr></table></div>
 </div>
 <h3 id="xml-root-element" class="module04a01a">XML Root Element</h3>
 <ul>
@@ -3071,7 +3136,7 @@ services/ogc/wms?
 <li>It must be a pair of opening and closing tags</li>
 </ul>
 <div class="codeTable medium">
-<table class="sourceCode xml numberLines" id="xmlSample_RootElement" startFrom="3"><tr class="sourceCode"><td class="lineNumbers"><pre>3
+<div class="sourceCode" id="xmlSample_RootElement" startFrom="3"><table class="sourceCode xml numberLines"><tr class="sourceCode"><td class="lineNumbers"><pre>3
 4
 5
 6
@@ -3082,7 +3147,7 @@ services/ogc/wms?
     ...
     ...
     ...
-<span class="kw">&lt;/note&gt;</span></code></pre></td></tr></table>
+<span class="kw">&lt;/note&gt;</span></code></pre></td></tr></table></div>
 </div>
 <h3 id="xml-content-elements" class="module04a01a">XML Content Elements</h3>
 <ul>
@@ -3091,32 +3156,32 @@ services/ogc/wms?
 <li>May be self-closing with a terminal &quot;/&quot; in the element, e.g. <code>&lt;br /&gt;</code></li>
 </ul>
 <div class="codeTable medium">
-<table class="sourceCode xml numberLines" id="xmlSample_ContentElements" startFrom="4"><tr class="sourceCode"><td class="lineNumbers"><pre>4
+<div class="sourceCode" id="xmlSample_ContentElements" startFrom="4"><table class="sourceCode xml numberLines"><tr class="sourceCode"><td class="lineNumbers"><pre>4
 5
 6
 7
 </pre></td><td class="sourceCode"><pre><code class="sourceCode xml">    <span class="kw">&lt;to&gt;</span>Tove<span class="kw">&lt;/to&gt;</span>
     <span class="kw">&lt;from&gt;</span>Jani<span class="kw">&lt;/from&gt;</span>
     <span class="kw">&lt;heading&gt;</span>Reminder<span class="kw">&lt;/heading&gt;</span>
-    <span class="kw">&lt;body</span><span class="ot"> type=</span><span class="st">&quot;instruction&quot;</span> <span class="kw">&gt;</span>Don&#39;t forget me this weekend!<span class="kw">&lt;/body&gt;</span></code></pre></td></tr></table>
+    <span class="kw">&lt;body</span><span class="ot"> type=</span><span class="st">&quot;instruction&quot;</span> <span class="kw">&gt;</span>Don&#39;t forget me this weekend!<span class="kw">&lt;/body&gt;</span></code></pre></td></tr></table></div>
 </div>
 <h3 id="xml-attributes" class="module04a01a">XML Attributes</h3>
 <p>Define additional information about elements as <em>name</em>=<em>value</em> pairs.</p>
 <div class="codeTable medium">
-<table class="sourceCode xml numberLines" id="xmlSample_Attributes" startFrom="7"><tr class="sourceCode"><td class="lineNumbers"><pre>7
-</pre></td><td class="sourceCode"><pre><code class="sourceCode xml">    <span class="kw">&lt;body</span><span class="ot"> type=</span><span class="st">&quot;instruction&quot;</span> <span class="kw">&gt;</span>Don&#39;t forget me this weekend!<span class="kw">&lt;/body&gt;</span></code></pre></td></tr></table>
+<div class="sourceCode" id="xmlSample_Attributes" startFrom="7"><table class="sourceCode xml numberLines"><tr class="sourceCode"><td class="lineNumbers"><pre>7
+</pre></td><td class="sourceCode"><pre><code class="sourceCode xml">    <span class="kw">&lt;body</span><span class="ot"> type=</span><span class="st">&quot;instruction&quot;</span> <span class="kw">&gt;</span>Don&#39;t forget me this weekend!<span class="kw">&lt;/body&gt;</span></code></pre></td></tr></table></div>
 </div>
 <h3 id="xml-element-content" class="module04a01a">XML Element Content</h3>
 <p>The material contained between the opening and closing tags of an <em>Element</em>.</p>
 <div class="codeTable medium">
-<table class="sourceCode xml numberLines" id="xmlSample_ElementContent" startFrom="7"><tr class="sourceCode"><td class="lineNumbers"><pre>7
-</pre></td><td class="sourceCode"><pre><code class="sourceCode xml">    <span class="kw">&lt;body</span><span class="ot"> type=</span><span class="st">&quot;instruction&quot;</span> <span class="kw">&gt;</span>Don&#39;t forget me this weekend!<span class="kw">&lt;/body&gt;</span></code></pre></td></tr></table>
+<div class="sourceCode" id="xmlSample_ElementContent" startFrom="7"><table class="sourceCode xml numberLines"><tr class="sourceCode"><td class="lineNumbers"><pre>7
+</pre></td><td class="sourceCode"><pre><code class="sourceCode xml">    <span class="kw">&lt;body</span><span class="ot"> type=</span><span class="st">&quot;instruction&quot;</span> <span class="kw">&gt;</span>Don&#39;t forget me this weekend!<span class="kw">&lt;/body&gt;</span></code></pre></td></tr></table></div>
 </div>
 <h3 id="valid-xml" class="module04a01a">Valid XML?</h3>
 <p>Why is this XML <em>well-formed</em> but not <em>valid</em>?</p>
 <p><em>There is no DTD or Schema defined for the document against which it can be validated</em></p>
 <div class="codeTable medium">
-<table class="sourceCode xml numberLines" id="xmlSample_valid"><tr class="sourceCode"><td class="lineNumbers"><pre>1
+<div class="sourceCode" id="xmlSample_valid"><table class="sourceCode xml numberLines"><tr class="sourceCode"><td class="lineNumbers"><pre>1
 2
 3
 4
@@ -3131,7 +3196,7 @@ services/ogc/wms?
     <span class="kw">&lt;from&gt;</span>Jani<span class="kw">&lt;/from&gt;</span>
     <span class="kw">&lt;heading&gt;</span>Reminder<span class="kw">&lt;/heading&gt;</span>
     <span class="kw">&lt;body</span><span class="ot"> type=</span><span class="st">&quot;instruction&quot;</span> <span class="kw">&gt;</span>Don&#39;t forget me this weekend!<span class="kw">&lt;/body&gt;</span>
-<span class="kw">&lt;/note&gt;</span></code></pre></td></tr></table>
+<span class="kw">&lt;/note&gt;</span></code></pre></td></tr></table></div>
 </div>
 <h3 id="common-xml-constructs" class="module04a01a">Common XML Constructs</h3>
 <dl>
@@ -3152,7 +3217,7 @@ services/ogc/wms?
 </dd>
 </dl>
 <div class="codeTable inflow">
-<table class="sourceCode xml numberLines" id="xmlNamespaceDeclarations"><tr class="sourceCode"><td class="lineNumbers"><pre>1
+<div class="sourceCode" id="xmlNamespaceDeclarations"><table class="sourceCode xml numberLines"><tr class="sourceCode"><td class="lineNumbers"><pre>1
 2
 3
 4
@@ -3187,7 +3252,7 @@ services/ogc/wms?
     <span class="kw">&lt;f:length&gt;</span>5<span class="kw">&lt;/f:length&gt;</span>
     <span class="kw">&lt;f:height&gt;</span>4<span class="kw">&lt;/f:height&gt;</span>
 <span class="kw">&lt;/f:table&gt;</span>
-<span class="kw">&lt;/root&gt;</span></code></pre></td></tr></table>
+<span class="kw">&lt;/root&gt;</span></code></pre></td></tr></table></div>
 </div>
 <h2 id="kml" class="module04a01a">KML</h2>
 <h3 id="kml-background" class="module04a01a">KML Background</h3>
@@ -3225,10 +3290,11 @@ services/ogc/wms?
 </ul>
 <h3 id="d-and-3d-kml-sample" class="module04a01a oneUp">2D and 3D KML Sample</h3>
 <div class="figure">
-<img src="./images/kmlExample.png" alt="Illustration of polygon in both planar and terrain surface" /><p class="caption">Illustration of polygon in both planar and terrain surface</p>
+<img src="./images/kmlExample.png" alt="Illustration of polygon in both planar and terrain surface" />
+<p class="caption">Illustration of polygon in both planar and terrain surface</p>
 </div>
 <div class="codeTable inflow">
-<table class="sourceCode xml numberLines" id="sampleKML"><tr class="sourceCode"><td class="lineNumbers"><pre>1
+<div class="sourceCode" id="sampleKML"><table class="sourceCode xml numberLines"><tr class="sourceCode"><td class="lineNumbers"><pre>1
 2
 3
 4
@@ -3271,7 +3337,7 @@ services/ogc/wms?
         <span class="kw">&lt;/Polygon&gt;</span>
     <span class="kw">&lt;/Placemark&gt;</span>
 <span class="kw">&lt;/Document&gt;</span>
-<span class="kw">&lt;/kml&gt;</span></code></pre></td></tr></table>
+<span class="kw">&lt;/kml&gt;</span></code></pre></td></tr></table></div>
 </div>
 <p><a href="sample-files/kmlExample.kml">KML Example</a></p>
 <p><a href="https://portal.opengeospatial.org/files/?artifact_id=27810l">Example from: KML 2.2 Specification (fig. 6, pg. 21)</a></p>
@@ -3390,6 +3456,14 @@ services/ogc/wms?
 <p>R=Required / O=Optional</p>
 <h3 id="wms-getmap-request-core" class="module04a01a bigtable">WMS <em>GetMap</em> Request (Core)</h3>
 <table>
+<colgroup>
+<col width="19%" />
+<col width="3%" />
+<col width="3%" />
+<col width="4%" />
+<col width="4%" />
+<col width="63%" />
+</colgroup>
 <thead>
 <tr class="header">
 <th align="left">Request Parameter</th>
@@ -3556,7 +3630,15 @@ services/ogc/wms?
 </tbody>
 </table>
 <h3 id="wms-getfeatureinfo-request" class="module04a01a bigtable">WMS GetFeatureInfo Request</h3>
-<table>
+<table style="width:100%;">
+<colgroup>
+<col width="19%" />
+<col width="3%" />
+<col width="3%" />
+<col width="4%" />
+<col width="4%" />
+<col width="62%" />
+</colgroup>
 <thead>
 <tr class="header">
 <th align="left">Request Parameter</th>
@@ -3684,7 +3766,7 @@ services/ogc/wms?
 </table>
 <h3 id="wms-getcapabilities" class="module04a01a">WMS GetCapabilities</h3>
 <div class="codeTable">
-<table class="sourceCode xml numberLines" id="sampleCapabilitiesRequest"><tr class="sourceCode"><td class="lineNumbers"><pre>1
+<div class="sourceCode" id="sampleCapabilitiesRequest"><table class="sourceCode xml numberLines"><tr class="sourceCode"><td class="lineNumbers"><pre>1
 2
 3
 4
@@ -3693,9 +3775,9 @@ services/ogc/wms?
 da70dc92f2cc/services/ogc/wms?
     SERVICE=wms<span class="er">&amp;</span>
     REQUEST=GetCapabilities<span class="er">&amp;</span>
-    VERSION=1.1.1</code></pre></td></tr></table>
+    VERSION=1.1.1</code></pre></td></tr></table></div>
 <p><a href="http://gstore.unm.edu/apps/rgis/datasets/6ca5428a-a78c-4c82-8120-da70dc92f2cc/services/ogc/wms?SERVICE=wms&amp;REQUEST=GetCapabilities&amp;VERSION=1.1.1">Live Link</a></p>
-<table class="sourceCode xml numberLines" id="sampleCapabilitiesResponse"><tr class="sourceCode"><td class="lineNumbers"><pre>1
+<div class="sourceCode" id="sampleCapabilitiesResponse"><table class="sourceCode xml numberLines"><tr class="sourceCode"><td class="lineNumbers"><pre>1
 2
 3
 4
@@ -4090,12 +4172,15 @@ WMS_MS_Capabilities.dtd&quot;
     <span class="kw">&lt;/Layer&gt;</span>
   <span class="kw">&lt;/Layer&gt;</span>
 <span class="kw">&lt;/Capability&gt;</span>
-<span class="kw">&lt;/WMT_MS_Capabilities&gt;</span></code></pre></td></tr></table>
+<span class="kw">&lt;/WMT_MS_Capabilities&gt;</span></code></pre></td></tr></table></div>
 </div>
 <h3 id="wms-getmap" class="module04a01a">WMS GetMap</h3>
 <div class="codeTable">
-<p><img src="images/wms_01.jpeg" alt="Sample WMS response #1" />{.WMSimage width=200px height=200px}</p>
-<table class="sourceCode numberLines" id="sampleGetMap01"><tr class="sourceCode"><td class="lineNumbers"><pre>1
+<div class="figure">
+<img src="images/wms_01.jpeg" alt="Sample WMS response #1" class="WMSimage" width="200" height="200" />
+<p class="caption">Sample WMS response #1</p>
+</div>
+<div class="sourceCode" id="sampleGetMap01"><table class="sourceCode numberLines"><tr class="sourceCode"><td class="lineNumbers"><pre>1
 2
 3
 4
@@ -4120,10 +4205,13 @@ services/ogc/wms?
     HEIGHT=200&amp;
     SRS=EPSG:4326&amp;
     FORMAT=image/jpeg&amp;
-    STYLES=</code></pre></td></tr></table>
+    STYLES=</code></pre></td></tr></table></div>
 <p><a href="http://gstore.unm.edu/apps/rgis/datasets/6ca5428a-a78c-4c82-8120-da70dc92f2cc/services/ogc/wms?VERSION=1.1.1&amp;SERVICE=WMS&amp;REQUEST=GetMap&amp;BBOX=-109,31,-102.9,37.1&amp;LAYERS=tl_2010_35_state10&amp;WIDTH=200&amp;HEIGHT=200&amp;SRS=EPSG:4326&amp;FORMAT=image/jpeg&amp;STYLES=">link</a></p>
-<p><img src="images/wms_02.png" alt="Sample WMS response #2" />{.WMSimage width=300px height=300px}</p>
-<table class="sourceCode numberLines" id="sampleGetMap02"><tr class="sourceCode"><td class="lineNumbers"><pre>1
+<div class="figure">
+<img src="images/wms_02.png" alt="Sample WMS response #2" class="WMSimage" width="300" height="300" />
+<p class="caption">Sample WMS response #2</p>
+</div>
+<div class="sourceCode" id="sampleGetMap02"><table class="sourceCode numberLines"><tr class="sourceCode"><td class="lineNumbers"><pre>1
 2
 3
 4
@@ -4150,7 +4238,7 @@ services/ogc/wms?
     SRS=EPSG:4326&amp;
     TRANSPARENT=TRUE&amp;
     FORMAT=image/png&amp;
-    STYLES=</code></pre></td></tr></table>
+    STYLES=</code></pre></td></tr></table></div>
 <p><a href="http://gstore.unm.edu/apps/rgis/datasets/6ca5428a-a78c-4c82-8120-da70dc92f2cc/services/ogc/wms?VERSION=1.1.1&amp;SERVICE=WMS&amp;REQUEST=GetMap&amp;BBOX=-109,31,-102.9,37.1&amp;LAYERS=tl_2010_35_state10&amp;WIDTH=300&amp;HEIGHT=300&amp;SRS=EPSG:4326&amp;TRANSPARENT=TRUE&amp;FORMAT=image/png&amp;STYLES=">link</a></p>
 </div>
 <h3 id="integraton-of-wms-and-kml" class="module04a01a">Integraton of WMS and KML</h3>
@@ -4162,7 +4250,7 @@ services/ogc/wms?
 </ul>
 <h3 id="sample-wms-kml-integration" class="module04a01a">Sample WMS-KML Integration</h3>
 <div class="codeTable">
-<table class="sourceCode xml numberLines" id="sampleKMLwWMS"><tr class="sourceCode"><td class="lineNumbers"><pre>1
+<div class="sourceCode" id="sampleKMLwWMS"><table class="sourceCode xml numberLines"><tr class="sourceCode"><td class="lineNumbers"><pre>1
 2
 3
 4
@@ -4201,7 +4289,7 @@ services/ogc/wms?
             <span class="kw">&lt;west&gt;</span>-110.6891149310152<span class="kw">&lt;/west&gt;</span>
         <span class="kw">&lt;/LatLonBox&gt;</span>
     <span class="kw">&lt;/GroundOverlay&gt;</span>
-<span class="kw">&lt;/kml&gt;</span></code></pre></td></tr></table>
+<span class="kw">&lt;/kml&gt;</span></code></pre></td></tr></table></div>
 <p><a href="sample-files/KML/kmlWMS.kml">Sample KML File</a></p>
 </div>
 <!---------------------------------------------------------------------------->
@@ -4417,7 +4505,8 @@ services/ogc/wms?
 <p>Base request parameters for all HTTP GET KVP requests (Figure <a href="#fig:wfsTable02">1</a>)</p>
 <a name="fig:wfsTable02"></a>
 <div class="figure">
-<img src="images/09-025r1_OGC_Web_Feature_Service_WFS_2-table04.jpg" alt="Figure 1. Table 4 from OpenGIS Web Feature Service 2.0 Interface Standard - Panagiotis (Peter) A. Vretanos, editor - 2010-11-02" /><p class="caption">Figure 1. Table 4 from <a href="http://www.opengeospatial.org/standards/wfs">OpenGIS Web Feature Service 2.0 Interface Standard - Panagiotis (Peter) A. Vretanos, editor - 2010-11-02</a></p>
+<img src="images/09-025r1_OGC_Web_Feature_Service_WFS_2-table04.jpg" alt="Figure 1. Table 4 from OpenGIS Web Feature Service 2.0 Interface Standard - Panagiotis (Peter) A. Vretanos, editor - 2010-11-02" id="fig:wfsTable02" />
+<p class="caption">Figure 1. Table 4 from <a href="http://www.opengeospatial.org/standards/wfs">OpenGIS Web Feature Service 2.0 Interface Standard - Panagiotis (Peter) A. Vretanos, editor - 2010-11-02</a></p>
 </div>
 <p><code>VERSION</code> is required for all operations <em>except</em> the <code>GetCapabilities</code> request</p>
 <h3 id="sample-getcapabilities-requests" class="module04a02a">Sample GetCapabilities Requests</h3>
@@ -4434,7 +4523,8 @@ services/ogc/wms?
 <p><code>DescribeFeatureType</code> HTTP GET KVP request (Figure <a href="#fig:wfsTable15">2</a>)</p>
 <a name="fig:wfsTable15"></a>
 <div class="figure">
-<img src="images/09-025r1_OGC_Web_Feature_Service_WFS_2-table15.jpg" alt="Figure 2. Table 15 from OpenGIS Web Feature Service 2.0 Interface Standard - Panagiotis (Peter) A. Vretanos, editor - 2010-11-02" /><p class="caption">Figure 2. Table 15 from <a href="http://www.opengeospatial.org/standards/wfs">OpenGIS Web Feature Service 2.0 Interface Standard - Panagiotis (Peter) A. Vretanos, editor - 2010-11-02</a></p>
+<img src="images/09-025r1_OGC_Web_Feature_Service_WFS_2-table15.jpg" alt="Figure 2. Table 15 from OpenGIS Web Feature Service 2.0 Interface Standard - Panagiotis (Peter) A. Vretanos, editor - 2010-11-02" id="fig:wfsTable15" />
+<p class="caption">Figure 2. Table 15 from <a href="http://www.opengeospatial.org/standards/wfs">OpenGIS Web Feature Service 2.0 Interface Standard - Panagiotis (Peter) A. Vretanos, editor - 2010-11-02</a></p>
 </div>
 <h3 id="sample-describefeaturetype-requests" class="module04a02a">Sample DescribeFeatureType Requests</h3>
 <p>USGS Framework Layer (Governmental Units) WFS Service linked from the USGS <a href="http://viewer.nationalmap.gov/tnmaccess/api/servicesForm"><em>TNM Access API page</em></a> <a href="http://viewer.nationalmap.gov/tnmaccess/api/services?">service list</a> - <a href="http://services.nationalmap.gov/arcgis/services/WFS/govunits/MapServer/WFSServer?version=1.1.0&amp;request=DescribeFeatureType&amp;service=WFS&amp;typeName=WFS_govunits:State_or_Territory_High-res">Live Link</a></p>
@@ -4453,27 +4543,32 @@ services/ogc/wms?
 <p><code>GetFeature</code> HTTP GET KVP request (Figure <a href="#fig:wfsTable17">3</a>)</p>
 <a name="fig:wfsTable17"></a>
 <div class="figure">
-<img src="images/09-025r1_OGC_Web_Feature_Service_WFS_2-table17.jpg" alt="Figure 3. Table 17 from OpenGIS Web Feature Service 2.0 Interface Standard - Panagiotis (Peter) A. Vretanos, editor - 2010-11-02" /><p class="caption">Figure 3. Table 17 from <a href="http://www.opengeospatial.org/standards/wfs">OpenGIS Web Feature Service 2.0 Interface Standard - Panagiotis (Peter) A. Vretanos, editor - 2010-11-02</a></p>
+<img src="images/09-025r1_OGC_Web_Feature_Service_WFS_2-table17.jpg" alt="Figure 3. Table 17 from OpenGIS Web Feature Service 2.0 Interface Standard - Panagiotis (Peter) A. Vretanos, editor - 2010-11-02" id="fig:wfsTable17" />
+<p class="caption">Figure 3. Table 17 from <a href="http://www.opengeospatial.org/standards/wfs">OpenGIS Web Feature Service 2.0 Interface Standard - Panagiotis (Peter) A. Vretanos, editor - 2010-11-02</a></p>
 </div>
 <h3 id="kvp-for-getfeature-request---presentation-parameters-figure-figwfstable05" class="module04a02a">KVP for GetFeature Request - Presentation Parameters (Figure {<a href="#fig:wfsTable05">4</a>})</h3>
 <a name="fig:wfsTable05"></a>
 <div class="figure">
-<img src="images/09-025r1_OGC_Web_Feature_Service_WFS_2-table05.jpg" alt="Figure 4. Table 5 from OpenGIS Web Feature Service 2.0 Interface Standard - Panagiotis (Peter) A. Vretanos, editor - 2010-11-02" /><p class="caption">Figure 4. Table 5 from <a href="http://www.opengeospatial.org/standards/wfs">OpenGIS Web Feature Service 2.0 Interface Standard - Panagiotis (Peter) A. Vretanos, editor - 2010-11-02</a></p>
+<img src="images/09-025r1_OGC_Web_Feature_Service_WFS_2-table05.jpg" alt="Figure 4. Table 5 from OpenGIS Web Feature Service 2.0 Interface Standard - Panagiotis (Peter) A. Vretanos, editor - 2010-11-02" id="fig:wfsTable05" />
+<p class="caption">Figure 4. Table 5 from <a href="http://www.opengeospatial.org/standards/wfs">OpenGIS Web Feature Service 2.0 Interface Standard - Panagiotis (Peter) A. Vretanos, editor - 2010-11-02</a></p>
 </div>
 <h3 id="kvp-for-getfeature-request---resolve-parameters-figure-figwfstable06" class="module04a02a">KVP for GetFeature Request - Resolve Parameters (Figure {<a href="#fig:wfsTable06">5</a>})</h3>
 <a name="fig:wfsTable06"></a>
 <div class="figure">
-<img src="images/09-025r1_OGC_Web_Feature_Service_WFS_2-table06.jpg" alt="Figure 5. Table 6 from OpenGIS Web Feature Service 2.0 Interface Standard - Panagiotis (Peter) A. Vretanos, editor - 2010-11-02" /><p class="caption">Figure 5. Table 6 from <a href="http://www.opengeospatial.org/standards/wfs">OpenGIS Web Feature Service 2.0 Interface Standard - Panagiotis (Peter) A. Vretanos, editor - 2010-11-02</a></p>
+<img src="images/09-025r1_OGC_Web_Feature_Service_WFS_2-table06.jpg" alt="Figure 5. Table 6 from OpenGIS Web Feature Service 2.0 Interface Standard - Panagiotis (Peter) A. Vretanos, editor - 2010-11-02" id="fig:wfsTable06" />
+<p class="caption">Figure 5. Table 6 from <a href="http://www.opengeospatial.org/standards/wfs">OpenGIS Web Feature Service 2.0 Interface Standard - Panagiotis (Peter) A. Vretanos, editor - 2010-11-02</a></p>
 </div>
 <h3 id="kvp-for-getfeature-request---ad-hoc-query-parameters-figure-figwfstable08" class="module04a02a">KVP for GetFeature Request - Ad-hoc Query Parameters (Figure {<a href="#fig:wfsTable08">6</a>})</h3>
 <a name="fig:wfsTable08"></a>
 <div class="figure">
-<img src="images/09-025r1_OGC_Web_Feature_Service_WFS_2-table08.jpg" alt="Figure 6. Table 8 from OpenGIS Web Feature Service 2.0 Interface Standard - Panagiotis (Peter) A. Vretanos, editor - 2010-11-02" /><p class="caption">Figure 6. Table 8 from <a href="http://www.opengeospatial.org/standards/wfs">OpenGIS Web Feature Service 2.0 Interface Standard - Panagiotis (Peter) A. Vretanos, editor - 2010-11-02</a></p>
+<img src="images/09-025r1_OGC_Web_Feature_Service_WFS_2-table08.jpg" alt="Figure 6. Table 8 from OpenGIS Web Feature Service 2.0 Interface Standard - Panagiotis (Peter) A. Vretanos, editor - 2010-11-02" id="fig:wfsTable08" />
+<p class="caption">Figure 6. Table 8 from <a href="http://www.opengeospatial.org/standards/wfs">OpenGIS Web Feature Service 2.0 Interface Standard - Panagiotis (Peter) A. Vretanos, editor - 2010-11-02</a></p>
 </div>
 <h3 id="kvp-for-getfeature-request---stored-query-parameters-figure-figwfstable08" class="module04a02a">KVP for GetFeature Request - Stored Query Parameters (Figure {<a href="#fig:wfsTable08">6</a>})</h3>
 <a name="fig:wfsTable10"></a>
 <div class="figure">
-<img src="images/09-025r1_OGC_Web_Feature_Service_WFS_2-table10.jpg" alt="Figure 7. Table 10 from OpenGIS Web Feature Service 2.0 Interface Standard - Panagiotis (Peter) A. Vretanos, editor - 2010-11-02" /><p class="caption">Figure 7. Table 10 from <a href="http://www.opengeospatial.org/standards/wfs">OpenGIS Web Feature Service 2.0 Interface Standard - Panagiotis (Peter) A. Vretanos, editor - 2010-11-02</a></p>
+<img src="images/09-025r1_OGC_Web_Feature_Service_WFS_2-table10.jpg" alt="Figure 7. Table 10 from OpenGIS Web Feature Service 2.0 Interface Standard - Panagiotis (Peter) A. Vretanos, editor - 2010-11-02" id="fig:wfsTable10" />
+<p class="caption">Figure 7. Table 10 from <a href="http://www.opengeospatial.org/standards/wfs">OpenGIS Web Feature Service 2.0 Interface Standard - Panagiotis (Peter) A. Vretanos, editor - 2010-11-02</a></p>
 </div>
 <h3 id="sample-getfeature-requests" class="module04a02a">Sample GetFeature Requests</h3>
 <p>USGS Framework Layer (Governmental Units) WFS Service linked from the USGS <a href="http://viewer.nationalmap.gov/tnmaccess/api/servicesForm"><em>TNM Access API page</em></a> <a href="http://viewer.nationalmap.gov/tnmaccess/api/services?">service list</a> - <a href="http://services.nationalmap.gov/arcgis/services/WFS/govunits/MapServer/WFSServer?VERSION=1.1.0&amp;REQUEST=GetFeature&amp;SERVICE=WFS&amp;TYPENAME=WFS_govunits:State_or_Territory_High-res">Live Link</a></p>
@@ -4575,7 +4670,8 @@ services/ogc/wms?
 <p><code>DescribeCoverage</code> HTTP GET KVP request (Figure <a href="#fig:wcsTable01">8</a>)</p>
 <a name="fig:wcsTable01"></a>
 <div class="figure">
-<img src="images/09-147r1_OGC_Web_Coverage_Service_2-table01.jpg" alt="Figure 8. Table 1 from OGC Web Coverage Service 2.0 Interface Standard - KVP Protocol Binding Extension - Peter Baumann, editor - 2010-10-27" /><p class="caption">Figure 8. Table 1 from <a href="http://portal.opengeospatial.org/files/?artifact_id=41439"><em>OGC Web Coverage Service 2.0 Interface Standard - KVP Protocol Binding Extension</em> - Peter Baumann, editor - 2010-10-27</a></p>
+<img src="images/09-147r1_OGC_Web_Coverage_Service_2-table01.jpg" alt="Figure 8. Table 1 from OGC Web Coverage Service 2.0 Interface Standard - KVP Protocol Binding Extension - Peter Baumann, editor - 2010-10-27" id="fig:wcsTable01" />
+<p class="caption">Figure 8. Table 1 from <a href="http://portal.opengeospatial.org/files/?artifact_id=41439"><em>OGC Web Coverage Service 2.0 Interface Standard - KVP Protocol Binding Extension</em> - Peter Baumann, editor - 2010-10-27</a></p>
 </div>
 <h3 id="sample-describecoverage-request" class="module04a02a">Sample DescribeCoverage Request</h3>
 <p>NOAA Global Forecast System <a href="http://nomads.ncdc.noaa.gov/thredds/catalog/gfs-004/catalog.html">THREDDS catalog</a>. <a href="http://nomads.ncdc.noaa.gov/thredds/wcs/gfs-004/201602/20160228/gfs_4_20160228_0000_384.grb2?service=WCS&amp;version=1.0.0&amp;request=DescribeCoverage&amp;COVERAGE=Categorical_Rain">Live Link</a></p>
@@ -4595,13 +4691,15 @@ gfs_4_20160228_0000_384.grb2?
 <p><code>GetCoverage</code> HTTP GET KVP request (Figure <a href="#fig:wcsTable01">8</a>)</p>
 <a name="fig:wcsTable02"></a>
 <div class="figure">
-<img src="images/09-147r1_OGC_Web_Coverage_Service_2-table02.jpg" alt="Figure 9. Table 2 from OGC Web Coverage Service 2.0 Interface Standard - KVP Protocol Binding Extension - Peter Baumann, editor - 2010-10-27" /><p class="caption">Figure 9. Table 2 from <a href="http://portal.opengeospatial.org/files/?artifact_id=41439"><em>OGC Web Coverage Service 2.0 Interface Standard - KVP Protocol Binding Extension</em> - Peter Baumann, editor - 2010-10-27</a></p>
+<img src="images/09-147r1_OGC_Web_Coverage_Service_2-table02.jpg" alt="Figure 9. Table 2 from OGC Web Coverage Service 2.0 Interface Standard - KVP Protocol Binding Extension - Peter Baumann, editor - 2010-10-27" id="fig:wcsTable02" />
+<p class="caption">Figure 9. Table 2 from <a href="http://portal.opengeospatial.org/files/?artifact_id=41439"><em>OGC Web Coverage Service 2.0 Interface Standard - KVP Protocol Binding Extension</em> - Peter Baumann, editor - 2010-10-27</a></p>
 </div>
 <h3 id="subset-definition-for-getcoverage-request" class="module04a02a">Subset Definition for GetCoverage Request</h3>
 <p>Subset definition for the <code>GetCoverage</code> HTTP GET KVP request (Figure <a href="#fig:wcsReq07">10</a>)</p>
 <a name="fig:wcsReq07"></a>
 <div class="figure">
-<img src="images/09-147r1_OGC_Web_Coverage_Service_2-requirement07.jpg" alt="Figure 10. Requirement 7 from OGC Web Coverage Service 2.0 Interface Standard - KVP Protocol Binding Extension - Peter Baumann, editor - 2010-10-27" /><p class="caption">Figure 10. Requirement 7 from <a href="http://portal.opengeospatial.org/files/?artifact_id=41439"><em>OGC Web Coverage Service 2.0 Interface Standard - KVP Protocol Binding Extension</em> - Peter Baumann, editor - 2010-10-27</a></p>
+<img src="images/09-147r1_OGC_Web_Coverage_Service_2-requirement07.jpg" alt="Figure 10. Requirement 7 from OGC Web Coverage Service 2.0 Interface Standard - KVP Protocol Binding Extension - Peter Baumann, editor - 2010-10-27" id="fig:wcsReq07" />
+<p class="caption">Figure 10. Requirement 7 from <a href="http://portal.opengeospatial.org/files/?artifact_id=41439"><em>OGC Web Coverage Service 2.0 Interface Standard - KVP Protocol Binding Extension</em> - Peter Baumann, editor - 2010-10-27</a></p>
 </div>
 <p>Example from the 2.0 specification:</p>
 <pre><code>http://www.myserver.org:port/path?
@@ -4663,7 +4761,7 @@ gfs_4_20160228_0000_384.grb2?
 </ul>
 <div class="codeTable">
 <p>OpenLayers_01.html</p>
-<table class="sourceCode html numberLines" id="OpenLayers_01_demo"><tr class="sourceCode"><td class="lineNumbers"><pre>1
+<div class="sourceCode" id="OpenLayers_01_demo"><table class="sourceCode html numberLines"><tr class="sourceCode"><td class="lineNumbers"><pre>1
 2
 3
 4
@@ -4702,9 +4800,9 @@ gfs_4_20160228_0000_384.grb2?
     <span class="kw">&lt;script</span><span class="ot"> src=</span><span class="st">&quot;js/OpenLayers_01.js&quot;</span><span class="ot"> type=</span><span class="st">&quot;text/javascript&quot;</span><span class="kw">&gt;&lt;/script&gt;</span>
 <span class="kw">&lt;/body&gt;</span>
 
-<span class="kw">&lt;/html&gt;</span></code></pre></td></tr></table>
+<span class="kw">&lt;/html&gt;</span></code></pre></td></tr></table></div>
 <p>OpenLayers_01.js</p>
-<table class="sourceCode html numberLines"><tr class="sourceCode"><td class="lineNumbers"><pre>1
+<div class="sourceCode"><table class="sourceCode html numberLines"><tr class="sourceCode"><td class="lineNumbers"><pre>1
 2
 3
 4
@@ -4731,9 +4829,9 @@ var myMap = new ol.Map({
         center: ol.proj.fromLonLat([-106.624083,35.08427]),
         zoom: 18
         })
-    });</code></pre></td></tr></table>
+    });</code></pre></td></tr></table></div>
 <p>OpenLayers_01.css</p>
-<table class="sourceCode html numberLines"><tr class="sourceCode"><td class="lineNumbers"><pre>1
+<div class="sourceCode"><table class="sourceCode html numberLines"><tr class="sourceCode"><td class="lineNumbers"><pre>1
 2
 3
 4
@@ -4754,7 +4852,7 @@ body {
 #map {
     width:600px;
     height:400px
-}</code></pre></td></tr></table>
+}</code></pre></td></tr></table></div>
 </div>
 <h3 id="demonstration-and-examples---online-resources" class="module02b01a">Demonstration and Examples - Online Resources</h3>
 <ul>
@@ -4789,7 +4887,7 @@ body {
 </ul>
 <p>A variety of strategies for constructing a new <code>OpenLayers.Map</code> object</p>
 <div class="codeTable inflow">
-<table class="sourceCode html numberLines" id="OpenLayers_02_Map_options"><tr class="sourceCode"><td class="lineNumbers"><pre>1
+<div class="sourceCode" id="OpenLayers_02_Map_options"><table class="sourceCode html numberLines"><tr class="sourceCode"><td class="lineNumbers"><pre>1
 2
 3
 4
@@ -4934,7 +5032,7 @@ map.setView()
 // the target DOM object for the map object can be set or changed using 
 // the following command
 
-map.setTarget</code></pre></td></tr></table>
+map.setTarget</code></pre></td></tr></table></div>
 </div>
 <h3 id="layer-object-options">Layer Object Options</h3>
 <p>Layer Types and a subset of sources for each type</p>
@@ -4962,7 +5060,7 @@ map.setTarget</code></pre></td></tr></table>
 </ul>
 <p>Common Pattern of <a href="http://openlayers.org/en/v3.14.2/apidoc/ol.layer.Base.html">Layer Object</a> Creation (varies some depending upon the specific layer type)</p>
 <div class="codeTable inflow">
-<table class="sourceCode html numberLines" id="OpenLayers_02_Layer_options"><tr class="sourceCode"><td class="lineNumbers"><pre>1
+<div class="sourceCode" id="OpenLayers_02_Layer_options"><table class="sourceCode html numberLines"><tr class="sourceCode"><td class="lineNumbers"><pre>1
 2
 3
 4
@@ -4973,7 +5071,7 @@ map.setTarget</code></pre></td></tr></table>
         ...
     }),
     other options ...
-})</code></pre></td></tr></table>
+})</code></pre></td></tr></table></div>
 </div>
 <h3 id="additional-map-and-layer-object-functions-events">Additional Map and Layer Object Functions &amp; Events</h3>
 <p>Both Map and Layer Objects have a number of associated functions as well</p>
@@ -4993,7 +5091,7 @@ map.setTarget</code></pre></td></tr></table>
 </ul>
 <p>Sample WMS Layer Object Creation</p>
 <div class="codeTable inflow">
-<table class="sourceCode html numberLines" id="OpenLayers_02_WmsLayer_options"><tr class="sourceCode"><td class="lineNumbers"><pre>1
+<div class="sourceCode" id="OpenLayers_02_WmsLayer_options"><table class="sourceCode html numberLines"><tr class="sourceCode"><td class="lineNumbers"><pre>1
 2
 3
 4
@@ -5060,7 +5158,7 @@ var singleMap = new ol.Map({
         })
     });
 
-</code></pre></td></tr></table>
+</code></pre></td></tr></table></div>
 </div>
 <p>Example: <a href="https://github.com/UNM-GEOG-485-585/class-materials/blob/master/sample-files/OpenLayers/OpenLayers_03_wms.html">HTML</a>, <a href="https://github.com/UNM-GEOG-485-585/class-materials/blob/master/sample-files/OpenLayers/js/OpenLayers_03_wms.js">Javascript</a></p>
 <h3 id="vector-layer-configuration">Vector Layer Configuration</h3>
@@ -5073,7 +5171,7 @@ var singleMap = new ol.Map({
 </ul>
 <div class="codeTable inflow">
 <p>Sample Point Feature Object creation</p>
-<table class="sourceCode html numberLines" id="OpenLayers_02_VectorLayer_options01"><tr class="sourceCode"><td class="lineNumbers"><pre>1
+<div class="sourceCode" id="OpenLayers_02_VectorLayer_options01"><table class="sourceCode html numberLines"><tr class="sourceCode"><td class="lineNumbers"><pre>1
 2
 3
 4
@@ -5082,9 +5180,9 @@ var singleMap = new ol.Map({
 var officeCoord = [-106.624899,35.084506]
 
 var classroomPoint = new ol.geom.Point(classroomCoord);
-var officePoint = new ol.geom.Point(officeCoord);</code></pre></td></tr></table>
+var officePoint = new ol.geom.Point(officeCoord);</code></pre></td></tr></table></div>
 <p>Sample KML Layer Object creation with style</p>
-<table class="sourceCode html numberLines" id="OpenLayers_02_KMLayer_options01"><tr class="sourceCode"><td class="lineNumbers"><pre>1
+<div class="sourceCode" id="OpenLayers_02_KMLayer_options01"><table class="sourceCode html numberLines"><tr class="sourceCode"><td class="lineNumbers"><pre>1
 2
 3
 4
@@ -5137,7 +5235,7 @@ var counties_kml_styled = new ol.layer.Vector({
         style: county_style
     })
 })
-</code></pre></td></tr></table>
+</code></pre></td></tr></table></div>
 </div>
 <p>Example: <a href="https://github.com/UNM-GEOG-485-585/class-materials/blob/master/sample-files/OpenLayers/OpenLayers_04_vector.html">HTML</a>, <a href="https://github.com/UNM-GEOG-485-585/class-materials/blob/master/sample-files/OpenLayers/js/OpenLayers_04_vector.js">Javascript</a></p>
 <!---------------------------------------------------------------------------->
@@ -5146,13 +5244,143 @@ var counties_kml_styled = new ol.layer.Vector({
 <!-- Interoperability Standards----------------------------------------------->
 <!-- Desktop GIS Integration-------------------------------------------------->
 <!---------------------------------------------------------------------------->
-<!-- 
-
-# GEOG 485L/585L Module 4b - Interoperability Standards - Desktop GIS Integration# {.module04b01a}
-
-### Overview ###  {.module04b01a}
-
- -->
+<h1 id="module-4b---interoperability-standards---desktop-gis-integration" class="module04b01a">Module 4b - Interoperability Standards - Desktop GIS Integration</h1>
+<h3 id="overview-8" class="module04b01a">Overview</h3>
+<ul>
+<li>Common Model for Client Configuration for Connections to Remote OGC Services</li>
+<li>Specific Client Examples</li>
+</ul>
+<p>Quantum GIS (QGIS)</p>
+<ul>
+<li>WMS</li>
+<li>WFS</li>
+<li>WCS</li>
+</ul>
+<p>ArcGIS</p>
+<ul>
+<li>WMS</li>
+<li>WFS</li>
+<li>WCS</li>
+</ul>
+<h3 id="common-model" class="module04b01a">Common Model</h3>
+<p>Based upon the results of a GetCapabilities request against a remote service. GetCapabilities request information provided as either:</p>
+<ul>
+<li>The base URL to which the OGC service parameters would be added</li>
+<li>A complete GetCapabilities request against the service</li>
+</ul>
+<h3 id="full-getcapabilities-request" class="module04b01a">Full GetCapabilities Request</h3>
+<p>NASA Earth Observations (NEO) Imagery WMS</p>
+<p><a href="http://neowms.sci.gsfc.nasa.gov/wms/wms?version=1.3.0&amp;service=WMS&amp;request=GetCapabilities"><code>http://neowms.sci.gsfc.nasa.gov/wms/wms?version=1.3.0&amp;service=WMS&amp;request=GetCapabilities</code></a></p>
+<p>USGS <a href="http://viewer.nationalmap.gov/services/">Service Endpoints</a> - <a href="http://services.nationalmap.gov/arcgis/services/USGSTopoLarge/MapServer/WMSServer?request=GetCapabilities&amp;service=WMS" class="uri">http://services.nationalmap.gov/arcgis/services/USGSTopoLarge/MapServer/WMSServer?request=GetCapabilities&amp;service=WMS</a></p>
+<h3 id="base-url-for-getcapabilities" class="module04b01a">Base URL for GetCapabilities</h3>
+<p>NASA Earth Observations (NEO) Imagery WMS</p>
+<p><a href="http://neowms.sci.gsfc.nasa.gov/wms/wms?"><code>http://neowms.sci.gsfc.nasa.gov/wms/wms?</code></a></p>
+<p>USGS <a href="http://viewer.nationalmap.gov/services/">Service Endpoints</a> - <a href="http://services.nationalmap.gov/arcgis/services/USGSTopoLarge/MapServer/WMSServer?"><code>http://services.nationalmap.gov/arcgis/services/USGSTopoLarge/MapServer/WMSServer?</code></a></p>
+<h3 id="quantum-gis-qgis" class="module04b01a">Quantum GIS (QGIS)</h3>
+<p>QGIS uses the Base URL approach for adding WMS, WFS or WCS layers to a project.</p>
+<p>The General Process:</p>
+<ol style="list-style-type: decimal">
+<li>Add service, or select existing service</li>
+<li>Connect to the service to retrieve the information from the GetCapabilities response for the service</li>
+<li>Select layer(s)</li>
+<li>Modify settings for layer(s)</li>
+<li>Add layer(s)</li>
+</ol>
+<p><a href="http://docs.qgis.org/2.8/en/docs/user_manual/working_with_ogc/index.html">QGIS OGC Documentation</a></p>
+<h3 id="qgis---adding-services-and-layers---start" class="module04b01a twoUp">QGIS - Adding Services and Layers - start</h3>
+<div class="figure">
+<img src="images/QGIS-AddLayer-OGC.png" alt="OGC Options in the Add Layer menu options" />
+<p class="caption">OGC Options in the <em>Add Layer</em> menu options</p>
+</div>
+<div class="figure">
+<img src="images/QGIS-AddOGC-Buttons.png" alt="OGC Options in the left-side icon list" />
+<p class="caption">OGC Options in the left-side icon list</p>
+</div>
+<p>You need to know the GetCapabilities request for the service you want to add, for example one of the USGS WMS services</p>
+<pre><code>http://services.nationalmap.gov/arcgis/services/USGSTopoLarge/MapServer/WMSServer?request=GetCapabilities&amp;service=WMS</code></pre>
+<p>determine the base URL -</p>
+<p><code>http://services.nationalmap.gov/arcgis/services/USGSTopoLarge/MapServer/WMSServer</code></p>
+<p>in this case</p>
+<p>If in doubt, check the information in the metadata</p>
+<p>Select the layer type you would like to from &quot;Layer&quot; menu, or click the button in the interface to add a specific layer type.</p>
+<h3 id="qgis---adding-services-and-layers---adding-a-service" class="module04b01a">QGIS - Adding Services and Layers - adding a service</h3>
+<p>Add a service to the list of services in the menu (if necessary - QGIS retains information about previously added services) by selecting the &quot;New&quot; option under the service list in the &quot;Add Layer(s) from a Server&quot; dialog</p>
+<div class="figure">
+<img src="images/QGIS-AddLayer_s_fromAWM_T_SServer.png" alt="&quot;Add Layer(s) from a Server&quot; dialog" />
+<p class="caption">&quot;Add Layer(s) from a Server&quot; dialog</p>
+</div>
+<h3 id="qgis---adding-services-and-layers---adding-connection-information" class="module04b01a">QGIS - Adding Services and Layers - adding connection information</h3>
+<p>Add the name, base URL and any additional information about the service to the connection dialog box</p>
+<div class="figure">
+<img src="images/QGIS-AddConnectionDialog.png" alt="Connection dialog box" />
+<p class="caption">Connection dialog box</p>
+</div>
+<h3 id="qgis---adding-services-and-layers---connecting-to-and-adding-layers-from-the-service" class="module04b01a">QGIS - Adding Services and Layers - connecting to and adding layers from the service</h3>
+<p>After adding the service, you can select it from the service list in the &quot;Add Layer(s) from a Server&quot; dialog box, connect to the service to retrieve the GetCapabilities response from the service, select the layers and other options advertised by the service through its response, and add them to your map.</p>
+<div class="figure">
+<img src="images/QGIS-AddLayerFromSource.png" alt="&quot;Add Layer(s) from a Server&quot; dialog with service connection and layer selection process" />
+<p class="caption">&quot;Add Layer(s) from a Server&quot; dialog with service connection and layer selection process</p>
+</div>
+<h3 id="qgis---adding-services-and-layers---the-final-added-layer" class="module04b01a">QGIS - Adding Services and Layers - the final added layer</h3>
+<p>After adding the layer, it appears as an available layer in the table of contents for your map.</p>
+<div class="figure">
+<img src="images/QGIS-AddedOGCLayers.png" alt="QGIS map with added WMS layer in the TOC" />
+<p class="caption">QGIS map with added WMS layer in the TOC</p>
+</div>
+<h3 id="qgis-demonstration-with-wms-wfs-and-wcs-services" class="module04b01a">QGIS Demonstration with WMS, WFS and WCS Services</h3>
+<p>WMS, WFS and WCS in QGIS</p>
+<p><a href="https://raw.githubusercontent.com/UNM-GEOG-485-585/class-materials/master/sample-files/QGIS_OGC_demo.qgs">Example</a></p>
+<h3 id="arcgis" class="module04b01a">ArcGIS</h3>
+<p>Based upon the results of a GetCapabilities request against a remote service. GetCapabilities request information provided as either:</p>
+<ul>
+<li>The base URL to which the OGC service parameters would be added</li>
+<li>A complete GetCapabilities request against the service</li>
+</ul>
+<p>This model applies to ArcGIS just as it did for Quantum GIS - the base URL is provided to the various ArcGIS components that support the addition of OGC services to the client interface.</p>
+<p><a href="http://resources.arcgis.com/en/help/main/10.2/index.html#/About_using_OGC_service_layers/00sp0000000n000000/">ArcGIS OGC Support Documentation</a></p>
+<h3 id="arcgis-wms-and-wcs-configuration" class="module04b01a">ArcGIS WMS and WCS Configuration</h3>
+<p>The addition of OGC WMS and WCS layers to ArcMap is through the same process of</p>
+<ul>
+<li>Select the &quot;add data&quot; button</li>
+<li>WMS/WCS services are added through the &quot;GIS Servers&quot; option in the &quot;Add Data&quot; dialog</li>
+<li>If you have not previously added the service from which you want to add layers, you select &quot;Add WMS Server&quot; or &quot;Add WCS Server&quot; from the list of options in the &quot;Add Data&quot; dialog
+<ul>
+<li>You then provide the BASE GetCapabilities URL to the &quot;ADD WMS/WCS Server&quot; dialog that appears</li>
+<li>Click &quot;OK&quot;, and the new WMS/WCS service is added to the list of services that is available when you choose to add a WMS service.</li>
+</ul></li>
+<li>You then select the layer(s) from the service that you want to add to your map and click the &quot;add&quot; button in the dialog.</li>
+</ul>
+<h3 id="arcgis-wms-and-wcs-configuration-resources" class="module04b01a">ArcGIS WMS and WCS Configuration Resources</h3>
+<ul>
+<li>Adding WMS Services to ArcMap 10.2</li>
+</ul>
+<p><a href="http://resources.arcgis.com/en/help/main/10.2/index.html#/Adding_WMS_services/00sp0000000s000000/">ESRI Documentation</a></p>
+<ul>
+<li>Adding WCS Services to ArcMap 10.2</li>
+</ul>
+<p><a href="http://resources.arcgis.com/en/help/main/10.2/index.html#/Adding_a_WCS_service_to_ArcMap/00sp0000000z000000/">ESRI Documentation</a></p>
+<h3 id="arcgis-wfs-configuration" class="module04b01a">ArcGIS WFS Configuration</h3>
+<ul>
+<li>WFS support in ArcGIS 10.0 and beyond requires that the &quot;Data Interoperability Extension&quot; be installed (though it doesn’t have to be enabled)</li>
+<li>Connections to WFS services are defined through ArcCatalog's &quot;Interoperabilty Connections&quot; &quot;Add Interoperability Connection&quot; option</li>
+<li>After defining the connection in ArcCatalog (including the specification of the interoperabilty connection type, desired feature types, and maximum number of features to return), its feature types are available through that Interoperability Connection that may be added to ArcMap and other ArcGIS components</li>
+<li>Once the connection is created, WFS data may be added through the &quot;Add Data&quot; dialog in ArcMap</li>
+</ul>
+<h3 id="arcgis-wfs-configuration-resources" class="module04b01a">ArcGIS WFS Configuration Resources</h3>
+<ul>
+<li>Steps for connecting to an OGC WFS from within ArcCatalog 10.2</li>
+</ul>
+<p><a href="http://resources.arcgis.com/en/help/main/10.2/index.html#//00370000000p000000">ESRI Documentation</a></p>
+<ul>
+<li>Steps for adding a WFS service to ArcMap 10.2</li>
+</ul>
+<p><a href="http://resources.arcgis.com/en/help/main/10.2/index.html#/Adding_a_WFS_service_to_ArcMap/00sp0000001m000000/">ESRI Documentation</a></p>
+<h3 id="conclusions" class="module04b01a">Conclusions</h3>
+<ul>
+<li>A GetCapabilities request is the key for configuring most OGC client applications to access remote services</li>
+<li>The specific way in which the GetCapabilities request is given to the client varies from client to client</li>
+<li>Clients can auto/<em>mis</em>-configure themselves based upon the GetCapabilities XML response - when troubleshooting problems with an advertised service, try the manual request approach for the GetCapabilities, data and maps that you have learned about to determine if the service is functioning as advertised.</li>
+</ul>
 <!---------------------------------------------------------------------------->
 <!-- Week 13 ----------------------------------------------------------------->
 <!-- Lecture 05 a 01 a ------------------------------------------------------->
