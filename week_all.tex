@@ -2183,6 +2183,231 @@ GetCapabilities requests related to those layers. Also include screen
 shots (again, one for each added layer) showing each layer in your QGIS
 project.  
 
+\chapter{Week 13 - Platforms and GeoServer Introduction}\label{week13}
+
+Thus far we have concentrated on the client side of geospatial services
+oriented architectures in developing web interfaces based upon the
+Google Maps API, the OpenLayers javascript framework, and accessing data
+published using the OGC WMS, WFS, and WCS standards in desktop
+applications. Starting this week we begin our work on the server side -
+working with the GeoServer server platform to publish data through the
+OGC WMS, WFS, and WCS service standards. This work will demonstrate the
+ease with which you can share data using these standards, facilitating
+client use such as that that we have seen in our web site and desktop
+application work.
+
+\emph{Expected Outcomes}
+
+By the end of this class, students should be able to:
+
+\begin{itemize}
+\tightlist
+\item
+  Place files within the server file system for integration into the
+  GeoServer platform
+\item
+  Create a GeoServer \emph{Workspace}, \emph{Store}, and \emph{Layer}
+  based upon those data
+\item
+  Test those layers using the \emph{Layer Preview} tools integrated into
+  GeoServer
+\end{itemize}
+
+\emph{Key Concepts}
+
+By the end of this class, students should understand:
+
+\begin{itemize}
+\tightlist
+\item
+  The components of a map server platform and their relationship to each
+  other
+\item
+  The role of a geospatial server within a geospatial services oriented
+  architecture
+\item
+  The information required about data to successfully configure it for
+  publication within GeoServer
+\item
+  The stepwise process through which a dataset may be published using
+  GeoServer
+\end{itemize}
+
+\section{Reference Materials}\label{week13-reference}
+
+\begin{itemize}
+\tightlist
+\item
+  Lynda.com
+  \href{http://www.lynda.com/Linux-tutorials/Learn-Linux-Command-Line-Basics/435539-2.html?org=unm.edu}{\emph{Learn
+  the Linux Command Line: The Basics}} - particularly:
+
+  \begin{itemize}
+  \item
+    Introduction
+  \item
+    \begin{enumerate}
+    \def\labelenumi{\arabic{enumi}.}
+    \tightlist
+    \item
+      Command-Line Basics
+    \end{enumerate}
+  \item
+    \begin{enumerate}
+    \def\labelenumi{\arabic{enumi}.}
+    \setcounter{enumi}{1}
+    \tightlist
+    \item
+      Files, Folders, and Permissions
+    \end{enumerate}
+  \end{itemize}
+\item
+  GeoServer
+  \href{http://docs.geoserver.org/stable/en/user/index.html}{Online
+  Documentation}: sections
+  \href{http://docs.geoserver.org/stable/en/user/introduction/index.html}{Introduction},
+  \href{http://docs.geoserver.org/stable/en/user/gettingstarted/index.html}{Getting
+  Started}, and
+  \href{http://docs.geoserver.org/stable/en/user/webadmin/index.html}{Web
+  Administration Interface}
+\end{itemize}
+
+\section{Weekly Milestone - Linux Basics and GeoServer Data
+Import}\label{week13-milestone}
+
+\subsection{Working on the Class
+Server}\label{working-on-the-class-server}
+
+For the GeoServer portion of our work, you will be working on a Linux
+server that has been created for the class. While we won't be doing a
+lot of Linux work, some basic familiarity with moving around, copying
+files, and working with files is needed. The class server is running
+Ubuntu Linux which is a broadly deployed, well supported operating
+system and computing platform that has excellent support for many Open
+Source geospatial applications, including those that we will be using in
+this class.
+
+The first set of exercises relate to learning some basics about working
+with the Linux Operating system, applicable just about any Linux server
+including the class server.
+
+Review (but don't worry about memorizing) the following materials (in
+addition to watching the Lynda.com video tutorial sections listed
+above):
+
+\href{http://www.webmonkey.com/2010/02/unix-guide/}{Webmonkey ``Unix
+Guide''}
+
+\href{http://www.cheatography.com/davechild/cheat-sheets/linux-command-line/}{Linux
+Command Line Cheatsheet}
+
+\begin{description}
+\tightlist
+\item[QUESTION 1]
+What command would you use to list the contents of a directory on a
+linux system?
+\item[QUESTION 2]
+What command would you use to read the ``manual page'' for a specific
+command?
+\end{description}
+
+Log into the class Linux server - geog485.unm.edu. \emph{This is
+different from the address referenced in the below linked videos} The
+rest of the process is the same as demonstrated in the videos.
+
+\emph{Windows}: Open PuTTY on your computer and connect using the SSH
+protocol (see video demonstration)
+
+\href{http://youtu.be/GdO_n89mey8}{Link to the YouTube video
+demonstration for Windows}
+
+\emph{Mac}: Open the Terminal Application and connect using SSH (see
+video)
+
+\href{http://youtu.be/Gu_ij6HxTWo}{Link to the YouTube video
+demonstration for Mac OS X}
+
+Start a session on the class Linux server, which is located at at the
+hostname \texttt{geog485.unm.edu} (you will use your class server
+username and password to open the connection)
+
+\begin{description}
+\tightlist
+\item[Task]
+Use the \texttt{mkdir\ data} command to create a directory called
+\texttt{data} in your home directory (the directory that you are in when
+you login, and where you go when you type the \texttt{cd} command with
+no options).
+\end{description}
+
+\subsection{Adding data to GeoServer}\label{adding-data-to-geoserver}
+
+To add data to GeoServer you must have a file location on the server
+where data files must be stored and accessible by the GeoServer.
+
+\begin{description}
+\item[Task]
+Change into the \texttt{data} directory that you created above using the
+\texttt{cd\ data} command.
+\item[Task]
+Copy all of the data files located in the \texttt{data} directory in my
+\texttt{Week13Data} folder by executing the following command from
+\emph{inside your \texttt{data} directory}.
+
+cp -r /geodata/data/demo/week13data/* . (make sure to include final `.')
+\end{description}
+
+This will place a copy of these data files in your \texttt{data}
+directory
+
+\begin{description}
+\tightlist
+\item[Task]
+Log into the Geoserver on the class server
+(\url{http://geog485.unm.edu:8080/geoserver/web/}) using the username
+and password provided for the class server via email.
+\end{description}
+
+Create a new \emph{store} for each of the datasets added to your
+\texttt{data} directory above. Assign the new store to the workspace
+that is named based on your username (e.g.
+\texttt{ws\_\textless{}your\ user\ name\textgreater{}}. When specifying
+the the \texttt{Connection\ Parameters} for pointing to the file, the
+format is:
+\texttt{file:data/\textless{}your\ username\textgreater{}/data/\textless{}filename\ including\ any\ additional\ directories\textgreater{}} 
+for example
+
+\begin{verbatim}
+file:data/kbene/data/roadl_usa.shp
+\end{verbatim}
+
+You can also browse to the file by clicking on the ``Browse \ldots{}''
+link next to the location field, for example for a shapefile:
+
+\includegraphics{images/GeoServer_Browse.jpg}~
+
+and navigating to your home directory (data\_dir/data/\textless{}your
+username\textgreater{}/data) to see the data to select from.
+
+\includegraphics{images/GeoServer_SelectData.jpg}~
+
+Create a new \emph{layer} for each of the \emph{stores} added above.
+Here are some things to keep in mind:
+
+You may need to designate the SRS for a layer if it can't be read
+directly from the dataset. Your specify the \emph{designated} SRS using
+the standard EPSG:XXXX format.
+
+The EPSG code for \texttt{GCS\_North\_American\_1983} is EPSG:4269
+
+\begin{description}
+\tightlist
+\item[Question 3]
+Preview each of your added layers, using the \emph{Layer Preview} tool
+and the \emph{Open Layers} option to display the data. Include screen
+grabs of the previews in your write-up.
+\end{description}
+
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
 This work by {Karl Benedict} is licensed under a Creative Commons
