@@ -5263,13 +5263,171 @@ var counties_kml_styled = new ol.layer.Vector({
 <!-- Developing and Hosting OGC Services-------------------------------------->
 <!-- Platforms and GeoServer Introduction------------------------------------->
 <!---------------------------------------------------------------------------->
-<!-- 
-
-# GEOG 485L/585L Module 5 - Developing and Hosting OGC Services. Part 1: Platforms and GeoServer Introduction# {.module05a01a}
-
-### Overview ###  {.module05a01a}
-
- -->
+</section>
+<section id="module-5---platforms-and-geoserver-introduction" class="titleslide slide level1 module05a01a"><h1>Module 5 - Platforms and GeoServer Introduction</h1></section><section id="overview-9" class="slide level3 module05a01a">
+<h1>Overview</h1>
+<ul>
+<li>SOA Review</li>
+<li>Server Platform</li>
+<li>Online Mapping Server Applications: COTS &amp; Open Source</li>
+<li>What is GeoServer</li>
+<li>Working with GeoServer</li>
+<li>Demonstration</li>
+</ul>
+</section><section id="soa-review" class="slide level3 module05a01a">
+<h1>SOA Review</h1>
+<figure>
+<img src="./images/SOAillustration.png" alt="SOA Illustration" /><figcaption>SOA Illustration</figcaption>
+</figure>
+<ul>
+<li>Services Oriented Architecture (SOA) for Geospatial Data and Processing
+<ul>
+<li>Data, Processing &amp; Client Tiers</li>
+</ul></li>
+<li>Open Geospatial Consortium Interoperability Standards
+<ul>
+<li>WMS, WFS, WCS</li>
+</ul></li>
+<li>Geospatial Metadata Standards
+<ul>
+<li>ISO 19115, FGDC</li>
+</ul></li>
+<li>Internet Standards
+<ul>
+<li>Web: HTML, CSS, JavaScript, XML</li>
+<li>SOAP - Simple Object Access Protocol</li>
+<li>REST - Representation State Transformation</li>
+</ul></li>
+</ul>
+</section><section id="server-platform" class="slide level3 module05a01a">
+<h1>Server Platform</h1>
+<p>In the context of server platforms for online mapping with OGC services, there are several components that are of interest</p>
+<ul>
+<li>The operating system - the software environment in which all applications on a computer operate (e.g. Windows, Mac OS X, Linux)</li>
+<li>The web server - the application that listens for incoming requests from the Internet (e.g. Apache, IIS)</li>
+<li>The mapping server - the application (that may also include the web server) that enables online mapping applications, that may include support for one or more OGC service interfaces (e.g. GeoServer, MapServer, CubeWerx, ArcGIS Server)</li>
+</ul>
+</section><section id="online-mapping-server-applications" class="slide level3 module05a01a">
+<h1>Online Mapping Server Applications</h1>
+<p>Sample Commercial Off-the-Shelf (COTS)</p>
+<ul>
+<li>ArcGIS Server (<a href="http://www.esri.com/software/arcgis/arcgisserver">info</a>)</li>
+<li>CubeWerx SDI Suite (<a href="http://www.cubewerx.com/solutions/sdi/">info</a>)</li>
+<li>ERDAS APOLLO (<a href="http://www.hexagongeospatial.com/products/provider-suite/erdas-apollo">info</a>)</li>
+</ul>
+<p>Sample Open Source</p>
+<ul>
+<li>MapServer (<a href="http://mapserver.org/">info</a>)</li>
+<li>GeoServer (<a href="http://geoserver.org/">info</a>)</li>
+<li>QGIS (<a href="http://docs.qgis.org/2.8/en/docs/user_manual/working_with_ogc/ogc_server_support.html">info</a>)</li>
+</ul>
+</section><section id="what-is-geoserver" class="slide level3 module05a01a">
+<h1>What is GeoServer</h1>
+<p>GeoServer is an Open Source, Open Standards supporting geospatial web services platform</p>
+<ul>
+<li>GNU General Public License</li>
+<li>WMS, WFS, WCS</li>
+<li>Written in Java as a web application commonly hosted on the Jetty HTTP server and Java servlet engine</li>
+<li>An appropriate version of Java must already be installed</li>
+</ul>
+</section><section id="working-with-geoserver" class="slide level3 module05a01a">
+<h1>Working with GeoServer</h1>
+<p>OS-Independent Binaries are Available for Multiple Platforms (these are just ‘run’ to start the server)</p>
+<ul>
+<li>Includes the Jetty HTTP server</li>
+<li>Windows, Mac OS X, Linux</li>
+<li>There are OS-specific configuration instructions for each operating system</li>
+</ul>
+<p>GeoServer may be integrated into existing Java web servlet applications (such as Apache Tomcat) using the available Web Archive (WAR) file.</p>
+<p>OS-Specific Installers are also Available</p>
+<ul>
+<li>Include an integrated HTTP server</li>
+<li>Windows and Mac OS X</li>
+</ul>
+<p>[Installation Information[(http://docs.geoserver.org/2.8.x/en/user/installation/index.html)</p>
+</section><section id="what-is-happening-behind-the-scenes" class="slide level3 module05a01a">
+<h1>What is Happening Behind the Scenes</h1>
+<figure>
+<img src="images/GeoServerInteraction.png" alt="Interaction Between GeoServer Components" /><figcaption>Interaction Between GeoServer Components</figcaption>
+</figure>
+</section><section id="setup-and-configuration" class="slide level3 module05a01a">
+<h1>Setup and Configuration</h1>
+<ul>
+<li>After the initial setup as part of the installation process, other setup and configuration is performed through the web interface</li>
+<li>All configuration activities require that you are logged in as an administrator</li>
+<li>Default username and password for a new GeoServer are <code>admin:geoserver</code></li>
+<li>After logging in you can view and modify the configuration of the server and services - some of the configuration elements inform the OGC service capabilities</li>
+</ul>
+</section><section id="server-configuration-options" class="slide level3 module05a01a">
+<h1>Server Configuration Options</h1>
+<figure>
+<img src="images/GeoServer_ServerConfig.jpg" alt="Geoserver Configuration Menu" /><figcaption>Geoserver Configuration Menu</figcaption>
+</figure>
+<ul>
+<li>Server Status - summary information about the status of the currently running server</li>
+<li>GeoServer Logs - access to the application logs for diagnosing issues with the server</li>
+<li>Contact Information - contact information for the person responsible for providing support for the server and services. This information is used to build parts of the Capabilities XML metadata returned by the services</li>
+<li>About GeoServer - links to information about GeoServer</li>
+<li>Global Settings - settings that apply to the whole server - primarily focussed on options for logging</li>
+<li>JAI Settings - settings related to the Java Advanced Imagery engine within GeoServer</li>
+<li>Coverage Access - configuration information for the tuning of processing resources for the server</li>
+</ul>
+</section><section id="wxs-service-configuration-options" class="slide level3 module05a01a">
+<h1>WxS Service Configuration Options</h1>
+<figure>
+<img src="images/GeoServer_ServiceConfig.jpg" alt="Geoserver Service Configuration Menu" /><figcaption>Geoserver Service Configuration Menu</figcaption>
+</figure>
+<p>Options Common to all WxS services</p>
+<ul>
+<li>Enable/disable the service, with or without strict CITE compliance</li>
+<li>Maintainer and Online Resource URLs</li>
+<li>Title/Abstract</li>
+<li>Fees/Access Constraints</li>
+<li>Keywords</li>
+</ul>
+<p>Options specific to individual services</p>
+<ul>
+<li>WFS - max. no. features, service type (basic/transactional/complete), GML-specific styles, other options</li>
+<li>WMS - SRS subset specification, interpolation method, resource consumption limits, KML options, map image watermarking, PNG/JPEG/SVG format options, and others</li>
+<li>WCS - SRS subset specification, policies for overviews to be used, subsampling, and resource consumption limits, other options</li>
+</ul>
+</section><section id="data-component-configuration-options" class="slide level3 module05a01a">
+<h1>Data Component Configuration Options</h1>
+<figure>
+<img src="images/GeoServer_DataConfig.jpg" alt="GeoServer Data Configuration Menu" /><figcaption>GeoServer Data Configuration Menu</figcaption>
+</figure>
+<ul>
+<li><em>Layer Preview</em> - An interface through which a <em>Layers</em> may be previewed in a variety of formats</li>
+<li><em>Workspaces</em> - Defined containers for related data products</li>
+<li><em>Stores</em> - Specific data sources (file or service based) with required data type and connection information provided in the <em>Store</em> configuration</li>
+<li><em>Layers</em> - Defined layers that are published by the server, with the layers based upon data provided by a <em>Store</em>, but with additional layer-specific settings (such as bounding box, applied and available styles,and attribution).</li>
+<li><em>Layer Groups</em> - Collections of <em>Layers</em> for specific projects/applications or other logical groupings.</li>
+<li><em>Styles</em> - A listing of defined layer styles for the server through which those styles may be accessed and managed.</li>
+</ul>
+</section><section id="data-integration-process" class="slide level3 module05a01a">
+<h1>Data Integration Process</h1>
+<figure>
+<img src="images/GeoServer_DataWorkflow.png" alt="Data integration workflow" /><figcaption>Data integration workflow</figcaption>
+</figure>
+</section><section id="security-settings" class="slide level3 module05a01a">
+<h1>Security Settings</h1>
+<figure>
+<img src="images/GeoServer_SecurityConfig.jpg" alt="GeoServer Security Configuration Menu" /><figcaption>GeoServer Security Configuration Menu</figcaption>
+</figure>
+<ul>
+<li><em>Settings</em> - Basic security configuration settings: role service, encryption options</li>
+<li><em>Authentication</em> - Configuration settings for authentication providers for users</li>
+<li><em>Passwords</em> - Settings related to underlying password providers and policies</li>
+<li><em>Users, Groups, Roles</em> - Management of system users, groups and defined roles</li>
+<li><em>Data</em> - Settings for read/write access to data products within the server, settings for the system's <em>catalog mode</em></li>
+<li><em>Service</em> - Settings for managing service-level (i.e. WMS, WFS, WCS and related request types) access privileges by user role.</li>
+</ul>
+</section><section id="demonstration-of-geoserver-interface" class="slide level3 module05a01a">
+<h1>Demonstration of GeoServer Interface</h1>
+<p><a href="http://geog485.unm.edu:8080/geoserver/web/">Class GeoServer Instance</a></p>
+<figure>
+<img src="images/GeoServer_Home.jpg" alt="GeoServer Home Page" /><figcaption>GeoServer Home Page</figcaption>
+</figure>
 <!---------------------------------------------------------------------------->
 <!-- Week 14 ----------------------------------------------------------------->
 <!-- Lecture 05 a 02 a ------------------------------------------------------->

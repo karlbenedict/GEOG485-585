@@ -5,6 +5,7 @@
 \usepackage{ifxetex,ifluatex}
 \usepackage{fixltx2e} % provides \textsubscript
 \usepackage{booktabs}
+\usepackage[export]{adjustbox}
 
 % Added by KB to handle generation of tables with tiny font
 \usepackage{floatrow}
@@ -82,8 +83,8 @@ $if(graphics)$
 % are scaled down if they would overflow the margins.
 \makeatletter
 \def\ScaleIfNeeded{%
-  \ifdim\Gin@nat@width>\linewidth
-    \linewidth
+  \ifdim\Gin@nat@width>.5\linewidth
+    .5\linewidth
   \else
     \Gin@nat@width
   \fi
@@ -92,7 +93,8 @@ $if(graphics)$
 \let\Oldincludegraphics\includegraphics
 {%
  \catcode`\@=11\relax%
- \gdef\includegraphics{\@ifnextchar[{\Oldincludegraphics}{\Oldincludegraphics[width=\ScaleIfNeeded]}}%
+ %\gdef\includegraphics{\@ifnextchar[{\Oldincludegraphics}{\Oldincludegraphics[width=\ScaleIfNeeded]}}%
+  \gdef\includegraphics{\@ifnextchar[{\Oldincludegraphics}{\Oldincludegraphics[max size={.75\textwidth}{.75\textheight}]}}%
 }%
 $endif$
 \ifxetex
