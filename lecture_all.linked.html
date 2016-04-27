@@ -289,6 +289,42 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li><a href="#security-settings">Security Settings</a></li>
 <li><a href="#demonstration-of-geoserver-interface">Demonstration of GeoServer Interface</a></li>
 </ul></li>
+<li><a href="#module-5---ogc-services-and-styling-in-geoserver">Module 5 - OGC Services and Styling in GeoServer</a><ul>
+<li><a href="#overview-10">Overview</a></li>
+<li><a href="#ogc-styled-layer-descriptor-sld">OGC Styled Layer Descriptor (SLD)</a><ul>
+<li><a href="#ogc-styled-layer-descriptor-sld-1">OGC Styled Layer Descriptor (SLD)</a></li>
+<li><a href="#definitionOfStyles_01">Definition of Styles</a></li>
+<li><a href="#definitionOfStyles_03">Definition of Styles - Header Content</a></li>
+<li><a href="#definitionOfStyles_04">Definition of Styles - Sample SLD File</a></li>
+<li><a href="#simple-geoserver-point-style">Simple GeoServer Point Style</a></li>
+<li><a href="#simple-geoserver-line-style">Simple GeoServer Line Style</a></li>
+<li><a href="#simple-geoserver-polygon-style">Simple GeoServer Polygon Style</a></li>
+<li><a href="#simple-geoserver-raster-style">Simple GeoServer Raster Style</a></li>
+<li><a href="#pointsymbolizer">PointSymbolizer</a></li>
+<li><a href="#linesybolizer">LineSybolizer</a></li>
+<li><a href="#polygonsymbolizer">PolygonSymbolizer</a></li>
+<li><a href="#raster-symbolizer">Raster Symbolizer</a></li>
+</ul></li>
+<li><a href="#filters">Filters</a><ul>
+<li><a href="#SLDrulesVectorSymbolization_01">SLD Filter Rules and Vector Symbolization</a></li>
+<li><a href="#attributeFilterExample_01">Attribute Filter Example</a></li>
+<li><a href="#attributeFilterWscaleFactor_01">Attribute Filter with Scale Factor</a></li>
+<li><a href="#demonstrations">Demonstrations</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#module-5---ogc-services-and-styling-in-geoserver-1">Module 5 - OGC Services and Styling in GeoServer</a><ul>
+<li><a href="#overview-11">Overview</a></li>
+<li><a href="#raster-symbolizer---review">Raster Symbolizer - Review</a></li>
+<li><a href="#sample-raster-sld-for-color-map-examples">Sample Raster SLD for Color Map Examples</a></li>
+<li><a href="#colormap-types">ColorMap Types</a></li>
+<li><a href="#extend-or-not-to-extend">Extend or Not To Extend?</a></li>
+<li><a href="#opacity">Opacity</a></li>
+<li><a href="#channel-selection">Channel Selection</a></li>
+<li><a href="#contrast-enhancement">Contrast Enhancement</a></li>
+<li><a href="#sample-contrast-enhancement-sld-for-examples">Sample Contrast Enhancement SLD for Examples</a></li>
+<li><a href="#geoserver-demoqa">GeoServer Demo/Q&amp;A</a></li>
+<li><a href="#class-geoserver-instance-httpgeog485.unm.edu8080geoserverweb">Class GeoServer Instance: <a href="http://geog485.unm.edu:8080/geoserver/web/" class="uri">http://geog485.unm.edu:8080/geoserver/web/</a></a></li>
+</ul></li>
 </ul>
 </div>
 <!---------------------------------------------------------------------------->
@@ -5568,27 +5604,650 @@ var counties_kml_styled = new ol.layer.Vector({
 <!-- Developing and Hosting OGC Services-------------------------------------->
 <!-- OGC Services and Styling in GeoServer------------------------------------>
 <!---------------------------------------------------------------------------->
-<!-- 
+<h1 id="module-5---ogc-services-and-styling-in-geoserver" class="module05a02a">Module 5 - OGC Services and Styling in GeoServer</h1>
+<h3 id="overview-10">Overview</h3>
+<ul>
+<li>GeoServer Styled Layer Descriptor (SLD) Foundation: OGC Specification</li>
+<li>Creation and Management of Styles in GeoServer
+<ul>
+<li>Definition of Styles</li>
+<li>Base Styles</li>
+<li>Basic New Styles</li>
+<li>Basic Filters</li>
+</ul></li>
+</ul>
+<h2 id="ogc-styled-layer-descriptor-sld">OGC Styled Layer Descriptor (SLD)</h2>
+<h3 id="ogc-styled-layer-descriptor-sld-1">OGC Styled Layer Descriptor (SLD)</h3>
+<ul>
+<li>GeoServer uses the OGC standard for definition of symbolization both for user and server definition (<a href="http://www.opengeospatial.org/standards/sld">OGC SLD Standard</a>)</li>
+<li>Most, but not all of the OGC standard has been implemented with GeoServer</li>
+<li>The materials presented here are based upon the SLD reference distributed as part of the <a href="http://docs.geoserver.org/stable/en/user/index.html">Current GeoServer HTML documentation</a>, and in particular the <a href="http://docs.geoserver.org/stable/en/user/styling/sld-cookbook/index.html">GeoServer SLD Cookbook</a>.</li>
+</ul>
+<h3 id="definitionOfStyles_01">Definition of Styles</h3>
+<p>Styles are XML documents that conform to the OGC SLD standard, and consist of four major components</p>
+<dl>
+<dt>Symbolizers</dt>
+<dd>SLD components that define the rendering style of specific types of content
+</dd>
+</dl>
+<ul>
+<li><a href="http://docs.geoserver.org/stable/en/user/styling/sld-reference/pointsymbolizer.html">Point</a></li>
+<li><a href="http://docs.geoserver.org/stable/en/user/styling/sld-reference/linesymbolizer.html">Line</a></li>
+<li><a href="http://docs.geoserver.org/stable/en/user/styling/sld-reference/polygonsymbolizer.html">Polygon</a></li>
+<li><a href="http://docs.geoserver.org/stable/en/user/styling/sld-reference/rastersymbolizer.html">Raster</a></li>
+<li><a href="http://docs.geoserver.org/stable/en/user/styling/sld-reference/textsymbolizer.html">Text</a></li>
+</ul>
+<dl>
+<dt>Labels</dt>
+<dd>Defining the placement of <a href="http://docs.geoserver.org/stable/en/user/styling/sld-reference/labeling.html">labels</a>
+</dd>
+<dt>Filters</dt>
+<dd>Allow for the application different symbolizers to <a href="http://docs.geoserver.org/stable/en/user/styling/sld-reference/filters.html">defined sets</a> of features
+</dd>
+<dt>Scale Elements</dt>
+<dd>Allow for the application of different symbolizers at different map scales through the definition of <a href="http://docs.geoserver.org/stable/en/user/styling/sld-reference/rules.html">styling rules</a>
+</dd>
+</dl>
+<h3 id="definitionOfStyles_03">Definition of Styles - Header Content</h3>
+<div class="sourceCode" id="SLD-header-styles_01"><pre class="sourceCode xml"><code class="sourceCode xml"><span class="kw">&lt;?xml</span> version=&quot;1.0&quot; encoding=&quot;ISO-8859-1&quot;<span class="kw">?&gt;</span>
+<span class="kw">&lt;StyledLayerDescriptor</span><span class="ot"> version=</span><span class="st">&quot;1.0.0&quot;</span> 
+<span class="ot">  xsi:schemaLocation=</span><span class="st">&quot;http://www.opengis.net/sld StyledLayerDescriptor.xsd&quot;</span> 
+<span class="ot">  xmlns=</span><span class="st">&quot;http://www.opengis.net/sld&quot;</span> 
+<span class="ot">  xmlns:ogc=</span><span class="st">&quot;http://www.opengis.net/ogc&quot;</span> 
+<span class="ot">  xmlns:xlink=</span><span class="st">&quot;http://www.w3.org/1999/xlink&quot;</span> 
+<span class="ot">  xmlns:xsi=</span><span class="st">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span><span class="kw">&gt;</span>
 
-# GEOG 485L/585L Module 5 - Developing and Hosting OGC Services. Part 2: OGC Services and Styling in GeoServer# {.module05a02a}
+one or more <span class="kw">&lt;NamedLayer&gt;</span> ...  <span class="kw">&lt;/NamedLayer&gt;</span> elements
 
-### Overview ###  {.module05a02a}
+<span class="kw">&lt;/StyledLayerDescriptor&gt;</span></code></pre></div>
+<h3 id="definitionOfStyles_04">Definition of Styles - Sample SLD File</h3>
+<div class="sourceCode" id="sampleSLD"><pre class="sourceCode xml"><code class="sourceCode xml"><span class="kw">&lt;?xml</span> version=&quot;1.0&quot; encoding=&quot;ISO-8859-1&quot;<span class="kw">?&gt;</span>
+<span class="kw">&lt;StyledLayerDescriptor</span><span class="ot"> version=</span><span class="st">&quot;1.0.0&quot;</span> 
+<span class="ot">  xsi:schemaLocation=</span><span class="st">&quot;http://www.opengis.net/sld StyledLayerDescriptor.xsd&quot;</span> 
+<span class="ot">  xmlns=</span><span class="st">&quot;http://www.opengis.net/sld&quot;</span> 
+<span class="ot">  xmlns:ogc=</span><span class="st">&quot;http://www.opengis.net/ogc&quot;</span> 
+<span class="ot">  xmlns:xlink=</span><span class="st">&quot;http://www.w3.org/1999/xlink&quot;</span> 
+<span class="ot">  xmlns:xsi=</span><span class="st">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span><span class="kw">&gt;</span>
+  <span class="kw">&lt;NamedLayer&gt;</span>
+    <span class="kw">&lt;Name&gt;</span>Simple Point<span class="kw">&lt;/Name&gt;</span>
+    <span class="kw">&lt;UserStyle&gt;</span>
+      <span class="kw">&lt;Title&gt;</span>SLD Cook Book: Simple Point With Stroke<span class="kw">&lt;/Title&gt;</span>
+      <span class="kw">&lt;FeatureTypeStyle&gt;</span>
+        <span class="kw">&lt;Rule&gt;</span>
+          <span class="kw">&lt;PointSymbolizer&gt;</span>
+            <span class="kw">&lt;Graphic&gt;</span>
+              <span class="kw">&lt;Mark&gt;</span>
+                <span class="kw">&lt;WellKnownName&gt;</span>circle<span class="kw">&lt;/WellKnownName&gt;</span>
+                <span class="kw">&lt;Fill&gt;</span>
+                  <span class="kw">&lt;CssParameter</span><span class="ot"> name=</span><span class="st">&quot;fill&quot;</span><span class="kw">&gt;</span>#FF0000<span class="kw">&lt;/CssParameter&gt;</span>
+                <span class="kw">&lt;/Fill&gt;</span>
+              <span class="kw">&lt;/Mark&gt;</span>
+              <span class="kw">&lt;Size&gt;</span>6<span class="kw">&lt;/Size&gt;</span>
+            <span class="kw">&lt;/Graphic&gt;</span>
+          <span class="kw">&lt;/PointSymbolizer&gt;</span>
+        <span class="kw">&lt;/Rule&gt;</span>
+      <span class="kw">&lt;/FeatureTypeStyle&gt;</span>
+    <span class="kw">&lt;/UserStyle&gt;</span>
+  <span class="kw">&lt;/NamedLayer&gt;</span>
+<span class="kw">&lt;/StyledLayerDescriptor&gt;</span></code></pre></div>
+<h3 id="simple-geoserver-point-style">Simple GeoServer Point Style</h3>
+<div class="figure">
+<img src="images/point_simplepoint.png" alt="Sample simple styled point layer" />
+<p class="caption">Sample simple styled point layer</p>
+</div>
+<p>SLD Snippet (<a href="http://karlbenedict.com/GEOG485-585/lectures/examples/sld_cookbook/point_simplepoint.sld">Full SLD</a>)</p>
+<div class="sourceCode" id="sampleSLD_simplePoint"><pre class="sourceCode xml"><code class="sourceCode xml"><span class="kw">&lt;NamedLayer&gt;</span>
+  <span class="kw">&lt;Name&gt;</span>Simple Point<span class="kw">&lt;/Name&gt;</span>
+  <span class="kw">&lt;UserStyle&gt;</span>
+    <span class="kw">&lt;Title&gt;</span>SLD Cook Book: Simple Point With Stroke<span class="kw">&lt;/Title&gt;</span>
+    <span class="kw">&lt;FeatureTypeStyle&gt;</span>
+      <span class="kw">&lt;Rule&gt;</span>
+        <span class="kw">&lt;PointSymbolizer&gt;</span>
+          <span class="kw">&lt;Graphic&gt;</span>
+            <span class="kw">&lt;Mark&gt;</span>
+              <span class="kw">&lt;WellKnownName&gt;</span>circle<span class="kw">&lt;/WellKnownName&gt;</span>
+              <span class="kw">&lt;Fill&gt;</span>
+                <span class="kw">&lt;CssParameter</span><span class="ot"> name=</span><span class="st">&quot;fill&quot;</span><span class="kw">&gt;</span>#FF0000<span class="kw">&lt;/CssParameter&gt;</span>
+              <span class="kw">&lt;/Fill&gt;</span>
+            <span class="kw">&lt;/Mark&gt;</span>
+            <span class="kw">&lt;Size&gt;</span>6<span class="kw">&lt;/Size&gt;</span>
+          <span class="kw">&lt;/Graphic&gt;</span>
+        <span class="kw">&lt;/PointSymbolizer&gt;</span>
+      <span class="kw">&lt;/Rule&gt;</span>
+    <span class="kw">&lt;/FeatureTypeStyle&gt;</span>
+  <span class="kw">&lt;/UserStyle&gt;</span>
+<span class="kw">&lt;/NamedLayer&gt;</span></code></pre></div>
+<h3 id="simple-geoserver-line-style">Simple GeoServer Line Style</h3>
+<div class="figure">
+<img src="images/line_simpleline.png" alt="Sample simple styled line layer" />
+<p class="caption">Sample simple styled line layer</p>
+</div>
+<p>SLD Snippet (<a href="http://karlbenedict.com/GEOG485-585/lectures/examples/sld_cookbook/line_simpleline.sld">Full SLD</a>)</p>
+<div class="sourceCode" id="sampleSLD_simpleLine"><pre class="sourceCode xml"><code class="sourceCode xml"><span class="kw">&lt;NamedLayer&gt;</span>
+  <span class="kw">&lt;Name&gt;</span>Simple Line<span class="kw">&lt;/Name&gt;</span>
+  <span class="kw">&lt;UserStyle&gt;</span>
+    <span class="kw">&lt;Title&gt;</span>SLD Cook Book: Simple Line<span class="kw">&lt;/Title&gt;</span>
+    <span class="kw">&lt;FeatureTypeStyle&gt;</span>
+      <span class="kw">&lt;Rule&gt;</span>
+        <span class="kw">&lt;LineSymbolizer&gt;</span>
+          <span class="kw">&lt;Stroke&gt;</span>
+            <span class="kw">&lt;CssParameter</span><span class="ot"> name=</span><span class="st">&quot;stroke&quot;</span><span class="kw">&gt;</span>#000000<span class="kw">&lt;/CssParameter&gt;</span>
+            <span class="kw">&lt;CssParameter</span><span class="ot"> name=</span><span class="st">&quot;stroke-width&quot;</span><span class="kw">&gt;</span>3<span class="kw">&lt;/CssParameter&gt;</span>    
+          <span class="kw">&lt;/Stroke&gt;</span>
+        <span class="kw">&lt;/LineSymbolizer&gt;</span>
+      <span class="kw">&lt;/Rule&gt;</span>
+    <span class="kw">&lt;/FeatureTypeStyle&gt;</span>
+  <span class="kw">&lt;/UserStyle&gt;</span>
+<span class="kw">&lt;/NamedLayer&gt;</span></code></pre></div>
+<h3 id="simple-geoserver-polygon-style">Simple GeoServer Polygon Style</h3>
+<div class="figure">
+<img src="images/polygon_simplepolygon.png" alt="Sample simple styled polygon layer" />
+<p class="caption">Sample simple styled polygon layer</p>
+</div>
+<p>SLD Snippet (<a href="http://karlbenedict.com/GEOG485-585/lectures/examples/sld_cookbook/polygon_simplepolygon.sld">Full SLD</a>)</p>
+<div class="sourceCode" id="sampleSLD_simplepoly"><pre class="sourceCode xml"><code class="sourceCode xml"><span class="kw">&lt;NamedLayer&gt;</span>
+  <span class="kw">&lt;Name&gt;</span>Simple polygon<span class="kw">&lt;/Name&gt;</span>
+  <span class="kw">&lt;UserStyle&gt;</span>
+    <span class="kw">&lt;Title&gt;</span>SLD Cook Book: Simple polygon<span class="kw">&lt;/Title&gt;</span>
+    <span class="kw">&lt;FeatureTypeStyle&gt;</span>
+      <span class="kw">&lt;Rule&gt;</span>
+        <span class="kw">&lt;PolygonSymbolizer&gt;</span>
+          <span class="kw">&lt;Fill&gt;</span>
+            <span class="kw">&lt;CssParameter</span><span class="ot"> name=</span><span class="st">&quot;fill&quot;</span><span class="kw">&gt;</span>#000080<span class="kw">&lt;/CssParameter&gt;</span>
+          <span class="kw">&lt;/Fill&gt;</span>
+        <span class="kw">&lt;/PolygonSymbolizer&gt;</span>
+      <span class="kw">&lt;/Rule&gt;</span>
+    <span class="kw">&lt;/FeatureTypeStyle&gt;</span>
+  <span class="kw">&lt;/UserStyle&gt;</span>
+<span class="kw">&lt;/NamedLayer&gt;</span></code></pre></div>
+<h3 id="simple-geoserver-raster-style">Simple GeoServer Raster Style</h3>
+<div class="figure">
+<img src="images/raster_twocolorgradient.png" alt="Sample simple styled raster layer" />
+<p class="caption">Sample simple styled raster layer</p>
+</div>
+<p>SLD Snippet (<a href="http://karlbenedict.com/GEOG485-585/lectures/examples/sld_cookbook/raster_twocolorgradient.sld">Full SLD</a>)</p>
+<div class="sourceCode" id="sampleSLD_simpleraster"><pre class="sourceCode xml"><code class="sourceCode xml"><span class="kw">&lt;NamedLayer&gt;</span>
+  <span class="kw">&lt;Name&gt;</span>Two color gradient<span class="kw">&lt;/Name&gt;</span>
+  <span class="kw">&lt;UserStyle&gt;</span>
+    <span class="kw">&lt;Title&gt;</span>SLD Cook Book: Two color gradient<span class="kw">&lt;/Title&gt;</span>
+      <span class="kw">&lt;FeatureTypeStyle&gt;</span>
+        <span class="kw">&lt;Rule&gt;</span>
+          <span class="kw">&lt;RasterSymbolizer&gt;</span>
+            <span class="kw">&lt;ColorMap&gt;</span>
+              <span class="kw">&lt;ColorMapEntry</span><span class="ot"> color=</span><span class="st">&quot;#008000&quot;</span> 
+<span class="ot">                quantity=</span><span class="st">&quot;70&quot;</span> <span class="kw">/&gt;</span>
+              <span class="kw">&lt;ColorMapEntry</span><span class="ot"> color=</span><span class="st">&quot;#663333&quot;</span> 
+<span class="ot">                quantity=</span><span class="st">&quot;256&quot;</span> <span class="kw">/&gt;</span>
+            <span class="kw">&lt;/ColorMap&gt;</span>
+          <span class="kw">&lt;/RasterSymbolizer&gt;</span>
+        <span class="kw">&lt;/Rule&gt;</span>
+      <span class="kw">&lt;/FeatureTypeStyle&gt;</span>
+  <span class="kw">&lt;/UserStyle&gt;</span>
+<span class="kw">&lt;/NamedLayer&gt;</span></code></pre></div>
+<h3 id="pointsymbolizer">PointSymbolizer</h3>
+<div class="sourceCode" id="pointSymbolizer"><pre class="sourceCode xml"><code class="sourceCode xml"><span class="kw">&lt;Graphic&gt;</span>
+  <span class="kw">&lt;ExternalGraphic&gt;</span>
+    <span class="kw">&lt;OnlineResource&gt;</span> (Required)
+    <span class="kw">&lt;Format&gt;</span>
+  <span class="kw">&lt;Mark&gt;</span>
+    <span class="kw">&lt;WellKnownName&gt;</span> (Required)
+    <span class="kw">&lt;Fill&gt;</span>
+    <span class="kw">&lt;Stroke&gt;</span>
+    <span class="kw">&lt;Opacity&gt;</span>
+    <span class="kw">&lt;Size&gt;</span>
+    <span class="kw">&lt;Rotation&gt;</span></code></pre></div>
+<h3 id="linesybolizer">LineSybolizer</h3>
+<div class="sourceCode" id="lineSymbolizer"><pre class="sourceCode xml"><code class="sourceCode xml"><span class="kw">&lt;Stroke&gt;</span>
+  <span class="kw">&lt;GraphicFill&gt;</span>
+    <span class="kw">&lt;Graphic&gt;</span> contents same as PointSymbolizer
+  <span class="kw">&lt;GraphicStroke&gt;</span>
+    <span class="kw">&lt;Graphic&gt;</span> contents same as PointSymbolizer
+  <span class="kw">&lt;CssParameter</span><span class="ot"> name=</span><span class="st">&quot;...&quot;</span><span class="kw">&gt;</span>
+    name=&quot;stroke&quot;
+    name=&quot;stroke-width&quot;
+    name=&quot;stroke-opacity&quot;
+    name=&quot;stroke-linejoin&quot;
+    name=&quot;stroke-linecap&quot;
+    name=&quot;stroke-dasharray&quot;
+    name=&quot;stroke-dashoffset&quot;</code></pre></div>
+<h3 id="polygonsymbolizer">PolygonSymbolizer</h3>
+<div class="sourceCode" id="polySymbolizer"><pre class="sourceCode xml"><code class="sourceCode xml"><span class="kw">&lt;Fill&gt;</span>
+  <span class="kw">&lt;GraphicFill&gt;</span>
+    <span class="kw">&lt;Graphic&gt;</span> contents same as PointSymbolizer
+  <span class="kw">&lt;CssParameter</span><span class="ot"> name=</span><span class="st">&quot;...&quot;</span><span class="kw">&gt;</span>
+    name=&quot;fill&quot;
+    name=&quot;fill-opacity&quot;
+  <span class="kw">&lt;Stroke&gt;</span> same as the LineSymbolizer</code></pre></div>
+<h3 id="raster-symbolizer">Raster Symbolizer</h3>
+<div class="sourceCode" id="rasterSymbolizer"><pre class="sourceCode xml"><code class="sourceCode xml"><span class="kw">&lt;Opacity&gt;</span>
+<span class="kw">&lt;ColorMap</span><span class="ot"> type=</span><span class="st">&quot;ramp | values | intervals&quot;</span><span class="ot"> extended=</span><span class="st">&quot;true | false&quot;</span><span class="kw">&gt;</span>
+  <span class="kw">&lt;ColorMapEntry</span><span class="ot"> color=</span><span class="st">&quot;&quot;</span><span class="ot"> quantity=</span><span class="st">&quot;&quot;</span><span class="ot"> label=</span><span class="st">&quot;&quot;</span><span class="ot"> opacity=</span><span class="st">&quot;&quot;</span><span class="kw">/&gt;</span>
+<span class="kw">&lt;ChannelSelection&gt;</span>
+  <span class="kw">&lt;RedChannel&gt;</span> <span class="kw">&lt;GreenChannel&gt;</span> <span class="kw">&lt;BlueChannel&gt;</span>
+    <span class="kw">&lt;SourceChannelName&gt;</span>
+  <span class="kw">&lt;GrayChannel&gt;</span>
+    <span class="kw">&lt;SourceChannelName&gt;</span>
+<span class="kw">&lt;ContrastEnhancement&gt;</span>
+<span class="kw">&lt;ShadedRelief&gt;</span> (not implemented in ver 2.0)
+<span class="kw">&lt;OverlapBehavior&gt;</span> (not implemented in ver 2.0)
+<span class="kw">&lt;ImageOutline&gt;</span> (not implemented in ver 2.0)</code></pre></div>
+<h2 id="filters">Filters</h2>
+<h3 id="SLDrulesVectorSymbolization_01">SLD Filter Rules and Vector Symbolization</h3>
+<p>Filters based upon Attribute Values</p>
+<pre><code>&lt;PropertyIsEqualTo&gt;
+&lt;PropertyIsNotEqualTo&gt;
+&lt;PropertyIsLessThan&gt;
+&lt;PropertyIsLessThanOrEqualTo&gt;
+&lt;PropertyIsGreaterThan&gt;
+&lt;PropertyIsGreaterThanOrEqualTo&gt;
+&lt;PropertyIsBetween&gt;</code></pre>
+<p>Logical Filters - for combining multiple filters</p>
+<pre><code>&lt;And&gt;
+&lt;Or&gt;
+&lt;Not&gt;</code></pre>
+<p>Spatial Filters</p>
+<pre><code>&lt;Intersects&gt;
+&lt;Equals&gt;
+&lt;Disjoint&gt;
+&lt;Within&gt;
+&lt;Overlaps&gt;
+&lt;Crosses&gt;
+&lt;DWithin&gt;
+&lt;Beyond&gt;
+&lt;Distance&gt;</code></pre>
+<p>Scale-based selection</p>
+<pre><code>&lt;MaxScaleDenominator&gt;
+&lt;MinScaleDenominator&gt;</code></pre>
+<h3 id="attributeFilterExample_01">Attribute Filter Example</h3>
+<p>To define an <em>Attribute Filter</em> you need to know both the <em>Attribute Name</em> of the layer(s) that will use the filter and the <em>value(s)</em> of that field that will be used for the filter. <em>How do you determine the attribute name and values?</em></p>
+<ul>
+<li>If available, this information should be available through the documentation (metadata) for the data that is published by the data provider.</li>
+<li>In GeoServer you can view a list of attribute names in the <em>data</em> tab of the layer information under the <em>Feature Type Details</em> at the bottom of the web page, but you can't view the actual field values.</li>
+<li>For vector data you can view both the attribute names and their values using the <code>ogrinfo</code> command from the command line on the class linux server.</li>
+</ul>
+<p>For example:</p>
+<pre><code>ogrinfo -fields=YES -geom=NO kb_gpsrdsdd.shp kb_gpsrdsdd</code></pre>
+<p>Where this command requests that the fields and their values be displayed, but that the detailed geometry information (i.e. all of the nodes associated with each feature) be suppressed in the output</p>
+<p><a href="examples/SimpleRoads.sld">Full SLD</a></p>
+<div class="sourceCode" id="styledNMRoads"><pre class="sourceCode xml"><code class="sourceCode xml"><span class="kw">&lt;?xml</span> version=&quot;1.0&quot; encoding=&quot;ISO-8859-1&quot;<span class="kw">?&gt;</span>
+<span class="kw">&lt;StyledLayerDescriptor</span><span class="ot"> version=</span><span class="st">&quot;1.0.0&quot;</span> 
+<span class="ot">  xsi:schemaLocation=</span><span class="st">&quot;http://www.opengis.net/sld StyledLayerDescriptor.xsd&quot;</span> 
+<span class="ot">  xmlns=</span><span class="st">&quot;http://www.opengis.net/sld&quot;</span> 
+<span class="ot">  xmlns:ogc=</span><span class="st">&quot;http://www.opengis.net/ogc&quot;</span> 
+<span class="ot">  xmlns:xlink=</span><span class="st">&quot;http://www.w3.org/1999/xlink&quot;</span> 
+<span class="ot">  xmlns:xsi=</span><span class="st">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span><span class="kw">&gt;</span>
 
- -->
+<span class="co">&lt;!-- New Mexico Highways --&gt;</span>
+<span class="kw">&lt;NamedLayer&gt;</span>
+<span class="kw">&lt;Name&gt;</span>NM Roads<span class="kw">&lt;/Name&gt;</span>
+  <span class="kw">&lt;UserStyle&gt;</span>
+    <span class="kw">&lt;Name&gt;</span>NM Roads<span class="kw">&lt;/Name&gt;</span>
+    <span class="kw">&lt;FeatureTypeStyle&gt;</span>
+        <span class="kw">&lt;Rule&gt;</span>
+          <span class="kw">&lt;Title&gt;</span>NM Highways<span class="kw">&lt;/Title&gt;</span>
+          <span class="kw">&lt;ogc:Filter&gt;</span>
+            <span class="kw">&lt;ogc:PropertyIsEqualTo&gt;</span>
+              <span class="kw">&lt;ogc:PropertyName&gt;</span>TYPE<span class="kw">&lt;/ogc:PropertyName&gt;</span>
+              <span class="kw">&lt;ogc:Literal&gt;</span>State Highway<span class="kw">&lt;/ogc:Literal&gt;</span>
+            <span class="kw">&lt;/ogc:PropertyIsEqualTo&gt;</span>
+          <span class="kw">&lt;/ogc:Filter&gt;</span>
+          <span class="kw">&lt;LineSymbolizer&gt;</span>
+            <span class="kw">&lt;Stroke&gt;</span>
+              <span class="kw">&lt;CssParameter</span><span class="ot"> name=</span><span class="st">&quot;stroke&quot;</span><span class="kw">&gt;</span>
+                <span class="kw">&lt;ogc:Literal&gt;</span>#CCCCCC<span class="kw">&lt;/ogc:Literal&gt;</span>
+              <span class="kw">&lt;/CssParameter&gt;</span>
+              <span class="kw">&lt;CssParameter</span><span class="ot"> name=</span><span class="st">&quot;stroke-width&quot;</span><span class="kw">&gt;</span>
+                <span class="kw">&lt;ogc:Literal&gt;</span>2<span class="kw">&lt;/ogc:Literal&gt;</span>
+              <span class="kw">&lt;/CssParameter&gt;</span>
+            <span class="kw">&lt;/Stroke&gt;</span>
+          <span class="kw">&lt;/LineSymbolizer&gt;</span>
+        <span class="kw">&lt;/Rule&gt;</span>
+
+<span class="co">&lt;!-- US Highways --&gt;</span>
+        <span class="kw">&lt;Rule&gt;</span>
+            <span class="kw">&lt;Title&gt;</span>US Highways<span class="kw">&lt;/Title&gt;</span>
+            <span class="kw">&lt;ogc:Filter&gt;</span>
+            <span class="kw">&lt;ogc:PropertyIsEqualTo&gt;</span>
+                <span class="kw">&lt;ogc:PropertyName&gt;</span>TYPE<span class="kw">&lt;/ogc:PropertyName&gt;</span>
+                <span class="kw">&lt;ogc:Literal&gt;</span>US Highway<span class="kw">&lt;/ogc:Literal&gt;</span>
+            <span class="kw">&lt;/ogc:PropertyIsEqualTo&gt;</span>
+            <span class="kw">&lt;/ogc:Filter&gt;</span>
+            <span class="kw">&lt;LineSymbolizer&gt;</span>
+            <span class="kw">&lt;Stroke&gt;</span>
+              <span class="kw">&lt;CssParameter</span><span class="ot"> name=</span><span class="st">&quot;stroke&quot;</span><span class="kw">&gt;</span>
+                <span class="kw">&lt;ogc:Literal&gt;</span>#ff0000<span class="kw">&lt;/ogc:Literal&gt;</span>
+              <span class="kw">&lt;/CssParameter&gt;</span>
+              <span class="kw">&lt;CssParameter</span><span class="ot"> name=</span><span class="st">&quot;stroke-width&quot;</span><span class="kw">&gt;</span>
+                <span class="kw">&lt;ogc:Literal&gt;</span>3<span class="kw">&lt;/ogc:Literal&gt;</span>
+              <span class="kw">&lt;/CssParameter&gt;</span>
+            <span class="kw">&lt;/Stroke&gt;</span>
+            <span class="kw">&lt;/LineSymbolizer&gt;</span>
+            <span class="kw">&lt;LineSymbolizer&gt;</span>
+            <span class="kw">&lt;Stroke&gt;</span>
+              <span class="kw">&lt;CssParameter</span><span class="ot"> name=</span><span class="st">&quot;stroke&quot;</span><span class="kw">&gt;</span>
+                <span class="kw">&lt;ogc:Literal&gt;</span>#CCCCCC<span class="kw">&lt;/ogc:Literal&gt;</span>
+              <span class="kw">&lt;/CssParameter&gt;</span>
+              <span class="kw">&lt;CssParameter</span><span class="ot"> name=</span><span class="st">&quot;stroke-width&quot;</span><span class="kw">&gt;</span>
+                <span class="kw">&lt;ogc:Literal&gt;</span>1<span class="kw">&lt;/ogc:Literal&gt;</span>
+              <span class="kw">&lt;/CssParameter&gt;</span>
+            <span class="kw">&lt;/Stroke&gt;</span>
+            <span class="kw">&lt;/LineSymbolizer&gt;</span>
+        <span class="kw">&lt;/Rule&gt;</span>
+
+<span class="co">&lt;!-- Interstate Highways --&gt;</span>
+        <span class="kw">&lt;Rule&gt;</span>
+          <span class="kw">&lt;Title&gt;</span>Interstates<span class="kw">&lt;/Title&gt;</span>
+          <span class="kw">&lt;ogc:Filter&gt;</span>
+            <span class="kw">&lt;ogc:PropertyIsEqualTo&gt;</span>
+              <span class="kw">&lt;ogc:PropertyName&gt;</span>TYPE<span class="kw">&lt;/ogc:PropertyName&gt;</span>
+              <span class="kw">&lt;ogc:Literal&gt;</span>Interstate<span class="kw">&lt;/ogc:Literal&gt;</span>
+            <span class="kw">&lt;/ogc:PropertyIsEqualTo&gt;</span>
+          <span class="kw">&lt;/ogc:Filter&gt;</span>
+          <span class="kw">&lt;LineSymbolizer&gt;</span>
+            <span class="kw">&lt;Stroke&gt;</span>
+              <span class="kw">&lt;CssParameter</span><span class="ot"> name=</span><span class="st">&quot;stroke&quot;</span><span class="kw">&gt;</span>
+                <span class="kw">&lt;ogc:Literal&gt;</span>#fcff00<span class="kw">&lt;/ogc:Literal&gt;</span>
+              <span class="kw">&lt;/CssParameter&gt;</span>
+              <span class="kw">&lt;CssParameter</span><span class="ot"> name=</span><span class="st">&quot;stroke-width&quot;</span><span class="kw">&gt;</span>
+                <span class="kw">&lt;ogc:Literal&gt;</span>5<span class="kw">&lt;/ogc:Literal&gt;</span>
+              <span class="kw">&lt;/CssParameter&gt;</span>
+            <span class="kw">&lt;/Stroke&gt;</span>
+          <span class="kw">&lt;/LineSymbolizer&gt;</span>
+          <span class="kw">&lt;LineSymbolizer&gt;</span>
+            <span class="kw">&lt;Stroke&gt;</span>
+              <span class="kw">&lt;CssParameter</span><span class="ot"> name=</span><span class="st">&quot;stroke&quot;</span><span class="kw">&gt;</span>
+                <span class="kw">&lt;ogc:Literal&gt;</span>#222222<span class="kw">&lt;/ogc:Literal&gt;</span>
+              <span class="kw">&lt;/CssParameter&gt;</span>
+              <span class="kw">&lt;CssParameter</span><span class="ot"> name=</span><span class="st">&quot;stroke-width&quot;</span><span class="kw">&gt;</span>
+                <span class="kw">&lt;ogc:Literal&gt;</span>3<span class="kw">&lt;/ogc:Literal&gt;</span>
+              <span class="kw">&lt;/CssParameter&gt;</span>
+            <span class="kw">&lt;/Stroke&gt;</span>
+          <span class="kw">&lt;/LineSymbolizer&gt;</span>
+        <span class="kw">&lt;/Rule&gt;</span>
+    <span class="kw">&lt;/FeatureTypeStyle&gt;</span>
+  <span class="kw">&lt;/UserStyle&gt;</span>
+<span class="kw">&lt;/NamedLayer&gt;</span>
+
+<span class="kw">&lt;/StyledLayerDescriptor&gt;</span></code></pre></div>
+<h3 id="attributeFilterWscaleFactor_01">Attribute Filter with Scale Factor</h3>
+<p>The only change needed to introduce scale-dependencies into styles is to include <code>&lt;MaxScaleDenominator&gt;</code> or <code>&lt;MinScaleDenominator&gt;</code> elements within a rule where they should be applied. These elements should be placed just before the symbolizer element so that GeoServer can properly validate the provided SLD.</p>
+<p><a href="sample-files/SLD/SimpleRoadsScaled.sld">Full SLD</a> </p>
+<div class="sourceCode" id="attributeFilterWscale_highways"><pre class="sourceCode xml"><code class="sourceCode xml"><span class="kw">&lt;?xml</span> version=&quot;1.0&quot; encoding=&quot;ISO-8859-1&quot;<span class="kw">?&gt;</span>
+<span class="kw">&lt;StyledLayerDescriptor</span><span class="ot"> version=</span><span class="st">&quot;1.0.0&quot;</span> 
+<span class="ot">  xsi:schemaLocation=</span><span class="st">&quot;http://www.opengis.net/sld StyledLayerDescriptor.xsd&quot;</span> 
+<span class="ot">  xmlns=</span><span class="st">&quot;http://www.opengis.net/sld&quot;</span> 
+<span class="ot">  xmlns:ogc=</span><span class="st">&quot;http://www.opengis.net/ogc&quot;</span> 
+<span class="ot">  xmlns:xlink=</span><span class="st">&quot;http://www.w3.org/1999/xlink&quot;</span> 
+<span class="ot">  xmlns:xsi=</span><span class="st">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span><span class="kw">&gt;</span>
+
+<span class="co">&lt;!-- New Mexico Highways --&gt;</span>
+<span class="kw">&lt;NamedLayer&gt;</span>
+<span class="kw">&lt;Name&gt;</span>NM Roads<span class="kw">&lt;/Name&gt;</span>
+  <span class="kw">&lt;UserStyle&gt;</span>
+    <span class="kw">&lt;Name&gt;</span>NM Roads<span class="kw">&lt;/Name&gt;</span>
+    <span class="kw">&lt;FeatureTypeStyle&gt;</span>
+        <span class="kw">&lt;Rule&gt;</span>
+          <span class="kw">&lt;Title&gt;</span>NM Highways<span class="kw">&lt;/Title&gt;</span>
+          <span class="kw">&lt;ogc:Filter&gt;</span>
+            <span class="kw">&lt;ogc:PropertyIsEqualTo&gt;</span>
+              <span class="kw">&lt;ogc:PropertyName&gt;</span>TYPE<span class="kw">&lt;/ogc:PropertyName&gt;</span>
+              <span class="kw">&lt;ogc:Literal&gt;</span>State Highway<span class="kw">&lt;/ogc:Literal&gt;</span>
+            <span class="kw">&lt;/ogc:PropertyIsEqualTo&gt;</span>
+          <span class="kw">&lt;/ogc:Filter&gt;</span>
+          <span class="kw">&lt;MaxScaleDenominator&gt;</span>1000000<span class="kw">&lt;/MaxScaleDenominator&gt;</span>
+          <span class="kw">&lt;LineSymbolizer&gt;</span>
+            <span class="kw">&lt;Stroke&gt;</span>
+              <span class="kw">&lt;CssParameter</span><span class="ot"> name=</span><span class="st">&quot;stroke&quot;</span><span class="kw">&gt;</span>
+                <span class="kw">&lt;ogc:Literal&gt;</span>#CCCCCC<span class="kw">&lt;/ogc:Literal&gt;</span>
+              <span class="kw">&lt;/CssParameter&gt;</span>
+              <span class="kw">&lt;CssParameter</span><span class="ot"> name=</span><span class="st">&quot;stroke-width&quot;</span><span class="kw">&gt;</span>
+                <span class="kw">&lt;ogc:Literal&gt;</span>2<span class="kw">&lt;/ogc:Literal&gt;</span>
+              <span class="kw">&lt;/CssParameter&gt;</span>
+            <span class="kw">&lt;/Stroke&gt;</span>
+          <span class="kw">&lt;/LineSymbolizer&gt;</span>
+        <span class="kw">&lt;/Rule&gt;</span>
+
+<span class="co">&lt;!-- US Highways --&gt;</span>
+        <span class="kw">&lt;Rule&gt;</span>
+            <span class="kw">&lt;Title&gt;</span>US Highways<span class="kw">&lt;/Title&gt;</span>
+            <span class="kw">&lt;ogc:Filter&gt;</span>
+            <span class="kw">&lt;ogc:PropertyIsEqualTo&gt;</span>
+                <span class="kw">&lt;ogc:PropertyName&gt;</span>TYPE<span class="kw">&lt;/ogc:PropertyName&gt;</span>
+                <span class="kw">&lt;ogc:Literal&gt;</span>US Highway<span class="kw">&lt;/ogc:Literal&gt;</span>
+            <span class="kw">&lt;/ogc:PropertyIsEqualTo&gt;</span>
+            <span class="kw">&lt;/ogc:Filter&gt;</span>
+            <span class="kw">&lt;MaxScaleDenominator&gt;</span>5000000<span class="kw">&lt;/MaxScaleDenominator&gt;</span>
+            <span class="kw">&lt;LineSymbolizer&gt;</span>
+            <span class="kw">&lt;Stroke&gt;</span>
+              <span class="kw">&lt;CssParameter</span><span class="ot"> name=</span><span class="st">&quot;stroke&quot;</span><span class="kw">&gt;</span>
+                <span class="kw">&lt;ogc:Literal&gt;</span>#ff0000<span class="kw">&lt;/ogc:Literal&gt;</span>
+              <span class="kw">&lt;/CssParameter&gt;</span>
+              <span class="kw">&lt;CssParameter</span><span class="ot"> name=</span><span class="st">&quot;stroke-width&quot;</span><span class="kw">&gt;</span>
+                <span class="kw">&lt;ogc:Literal&gt;</span>3<span class="kw">&lt;/ogc:Literal&gt;</span>
+              <span class="kw">&lt;/CssParameter&gt;</span>
+            <span class="kw">&lt;/Stroke&gt;</span>
+            <span class="kw">&lt;/LineSymbolizer&gt;</span>
+            <span class="kw">&lt;LineSymbolizer&gt;</span>
+            <span class="kw">&lt;Stroke&gt;</span>
+              <span class="kw">&lt;CssParameter</span><span class="ot"> name=</span><span class="st">&quot;stroke&quot;</span><span class="kw">&gt;</span>
+                <span class="kw">&lt;ogc:Literal&gt;</span>#CCCCCC<span class="kw">&lt;/ogc:Literal&gt;</span>
+              <span class="kw">&lt;/CssParameter&gt;</span>
+              <span class="kw">&lt;CssParameter</span><span class="ot"> name=</span><span class="st">&quot;stroke-width&quot;</span><span class="kw">&gt;</span>
+                <span class="kw">&lt;ogc:Literal&gt;</span>1<span class="kw">&lt;/ogc:Literal&gt;</span>
+              <span class="kw">&lt;/CssParameter&gt;</span>
+            <span class="kw">&lt;/Stroke&gt;</span>
+            <span class="kw">&lt;/LineSymbolizer&gt;</span>
+        <span class="kw">&lt;/Rule&gt;</span>
+
+<span class="co">&lt;!-- Interstate Highways --&gt;</span>
+        <span class="kw">&lt;Rule&gt;</span>
+          <span class="kw">&lt;Title&gt;</span>Interstates<span class="kw">&lt;/Title&gt;</span>
+          <span class="kw">&lt;ogc:Filter&gt;</span>
+            <span class="kw">&lt;ogc:PropertyIsEqualTo&gt;</span>
+              <span class="kw">&lt;ogc:PropertyName&gt;</span>TYPE<span class="kw">&lt;/ogc:PropertyName&gt;</span>
+              <span class="kw">&lt;ogc:Literal&gt;</span>Interstate<span class="kw">&lt;/ogc:Literal&gt;</span>
+            <span class="kw">&lt;/ogc:PropertyIsEqualTo&gt;</span>
+          <span class="kw">&lt;/ogc:Filter&gt;</span>
+          <span class="kw">&lt;LineSymbolizer&gt;</span>
+            <span class="kw">&lt;Stroke&gt;</span>
+              <span class="kw">&lt;CssParameter</span><span class="ot"> name=</span><span class="st">&quot;stroke&quot;</span><span class="kw">&gt;</span>
+                <span class="kw">&lt;ogc:Literal&gt;</span>#fcff00<span class="kw">&lt;/ogc:Literal&gt;</span>
+              <span class="kw">&lt;/CssParameter&gt;</span>
+              <span class="kw">&lt;CssParameter</span><span class="ot"> name=</span><span class="st">&quot;stroke-width&quot;</span><span class="kw">&gt;</span>
+                <span class="kw">&lt;ogc:Literal&gt;</span>5<span class="kw">&lt;/ogc:Literal&gt;</span>
+              <span class="kw">&lt;/CssParameter&gt;</span>
+            <span class="kw">&lt;/Stroke&gt;</span>
+          <span class="kw">&lt;/LineSymbolizer&gt;</span>
+          <span class="kw">&lt;LineSymbolizer&gt;</span>
+            <span class="kw">&lt;Stroke&gt;</span>
+              <span class="kw">&lt;CssParameter</span><span class="ot"> name=</span><span class="st">&quot;stroke&quot;</span><span class="kw">&gt;</span>
+                <span class="kw">&lt;ogc:Literal&gt;</span>#222222<span class="kw">&lt;/ogc:Literal&gt;</span>
+              <span class="kw">&lt;/CssParameter&gt;</span>
+              <span class="kw">&lt;CssParameter</span><span class="ot"> name=</span><span class="st">&quot;stroke-width&quot;</span><span class="kw">&gt;</span>
+                <span class="kw">&lt;ogc:Literal&gt;</span>3<span class="kw">&lt;/ogc:Literal&gt;</span>
+              <span class="kw">&lt;/CssParameter&gt;</span>
+            <span class="kw">&lt;/Stroke&gt;</span>
+          <span class="kw">&lt;/LineSymbolizer&gt;</span>
+        <span class="kw">&lt;/Rule&gt;</span>
+    <span class="kw">&lt;/FeatureTypeStyle&gt;</span>
+  <span class="kw">&lt;/UserStyle&gt;</span>
+<span class="kw">&lt;/NamedLayer&gt;</span>
+
+<span class="kw">&lt;/StyledLayerDescriptor&gt;</span></code></pre></div>
+<h3 id="demonstrations">Demonstrations</h3>
+<p>Class GeoServer Instance: <a href="http://geog485.unm.edu:8080/geoserver/web/" class="uri">http://geog485.unm.edu:8080/geoserver/web/</a></p>
+<p>SLD Creation Using QGIS: Link to the <a href="http://docs.qgis.org/2.8/en/docs/user_manual/working_with_vector/vector_properties.html#style-menu">QGIS Vector Properties Dialog</a> Documentation.</p>
 <!---------------------------------------------------------------------------->
 <!-- Week 15 ----------------------------------------------------------------->
-<!-- Lecture 02 c 01 a ------------------------------------------------------->
+<!-- Lecture 05 a 03 a ------------------------------------------------------->
 <!-- Web-based Mapping Clients------------------------------------------------>
 <!-- Integrating GeoServer OGC Services into OpenLayers Clients--------------->
 <!---------------------------------------------------------------------------->
-<!-- 
+<h1 id="module-5---ogc-services-and-styling-in-geoserver-1" class="module05a03a">Module 5 - OGC Services and Styling in GeoServer</h1>
+<h3 id="overview-11" class="module02c01a">Overview</h3>
+<ul>
+<li><p>Review of Raster Styling in GeoServer</p></li>
+<li><p>Raster Styling Demonstration</p></li>
+</ul>
+<h3 id="raster-symbolizer---review">Raster Symbolizer - Review</h3>
+<div class="sourceCode" id="rasterSymbolizerElements"><pre class="sourceCode xml"><code class="sourceCode xml"><span class="kw">&lt;Opacity&gt;</span>
+<span class="kw">&lt;ColorMap</span><span class="ot"> type=</span><span class="er">ramp|values|intervals</span> <span class="er">extended=true|false</span> <span class="er">/&gt;</span>
+  <span class="er">&lt;ColorMapEntry</span> <span class="er">color=</span><span class="st">&quot;&quot;</span><span class="ot"> quantity=</span><span class="st">&quot;&quot;</span><span class="ot"> label=</span><span class="st">&quot;&quot;</span><span class="ot"> opacity=</span><span class="st">&quot;&quot;</span><span class="kw">/&gt;</span>
+<span class="kw">&lt;ChannelSelection&gt;</span>
+  <span class="kw">&lt;RedChannel&gt;</span> <span class="kw">&lt;GreenChannel&gt;</span> <span class="kw">&lt;BlueChannel&gt;</span>
+    <span class="kw">&lt;SourceChannelName&gt;</span>
+  <span class="kw">&lt;GrayChannel&gt;</span>
+    <span class="kw">&lt;SourceChannelName&gt;</span>
+<span class="kw">&lt;ContrastEnhancement&gt;</span>
+<span class="kw">&lt;ShadedRelief&gt;</span> (not implemented in ver 2.0)
+<span class="kw">&lt;OverlapBehavior&gt;</span> (not implemented in ver 2.0)
+<span class="kw">&lt;ImageOutline&gt;</span> (not implemented in ver 2.0)</code></pre></div>
+<h3 id="sample-raster-sld-for-color-map-examples">Sample Raster SLD for Color Map Examples</h3>
+<div class="sourceCode" id="simpleRasterSymbolizer"><pre class="sourceCode xml"><code class="sourceCode xml"><span class="kw">&lt;?xml</span> version=&quot;1.0&quot; encoding=&quot;ISO-8859-1&quot;<span class="kw">?&gt;</span>
+<span class="kw">&lt;StyledLayerDescriptor</span><span class="ot"> version=</span><span class="st">&quot;1.0.0&quot;</span> 
+<span class="ot">  xsi:schemaLocation=</span><span class="st">&quot;http://www.opengis.net/sld StyledLayerDescriptor.xsd&quot;</span> 
+<span class="ot">  xmlns=</span><span class="st">&quot;http://www.opengis.net/sld&quot;</span> 
+<span class="ot">  xmlns:ogc=</span><span class="st">&quot;http://www.opengis.net/ogc&quot;</span> 
+<span class="ot">  xmlns:xlink=</span><span class="st">&quot;http://www.w3.org/1999/xlink&quot;</span> 
+<span class="ot">  xmlns:xsi=</span><span class="st">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span><span class="kw">&gt;</span>
 
-# GEOG 485L/585L Module 2c - Web-based Mapping Clients - Integrating GeoServer OGC Services into OpenLayers Clients# {.module02c01a}
+<span class="kw">&lt;NamedLayer&gt;</span>
+<span class="kw">&lt;Name&gt;</span>ElevationData<span class="kw">&lt;/Name&gt;</span>
+  <span class="kw">&lt;UserStyle&gt;</span>
+    <span class="kw">&lt;Name&gt;</span>dem<span class="kw">&lt;/Name&gt;</span>
+    <span class="kw">&lt;Title&gt;</span>Simple DEM style<span class="kw">&lt;/Title&gt;</span>
+    <span class="kw">&lt;Abstract&gt;</span>Classic elevation color progression<span class="kw">&lt;/Abstract&gt;</span>
+    <span class="kw">&lt;FeatureTypeStyle&gt;</span>
+      <span class="kw">&lt;Rule&gt;</span>
+        <span class="kw">&lt;RasterSymbolizer&gt;</span>
+          <span class="kw">&lt;Opacity&gt;</span>1.0<span class="kw">&lt;/Opacity&gt;</span>
+          <span class="kw">&lt;ColorMap&gt;</span>
+            <span class="kw">&lt;ColorMapEntry</span><span class="ot"> color=</span><span class="st">&quot;#000000&quot;</span><span class="ot"> quantity=</span><span class="st">&quot;-500&quot;</span><span class="ot"> label=</span><span class="st">&quot;nodata&quot;</span><span class="ot"> opacity=</span><span class="st">&quot;0.0&quot;</span> <span class="kw">/&gt;</span>
+            <span class="kw">&lt;ColorMapEntry</span><span class="ot"> color=</span><span class="st">&quot;#AAFFAA&quot;</span><span class="ot"> quantity=</span><span class="st">&quot;0&quot;</span><span class="ot"> label=</span><span class="st">&quot;0&quot;</span> <span class="kw">/&gt;</span>
+            <span class="kw">&lt;ColorMapEntry</span><span class="ot"> color=</span><span class="st">&quot;#00FF00&quot;</span><span class="ot"> quantity=</span><span class="st">&quot;1000&quot;</span><span class="ot"> label=</span><span class="st">&quot;1000&quot;</span><span class="kw">/&gt;</span>
+            <span class="kw">&lt;ColorMapEntry</span><span class="ot"> color=</span><span class="st">&quot;#FFFF00&quot;</span><span class="ot"> quantity=</span><span class="st">&quot;1200&quot;</span><span class="ot"> label=</span><span class="st">&quot;1200&quot;</span> <span class="kw">/&gt;</span>
+            <span class="kw">&lt;ColorMapEntry</span><span class="ot"> color=</span><span class="st">&quot;#FF7F00&quot;</span><span class="ot"> quantity=</span><span class="st">&quot;1400&quot;</span><span class="ot"> label=</span><span class="st">&quot;1400&quot;</span> <span class="kw">/&gt;</span>
+            <span class="kw">&lt;ColorMapEntry</span><span class="ot"> color=</span><span class="st">&quot;#BF7F3F&quot;</span><span class="ot"> quantity=</span><span class="st">&quot;1600&quot;</span><span class="ot"> label=</span><span class="st">&quot;1600&quot;</span> <span class="kw">/&gt;</span>
+            <span class="kw">&lt;ColorMapEntry</span><span class="ot"> color=</span><span class="st">&quot;#99CC66&quot;</span><span class="ot"> quantity=</span><span class="st">&quot;2000&quot;</span><span class="ot"> label=</span><span class="st">&quot;2000&quot;</span> <span class="kw">/&gt;</span>
+            <span class="kw">&lt;ColorMapEntry</span><span class="ot"> color=</span><span class="st">&quot;#336633&quot;</span><span class="ot"> quantity=</span><span class="st">&quot;2500&quot;</span><span class="ot"> label=</span><span class="st">&quot;2500&quot;</span> <span class="kw">/&gt;</span>
+            <span class="kw">&lt;ColorMapEntry</span><span class="ot"> color=</span><span class="st">&quot;#006600&quot;</span><span class="ot"> quantity=</span><span class="st">&quot;3000&quot;</span><span class="ot"> label=</span><span class="st">&quot;3000&quot;</span> <span class="kw">/&gt;</span>
+            <span class="kw">&lt;ColorMapEntry</span><span class="ot"> color=</span><span class="st">&quot;#FFFFFF&quot;</span><span class="ot"> quantity=</span><span class="st">&quot;3500&quot;</span><span class="ot"> label=</span><span class="st">&quot;3500&quot;</span> <span class="kw">/&gt;</span>
+          <span class="kw">&lt;/ColorMap&gt;</span>
+        <span class="kw">&lt;/RasterSymbolizer&gt;</span>
+      <span class="kw">&lt;/Rule&gt;</span>
+    <span class="kw">&lt;/FeatureTypeStyle&gt;</span>
+  <span class="kw">&lt;/UserStyle&gt;</span>
 
-### Overview ###  {.module02c01a}
 
- -->
-<hr />
+<span class="kw">&lt;/NamedLayer&gt;</span>
+<span class="kw">&lt;/StyledLayerDescriptor&gt;</span></code></pre></div>
+<h3 id="colormap-types">ColorMap Types</h3>
+<pre><code>&lt;ColorMap&gt; or &lt;ColorMap type=&quot;ramp&quot;&gt;
+
+&lt;ColorMap type=&quot;intervals&quot;&gt;
+
+&lt;ColorMap type=&quot;values&quot;&gt;</code></pre>
+<h3 id="extend-or-not-to-extend">Extend or Not To Extend?</h3>
+<div class="sourceCode" id="extendedRamp"><pre class="sourceCode xml"><code class="sourceCode xml"><span class="kw">&lt;ColorMap</span><span class="ot"> type=</span><span class="st">&quot;ramp&quot;</span><span class="ot"> extended=</span><span class="st">&quot;false&quot;</span><span class="kw">&gt;</span>  = 256 colors in ramp (default)
+<span class="kw">&lt;ColorMap</span><span class="ot"> type=</span><span class="st">&quot;ramp&quot;</span><span class="ot"> extended=</span><span class="st">&quot;true&quot;</span><span class="kw">&gt;</span> = 65536 colors in ramp</code></pre></div>
+<h3 id="opacity">Opacity</h3>
+<p>Options for defining <code>opacity</code> appear in two places in the <em>raster symbolizer</em>.</p>
+<p>At the level of the entire raster dataset</p>
+<div class="sourceCode" id="opacityRasterSymbolizerElement"><pre class="sourceCode xml"><code class="sourceCode xml"><span class="kw">&lt;Opacity&gt;</span>0.5<span class="kw">&lt;/Opacity&gt;</span></code></pre></div>
+<p>Within a <code>ColorMapEntry</code> for a specific color definition within a <code>ColorMap</code></p>
+<div class="sourceCode" id="opacityColorMapEntry"><pre class="sourceCode xml"><code class="sourceCode xml"><span class="kw">&lt;ColorMap&gt;</span>
+   <span class="kw">&lt;ColorMapEntry</span><span class="ot"> color=</span><span class="st">&quot;#000000&quot;</span><span class="ot"> quantity=</span><span class="st">&quot;-500&quot;</span><span class="ot"> label=</span><span class="st">&quot;nodata&quot;</span><span class="ot"> opacity=</span><span class="st">&quot;0.0&quot;</span> <span class="kw">/&gt;</span>
+   <span class="kw">&lt;ColorMapEntry</span><span class="ot"> color=</span><span class="st">&quot;#AAFFAA&quot;</span><span class="ot"> quantity=</span><span class="st">&quot;0&quot;</span><span class="ot"> label=</span><span class="st">&quot;0&quot;</span> <span class="kw">/&gt;</span>
+   <span class="kw">&lt;ColorMapEntry</span><span class="ot"> color=</span><span class="st">&quot;#00FF00&quot;</span><span class="ot"> quantity=</span><span class="st">&quot;1000&quot;</span><span class="ot"> label=</span><span class="st">&quot;1000&quot;</span><span class="kw">/&gt;</span>
+   ...
+   <span class="kw">&lt;ColorMapEntry</span><span class="ot"> color=</span><span class="st">&quot;#FFFFFF&quot;</span><span class="ot"> quantity=</span><span class="st">&quot;3500&quot;</span><span class="ot"> label=</span><span class="st">&quot;3500&quot;</span> <span class="kw">/&gt;</span>
+<span class="kw">&lt;/ColorMap&gt;</span></code></pre></div>
+<h3 id="channel-selection">Channel Selection</h3>
+<p>Many raster datasets contain multiple <em>bands</em> of values which may be viewed individually or assigned to the colors <em>red</em>, <em>green</em>, and <em>blue</em> to generate a color image representing a combination of band values. GeoServer allows for the specification of a single band for display as a <code>GrayChannel</code> or three bands as <code>RedChannel</code>, <code>GreenChannel</code>, and <code>BlueChannel</code>.</p>
+<div class="sourceCode" id="channelSelection"><pre class="sourceCode xml"><code class="sourceCode xml"><span class="kw">&lt;?xml</span> version=&quot;1.0&quot; encoding=&quot;ISO-8859-1&quot;<span class="kw">?&gt;</span>
+<span class="kw">&lt;StyledLayerDescriptor</span><span class="ot"> version=</span><span class="st">&quot;1.0.0&quot;</span> 
+<span class="ot">  xsi:schemaLocation=</span><span class="st">&quot;http://www.opengis.net/sld StyledLayerDescriptor.xsd&quot;</span> 
+<span class="ot">  xmlns=</span><span class="st">&quot;http://www.opengis.net/sld&quot;</span> 
+<span class="ot">  xmlns:ogc=</span><span class="st">&quot;http://www.opengis.net/ogc&quot;</span> 
+<span class="ot">  xmlns:xlink=</span><span class="st">&quot;http://www.w3.org/1999/xlink&quot;</span> 
+<span class="ot">  xmlns:xsi=</span><span class="st">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span><span class="kw">&gt;</span>
+
+<span class="kw">&lt;NamedLayer&gt;</span>
+<span class="kw">&lt;Name&gt;</span>DOQQBands<span class="kw">&lt;/Name&gt;</span>
+  <span class="kw">&lt;UserStyle&gt;</span>
+    <span class="kw">&lt;Name&gt;</span>DOQQ321<span class="kw">&lt;/Name&gt;</span>
+    <span class="kw">&lt;Title&gt;</span>Simple DEM style<span class="kw">&lt;/Title&gt;</span>
+    <span class="kw">&lt;Abstract&gt;</span>Classic elevation color progression<span class="kw">&lt;/Abstract&gt;</span>
+    <span class="kw">&lt;FeatureTypeStyle&gt;</span>
+      <span class="kw">&lt;Rule&gt;</span>
+        <span class="kw">&lt;RasterSymbolizer&gt;</span>
+         <span class="kw">&lt;ChannelSelection&gt;</span>
+          <span class="kw">&lt;RedChannel&gt;</span>
+            <span class="kw">&lt;SourceChannelName&gt;</span>3<span class="kw">&lt;/SourceChannelName&gt;</span>
+          <span class="kw">&lt;/RedChannel&gt;</span>
+          <span class="kw">&lt;GreenChannel&gt;</span>
+            <span class="kw">&lt;SourceChannelName&gt;</span>2<span class="kw">&lt;/SourceChannelName&gt;</span>
+          <span class="kw">&lt;/GreenChannel&gt;</span>
+          <span class="kw">&lt;BlueChannel&gt;</span>
+            <span class="kw">&lt;SourceChannelName&gt;</span>1<span class="kw">&lt;/SourceChannelName&gt;</span>
+          <span class="kw">&lt;/BlueChannel&gt;</span>
+         <span class="kw">&lt;/ChannelSelection&gt;</span>
+        <span class="kw">&lt;/RasterSymbolizer&gt;</span>
+      <span class="kw">&lt;/Rule&gt;</span>
+    <span class="kw">&lt;/FeatureTypeStyle&gt;</span>
+  <span class="kw">&lt;/UserStyle&gt;</span>
+
+
+<span class="kw">&lt;/NamedLayer&gt;</span>
+<span class="kw">&lt;/StyledLayerDescriptor&gt;</span></code></pre></div>
+<h3 id="contrast-enhancement">Contrast Enhancement</h3>
+<p>Some raster data may need adjustment to increase the contrast (the range between the darkest and lightest values) displayed. GeoServer provides three options for contrast enhancement, each of which have a different effect on the resulting image.</p>
+<dl>
+<dt>Histogram</dt>
+<dd>The values are stretched so that an equal number of pixels fall into each color in the range
+</dd>
+<dt>Normalize</dt>
+<dd>The minimum and maximum brightness values are mapped to the minimum and maximum raster values
+</dd>
+<dt>Gamma</dt>
+<dd>The image is brightened or darkened by a specified factor (negative numbers darken, positive numbers brighten)
+</dd>
+</dl>
+<h3 id="sample-contrast-enhancement-sld-for-examples">Sample Contrast Enhancement SLD for Examples</h3>
+<div class="sourceCode" id="contrastEnhancement"><pre class="sourceCode xml"><code class="sourceCode xml"><span class="kw">&lt;RasterSymbolizer&gt;</span>
+  <span class="kw">&lt;Opacity&gt;</span>1.0<span class="kw">&lt;/Opacity&gt;</span>
+  <span class="kw">&lt;ChannelSelection&gt;</span>
+    <span class="kw">&lt;RedChannel&gt;</span>
+      <span class="kw">&lt;SourceChannelName&gt;</span>1<span class="kw">&lt;/SourceChannelName&gt;</span>
+      <span class="kw">&lt;ContrastEnhancement&gt;</span>
+      <span class="kw">&lt;Histogram/&gt;</span>
+      <span class="kw">&lt;/ContrastEnhancement&gt;</span>
+    <span class="kw">&lt;/RedChannel&gt;</span>
+    <span class="kw">&lt;GreenChannel&gt;</span>
+      <span class="kw">&lt;SourceChannelName&gt;</span>2<span class="kw">&lt;/SourceChannelName&gt;</span>
+      <span class="kw">&lt;ContrastEnhancement&gt;</span>
+      <span class="kw">&lt;Histogram/&gt;</span>
+      <span class="kw">&lt;/ContrastEnhancement&gt;</span>
+    <span class="kw">&lt;/GreenChannel&gt;</span>
+    <span class="kw">&lt;BlueChannel&gt;</span>
+      <span class="kw">&lt;SourceChannelName&gt;</span>3<span class="kw">&lt;/SourceChannelName&gt;</span>
+      <span class="kw">&lt;ContrastEnhancement&gt;</span>
+      <span class="kw">&lt;Histogram/&gt;</span>
+      <span class="kw">&lt;/ContrastEnhancement&gt;</span>
+    <span class="kw">&lt;/BlueChannel&gt;</span>
+  <span class="kw">&lt;/ChannelSelection&gt;</span>
+<span class="kw">&lt;/RasterSymbolizer&gt;</span></code></pre></div>
+<div class="sourceCode" id="contrastEnhancementNormalize"><pre class="sourceCode xml"><code class="sourceCode xml"><span class="kw">&lt;ContrastEnhancement&gt;</span>
+  <span class="kw">&lt;Normalize/&gt;</span>
+<span class="kw">&lt;/ContrastEnhancement&gt;</span></code></pre></div>
+<div class="sourceCode" id="contrastEnhancementHistogram"><pre class="sourceCode xml"><code class="sourceCode xml"><span class="kw">&lt;ContrastEnhancement&gt;</span>
+  <span class="kw">&lt;Histogram/&gt;</span>
+<span class="kw">&lt;/ContrastEnhancement&gt;</span></code></pre></div>
+<div class="sourceCode" id="contrastEnhancementGamma"><pre class="sourceCode xml"><code class="sourceCode xml"><span class="kw">&lt;ContrastEnhancement&gt;</span>
+  <span class="kw">&lt;GammaValue&gt;</span>.5<span class="kw">&lt;/GammaValue&gt;</span>
+<span class="kw">&lt;/ContrastEnhancement&gt;</span></code></pre></div>
+<h3 id="geoserver-demoqa">GeoServer Demo/Q&amp;A</h3>
+<h2 id="class-geoserver-instance-httpgeog485.unm.edu8080geoserverweb">Class GeoServer Instance: <a href="http://geog485.unm.edu:8080/geoserver/web/" class="uri">http://geog485.unm.edu:8080/geoserver/web/</a></h2>
 <div class="license">
 <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />This work by <span xmlns:cc="http://creativecommons.org/ns#" property="cc:attributionName">Karl Benedict</span> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
 </div>
