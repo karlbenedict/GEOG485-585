@@ -108,7 +108,7 @@ one or more <NamedLayer> ...  </NamedLayer> elements
 ![Sample simple styled point layer](images/point_simplepoint.png)
 
 
-SLD Snippet ([Full SLD](http://karlbenedict.com/GEOG485-585/lectures/examples/sld_cookbook/point_simplepoint.sld))
+SLD Snippet ([Full SLD](https://github.com/UNM-GEOG-485-585/class-materials/blob/master/sample-files/SLD/point_simplepoint.sld))
 
 ~~~~~~~~~~ {#sampleSLD_simplePoint .xml }
 <NamedLayer>
@@ -139,7 +139,7 @@ SLD Snippet ([Full SLD](http://karlbenedict.com/GEOG485-585/lectures/examples/sl
 
 ![Sample simple styled line layer](images/line_simpleline.png)
 
-SLD Snippet ([Full SLD](http://karlbenedict.com/GEOG485-585/lectures/examples/sld_cookbook/line_simpleline.sld))
+SLD Snippet ([Full SLD](https://github.com/UNM-GEOG-485-585/class-materials/blob/master/sample-files/SLD/line_simpleline.sld))
 
 ~~~~~~~~~~ {#sampleSLD_simpleLine .xml }
 <NamedLayer>
@@ -165,7 +165,7 @@ SLD Snippet ([Full SLD](http://karlbenedict.com/GEOG485-585/lectures/examples/sl
 
 ![Sample simple styled polygon layer](images/polygon_simplepolygon.png)
 
-SLD Snippet ([Full SLD](http://karlbenedict.com/GEOG485-585/lectures/examples/sld_cookbook/polygon_simplepolygon.sld))
+SLD Snippet ([Full SLD](https://github.com/UNM-GEOG-485-585/class-materials/blob/master/sample-files/SLD/polygon_simplepolygon.sld))
 
 ~~~~~~~~~~ {#sampleSLD_simplepoly .xml }
 <NamedLayer>
@@ -190,7 +190,7 @@ SLD Snippet ([Full SLD](http://karlbenedict.com/GEOG485-585/lectures/examples/sl
 
 ![Sample simple styled raster layer](images/raster_twocolorgradient.png)
 
-SLD Snippet ([Full SLD](http://karlbenedict.com/GEOG485-585/lectures/examples/sld_cookbook/raster_twocolorgradient.sld))
+SLD Snippet ([Full SLD](https://github.com/UNM-GEOG-485-585/class-materials/blob/master/sample-files/SLD/raster_twocolorgradient.sld))
 
 ~~~~~~~~~~ {#sampleSLD_simpleraster .xml }
 <NamedLayer>
@@ -348,7 +348,7 @@ ogrinfo -fields=YES -geom=NO kb_gpsrdsdd.shp kb_gpsrdsdd
 
 Where this command requests that the fields and their values be displayed, but that the detailed geometry information (i.e. all of the nodes associated with each feature) be suppressed in the output
 
-[Full SLD](examples/SimpleRoads.sld)
+[Full SLD](https://github.com/UNM-GEOG-485-585/class-materials/blob/master/sample-files/SLD/SimpleRoads.sld)
 
 
 ~~~~~~~~~~ {#styledNMRoads .xml }
@@ -463,7 +463,7 @@ Where this command requests that the fields and their values be displayed, but t
 The only change needed to introduce scale-dependencies into styles is to include `<MaxScaleDenominator>` or `<MinScaleDenominator>` elements within a rule where they should be applied. These elements should be placed just before the symbolizer element so that GeoServer can properly validate the provided SLD. 
 
 
-[Full SLD](sample-files/SLD/SimpleRoadsScaled.sld)\ 
+[Full SLD](https://github.com/UNM-GEOG-485-585/class-materials/blob/master/sample-files/SLD/SimpleRoadsScaled.sld)\ 
 
 ~~~~~~~~~~ {#attributeFilterWscale_highways .xml }
 <?xml version="1.0" encoding="ISO-8859-1"?>

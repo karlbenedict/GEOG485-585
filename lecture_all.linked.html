@@ -323,7 +323,10 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li><a href="#contrast-enhancement">Contrast Enhancement</a></li>
 <li><a href="#sample-contrast-enhancement-sld-for-examples">Sample Contrast Enhancement SLD for Examples</a></li>
 <li><a href="#geoserver-demoqa">GeoServer Demo/Q&amp;A</a></li>
-<li><a href="#class-geoserver-instance-httpgeog485.unm.edu8080geoserverweb">Class GeoServer Instance: <a href="http://geog485.unm.edu:8080/geoserver/web/" class="uri">http://geog485.unm.edu:8080/geoserver/web/</a></a></li>
+</ul></li>
+<li><a href="#epilogue---geography-485l585l-closing-comments-and-next-steps">Epilogue - Geography 485L/585L Closing Comments and Next Steps</a><ul>
+<li><a href="#what-weve-done-...">What We've Done ...</a></li>
+<li><a href="#where-do-you-go-from-here">Where Do You Go From Here?</a></li>
 </ul></li>
 </ul>
 </div>
@@ -5695,7 +5698,7 @@ one or more <span class="kw">&lt;NamedLayer&gt;</span> ...  <span class="kw">&lt
 <img src="images/point_simplepoint.png" alt="Sample simple styled point layer" />
 <p class="caption">Sample simple styled point layer</p>
 </div>
-<p>SLD Snippet (<a href="http://karlbenedict.com/GEOG485-585/lectures/examples/sld_cookbook/point_simplepoint.sld">Full SLD</a>)</p>
+<p>SLD Snippet (<a href="https://github.com/UNM-GEOG-485-585/class-materials/blob/master/sample-files/SLD/point_simplepoint.sld">Full SLD</a>)</p>
 <div class="sourceCode" id="sampleSLD_simplePoint"><pre class="sourceCode xml"><code class="sourceCode xml"><span class="kw">&lt;NamedLayer&gt;</span>
   <span class="kw">&lt;Name&gt;</span>Simple Point<span class="kw">&lt;/Name&gt;</span>
   <span class="kw">&lt;UserStyle&gt;</span>
@@ -5722,7 +5725,7 @@ one or more <span class="kw">&lt;NamedLayer&gt;</span> ...  <span class="kw">&lt
 <img src="images/line_simpleline.png" alt="Sample simple styled line layer" />
 <p class="caption">Sample simple styled line layer</p>
 </div>
-<p>SLD Snippet (<a href="http://karlbenedict.com/GEOG485-585/lectures/examples/sld_cookbook/line_simpleline.sld">Full SLD</a>)</p>
+<p>SLD Snippet (<a href="https://github.com/UNM-GEOG-485-585/class-materials/blob/master/sample-files/SLD/line_simpleline.sld">Full SLD</a>)</p>
 <div class="sourceCode" id="sampleSLD_simpleLine"><pre class="sourceCode xml"><code class="sourceCode xml"><span class="kw">&lt;NamedLayer&gt;</span>
   <span class="kw">&lt;Name&gt;</span>Simple Line<span class="kw">&lt;/Name&gt;</span>
   <span class="kw">&lt;UserStyle&gt;</span>
@@ -5744,7 +5747,7 @@ one or more <span class="kw">&lt;NamedLayer&gt;</span> ...  <span class="kw">&lt
 <img src="images/polygon_simplepolygon.png" alt="Sample simple styled polygon layer" />
 <p class="caption">Sample simple styled polygon layer</p>
 </div>
-<p>SLD Snippet (<a href="http://karlbenedict.com/GEOG485-585/lectures/examples/sld_cookbook/polygon_simplepolygon.sld">Full SLD</a>)</p>
+<p>SLD Snippet (<a href="https://github.com/UNM-GEOG-485-585/class-materials/blob/master/sample-files/SLD/polygon_simplepolygon.sld">Full SLD</a>)</p>
 <div class="sourceCode" id="sampleSLD_simplepoly"><pre class="sourceCode xml"><code class="sourceCode xml"><span class="kw">&lt;NamedLayer&gt;</span>
   <span class="kw">&lt;Name&gt;</span>Simple polygon<span class="kw">&lt;/Name&gt;</span>
   <span class="kw">&lt;UserStyle&gt;</span>
@@ -5765,7 +5768,7 @@ one or more <span class="kw">&lt;NamedLayer&gt;</span> ...  <span class="kw">&lt
 <img src="images/raster_twocolorgradient.png" alt="Sample simple styled raster layer" />
 <p class="caption">Sample simple styled raster layer</p>
 </div>
-<p>SLD Snippet (<a href="http://karlbenedict.com/GEOG485-585/lectures/examples/sld_cookbook/raster_twocolorgradient.sld">Full SLD</a>)</p>
+<p>SLD Snippet (<a href="https://github.com/UNM-GEOG-485-585/class-materials/blob/master/sample-files/SLD/raster_twocolorgradient.sld">Full SLD</a>)</p>
 <div class="sourceCode" id="sampleSLD_simpleraster"><pre class="sourceCode xml"><code class="sourceCode xml"><span class="kw">&lt;NamedLayer&gt;</span>
   <span class="kw">&lt;Name&gt;</span>Two color gradient<span class="kw">&lt;/Name&gt;</span>
   <span class="kw">&lt;UserStyle&gt;</span>
@@ -5868,7 +5871,7 @@ one or more <span class="kw">&lt;NamedLayer&gt;</span> ...  <span class="kw">&lt
 <p>For example:</p>
 <pre><code>ogrinfo -fields=YES -geom=NO kb_gpsrdsdd.shp kb_gpsrdsdd</code></pre>
 <p>Where this command requests that the fields and their values be displayed, but that the detailed geometry information (i.e. all of the nodes associated with each feature) be suppressed in the output</p>
-<p><a href="examples/SimpleRoads.sld">Full SLD</a></p>
+<p><a href="https://github.com/UNM-GEOG-485-585/class-materials/blob/master/sample-files/SLD/SimpleRoads.sld">Full SLD</a></p>
 <div class="sourceCode" id="styledNMRoads"><pre class="sourceCode xml"><code class="sourceCode xml"><span class="kw">&lt;?xml</span> version=&quot;1.0&quot; encoding=&quot;ISO-8859-1&quot;<span class="kw">?&gt;</span>
 <span class="kw">&lt;StyledLayerDescriptor</span><span class="ot"> version=</span><span class="st">&quot;1.0.0&quot;</span> 
 <span class="ot">  xsi:schemaLocation=</span><span class="st">&quot;http://www.opengis.net/sld StyledLayerDescriptor.xsd&quot;</span> 
@@ -5971,7 +5974,7 @@ one or more <span class="kw">&lt;NamedLayer&gt;</span> ...  <span class="kw">&lt
 <span class="kw">&lt;/StyledLayerDescriptor&gt;</span></code></pre></div>
 <h3 id="attributeFilterWscaleFactor_01">Attribute Filter with Scale Factor</h3>
 <p>The only change needed to introduce scale-dependencies into styles is to include <code>&lt;MaxScaleDenominator&gt;</code> or <code>&lt;MinScaleDenominator&gt;</code> elements within a rule where they should be applied. These elements should be placed just before the symbolizer element so that GeoServer can properly validate the provided SLD.</p>
-<p><a href="sample-files/SLD/SimpleRoadsScaled.sld">Full SLD</a> </p>
+<p><a href="https://github.com/UNM-GEOG-485-585/class-materials/blob/master/sample-files/SLD/SimpleRoadsScaled.sld">Full SLD</a> </p>
 <div class="sourceCode" id="attributeFilterWscale_highways"><pre class="sourceCode xml"><code class="sourceCode xml"><span class="kw">&lt;?xml</span> version=&quot;1.0&quot; encoding=&quot;ISO-8859-1&quot;<span class="kw">?&gt;</span>
 <span class="kw">&lt;StyledLayerDescriptor</span><span class="ot"> version=</span><span class="st">&quot;1.0.0&quot;</span> 
 <span class="ot">  xsi:schemaLocation=</span><span class="st">&quot;http://www.opengis.net/sld StyledLayerDescriptor.xsd&quot;</span> 
@@ -6247,7 +6250,38 @@ one or more <span class="kw">&lt;NamedLayer&gt;</span> ...  <span class="kw">&lt
   <span class="kw">&lt;GammaValue&gt;</span>.5<span class="kw">&lt;/GammaValue&gt;</span>
 <span class="kw">&lt;/ContrastEnhancement&gt;</span></code></pre></div>
 <h3 id="geoserver-demoqa">GeoServer Demo/Q&amp;A</h3>
-<h2 id="class-geoserver-instance-httpgeog485.unm.edu8080geoserverweb">Class GeoServer Instance: <a href="http://geog485.unm.edu:8080/geoserver/web/" class="uri">http://geog485.unm.edu:8080/geoserver/web/</a></h2>
+<p>Class GeoServer Instance: <a href="http://geog485.unm.edu:8080/geoserver/web/" class="uri">http://geog485.unm.edu:8080/geoserver/web/</a></p>
+<h1 id="epilogue---geography-485l585l-closing-comments-and-next-steps">Epilogue - Geography 485L/585L Closing Comments and Next Steps</h1>
+<h3 id="what-weve-done-...">What We've Done ...</h3>
+<ul>
+<li>Developed basic web pages</li>
+<li>Learned how to publish our content using GitHub</li>
+<li>Developed basic interactive maps based on the Google Maps API and OpenLayers</li>
+<li>Learned about the key data visualization and data access standards from the Open Geospatial Consortium
+<ul>
+<li>WMS, WFS, WCS</li>
+</ul></li>
+<li>Used those visualization and data access services in desktop GIS applications</li>
+<li>Published data using those standards, and done basic styling of those data</li>
+</ul>
+<p>Whew!!! That's a bunch of work for 16 weeks. Good Job.</p>
+<h3 id="where-do-you-go-from-here">Where Do You Go From Here?</h3>
+<ul>
+<li>Establish your own identity on the internet by getting your own domain name (e.g. <a href="https://www.hover.com/">Hover.com</a>, <a href="http://www.godaddy.com/">GoDaddy</a> and many others</li>
+<li>Build your personal web site focusing on what interests you (published through GitHub or any other web hosting provider)</li>
+<li>Continue experimenting with interactive mapping - using the Google Maps API, OpenLayers or another framework that interests you. Some additional candidates include:
+<ul>
+<li>The ArcGIS <a href="https://developers.arcgis.com/javascript/">Javascript API</a></li>
+<li><a href="http://leafletjs.com/">Leaflet</a> Javascript Framework</li>
+</ul></li>
+<li>Publish your own data (you will need a server e.g. <a href="https://aws.amazon.com/ec2/">Amazon EC2</a>, <a href="http://cari.net/">Cari.net</a>, <a href="http://www.mapserverpro.com/cr-articles/mapserver_hosting.php">MapServerPro</a>, <a href="http://www.acugis.com/about-us.htm">AcuGIS</a>, <a href="http://www.geocortex.com/arcgis-server-services/arcgis-server-hosting/">Geocortex</a>) using GeoServer or another platform like:
+<ul>
+<li><a href="http://mapserver.org/">MapServer</a></li>
+<li><a href="http://www.esri.com/software/arcgis/arcgisserver">ArcGIS Server</a></li>
+<li><a href="http://doc.arcgis.com/en/arcgis-online/reference/arcgis-server-services.htm">ArcGIS Online</a></li>
+</ul></li>
+</ul>
+<hr />
 <div class="license">
 <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />This work by <span xmlns:cc="http://creativecommons.org/ns#" property="cc:attributionName">Karl Benedict</span> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
 </div>
