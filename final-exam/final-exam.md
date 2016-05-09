@@ -24,6 +24,8 @@ The GetCapabilities request for your workspace on the GeoServer instance we are 
 
 	http://geog485.unm.edu:8080/geoserver/<your workspace name>
 	/wms?service=WMS&version=1.1.1&request=GetCapabilities
+	
+(added 5/9/2016 08:20) If you are having connection problems try replacing the hostname `geog485.unm.edu` with the IP address `129.24.65.137` of the server. 
 
 For example (again, ignore the line break):
 
