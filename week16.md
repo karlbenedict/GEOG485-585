@@ -14,3 +14,5 @@
 
 ## Peer Review - ## {#week16-peerReview}
 -->
+
+# Week 16 - Course Review and Emerging Technologies Discussion

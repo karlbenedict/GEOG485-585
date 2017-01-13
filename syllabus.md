@@ -206,7 +206,7 @@ Module 4a - *Interoperability Standards*
 *	Week 6 - February 20-26. WMS, KML, and XML  (Virtual class session - no regular office hours)
 *	Week 7 - February 27 - March 5. WFS & WCS (Recorded demonstration - no regular office hours)
 
-*Mid-term Exam* and *Portfolio Review* - Portfolio must be ready for review before March 7
+*Mid-term Exam* and *Portfolio Review* - Portfolio must be submitted for review by 5:00 pm on Friday March 10
 
 *	Week 8 - March 6-12 (*Exam Due by 5:00 pm on March 10*)
 
@@ -214,28 +214,25 @@ Module 4a - *Interoperability Standards*
 
 Module 2b - *Web-based Mapping Clients*
 
-*	Week 9, 10 - March 20 - April 2. OpenLayers Javascript Framework (Peer Review)
+*	Week 10, 11 - March 20 - April 2. OpenLayers Javascript Framework (Peer Review)
 
 Module 4b - *Interoperability Standards*
 
-*	Week 11 - April 3-9. Desktop GIS Integration (Virtual Class session on April 5 - no regular office hours)
+*	Week 12 - April 3-9. Desktop GIS Integration (Virtual Class session on April 5 - no regular office hours)
 
 Module 5 - *Developing and Hosting OGC Services*
 
-*	Week 12 - April 10-16. Platforms and GeoServer Introduction
-*	Week 13 - April 17-23. OGC services and styling in GeoServer
-
-Module 2c - *Web-based Mapping Clients*
-
-*	Week 14 - April 24-30. Integrating GeoServer OGC Services into OpenLayers clients  (Peer Review)
+*	Week 13 - April 10-16. Platforms and GeoServer Introduction
+*	Week 14 - April 17-23. OGC services and styling in GeoServer
+*	Week 15 - April 24-30. OGC services and styling in GeoServer - Integration into an OpenLayers Client  (Peer Review)
 
 Course Review and Emerging Technologies
 
-* Week 15 - May 1-7
+* Week 16 - May 1-7
 
 *Final Exam* and *Portfolio Review* - Portfolio must be submitted for review before 5:00 pm on Friday, May 5
 
-*	Week 16 - May 8-13 (*Exam due by 5:00 pm May 11*)
+*	Week 17 - May 8-13 (*Exam due by 5:00 pm May 11*)
 
 ## Additional Information ##
 

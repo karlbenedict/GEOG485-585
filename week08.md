@@ -14,3 +14,5 @@
 
 ## Peer Review - ## {#week08-peerReview}
 -->
+
+# Week 8 - Midterm Examination (Take home) & Submission of Portfolio for Review
