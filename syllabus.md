@@ -50,7 +50,7 @@ The class is structured around a combination of readings; video tutorials, lectu
 The class will consist of the following components:
 
 Lectures/Video Tutorials 
-~	Recorded presentations that provides an overview of high-level concepts, technical demonstrations and reference information
+~	In-person and recorded presentations and demonstrations that provide an overview of high-level concepts, technical strategies and reference information
 
 Portfolio Milestones (weekly)
 ~	Hands-on experiences with the technologies and capabilities covered in the course. The milestones will be exploratory, in that in many instances the work will be problem based with an emphasis on creative and effective use of concepts and reference materials in answering questions and solving practical problems.
@@ -194,8 +194,8 @@ Module 1 - *Introduction and Outline. Github introduction.*
 
 Module 2a - *Web-based Mapping Clients*
 
-*	Week 2 - January 23-29. Introduction to HTML, CSS, and Javascript
-*	Weeks 3, 4 - January 30 - February 12. Google Maps API 
+*	Week 2 - January 23-29. Introduction to HTML, CSS, and Javascript (Peer Review)
+*	Weeks 3, 4 - January 30 - February 12. Google Maps API (Peer Review)
 
 Module 3 - *GIS and Services Oriented Architectures (SOA)*
 
@@ -214,7 +214,7 @@ Module 4a - *Interoperability Standards*
 
 Module 2b - *Web-based Mapping Clients*
 
-*	Week 9, 10 - March 20 - April 2. OpenLayers Javascript Framework 
+*	Week 9, 10 - March 20 - April 2. OpenLayers Javascript Framework (Peer Review)
 
 Module 4b - *Interoperability Standards*
 
@@ -227,13 +227,13 @@ Module 5 - *Developing and Hosting OGC Services*
 
 Module 2c - *Web-based Mapping Clients*
 
-*	Week 14 - April 24-30. Integrating GeoServer OGC Services into OpenLayers clients 
+*	Week 14 - April 24-30. Integrating GeoServer OGC Services into OpenLayers clients  (Peer Review)
 
 Course Review and Emerging Technologies
 
 * Week 15 - May 1-7
 
-*Final Exam* and *Portfolio Review* - Portfolio must be ready for review before May 9
+*Final Exam* and *Portfolio Review* - Portfolio must be submitted for review before 5:00 pm on Friday, May 5
 
 *	Week 16 - May 8-13 (*Exam due by 5:00 pm May 11*)
 
