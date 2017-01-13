@@ -1,12 +1,15 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html>
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <meta http-equiv="Content-Style-Type" content="text/css" />
-  <meta name="generator" content="pandoc" />
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
   <title></title>
   <style type="text/css">code{white-space: pre;}</style>
-  <link rel="stylesheet" href="page.css" type="text/css" />
+  <link rel="stylesheet" href="page.css">
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
 </head>
 <body>
 <!---------------------------------------------------------------------------->
@@ -58,14 +61,13 @@
 <p><em>NASA Earth Observation System</em>: <a href="http://neowms.sci.gsfc.nasa.gov/wms/wms?service=WMS&amp;request=GetCapabilities" class="uri">http://neowms.sci.gsfc.nasa.gov/wms/wms?service=WMS&amp;request=GetCapabilities</a></p>
 <p>In your write-up include the names of the layers you added, which service they came from, and screen shots (one for for each of the added layers) showing each of them in the QGIS client interface.</p>
 <p>Add three WFS layers to the same QGIS project, two based upon data available from the RGIS data browser (<a href="http://rgis.unm.edu/getdata/" class="uri">http://rgis.unm.edu/getdata/</a>), and one based on the GeoServer sample WFS service (<a href="http://demo.boundlessgeo.com/geoserver/wfs?service=wfs&amp;request=GetCapabilities" class="uri">http://demo.boundlessgeo.com/geoserver/wfs?service=wfs&amp;request=GetCapabilities</a>.   In RGIS you can see the available services for a specific data layer by</p>
-<ol style="list-style-type: decimal">
+<ol type="1">
 <li><p>Selecting the collection you want to view by selecting from the directory tree on the left side of the page;</p></li>
 <li><p>Identifying the data sets that have available OGC WMS and/or WFS services as indicated by the &quot;Services&quot; entry for each dataset, where the provided links are for the GetCapabilities requests for the provided services:</p></li>
 </ol>
-<div class="figure">
-<img src="images/RGIS_OGCLinkScreenshot.jpg" alt="Illustration highlighting where to see if a spacific dataset has an available OGC service" id="fig:RGIS_OGC_LINKS" />
-<p class="caption">Illustration highlighting where to see if a spacific dataset has an available OGC service</p>
-</div>
+<figure>
+<img src="images/RGIS_OGCLinkScreenshot.jpg" alt="Illustration highlighting where to see if a spacific dataset has an available OGC service" id="fig:RGIS_OGC_LINKS" /><figcaption>Illustration highlighting where to see if a spacific dataset has an available OGC service</figcaption>
+</figure>
 <p><em>Important</em>: When adding any WFS layer, you may need to go into the preferences for QGIS and under the &quot;Network&quot; options increase the &quot;Timeout for Network Requests(ms)&quot; value to a larger number than the default 60000 (1 minute). If you don't do this, QGIS might give up on the request before it has been fulfilled by the server. You may also want to zoom into a limited area and check the box in the QGIS &quot;Add WFS Layer ...&quot; dialog for &quot;Only Request Features Overlapping the Current View Extent&quot; as this will reduce the number of features recovered - a significant issue if the WFS service is publishing a large number of features.</p>
 <p>In your write-up include the names of the layers you added, and the GetCapabilities requests related to those layers. Also include screen shots (again, one for each added layer) showing each layer in your QGIS project.  </p>
 </body>

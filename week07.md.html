@@ -1,12 +1,15 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html>
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <meta http-equiv="Content-Style-Type" content="text/css" />
-  <meta name="generator" content="pandoc" />
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
   <title></title>
   <style type="text/css">code{white-space: pre;}</style>
-  <link rel="stylesheet" href="page.css" type="text/css" />
+  <link rel="stylesheet" href="page.css">
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
 </head>
 <body>
 <!---------------------------------------------------------------------------->
@@ -42,20 +45,18 @@
 </ul>
 <h2 id="week07-milestone">Weekly Milestone - WMS GetMap Requests, Map Scale and Aspect Ratio Calculations</h2>
 <p>You might have noticed in the WMS requests that you generated in the previous lab returned images that didn’t look “quite right” relative to what you may know of the shape of familiar features.</p>
-<p>For example, a WMS request for a 200x200 pixel PNG file (Figure {<span class="citation">@fig:bernalillo-01</span>} for an area surrounding Bernalillo County (-107.2,34.7,-106,35.25) from the previous lab would be (<a href="http://gstore.unm.edu/apps/rgis/datasets/92403ebf-aec5-404b-ae8a-6db41f388737/services/ogc/wms?VERSION=1.1.1&amp;SERVICE=WMS&amp;REQUEST=GetMap&amp;BBOX=-107.2,34.7,-106,35.25&amp;LAYERS=g_2007fe_35_county&amp;FORMAT=image/png&amp;TRANSPARENT=TRUE&amp;STYLES=&amp;SRS=EPSG:4326&amp;WIDTH=200&amp;HEIGHT=200">link</a>):</p>
+<p>For example, a WMS request for a 200x200 pixel PNG file (Figure {<span class="citation" data-cites="fig:bernalillo-01">@fig:bernalillo-01</span>} for an area surrounding Bernalillo County (-107.2,34.7,-106,35.25) from the previous lab would be (<a href="http://gstore.unm.edu/apps/rgis/datasets/92403ebf-aec5-404b-ae8a-6db41f388737/services/ogc/wms?VERSION=1.1.1&amp;SERVICE=WMS&amp;REQUEST=GetMap&amp;BBOX=-107.2,34.7,-106,35.25&amp;LAYERS=g_2007fe_35_county&amp;FORMAT=image/png&amp;TRANSPARENT=TRUE&amp;STYLES=&amp;SRS=EPSG:4326&amp;WIDTH=200&amp;HEIGHT=200">link</a>):</p>
 <pre><code>http://gstore.unm.edu/apps/rgis/datasets/92403ebf-aec5-404b-ae8a-6db41f388737/
 services/ogc/wms?VERSION=1.1.1&amp;SERVICE=WMS&amp;REQUEST=GetMap&amp;BBOX=-107.2,34.7,
 -106,35.25&amp;LAYERS=g_2007fe_35_county&amp;FORMAT=image/png&amp;TRANSPARENT=TRUE&amp;
 STYLES=&amp;SRS=EPSG:4326&amp;WIDTH=200&amp;HEIGHT=200</code></pre>
-<div class="figure">
-<img src="images/bernalillo_01.png" alt="Returned map image for the region surrounding Bernalillo County for a WMS request with BBOX=-107.2,34.7,-106,35.25, WIDTH=200 and HEIGHT=200" id="fig:bernalillo-01" />
-<p class="caption">Returned map image for the region surrounding Bernalillo County for a WMS request with <code>BBOX=-107.2,34.7,-106,35.25</code>, <code>WIDTH=200</code> and <code>HEIGHT=200</code></p>
-</div>
-<p>this request results in a map image that does not agree with the standard shape of Bernalillo county (depicted in QGIS - Figure {<span class="citation">@fig:bernalillo-qgis</span>}) that we are accustomed to, regardless of the specific map projection being used.</p>
-<div class="figure">
-<img src="images/bernalillo_qgis.png" alt="Area around Bernalillo County as viewed in QGIS based on the OGC WCS based on the same data source used for the WMS request illustrated above}" id="fig:bernalillo-qgis" />
-<p class="caption">Area around Bernalillo County as viewed in QGIS based on the OGC WCS based on the same data source used for the WMS request illustrated above}</p>
-</div>
+<figure>
+<img src="images/bernalillo_01.png" alt="Returned map image for the region surrounding Bernalillo County for a WMS request with BBOX=-107.2,34.7,-106,35.25, WIDTH=200 and HEIGHT=200" id="fig:bernalillo-01" /><figcaption>Returned map image for the region surrounding Bernalillo County for a WMS request with <code>BBOX=-107.2,34.7,-106,35.25</code>, <code>WIDTH=200</code> and <code>HEIGHT=200</code></figcaption>
+</figure>
+<p>this request results in a map image that does not agree with the standard shape of Bernalillo county (depicted in QGIS - Figure {<span class="citation" data-cites="fig:bernalillo-qgis">@fig:bernalillo-qgis</span>}) that we are accustomed to, regardless of the specific map projection being used.</p>
+<figure>
+<img src="images/bernalillo_qgis.png" alt="Area around Bernalillo County as viewed in QGIS based on the OGC WCS based on the same data source used for the WMS request illustrated above}" id="fig:bernalillo-qgis" /><figcaption>Area around Bernalillo County as viewed in QGIS based on the OGC WCS based on the same data source used for the WMS request illustrated above}</figcaption>
+</figure>
 <p>This discrepancy is the result of a difference in the aspect ratio of the requested BBOX (-107.2,34.7,-106,35.25) and the requested image dimensions (200x200 pixels). <em>When you compose a WMS GetMap request, you need to make sure that the aspect ratio of both the image size and BBOX match.</em></p>
 <p>For example, if we calculate the aspect ratio of the BBOX we obtain the following values (remember that the BBOX is specified as a comma separated list of x,y coordinates: minx,miny,maxx,maxy):</p>
 <p><span class="math inline"><em>B</em><em>B</em><em>O</em><em>X</em><sub><em>w</em><em>i</em><em>d</em><em>t</em><em>h</em></sub> = <em>x</em><sub><em>m</em><em>a</em><em>x</em></sub> − <em>x</em><sub><em>m</em><em>i</em><em>n</em></sub> = ( − 106)−(−107.2)=1.2<sup>∘</sup></span></p>
@@ -70,10 +71,9 @@ STYLES=&amp;SRS=EPSG:4326&amp;WIDTH=200&amp;HEIGHT=200</code></pre>
 services/ogc/wms?VERSION=1.1.1&amp;SERVICE=WMS&amp;REQUEST=GetMap&amp;BBOX=-107.2,34.7,-106,35.25&amp;
 LAYERS=g_2007fe_35_county&amp;FORMAT=image/png&amp;TRANSPARENT=TRUE&amp;STYLES=&amp;
 SRS=EPSG:4326&amp;WIDTH=200&amp;HEIGHT=92</code></pre>
-<div class="figure">
-<img src="images/bernalillo_02.png" alt="Returned map image for the region surrounding Bernalillo County for a WMS request with BBOX=-107.2,34.7,-106,35.25, WIDTH=200 and HEIGHT=92" />
-<p class="caption">Returned map image for the region surrounding Bernalillo County for a WMS request with <code>BBOX=-107.2,34.7,-106,35.25</code>, <code>WIDTH=200</code> and <code>HEIGHT=92</code></p>
-</div>
+<figure>
+<img src="images/bernalillo_02.png" alt="Returned map image for the region surrounding Bernalillo County for a WMS request with BBOX=-107.2,34.7,-106,35.25, WIDTH=200 and HEIGHT=92" /><figcaption>Returned map image for the region surrounding Bernalillo County for a WMS request with <code>BBOX=-107.2,34.7,-106,35.25</code>, <code>WIDTH=200</code> and <code>HEIGHT=92</code></figcaption>
+</figure>
 <p>This process may be reversed to request images of a fixed size for use in a client interface, with the requested BBOX modified to match the aspect ratio of the target image. If, for example, images are being requested for a client interface with a fixed map size of 600x400 pixels, a corresponding BBOX can be derived using the same calculation.</p>
 <p>If, for example, the area of interest for a map is 2 degrees wide, we can calculate the target height (in degrees) using the aspect ratio of the desired image.</p>
 <p><span class="math inline"><em>I</em><em>m</em><em>a</em><em>g</em><em>e</em><sub><em>a</em><em>s</em><em>p</em><em>e</em><em>c</em><em>t</em> − <em>r</em><em>a</em><em>t</em><em>i</em><em>o</em></sub> = <em>I</em><em>m</em><em>a</em><em>g</em><em>e</em><sub><em>w</em><em>i</em><em>d</em><em>t</em><em>h</em></sub>/<em>I</em><em>m</em><em>a</em><em>g</em><em>e</em><sub><em>h</em><em>e</em><em>i</em><em>g</em><em>h</em><em>t</em></sub> = (600<em>p</em><em>x</em>)/(400<em>p</em><em>x</em>)=1.5</span></p>
@@ -86,10 +86,9 @@ SRS=EPSG:4326&amp;WIDTH=200&amp;HEIGHT=92</code></pre>
 services/ogc/wms?VERSION=1.1.1&amp;SERVICE=WMS&amp;REQUEST=GetMap&amp;BBOX=-108,34.7,-106,36.0333&amp;
 LAYERS=2007fe_35_county&amp;FORMAT=image/png&amp;TRANSPARENT=TRUE&amp;STYLES=&amp;
 SRS=EPSG:4326&amp;WIDTH=600&amp;HEIGHT=400</code></pre>
-<div class="figure">
-<img src="images/bernalillo_03.png" alt="Returned map image for the region surrounding Bernalillo County for a WMS request with BBOX=-108,34.7,-106,36.0333, WIDTH=600 and HEIGHT=400" />
-<p class="caption">Returned map image for the region surrounding Bernalillo County for a WMS request with <code>BBOX=-108,34.7,-106,36.0333</code>, <code>WIDTH=600</code> and <code>HEIGHT=400</code></p>
-</div>
+<figure>
+<img src="images/bernalillo_03.png" alt="Returned map image for the region surrounding Bernalillo County for a WMS request with BBOX=-108,34.7,-106,36.0333, WIDTH=600 and HEIGHT=400" /><figcaption>Returned map image for the region surrounding Bernalillo County for a WMS request with <code>BBOX=-108,34.7,-106,36.0333</code>, <code>WIDTH=600</code> and <code>HEIGHT=400</code></figcaption>
+</figure>
 <p>Given that McKinley County NM is contained within the following BBOX: -109.5, 34.5, -106.5, 36.5</p>
 <dl>
 <dt>Question 1</dt>
@@ -106,7 +105,7 @@ SRS=EPSG:4326&amp;WIDTH=600&amp;HEIGHT=400</code></pre>
 </dd>
 </dl>
 <p>Given the following set of <code>GetMap</code> requests against the <em><a href="http://raster.nationalmap.gov/arcgis/rest/services/Orthoimagery/USGS_EROS_Ortho_SCALE/ImageServer">USGS/EROS Ortho Imagery Service</a></em> answer the following questions</p>
-<ol style="list-style-type: decimal">
+<ol type="1">
 <li><p><a href="http://raster.nationalmap.gov/arcgis/services/Orthoimagery/USGS_EROS_Ortho_SCALE/ImageServer/WMSServer?request=GetMap&amp;service=WMS&amp;VERSION=1.1.0&amp;SRS=EPSG:4326&amp;LAYERS=0&amp;FORMAT=image/jpeg&amp;TRANSPARENT=FALSE&amp;STYLES=&amp;WIDTH=1200&amp;HEIGHT=800&amp;BBOX=-107.1242070,34.7509960,-106.1242070,35.4176960" class="uri">http://raster.nationalmap.gov/arcgis/services/Orthoimagery/USGS_EROS_Ortho_SCALE/ImageServer/WMSServer?request=GetMap&amp;service=WMS&amp;VERSION=1.1.0&amp;SRS=EPSG:4326&amp;LAYERS=0&amp;FORMAT=image/jpeg&amp;TRANSPARENT=FALSE&amp;STYLES=&amp;WIDTH=1200&amp;HEIGHT=800&amp;BBOX=-107.1242070,34.7509960,-106.1242070,35.4176960</a></p></li>
 <li><p><a href="http://raster.nationalmap.gov/arcgis/services/Orthoimagery/USGS_EROS_Ortho_SCALE/ImageServer/WMSServer?request=GetMap&amp;service=WMS&amp;VERSION=1.1.0&amp;SRS=EPSG:4326&amp;LAYERS=0&amp;FORMAT=image/jpeg&amp;TRANSPARENT=FALSE&amp;STYLES=&amp;WIDTH=1200&amp;HEIGHT=800&amp;BBOX=-106.6867070,35.0426773,-106.5617070,35.1260148" class="uri">http://raster.nationalmap.gov/arcgis/services/Orthoimagery/USGS_EROS_Ortho_SCALE/ImageServer/WMSServer?request=GetMap&amp;service=WMS&amp;VERSION=1.1.0&amp;SRS=EPSG:4326&amp;LAYERS=0&amp;FORMAT=image/jpeg&amp;TRANSPARENT=FALSE&amp;STYLES=&amp;WIDTH=1200&amp;HEIGHT=800&amp;BBOX=-106.6867070,35.0426773,-106.5617070,35.1260148</a></p></li>
 <li><p><a href="http://raster.nationalmap.gov/arcgis/services/Orthoimagery/USGS_EROS_Ortho_SCALE/ImageServer/WMSServer?request=GetMap&amp;service=WMS&amp;VERSION=1.1.0&amp;SRS=EPSG:4326&amp;LAYERS=0&amp;FORMAT=image/jpeg&amp;TRANSPARENT=FALSE&amp;STYLES=&amp;WIDTH=1200&amp;HEIGHT=800&amp;BBOX=-106.6281133,35.0817417,-106.6203008,35.0869503" class="uri">http://raster.nationalmap.gov/arcgis/services/Orthoimagery/USGS_EROS_Ortho_SCALE/ImageServer/WMSServer?request=GetMap&amp;service=WMS&amp;VERSION=1.1.0&amp;SRS=EPSG:4326&amp;LAYERS=0&amp;FORMAT=image/jpeg&amp;TRANSPARENT=FALSE&amp;STYLES=&amp;WIDTH=1200&amp;HEIGHT=800&amp;BBOX=-106.6281133,35.0817417,-106.6203008,35.0869503</a></p></li>
