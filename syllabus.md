@@ -13,6 +13,8 @@ kbene@unm.edu
 
 \(505\) 277-5256
 
+Office: Centennial Science and Engineering Library - Room L172
+
 Office hours prior to the class session on Wednesday afternoons (4:00-5:00 pm), and by appointment
 
 
@@ -48,10 +50,10 @@ The class is structured around a combination of readings; video tutorials, lectu
 The class will consist of the following components:
 
 Lectures/Video Tutorials 
-~	Recorded presentations that provides an overview of high-level concepts, technical demonstrations and reference information
+~	In-person and recorded presentations and demonstrations that provide an overview of high-level concepts, technical strategies and reference information
 
 Portfolio Milestones (weekly)
-~	Hands-on experiences with the technologies and capabilities covered in the course. The milestones will be exploratory, in that in many instances the work will be problem based with an emphasis on creative use of concepts and reference materials in answering questions and solving practical problems.
+~	Hands-on experiences with the technologies and capabilities covered in the course. The milestones will be exploratory, in that in many instances the work will be problem based with an emphasis on creative and effective use of concepts and reference materials in answering questions and solving practical problems.
 
 Deep Dives (4 over the course of the semester)
 ~	Activities based upon small projects that reinforce the hands-on activities undertaken in the milestones. 
@@ -76,13 +78,9 @@ Required
 Reference
 ~	Readings that should be reviewed so that they may be effectively used as reference materials when working on lab and homework assignments and exams. These materials typically include specific syntax for web development and other information that you are not expected to memorize but instead know how to find and use when working on a particular problem.
 
-There are three texts that are being used in the course as core resources and are therefore listed as *required* texts.
+The reading materials for the course are based primarily on online reference materials for the multiple technologies that we will be using throughout the course. An additional reference book (also available online through the Library's ebook collection) is the following:
 
 Duckett, Jon, and Larsen, Rob. *Beginning HTML and CSS*. Somerset, NJ, USA: John Wiley & Sons, 2013. ProQuest ebrary. Web. 28 December 2015. This book is available online through the [University Library](http://site.ebrary.com.libproxy.unm.edu/lib/unma/detail.action?docID=10667426) (you will be asked to login using your UNM NetID and password to access this book if accessing it from off campus)
-
-Svennerberg, Gabriel. *Beginning Google Maps API 3*. Apress, © 2010. Books24x7. Web. Dec. 28, 2015. AKA *Google Maps API* in reading assignments. Available through the [*Books 24x7 Library Database*](http://library.books24x7.com.libproxy.unm.edu/toc.aspx?bookid=36390&refid=SVA3S). You will need to create a login for Books 24x7 to access this for the first time. After that you can login using the username and password you created from on- or off-campus. If you have problems with the direct link to the book provided above, try logging into the [Books 24x7 system](http://library.unm.edu/applications/dam/plink.php?db_id=238) first, then searching for `Google Maps API`. The book will come up at the top of the search results. 
-
-Gratier, T., Spencer, P., & Hazzard, E. (2015). *Openlayers 3 beginner's guide : Get started with openlayers 3 and enhance your web pages by creating and displaying dynamic maps*. Birmingham, England: Packt Publishing.  AKA *OpenLayers Beginner's Guide* in reading assignments. Available as an ebook through the [University Libraries](https://unm-on-worldcat-org.libproxy.unm.edu/oclc/903963849?databaseList=1271,143,1487,1533,1540,1672,1708,173,1925,2006,2007,203,2201,2237,2259,2260,2261,2262,2263,2264,2267,2268,2281,2328,3036,3201,638). 
 
 In addition to the reading materials for the course, some course content is also provided through a selection of Lynda.com tutorials. Access to Lynda.com is free to all UNM students and the tutorials that will be used in the class can be found in an online playlist created for the course. The playlist can be found [here](http://www.lynda.com/SharedPlaylist/2b710369c9ec4d8c964467225c6610ad?org=unm.edu). In some cases specific sections of the tutorials that are not relevant to the course have been excluded from the playlist. 
 
@@ -106,23 +104,23 @@ D
 F
 ~	< 240 points
 
-Points for the class will be earned through a combination of portfolio milestones, deep dives, peer-review, and exams.
+Points for the class will be earned through a combination of portfolio review (for milestones and deep dives), peer-review, and exams.
  
-As an ongoing exercise in working with the web-based technologies upon which the course is based, all milestone and deep dive activities *(after the first week's exercise)* will be completed as individual web pages within your web portfolio developed in the class. 
+As an ongoing exercise in working with the web-based technologies upon which the course is based, milestone and deep dive activities will be completed trough a combination of Learn assignments and as individual web pages within your web portfolio developed in the class. 
 
-You will use a private GitHub [https://github.com](https://github.com) repository to share your portfolio with members of the class and you can optionally publicly share your web content through making your work public. We will review the process for setting up your GitHub account and working repository during the first class session.  
+You will use a public GitHub [https://github.com](https://github.com) repository to share your portfolio with members of the class for our peer review assignments and for submission of your portfolio for grading. We will review the process for setting up your GitHub account and working repository during the first class session.  
  
 Portfolio Milestones
-~	There will be 13 weekly milestones. While there are no formal weekly due dates for the milestones, you *must keep up* if you expect to successfully complete the course. *If you fall behind it will be very difficult to catch up*. I will evaluate your portfolio milestones at mid-term (40 points) and at the end of the term (40 points) for completeness, functionality, creativity and accuracy (i.e. correct answers for milestone questions when asked). 
+~	There will be 13 weekly milestones. While there are no weekly due dates for the milestones, you *must keep up* if you expect to successfully complete the course. You must also have your preliminary materials ready for peer review on the dates specified in the course calendar below. *If you fall behind it will be very difficult to catch up*. I will evaluate your portfolio milestones and deep-dive materials at mid-term (40 points) and at the end of the term (40 points) for completeness, functionality, creativity and accuracy (i.e. correct answers for milestone questions when asked). 
 
 Deep Dives
 ~	There will be 4 deep dive assignments during the semester. These will be small project-focussed activities that will be added to your portfolio and will reinforce the hands-on activities undertaken as part of the portfolio milestones. Each homework assignment will be worth an additional 25 points (100 points total). Evaluation of the deep dive assignments will also take place at mid-term and at the end of the class as part of the portfolio review. 
 
 Peer Review
-~	There will be 4 points during the semester that you will be asked to perform a peer review of specific components within the portfolios of your peers. Each peer review will contribute up to 5-points to your overall score for the course. The peer-review points you earn will be based upon the *substantive* feedback that you provide to other students as part of the assignment. I will review the peer-review procedures in more detail when we have our first peer-review activity. 
+~	There will be 4 points during the semester that you will be asked to submit your materials for and perform a peer review of specific components within the portfolios of your peers. Each peer review will contribute up to 5-points to your overall score for the course. The peer-review points you earn will be based upon the timelines of your submission and the *substantive* feedback that you provide to other students as part of the assignment. I will review the peer-review procedures in more detail when we have our first peer-review activity. 
 
 Exams 
-~	There will be two exams: a midterm and final. The midterm will be a take-home exam that will be released on Monday March 7 and due on Friday March 11 at 5:00 pm. The final exam will be a take-home exam which will released on Monday May 9 and due on Wednesday May 11 by 5:00 pm. Each exam will be worth 100 points (200 points total). 
+~	There will be two exams: a midterm and final. The midterm will be a take-home exam that will be released on Monday March 6 and due on Friday March 10 at 5:00 pm. The final exam will be a take-home exam which will released on Monday May 8 and due on Thursday May 11 by 5:00 pm. Each exam will be worth 100 points (200 points total). 
 
 While students are encouraged to collaborate in their work on their portfolio milestone and deep dive assignments, submitted work must be original and written and submitted by each individual student. Both exams will be individual - each student must complete their exam individually. All assignments and exams are open book and online resources may also be used in completion of the assignments and exams. BUT, again, all submitted work must be original and created by each student. 
 
@@ -150,8 +148,7 @@ As an hybrid in-person/online course that is focused on the integration of onlin
 
 Operating System (one of the following)
 
-*	Microsoft Windows Vista or above
-*	Mac OS 10.6 or above
+*	Recent releases of Windows or Mac OS
 *	Linux (*speak to Dr. Benedict*)
 
 Geographic Information System (GIS) (one or both)
@@ -187,55 +184,58 @@ Web Browser (at least one of the following)
 A desktop Git/GitHub client for your operating system of choice
 
 *	SourceTree [http://www.sourcetreeapp.com](http://www.sourcetreeapp.com)
+* 	Github Desktop []()
 
 ## Course Outline ##
 
-Module 1 - *Introduction and Outline*
+Module 1 - *Introduction and Outline. Github introduction.*
 
-*	Week 1 - January 19-22. 
+*	Week 1 - January 17-20. 
 
 Module 2a - *Web-based Mapping Clients*
 
-*	Week 2 - January 25-29. Introduction to HTML, CSS, and Javascript
-*	Weeks 3, 4 - February 1-12. Google Maps API 
+*	Week 2 - January 23-29. Introduction to HTML, CSS, and Javascript (Peer Review)
+*	Weeks 3, 4 - January 30 - February 12. Google Maps API (Peer Review)
 
 Module 3 - *GIS and Services Oriented Architectures (SOA)*
 
-*	Week 5 - February 15-19. 
+*	Week 5 - February 13-19. 
 
 Module 4a - *Interoperability Standards*
 
-*	Week 6 - February 22-26. WMS, KML, and XML
-*	Week 7 - February 29-March 4. WFS & WCS
+*	Week 6 - February 20-26. WMS, KML, and XML  (Virtual class session - no regular office hours)
+*	Week 7 - February 27 - March 5. WFS & WCS (Recorded demonstration - no regular office hours)
 
 *Mid-term Exam* and *Portfolio Review* - Portfolio must be ready for review before March 7
 
-*	Week 8 - March 7-11 (*Exam Due by 5:00 pm on March 11*)
+*	Week 8 - March 6-12 (*Exam Due by 5:00 pm on March 10*)
 
-*Spring Break - No Class*
-
-*	Week 9 - March 21-25. 
+*Spring Break - No Class* - March 13-19
 
 Module 2b - *Web-based Mapping Clients*
 
-*	Weeks 10, 11 - March 28 - April 8. OpenLayers Javascript Framework
+*	Week 9, 10 - March 20 - April 2. OpenLayers Javascript Framework (Peer Review)
 
 Module 4b - *Interoperability Standards*
 
-*	Week 12 - April 11-15. Desktop GIS Integration
+*	Week 11 - April 3-9. Desktop GIS Integration (Virtual Class session on April 5 - no regular office hours)
 
 Module 5 - *Developing and Hosting OGC Services*
 
-*	Week 13 - April 18-22. Platforms and GeoServer Introduction
-*	Week 14 - April 25-29. OGC services and styling in GeoServer
+*	Week 12 - April 10-16. Platforms and GeoServer Introduction
+*	Week 13 - April 17-23. OGC services and styling in GeoServer
 
 Module 2c - *Web-based Mapping Clients*
 
-*	Week 15 - May 2-6. Integrating GeoServer OGC Services into OpenLayers clients 
+*	Week 14 - April 24-30. Integrating GeoServer OGC Services into OpenLayers clients  (Peer Review)
 
-*Final Exam* and *Portfolio Review* - Portfolio must be ready for review before May 9
+Course Review and Emerging Technologies
 
-*	Week 16 - May 9-13 (*Exam due by 5:00 pm May 11*)
+* Week 15 - May 1-7
+
+*Final Exam* and *Portfolio Review* - Portfolio must be submitted for review before 5:00 pm on Friday, May 5
+
+*	Week 16 - May 8-13 (*Exam due by 5:00 pm May 11*)
 
 ## Additional Information ##
 
