@@ -69,7 +69,7 @@ By the end of this class module you should understand the following:
 
 This week’s milestone activity takes you through the process of creating two more web pages in preparation for next week’s work with the Google Maps API in developing your first web mapping page. These pages will be:
 
-1. A *home page* for your portfolio that will be the access point for all of the materials you create ([template](https://github.com/UNM-GEOG-485-585/class-materials/blob/master/sample-files/homePageTemplate.html){target="_blank"}/[preview](http://htmlpreview.github.io/?https://github.com/UNM-GEOG-485-585/class-materials/blob/master/sample-files/homePageTemplate.html){target="_blank"}), and
+1. A *home page* for your portfolio that will be the access point for all of the materials you create ([template](https://raw.githubusercontent.com/UNM-GEOG-485-585/class-materials/master/sample-files/homePageTemplate.html){target="_blank"}/[preview](http://htmlpreview.github.io/?https://github.com/UNM-GEOG-485-585/class-materials/blob/master/sample-files/homePageTemplate.html){target="_blank"}), and
 
 2. Your first web page containing materials related to this *milestone* assignment ([template](https://github.com/UNM-GEOG-485-585/class-materials/blob/master/sample-files/assignmentTemplate.html){target="_blank"}/[preview](http://htmlpreview.github.io/?https://github.com/UNM-GEOG-485-585/class-materials/blob/master/sample-files/assignmentTemplate.html){target="_blank"}).  
 

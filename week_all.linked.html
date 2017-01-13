@@ -58,7 +58,10 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li><a href="#week01">Week 1 - Introductions, Course Outline &amp; Web Concepts</a><ul>
 <li><a href="#week01-prep">Class Prep</a></li>
 <li><a href="#week01-reference">Reference Materials</a></li>
-<li><a href="#week01-milestone">Weekly Milestone - Creating Your GitHub Repository and First Web Page</a></li>
+<li><a href="#week01-milestone">Weekly Milestone - Creating Your GitHub Repository and First Web Page</a><ul>
+<li><a href="#create-your-github-account-and-portfolio-repository">Create Your GitHub Account and Portfolio Repository</a></li>
+<li><a href="#create-your-first-web-page">Create Your First Web Page</a></li>
+</ul></li>
 </ul></li>
 <li><a href="#week02">Week 2 - Module 2a - Web-based Mapping Clients: HTML, CSS &amp; Javascript</a><ul>
 <li><a href="#week02-prep">Class Prep</a></li>
@@ -182,28 +185,64 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p><a href="https://github.com/UNM-GEOG-485-585/class-materials/raw/master/syllabus.pdf">Class Syllabus</a></p>
 <h2 id="week01-milestone">Weekly Milestone - Creating Your GitHub Repository and First Web Page</h2>
 <p>Developing content to go onto the web has evolved from a solitary effort to one where teams work together in developing components of larger web sites. These teams need to have a variety of tools to enable their work. Some of the most important tools enable code sharing with the team, and in projects based on the <a href="http://opensource.org/osd-annotated">Open Source</a> software model the rest of the world. The <a href="https://github.com/">GitHub</a> web platform uses the <a href="http://git-scm.com/">Git</a> distributed <a href="http://en.wikipedia.org/wiki/Revision_control">version control</a> system to enable sharing of code and hosting static web pages based on that shared code.</p>
-<p>You will be using a private <a href="http://github.com">GitHub</a> repository to build your class portfolio during the course. If you would like to make your portfolio available publicly you can also use GitHub as the platform for providing that public access. Regardless of your decision about providing public access to your portfolio, you will learn how version control operates, and how to provide comments and keep notes on your work and comment on the work of others (this will be part of our peer review process).</p>
-<p>While the work we do this and next week will be directly through the editor integrated into the GitHub system, you will eventually need to install a desktop application (such as the <a href="https://www.sourcetreeapp.com/">SourceTree</a> application recommended for the class) that allows you to develop your web pages on your local computer and then update the files on the GitHub system when you want to share a new version. Also, you can't add things like images to your web pages until you are adding them to a local repository on your computer and then sending them GitHub.</p>
-<p>For this milestone we will walk through the process of creating your repository in GitHub, creating your first web page, previewing that page on your local computer, changing the page, and updating the page on LoboGit. For this milestone we will do this as a manual process which we will streamline in the coming weeks.</p>
-<p><em>Step 1</em> - Create Your GitHub Account and Portfolio Repository</p>
-<p>For your work in this class you will build your portfolio within an organization (<a href="https://github.com/UNM-GEOG-485-585" class="uri">https://github.com/UNM-GEOG-485-585</a>) within GitHub that has been created for the class. The first step in the process of creating your portfolio is to create a new <em>repository</em> in GitHub within which you will put your portfolio materials for sharing within the class. Please follow the following steps to create your repository:</p>
+<p>You will be using a public <a href="http://github.com">GitHub</a> repository and associated <a href="https://help.github.com/articles/user-organization-and-project-pages/"><em>Project Pages</em></a> collection to build your class portfolio during the course. You will learn how version control operates, and how to provide comments and keep notes on your work and comment on the work of others (this will be part of our peer review process).</p>
+<p>While the work we do this and next week will be directly through the editor integrated into the GitHub system, you will need to install a desktop application (such as the <a href="https://www.sourcetreeapp.com/">SourceTree</a> application [recommended for the class], the <a href="https://desktop.github.com">GitHub Desktop application</a>, or, for the more adventurous, one of the Git <a href="https://git-scm.com/downloads">command line tools</a>) that allows you to develop your web pages on your local computer and then update the files on the GitHub system when you want to share a new version.</p>
+<p>For this milestone we will walk through the process of creating your repository in GitHub, creating your first web page, previewing that page on your local computer, changing the page, and updating the page on GitHub. For this milestone we will do this as a manual process which we will streamline in the coming weeks.</p>
+<h3 id="create-your-github-account-and-portfolio-repository">Create Your GitHub Account and Portfolio Repository</h3>
+<p>For your work in this class you will build your portfolio within your account - which you will need to create if you don't already have one.</p>
+<p>The first step in the process of creating your portfolio is to create a new (or log into an existing) GitHub account, and create <em>repository</em> in GitHub within which you will put your portfolio materials for sharing within the class. Please follow the following steps to create your repository:</p>
 <ol style="list-style-type: decimal">
-<li>Go to the <a href="https://github.com/">GitHub homepage</a> and follow the onscreen instructions for creating a new account. If you already have an account you can skip this step.</li>
-<li>Come to the front of the class and tell me your GitHub username so that I can add you to the organization and create your repository for you within the organization.</li>
-</ol>
-<p><em>Step 2</em> - Create Your First Web Page</p>
-<p>To create your first web page within your portfolio repository you need to first enter your repository, add a new file, modify its contents, and commit your modifications back to the repository to save your changes.</p>
-<ol style="list-style-type: decimal">
-<li>Go to the class organization page ((<a href="https://github.com/UNM-GEOG-485-585" class="uri">https://github.com/UNM-GEOG-485-585</a> - logging in if necessary) and click on your repository name in the list.</li>
-<li>On the page that comes up listing the files in your repository, click the &quot;New File&quot; button above the list of files.</li>
+<li>Go to the <a href="https://github.com/">GitHub homepage</a> and follow the onscreen instructions for creating a new account. If you already have an account you can skip this step. Once you have created your account you can login and continue the process of creating your class repository.</li>
 </ol>
 <div class="figure">
-<img src="images/github_editor.png" alt="GitHub file creation/editor page" style="width:70.0%" />
-<p class="caption">GitHub file creation/editor page</p>
+<img src="images/github_home.jpg" alt="GitHub home page" style="width:70.0%" />
+<p class="caption">GitHub home page</p>
 </div>
+<p>Unless you have specific reasons to do otherwise select the default options for step 2 of the account creation process.</p>
+<div class="figure">
+<img src="images/github_step2.jpg" alt="GitHub setup step 2" style="width:70.0%" />
+<p class="caption">GitHub setup step 2</p>
+</div>
+<p>(optional) Complete the online survey from GitHub associated with your account.</p>
+<div class="figure">
+<img src="images/github_step3.jpg" alt="GitHub online survey" style="width:70.0%" />
+<p class="caption">GitHub online survey</p>
+</div>
+<ol start="2" style="list-style-type: decimal">
+<li><p>Check your email inbox and verify your newly created GitHub account.</p></li>
+<li><p>Select &quot;Start a project&quot; from the web page that is presented when you confirm your email address (or complete the account creation steps above).</p></li>
+</ol>
+<div class="figure">
+<img src="images/github_start.jpg" alt="Start project page" style="width:70.0%" />
+<p class="caption">Start project page</p>
+</div>
+<ol start="4" style="list-style-type: decimal">
+<li>Create your portfolio repository by choosing the following options in the page that is presented when you choose &quot;Start a project&quot; in step (3) above.</li>
+</ol>
+<div class="figure">
+<img src="images/github_createRepo.jpg" alt="Create repository page" style="width:70.0%" />
+<p class="caption">Create repository page</p>
+</div>
+<p>After your successfully create your <code>portfolio</code> repository you should see the home page for your new repo:</p>
+<div class="figure">
+<img src="images/github_portfolioHome.jpg" alt="Repository home page" style="width:70.0%" />
+<p class="caption">Repository home page</p>
+</div>
+<p><strong>Make note of the web address of this page (even email it to yourself) to make it easy to get back here later</strong> - <code>https://github.com/&lt;your username&gt;/portfolio</code></p>
+<h3 id="create-your-first-web-page">Create Your First Web Page</h3>
+<p>To create your first web page within your portfolio repository you need to first enter your repository, add a new file, modify its contents, and commit your modifications back to the repository to save your changes.</p>
+<ol style="list-style-type: decimal">
+<li><p>Go to your <code>portfolio</code> home page - <code>https://github.com/&lt;your username&gt;/portfolio</code> - either by going directly to the link (above) for your repository or by selecting the repository from your account home page - <code>https://github.com/&lt;your username&gt;</code>.</p></li>
+<li><p>On the page that comes up listing the files in your repository, click the &quot;Create new file&quot; button above the list of files.</p></li>
+</ol>
+<div class="figure">
+<img src="images/github_createButton.jpg" alt="Create a new file" style="width:70.0%" />
+<p class="caption">Create a new file</p>
+</div>
+<p>Which will take you to the editor for your new file.</p>
 <ol start="3" style="list-style-type: decimal">
-<li>Enter the name of the file that you are creating as &quot;hello-world.html&quot;</li>
-<li>Enter the following text into the text entry area under the filename field.</li>
+<li><p>Enter the name of the file ((1) on the figure below) that you are creating as &quot;hello-world.html&quot;</p></li>
+<li><p>Enter the following text into the text entry area (2) under the filename field.</p></li>
 </ol>
 <div class="sourceCode" startFrom="1"><table class="sourceCode html numberLines"><tr class="sourceCode"><td class="lineNumbers"><pre>1
 2
@@ -220,25 +259,37 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
     <span class="kw">&lt;/body&gt;</span> 
 <span class="kw">&lt;/html&gt;</span></code></pre></td></tr></table></div>
 <ol start="5" style="list-style-type: decimal">
-<li>Add a brief comment (such as &quot;Created hello-world.html from provided text&quot;) in the first field under the &quot;Commit new file&quot; title. You can optionally add a more detailed description in the next field if you like.</li>
-<li>Keep the default option to &quot;Commit directly to the master branch&quot;</li>
-<li>Click the &quot;Commit New File&quot; button to commit your change and save the file</li>
+<li><p>Add a brief comment (such as &quot;Created hello-world.html from provided text&quot;) in the first field under the &quot;Commit new file&quot; title (3). You can optionally add a more detailed description in the next field (4) if you like.</p></li>
+<li><p>Keep the default option to &quot;Commit directly to the master branch&quot;</p></li>
+<li><p>Click the &quot;Commit New File&quot; button (5) to commit your change and save the file</p></li>
 </ol>
+<div class="figure">
+<img src="images/github_editor.jpg" alt="GitHub file creation/editor page" style="width:70.0%" />
+<p class="caption">GitHub file creation/editor page</p>
+</div>
 <p><em>Step 3</em> - Preview Your Web Page in a Browser</p>
-<p>While we will later discuss strategies for hosting your web content on a system (GitHub for example) that supports direct access by web clients, to preview the web page you just created you need to download the repository to your local computer where you can open the locally stored file in a browser.</p>
-<ol style="list-style-type: decimal">
-<li>Go to the class organization page ((<a href="https://github.com/UNM-GEOG-485-585" class="uri">https://github.com/UNM-GEOG-485-585</a> - logging in if necessary) and click on your repository name in the list.</li>
-<li>On the page that comes up listing the files in your repository, click the &quot;Download Zip&quot; button above the list of files. You may be prompted to provide a download location - if not you will need to find the default download location. Often it is the &quot;Downloads&quot; folder in your home directory.</li>
-<li>Extract the contents of the downloaded .zip file using the appropriate utility program on your computer. On Macs and Windows computers this functionality is available through right-clicking on the file name in their respective file browsers.</li>
-<li>Once you have extracted the contents of the zip file open the <code>hello-world.html</code> file that you created in a web browser - typically if you double-click on the file it will open in your default browser. You can also open it from within your browser of choice by using the &quot;Open File&quot; (or similar) option in the browser's file menu.</li>
-<li>Confirm that the display resembles something like the following:</li>
-</ol>
+<p>Since your repository in GitHub is public you can use GitHub to host your portfolio and its content on the web. GitHub's hosting capabilities are limited to static content (i.e. files directly accessible over the web), but this will meet our needs for the class very well. To enable GitHub's web hosting capabilities for your repository you need to change the <code>GitHub Pages</code> option in the settings for your repository. First, click the <code>Settings</code> button near the top of your repository home page:</p>
+<div class="figure">
+<img src="images/github_settingsButton.jpg" alt="Settings button in GitHub" style="width:70.0%" />
+<p class="caption">Settings button in GitHub</p>
+</div>
+<p>Then modify the <code>GitHub Pages</code> setting to use the <code>Master</code> branch as the source for your GitHub pages web site. Click the <code>Save</code> button next to your update.</p>
+<div class="figure">
+<img src="images/github_settingsForWeb.jpg" alt="Update settings for GitHub web publishing" style="width:70.0%" />
+<p class="caption">Update settings for GitHub web publishing</p>
+</div>
+<p>After saving your changed <code>GitHub Pages</code> setting you can view your web page using the following pattern:</p>
+<p><code>https://&lt;your username&gt;.github.io/&lt;repository name&gt;/&lt;page name&gt;</code></p>
+<p>which translates into the following (assuming that you followed the instructions above for naming your repository and file:</p>
+<p><code>https://&lt;your username&gt;.github.io/portfolio/htllo-world.html</code></p>
+<p>Using this approach you can modify and preview your site in real time as you commit your changes within GitHub. You can also preview your portfolio based on files on your local computer by installing a GitHub client onto your computer and <code>cloning</code> your GitHub repository to your local computer. This is done using a desktop application such as <a href="https://www.sourcetreeapp.com"><em>Sourcetree</em></a>, the <a href="https://desktop.github.com"><em>GitHub Desktop Client</em></a>, or another <a href="https://git-scm.com/downloads"><em>Git</em> client</a> appropriate to your operating system. Once you've cloned your repository you can work with the files (including previewing them) on your local computer and when ready <code>push</code> those files back into GitHub for online access, viewing and sharing. <strong>While you can work on your files locally - peer review, troubleshooting, and grading will be based on the content in your public GitHub repository</strong>.</p>
+<p>Confirm that the display resembles something like the following:</p>
 <div class="figure">
 <img src="images/hello-world.png" alt="Sample hello-world.html file when viewed in a web browser" style="width:70.0%" />
 <p class="caption">Sample <code>hello-world.html</code> file when viewed in a web browser</p>
 </div>
 <ol start="6" style="list-style-type: decimal">
-<li>If the page does not appear as you like, edit it on GitHub and repeat 2-5 above until you see something like the sample figure.</li>
+<li>If the page does not appear as you like, edit it on GitHub, commit your change and preview it again. Repeat until you get what you expect.</li>
 </ol>
 <!---------------------------------------------------------------------------->
 <!-- Week 02 ----------------------------------------------------------------->
@@ -301,7 +352,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <h2 id="week02-milestone">Weekly Milestone - Create a More Complex Web Page and Style It</h2>
 <p>This week’s milestone activity takes you through the process of creating two more web pages in preparation for next week’s work with the Google Maps API in developing your first web mapping page. These pages will be:</p>
 <ol style="list-style-type: decimal">
-<li><p>A <em>home page</em> for your portfolio that will be the access point for all of the materials you create (<a href="https://github.com/UNM-GEOG-485-585/class-materials/blob/master/sample-files/homePageTemplate.html" target="_blank">template</a>/<a href="http://htmlpreview.github.io/?https://github.com/UNM-GEOG-485-585/class-materials/blob/master/sample-files/homePageTemplate.html" target="_blank">preview</a>), and</p></li>
+<li><p>A <em>home page</em> for your portfolio that will be the access point for all of the materials you create (<a href="https://raw.githubusercontent.com/UNM-GEOG-485-585/class-materials/master/sample-files/homePageTemplate.html" target="_blank">template</a>/<a href="http://htmlpreview.github.io/?https://github.com/UNM-GEOG-485-585/class-materials/blob/master/sample-files/homePageTemplate.html" target="_blank">preview</a>), and</p></li>
 <li><p>Your first web page containing materials related to this <em>milestone</em> assignment (<a href="https://github.com/UNM-GEOG-485-585/class-materials/blob/master/sample-files/assignmentTemplate.html" target="_blank">template</a>/<a href="http://htmlpreview.github.io/?https://github.com/UNM-GEOG-485-585/class-materials/blob/master/sample-files/assignmentTemplate.html" target="_blank">preview</a>).</p></li>
 </ol>
 <p><em>Step 1</em> - Open the <em>home page</em> <a href="https://github.com/UNM-GEOG-485-585/class-materials/blob/master/sample-files/homePageTemplate.html" target="_blank">template</a> linked above in your web browser and open the <a href="http://htmlpreview.github.io/?https://github.com/UNM-GEOG-485-585/class-materials/blob/master/sample-files/homePageTemplate.html" target="_blank">preview</a> in a second tab or window so that you can view both at the same time.</p>
