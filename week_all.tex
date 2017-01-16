@@ -665,128 +665,62 @@ Maps API in developing your first web mapping page. These pages will be:
 \def\labelenumi{\arabic{enumi}.}
 \item
   A \emph{home page} for your portfolio that will be the access point
-  for all of the materials you create
-  (\href{https://raw.githubusercontent.com/UNM-GEOG-485-585/class-materials/master/sample-files/homePageTemplate.html}{template}/\href{http://htmlpreview.github.io/?https://github.com/UNM-GEOG-485-585/class-materials/blob/master/sample-files/homePageTemplate.html}{preview}),
-  and
+  for all of the materials you create, and
 \item
-  Your first web page containing materials related to this
-  \emph{milestone} assignment
-  (\href{https://github.com/UNM-GEOG-485-585/class-materials/blob/master/sample-files/assignmentTemplate.html}{template}/\href{http://htmlpreview.github.io/?https://github.com/UNM-GEOG-485-585/class-materials/blob/master/sample-files/assignmentTemplate.html}{preview}).
+  A variant of your \emph{home page} that has been styled to modify its
+  appearance.
 \end{enumerate}
 
 \emph{Step 1} - Open the \emph{home page}
-\href{https://github.com/UNM-GEOG-485-585/class-materials/blob/master/sample-files/homePageTemplate.html}{template}
-linked above in your web browser and open the
-\href{http://htmlpreview.github.io/?https://github.com/UNM-GEOG-485-585/class-materials/blob/master/sample-files/homePageTemplate.html}{preview}
-in a second tab or window so that you can view both at the same time.
+\href{https://raw.githubusercontent.com/UNM-GEOG-485-585/class-materials/master/sample-files/homePageTemplate.html}{template}
+in your web browser.
 
-\emph{Step 2} - Copy the code in the home page
-\href{https://github.com/UNM-GEOG-485-585/class-materials/blob/master/sample-files/homePageTemplate.html}{template}
-into a new text file named \texttt{index.html} on your computer.
+\emph{Step 2} - Copy the code in the home page template into a new file
+named \texttt{index.html} in your GitHub repository.
 
-\emph{Step 3} - Open the \emph{milestone} assignment
-\href{https://github.com/UNM-GEOG-485-585/class-materials/blob/master/sample-files/assignmentTemplate.html}{template}
-linked above.
+\emph{Step 3} - After you have committed the \texttt{index.html} file to
+your repository preview it in your browser to see what it looks like
+when accessed as a static web page. Verify that it looks the same as the
+\href{http://karlbenedict.com/GEOG485-585/sample-files/homePageTemplate.html}{preview
+of the template file} as a web page.
 
-\emph{Step 4} - Copy the code in the template into a new text file named
-\texttt{milestone\_02.html} on your copmuter.
+\emph{Step 4} - Answer the questions in the Milestone 2 assignment in
+Learn
 
-\emph{Step 5} - After you have saved the \texttt{index.html} and
-\texttt{milestone\_02.html} files to your hard drive open them up in
-your browser to see what they look like when read through a web browser.
-
-\emph{Step 6} - Add your responses to the following questions to the
-\texttt{milestone\_02.html} document. - note: it is a good practice when
-you are developing a web page to make small changes, save them, and
-preview the page to make sure that you have not made an error in your
-code before adding the next item. Practice this by adding each answer,
-saving your page and previewing it and correcting any errors in your
-code before going onto the next question.
-
-\begin{description}
-\item[Question 1]
-From examining the display of \texttt{index.html} in your web browser
-and the structure of the source code in the page, what effect (if any)
-does the white space (i.e.~tabs, blank lines, multiple spaces) have on
-what is displayed in the browser?
-\item[Question 2]
-How are the
-
-\begin{verbatim}
-<h1>
-\end{verbatim}
-
-and
-
-\begin{verbatim}
-<h2>
-\end{verbatim}
-\end{description}
-
-elements from the source code displayed differently in the browser?
-
-\begin{description}
-\tightlist
-\item[Question 3]
-What type of element would you use to create additional list elements in
-either the ``topic'' or ``data type''
-(\texttt{\textless{}ul\textgreater{}}) lists on the page.
-\end{description}
-
-\emph{Step 7} - Flesh out the \texttt{index.html} page that you created
-above (\emph{Step 2}) with information specific to you based upon the
-content areas in the page. After making sure that your
-\texttt{index.html} and \texttt{milestone\_02.html} are in the same
-directory, add a \emph{relative} link to your
-\texttt{milestone\_02.html} file to the ``milestones'' section of your
-\texttt{index.html} page by modifying the line
-
-\begin{verbatim}
-<p><a href="">Milestone 2</a></p>
-\end{verbatim}
-
-to look like this
-
-\begin{verbatim}
-<p><a href="milestone_02.html">Milestone 2</a></p>
-\end{verbatim}
-
-Save your change and test it in the browser by clicking the link on your
-\texttt{index.html} page in the browser. If it successfully opens your
-\texttt{milestone\_02.html} page you have properly built your link.
-
-\emph{Step 8} - Copy your \texttt{hello-world.html} file from
-\emph{Milestone 1} into the same directory as your \texttt{index.html}
-file and modify the existing line in your \texttt{index.html} file
+\emph{Step 5} - Flesh out the \texttt{index.html} page that you created
+above (\emph{Step 2}) with information specific to you and your
+interests based upon the content areas in the page. After making sure
+that your \texttt{index.html} is in the same directory as the
+\texttt{hello-world.html} file you created in Milestone 1, add a
+\emph{relative} link to your \texttt{hello-world.html} file to the
+``milestones'' section of your \texttt{index.html} page by modifying the
+line
 
 \begin{verbatim}
 <p><a href="">Hello World</a></p>
 \end{verbatim}
 
-to link to your \texttt{hello-world.html} file (follow the same pattern
-you used in \emph{Step 7} above).
+to look like this
 
-\emph{Step 8} - Make a copy of your \texttt{index.html} page by copying
-the content of the page and pasting it into a new document named
-\texttt{index\_styled.html}.
+\begin{verbatim}
+<p><a href="hello-world.html">Hello World</a></p>
+\end{verbatim}
 
-Experiment with some of the styling capabilities described in Dave
-Raggett's ``Adding a Touch of Style'' page
-(\url{http://www.w3.org/MarkUp/Guide/Style.html}) on
+Save your change and test it in the browser by clicking the link on your
+\texttt{index.html} page in the browser. If it successfully opens your
+\texttt{hello-world.html} page you have properly built your link.
+
+\emph{Step 6} - Make a copy of your \texttt{index.html} page by copying
+the content of the page and pasting it into a new document in your
+repository named \texttt{index\_styled.html}.
+
+Experiment with some of the styling capabilities described in the
+W3Schools CSS Examples page
+(\url{http://www.w3schools.com/css/css_examples.asp}) on
 \texttt{index\_styled.html} page you created above. Make at least three
 stylistic changes to the \texttt{index\_styled.html} page. Add a link to
 your \texttt{index\_styled.html} page to your home page
 (\texttt{index.html}) under the \texttt{milestones} section.
-
-\emph{Step 9} - Transfer your created files \texttt{index.html},
-\texttt{milestone\_02.html}, and \texttt{index\_styled.html} to your
-GitHub repository (created in \emph{Milestone 1}). Of course you could
-do this by copying and pasting the content of your files into
-corresponding files in GitHub (but that would not be very efficient or
-satisfying), but you should probably experiment with
-\href{https://www.sourcetreeapp.com/}{SourceTree} as demonstrated in
-this week's Lynda.com video tutorial as a way to work locally and
-transfer your files to GitHub for remote access and sharing.
 
 \chapter{Week 3 - Module 2a - Web-based Mapping Clients. Google Maps
 API}\label{week03}

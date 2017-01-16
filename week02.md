@@ -69,63 +69,32 @@ By the end of this class module you should understand the following:
 
 This week’s milestone activity takes you through the process of creating two more web pages in preparation for next week’s work with the Google Maps API in developing your first web mapping page. These pages will be:
 
-1. A *home page* for your portfolio that will be the access point for all of the materials you create ([template](https://raw.githubusercontent.com/UNM-GEOG-485-585/class-materials/master/sample-files/homePageTemplate.html){target="_blank"}/[preview](http://htmlpreview.github.io/?https://github.com/UNM-GEOG-485-585/class-materials/blob/master/sample-files/homePageTemplate.html){target="_blank"}), and
+1. A *home page* for your portfolio that will be the access point for all of the materials you create, and
 
-2. Your first web page containing materials related to this *milestone* assignment ([template](https://github.com/UNM-GEOG-485-585/class-materials/blob/master/sample-files/assignmentTemplate.html){target="_blank"}/[preview](http://htmlpreview.github.io/?https://github.com/UNM-GEOG-485-585/class-materials/blob/master/sample-files/assignmentTemplate.html){target="_blank"}).  
-
-
-*Step 1* - Open the *home page* [template](https://github.com/UNM-GEOG-485-585/class-materials/blob/master/sample-files/homePageTemplate.html){target="_blank"} linked above in your web browser and open the [preview](http://htmlpreview.github.io/?https://github.com/UNM-GEOG-485-585/class-materials/blob/master/sample-files/homePageTemplate.html){target="_blank"} in a second tab or window so that you can view both at the same time. 
-
-*Step 2* - Copy the code in the home page [template](https://github.com/UNM-GEOG-485-585/class-materials/blob/master/sample-files/homePageTemplate.html){target="_blank"} into a new text file named `index.html` on your computer. 
-
-*Step 3* - Open the *milestone* assignment [template](https://github.com/UNM-GEOG-485-585/class-materials/blob/master/sample-files/assignmentTemplate.html){target="_blank"} linked above.
-
-*Step 4* -  Copy the code in the template into a new text file named `milestone_02.html` on your copmuter. 
-
-*Step 5* - After you have saved the `index.html` and `milestone_02.html` files to your hard drive open them up in your browser to see what they look like when read through a web browser.  
+2. A variant of your *home page* that has been styled to modify its appearance.  
 
 
-*Step 6* - Add your responses to the following questions to the `milestone_02.html` document.  - note: it is a good practice when you are developing a web page to make small changes, save them, and preview the page to make sure that you have not made an error in your code before adding the next item. Practice this by adding each answer, saving your page and previewing it and correcting any errors in your code before going onto the next question. 
+*Step 1* - Open the *home page* [template](https://raw.githubusercontent.com/UNM-GEOG-485-585/class-materials/master/sample-files/homePageTemplate.html){target="_blank"} in your web browser.  
 
-Question 1
-:	From examining the display of `index.html` in your web browser and the structure of the source code in the page, what effect (if any) does the white space (i.e. tabs, blank lines, multiple spaces) have on what is displayed in the browser?
+*Step 2* - Copy the code in the home page template into a new file named `index.html` in your GitHub repository. 
 
+*Step 3* - After you have committed the `index.html` file to your repository preview it in your browser to see what it looks like when accessed as a static web page. Verify that it looks the same as the [preview of the template file](http://karlbenedict.com/GEOG485-585/sample-files/homePageTemplate.html) as a web page. 
 
-Question 2
-:  How are the 
+*Step 4* - Answer the questions in the Milestone 2 assignment in Learn 
 
-		<h1>
-and 
-
-		<h2> 
-
-elements from the source code displayed differently in the browser?
-
-Question 3
-:	What type of element would you use to create additional list elements in either the “topic” or “data type” (`<ul>`) lists on the page.
-
-*Step 7* - Flesh out the `index.html` page that you created above (*Step 2*) with information specific to you based upon the content areas in the page. After making sure that your `index.html` and `milestone_02.html` are in the same directory, add a *relative* link to your `milestone_02.html` file to the "milestones" section of your `index.html` page by modifying the line
-
-	<p><a href="">Milestone 2</a></p>
-
-to look like this
-
-	<p><a href="milestone_02.html">Milestone 2</a></p>
-
-Save your change and test it in the browser by clicking the link on your `index.html` page in the browser. If it successfully opens your `milestone_02.html` page you have properly built your link. 
-
-*Step 8* - Copy your `hello-world.html` file from *Milestone 1* into the same directory as your `index.html` file and modify the existing line in your `index.html` file
+*Step 5* - Flesh out the `index.html` page that you created above (*Step 2*) with information specific to you and your interests based upon the content areas in the page. After making sure that your `index.html` is in the same directory as the `hello-world.html` file you created in Milestone 1, add a *relative* link to your `hello-world.html` file to the "milestones" section of your `index.html` page by modifying the line
 
 	<p><a href="">Hello World</a></p>
 
-to link to your `hello-world.html` file (follow the same pattern you used in *Step 7* above). 
+to look like this
 
-*Step 8* - Make a copy of your `index.html` page by copying the content of the page and pasting it into a new document named `index_styled.html`.
+	<p><a href="hello-world.html">Hello World</a></p>
 
-Experiment with some of the styling capabilities described in Dave Raggett’s “Adding a Touch of Style” page (<http://www.w3.org/MarkUp/Guide/Style.html>) on `index_styled.html` page you created above. Make at least three stylistic changes to the `index_styled.html` page. Add a link to your `index_styled.html` page to your home page (`index.html`) under the `milestones` section. 
+Save your change and test it in the browser by clicking the link on your `index.html` page in the browser. If it successfully opens your `hello-world.html` page you have properly built your link. 
 
-*Step 9* - Transfer your created files `index.html`, `milestone_02.html`, and `index_styled.html` to your GitHub repository (created in *Milestone 1*). Of course you could do this by copying and pasting the content of your files into corresponding files in GitHub (but that would not be very efficient or satisfying), but you should probably experiment with [SourceTree](https://www.sourcetreeapp.com/) as demonstrated in this week's Lynda.com video tutorial as a way to work locally and transfer your files to GitHub for remote access and sharing.  
+*Step 6* - Make a copy of your `index.html` page by copying the content of the page and pasting it into a new document in your repository named `index_styled.html`.
 
+Experiment with some of the styling capabilities described in the W3Schools CSS Examples page (<http://www.w3schools.com/css/css_examples.asp>) on `index_styled.html` page you created above. Make at least three stylistic changes to the `index_styled.html` page. Add a link to your `index_styled.html` page to your home page (`index.html`) under the `milestones` section. 
 
 
 <!-- ## Deep Dive - ## {#week02-deepDive} -->
