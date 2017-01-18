@@ -1,8 +1,13 @@
+---
+title: Week 12 - Module 4.3 - Interoperability Standards - Desktop GIS Integration
+...
+
+
 <!---------------------------------------------------------------------------->
 <!-- Week 12 ----------------------------------------------------------------->
 <!---------------------------------------------------------------------------->
 
-# Week 12 - Module 4.3 - Interoperability Standards - Desktop GIS Integration # {#week12}
+# Introduction # {#week12}
 
 As we've discussed the components of the client tier of our tiered geospatial services oriented architecture we have concentrated on the open standards that can support client applications and the web-based clients that can consume them. Desktop GIS applications can also consume standards-based services, specifically OGC services. This week's class concentrates on the methods for integrating OGC services into two GIS client applications Quantum GIS and ArcGIS, demonstrating the utility of using external standards-based services as a data and map image source within desktop applications.
 
@@ -27,7 +32,7 @@ At the end of this class students will understand that
 * Both Quantum GIS and ArcGIS require additional configuration to enable WFS access 
 
 
-## Class Prep ## {#week12-prep}
+# Class Prep # {#week12-prep}
 
 * Quantum GIS [documentation](http://docs.qgis.org/2.8/en/docs/user_manual/), especially
 	* [Working with OGC Data](http://docs.qgis.org/2.8/en/docs/user_manual/working_with_ogc/index.html)
@@ -38,7 +43,7 @@ At the end of this class students will understand that
 	* [Adding a WCS service to ArcMap](http://desktop.arcgis.com/en/arcmap/10.3/map/web-maps-and-services/adding-a-wcs-service-to-arcmap.htm)
 	* [Adding a WFS service to ArcMap](http://desktop.arcgis.com/en/arcmap/10.3/map/web-maps-and-services/adding-a-wfs-service-to-arcmap.htm)
 
-## Weekly Milestone - WMS, WFS and WCS Access in Quantum GIS## {#week12-milestone}
+# Weekly Milestone - WMS, WFS and WCS Access in Quantum GIS# {#week12-milestone}
 
 *While the focus of these instructions is on using QGIS to interact with remote OGC services you may use ArcGIS instead of QGIS if you prefer.*
 

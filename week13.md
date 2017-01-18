@@ -1,8 +1,12 @@
+---
+title: Week 13 - Platforms and GeoServer Introduction
+...
+
 <!---------------------------------------------------------------------------->
 <!-- Week 13 ----------------------------------------------------------------->
 <!---------------------------------------------------------------------------->
 
-# Week 13 - Platforms and GeoServer Introduction # {#week13}
+# Introduction # {#week13}
 
 Thus far we have concentrated on the client side of geospatial services oriented architectures in developing web interfaces based upon the Google Maps API, the OpenLayers javascript framework, and accessing data published using the OGC WMS, WFS, and WCS standards in desktop applications. Starting this week we begin our work on the server side - working with the GeoServer server platform to publish data through the OGC WMS, WFS, and WCS service standards. This work will demonstrate the ease with which you can share data using these standards, facilitating client use such as that that we have seen in our web site and desktop application work.
 
@@ -25,7 +29,7 @@ By the end of this class, students should understand:
 * The information required about data to successfully configure it for publication within GeoServer
 * The stepwise process through which a dataset may be published using GeoServer 
 
-## Reference Materials ## {#week13-reference}
+# Reference Materials # {#week13-reference}
 
 * Lynda.com [*Learn the Linux Command Line: The Basics*](http://www.lynda.com/Linux-tutorials/Learn-Linux-Command-Line-Basics/435539-2.html?org=unm.edu) - particularly:
 	* Introduction
@@ -35,9 +39,9 @@ By the end of this class, students should understand:
 * GeoServer [Online Documentation](http://docs.geoserver.org/stable/en/user/index.html): sections [Introduction](http://docs.geoserver.org/stable/en/user/introduction/index.html), [Getting Started](http://docs.geoserver.org/stable/en/user/gettingstarted/index.html), and [Web Administration Interface](http://docs.geoserver.org/stable/en/user/webadmin/index.html)
 
 
-## Weekly Milestone - Linux Basics and GeoServer Data Import## {#week13-milestone}
+# Weekly Milestone - Linux Basics and GeoServer Data Import# {#week13-milestone}
 
-### Working on the Class Server
+## Working on the Class Server
 
 For the GeoServer portion of our work, you will be working on a Linux server that has been created for the class. While we won't be doing a lot of Linux work, some basic familiarity with moving around, copying files, and working with files is needed. The class server is running Ubuntu Linux which is a broadly deployed, well supported operating system and computing platform that has excellent support for many Open Source geospatial applications, including those that we will be using in this class. 
 
@@ -72,7 +76,7 @@ Task
 
 
 
-### Adding data to GeoServer ###
+## Adding data to GeoServer ##
 
 To add data to GeoServer you must have a file location on the server where data files must be stored and accessible by the GeoServer. 
 

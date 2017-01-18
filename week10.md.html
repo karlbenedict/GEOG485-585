@@ -4,7 +4,8 @@
   <meta charset="utf-8">
   <meta name="generator" content="pandoc">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-  <title></title>
+  <meta name="author" content="Karl Benedict">
+  <title>Week 10 - Web-based Mapping Clients - OpenLayers Javascript Framework</title>
   <style type="text/css">code{white-space: pre;}</style>
   <link rel="stylesheet" href="page.css">
   <!--[if lt IE 9]>
@@ -12,10 +13,15 @@
   <![endif]-->
 </head>
 <body>
+<header>
+<h1 class="title">Week 10 - Web-based Mapping Clients - OpenLayers Javascript Framework</h1>
+<h2 class="author">Karl Benedict</h2>
+<h3 class="date">GEOG 485L/585L - Spring 2017</h3>
+</header>
 <!---------------------------------------------------------------------------->
 <!-- Week 10 ----------------------------------------------------------------->
 <!---------------------------------------------------------------------------->
-<h1 id="week10">Week 10 - Web-based Mapping Clients: OpenLayers Javascript Framework</h1>
+<h1 id="week10">Introduction</h1>
 <p>The Google Maps API provides one method for presenting an interactive mapping tool within a web browser, but there are restrictions for free use based upon Google's <a href="https://developers.google.com/maps/licensing">license</a> agreement, and the API is completely controlled by Google - changes are limited to those that Google enables. The <a href="http://openlayers.org/">OpenLayers</a> Javascript framework which (as quoted from the OpenLayers 2 project home page)</p>
 <blockquote>
 <p>has been developed to further the use of geographic information of all kinds. OpenLayers is completely free, Open Source JavaScript, released under the 2-clause BSD License (also known as the FreeBSD).</p>
@@ -28,7 +34,7 @@
 <li>Examples of a variety of base maps that can be added to a map</li>
 <li>The controls that may be added to a map, and the methods for managing and positioning those controls</li>
 </ul>
-<h3 id="expected-outcomes">Expected Outcomes</h3>
+<h2 id="expected-outcomes">Expected Outcomes</h2>
 <p>At the end of this class the students will be able to:</p>
 <ul>
 <li>Create a new web page that includes an interactive OpenLayers mapper</li>
@@ -36,7 +42,7 @@
 <li>Define an appropriate map center and zoom level for the desired map</li>
 <li>Enable and position controls within the map</li>
 </ul>
-<h3 id="key-concepts">Key Concepts</h3>
+<h2 id="key-concepts">Key Concepts</h2>
 <p>At the end of this class students will understand that</p>
 <ul>
 <li>OpenLayers is a Javascript framework that enables web-based interactive mapping</li>
@@ -44,14 +50,14 @@
 <li>Map size, center, zoom level, and layers may all be defined through the Javascript API</li>
 <li>A wide variety of map controls (informational and interactive) may be added to maps</li>
 </ul>
-<h2 id="week10-prep">Class Prep</h2>
+<h1 id="week10-prep">Class Prep</h1>
 <p><a href="http://openlayers.org/en/v3.14.2/doc/quickstart.html">OpenLayers Quick Start Page</a></p>
 <p><a href="http://openlayers.org/en/v3.14.2/doc/tutorials/concepts.html">OpenLayers Basic Concepts</a></p>
 <p>Gratier, T., Spencer, P., &amp; Hazzard, E. (2015). <em>Openlayers 3 beginner's guide : Get started with openlayers 3 and enhance your web pages by creating and displaying dynamic maps</em>. Birmingham, England: Packt Publishing. <a href="https://unm-on-worldcat-org.libproxy.unm.edu/oclc/903963849?databaseList=1271,143,1487,1533,1540,1672,1708,173,1925,2006,2007,203,2201,2237,2259,2260,2261,2262,2263,2264,2267,2268,2281,2328,3036,3201,638">eBook</a> Chapters 1-3.</p>
-<h2 id="week10-reference">Reference Materials</h2>
+<h1 id="week10-reference">Reference Materials</h1>
 <p><a href="http://openlayers.org/en/v3.14.2/apidoc/">OpenLayers API Reference</a></p>
 <p><a href="http://openlayers.org/en/v3.2.1/examples/">OpenLayers Sample Maps</a></p>
-<h2 id="week10-milestone">Weekly Milestone - OpenLayers Mapping</h2>
+<h1 id="week10-milestone">Weekly Milestone - OpenLayers Mapping</h1>
 <p>Following the model used in Milestone 3 for your first Google Map web page, you should first answer the following questions about what and how you want to map - <em>relating to a different focus than you have used in your previous assignments</em>. As you define the type of map you want to build, think about a specific problem or topic that you would like to address with your map.</p>
 <p>In this exercise you will be generating the configuration for the base map (i.e. including one or more OpenLayer enabled background layers), adding controls, and defining an appropriate map center and zoom level for the map. You will add your own custom content (i.e. the answers to the following questions) to a free-standing web page that include an interactive mapper and the reasoning behind the design of the map.</p>
 <p>Create a web page that contains your milestone assignment writeup (<em>including</em> the embedded OpenLayers map required by question 5), and link it to your home page (index.html).</p>
@@ -76,11 +82,15 @@
 <dd>Embed the OpenLayers Map in your writeup (included with the answers to questions 1-4 above) that is based upon your responses to questions 1-4 above.
 </dd>
 </dl>
-<h2 id="peer-review">Peer Review</h2>
+<h1 id="peer-review">Peer Review</h1>
 <p><em>Peer Review:</em> This week's assignment will include a peer review component. Specifically, 1/3 of your 20-point peer review score will be based upon <em>your</em> peer-review of <em>two</em> other web pages generated by the students in the class. The required peer-review will consist of two steps:</p>
 <ol type="1">
 <li><p>Create a new Discussion Thread in Learn entitled: &quot;Page for Peer-Review &lt;Your Name&gt;&quot; at the same time you link your milestone to your homepage. Include in the post the GitHub address of your Week 10 milestone that you created for this assignment.</p></li>
 <li><p>Provide a <em>substantive</em>, <em>constructive</em>, and <em>civil</em> comment (through the &quot;reply&quot; option for a posted thread) to <em>two</em> of the posted discussion threads posted for peer-review. Please complete the peer-review as soon as possible so that your colleagues can benefit most from your input. Complete the peer-review no later than the required end-of-term portfolio review deadline. Think about the following ideas for your review: <em>what did I learn from this page</em>, <em>what was done well</em>, <em>what could be improved</em></p></li>
 </ol>
+<hr />
+<div class="license">
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />This work by <span xmlns:cc="http://creativecommons.org/ns#" property="cc:attributionName">Karl Benedict</span> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+</div>
 </body>
 </html>

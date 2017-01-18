@@ -1,9 +1,13 @@
+---
+title: Week 6 - Module 4.1 - Interoperability Standards - XML, KML, and WMS
+...
+
 <!---------------------------------------------------------------------------->
 <!-- Week 06 ----------------------------------------------------------------->
 <!---------------------------------------------------------------------------->
 
 
-# Week 6 - Module 4.1 - Interoperability Standards - XML, KML, and WMS # {#week06}
+# Introduction # {#week06}
 
 This week's class focuses on three open interoperability standards that are the most broadly used of the standards that we will be covering. 
 
@@ -42,12 +46,12 @@ At the end of this class students should have an understanding of the following:
 * WMS as a geospatial data visualization standard for providing online access to map images in a variety of formats for integration into desktop and web-based mapping applications
 
 
-## Class Prep ## {#week06-prep}
+# Class Prep # {#week06-prep}
 
 * [OGC Workshop White Paper](http://karlbenedict.com/documents/ogcworkshop.pdf)
 
 
-## Reference Materials ## {#week06-reference}
+# Reference Materials # {#week06-reference}
 
 * OGC WMS Implementation Specification [Version 1.0 - 2000](http://portal.opengeospatial.org/files/?artifact_id=7196), [Version 1.1 - 2001](http://portal.opengeospatial.org/files/?artifact_id=1058), [Version 1.1.1 - 2002](http://portal.opengeospatial.org/files/?artifact_id=1081&version=1&format=pdf), [*Version 1.3.0 - 2006*](http://portal.opengeospatial.org/files/?artifact_id=14416)
 
@@ -55,7 +59,7 @@ At the end of this class students should have an understanding of the following:
 
 * [Google Code KML Documentation](https://developers.google.com/kml/documentation/)
 
-## Weekly Milestone - WMS & KML ## {#week06-milestone}
+# Weekly Milestone - WMS & KML # {#week06-milestone}
 
 There are a large number of WMS services available on the web. One way to find interesting services is to search for them using standard search engines such as Google. Try searching for the following search phrase: 
 
@@ -122,7 +126,7 @@ Question 7
 
 
 
-## Deep Dive - OGC Service Concepts## {#week06-deepDive}
+# Deep Dive - OGC Service Concepts# {#week06-deepDive}
 
 Question 1
 :	What request type is common across all three (WMS, WFS, WCS) OGC web services that we have learned about?

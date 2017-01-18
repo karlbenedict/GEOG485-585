@@ -4,7 +4,8 @@
   <meta charset="utf-8">
   <meta name="generator" content="pandoc">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-  <title></title>
+  <meta name="author" content="Karl Benedict">
+  <title>Week 14 - OGC Services and Styling in GeoServer</title>
   <style type="text/css">code{white-space: pre;}</style>
   <link rel="stylesheet" href="page.css">
   <!--[if lt IE 9]>
@@ -12,10 +13,15 @@
   <![endif]-->
 </head>
 <body>
+<header>
+<h1 class="title">Week 14 - OGC Services and Styling in GeoServer</h1>
+<h2 class="author">Karl Benedict</h2>
+<h3 class="date">GEOG 485L/585L - Spring 2017</h3>
+</header>
 <!---------------------------------------------------------------------------->
 <!-- Week 14 ----------------------------------------------------------------->
 <!---------------------------------------------------------------------------->
-<h1 id="week14">Week 14 - OGC Services and Styling in GeoServer</h1>
+<h1 id="week14">Introduction</h1>
 <p>While integrating data into a web mapping platform is a critical first step, a robust geospatial data service system must also support the development and use of cartographically informative representations of the published data. GeoServer accomplishes this through the integration of the Open Geospatial Consortium's Styled Layer Descriptor standard into the system for publishing alternative styles for vector and raster data products. This standard allows for the configuration of attribute and scale-based representations that may be advertised by name and requested by reference through the published OGC WMS services.</p>
 <p><em>Expected Outcomes</em></p>
 <p>At the end of this class students will be able to:</p>
@@ -31,14 +37,18 @@
 <li>The capabilities of the SLD standard to defined representation styles that may be defined in reference to attribute values and WMS request scales</li>
 <li>That logical comparison operators may be used to control the application of style rules to specific features</li>
 </ul>
-<h2 id="week14-reference">Reference Materials</h2>
+<h1 id="week14-reference">Reference Materials</h1>
 <ul>
 <li>GeoServer <a href="http://docs.geoserver.org/stable/en/user/index.html">Online Documentation</a>: sections <a href="http://docs.geoserver.org/latest/en/user/data/index.html#data">Data Management</a>, <a href="http://docs.geoserver.org/latest/en/user/styling/index.html#styling">Styling</a></li>
 </ul>
-<h2 id="weekly-milestone---styling-of-layers-in-geoserver">Weekly Milestone - Styling of Layers in GeoServer</h2>
+<h1 id="weekly-milestone---styling-of-layers-in-geoserver">Weekly Milestone - Styling of Layers in GeoServer</h1>
 <p>This week's milestone provides an opportunity to experiment with vector layer styling. Please define two custom styles for each of the vector datasets that you added to GeoServer during last week's lab assignment. Take a screenshot of the layer preview for each of your styles - including the options tools above the OpenLayers preview displaying the name of the custom style that is being used for the current map display.</p>
 <p>Include in your writeup the layer name, the name of the two custom styles and the associated screenshots for each of the vector datasets.</p>
-<h2 id="deep-dive---data-integration-and-styling-in-geoserver">Deep Dive - Data Integration and Styling in GeoServer</h2>
+<h1 id="deep-dive---data-integration-and-styling-in-geoserver">Deep Dive - Data Integration and Styling in GeoServer</h1>
 <p>Add each of the datasets that you acquired for Deep Dive 3 to GeoServer and style at least three of the layers with a custom style designed to best display the data for your envisioned map. Include in your writeup the names of the datasets, associated styles, and screenshots of the layers in the OpenLayers previewer, with the style name displayed in the OpenLayers preview tool set.</p>
+<hr />
+<div class="license">
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />This work by <span xmlns:cc="http://creativecommons.org/ns#" property="cc:attributionName">Karl Benedict</span> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+</div>
 </body>
 </html>

@@ -4,7 +4,8 @@
   <meta charset="utf-8">
   <meta name="generator" content="pandoc">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-  <title></title>
+  <meta name="author" content="Karl Benedict">
+  <title>Week 12 - Module 4.3 - Interoperability Standards - Desktop GIS Integration</title>
   <style type="text/css">code{white-space: pre;}</style>
   <link rel="stylesheet" href="page.css">
   <!--[if lt IE 9]>
@@ -12,10 +13,15 @@
   <![endif]-->
 </head>
 <body>
+<header>
+<h1 class="title">Week 12 - Module 4.3 - Interoperability Standards - Desktop GIS Integration</h1>
+<h2 class="author">Karl Benedict</h2>
+<h3 class="date">GEOG 485L/585L - Spring 2017</h3>
+</header>
 <!---------------------------------------------------------------------------->
 <!-- Week 12 ----------------------------------------------------------------->
 <!---------------------------------------------------------------------------->
-<h1 id="week12">Week 12 - Module 4.3 - Interoperability Standards - Desktop GIS Integration</h1>
+<h1 id="week12">Introduction</h1>
 <p>As we've discussed the components of the client tier of our tiered geospatial services oriented architecture we have concentrated on the open standards that can support client applications and the web-based clients that can consume them. Desktop GIS applications can also consume standards-based services, specifically OGC services. This week's class concentrates on the methods for integrating OGC services into two GIS client applications Quantum GIS and ArcGIS, demonstrating the utility of using external standards-based services as a data and map image source within desktop applications.</p>
 <p><em>Expected Outcomes</em></p>
 <p>At the end of this class, students should be able to:</p>
@@ -33,7 +39,7 @@
 <li>ArcGIS uses a base URL request model for self-configuration of WMS, WCS, and WFS services</li>
 <li>Both Quantum GIS and ArcGIS require additional configuration to enable WFS access</li>
 </ul>
-<h2 id="week12-prep">Class Prep</h2>
+<h1 id="week12-prep">Class Prep</h1>
 <ul>
 <li>Quantum GIS <a href="http://docs.qgis.org/2.8/en/docs/user_manual/">documentation</a>, especially
 <ul>
@@ -48,7 +54,7 @@
 <li><a href="http://desktop.arcgis.com/en/arcmap/10.3/map/web-maps-and-services/adding-a-wfs-service-to-arcmap.htm">Adding a WFS service to ArcMap</a></li>
 </ul></li>
 </ul>
-<h2 id="week12-milestone">Weekly Milestone - WMS, WFS and WCS Access in Quantum GIS</h2>
+<h1 id="week12-milestone">Weekly Milestone - WMS, WFS and WCS Access in Quantum GIS</h1>
 <p><em>While the focus of these instructions is on using QGIS to interact with remote OGC services you may use ArcGIS instead of QGIS if you prefer.</em></p>
 <p>Add three WMS layers to a new map project in QGIS, with at least one coming from each of the following collections of WMS services.</p>
 <p>Some things to keep an eye out for:</p>
@@ -70,5 +76,9 @@
 </figure>
 <p><em>Important</em>: When adding any WFS layer, you may need to go into the preferences for QGIS and under the &quot;Network&quot; options increase the &quot;Timeout for Network Requests(ms)&quot; value to a larger number than the default 60000 (1 minute). If you don't do this, QGIS might give up on the request before it has been fulfilled by the server. You may also want to zoom into a limited area and check the box in the QGIS &quot;Add WFS Layer ...&quot; dialog for &quot;Only Request Features Overlapping the Current View Extent&quot; as this will reduce the number of features recovered - a significant issue if the WFS service is publishing a large number of features.</p>
 <p>In your write-up include the names of the layers you added, and the GetCapabilities requests related to those layers. Also include screen shots (again, one for each added layer) showing each layer in your QGIS project.  </p>
+<hr />
+<div class="license">
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />This work by <span xmlns:cc="http://creativecommons.org/ns#" property="cc:attributionName">Karl Benedict</span> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+</div>
 </body>
 </html>

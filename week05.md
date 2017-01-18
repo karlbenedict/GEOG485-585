@@ -1,3 +1,7 @@
+---
+title: Week 5 - Module 3 - GIS and Services Oriented Architectures
+...
+
 <!---------------------------------------------------------------------------->
 <!-- Week 05 ----------------------------------------------------------------->
 <!-- Lecture 03 a 01 a ------------------------------------------------------->
@@ -5,7 +9,7 @@
 <!---------------------------------------------------------------------------->
 <!----------------------------------------------------------------------------> 
 
-# Week 5 - Module 3 - GIS and Services Oriented Architectures# {#week05}
+# Introduction# {#week05}
 
 Core the the development of distributed mapping systems over the internet is the concept of web services and the interoperability upon which they are based as the means of communication between systems. This week's lecture and focuses on the core concepts of geospatial _Services Oriented Architectures_ and the open interoperability standards from the _Open Geospatial Consortium_ that enable the exchange of map images and data over the web. 
 
@@ -34,7 +38,7 @@ By the end of this class module you should understand the following:
 * The OGC WMS, WFS, WCS, GML, and KML standards and their respective capabilities and purposes
 
 
-## Class Prep ## {#week05-prep}
+# Class Prep # {#week05-prep}
 
 1. Yang C, Raskin R, Goodchild M, Gahegan M. Geospatial Cyberinfrastructure: Past, present and future. Computers, Environment and Urban Systems. 2010;34: 264–277. doi:10.1016/j.compenvurbsys.2010.04.001 [http://www.sciencedirect.com.libproxy.unm.edu/science/article/pii/S0198971510000268](http://www.sciencedirect.com.libproxy.unm.edu/science/article/pii/S0198971510000268)
 
@@ -43,11 +47,11 @@ By the end of this class module you should understand the following:
 3. Foster I. Service-Oriented Science. Science. 2005;308: 814–817. doi:10.1126/science.1110411 [http://science.sciencemag.org.libproxy.unm.edu/content/308/5723/814](http://science.sciencemag.org.libproxy.unm.edu/content/308/5723/814)
 
 
-## Reference Materials ## {#week05-reference}
+# Reference Materials # {#week05-reference}
 
 None
 
-## Weekly Milestone - Fun with data ## {#week05-milestone}
+# Weekly Milestone - Fun with data # {#week05-milestone}
 
 Question 1
 :    Define a data theme that you would like to focus on for this assignment

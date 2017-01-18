@@ -4,7 +4,8 @@
   <meta charset="utf-8">
   <meta name="generator" content="pandoc">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-  <title></title>
+  <meta name="author" content="Karl Benedict">
+  <title>Week 13 - Platforms and GeoServer Introduction</title>
   <style type="text/css">code{white-space: pre;}</style>
   <link rel="stylesheet" href="page.css">
   <!--[if lt IE 9]>
@@ -12,10 +13,15 @@
   <![endif]-->
 </head>
 <body>
+<header>
+<h1 class="title">Week 13 - Platforms and GeoServer Introduction</h1>
+<h2 class="author">Karl Benedict</h2>
+<h3 class="date">GEOG 485L/585L - Spring 2017</h3>
+</header>
 <!---------------------------------------------------------------------------->
 <!-- Week 13 ----------------------------------------------------------------->
 <!---------------------------------------------------------------------------->
-<h1 id="week13">Week 13 - Platforms and GeoServer Introduction</h1>
+<h1 id="week13">Introduction</h1>
 <p>Thus far we have concentrated on the client side of geospatial services oriented architectures in developing web interfaces based upon the Google Maps API, the OpenLayers javascript framework, and accessing data published using the OGC WMS, WFS, and WCS standards in desktop applications. Starting this week we begin our work on the server side - working with the GeoServer server platform to publish data through the OGC WMS, WFS, and WCS service standards. This work will demonstrate the ease with which you can share data using these standards, facilitating client use such as that that we have seen in our web site and desktop application work.</p>
 <p><em>Expected Outcomes</em></p>
 <p>By the end of this class, students should be able to:</p>
@@ -32,7 +38,7 @@
 <li>The information required about data to successfully configure it for publication within GeoServer</li>
 <li>The stepwise process through which a dataset may be published using GeoServer</li>
 </ul>
-<h2 id="week13-reference">Reference Materials</h2>
+<h1 id="week13-reference">Reference Materials</h1>
 <ul>
 <li>Lynda.com <a href="http://www.lynda.com/Linux-tutorials/Learn-Linux-Command-Line-Basics/435539-2.html?org=unm.edu"><em>Learn the Linux Command Line: The Basics</em></a> - particularly:
 <ul>
@@ -46,8 +52,8 @@
 </ul></li>
 <li>GeoServer <a href="http://docs.geoserver.org/stable/en/user/index.html">Online Documentation</a>: sections <a href="http://docs.geoserver.org/stable/en/user/introduction/index.html">Introduction</a>, <a href="http://docs.geoserver.org/stable/en/user/gettingstarted/index.html">Getting Started</a>, and <a href="http://docs.geoserver.org/stable/en/user/webadmin/index.html">Web Administration Interface</a></li>
 </ul>
-<h2 id="week13-milestone">Weekly Milestone - Linux Basics and GeoServer Data Import</h2>
-<h3 id="working-on-the-class-server">Working on the Class Server</h3>
+<h1 id="week13-milestone">Weekly Milestone - Linux Basics and GeoServer Data Import</h1>
+<h2 id="working-on-the-class-server">Working on the Class Server</h2>
 <p>For the GeoServer portion of our work, you will be working on a Linux server that has been created for the class. While we won't be doing a lot of Linux work, some basic familiarity with moving around, copying files, and working with files is needed. The class server is running Ubuntu Linux which is a broadly deployed, well supported operating system and computing platform that has excellent support for many Open Source geospatial applications, including those that we will be using in this class.</p>
 <p>The first set of exercises relate to learning some basics about working with the Linux Operating system, applicable just about any Linux server including the class server.</p>
 <p>Review (but don't worry about memorizing) the following materials (in addition to watching the Lynda.com video tutorial sections listed above):</p>
@@ -72,7 +78,7 @@
 <dd>Use the <code>mkdir data</code> command to create a directory called <code>data</code> in your home directory (the directory that you are in when you login, and where you go when you type the <code>cd</code> command with no options).
 </dd>
 </dl>
-<h3 id="adding-data-to-geoserver">Adding data to GeoServer</h3>
+<h2 id="adding-data-to-geoserver">Adding data to GeoServer</h2>
 <p>To add data to GeoServer you must have a file location on the server where data files must be stored and accessible by the GeoServer.</p>
 <dl>
 <dt>Task</dt>
@@ -103,5 +109,9 @@
 <dd>Preview each of your added layers, using the <em>Layer Preview</em> tool and the <em>Open Layers</em> option to display the data. Include screen grabs of the previews in your write-up.
 </dd>
 </dl>
+<hr />
+<div class="license">
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />This work by <span xmlns:cc="http://creativecommons.org/ns#" property="cc:attributionName">Karl Benedict</span> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+</div>
 </body>
 </html>

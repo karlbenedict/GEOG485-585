@@ -1,12 +1,18 @@
+---
+title: Week 1 - Introductions, Course Outline & Web Concepts
+...
+
+
+
 <!---------------------------------------------------------------------------->
 <!-- Week 01 ----------------------------------------------------------------->
 <!---------------------------------------------------------------------------->
 
-# Week 1 - Introductions, Course Outline & Web Concepts # {#week01}
+# Introduction # {#week01}
 
 This week we will review the content and structure for the course and spend some time getting to know each other. Following this we will spend some time setting up some of the tools that you will be using for the course in developing your portfolio of materials. 
 
-## Class Prep ## {#week01-prep}
+# Class Prep # {#week01-prep}
 
 * [Wikipedia article - History of the World Wide web](http://en.wikipedia.org/wiki/History_of_the_World_Wide_Web)
 
@@ -21,12 +27,12 @@ This week we will review the content and structure for the course and spend some
 		* 2. Version Control Basics
 		* 3. Setting Up Your First Project 
 
-## Reference Materials ## {#week01-reference}
+# Reference Materials # {#week01-reference}
 
 [Class Syllabus](https://github.com/UNM-GEOG-485-585/class-materials/raw/master/syllabus.pdf)
 
 
-## Weekly Milestone - Creating Your GitHub Repository and First Web Page## {#week01-milestone}
+# Weekly Milestone - Creating Your GitHub Repository and First Web Page# {#week01-milestone}
 
 Developing content to go onto the web has evolved from a solitary effort to one where teams work together in developing components of larger web sites. These teams need to have a variety of tools to enable their work. Some of the most important tools enable code sharing with the team, and in projects based on the [Open Source](http://opensource.org/osd-annotated) software model the rest of the world. The [GitHub](https://github.com/) web platform uses the [Git](http://git-scm.com/) distributed [version control](http://en.wikipedia.org/wiki/Revision_control) system to enable sharing of code and hosting static web pages based on that shared code. 
 
@@ -36,7 +42,7 @@ While the work we do this and next week will be directly through the editor inte
 
 For this milestone we will walk through the process of creating your repository in GitHub, creating your first web page, previewing that page on your local computer, changing the page, and updating the page on GitHub. For this milestone we will do this as a manual process which we will streamline in the coming weeks. 
 
-### Create Your GitHub Account and Portfolio Repository
+## Create Your GitHub Account and Portfolio Repository
 
 For your work in this class you will build your portfolio within your account - which you will need to create if you don't already have one. 
 
@@ -70,7 +76,7 @@ After your successfully create your `portfolio` repository you should see the ho
 
 **Make note of the web address of this page (even email it to yourself) to make it easy to get back here later** - `https://github.com/<your username>/portfolio`
 
-### Create Your First Web Page
+## Create Your First Web Page
 
 To create your first web page within your portfolio repository you need to first enter your repository, add a new file, modify its contents, and commit your modifications back to the repository to save your changes. 
 

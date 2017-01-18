@@ -1,8 +1,12 @@
+---
+title: Week 7 - Module 4.2 - Interoperability Standards - WFS & WCS
+...
+
 <!---------------------------------------------------------------------------->
 <!-- Week 07 ----------------------------------------------------------------->
 <!---------------------------------------------------------------------------->
 
-# Week 7 - Module 4.2 - Interoperability Standards - WFS & WCS # {#week07}
+# Introduction # {#week07}
 
 This week's class focuses on two other key Open Geospatial Consortium standards that were created to enable access to geospatial _data_ of a variety of types. 
 
@@ -33,15 +37,15 @@ At the end of this class students should have an understanding of the following:
 * OGC WCS as a data access standard for  _coverages_ representing spatio-temporal gridded data represented in 1- or more dimensions. 
 
 
-## Class Prep ## {#week07-prep}
+# Class Prep # {#week07-prep}
 
-## Reference Materials ## {#week07-reference}
+# Reference Materials # {#week07-reference}
 
 * [OGC WFS Implementation Specification][http://www.opengeospatial.org/standards/wfs]
 
 * [OGC WCS Implementation Specification][http://www.opengeospatial.org/standards/wcs]
 
-## Weekly Milestone - WMS GetMap Requests, Map Scale and Aspect Ratio Calculations## {#week07-milestone}
+# Weekly Milestone - WMS GetMap Requests, Map Scale and Aspect Ratio Calculations# {#week07-milestone}
 
 You might have noticed in the WMS requests that you generated in the previous lab returned images that didn’t look “quite right” relative to what you may know of the shape of familiar features. 
 

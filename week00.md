@@ -1,6 +1,6 @@
-% Geography 485L/585L Weekly Breakdown
-% Karl Benedict
-% Spring 2016
+---
+title: Week 1 - Goals and Objectives
+...
 
 # Goals and Objectives # {#goals}
 
