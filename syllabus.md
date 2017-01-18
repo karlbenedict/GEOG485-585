@@ -90,19 +90,19 @@ In addition to the reading materials for the course, some course content is also
 Class grades will be based upon the number of points acquired throughout the semester. The grade breakdown will be as follows:
 
 A
-~	360 - 400 points
+~	90-100% of points
 
 B
-~	320 - 359.9 points
+~	80-89.9% of points
 
 C
-~	280 - 319.9 points
+~	70-79.7% of points
 
 D
-~	240 - 279.9 points
+~	60-69.9% of points
 
 F
-~	< 240 points
+~	< 60% of points
 
 Points for the class will be earned through a combination of portfolio review (for milestones and deep dives), peer-review, and exams.
  
@@ -117,7 +117,7 @@ Deep Dives
 ~	There will be 4 deep dive assignments during the semester. These will be small project-focussed activities that will be added to your portfolio and will reinforce the hands-on activities undertaken as part of the portfolio milestones. Each homework assignment will be worth an additional 25 points (100 points total). Evaluation of the deep dive assignments will also take place at mid-term and at the end of the class as part of the portfolio review. 
 
 Peer Review
-~	There will be 4 points during the semester that you will be asked to submit your materials for and perform a peer review of specific components within the portfolios of your peers. Each peer review will contribute up to 5-points to your overall score for the course. The peer-review points you earn will be based upon the timelines of your submission and the *substantive* feedback that you provide to other students as part of the assignment. I will review the peer-review procedures in more detail when we have our first peer-review activity. 
+~	There will be 4 points during the semester that you will be asked to submit your materials for and perform a peer review of specific components within the portfolios of your peers. Each peer review will contribute up to 9-points to your overall score for the course. The peer-review points you earn will be based upon the timelines of your submission and the *substantive* feedback that you provide to other students as part of the assignment. I will review the peer-review procedures in more detail when we have our first peer-review activity. 
 
 Exams 
 ~	There will be two exams: a midterm and final. The midterm will be a take-home exam that will be released on Monday March 6 and due on Friday March 10 at 5:00 pm. The final exam will be a take-home exam which will released on Monday May 8 and due on Thursday May 11 by 5:00 pm. Each exam will be worth 100 points (200 points total). 
@@ -223,8 +223,8 @@ Module 4b - *Interoperability Standards*
 Module 5 - *Developing and Hosting OGC Services*
 
 *	Week 13 - April 10-16. Platforms and GeoServer Introduction
-*	Week 14 - April 17-23. OGC services and styling in GeoServer
-*	Week 15 - April 24-30. OGC services and styling in GeoServer - Integration into an OpenLayers Client  (Peer Review)
+*	Week 14 - April 17-23. OGC services and styling in GeoServer  (Peer Review)
+*	Week 15 - April 24-30. OGC services and styling in GeoServer - Integration into an OpenLayers Client 
 
 Course Review and Emerging Technologies
 
