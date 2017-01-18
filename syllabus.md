@@ -96,7 +96,7 @@ B
 ~	80-89.9% of points
 
 C
-~	70-79.7% of points
+~	70-79.9% of points
 
 D
 ~	60-69.9% of points
