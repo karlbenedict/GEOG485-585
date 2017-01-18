@@ -1,3 +1,7 @@
+---
+title: Week 3- Module 2a - Web-based Mapping Clients. Google Maps API
+...
+
 <!---------------------------------------------------------------------------->
 <!-- Week 03 ----------------------------------------------------------------->
 <!-- Lecture 02 a 02 a ------------------------------------------------------->
@@ -5,8 +9,6 @@
 <!-- Google Maps API---------------------------------------------------------->
 <!---------------------------------------------------------------------------->
 
-
-# Week 3- Module 2a - Web-based Mapping Clients. Google Maps API# {.module02a02a}
 
 ### Outline ### {.module02a02a}
 
@@ -32,7 +34,7 @@
 * The version of the Google Maps API used in this class is v3 of the Javascript API
 	* Freely usable for free applications
 	* Subject to Google’s Terms of Service
-	* Google [API key is optional for our work](https://developers.google.com/maps/signup?hl=en)
+	* Google [API key is now required](https://developers.google.com/maps/faq?hl=en#using-google-maps-apis)
 
 * Key capabilities in v3
 	* Interactive maps based on Google’s mapping engine (contrast w. static maps API)
@@ -43,19 +45,19 @@
 
 
 Google Maps API Family
-:	[http://code.google.com/apis/maps/](http://code.google.com/apis/maps/)
+:	[http://code.google.com/apis/maps/](https://developers.google.com/maps/?csw=1)
 
 Javascript API Home Page
-:	[http://code.google.com/apis/maps/documentation/javascript/](http://code.google.com/apis/maps/documentation/javascript/)
+:	[https://developers.google.com/maps/documentation/javascript/?csw=1](https://developers.google.com/maps/documentation/javascript/?csw=1)
 
 Javascript API v3 Tutorial Page
-:	[http://code.google.com/apis/maps/documentation/javascript/tutorial.html](http://code.google.com/apis/maps/documentation/javascript/tutorial.html)
+:	[http://code.google.com/apis/maps/documentation/javascript/tutorial.html](https://developers.google.com/maps/documentation/javascript/tutorial?csw=1)
 
 
 
 ### Key Components ### {.module02a02a} 
 
-* Map [object options](http://code.google.com/apis/maps/documentation/javascript/reference.html#MapOptions) 
+* Map [object options](https://developers.google.com/maps/documentation/javascript/reference?csw=1#MapOptions) 
 
 Types (required)
 :	ROADMAP
@@ -73,50 +75,45 @@ Zoom Level (required)
 
 ### Controls ### {.module02a02a} 
 
-* Available Controls (enabled through map options) [default controls](http://code.google.com/apis/maps/documentation/javascript/controls.html#DefaultUI)
+* Available Controls (enabled through map options) [default controls](https://developers.google.com/maps/documentation/javascript/controls?csw=1#DefaultUI)
 	* Zoom Control
-	* Pan Control
 	* Scale Control
 	* MapType Control
 	* Street View Control
 	* Rotate (for maps that contain 45-degree imagery)
+	* Fullscreen Control
 * Different control styles may be defined
-* Controls may be positioned [positioning options](http://code.google.com/apis/maps/documentation/javascript/controls.html#ControlPositioning)
+* Controls may be positioned [positioning options](https://developers.google.com/maps/documentation/javascript/controls?csw=1#ControlPositioning)
 * Custom controls may be defined and attached to fixed location in the map
 
 
 
 ### Overlays ### {.module02a02a} 
 
-Overlay Types [documentation](http://code.google.com/apis/maps/documentation/javascript/overlays.html)
+Overlay Types [documentation](https://developers.google.com/maps/documentation/javascript/overlays?csw=1)
 
 
 Marker
-:	points depicted by specified or defined icons at locations within the map
+:	points depicted by specified or defined icons at locations within the map ([reference](https://developers.google.com/maps/documentation/javascript/markers))
 
 Polyline
-:	linear features defined by multiple points with a defined style for the line
+:	linear features defined by multiple points with a defined style for the line ([reference](https://developers.google.com/maps/documentation/javascript/shapes))
 
 Polygon
-:	closed features defined by multiple points. Supports multi-polygons, and donuts. Line and fill styles may be specified.
+:	closed features defined by multiple points. Supports multi-polygons, and donuts. Line and fill styles may be specified. ([reference](https://developers.google.com/maps/documentation/javascript/shapes))
 
 (Ground) Overlay Maps
-:	Image-based map layers that replace or overlay Google layers - registered to the map coordinates
-
-
-
-
-### Overlays (continued) ### {.module02a02a} 
+:	Image-based map layers that replace or overlay Google layers - registered to the map coordinates ([reference](https://developers.google.com/maps/documentation/javascript/groundoverlays))
 
 
 Info Windows
-:	floating content windows for displaying content defined as HTML, a DOM element, or text string
+:	floating content windows for displaying content defined as HTML, a DOM element, or text string ([reference](https://developers.google.com/maps/documentation/javascript/infowindows))
 
 Layers
-:	Grouped display content assigned to a specific layer type: Data (including GeoJSON), KmlLayer (& GeoRSS), Heatmap, FusionTablesLayer, TrafficLayer, TransitLayer BicyclingLayer
+:	Grouped display content assigned to a specific layer type: Data (including GeoJSON), KmlLayer (& GeoRSS), Heatmap, FusionTablesLayer, TrafficLayer, TransitLayer, BicyclingLayer ([reference](https://developers.google.com/maps/documentation/javascript/layers))
 
 Custom Overlays
-:	definition of programmatically controlled layers
+:	definition of programmatically controlled layers ([reference](https://developers.google.com/maps/documentation/javascript/customoverlays))
 
 
 ### Services ### {.module02a02a} 
@@ -131,11 +128,6 @@ Custom Overlays
 	* Available directions and rendered route
 * Distance Matrix
 	* Travel distance and duration given a specific mode of travel
-
-
-
-### Services ### {.module02a02a} 
-
 * Elevation
 	* Delivery of elevation data for locations or paths
 * Streetview
@@ -166,7 +158,7 @@ Custom Overlays
 
 <div class="codeTable">
 
-gmaps01.html
+[gmaps01.html](http://karlbenedict.com/GEOG485-585/sample-files/GoogleMaps/gmaps01.html)
 
 ~~~~~~~~~~ {.html .numberLines}
 <!DOCTYPE html>
@@ -185,16 +177,14 @@ gmaps01.html
 		
 		<!-- Load the API in asynchronous mode and execute the initialize 
 			function when done -->
-		<!-- The optional 'key-<API Key>' parameter is not used here but should be 
-			for a production map -->
 		<script async defer 
-			src="https://maps.googleapis.com/maps/api/js?callback=initialize">
+			src="https://maps.googleapis.com/maps/api/js?callback=initialize&key=<mykey>">
     	</script>
 	</body>
 </html>
 ~~~~~~~~~~
 
-mapPage.css
+[mapPage.css](http://karlbenedict.com/GEOG485-585/sample-files/GoogleMaps/css/mapPage.css)
 
 ~~~~~~~~~~ {.css .numberLines}
 /* You must set the height of either the 'html' or 'body' elements for some 
@@ -220,7 +210,7 @@ body {
 	color:black }
 ~~~~~~~~~~
 
-mapPage_01.js
+[mapPage_01.js](http://karlbenedict.com/GEOG485-585/sample-files/GoogleMaps/js/mapPage_01.js)
 
 ~~~~~~~~~~ {.js .numberLines}
 function initialize() {
@@ -250,7 +240,7 @@ function initialize() {
 
 <div class="codeTable">
 
-gmaps02.html
+[gmaps02.html](http://karlbenedict.com/GEOG485-585/sample-files/GoogleMaps/gmaps02.html)
 
 ~~~~~~~~~~ {.html .numberLines}
 <!DOCTYPE html>
@@ -269,16 +259,15 @@ gmaps02.html
 		
 		<!-- Load the API in asynchronous mode and execute the initialize 
 			function when done -->
-		<!-- The optional 'key-<API Key>' parameter is not used here but should be 
-			for a production map -->
+		
 		<script async defer 
-			src="https://maps.googleapis.com/maps/api/js?callback=initialize">
+			src="https://maps.googleapis.com/maps/api/js?callback=initialize&key=<mykey>">
     	</script>
 	</body>
 </html>
 ~~~~~~~~~~
 
-mapPage_02.js
+[mapPage_02.js](http://karlbenedict.com/GEOG485-585/sample-files/GoogleMaps/js/mapPage_02.js)
 
 ~~~~~~~~~~ {.js .numberLines}
 function initialize() {
@@ -308,7 +297,7 @@ function initialize() {
 
 <div class="codeTable">
 
-gmaps03.html
+[gmaps03.html](http://karlbenedict.com/GEOG485-585/sample-files/GoogleMaps/gmaps03.html)
 
 ~~~~~~~~~~ {.html .numberLines}
 <!DOCTYPE html>
@@ -327,16 +316,15 @@ gmaps03.html
 		
 		<!-- Load the API in asynchronous mode and execute the initialize 
 			function when done -->
-		<!-- The optional 'key-<API Key>' parameter is not used here but should be 
-			for a production map -->
+		
 		<script async defer 
-			src="https://maps.googleapis.com/maps/api/js?callback=initialize">
+			src="https://maps.googleapis.com/maps/api/js?callback=initialize&key=<mykey>">
     	</script>
 	</body>
 </html>
 ~~~~~~~~~~
 
-mapPage_03.js
+[mapPage_03.js](http://karlbenedict.com/GEOG485-585/sample-files/GoogleMaps/js/mapPage_03.js)
 
 ~~~~~~~~~~ {.js .numberLines}
 function initialize() {
@@ -367,7 +355,7 @@ function initialize() {
 
 <div class="codeTable">
 
-gmaps04.html
+[gmaps04.html](http://karlbenedict.com/GEOG485-585/sample-files/GoogleMaps/gmaps04.html)
 
 ~~~~~~~~~~ {.html .numberLines}
 <!DOCTYPE html>
@@ -386,16 +374,15 @@ gmaps04.html
 		
 		<!-- Load the API in asynchronous mode and execute the initialize 
 			function when done -->
-		<!-- The optional 'key-<API Key>' parameter is not used here but should be 
-			for a production map -->
+		
 		<script async defer 
-			src="https://maps.googleapis.com/maps/api/js?callback=initialize">
+			src="https://maps.googleapis.com/maps/api/js?callback=initialize&key=<mykey>">
     	</script>
 	</body>
 </html>
 ~~~~~~~~~~
 
-mapPage_04.js
+[mapPage_04.js](http://karlbenedict.com/GEOG485-585/sample-files/GoogleMaps/js/mapPage_04.js)
 
 ~~~~~~~~~~ {.js .numberLines}
 function initialize() {
@@ -423,7 +410,7 @@ function initialize() {
 
 <div class="codeTable">
 
-gmaps05.html
+[gmaps05.html](http://karlbenedict.com/GEOG485-585/sample-files/GoogleMaps/gmaps05.html)
 
 ~~~~~~~~~~ {.html .numberLines}
 <!DOCTYPE html>
@@ -442,16 +429,15 @@ gmaps05.html
 		
 		<!-- Load the API in asynchronous mode and execute the initialize 
 			function when done -->
-		<!-- The optional 'key-<API Key>' parameter is not used here but should be 
-			for a production map -->
+		
 		<script async defer 
-			src="https://maps.googleapis.com/maps/api/js?callback=initialize">
+			src="https://maps.googleapis.com/maps/api/js?callback=initialize&key=<mykey>">
     	</script>
 	</body>
 </html>
 ~~~~~~~~~~
 
-mapPage_05.js
+[mapPage_05.js](http://karlbenedict.com/GEOG485-585/sample-files/GoogleMaps/js/mapPage_05.js)
 
 ~~~~~~~~~~ {.js .numberLines}
 function initialize() {
@@ -482,7 +468,7 @@ function initialize() {
 
 <div class="codeTable">
 
-gmaps06.html
+[gmaps06.html](http://karlbenedict.com/GEOG485-585/sample-files/GoogleMaps/gmaps06.html)
 
 ~~~~~~~~~~ {.html .numberLines}
 <!DOCTYPE html>
@@ -501,16 +487,15 @@ gmaps06.html
 		
 		<!-- Load the API in asynchronous mode and execute the initialize 
 			function when done -->
-		<!-- The optional 'key-<API Key>' parameter is not used here but should be 
-			for a production map -->
+		
 		<script async defer 
-			src="https://maps.googleapis.com/maps/api/js?callback=initialize">
+			src="https://maps.googleapis.com/maps/api/js?callback=initialize&key=<mykey>">
     	</script>
 	</body>
 </html>
 ~~~~~~~~~~
 
-mapPage_06.js
+[mapPage_06.js](http://karlbenedict.com/GEOG485-585/sample-files/GoogleMaps/js/mapPage_06.js)
 
 ~~~~~~~~~~ {.js .numberLines}
 function initialize() {
@@ -546,7 +531,7 @@ var map = new google.maps.Map(
 
 <div class="codeTable">
 
-gmaps07.html
+[gmaps07.html](http://karlbenedict.com/GEOG485-585/sample-files/GoogleMaps/gmaps07.html)
 
 ~~~~~~~~~~ {.html .numberLines}
 <!DOCTYPE html>
@@ -565,16 +550,15 @@ gmaps07.html
 		
 		<!-- Load the API in asynchronous mode and execute the initialize 
 			function when done -->
-		<!-- The optional 'key-<API Key>' parameter is not used here but should be 
-			for a production map -->
+		
 		<script async defer 
-			src="https://maps.googleapis.com/maps/api/js?callback=initialize">
+			src="https://maps.googleapis.com/maps/api/js?callback=initialize&key=<mykey>">
     	</script>
 	</body>
 </html>
 ~~~~~~~~~~
 
-mapPage_07.js
+[mapPage_07.js](http://karlbenedict.com/GEOG485-585/sample-files/GoogleMaps/js/mapPage_07.js)
 
 ~~~~~~~~~~ {.js .numberLines}
 function initialize() {
@@ -617,7 +601,7 @@ function initialize() {
 
 <div class="codeTable">
 
-gmaps08.html
+[gmaps08.html](http://karlbenedict.com/GEOG485-585/sample-files/GoogleMaps/gmaps08.html)
 
 ~~~~~~~~~~ {.html .numberLines}
 <!DOCTYPE html>
@@ -636,16 +620,15 @@ gmaps08.html
 		
 		<!-- Load the API in asynchronous mode and execute the initialize 
 			function when done -->
-		<!-- The optional 'key-<API Key>' parameter is not used here but should be 
-			for a production map -->
+		
 		<script async defer 
-			src="https://maps.googleapis.com/maps/api/js?callback=initialize">
+			src="https://maps.googleapis.com/maps/api/js?callback=initialize&key=<mykey>">
     	</script>
 	</body>
 </html>
 ~~~~~~~~~~
 
-mapPage_08.js
+[mapPage_08.js](http://karlbenedict.com/GEOG485-585/sample-files/GoogleMaps/js/mapPage_08.js)
 
 ~~~~~~~~~~ {.js .numberLines}
 	var classroom = new google.maps.LatLng(35.084280,-106.624073)
@@ -702,7 +685,7 @@ mapPage_08.js
 
 <div class="codeTable">
 
-gmaps09.html
+[gmaps09.html](http://karlbenedict.com/GEOG485-585/sample-files/GoogleMaps/gmaps09.html)
 
 ~~~~~~~~~~ {.html .numberLines}
 <!DOCTYPE html>
@@ -721,16 +704,15 @@ gmaps09.html
 		
 		<!-- Load the API in asynchronous mode and execute the initialize 
 			function when done -->
-		<!-- The optional 'key-<API Key>' parameter is not used here but should be 
-			for a production map -->
+		
 		<script async defer 
-			src="https://maps.googleapis.com/maps/api/js?callback=initialize">
+			src="https://maps.googleapis.com/maps/api/js?callback=initialize&key=<mykey>">
     	</script>
 	</body>
 </html>
 ~~~~~~~~~~
 
-mapPage_09.js
+[mapPage_09.js](http://karlbenedict.com/GEOG485-585/sample-files/GoogleMaps/js/mapPage_09.js)
 
 ~~~~~~~~~~ {.js .numberLines}
 function initialize() {
@@ -792,7 +774,7 @@ function initialize() {
 
 <div class="codeTable">
 
-gmaps10.html
+[gmaps10.html](http://karlbenedict.com/GEOG485-585/sample-files/GoogleMaps/gmaps10.html)
 
 ~~~~~~~~~~ {.html .numberLines}
 <!DOCTYPE html>
@@ -811,16 +793,15 @@ gmaps10.html
 		
 		<!-- Load the API in asynchronous mode and execute the initialize 
 			function when done -->
-		<!-- The optional 'key-<API Key>' parameter is not used here but should be 
-			for a production map -->
+		
 		<script async defer 
-			src="https://maps.googleapis.com/maps/api/js?callback=initialize">
+			src="https://maps.googleapis.com/maps/api/js?callback=initialize&key=<mykey>">
     	</script>
 	</body>
 </html>
 ~~~~~~~~~~
 
-mapPage_10.js
+[mapPage_10.js](http://karlbenedict.com/GEOG485-585/sample-files/GoogleMaps/js/mapPage_10.js)
 
 ~~~~~~~~~~ {.js .numberLines}
 function initialize() {

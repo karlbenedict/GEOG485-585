@@ -1,3 +1,7 @@
+---
+title: Week 2 - Module 2a - Web-based Mapping Clients. HTML, CSS & Javascript
+...
+
 <!---------------------------------------------------------------------------->
 <!-- Week 02 ----------------------------------------------------------------->
 <!-- Lecture 02 a 01 --------------------------------------------------------->
@@ -5,8 +9,6 @@
 <!-- Introduction to HTML, CSS and Javascript--------------------------------->
 <!---------------------------------------------------------------------------->
 
-
-# Week 2 - Module 2a - Web-based Mapping Clients. HTML, CSS & Javascript# {.module02a01}
 
 ### Overview ###  {.module02a01}
 
@@ -62,7 +64,7 @@
 </html>
 ~~~~~~~~~~
 
-[Link to example](https://github.com/UNM-GEOG-485-585/class-materials/blob/master/sample-files/example02_01_01.html)/[Preview](http://htmlpreview.github.io/?https://github.com/UNM-GEOG-485-585/class-materials/blob/master/sample-files/example02_01_01.html)
+[Link to example](https://karlbenedict.github.io/GEOG485-585/sample-files/example02_01_01.html)
 
 
 
@@ -136,6 +138,7 @@ The most interoperable language for adding dynamic behavior to web sites is _Jav
 ### Reference Links ###  {.module02a01}
 
 * w3schools.com
+	* [HTML 5.0 Introduction](http://www.w3schools.com/html/html5_intro.asp)
 	* [HTML 4.0 / XHTML 1.0 Tag Reference](http://www.w3schools.com/tags/default.asp)
 	* [Cascading Style Sheet (CSS) selectors and elements](http://www.w3schools.com/css/default.asp)
 	* [Javascript reference](http://www.w3schools.com/js/default.asp)
@@ -144,8 +147,8 @@ The most interoperable language for adding dynamic behavior to web sites is _Jav
 	* [HTML and CSS Tutorial Links Page](http://www.w3.org/2002/03/tutorials.html#webdesign_htmlcss)
 	* [Validators Page](http://validator.w3.org/)
 * Webmonkey.com
-	* [HTML Cheat Sheet](http://www.webmonkey.com/2010/02/html_cheatsheet/)
-	* [CSS Guide](http://www.webmonkey.com/2010/02/css-guide/)
+	* [HTML Cheat Sheet](https://www.wired.com/2010/02/html_cheatsheet/)
+	* [CSS Guide](https://www.wired.com/2010/02/css-guide/)
 
 
 
@@ -166,7 +169,7 @@ The most interoperable language for adding dynamic behavior to web sites is _Jav
 </html>
 ~~~~~~~~~~
 
-[link to example](https://github.com/UNM-GEOG-485-585/class-materials/blob/master/sample-files/example02_01_02.html)/[Preview](http://htmlpreview.github.io/?https://github.com/UNM-GEOG-485-585/class-materials/blob/master/sample-files/example02_01_02.html)
+[link to example](https://karlbenedict.github.io/GEOG485-585/sample-files/example02_01_02.html)
 
 
 
@@ -192,7 +195,7 @@ The most interoperable language for adding dynamic behavior to web sites is _Jav
 </html>
 ~~~~~~~~~~
 
-[link to example](https://github.com/UNM-GEOG-485-585/class-materials/blob/master/sample-files/example02_01_03.html)/[Preview](http://htmlpreview.github.io/?https://github.com/UNM-GEOG-485-585/class-materials/blob/master/sample-files/example02_01_03.html)
+[link to example](https://karlbenedict.github.io/GEOG485-585/sample-files/example02_01_03.html)
 
 
 
@@ -219,7 +222,7 @@ The most interoperable language for adding dynamic behavior to web sites is _Jav
 </html>
 ~~~~~~~~~~
 
-[link to example](https://github.com/UNM-GEOG-485-585/class-materials/blob/master/sample-files/example02_01_04.html)/[Preview](http://htmlpreview.github.io/?https://github.com/UNM-GEOG-485-585/class-materials/blob/master/sample-files/example02_01_04.html)
+[link to example](https://karlbenedict.github.io/GEOG485-585/sample-files/example02_01_04.html)
 
 
 

@@ -1,10 +1,12 @@
+---
+title: Week 1 - Module 1 - Introduction and Outline
+...
+
 <!---------------------------------------------------------------------------->
 <!-- Week 01 ----------------------------------------------------------------->
 <!-- Lecture 01 a 01 --------------------------------------------------------->
 <!-- Introduction and Outline ------------------------------------------------>
 <!---------------------------------------------------------------------------->
-
-# Week 1 - Module 1 - Introduction and Outline # {.module01}
 
 ### Overview ### {.module01}
 
@@ -21,7 +23,7 @@
 
 * What brought you here?
 
-## Syllabus Review ([link](https://github.com/UNM-GEOG-485-585/class-materials/raw/master/syllabus.pdf)) ## {.module01}
+## Syllabus Review ([link](https://karlbenedict.github.io/GEOG485-585/syllabus.pdf)) ## {.module01}
 
 ### Class Topics ###  {.module01}
 
@@ -73,8 +75,6 @@ Mapping
 
 :	The generation of cartographic products that include map images (pictures of geospatial data) and other elements (e.g. legends, tools, scale information, north-arrow)
 
-### Definitions ###  {.module01}
-
 Analysis
 
 :	The development of models (statistical and otherwise) that enable the exploration of geospatial data and testing of hypotheses using those data
@@ -85,8 +85,6 @@ Open Standards
 
 * Developed through a public process by a national or international standards group
 * May be implemented royalty-free
-
-### Definitions ###  {.module01}
 
 Interoperability
 
@@ -99,8 +97,6 @@ COTS
 Open Source
 
 :	Software licensed under terms that are consistent with the Open Source definition, which includes access to source code, and freedom to modify and redistribute
-
-### Definitions ###  {.module01}
 
 Data
 

@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <meta name="author" content="Karl Benedict">
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+  </style>
+  <link rel="stylesheet" href="page.css">
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<!---------------------------------------------------------------------------->
+<!-- Week 10 ----------------------------------------------------------------->
+<!-- Lecture 02 b 01 a ------------------------------------------------------->
+<!-- Web-based Mapping Clients------------------------------------------------>
+<!-- OpenLayers Javascript Framework------------------------------------------>
+<!---------------------------------------------------------------------------->
+<h1 id="week-10---module-2b---openlayers-3-javascript-framework" class="module02b01a">Week 10 - Module 2b - OpenLayers 3 Javascript Framework</h1>
+<h3 id="overview" class="module02b01a">Overview</h3>
+<ul>
+<li><p>Capabilities</p></li>
+<li><p>OpenLayers = Javascript (by example)</p></li>
+</ul>
+<h3 id="openlayers-capabilities" class="module02b01a">OpenLayers Capabilities</h3>
+<ul>
+<li>Support for Multiple basemaps: <em>BingMaps</em>, <em>MapQuest</em>, <em>OpenStreetMap</em>, <em>Stamen</em></li>
+<li>Model for interaction with multiple map server platforms: <em>ArcGIS</em> (REST), <em>MapServer</em>, <em>GeoServer</em></li>
+<li>Support for key OGC standards: <em>WMS</em>, <em>WMTS</em>, <em>WFS</em>, <em>GML</em>, <em>KML</em></li>
+<li>Multiple control types: <em>Attribution</em>, <em>Zoom</em>, <em>Overview</em>, <em>Scale</em>, <em>FullScreen</em>, <em>Graticule</em></li>
+<li>Custom styled features with associated attributes: <em>Curve</em>, <em>LinearRing</em>, <em>LineString</em>, <em>MultiLineString</em>, <em>MultiPoint</em>, <em>MultiPolygon</em>, <em>Point</em>, <em>Polygon</em></li>
+<li>Support for many formats for data read and write: <em>ATOM</em>, <em>GML</em> (1, 2, 3), <em>GeoJSON</em>, <em>GPX</em>, <em>KML</em>, <em>WKT</em>, any many others</li>
+<li>Open Source, enabling modification and integration into other systems (e.g. <a href="http://geoext.org/">GeoExt</a>)</li>
+</ul>
+<h3 id="distinguishing-characteristics-between-openlayers-and-google-maps" class="module02b01a">Distinguishing Characteristics Between OpenLayers and Google Maps</h3>
+<ul>
+<li>Greater emphasis on client-side processing - Client access and rendering of data files that Google's servers otherwise take care of (pros &amp; cons to this approach)</li>
+<li>Integrated support for OGC services and their products</li>
+<li>Support for different projections (adds complexity)</li>
+<li>API more rich in options ==&gt; more complexity</li>
+</ul>
+<h3 id="resources" class="module02b01a">Resources</h3>
+<p><a href="http://openlayers.org/">OpenLayers Home Page</a></p>
+<p><a href="http://openlayers.org/en/v3.14.2/apidoc/index.html">Application Programming Interface (API) Reference</a></p>
+<p><a href="http://openlayers.org/en/v3.14.2/examples/">Examples</a></p>
+<h3 id="demonstrations-and-examples" class="module02b01a">Demonstrations and Examples</h3>
+<ul>
+<li><a href="sample-files/OpenLayers/OpenLayers_01.html">Basic Mapper</a> (with MapQuest base map (<a href="https://github.com/UNM-GEOG-485-585/class-materials/blob/master/sample-files/OpenLayers/OpenLayers_01.html">source</a>))</li>
+</ul>
+<div class="codeTable">
+<p>OpenLayers_01.html</p>
+<div class="sourceCode" id="OpenLayers_01_demo"><table class="sourceCode html numberLines"><tr class="sourceCode"><td class="lineNumbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+</pre></td><td class="sourceCode"><pre><code class="sourceCode html"><span class="kw">&lt;html&gt;</span>
+
+<span class="kw">&lt;head&gt;</span>
+    <span class="kw">&lt;link</span><span class="ot"> rel=</span><span class="st">&quot;stylesheet&quot;</span><span class="ot"> href=</span><span class="st">&quot;css/OpenLayers_01.css&quot;</span><span class="ot"> type=</span><span class="st">&quot;text/css&quot;</span><span class="kw">&gt;</span>
+    <span class="kw">&lt;link</span><span class="ot"> rel=</span><span class="st">&quot;stylesheet&quot;</span><span class="ot"> href=</span><span class="st">&quot;http://openlayers.org/en/v3.14.2/css/ol.css&quot;</span><span class="ot"> type=</span><span class="st">&quot;text/css&quot;</span><span class="kw">&gt;</span>
+    <span class="co">&lt;!-- you can use this line if you want to use the hosted version instead of the local copy --&gt;</span>
+    <span class="co">&lt;!-- &lt;script src=&quot;http://openlayers.org/en/v3.14.2/build/ol.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt; --&gt;</span>
+    <span class="kw">&lt;script</span><span class="ot"> src=</span><span class="st">&quot;js/v3.14.2/build/ol.js&quot;</span><span class="ot"> type=</span><span class="st">&quot;text/javascript&quot;</span><span class="kw">&gt;&lt;/script&gt;</span>
+<span class="kw">&lt;/head&gt;</span>
+
+<span class="kw">&lt;body&gt;</span>
+    <span class="kw">&lt;h1&gt;</span>This is a very simple OpenLayers 3 sample map page<span class="kw">&lt;/h1&gt;</span>
+
+    <span class="kw">&lt;div</span><span class="ot"> id=</span><span class="st">&#39;map&#39;</span><span class="kw">&gt;</span><span class="co">&lt;!-- This is where the map will be displayed --&gt;</span><span class="kw">&lt;/div&gt;</span>
+
+    <span class="co">&lt;!-- import the external Javascript file with the map configuration code --&gt;</span>
+    <span class="kw">&lt;script</span><span class="ot"> src=</span><span class="st">&quot;js/OpenLayers_01.js&quot;</span><span class="ot"> type=</span><span class="st">&quot;text/javascript&quot;</span><span class="kw">&gt;&lt;/script&gt;</span>
+<span class="kw">&lt;/body&gt;</span>
+
+<span class="kw">&lt;/html&gt;</span></code></pre></td></tr></table></div>
+<p>OpenLayers_01.js</p>
+<div class="sourceCode"><table class="sourceCode html numberLines"><tr class="sourceCode"><td class="lineNumbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+</pre></td><td class="sourceCode"><pre><code class="sourceCode html">// OpenLayers_01.js
+
+var myMap = new ol.Map({
+    target: &#39;map&#39;,
+    layers: [
+        new ol.layer.Tile({
+        source: new ol.source.MapQuest({layer: &#39;sat&#39;})
+        })
+    ],
+    view: new ol.View({
+        center: ol.proj.fromLonLat([-106.624083,35.08427]),
+        zoom: 18
+        })
+    });</code></pre></td></tr></table></div>
+<p>OpenLayers_01.css</p>
+<div class="sourceCode"><table class="sourceCode html numberLines"><tr class="sourceCode"><td class="lineNumbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+</pre></td><td class="sourceCode"><pre><code class="sourceCode html">/* OpenLayers_01.css */
+
+body {
+    width:100%;
+    hwight:100%
+}
+
+#map {
+    width:600px;
+    height:400px
+}</code></pre></td></tr></table></div>
+</div>
+<h3 id="demonstration-and-examples---online-resources" class="module02b01a">Demonstration and Examples - Online Resources</h3>
+<ul>
+<li><a href="sample-files/OpenLayers/OpenLayers_02_basemaps.html">Mapper</a> (<a href="https://github.com/UNM-GEOG-485-585/class-materials/blob/master/sample-files/OpenLayers/OpenLayers_02_basemaps.html">source</a>) with a variety of base maps (MapQuest, Stamen, OSM) and basic layer selection</li>
+<li>Basic Mapper with Controls: <a href="sample-files/OpenLayers/OpenLayers_01_noControls.html">No Controls</a> (<a href="https://github.com/UNM-GEOG-485-585/class-materials/blob/master/sample-files/OpenLayers/OpenLayers_01_noControls.html">source</a>), <a href="sample-files/OpenLayers/OpenLayers_01_controlArray.html">Customized Controls</a> (<a href="https://github.com/UNM-GEOG-485-585/class-materials/blob/master/sample-files/OpenLayers/OpenLayers_01_controlArray.html">source</a>)</li>
+</ul>
+<h2 id="next-week---custom-features-and-wms-layers" class="module02b01a">Next Week - Custom Features and WMS Layers</h2>
+<hr />
+<section>
+<div class="license">
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />This work by <span xmlns:cc="http://creativecommons.org/ns#" property="cc:attributionName">Karl Benedict</span> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+</div>
+</section>
+</body>
+</html>
