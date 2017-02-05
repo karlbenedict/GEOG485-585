@@ -5,7 +5,7 @@
   <meta name="generator" content="pandoc">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
   <meta name="author" content="Karl Benedict">
-  <title></title>
+  <title>Week 4 - Module 2a - Web-based Mapping Clients. Google Maps API (pt. 2)</title>
   <style type="text/css">code{white-space: pre;}</style>
   <style type="text/css">
 div.sourceCode { overflow-x: auto; }
@@ -50,6 +50,11 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
   <![endif]-->
 </head>
 <body>
+<header>
+<h1 class="title">Week 4 - Module 2a - Web-based Mapping Clients. Google Maps API (pt. 2)</h1>
+<h2 class="author">Karl Benedict</h2>
+<h3 class="date">GEOG 485L/585L - Spring 2017</h3>
+</header>
 <!---------------------------------------------------------------------------->
 <!-- Week 04 ----------------------------------------------------------------->
 <!-- Lecture 02 a 02 b ------------------------------------------------------->
@@ -67,10 +72,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li>Bringing it all together in a &quot;real&quot; web page</li>
 </ul>
 <h3 id="getting-started-with-styled-maps---video"><em>Getting Started with Styled Maps</em> - Video</h3>
-<p><a href="https://developers.google.com/maps/documentation/javascript/styling">Styled Maps Documentation</a> | <a href="http://gmaps-samples-v3.googlecode.com/svn/trunk/styledmaps/wizard/index.html">Styled Maps Wizard</a></p>
-<figure>
-<img src="./images/styledMapsWizard.png" alt="Google Maps Styled Maps Wizard link" /><figcaption>Google Maps Styled Maps Wizard <a href="http://youtu.be/0hhiEjf7_NA">link</a></figcaption>
-</figure>
+<p><a href="https://developers.google.com/maps/documentation/javascript/styling">Styled Maps Documentation</a> | <a href="https://mapstyle.withgoogle.com">Create Map Style wizard</a></p>
 <h3 id="map-example-simple---styled">Map Example: Simple - Styled</h3>
 <div class="codeTable">
 <p>gmap_styled.html</p>
@@ -110,9 +112,9 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
         <span class="kw">&lt;script</span><span class="ot"> src=</span><span class="st">&quot;js/mapPage_styled.js&quot;</span><span class="kw">&gt;&lt;/script&gt;</span>
         
         <span class="co">&lt;!-- Load the API in asynchronous mode and execute the initialize function when done --&gt;</span>
-        <span class="co">&lt;!-- The optional &#39;key-&lt;API Key&gt;&#39; parameter is not used here but should be for a production map --&gt;</span>
+        
         <span class="kw">&lt;script</span><span class="ot"> async defer</span> 
-<span class="ot">            src=</span><span class="st">&quot;https://maps.googleapis.com/maps/api/js?callback=initialize&quot;</span><span class="kw">&gt;</span>
+<span class="ot">            src=</span><span class="st">&quot;https://maps.googleapis.com/maps/api/js?callback=initialize</span><span class="er">&amp;</span><span class="st">key=</span><span class="er">&lt;</span><span class="st">YourKey&gt;&quot;</span><span class="kw">&gt;</span>
         <span class="kw">&lt;/script&gt;</span>
     <span class="kw">&lt;/body&gt;</span>
 <span class="kw">&lt;/html&gt;</span></code></pre></td></tr></table></div>
@@ -224,12 +226,10 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
         myOptions);
 }</code></pre></td></tr></table></div>
 </div>
-<h3 id="google-io-2011-managing-and-visualizing-your-geospatial-data-with-fusion-tables---video"><em>Google I/O 2011: Managing and visualizing your geospatial data with Fusion Tables</em> - Video</h3>
-<p>Some particularly relevant sections: <a href="http://youtu.be/Z2o0mtnF1Bg">Introduction (0:00 - 10:30)</a> | <a href="http://youtu.be/Z2o0mtnF1Bg?t=21m40s">Google Maps API Integration (21:40 - 34:42)</a> | <a href="http://youtu.be/Z2o0mtnF1Bg?t=52m">Summary and Links (52:00 52:40)</a></p>
-<p><a href="https://support.google.com/fusiontables/?hl=en#topic=1652595">Fusion Tables Documentation/Help</a></p>
-<figure>
-<img src="./images/fusionTablesVideo.png" alt="Google Fusion Tables Introduction Video link" /><figcaption>Google Fusion Tables Introduction Video <a href="http://youtu.be/Z2o0mtnF1Bg">link</a></figcaption>
-</figure>
+<h3 id="google-fusion-tables">Google Fusion Tables</h3>
+<p><a href="https://support.google.com/fusiontables/answer/2571232?hl=en&amp;ref_topic=1652595">Fusion Tables Introduction</a></p>
+<p>Sample Fusion Table from the previous NAWRS Mapper example: <a href="https://www.google.com/fusiontables/DataSource?docid=1v2IlIFJqat2tTSBA8e4guqlzMGRe8iW4yXP25Kg" class="uri">https://www.google.com/fusiontables/DataSource?docid=1v2IlIFJqat2tTSBA8e4guqlzMGRe8iW4yXP25Kg</a></p>
+<p>NAWRS Mapper Javascript File: <a href="https://github.com/nawrs/nawrs-web/blob/master/js/core.js" class="uri">https://github.com/nawrs/nawrs-web/blob/master/js/core.js</a></p>
 <h3 id="bringing-it-all-together">Bringing It All Together</h3>
 <div class="codeTable">
 <p>gmaps_events.html</p>
@@ -431,6 +431,30 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 196
 197
 198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
 </pre></td><td class="sourceCode"><pre><code class="sourceCode html"><span class="dt">&lt;!DOCTYPE </span>html<span class="dt">&gt;</span>
 <span class="kw">&lt;html&gt;</span>
     <span class="kw">&lt;head&gt;</span>
@@ -442,177 +466,203 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
         <span class="kw">&lt;h1&gt;</span>My diary of endurance events that I&#39;ve participated in since joining Team in Training
         <span class="kw">&lt;/h1&gt;</span>
         
-        <span class="kw">&lt;p&gt;</span>In 2008 Cynthia and I joined the Leukemia and Lymphoma Society&#39;s 
-        (<span class="kw">&lt;a</span><span class="ot"> href=</span><span class="st">&quot;http://www.lls.org/&quot;</span><span class="kw">&gt;</span>LLS<span class="kw">&lt;/a&gt;</span>) Team in Training 
-        (<span class="kw">&lt;a</span><span class="ot"> href=</span><span class="st">&quot;http://www.teamintraining.org/&quot;</span><span class="kw">&gt;</span>TNT<span class="kw">&lt;/a&gt;</span>, 
-        <span class="kw">&lt;a</span><span class="ot"> href=</span><span class="st">&quot;http://youtu.be/GMSKG8L6K78&quot;</span><span class="kw">&gt;</span>info video<span class="kw">&lt;/a&gt;</span>) program as 
-        participants to train for the Animas Valley/Steamworks Half Marathon 
-        and raise money for blood cancer research and patient services. In spite of 
-        our not having any direct connection to blood cancer (at that time), 
-        we found the goals of LLS admirable,  the combined training and fund-raising 
-        program of TNT a great idea, and have made many new friends over the many 
-        seasons that we&#39;ve been involved with TNT.<span class="kw">&lt;/p&gt;</span>
+        <span class="kw">&lt;p&gt;</span>In 2008 Cynthia and I joined the Leukemia and Lymphoma Society&#39;s (<span class="kw">&lt;a</span><span class="ot"> href=</span><span class="st">&quot;http://www.lls.org/&quot;</span><span class="kw">&gt;</span>LLS<span class="kw">&lt;/a&gt;</span>) Team in Training (<span class="kw">&lt;a</span><span class="ot"> href=</span><span class="st">&quot;http://www.teamintraining.org/&quot;</span><span class="kw">&gt;</span>TNT<span class="kw">&lt;/a&gt;</span>, <span class="kw">&lt;a</span><span class="ot"> href=</span><span class="st">&quot;http://youtu.be/GMSKG8L6K78&quot;</span><span class="kw">&gt;</span>info video<span class="kw">&lt;/a&gt;</span>) program as participants to train for the Animas Valley/Steamworks Half Marathon and raise money for blood cancer research and patient services. In spite of our not having any direct connection to blood cancer (at that time),  we found the goals of LLS admirable, the combined training and fund-raising program of TNT a great idea, and made many new friends over the many seasons that we have been involved with TNT.<span class="kw">&lt;/p&gt;</span>
         
-        <span class="kw">&lt;p&gt;</span>From 2008 through early 2015 we  continued to volunteer with TNT, as 
-        participants, mentors, and since 2010 I was a coach (check out my 
-        <span class="kw">&lt;a</span><span class="ot"> href=</span><span class="st">&quot;http://youtu.be/GMSKG8L6K78#t=2m13s&quot;</span><span class="kw">&gt;</span>half-second<span class="kw">&lt;/a&gt;</span> of fame in the 
-        info video) for TNT with an emphasis on training walkers for full- or 
-        half-marathons. This page provides a summary of the events that I&#39;ve participated 
-        in in some capacity since we became involved with TNT. <span class="kw">&lt;/p&gt;</span>
+        <span class="kw">&lt;p&gt;</span>From 2008 through early 2015 we  continued to volunteer with TNT, as participants, mentors, and since 2010 I was a coach  (check out my <span class="kw">&lt;a</span><span class="ot"> href=</span><span class="st">&quot;http://youtu.be/GMSKG8L6K78&quot;</span><span class="kw">&gt;</span>half-second<span class="kw">&lt;/a&gt;</span> of fame in the info video at 2:13) for TNT with an emphasis on training walkers for full- or half-marathons. This page provides a summary of the events that I&#39;ve participated in in some capacity since 2008. <span class="kw">&lt;/p&gt;</span>
+        
+        <span class="co">&lt;!-- based on the example provided by Google - https://developers.google.com/maps/documentation/javascript/examples/style-selector --&gt;</span>
+        <span class="kw">&lt;div</span><span class="ot"> id=</span><span class="st">&quot;style-selector-control&quot;</span><span class="ot">  class=</span><span class="st">&quot;map-control&quot;</span><span class="kw">&gt;</span>
+          <span class="kw">&lt;select</span><span class="ot"> id=</span><span class="st">&quot;style-selector&quot;</span><span class="ot"> class=</span><span class="st">&quot;selector-control&quot;</span><span class="kw">&gt;</span>
+            <span class="kw">&lt;option</span><span class="ot"> value=</span><span class="st">&quot;default&quot;</span><span class="kw">&gt;</span>Default<span class="kw">&lt;/option&gt;</span>
+            <span class="kw">&lt;option</span><span class="ot"> value=</span><span class="st">&quot;silver&quot;</span><span class="kw">&gt;</span>Silver<span class="kw">&lt;/option&gt;</span>
+            <span class="kw">&lt;option</span><span class="ot"> value=</span><span class="st">&quot;night&quot;</span><span class="kw">&gt;</span>Night mode<span class="kw">&lt;/option&gt;</span>
+            <span class="kw">&lt;option</span><span class="ot"> value=</span><span class="st">&quot;retro&quot;</span><span class="ot"> selected=</span><span class="st">&quot;selected&quot;</span><span class="kw">&gt;</span>Retro<span class="kw">&lt;/option&gt;</span>
+            <span class="kw">&lt;option</span><span class="ot"> value=</span><span class="st">&quot;hiding&quot;</span><span class="kw">&gt;</span>Hide features<span class="kw">&lt;/option&gt;</span>
+          <span class="kw">&lt;/select&gt;</span>
+        <span class="kw">&lt;/div&gt;</span>
         
         <span class="kw">&lt;div</span><span class="ot"> id=</span><span class="st">&quot;event-map&quot;</span><span class="ot"> name=</span><span class="st">&quot;event-map&quot;</span><span class="kw">&gt;&lt;/div&gt;</span>
 
-        <span class="kw">&lt;h2&gt;</span>
-            <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;date&quot;</span><span class="kw">&gt;</span>11/13/2015<span class="kw">&lt;/span&gt;</span> 
-            Avengers Half Marathon 
-            <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;time&quot;</span><span class="kw">&gt;</span>3:17:55<span class="kw">&lt;/span&gt;</span> 
-            (<span class="kw">&lt;a</span><span class="ot"> href=</span><span class="st">&quot;#event-map&quot;</span><span class="ot"> onclick=</span><span class="st">&quot;recenter(map, eventPlaces[5].point, 12)&quot;</span><span class="kw">&gt;</span>map<span class="kw">&lt;/a&gt;</span>)
-        <span class="kw">&lt;/h2&gt;</span>
+        <span class="kw">&lt;table&gt;</span>
+        
+        <span class="kw">&lt;thead&gt;</span>
+        <span class="kw">&lt;th&gt;</span>Date<span class="kw">&lt;/th&gt;</span>
+        <span class="kw">&lt;th&gt;</span>Event Name<span class="kw">&lt;/th&gt;</span>
+        <span class="kw">&lt;th&gt;</span>Event Time<span class="kw">&lt;/th&gt;</span>
+        <span class="kw">&lt;th&gt;</span>Location on Map<span class="kw">&lt;/th&gt;</span>    
+        <span class="kw">&lt;/thead&gt;</span>
+        
+        <span class="kw">&lt;tbody&gt;</span>
+        <span class="kw">&lt;tr&gt;</span>
+            <span class="kw">&lt;td&gt;</span>1/8/2017<span class="kw">&lt;/td&gt;</span> 
+            <span class="kw">&lt;td&gt;</span>Disney World  Marathon<span class="kw">&lt;/td&gt;</span>
+            <span class="kw">&lt;td&gt;</span>7:14<span class="kw">&lt;/td&gt;</span> 
+            <span class="kw">&lt;td&gt;&lt;a</span><span class="ot"> href=</span><span class="st">&quot;#event-map&quot;</span><span class="ot"> onclick=</span><span class="st">&quot;recenter(map, eventPlaces[4].point, 10)&quot;</span><span class="kw">&gt;</span>approx. map<span class="kw">&lt;/a&gt;&lt;/td&gt;</span>
+        <span class="kw">&lt;/tr&gt;</span>
+        
+        <span class="kw">&lt;tr&gt;</span>
+            <span class="kw">&lt;td&gt;</span>10/16/2016<span class="kw">&lt;/td&gt;</span> 
+            <span class="kw">&lt;td&gt;</span>Duke City Half Marathon <span class="kw">&lt;/td&gt;</span>
+            <span class="kw">&lt;td&gt;</span>~2:55<span class="kw">&lt;/td&gt;</span> 
+            <span class="kw">&lt;td&gt;&lt;a</span><span class="ot"> href=</span><span class="st">&quot;#event-map&quot;</span><span class="ot"> onclick=</span><span class="st">&quot;recenter(map, eventPlaces[0].point, 11)&quot;</span><span class="kw">&gt;</span>map<span class="kw">&lt;/a&gt;&lt;/td&gt;</span>
+        <span class="kw">&lt;/tr&gt;</span>
+        
+        <span class="kw">&lt;tr&gt;</span>
+            <span class="kw">&lt;td&gt;</span>11/13/2015<span class="kw">&lt;/td&gt;</span> 
+            <span class="kw">&lt;td&gt;</span>Avengers Half Marathon <span class="kw">&lt;/td&gt;</span>
+            <span class="kw">&lt;td&gt;</span>3:17:55<span class="kw">&lt;/td&gt;</span> 
+            <span class="kw">&lt;td&gt;&lt;a</span><span class="ot"> href=</span><span class="st">&quot;#event-map&quot;</span><span class="ot"> onclick=</span><span class="st">&quot;recenter(map, eventPlaces[5].point, 12)&quot;</span><span class="kw">&gt;</span>approx. map<span class="kw">&lt;/a&gt;&lt;/td&gt;</span>
+        <span class="kw">&lt;/tr&gt;</span>
 
-        <span class="kw">&lt;h2&gt;</span>
-            <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;date&quot;</span><span class="kw">&gt;</span>1/11/2015<span class="kw">&lt;/span&gt;</span> 
-            Disney World  Marathon (Goofy - Day 2)
-            <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;time&quot;</span><span class="kw">&gt;</span>6:21:01<span class="kw">&lt;/span&gt;</span> 
-            (<span class="kw">&lt;a</span><span class="ot"> href=</span><span class="st">&quot;#event-map&quot;</span><span class="ot"> onclick=</span><span class="st">&quot;recenter(map, eventPlaces[4].point, 10)&quot;</span><span class="kw">&gt;</span>map<span class="kw">&lt;/a&gt;</span>)
-        <span class="kw">&lt;/h2&gt;</span>
-        <span class="kw">&lt;p</span><span class="ot"> class=</span><span class="st">&quot;eventDescription&quot;</span><span class="kw">&gt;</span>blah, blah, blah ...<span class="kw">&lt;/p&gt;</span>
+        <span class="kw">&lt;tr&gt;</span>
+            <span class="kw">&lt;td&gt;</span>1/11/2015<span class="kw">&lt;/td&gt;</span> 
+            <span class="kw">&lt;td&gt;</span>Disney World  Marathon (Goofy - Day 2)<span class="kw">&lt;/td&gt;</span>
+            <span class="kw">&lt;td&gt;</span>6:21:01<span class="kw">&lt;/td&gt;</span> 
+            <span class="kw">&lt;td&gt;&lt;a</span><span class="ot"> href=</span><span class="st">&quot;#event-map&quot;</span><span class="ot"> onclick=</span><span class="st">&quot;recenter(map, eventPlaces[4].point, 10)&quot;</span><span class="kw">&gt;</span>approx. map<span class="kw">&lt;/a&gt;&lt;/td&gt;</span>
+        <span class="kw">&lt;/tr&gt;</span>
+        
 
-        <span class="kw">&lt;h2&gt;</span>
-            <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;date&quot;</span><span class="kw">&gt;</span>1/10/2015<span class="kw">&lt;/span&gt;</span> 
-            Disney World Half Marathon (Goofy - Day 1)
-            <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;time&quot;</span><span class="kw">&gt;</span>2:45:55<span class="kw">&lt;/span&gt;</span> 
-            (<span class="kw">&lt;a</span><span class="ot"> href=</span><span class="st">&quot;#event-map&quot;</span><span class="ot"> onclick=</span><span class="st">&quot;recenter(map, eventPlaces[4].point, 10)&quot;</span><span class="kw">&gt;</span>map<span class="kw">&lt;/a&gt;</span>)
-        <span class="kw">&lt;/h2&gt;</span>
-        <span class="kw">&lt;h2&gt;</span>
-            <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;date&quot;</span><span class="kw">&gt;</span>10/19/2014<span class="kw">&lt;/span&gt;</span> 
-            Duke City Half Marathon 
-            <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;time&quot;</span><span class="kw">&gt;</span>2:45:17<span class="kw">&lt;/span&gt;</span> 
-            (<span class="kw">&lt;a</span><span class="ot"> href=</span><span class="st">&quot;#event-map&quot;</span><span class="ot"> onclick=</span><span class="st">&quot;recenter(map, eventPlaces[0].point, 11)&quot;</span><span class="kw">&gt;</span>map<span class="kw">&lt;/a&gt;</span>)
-        <span class="kw">&lt;/h2&gt;</span>
-        <span class="kw">&lt;p</span><span class="ot"> class=</span><span class="st">&quot;eventDescription&quot;</span><span class="kw">&gt;</span>blah, blah, blah ...<span class="kw">&lt;/p&gt;</span>
-        <span class="kw">&lt;h2&gt;</span>
-            <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;date&quot;</span><span class="kw">&gt;</span>2/23/2014<span class="kw">&lt;/span&gt;</span> 
-            Princess Half Marathon
-            <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;time&quot;</span><span class="kw">&gt;</span>3:07:11<span class="kw">&lt;/span&gt;</span> 
-            (<span class="kw">&lt;a</span><span class="ot"> href=</span><span class="st">&quot;#event-map&quot;</span><span class="ot"> onclick=</span><span class="st">&quot;recenter(map, eventPlaces[4].point, 10)&quot;</span><span class="kw">&gt;</span>map<span class="kw">&lt;/a&gt;</span>)
-        <span class="kw">&lt;/h2&gt;</span>
-        <span class="kw">&lt;h2&gt;</span>
-            <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;date&quot;</span><span class="kw">&gt;</span>2/22/2014<span class="kw">&lt;/span&gt;</span> 
-            Princess Enchanted 10k
-            <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;time&quot;</span><span class="kw">&gt;</span>1:42:43<span class="kw">&lt;/span&gt;</span> 
-            (<span class="kw">&lt;a</span><span class="ot"> href=</span><span class="st">&quot;#event-map&quot;</span><span class="ot"> onclick=</span><span class="st">&quot;recenter(map, eventPlaces[4].point, 10)&quot;</span><span class="kw">&gt;</span>map<span class="kw">&lt;/a&gt;</span>)
-        <span class="kw">&lt;/h2&gt;</span>
-        <span class="kw">&lt;h2&gt;</span>
-            <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;date&quot;</span><span class="kw">&gt;</span>9/1/2013<span class="kw">&lt;/span&gt;</span> 
-            Disneyland Half Marathon 
-            <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;time&quot;</span><span class="kw">&gt;</span>2:56:57<span class="kw">&lt;/span&gt;</span> 
-            (<span class="kw">&lt;a</span><span class="ot"> href=</span><span class="st">&quot;#event-map&quot;</span><span class="ot"> onclick=</span><span class="st">&quot;recenter(map, eventPlaces[5].point, 12)&quot;</span><span class="kw">&gt;</span>map<span class="kw">&lt;/a&gt;</span>)
-        <span class="kw">&lt;/h2&gt;</span>
-        <span class="kw">&lt;p</span><span class="ot"> class=</span><span class="st">&quot;eventDescription&quot;</span><span class="kw">&gt;</span>blah, blah, blah ...<span class="kw">&lt;/p&gt;</span>
+        <span class="kw">&lt;tr&gt;</span>
+            <span class="kw">&lt;td&gt;</span>1/10/2015<span class="kw">&lt;/td&gt;</span> 
+            <span class="kw">&lt;td&gt;</span>Disney World Half Marathon (Goofy - Day 1)<span class="kw">&lt;/td&gt;</span>
+            <span class="kw">&lt;td&gt;</span>2:45:55<span class="kw">&lt;/td&gt;</span> 
+            <span class="kw">&lt;td&gt;&lt;a</span><span class="ot"> href=</span><span class="st">&quot;#event-map&quot;</span><span class="ot"> onclick=</span><span class="st">&quot;recenter(map, eventPlaces[4].point, 10)&quot;</span><span class="kw">&gt;</span>approx. map<span class="kw">&lt;/a&gt;&lt;/td&gt;</span>
+        <span class="kw">&lt;/tr&gt;</span>
+        
+        <span class="kw">&lt;tr&gt;</span>
+            <span class="kw">&lt;td&gt;</span>10/19/2014<span class="kw">&lt;/td&gt;</span> 
+            <span class="kw">&lt;td&gt;</span>Duke City Half Marathon<span class="kw">&lt;/td&gt;</span> 
+            <span class="kw">&lt;td&gt;</span>2:45:17<span class="kw">&lt;/td&gt;</span> 
+            <span class="kw">&lt;td&gt;&lt;a</span><span class="ot"> href=</span><span class="st">&quot;#event-map&quot;</span><span class="ot"> onclick=</span><span class="st">&quot;recenter(map, eventPlaces[0].point, 11)&quot;</span><span class="kw">&gt;</span>map<span class="kw">&lt;/a&gt;&lt;/td&gt;</span>
+        <span class="kw">&lt;/tr&gt;</span>
+        
+        <span class="kw">&lt;tr&gt;</span>
+            <span class="kw">&lt;td&gt;</span>2/23/2014<span class="kw">&lt;/td&gt;</span> 
+            <span class="kw">&lt;td&gt;</span>Princess Half Marathon<span class="kw">&lt;/td&gt;</span>
+            <span class="kw">&lt;td&gt;</span>3:07:11<span class="kw">&lt;/td&gt;</span> 
+            <span class="kw">&lt;td&gt;&lt;a</span><span class="ot"> href=</span><span class="st">&quot;#event-map&quot;</span><span class="ot"> onclick=</span><span class="st">&quot;recenter(map, eventPlaces[4].point, 10)&quot;</span><span class="kw">&gt;</span>approx. map<span class="kw">&lt;/a&gt;&lt;/td&gt;</span>
+        <span class="kw">&lt;/tr&gt;</span>
+        
+        <span class="kw">&lt;tr&gt;</span>
+            <span class="kw">&lt;td&gt;</span>2/22/2014<span class="kw">&lt;/td&gt;</span> 
+            <span class="kw">&lt;td&gt;</span>Princess Enchanted 10k<span class="kw">&lt;/td&gt;</span>
+            <span class="kw">&lt;td&gt;</span>1:42:43<span class="kw">&lt;/td&gt;</span> 
+            <span class="kw">&lt;td&gt;&lt;a</span><span class="ot"> href=</span><span class="st">&quot;#event-map&quot;</span><span class="ot"> onclick=</span><span class="st">&quot;recenter(map, eventPlaces[4].point, 10)&quot;</span><span class="kw">&gt;</span>approx. map<span class="kw">&lt;/a&gt;&lt;/td&gt;</span>
+        <span class="kw">&lt;/tr&gt;</span>
+        
+        <span class="kw">&lt;tr&gt;</span>
+            <span class="kw">&lt;td&gt;</span>9/1/2013<span class="kw">&lt;/td&gt;</span> 
+            <span class="kw">&lt;td&gt;</span>Disneyland Half Marathon<span class="kw">&lt;/td&gt;</span> 
+            <span class="kw">&lt;td&gt;</span>2:56:57<span class="kw">&lt;/td&gt;</span> 
+            <span class="kw">&lt;td&gt;&lt;a</span><span class="ot"> href=</span><span class="st">&quot;#event-map&quot;</span><span class="ot"> onclick=</span><span class="st">&quot;recenter(map, eventPlaces[5].point, 12)&quot;</span><span class="kw">&gt;</span>approx. map<span class="kw">&lt;/a&gt;&lt;/td&gt;</span>
+        <span class="kw">&lt;/tr&gt;</span>
+        
 
-        <span class="kw">&lt;h2&gt;</span>
-            <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;date&quot;</span><span class="kw">&gt;</span>1/13/2013<span class="kw">&lt;/span&gt;</span> 
-            Disney World  Marathon (Goofy - Day 2)
-            <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;time&quot;</span><span class="kw">&gt;</span>6:46:57<span class="kw">&lt;/span&gt;</span> 
-            (<span class="kw">&lt;a</span><span class="ot"> href=</span><span class="st">&quot;#event-map&quot;</span><span class="ot"> onclick=</span><span class="st">&quot;recenter(map, eventPlaces[4].point, 10)&quot;</span><span class="kw">&gt;</span>map<span class="kw">&lt;/a&gt;</span>)
-        <span class="kw">&lt;/h2&gt;</span>
-        <span class="kw">&lt;p</span><span class="ot"> class=</span><span class="st">&quot;eventDescription&quot;</span><span class="kw">&gt;</span>blah, blah, blah ...<span class="kw">&lt;/p&gt;</span>
+        <span class="kw">&lt;tr&gt;</span>
+            <span class="kw">&lt;td&gt;</span>1/13/2013<span class="kw">&lt;/td&gt;</span> 
+            <span class="kw">&lt;td&gt;</span>Disney World  Marathon (Goofy - Day 2)<span class="kw">&lt;/td&gt;</span>
+            <span class="kw">&lt;td&gt;</span>6:46:57<span class="kw">&lt;/td&gt;</span> 
+            <span class="kw">&lt;td&gt;&lt;a</span><span class="ot"> href=</span><span class="st">&quot;#event-map&quot;</span><span class="ot"> onclick=</span><span class="st">&quot;recenter(map, eventPlaces[4].point, 10)&quot;</span><span class="kw">&gt;</span>approx. map<span class="kw">&lt;/a&gt;&lt;/td&gt;</span>
+        <span class="kw">&lt;/tr&gt;</span>
+        
 
-        <span class="kw">&lt;h2&gt;</span>
-            <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;date&quot;</span><span class="kw">&gt;</span>1/12/2013<span class="kw">&lt;/span&gt;</span> 
-            Disney World Half Marathon (Goofy - Day 1)
-            <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;time&quot;</span><span class="kw">&gt;</span>3:22:48<span class="kw">&lt;/span&gt;</span> 
-            (<span class="kw">&lt;a</span><span class="ot"> href=</span><span class="st">&quot;#event-map&quot;</span><span class="ot"> onclick=</span><span class="st">&quot;recenter(map, eventPlaces[4].point, 10)&quot;</span><span class="kw">&gt;</span>map<span class="kw">&lt;/a&gt;</span>)
-        <span class="kw">&lt;/h2&gt;</span>
-        <span class="kw">&lt;p</span><span class="ot"> class=</span><span class="st">&quot;eventDescription&quot;</span><span class="kw">&gt;</span>blah, blah, blah ...<span class="kw">&lt;/p&gt;</span>
+        <span class="kw">&lt;tr&gt;</span>
+            <span class="kw">&lt;td&gt;</span>1/12/2013<span class="kw">&lt;/td&gt;</span> 
+            <span class="kw">&lt;td&gt;</span>Disney World Half Marathon (Goofy - Day 1)<span class="kw">&lt;/td&gt;</span>
+            <span class="kw">&lt;td&gt;</span>3:22:48<span class="kw">&lt;/td&gt;</span> 
+            <span class="kw">&lt;td&gt;&lt;a</span><span class="ot"> href=</span><span class="st">&quot;#event-map&quot;</span><span class="ot"> onclick=</span><span class="st">&quot;recenter(map, eventPlaces[4].point, 10)&quot;</span><span class="kw">&gt;</span>approx. map<span class="kw">&lt;/a&gt;&lt;/td&gt;</span>
+        <span class="kw">&lt;/tr&gt;</span>
+        
     
-        <span class="kw">&lt;h2&gt;</span>
-            <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;date&quot;</span><span class="kw">&gt;</span>9/29/2012<span class="kw">&lt;/span&gt;</span> 
-            Hot Chocolate 15k 
-            <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;time&quot;</span><span class="kw">&gt;</span>1:56:46<span class="kw">&lt;/span&gt;</span> 
-            (<span class="kw">&lt;a</span><span class="ot"> href=</span><span class="st">&quot;#event-map&quot;</span><span class="ot"> onclick=</span><span class="st">&quot;recenter(map, eventPlaces[6].point, 10)&quot;</span><span class="kw">&gt;</span>map<span class="kw">&lt;/a&gt;</span>)
-        <span class="kw">&lt;/h2&gt;</span>
-        <span class="kw">&lt;p</span><span class="ot"> class=</span><span class="st">&quot;eventDescription&quot;</span><span class="kw">&gt;</span>blah, blah, blah ...<span class="kw">&lt;/p&gt;</span>
+        <span class="kw">&lt;tr&gt;</span>
+            <span class="kw">&lt;td&gt;</span>9/29/2012<span class="kw">&lt;/td&gt;</span> 
+            <span class="kw">&lt;td&gt;</span>Hot Chocolate 15k <span class="kw">&lt;/td&gt;</span>
+            <span class="kw">&lt;td&gt;</span>1:56:46<span class="kw">&lt;/td&gt;</span> 
+            <span class="kw">&lt;td&gt;&lt;a</span><span class="ot"> href=</span><span class="st">&quot;#event-map&quot;</span><span class="ot"> onclick=</span><span class="st">&quot;recenter(map, eventPlaces[6].point, 10)&quot;</span><span class="kw">&gt;</span>map<span class="kw">&lt;/a&gt;&lt;/td&gt;</span>
+        <span class="kw">&lt;/tr&gt;</span>
+        
 
-        <span class="kw">&lt;h2&gt;</span>
-            <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;date&quot;</span><span class="kw">&gt;</span>6/9/2012<span class="kw">&lt;/span&gt;</span> 
-            Animas Valley/Steamworks Half Marathon 
-            <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;time&quot;</span><span class="kw">&gt;</span>no time: coached<span class="kw">&lt;/span&gt;</span> 
-            (<span class="kw">&lt;a</span><span class="ot"> href=</span><span class="st">&quot;#event-map&quot;</span><span class="ot"> onclick=</span><span class="st">&quot;recenter(map, eventPlaces[1].point, 10)&quot;</span><span class="kw">&gt;</span>map<span class="kw">&lt;/a&gt;</span>)
-        <span class="kw">&lt;/h2&gt;</span>
-        <span class="kw">&lt;p</span><span class="ot"> class=</span><span class="st">&quot;eventDescription&quot;</span><span class="kw">&gt;</span>blah, blah, blah ...<span class="kw">&lt;/p&gt;</span>
+        <span class="kw">&lt;tr&gt;</span>
+            <span class="kw">&lt;td&gt;</span>6/9/2012<span class="kw">&lt;/td&gt;</span> 
+            <span class="kw">&lt;td&gt;</span>Animas Valley/Steamworks Half Marathon<span class="kw">&lt;/td&gt;</span> 
+            <span class="kw">&lt;td&gt;</span>no time: coached<span class="kw">&lt;/td&gt;</span> 
+            <span class="kw">&lt;td&gt;&lt;a</span><span class="ot"> href=</span><span class="st">&quot;#event-map&quot;</span><span class="ot"> onclick=</span><span class="st">&quot;recenter(map, eventPlaces[1].point, 10)&quot;</span><span class="kw">&gt;</span>map<span class="kw">&lt;/a&gt;&lt;/td&gt;</span>
+        <span class="kw">&lt;/tr&gt;</span>
+        
 
-        <span class="kw">&lt;h2&gt;</span>
-            <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;date&quot;</span><span class="kw">&gt;</span>1/9/2012<span class="kw">&lt;/span&gt;</span> 
-            Disney World  Marathon (Goofy - Day 2)
-            <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;time&quot;</span><span class="kw">&gt;</span>6:56:28<span class="kw">&lt;/span&gt;</span> 
-            (<span class="kw">&lt;a</span><span class="ot"> href=</span><span class="st">&quot;#event-map&quot;</span><span class="ot"> onclick=</span><span class="st">&quot;recenter(map, eventPlaces[4].point, 10)&quot;</span><span class="kw">&gt;</span>map<span class="kw">&lt;/a&gt;</span>)
-        <span class="kw">&lt;/h2&gt;</span>
-        <span class="kw">&lt;p</span><span class="ot"> class=</span><span class="st">&quot;eventDescription&quot;</span><span class="kw">&gt;</span>blah, blah, blah ...<span class="kw">&lt;/p&gt;</span>
+        <span class="kw">&lt;tr&gt;</span>
+            <span class="kw">&lt;td&gt;</span>1/9/2012<span class="kw">&lt;/td&gt;</span> 
+            <span class="kw">&lt;td&gt;</span>Disney World  Marathon (Goofy - Day 2)<span class="kw">&lt;/td&gt;</span>
+            <span class="kw">&lt;td&gt;</span>6:56:28<span class="kw">&lt;/td&gt;</span> 
+            <span class="kw">&lt;td&gt;&lt;a</span><span class="ot"> href=</span><span class="st">&quot;#event-map&quot;</span><span class="ot"> onclick=</span><span class="st">&quot;recenter(map, eventPlaces[4].point, 10)&quot;</span><span class="kw">&gt;</span>map<span class="kw">&lt;/a&gt;&lt;/td&gt;</span>
+        <span class="kw">&lt;/tr&gt;</span>
+        
 
-        <span class="kw">&lt;h2&gt;</span>
-            <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;date&quot;</span><span class="kw">&gt;</span>1/8/2011<span class="kw">&lt;/span&gt;</span> 
-            Disney World Half Marathon (Goofy - Day 1)
-            <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;time&quot;</span><span class="kw">&gt;</span>3:29:00<span class="kw">&lt;/span&gt;</span> 
-            (<span class="kw">&lt;a</span><span class="ot"> href=</span><span class="st">&quot;#event-map&quot;</span><span class="ot"> onclick=</span><span class="st">&quot;recenter(map, eventPlaces[4].point, 10)&quot;</span><span class="kw">&gt;</span>map<span class="kw">&lt;/a&gt;</span>)
-        <span class="kw">&lt;/h2&gt;</span>
-        <span class="kw">&lt;p</span><span class="ot"> class=</span><span class="st">&quot;eventDescription&quot;</span><span class="kw">&gt;</span>blah, blah, blah ...<span class="kw">&lt;/p&gt;</span>
+        <span class="kw">&lt;tr&gt;</span>
+            <span class="kw">&lt;td&gt;</span>1/8/2011<span class="kw">&lt;/td&gt;</span> 
+            <span class="kw">&lt;td&gt;</span>Disney World Half Marathon (Goofy - Day 1)<span class="kw">&lt;/td&gt;</span>
+            <span class="kw">&lt;td&gt;</span>3:29:00<span class="kw">&lt;/td&gt;</span> 
+            <span class="kw">&lt;td&gt;&lt;a</span><span class="ot"> href=</span><span class="st">&quot;#event-map&quot;</span><span class="ot"> onclick=</span><span class="st">&quot;recenter(map, eventPlaces[4].point, 10)&quot;</span><span class="kw">&gt;</span>map<span class="kw">&lt;/a&gt;&lt;/td&gt;</span>
+        <span class="kw">&lt;/tr&gt;</span>
+        
 
-        <span class="kw">&lt;h2&gt;</span>
-            <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;date&quot;</span><span class="kw">&gt;</span>6/19/2010<span class="kw">&lt;/span&gt;</span> 
-            Animas Valley/Steamworks Half Marathon 
-            <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;time&quot;</span><span class="kw">&gt;</span>no time: coached<span class="kw">&lt;/span&gt;</span> 
-            (<span class="kw">&lt;a</span><span class="ot"> href=</span><span class="st">&quot;#event-map&quot;</span><span class="ot"> onclick=</span><span class="st">&quot;recenter(map, eventPlaces[1].point, 10)&quot;</span><span class="kw">&gt;</span>map<span class="kw">&lt;/a&gt;</span>)
-        <span class="kw">&lt;/h2&gt;</span>
-        <span class="kw">&lt;p</span><span class="ot"> class=</span><span class="st">&quot;eventDescription&quot;</span><span class="kw">&gt;</span>blah, blah, blah ...<span class="kw">&lt;/p&gt;</span>
+        <span class="kw">&lt;tr&gt;</span>
+            <span class="kw">&lt;td&gt;</span>6/19/2010<span class="kw">&lt;/td&gt;</span> 
+            <span class="kw">&lt;td&gt;</span>Animas Valley/Steamworks Half Marathon<span class="kw">&lt;/td&gt;</span> 
+            <span class="kw">&lt;td&gt;</span>no time: coached<span class="kw">&lt;/td&gt;</span> 
+            <span class="kw">&lt;td&gt;&lt;a</span><span class="ot"> href=</span><span class="st">&quot;#event-map&quot;</span><span class="ot"> onclick=</span><span class="st">&quot;recenter(map, eventPlaces[1].point, 10)&quot;</span><span class="kw">&gt;</span>map<span class="kw">&lt;/a&gt;&lt;/td&gt;</span>
+        <span class="kw">&lt;/tr&gt;</span>
+        
 
-        <span class="kw">&lt;h2&gt;</span>
-            <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;date&quot;</span><span class="kw">&gt;</span>6/6/2010<span class="kw">&lt;/span&gt;</span> 
-            San Diego Rock &#39;n&#39; Roll Marathon 
-            <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;time&quot;</span><span class="kw">&gt;</span>no time: coached<span class="kw">&lt;/span&gt;</span> 
-            (<span class="kw">&lt;a</span><span class="ot"> href=</span><span class="st">&quot;#event-map&quot;</span><span class="ot"> onclick=</span><span class="st">&quot;recenter(map, eventPlaces[2].point, 11)&quot;</span><span class="kw">&gt;</span>map<span class="kw">&lt;/a&gt;</span>)
-        <span class="kw">&lt;/h2&gt;</span>
-        <span class="kw">&lt;p</span><span class="ot"> class=</span><span class="st">&quot;eventDescription&quot;</span><span class="kw">&gt;</span>blah, blah, blah ...<span class="kw">&lt;/p&gt;</span>
+        <span class="kw">&lt;tr&gt;</span>
+            <span class="kw">&lt;td&gt;</span>6/6/2010<span class="kw">&lt;/td&gt;</span> 
+            <span class="kw">&lt;td&gt;</span>San Diego Rock &#39;n&#39; Roll Marathon<span class="kw">&lt;/td&gt;</span> 
+            <span class="kw">&lt;td&gt;</span>no time: coached<span class="kw">&lt;/td&gt;</span> 
+            <span class="kw">&lt;td&gt;&lt;a</span><span class="ot"> href=</span><span class="st">&quot;#event-map&quot;</span><span class="ot"> onclick=</span><span class="st">&quot;recenter(map, eventPlaces[2].point, 11)&quot;</span><span class="kw">&gt;</span>map<span class="kw">&lt;/a&gt;&lt;/td&gt;</span>
+        <span class="kw">&lt;/tr&gt;</span>
+        
 
-        <span class="kw">&lt;h2&gt;</span>
-            <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;date&quot;</span><span class="kw">&gt;</span>10/18/09<span class="kw">&lt;/span&gt;</span> 
-            Nike Women&#39;s Marathon 
-            <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;time&quot;</span><span class="kw">&gt;</span>7:13:05<span class="kw">&lt;/span&gt;</span> 
-            (<span class="kw">&lt;a</span><span class="ot"> href=</span><span class="st">&quot;#event-map&quot;</span><span class="ot"> onclick=</span><span class="st">&quot;recenter(map, eventPlaces[3].point, 12)&quot;</span><span class="kw">&gt;</span>map<span class="kw">&lt;/a&gt;</span>)
-        <span class="kw">&lt;/h2&gt;</span>
-        <span class="kw">&lt;p</span><span class="ot"> class=</span><span class="st">&quot;eventDescription&quot;</span><span class="kw">&gt;</span>blah, blah, blah ...<span class="kw">&lt;/p&gt;</span>
+        <span class="kw">&lt;tr&gt;</span>
+            <span class="kw">&lt;td&gt;</span>10/18/09<span class="kw">&lt;/td&gt;</span> 
+            <span class="kw">&lt;td&gt;</span>Nike Women&#39;s Marathon<span class="kw">&lt;/td&gt;</span> 
+            <span class="kw">&lt;td&gt;</span>7:13:05<span class="kw">&lt;/td&gt;</span> 
+            <span class="kw">&lt;td&gt;&lt;a</span><span class="ot"> href=</span><span class="st">&quot;#event-map&quot;</span><span class="ot"> onclick=</span><span class="st">&quot;recenter(map, eventPlaces[3].point, 12)&quot;</span><span class="kw">&gt;</span>map<span class="kw">&lt;/a&gt;&lt;/td&gt;</span>
+        <span class="kw">&lt;/tr&gt;</span>
+        
 
-        <span class="kw">&lt;h2&gt;</span>
-            <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;date&quot;</span><span class="kw">&gt;</span>9/6/2009<span class="kw">&lt;/span&gt;</span> 
-            Disneyland Half Marathon 
-            <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;time&quot;</span><span class="kw">&gt;</span>3:43:05<span class="kw">&lt;/span&gt;</span> 
-            (<span class="kw">&lt;a</span><span class="ot"> href=</span><span class="st">&quot;#event-map&quot;</span><span class="ot"> onclick=</span><span class="st">&quot;recenter(map, eventPlaces[5].point, 12)&quot;</span><span class="kw">&gt;</span>map<span class="kw">&lt;/a&gt;</span>)
-        <span class="kw">&lt;/h2&gt;</span>
-        <span class="kw">&lt;p</span><span class="ot"> class=</span><span class="st">&quot;eventDescription&quot;</span><span class="kw">&gt;</span>blah, blah, blah ...<span class="kw">&lt;/p&gt;</span>
+        <span class="kw">&lt;tr&gt;</span>
+            <span class="kw">&lt;td&gt;</span>9/6/2009<span class="kw">&lt;/td&gt;</span> 
+            <span class="kw">&lt;td&gt;</span>Disneyland Half Marathon<span class="kw">&lt;/td&gt;</span> 
+            <span class="kw">&lt;td&gt;</span>3:43:05<span class="kw">&lt;/td&gt;</span> 
+            <span class="kw">&lt;td&gt;&lt;a</span><span class="ot"> href=</span><span class="st">&quot;#event-map&quot;</span><span class="ot"> onclick=</span><span class="st">&quot;recenter(map, eventPlaces[5].point, 12)&quot;</span><span class="kw">&gt;</span>map<span class="kw">&lt;/a&gt;&lt;/td&gt;</span>
+        <span class="kw">&lt;/tr&gt;</span>
+        
 
-        <span class="kw">&lt;h2&gt;</span>
-            <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;date&quot;</span><span class="kw">&gt;</span>1/11/2009<span class="kw">&lt;/span&gt;</span> 
-            Disney World Marathon 
-            <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;time&quot;</span><span class="kw">&gt;</span>6:57:42<span class="kw">&lt;/span&gt;</span> 
-            (<span class="kw">&lt;a</span><span class="ot"> href=</span><span class="st">&quot;#event-map&quot;</span><span class="ot"> onclick=</span><span class="st">&quot;recenter(map, eventPlaces[4].point, 10)&quot;</span><span class="kw">&gt;</span>map<span class="kw">&lt;/a&gt;</span>)
-        <span class="kw">&lt;/h2&gt;</span>
-        <span class="kw">&lt;p</span><span class="ot"> class=</span><span class="st">&quot;eventDescription&quot;</span><span class="kw">&gt;</span>blah, blah, blah ...<span class="kw">&lt;/p&gt;</span>
+        <span class="kw">&lt;tr&gt;</span>
+            <span class="kw">&lt;td&gt;</span>1/11/2009<span class="kw">&lt;/td&gt;</span> 
+            <span class="kw">&lt;td&gt;</span>Disney World Marathon<span class="kw">&lt;/td&gt;</span> 
+            <span class="kw">&lt;td&gt;</span>6:57:42<span class="kw">&lt;/td&gt;</span> 
+            <span class="kw">&lt;td&gt;&lt;a</span><span class="ot"> href=</span><span class="st">&quot;#event-map&quot;</span><span class="ot"> onclick=</span><span class="st">&quot;recenter(map, eventPlaces[4].point, 10)&quot;</span><span class="kw">&gt;</span>map<span class="kw">&lt;/a&gt;&lt;/td&gt;</span>
+        <span class="kw">&lt;/tr&gt;</span>
+        
 
-        <span class="kw">&lt;h2&gt;</span>
-            <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;date&quot;</span><span class="kw">&gt;</span>10/19/2008<span class="kw">&lt;/span&gt;</span> 
-            Duke City Half Marathon 
-            <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;time&quot;</span><span class="kw">&gt;</span>3:09:42<span class="kw">&lt;/span&gt;</span> 
-            (<span class="kw">&lt;a</span><span class="ot"> href=</span><span class="st">&quot;#event-map&quot;</span><span class="ot"> onclick=</span><span class="st">&quot;recenter(map, eventPlaces[0].point, 11)&quot;</span><span class="kw">&gt;</span>map<span class="kw">&lt;/a&gt;</span>)
-        <span class="kw">&lt;/h2&gt;</span>
-        <span class="kw">&lt;p</span><span class="ot"> class=</span><span class="st">&quot;eventDescription&quot;</span><span class="kw">&gt;</span>blah, blah, blah ...<span class="kw">&lt;/p&gt;</span>
+        <span class="kw">&lt;tr&gt;</span>
+            <span class="kw">&lt;td&gt;</span>10/19/2008<span class="kw">&lt;/td&gt;</span> 
+            <span class="kw">&lt;td&gt;</span>Duke City Half Marathon<span class="kw">&lt;/td&gt;</span> 
+            <span class="kw">&lt;td&gt;</span>3:09:42<span class="kw">&lt;/td&gt;</span> 
+            <span class="kw">&lt;td&gt;&lt;a</span><span class="ot"> href=</span><span class="st">&quot;#event-map&quot;</span><span class="ot"> onclick=</span><span class="st">&quot;recenter(map, eventPlaces[0].point, 11)&quot;</span><span class="kw">&gt;</span>map<span class="kw">&lt;/a&gt;&lt;/td&gt;</span>
+        <span class="kw">&lt;/tr&gt;</span>
+        
 
-        <span class="kw">&lt;h2&gt;</span>
-            <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;date&quot;</span><span class="kw">&gt;</span>6/21/2008<span class="kw">&lt;/span&gt;</span> 
-            Animas Valley/Steamworks Half Marathon 
-            <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;time&quot;</span><span class="kw">&gt;</span>3:14:52<span class="kw">&lt;/span&gt;</span> 
-            (<span class="kw">&lt;a</span><span class="ot"> href=</span><span class="st">&quot;#event-map&quot;</span><span class="ot"> onclick=</span><span class="st">&quot;recenter(map, eventPlaces[1].point, 10)&quot;</span><span class="kw">&gt;</span>map<span class="kw">&lt;/a&gt;</span>)
-        <span class="kw">&lt;/h2&gt;</span>
-        <span class="kw">&lt;p</span><span class="ot"> class=</span><span class="st">&quot;eventDescription&quot;</span><span class="kw">&gt;</span>blah, blah, blah ...<span class="kw">&lt;/p&gt;</span>
+        <span class="kw">&lt;tr&gt;</span>
+            <span class="kw">&lt;td&gt;</span>6/21/2008<span class="kw">&lt;/td&gt;</span> 
+            <span class="kw">&lt;td&gt;</span>Animas Valley/Steamworks Half Marathon<span class="kw">&lt;/td&gt;</span> 
+            <span class="kw">&lt;td&gt;</span>3:14:52<span class="kw">&lt;/td&gt;</span> 
+            <span class="kw">&lt;td&gt;&lt;a</span><span class="ot"> href=</span><span class="st">&quot;#event-map&quot;</span><span class="ot"> onclick=</span><span class="st">&quot;recenter(map, eventPlaces[1].point, 10)&quot;</span><span class="kw">&gt;</span>map<span class="kw">&lt;/a&gt;&lt;/td&gt;</span>
+        <span class="kw">&lt;/tr&gt;</span>
+        <span class="kw">&lt;/tbody&gt;</span>
+        <span class="kw">&lt;/table&gt;</span>
+        
 
     <span class="kw">&lt;/body&gt;</span>
 
@@ -620,12 +670,10 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
         <span class="co">&lt;!-- Load the external JavaScript file with the map definition code --&gt;</span>
         <span class="kw">&lt;script</span><span class="ot"> src=</span><span class="st">&quot;js/mapPage_events.js&quot;</span><span class="kw">&gt;&lt;/script&gt;</span>
         
-        <span class="co">&lt;!-- Load the API in asynchronous mode and execute the initialize function</span>
-<span class="co">             when done --&gt;</span>
-        <span class="co">&lt;!-- The optional &#39;key-&lt;API Key&gt;&#39; parameter is not used here but should </span>
-<span class="co">            be for a production map --&gt;</span>
+        <span class="co">&lt;!-- Load the API in asynchronous mode and execute the initialize function when done --&gt;</span>
+        
         <span class="kw">&lt;script</span><span class="ot"> async defer</span> 
-<span class="ot">            src=</span><span class="st">&quot;https://maps.googleapis.com/maps/api/js?callback=initialize&quot;</span><span class="kw">&gt;</span>
+<span class="ot">            src=</span><span class="st">&quot;https://maps.googleapis.com/maps/api/js?callback=initialize</span><span class="er">&amp;</span><span class="st">key=</span><span class="er">&lt;</span><span class="st">YourKey&gt;&quot;</span><span class="kw">&gt;</span>
         <span class="kw">&lt;/script&gt;</span>
     <span class="kw">&lt;/body&gt;</span>
 <span class="kw">&lt;/html&gt;</span></code></pre></td></tr></table></div>
@@ -701,12 +749,325 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 69
 70
 71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265
+266
+267
+268
+269
+270
+271
+272
+273
+274
+275
+276
+277
+278
+279
+280
+281
+282
+283
+284
+285
+286
+287
+288
+289
+290
+291
+292
+293
+294
+295
+296
+297
+298
+299
+300
+301
+302
+303
+304
+305
+306
+307
+308
+309
+310
+311
+312
+313
+314
+315
+316
+317
+318
+319
+320
+321
+322
+323
+324
+325
+326
+327
+328
+329
+330
+331
+332
+333
+334
+335
+336
+337
+338
+339
+340
+341
+342
+343
+344
+345
+346
+347
+348
+349
+350
+351
+352
+353
+354
+355
+356
+357
+358
+359
+360
+361
+362
+363
+364
+365
+366
+367
+368
+369
+370
+371
+372
+373
+374
+375
+376
+377
+378
+379
+380
+381
+382
+383
 </pre></td><td class="sourceCode"><pre><code class="sourceCode html">var map;
 var eventPlaces;
 
 function initialize() {
     // Define a set of global coordinates for use throughout the web site
     // Place coordinates derived from GNIS database: http://geonames.usgs.gov/pls/gnispublic
+    geoCenter = new google.maps.LatLng(39.828175,-98.5795) // from https://tools.wmflabs.org/geohack/geohack.php?pagename=Geographic_center_of_the_contiguous_United_States<span class="er">&amp;</span>params=39.828175_N_98.579500_W_region:US_type:landmark
     eventPlaces = [
         {
             name: &quot;Albuquerque&quot;, 
@@ -748,14 +1109,28 @@ function initialize() {
 
     var myOptions = {
         zoom: 4,
-        center: eventPlaces[0].point,
-        mapTypeId: google.maps.MapTypeId.ROADMAP};
+        center: geoCenter,
+        mapTypeId: google.maps.MapTypeId.ROADMAP,
+        mapTypeControl: false};
 
     map = new google.maps.Map(
         document.getElementById(&quot;event-map&quot;), 
         myOptions);
 
     addMarkers(map,eventPlaces)
+    
+    // Add a style-selector control to the map.
+    var styleControl = document.getElementById(&#39;style-selector-control&#39;);
+    map.controls[google.maps.ControlPosition.TOP_LEFT].push(styleControl);
+    
+    // Set the map&#39;s style to the initial value of the selector.
+    var styleSelector = document.getElementById(&#39;style-selector&#39;);
+    map.setOptions({styles: styles[styleSelector.value]});
+    
+    // Apply new JSON when the user selects a different style.
+    styleSelector.addEventListener(&#39;change&#39;, function() {
+         map.setOptions({styles: styles[styleSelector.value]});
+    });
 }
 
 function recenter(mapName, latlon, zoomLevel) {
@@ -771,7 +1146,304 @@ function addMarkers(mapName, markerArray) {
         });
         myMarker.setMap(mapName)
     }
-}</code></pre></td></tr></table></div>
+}
+
+// styles generated by https://mapstyle.withgoogle.com
+var styles = {
+default: null,
+silver: [
+  {
+    elementType: &#39;geometry&#39;,
+    stylers: [{color: &#39;#f5f5f5&#39;}]
+  },
+  {
+    elementType: &#39;labels.icon&#39;,
+    stylers: [{visibility: &#39;off&#39;}]
+  },
+  {
+    elementType: &#39;labels.text.fill&#39;,
+    stylers: [{color: &#39;#616161&#39;}]
+  },
+  {
+    elementType: &#39;labels.text.stroke&#39;,
+    stylers: [{color: &#39;#f5f5f5&#39;}]
+  },
+  {
+    featureType: &#39;administrative.land_parcel&#39;,
+    elementType: &#39;labels.text.fill&#39;,
+    stylers: [{color: &#39;#bdbdbd&#39;}]
+  },
+  {
+    featureType: &#39;poi&#39;,
+    elementType: &#39;geometry&#39;,
+    stylers: [{color: &#39;#eeeeee&#39;}]
+  },
+  {
+    featureType: &#39;poi&#39;,
+    elementType: &#39;labels.text.fill&#39;,
+    stylers: [{color: &#39;#757575&#39;}]
+  },
+  {
+    featureType: &#39;poi.park&#39;,
+    elementType: &#39;geometry&#39;,
+    stylers: [{color: &#39;#e5e5e5&#39;}]
+  },
+  {
+    featureType: &#39;poi.park&#39;,
+    elementType: &#39;labels.text.fill&#39;,
+    stylers: [{color: &#39;#9e9e9e&#39;}]
+  },
+  {
+    featureType: &#39;road&#39;,
+    elementType: &#39;geometry&#39;,
+    stylers: [{color: &#39;#ffffff&#39;}]
+  },
+  {
+    featureType: &#39;road.arterial&#39;,
+    elementType: &#39;labels.text.fill&#39;,
+    stylers: [{color: &#39;#757575&#39;}]
+  },
+  {
+    featureType: &#39;road.highway&#39;,
+    elementType: &#39;geometry&#39;,
+    stylers: [{color: &#39;#dadada&#39;}]
+  },
+  {
+    featureType: &#39;road.highway&#39;,
+    elementType: &#39;labels.text.fill&#39;,
+    stylers: [{color: &#39;#616161&#39;}]
+  },
+  {
+    featureType: &#39;road.local&#39;,
+    elementType: &#39;labels.text.fill&#39;,
+    stylers: [{color: &#39;#9e9e9e&#39;}]
+  },
+  {
+    featureType: &#39;transit.line&#39;,
+    elementType: &#39;geometry&#39;,
+    stylers: [{color: &#39;#e5e5e5&#39;}]
+  },
+  {
+    featureType: &#39;transit.station&#39;,
+    elementType: &#39;geometry&#39;,
+    stylers: [{color: &#39;#eeeeee&#39;}]
+  },
+  {
+    featureType: &#39;water&#39;,
+    elementType: &#39;geometry&#39;,
+    stylers: [{color: &#39;#c9c9c9&#39;}]
+  },
+  {
+    featureType: &#39;water&#39;,
+    elementType: &#39;labels.text.fill&#39;,
+    stylers: [{color: &#39;#9e9e9e&#39;}]
+  }
+],
+
+night: [
+  {elementType: &#39;geometry&#39;, stylers: [{color: &#39;#242f3e&#39;}]},
+  {elementType: &#39;labels.text.stroke&#39;, stylers: [{color: &#39;#242f3e&#39;}]},
+  {elementType: &#39;labels.text.fill&#39;, stylers: [{color: &#39;#746855&#39;}]},
+  {
+    featureType: &#39;administrative.locality&#39;,
+    elementType: &#39;labels.text.fill&#39;,
+    stylers: [{color: &#39;#d59563&#39;}]
+  },
+  {
+    featureType: &#39;poi&#39;,
+    elementType: &#39;labels.text.fill&#39;,
+    stylers: [{color: &#39;#d59563&#39;}]
+  },
+  {
+    featureType: &#39;poi.park&#39;,
+    elementType: &#39;geometry&#39;,
+    stylers: [{color: &#39;#263c3f&#39;}]
+  },
+  {
+    featureType: &#39;poi.park&#39;,
+    elementType: &#39;labels.text.fill&#39;,
+    stylers: [{color: &#39;#6b9a76&#39;}]
+  },
+  {
+    featureType: &#39;road&#39;,
+    elementType: &#39;geometry&#39;,
+    stylers: [{color: &#39;#38414e&#39;}]
+  },
+  {
+    featureType: &#39;road&#39;,
+    elementType: &#39;geometry.stroke&#39;,
+    stylers: [{color: &#39;#212a37&#39;}]
+  },
+  {
+    featureType: &#39;road&#39;,
+    elementType: &#39;labels.text.fill&#39;,
+    stylers: [{color: &#39;#9ca5b3&#39;}]
+  },
+  {
+    featureType: &#39;road.highway&#39;,
+    elementType: &#39;geometry&#39;,
+    stylers: [{color: &#39;#746855&#39;}]
+  },
+  {
+    featureType: &#39;road.highway&#39;,
+    elementType: &#39;geometry.stroke&#39;,
+    stylers: [{color: &#39;#1f2835&#39;}]
+  },
+  {
+    featureType: &#39;road.highway&#39;,
+    elementType: &#39;labels.text.fill&#39;,
+    stylers: [{color: &#39;#f3d19c&#39;}]
+  },
+  {
+    featureType: &#39;transit&#39;,
+    elementType: &#39;geometry&#39;,
+    stylers: [{color: &#39;#2f3948&#39;}]
+  },
+  {
+    featureType: &#39;transit.station&#39;,
+    elementType: &#39;labels.text.fill&#39;,
+    stylers: [{color: &#39;#d59563&#39;}]
+  },
+  {
+    featureType: &#39;water&#39;,
+    elementType: &#39;geometry&#39;,
+    stylers: [{color: &#39;#17263c&#39;}]
+  },
+  {
+    featureType: &#39;water&#39;,
+    elementType: &#39;labels.text.fill&#39;,
+    stylers: [{color: &#39;#515c6d&#39;}]
+  },
+  {
+    featureType: &#39;water&#39;,
+    elementType: &#39;labels.text.stroke&#39;,
+    stylers: [{color: &#39;#17263c&#39;}]
+  }
+],
+
+retro: [
+  {elementType: &#39;geometry&#39;, stylers: [{color: &#39;#ebe3cd&#39;}]},
+  {elementType: &#39;labels.text.fill&#39;, stylers: [{color: &#39;#523735&#39;}]},
+  {elementType: &#39;labels.text.stroke&#39;, stylers: [{color: &#39;#f5f1e6&#39;}]},
+  {
+    featureType: &#39;administrative&#39;,
+    elementType: &#39;geometry.stroke&#39;,
+    stylers: [{color: &#39;#c9b2a6&#39;}]
+  },
+  {
+    featureType: &#39;administrative.land_parcel&#39;,
+    elementType: &#39;geometry.stroke&#39;,
+    stylers: [{color: &#39;#dcd2be&#39;}]
+  },
+  {
+    featureType: &#39;administrative.land_parcel&#39;,
+    elementType: &#39;labels.text.fill&#39;,
+    stylers: [{color: &#39;#ae9e90&#39;}]
+  },
+  {
+    featureType: &#39;landscape.natural&#39;,
+    elementType: &#39;geometry&#39;,
+    stylers: [{color: &#39;#dfd2ae&#39;}]
+  },
+  {
+    featureType: &#39;poi&#39;,
+    elementType: &#39;geometry&#39;,
+    stylers: [{color: &#39;#dfd2ae&#39;}]
+  },
+  {
+    featureType: &#39;poi&#39;,
+    elementType: &#39;labels.text.fill&#39;,
+    stylers: [{color: &#39;#93817c&#39;}]
+  },
+  {
+    featureType: &#39;poi.park&#39;,
+    elementType: &#39;geometry.fill&#39;,
+    stylers: [{color: &#39;#a5b076&#39;}]
+  },
+  {
+    featureType: &#39;poi.park&#39;,
+    elementType: &#39;labels.text.fill&#39;,
+    stylers: [{color: &#39;#447530&#39;}]
+  },
+  {
+    featureType: &#39;road&#39;,
+    elementType: &#39;geometry&#39;,
+    stylers: [{color: &#39;#f5f1e6&#39;}]
+  },
+  {
+    featureType: &#39;road.arterial&#39;,
+    elementType: &#39;geometry&#39;,
+    stylers: [{color: &#39;#fdfcf8&#39;}]
+  },
+  {
+    featureType: &#39;road.highway&#39;,
+    elementType: &#39;geometry&#39;,
+    stylers: [{color: &#39;#f8c967&#39;}]
+  },
+  {
+    featureType: &#39;road.highway&#39;,
+    elementType: &#39;geometry.stroke&#39;,
+    stylers: [{color: &#39;#e9bc62&#39;}]
+  },
+  {
+    featureType: &#39;road.highway.controlled_access&#39;,
+    elementType: &#39;geometry&#39;,
+    stylers: [{color: &#39;#e98d58&#39;}]
+  },
+  {
+    featureType: &#39;road.highway.controlled_access&#39;,
+    elementType: &#39;geometry.stroke&#39;,
+    stylers: [{color: &#39;#db8555&#39;}]
+  },
+  {
+    featureType: &#39;road.local&#39;,
+    elementType: &#39;labels.text.fill&#39;,
+    stylers: [{color: &#39;#806b63&#39;}]
+  },
+  {
+    featureType: &#39;transit.line&#39;,
+    elementType: &#39;geometry&#39;,
+    stylers: [{color: &#39;#dfd2ae&#39;}]
+  },
+  {
+    featureType: &#39;transit.line&#39;,
+    elementType: &#39;labels.text.fill&#39;,
+    stylers: [{color: &#39;#8f7d77&#39;}]
+  },
+  {
+    featureType: &#39;transit.line&#39;,
+    elementType: &#39;labels.text.stroke&#39;,
+    stylers: [{color: &#39;#ebe3cd&#39;}]
+  },
+  {
+    featureType: &#39;transit.station&#39;,
+    elementType: &#39;geometry&#39;,
+    stylers: [{color: &#39;#dfd2ae&#39;}]
+  },
+  {
+    featureType: &#39;water&#39;,
+    elementType: &#39;geometry.fill&#39;,
+    stylers: [{color: &#39;#b9d3c2&#39;}]
+  },
+  {
+    featureType: &#39;water&#39;,
+    elementType: &#39;labels.text.fill&#39;,
+    stylers: [{color: &#39;#92998d&#39;}]
+  }
+],
+
+hiding: [
+  {
+    featureType: &#39;poi.business&#39;,
+    stylers: [{visibility: &#39;off&#39;}]
+  },
+  {
+    featureType: &#39;transit&#39;,
+    elementType: &#39;labels.icon&#39;,
+    stylers: [{visibility: &#39;off&#39;}]
+  }
+]
+};</code></pre></td></tr></table></div>
 </div>
 <hr />
 <section>
