@@ -50,4 +50,15 @@ function initialize() {
 	google.maps.event.addListener(classroomMarker, 'click', function() {
 		classInfoWindow.open(map,classroomMarker);
 		});
+	var bldgInfoContent = '<div class="infoBox">' +
+		'<p>This is the location of Bandelier East and West on the UNM Campus</p>' +
+		'<iframe src="https://www.google.com/maps/embed?pb=!1m0!3m2!1sen!2sus!4v1486322485343!6m8!1m7!1sneDc4DwioOJ-TytixzvJEg!2m2!1d35.08459518161192!2d-106.6243050674837!3f207.5327084691508!4f-4.850942482843806!5f0.7820865974627469" width="300" height="225" frameborder="0" style="border:0" allowfullscreen></iframe>' +
+		'</div>'
+	var bldgInfoWindow = new google.maps.InfoWindow({
+		content: bldgInfoContent
+		});
+	google.maps.event.addListener(bldgPoly, 'click', function() {
+		bldgInfoWindow.setPosition(event.latLng);
+		bldgInfoWindow.open(map,classroomMarker);
+		});
 }
