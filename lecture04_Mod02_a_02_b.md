@@ -10,9 +10,6 @@ title: Week 4 - Module 2a - Web-based Mapping Clients. Google Maps API (pt. 2)
 <!-- Google Maps API---------------------------------------------------------->
 <!---------------------------------------------------------------------------->
 
-
-# Week 4 - Module 2a - Web-based Mapping Clients. Google Maps API (pt. 2)# {.module02a02b}
-
 ### Overview ###  {.module02a02b}
 
 * Additional Google Maps API Capabilities to be Aware of
@@ -128,7 +125,9 @@ Sample Fusion Table from the previous NAWRS Mapper example: [https://www.google.
 NAWRS Mapper Javascript File: [https://github.com/nawrs/nawrs-web/blob/master/js/core.js](https://github.com/nawrs/nawrs-web/blob/master/js/core.js)
 
 
-### Bringing It All Together ###
+### Bringing It All Together - [link](http://karlbenedict.com/GEOG485-585/sample-files/GoogleMaps/gmaps_events.html)
+ ###
+
 
 <div class="codeTable">
 
@@ -143,14 +142,31 @@ gmaps_events.html
 	</head>
 
 	<body>
-		<h1>My diary of endurance events that I've participated in since joining Team in Training
+		<h1>My diary of endurance events that I've participated in since joining 
+		Team in Training
 		</h1>
 		
-		<p>In 2008 Cynthia and I joined the Leukemia and Lymphoma Society's (<a href="http://www.lls.org/">LLS</a>) Team in Training (<a href="http://www.teamintraining.org/">TNT</a>, <a href="http://youtu.be/GMSKG8L6K78">info video</a>) program as participants to train for the Animas Valley/Steamworks Half Marathon and raise money for blood cancer research and patient services. In spite of our not having any direct connection to blood cancer (at that time),  we found the goals of LLS admirable, the combined training and fund-raising program of TNT a great idea, and made many new friends over the many seasons that we have been involved with TNT.</p>
+		<p>In 2008 Cynthia and I joined the Leukemia and Lymphoma Society's 
+		(<a href="http://www.lls.org/">LLS</a>) Team in Training 
+		(<a href="http://www.teamintraining.org/">TNT</a>, 
+		<a href="http://youtu.be/GMSKG8L6K78">info video</a>) program as 
+		participants to train for the Animas Valley/Steamworks Half Marathon and
+		 raise money for blood cancer research and patient services. In spite of
+		  our not having any direct connection to blood cancer (at that time),  
+		  we found the goals of LLS admirable, the combined training and 
+		  fund-raising program of TNT a great idea, and made many new friends 
+		  over the many seasons that we have been involved with TNT.</p>
 		
-		<p>From 2008 through early 2015 we  continued to volunteer with TNT, as participants, mentors, and since 2010 I was a coach  (check out my <a href="http://youtu.be/GMSKG8L6K78">half-second</a> of fame in the info video at 2:13) for TNT with an emphasis on training walkers for full- or half-marathons. This page provides a summary of the events that I've participated in in some capacity since 2008. </p>
+		<p>From 2008 through early 2015 we  continued to volunteer with TNT, as 
+		participants, mentors, and since 2010 I was a coach  (check out my 
+		<a href="http://youtu.be/GMSKG8L6K78">half-second</a> of fame in the 
+		info video at 2:13) for TNT with an emphasis on training walkers for 
+		full- or half-marathons. This page provides a summary of the events that
+		 I've participated in in some capacity since 2008. </p>
 		
-		<!-- based on the example provided by Google - https://developers.google.com/maps/documentation/javascript/examples/style-selector -->
+		<!-- based on the example provided by Google - 
+		https://developers.google.com/maps/documentation/javascript/examples/
+		style-selector -->
 		<div id="style-selector-control"  class="map-control">
 		  <select id="style-selector" class="selector-control">
 		    <option value="default">Default</option>
@@ -177,28 +193,32 @@ gmaps_events.html
 			<td>1/8/2017</td> 
 			<td>Disney World  Marathon</td>
 			<td>7:14</td> 
-			<td><a href="#event-map" onclick="recenter(map, eventPlaces[4].point, 10)">approx. map</a></td>
+			<td><a href="#event-map" onclick="recenter(map, eventPlaces[4].point, 
+			10)">approx. map</a></td>
 		</tr>
 		
 		<tr>
 			<td>10/16/2016</td> 
 			<td>Duke City Half Marathon </td>
 			<td>~2:55</td> 
-			<td><a href="#event-map" onclick="recenter(map, eventPlaces[0].point, 11)">map</a></td>
+			<td><a href="#event-map" onclick="recenter(map, eventPlaces[0].point,
+			 11)">map</a></td>
 		</tr>
 		
 		<tr>
 			<td>11/13/2015</td> 
 			<td>Avengers Half Marathon </td>
 			<td>3:17:55</td> 
-			<td><a href="#event-map" onclick="recenter(map, eventPlaces[5].point, 12)">approx. map</a></td>
+			<td><a href="#event-map" onclick="recenter(map, eventPlaces[5].point,
+			 12)">approx. map</a></td>
 		</tr>
 
 		<tr>
 			<td>1/11/2015</td> 
 			<td>Disney World  Marathon (Goofy - Day 2)</td>
 			<td>6:21:01</td> 
-			<td><a href="#event-map" onclick="recenter(map, eventPlaces[4].point, 10)">approx. map</a></td>
+			<td><a href="#event-map" onclick="recenter(map, eventPlaces[4].point,
+			 10)">approx. map</a></td>
 		</tr>
 		
 
@@ -206,35 +226,40 @@ gmaps_events.html
 			<td>1/10/2015</td> 
 			<td>Disney World Half Marathon (Goofy - Day 1)</td>
 			<td>2:45:55</td> 
-			<td><a href="#event-map" onclick="recenter(map, eventPlaces[4].point, 10)">approx. map</a></td>
+			<td><a href="#event-map" onclick="recenter(map, eventPlaces[4].point,
+			 10)">approx. map</a></td>
 		</tr>
 		
 		<tr>
 			<td>10/19/2014</td> 
 			<td>Duke City Half Marathon</td> 
 			<td>2:45:17</td> 
-			<td><a href="#event-map" onclick="recenter(map, eventPlaces[0].point, 11)">map</a></td>
+			<td><a href="#event-map" onclick="recenter(map, eventPlaces[0].point,
+			 11)">map</a></td>
 		</tr>
 		
 		<tr>
 			<td>2/23/2014</td> 
 			<td>Princess Half Marathon</td>
 			<td>3:07:11</td> 
-			<td><a href="#event-map" onclick="recenter(map, eventPlaces[4].point, 10)">approx. map</a></td>
+			<td><a href="#event-map" onclick="recenter(map, eventPlaces[4].point,
+			 10)">approx. map</a></td>
 		</tr>
 		
 		<tr>
 			<td>2/22/2014</td> 
 			<td>Princess Enchanted 10k</td>
 			<td>1:42:43</td> 
-			<td><a href="#event-map" onclick="recenter(map, eventPlaces[4].point, 10)">approx. map</a></td>
+			<td><a href="#event-map" onclick="recenter(map, eventPlaces[4].point,
+			 10)">approx. map</a></td>
 		</tr>
 		
 		<tr>
 			<td>9/1/2013</td> 
 			<td>Disneyland Half Marathon</td> 
 			<td>2:56:57</td> 
-			<td><a href="#event-map" onclick="recenter(map, eventPlaces[5].point, 12)">approx. map</a></td>
+			<td><a href="#event-map" onclick="recenter(map, eventPlaces[5].point,
+			 12)">approx. map</a></td>
 		</tr>
 		
 
@@ -242,7 +267,8 @@ gmaps_events.html
 			<td>1/13/2013</td> 
 			<td>Disney World  Marathon (Goofy - Day 2)</td>
 			<td>6:46:57</td> 
-			<td><a href="#event-map" onclick="recenter(map, eventPlaces[4].point, 10)">approx. map</a></td>
+			<td><a href="#event-map" onclick="recenter(map, eventPlaces[4].point,
+			 10)">approx. map</a></td>
 		</tr>
 		
 
@@ -250,7 +276,8 @@ gmaps_events.html
 			<td>1/12/2013</td> 
 			<td>Disney World Half Marathon (Goofy - Day 1)</td>
 			<td>3:22:48</td> 
-			<td><a href="#event-map" onclick="recenter(map, eventPlaces[4].point, 10)">approx. map</a></td>
+			<td><a href="#event-map" onclick="recenter(map, eventPlaces[4].point,
+			 10)">approx. map</a></td>
 		</tr>
 		
 	
@@ -258,7 +285,8 @@ gmaps_events.html
 			<td>9/29/2012</td> 
 			<td>Hot Chocolate 15k </td>
 			<td>1:56:46</td> 
-			<td><a href="#event-map" onclick="recenter(map, eventPlaces[6].point, 10)">map</a></td>
+			<td><a href="#event-map" onclick="recenter(map, eventPlaces[6].point,
+			 10)">map</a></td>
 		</tr>
 		
 
@@ -266,7 +294,8 @@ gmaps_events.html
 			<td>6/9/2012</td> 
 			<td>Animas Valley/Steamworks Half Marathon</td> 
 			<td>no time: coached</td> 
-			<td><a href="#event-map" onclick="recenter(map, eventPlaces[1].point, 10)">map</a></td>
+			<td><a href="#event-map" onclick="recenter(map, eventPlaces[1].point,
+			 10)">map</a></td>
 		</tr>
 		
 
@@ -274,7 +303,8 @@ gmaps_events.html
 			<td>1/9/2012</td> 
 			<td>Disney World  Marathon (Goofy - Day 2)</td>
 			<td>6:56:28</td> 
-			<td><a href="#event-map" onclick="recenter(map, eventPlaces[4].point, 10)">map</a></td>
+			<td><a href="#event-map" onclick="recenter(map, eventPlaces[4].point,
+			 10)">map</a></td>
 		</tr>
 		
 
@@ -282,7 +312,8 @@ gmaps_events.html
 			<td>1/8/2011</td> 
 			<td>Disney World Half Marathon (Goofy - Day 1)</td>
 			<td>3:29:00</td> 
-			<td><a href="#event-map" onclick="recenter(map, eventPlaces[4].point, 10)">map</a></td>
+			<td><a href="#event-map" onclick="recenter(map, eventPlaces[4].point,
+			 10)">map</a></td>
 		</tr>
 		
 
@@ -290,7 +321,8 @@ gmaps_events.html
 			<td>6/19/2010</td> 
 			<td>Animas Valley/Steamworks Half Marathon</td> 
 			<td>no time: coached</td> 
-			<td><a href="#event-map" onclick="recenter(map, eventPlaces[1].point, 10)">map</a></td>
+			<td><a href="#event-map" onclick="recenter(map, eventPlaces[1].point,
+			 10)">map</a></td>
 		</tr>
 		
 
@@ -298,7 +330,8 @@ gmaps_events.html
 			<td>6/6/2010</td> 
 			<td>San Diego Rock 'n' Roll Marathon</td> 
 			<td>no time: coached</td> 
-			<td><a href="#event-map" onclick="recenter(map, eventPlaces[2].point, 11)">map</a></td>
+			<td><a href="#event-map" onclick="recenter(map, eventPlaces[2].point,
+			 11)">map</a></td>
 		</tr>
 		
 
@@ -306,7 +339,8 @@ gmaps_events.html
 			<td>10/18/09</td> 
 			<td>Nike Women's Marathon</td> 
 			<td>7:13:05</td> 
-			<td><a href="#event-map" onclick="recenter(map, eventPlaces[3].point, 12)">map</a></td>
+			<td><a href="#event-map" onclick="recenter(map, eventPlaces[3].point,
+			 12)">map</a></td>
 		</tr>
 		
 
@@ -314,7 +348,8 @@ gmaps_events.html
 			<td>9/6/2009</td> 
 			<td>Disneyland Half Marathon</td> 
 			<td>3:43:05</td> 
-			<td><a href="#event-map" onclick="recenter(map, eventPlaces[5].point, 12)">map</a></td>
+			<td><a href="#event-map" onclick="recenter(map, eventPlaces[5].point,
+			 12)">map</a></td>
 		</tr>
 		
 
@@ -322,7 +357,8 @@ gmaps_events.html
 			<td>1/11/2009</td> 
 			<td>Disney World Marathon</td> 
 			<td>6:57:42</td> 
-			<td><a href="#event-map" onclick="recenter(map, eventPlaces[4].point, 10)">map</a></td>
+			<td><a href="#event-map" onclick="recenter(map, eventPlaces[4].point,
+			 10)">map</a></td>
 		</tr>
 		
 
@@ -330,7 +366,8 @@ gmaps_events.html
 			<td>10/19/2008</td> 
 			<td>Duke City Half Marathon</td> 
 			<td>3:09:42</td> 
-			<td><a href="#event-map" onclick="recenter(map, eventPlaces[0].point, 11)">map</a></td>
+			<td><a href="#event-map" onclick="recenter(map, eventPlaces[0].point,
+			 11)">map</a></td>
 		</tr>
 		
 
@@ -338,7 +375,8 @@ gmaps_events.html
 			<td>6/21/2008</td> 
 			<td>Animas Valley/Steamworks Half Marathon</td> 
 			<td>3:14:52</td> 
-			<td><a href="#event-map" onclick="recenter(map, eventPlaces[1].point, 10)">map</a></td>
+			<td><a href="#event-map" onclick="recenter(map, eventPlaces[1].point,
+			 10)">map</a></td>
 		</tr>
 		</tbody>
 		</table>
@@ -350,10 +388,12 @@ gmaps_events.html
 		<!-- Load the external JavaScript file with the map definition code -->
 		<script src="js/mapPage_events.js"></script>
 		
-		<!-- Load the API in asynchronous mode and execute the initialize function when done -->
+		<!-- Load the API in asynchronous mode and execute the initialize 
+		function when done -->
 		
 		<script async defer 
-			src="https://maps.googleapis.com/maps/api/js?callback=initialize&key=<YourKey>">
+			src="https://maps.googleapis.com/maps/api/js?callback=initialize&
+			key=<YourKey>">
     	</script>
 	</body>
 </html>
@@ -368,8 +408,12 @@ var eventPlaces;
 
 function initialize() {
 	// Define a set of global coordinates for use throughout the web site
-	// Place coordinates derived from GNIS database: http://geonames.usgs.gov/pls/gnispublic
-	geoCenter = new google.maps.LatLng(39.828175,-98.5795) // from https://tools.wmflabs.org/geohack/geohack.php?pagename=Geographic_center_of_the_contiguous_United_States&params=39.828175_N_98.579500_W_region:US_type:landmark
+	// Place coordinates derived from GNIS database: http://geonames.usgs.gov/
+	// pls/gnispublic
+	// from https://tools.wmflabs.org/geohack/geohack.php?
+	// pagename=Geographic_center_of_the_contiguous_United_States&
+	// params=39.828175_N_98.579500_W_region:US_type:landmark
+	geoCenter = new google.maps.LatLng(39.828175,-98.5795) 
 	eventPlaces = [
 		{
 			name: "Albuquerque", 
@@ -749,3 +793,4 @@ hiding: [
 
 ~~~~~~~~~~
 </div>
+
