@@ -58,7 +58,8 @@ function initialize() {
 		content: bldgInfoContent
 		});
 	google.maps.event.addListener(bldgPoly, 'click', function() {
-		bldgInfoWindow.setPosition(event.latLng);
-		bldgInfoWindow.open(map,classroomMarker);
+		var position = new google.maps.LatLng(35.084438,-106.624317)
+		bldgInfoWindow.setPosition(position)
+		bldgInfoWindow.open(map);
 		});
 }
