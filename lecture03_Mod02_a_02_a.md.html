@@ -1189,6 +1189,19 @@ var map = new google.maps.Map(
 52
 53
 54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
 </pre></td><td class="sourceCode"><pre><code class="sourceCode">function initialize() {
     var classroom = new google.maps.LatLng(35.084280,-106.624073)
     var office = new google.maps.LatLng(35.084506,-106.624899)
@@ -1241,7 +1254,20 @@ var map = new google.maps.Map(
     google.maps.event.addListener(classroomMarker, &#39;click&#39;, function() {
         classInfoWindow.open(map,classroomMarker);
         });
+    var bldgInfoContent = &#39;&lt;div class=&quot;infoBox&quot;&gt;&#39; +
+        &#39;&lt;p&gt;This is the location of Bandelier East and West on the UNM Campus&lt;/p&gt;&#39; +
+        &#39;&lt;iframe src=&quot;https://www.google.com/maps/embed?pb=!1m0!3m2!1sen!2sus!4v1486322485343!6m8!1m7!1sneDc4DwioOJ-TytixzvJEg!2m2!1d35.08459518161192!2d-106.6243050674837!3f207.5327084691508!4f-4.850942482843806!5f0.7820865974627469&quot; width=&quot;300&quot; height=&quot;225&quot; frameborder=&quot;0&quot; style=&quot;border:0&quot; allowfullscreen&gt;&lt;/iframe&gt;&#39; +
+        &#39;&lt;/div&gt;&#39;
+    var bldgInfoWindow = new google.maps.InfoWindow({
+        content: bldgInfoContent
+        });
+    google.maps.event.addListener(bldgPoly, &#39;click&#39;, function() {
+        var position = new google.maps.LatLng(35.084438,-106.624317)
+        bldgInfoWindow.setPosition(position)
+        bldgInfoWindow.open(map);
+        });
 }
+
 </code></pre></td></tr></table></div>
 </div>
 <hr />
