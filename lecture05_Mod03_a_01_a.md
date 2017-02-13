@@ -1,11 +1,14 @@
+---
+title: Week 5 -  Module 3 - GIS and Services Oriented Architectures
+...
+
+
 <!---------------------------------------------------------------------------->
 <!-- Week 05 ----------------------------------------------------------------->
 <!-- Lecture 03 a 01 a ------------------------------------------------------->
 <!-- GIS and Services Oriented Architectures---------------------------------->
 <!---------------------------------------------------------------------------->
 <!---------------------------------------------------------------------------->
-
-# Week 5 -  Module 3 - GIS and Services Oriented Architectures# {.module03a01a}
 
 ### Overview ###  {.module03a01a}
 
@@ -95,7 +98,7 @@ EPSG registry
 :	Helpful if you already know the EPSG code of the projection you are looking for - [http://www.epsg-registry.org/](http://www.epsg-registry.org/)
 
 GeoTIFF Projection List
-:	 Helpful if you know the name of one of the broadly used projections - uneven performance of links - [http://www.remotesensing.org/geotiff/proj_list/](http://www.remotesensing.org/geotiff/proj_list/) 
+:	 Helpful if you know the name of one of the broadly used projections - uneven performance of links - [http://www.remotesensing.org/geotiff/proj_list/ [Archived Version]](http://web.archive.org/web/20160802172057/http://www.remotesensing.org/geotiff/proj_list/) 
 
 SpatialReference.org 
 :	Decent search tool, includes non-EPSG as well as EPSG projection information, multiple descriptions of projection parameters - [http://spatialreference.org/](http://spatialreference.org/)
@@ -379,50 +382,44 @@ services/ogc/wms?
 ### Implementation of the OGC Standards ### {.module03a01a .twoColumn}
 
 * WMS
-	* 1.3.0 - 351 implementations
-	* 1.1.1 - 524
-	* 1.1 - 257
-	* 1.0 - 293
+	* 1.3.0 - 389 implementations
+	* 1.1.1 - 558
+	* 1.1 - 263
+	* 1.0 - 301
 
 * WFS
-	* 2.0 - 62
-	* 2.0 transactional - 14
-	* 1.1.0 - 280
-	* 1.1.0 transactional - 76
-	* 1.0.0 - 340
-	* 1.0.0 transactional - 127
+	* 2.0 - 78
+	* 2.0 transactional - 17
+	* 1.1.0 - 310
+	* 1.1.0 transactional - 83
+	* 1.0.0 - 363
+	* 1.0.0 transactional - 131
 
 * WCS
 	* 2.0 - Core - 7
-	* 1.1.2 - 22
-	* 1.1.1 Corregendum 1- 56
+	* 1.1.2 - 27
+	* 1.1.1 Corregendum 1- 67
 	* 1.1.0 - 30
-	* 1.0.0 Corregendum - 210
-
-Implementation information based upon [OGC Implementation Statistics](http://www.opengeospatial.org/resource/products/stats) - Accessed 2/2016
-
-
-
-### Implementation of the OGC Standards ### {.module03a01a .twoColumn}
+	* 1.0.0 Corregendum - 227
 
 * KML
-	* 2.2.0 - 106
+	* 2.2.0 - 117
 	* 2.2 Reference (Best Practice) - 11
-	* 2.1 Reference (Best Practice) - 77
+	* 2.1 Reference (Best Practice) - 82
 
 
 * GML
 	* 3.3 - 6
-	* 3.2.1 - 140
+	* 3.2.1 - 157
 	* 3.1.1 - 161
-	* 3.0 - 145
-	* 2.1.2 - 168
-	* 2.1.1 - 117
+	* 3.0 - 156
+	* 2.1.2 - 179
+	* 2.1.1 - 127
 	* 2.0 - 82 
 	* 1.0 - 20
 
 
-Implementation information based upon [OGC Implementation Statistics](http://www.opengeospatial.org/resource/products/stats) - Accessed 2/202016
+Implementation information based upon [OGC Implementation Statistics](http://www.opengeospatial.org/resource/products/stats) - Accessed 2/2017
 
 
 
