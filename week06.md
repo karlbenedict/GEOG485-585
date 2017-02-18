@@ -105,14 +105,14 @@ Question 5: For one of the layers in the first service,
 
 	What is the LatLonBoundingBox of the layer?
 
-Open the following GetCapabilities request in your browser. Select “View Source” from the browser menu to see the delivered XML document (it may appear as an unformatted string of text by default in your browser - if that is the case, save the file to your hard drive and view it in a text editor). Use the information in the XML capabilities document to formulate `GetMap` requests for the following map images. Include the requests and resulting images in your write-up. Comment on anything unusual that you notice in the images that are returned. 
+Open the following GetCapabilities request in your browser. Select “View Source” from the browser menu to see the delivered XML document (it may appear as an unformatted string of text by default in your browser - if that is the case, save the file to your hard drive and view it in a text editor). Use the information in the XML capabilities document to formulate `GetMap` requests for the following map images. Include the requestsin your write-up. Comment on anything unusual that you notice in the images that are returned. 
 
 [http://gstore.unm.edu/apps/rgis/datasets/92403ebf-aec5-404b-ae8a-6db41f388737/services/ogc/wms?SERVICE=wms&REQUEST=GetCapabilities&VERSION=1.1.1](http://gstore.unm.edu/apps/rgis/datasets/92403ebf-aec5-404b-ae8a-6db41f388737/services/ogc/wms?SERVICE=wms&REQUEST=GetCapabilities&VERSION=1.1.1)
 
 Question 6
 :	for the area surrounding Bernalillo County (-107.2,34.7,-106,35.25; EPSG:4326) for the `g_2007fe_35_county` layer as a 200x200 pixel JPEG <!-- http://gstore.unm.edu/apps/rgis/datasets/92403ebf-aec5-404b-ae8a-6db41f388737/services/ogc/wms?SERVICE=wms&REQUEST=GetMap&VERSION=1.1.1&FORMAT=JPEG&BBOX=-107.2,34.7,-106,35.25&SRS=EPSG:4326&WIDTH=200&HEIGHT=200&LAYERS=g_2007fe_35_county&STYLES= -->
 
-	for the same area and layer as a 500x500 pixel PNG <!-- http://gstore.unm.edu/apps/rgis/datasets/92403ebf-aec5-404b-ae8a-6db41f388737/services/ogc/wms?SERVICE=wms&REQUEST=GetMap&VERSION=1.1.1&FORMAT=PNG&BBOX=-107.2,34.7,-106,35.25&SRS=EPSG:4326&WIDTH=500&HEIGHT=500&LAYERS=g_2007fe_35_county&STYLES= -->
+	for the same area and layer as a 500x500 pixel PNG <!-- http://gstore.unm.edu/apps/rgis/datasets/92403ebf-aec5-404b-ae8a-6db41f388737/services/ogc/wms?SERVICE=wms&REQUEST=GetMap&VERSION=1.1.1&FORMAT=JPEG&BBOX=-107.2,34.7,-106,35.25&SRS=EPSG:4326&WIDTH=500&HEIGHT=500&LAYERS=g_2007fe_35_county&STYLES= -->
 
 
 
@@ -173,7 +173,7 @@ Question 7
 	What are the SRS/CRS’s for which layers from this service are available (remember that nested layers inherit the SRS/CRS of their parent layers). 
 
 Question 8
-:	Formulate a GetMap request for the “tl_2010_35_bg10” layer from this service, for a 500x500 pixel map image that is 0.05-degrees wide and 0.05-degress high, with the SW corner of the map image located at  35°N and -106°45'E (EPSG:4326). Include in your write-up the complete GetMap request and the returned map image. 
+:	Formulate a GetMap request for the “tl_2010_35_bg10” layer from this service, for a 500x500 pixel map image that is 0.05-degrees wide and 0.05-degress high, with the SW corner of the map image located at  35°N and -106°45'E (EPSG:4326). Include in your write-up the complete GetMap request. 
 
 <!-- http://gstore.unm.edu/apps/rgis/datasets/715663ba-c1c3-414c-84a7-c671526f8316/services/ogc/wms?SERVICE=wms&REQUEST=GetMap&VERSION=1.1.1&FORMAT=PNG&BBOX=-106.75,35,-106.667,35.05&SRS=EPSG:4326&WIDTH=500&HEIGHT=500&LAYERS=tl_2010_35_bg10&STYLES=  -->
 

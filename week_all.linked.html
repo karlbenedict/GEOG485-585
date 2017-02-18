@@ -82,7 +82,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li><a href="#week06">Introduction</a></li>
 <li><a href="#week06-prep">Class Prep</a></li>
 <li><a href="#week06-reference">Reference Materials</a></li>
-<li><a href="#week06-milestone">Weekly Milestone - WMS &amp; KML</a></li>
+<li><a href="#week06-milestone">Weekly Milestone - WMS</a></li>
 <li><a href="#week06-deepDive">Deep Dive - OGC Service Concepts</a></li>
 <li><a href="#week07">Introduction</a></li>
 <li><a href="#week07-prep">Class Prep</a></li>
@@ -561,7 +561,7 @@ You will perform your first peer-review based upon the *styled* home page that w
 <li><p>OGC KML <a href="http://portal.opengeospatial.org/files/?artifact_id=27810">Version 2.2 - 2008</a>, <a href="http://docs.opengeospatial.org/is/12-007r2/12-007r2.html"><em>Version 2.3 - 2015</em></a></p></li>
 <li><p><a href="https://developers.google.com/kml/documentation/">Google Code KML Documentation</a></p></li>
 </ul>
-<h1 id="week06-milestone">Weekly Milestone - WMS &amp; KML</h1>
+<h1 id="week06-milestone">Weekly Milestone - WMS</h1>
 <p>There are a large number of WMS services available on the web. One way to find interesting services is to search for them using standard search engines such as Google. Try searching for the following search phrase:</p>
 <p><code>“REQUEST=GetCapabilities” and “SERVICE=WMS”</code></p>
 <p>as a single search phrase</p>
@@ -597,19 +597,12 @@ You will perform your first peer-review based upon the *styled* home page that w
 <p>What is the LatLonBoundingBox of the layer?</p>
 </dd>
 </dl>
-<p>Open the following GetCapabilities request in your browser. Select “View Source” from the browser menu to see the delivered XML document (it may appear as an unformatted string of text by default in your browser - if that is the case, save the file to your hard drive and view it in a text editor). Use the information in the XML capabilities document to formulate <code>GetMap</code> requests for the following map images. Include the requests and resulting images in your write-up. Comment on anything unusual that you notice in the images that are returned.</p>
+<p>Open the following GetCapabilities request in your browser. Select “View Source” from the browser menu to see the delivered XML document (it may appear as an unformatted string of text by default in your browser - if that is the case, save the file to your hard drive and view it in a text editor). Use the information in the XML capabilities document to formulate <code>GetMap</code> requests for the following map images. Include the requestsin your write-up. Comment on anything unusual that you notice in the images that are returned.</p>
 <p><a href="http://gstore.unm.edu/apps/rgis/datasets/92403ebf-aec5-404b-ae8a-6db41f388737/services/ogc/wms?SERVICE=wms&amp;REQUEST=GetCapabilities&amp;VERSION=1.1.1" class="uri">http://gstore.unm.edu/apps/rgis/datasets/92403ebf-aec5-404b-ae8a-6db41f388737/services/ogc/wms?SERVICE=wms&amp;REQUEST=GetCapabilities&amp;VERSION=1.1.1</a></p>
 <dl>
 <dt>Question 6</dt>
 <dd><p>for the area surrounding Bernalillo County (-107.2,34.7,-106,35.25; EPSG:4326) for the <code>g_2007fe_35_county</code> layer as a 200x200 pixel JPEG <!-- http://gstore.unm.edu/apps/rgis/datasets/92403ebf-aec5-404b-ae8a-6db41f388737/services/ogc/wms?SERVICE=wms&REQUEST=GetMap&VERSION=1.1.1&FORMAT=JPEG&BBOX=-107.2,34.7,-106,35.25&SRS=EPSG:4326&WIDTH=200&HEIGHT=200&LAYERS=g_2007fe_35_county&STYLES= --></p>
-<p>for the same area and layer as a 500x500 pixel PNG <!-- http://gstore.unm.edu/apps/rgis/datasets/92403ebf-aec5-404b-ae8a-6db41f388737/services/ogc/wms?SERVICE=wms&REQUEST=GetMap&VERSION=1.1.1&FORMAT=PNG&BBOX=-107.2,34.7,-106,35.25&SRS=EPSG:4326&WIDTH=500&HEIGHT=500&LAYERS=g_2007fe_35_county&STYLES= --></p>
-</dd>
-</dl>
-<p>Open the following (linked) KML file in Google Earth, uncompress it, and save the contained KML file on your computer. Open the KML file in a text editor (e.g. Text Wrangler [Mac], Notepad/Notepad++ [Windows]).</p>
-<p><a href="http://rgis.unm.edu/gstore/datasets/3f0a85aa-b7f8-47bd-8db6-1c0e66becf72/nm_state_bdy_00.derived.kml" class="uri">http://rgis.unm.edu/gstore/datasets/3f0a85aa-b7f8-47bd-8db6-1c0e66becf72/nm_state_bdy_00.derived.kml</a></p>
-<dl>
-<dt>Question 7</dt>
-<dd>Add a second <em>Placemark</em> element to the KML file that represents a <em>square</em> region that is completely contained within the state boundary. Save the KML file and open it in Google Earth (download from http://www.google.com/earth/index.html). Submit the KML file (as a link in your writeup) as part of your writeup for the milestone. <!-- example file: sample-files/milestoneKML_example.kml -->
+<p>for the same area and layer as a 500x500 pixel PNG <!-- http://gstore.unm.edu/apps/rgis/datasets/92403ebf-aec5-404b-ae8a-6db41f388737/services/ogc/wms?SERVICE=wms&REQUEST=GetMap&VERSION=1.1.1&FORMAT=JPEG&BBOX=-107.2,34.7,-106,35.25&SRS=EPSG:4326&WIDTH=500&HEIGHT=500&LAYERS=g_2007fe_35_county&STYLES= --></p>
 </dd>
 </dl>
 <h1 id="week06-deepDive">Deep Dive - OGC Service Concepts</h1>
@@ -659,7 +652,7 @@ You will perform your first peer-review based upon the *styled* home page that w
 <p>What are the SRS/CRS’s for which layers from this service are available (remember that nested layers inherit the SRS/CRS of their parent layers).</p>
 </dd>
 <dt>Question 8</dt>
-<dd>Formulate a GetMap request for the “tl_2010_35_bg10” layer from this service, for a 500x500 pixel map image that is 0.05-degrees wide and 0.05-degress high, with the SW corner of the map image located at 35°N and -106°45'E (EPSG:4326). Include in your write-up the complete GetMap request and the returned map image.
+<dd>Formulate a GetMap request for the “tl_2010_35_bg10” layer from this service, for a 500x500 pixel map image that is 0.05-degrees wide and 0.05-degress high, with the SW corner of the map image located at 35°N and -106°45'E (EPSG:4326). Include in your write-up the complete GetMap request.
 </dd>
 </dl>
 <!-- http://gstore.unm.edu/apps/rgis/datasets/715663ba-c1c3-414c-84a7-c671526f8316/services/ogc/wms?SERVICE=wms&REQUEST=GetMap&VERSION=1.1.1&FORMAT=PNG&BBOX=-106.75,35,-106.667,35.05&SRS=EPSG:4326&WIDTH=500&HEIGHT=500&LAYERS=tl_2010_35_bg10&STYLES=  -->
