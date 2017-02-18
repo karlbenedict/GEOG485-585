@@ -59,7 +59,7 @@ At the end of this class students should have an understanding of the following:
 
 * [Google Code KML Documentation](https://developers.google.com/kml/documentation/)
 
-# Weekly Milestone - WMS & KML # {#week06-milestone}
+# Weekly Milestone - WMS # {#week06-milestone}
 
 There are a large number of WMS services available on the web. One way to find interesting services is to search for them using standard search engines such as Google. Try searching for the following search phrase: 
 
@@ -113,13 +113,6 @@ Question 6
 :	for the area surrounding Bernalillo County (-107.2,34.7,-106,35.25; EPSG:4326) for the `g_2007fe_35_county` layer as a 200x200 pixel JPEG <!-- http://gstore.unm.edu/apps/rgis/datasets/92403ebf-aec5-404b-ae8a-6db41f388737/services/ogc/wms?SERVICE=wms&REQUEST=GetMap&VERSION=1.1.1&FORMAT=JPEG&BBOX=-107.2,34.7,-106,35.25&SRS=EPSG:4326&WIDTH=200&HEIGHT=200&LAYERS=g_2007fe_35_county&STYLES= -->
 
 	for the same area and layer as a 500x500 pixel PNG <!-- http://gstore.unm.edu/apps/rgis/datasets/92403ebf-aec5-404b-ae8a-6db41f388737/services/ogc/wms?SERVICE=wms&REQUEST=GetMap&VERSION=1.1.1&FORMAT=PNG&BBOX=-107.2,34.7,-106,35.25&SRS=EPSG:4326&WIDTH=500&HEIGHT=500&LAYERS=g_2007fe_35_county&STYLES= -->
-
-Open the following (linked) KML file in Google Earth, uncompress it, and save the contained KML file on your computer. Open the KML file in a text editor (e.g. Text Wrangler [Mac], Notepad/Notepad++ [Windows]). 
-
-[http://rgis.unm.edu/gstore/datasets/3f0a85aa-b7f8-47bd-8db6-1c0e66becf72/nm_state_bdy_00.derived.kml](http://rgis.unm.edu/gstore/datasets/3f0a85aa-b7f8-47bd-8db6-1c0e66becf72/nm_state_bdy_00.derived.kml)
-
-Question 7
-: Add a second _Placemark_ element to the KML file that represents a _square_ region that is completely contained within the state boundary. Save the KML file and open it in Google Earth (download from http://www.google.com/earth/index.html). Submit the KML file (as a link in your writeup) as part of your writeup for the milestone. <!-- example file: sample-files/milestoneKML_example.kml -->
 
 
 

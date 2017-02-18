@@ -1,3 +1,7 @@
+---
+title: Week 7 - Module 4a - Interoperability Standards. WFS & WCS
+...
+
 <!---------------------------------------------------------------------------->
 <!-- Week 07 ----------------------------------------------------------------->
 <!-- Lecture 04 a 02 a ------------------------------------------------------->
@@ -5,8 +9,6 @@
 <!-- WFS and WCS ------------------------------------------------------------->
 <!---------------------------------------------------------------------------->
 
-
-# Week 7 - Module 4a - Interoperability Standards. WFS & WCS# {.module04a02a}
 
 ### Overview ###  {.module04a02a}
 
@@ -115,9 +117,9 @@ Conceptually _FeatureType_ = _Layer_
 
 ### KVP for Base WFS Requests ### {.module04a02a} 
 
-Base request parameters for all HTTP GET KVP requests (Figure {@fig:wfsTable02})
+Base request parameters for all HTTP GET KVP requests
 
-![Table 4 from [OpenGIS Web Feature Service 2.0 Interface Standard - Panagiotis (Peter) A. Vretanos, editor - 2010-11-02](http://www.opengeospatial.org/standards/wfs)](images/09-025r1_OGC_Web_Feature_Service_WFS_2-table04.jpg){#fig:wfsTable02}
+![Table 4 from [OpenGIS Web Feature Service 2.0 Interface Standard - Panagiotis (Peter) A. Vretanos, editor - 2010-11-02](http://www.opengeospatial.org/standards/wfs)](images/09-025r1_OGC_Web_Feature_Service_WFS_2-table04.jpg)
 
 `VERSION` is required for all operations _except_ the `GetCapabilities` request
 
@@ -141,9 +143,9 @@ Sample request to NM RGIS (NM 2010 Census Block Groups) - [Live Link](http://gst
 
 ### KVP for DescribeFeatureType Request ### {.module04a02a} 
 
-`DescribeFeatureType` HTTP GET KVP request (Figure {@fig:wfsTable15})
+`DescribeFeatureType` HTTP GET KVP request
 
-![Table 15 from [OpenGIS Web Feature Service 2.0 Interface Standard - Panagiotis (Peter) A. Vretanos, editor - 2010-11-02](http://www.opengeospatial.org/standards/wfs)](images/09-025r1_OGC_Web_Feature_Service_WFS_2-table15.jpg){#fig:wfsTable15}
+![Table 15 from [OpenGIS Web Feature Service 2.0 Interface Standard - Panagiotis (Peter) A. Vretanos, editor - 2010-11-02](http://www.opengeospatial.org/standards/wfs)](images/09-025r1_OGC_Web_Feature_Service_WFS_2-table15.jpg)
 
 
 ### Sample DescribeFeatureType Requests ### {.module04a02a} 
@@ -168,32 +170,32 @@ Sample request to NM RGIS (NM 2010 Census Block Groups) - [Live Link](http://gst
 
 ### KVP for GetFeature Request ### {.module04a02a} 
 
-`GetFeature` HTTP GET KVP request (Figure {@fig:wfsTable17})
+`GetFeature` HTTP GET KVP request
 
-![Table 17 from [OpenGIS Web Feature Service 2.0 Interface Standard - Panagiotis (Peter) A. Vretanos, editor - 2010-11-02](http://www.opengeospatial.org/standards/wfs)](images/09-025r1_OGC_Web_Feature_Service_WFS_2-table17.jpg){#fig:wfsTable17}
-
-
-### KVP for GetFeature Request - Presentation Parameters (Figure {@fig:wfsTable05}) ### {.module04a02a} 
-
-![Table 5 from [OpenGIS Web Feature Service 2.0 Interface Standard - Panagiotis (Peter) A. Vretanos, editor - 2010-11-02](http://www.opengeospatial.org/standards/wfs)](images/09-025r1_OGC_Web_Feature_Service_WFS_2-table05.jpg){#fig:wfsTable05}
+![Table 17 from [OpenGIS Web Feature Service 2.0 Interface Standard - Panagiotis (Peter) A. Vretanos, editor - 2010-11-02](http://www.opengeospatial.org/standards/wfs)](images/09-025r1_OGC_Web_Feature_Service_WFS_2-table17.jpg)\ 
 
 
+### KVP for GetFeature Request - Presentation Parameters  ### {.module04a02a} 
 
-### KVP for GetFeature Request - Resolve Parameters (Figure {@fig:wfsTable06})### {.module04a02a} 
-
-![Table 6 from [OpenGIS Web Feature Service 2.0 Interface Standard - Panagiotis (Peter) A. Vretanos, editor - 2010-11-02](http://www.opengeospatial.org/standards/wfs)](images/09-025r1_OGC_Web_Feature_Service_WFS_2-table06.jpg){#fig:wfsTable06}
+![Table 5 from [OpenGIS Web Feature Service 2.0 Interface Standard - Panagiotis (Peter) A. Vretanos, editor - 2010-11-02](http://www.opengeospatial.org/standards/wfs)](images/09-025r1_OGC_Web_Feature_Service_WFS_2-table05.jpg)\ 
 
 
 
-### KVP for GetFeature Request - Ad-hoc Query Parameters (Figure {@fig:wfsTable08}) ### {.module04a02a} 
+### KVP for GetFeature Request - Resolve Parameters### {.module04a02a} 
 
-![Table 8 from [OpenGIS Web Feature Service 2.0 Interface Standard - Panagiotis (Peter) A. Vretanos, editor - 2010-11-02](http://www.opengeospatial.org/standards/wfs)](images/09-025r1_OGC_Web_Feature_Service_WFS_2-table08.jpg){#fig:wfsTable08}
+![Table 6 from [OpenGIS Web Feature Service 2.0 Interface Standard - Panagiotis (Peter) A. Vretanos, editor - 2010-11-02](http://www.opengeospatial.org/standards/wfs)](images/09-025r1_OGC_Web_Feature_Service_WFS_2-table06.jpg)\ 
 
 
 
-### KVP for GetFeature Request - Stored Query Parameters (Figure {@fig:wfsTable08})### {.module04a02a} 
+### KVP for GetFeature Request - Ad-hoc Query Parameters (Figure ) ### {.module04a02a} 
 
-![Table 10 from [OpenGIS Web Feature Service 2.0 Interface Standard - Panagiotis (Peter) A. Vretanos, editor - 2010-11-02](http://www.opengeospatial.org/standards/wfs)](images/09-025r1_OGC_Web_Feature_Service_WFS_2-table10.jpg){#fig:wfsTable10}
+![Table 8 from [OpenGIS Web Feature Service 2.0 Interface Standard - Panagiotis (Peter) A. Vretanos, editor - 2010-11-02](http://www.opengeospatial.org/standards/wfs)](images/09-025r1_OGC_Web_Feature_Service_WFS_2-table08.jpg)\ 
+
+
+
+### KVP for GetFeature Request - Stored Query Parameters (Figure )### {.module04a02a} 
+
+![Table 10 from [OpenGIS Web Feature Service 2.0 Interface Standard - Panagiotis (Peter) A. Vretanos, editor - 2010-11-02](http://www.opengeospatial.org/standards/wfs)](images/09-025r1_OGC_Web_Feature_Service_WFS_2-table10.jpg)\ 
 
 
 ### Sample GetFeature Requests ### {.module04a02a} 
@@ -320,15 +322,15 @@ New Mexico Resource Geographic Information System PRISM Precipitation Normals WC
 
 `GetCoverage` HTTP GET KVP request (Figure {@fig:wcsTable01})
 
-![Table 2 from [_OGC Web Coverage Service 2.0 Interface Standard - KVP Protocol Binding Extension_ - Peter Baumann, editor - 2010-10-27](http://portal.opengeospatial.org/files/?artifact_id=41439)](images/09-147r1_OGC_Web_Coverage_Service_2-table02.jpg){#fig:wcsTable02}
+![Table 2 from [_OGC Web Coverage Service 2.0 Interface Standard - KVP Protocol Binding Extension_ - Peter Baumann, editor - 2010-10-27](http://portal.opengeospatial.org/files/?artifact_id=41439)](images/09-147r1_OGC_Web_Coverage_Service_2-table02.jpg)
 
 
 
 ### Subset Definition for GetCoverage Request ### {.module04a02a} 
 
-Subset definition for the `GetCoverage` HTTP GET KVP request (Figure {@fig:wcsReq07})
+Subset definition for the `GetCoverage` HTTP GET KVP request
 
-![Requirement 7 from [_OGC Web Coverage Service 2.0 Interface Standard - KVP Protocol Binding Extension_ - Peter Baumann, editor - 2010-10-27](http://portal.opengeospatial.org/files/?artifact_id=41439)](images/09-147r1_OGC_Web_Coverage_Service_2-requirement07.jpg){#fig:wcsReq07}
+![Requirement 7 from [_OGC Web Coverage Service 2.0 Interface Standard - KVP Protocol Binding Extension_ - Peter Baumann, editor - 2010-10-27](http://portal.opengeospatial.org/files/?artifact_id=41439)](images/09-147r1_OGC_Web_Coverage_Service_2-requirement07.jpg)
 
 Example from the 2.0 specification:
 

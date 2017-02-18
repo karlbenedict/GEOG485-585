@@ -5,7 +5,7 @@
   <meta name="generator" content="pandoc">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
   <meta name="author" content="Karl Benedict">
-  <title></title>
+  <title>Week 7 - Module 4a - Interoperability Standards. WFS &amp; WCS</title>
   <style type="text/css">code{white-space: pre;}</style>
   <link rel="stylesheet" href="page.css">
   <!--[if lt IE 9]>
@@ -13,13 +13,17 @@
   <![endif]-->
 </head>
 <body>
+<header>
+<h1 class="title">Week 7 - Module 4a - Interoperability Standards. WFS &amp; WCS</h1>
+<h2 class="author">Karl Benedict</h2>
+<h3 class="date">GEOG 485L/585L - Spring 2017</h3>
+</header>
 <!---------------------------------------------------------------------------->
 <!-- Week 07 ----------------------------------------------------------------->
 <!-- Lecture 04 a 02 a ------------------------------------------------------->
 <!-- Interoperability Standards----------------------------------------------->
 <!-- WFS and WCS ------------------------------------------------------------->
 <!---------------------------------------------------------------------------->
-<h1 id="week-7---module-4a---interoperability-standards.-wfs-wcs" class="module04a02a">Week 7 - Module 4a - Interoperability Standards. WFS &amp; WCS</h1>
 <h3 id="overview" class="module04a02a">Overview</h3>
 <ul>
 <li>OGC Web Feature Services (WFS)
@@ -223,9 +227,9 @@
 <p>Servers implementing WFS may support either the HTTP GET, POST, or SOAP request model</p>
 <p>Conceptually <em>FeatureType</em> = <em>Layer</em></p>
 <h3 id="kvp-for-base-wfs-requests" class="module04a02a">KVP for Base WFS Requests</h3>
-<p>Base request parameters for all HTTP GET KVP requests (Figure {<span class="citation" data-cites="fig:wfsTable02">@fig:wfsTable02</span>})</p>
+<p>Base request parameters for all HTTP GET KVP requests</p>
 <figure>
-<img src="images/09-025r1_OGC_Web_Feature_Service_WFS_2-table04.jpg" alt="Table 4 from OpenGIS Web Feature Service 2.0 Interface Standard - Panagiotis (Peter) A. Vretanos, editor - 2010-11-02" id="fig:wfsTable02" /><figcaption>Table 4 from <a href="http://www.opengeospatial.org/standards/wfs">OpenGIS Web Feature Service 2.0 Interface Standard - Panagiotis (Peter) A. Vretanos, editor - 2010-11-02</a></figcaption>
+<img src="images/09-025r1_OGC_Web_Feature_Service_WFS_2-table04.jpg" alt="Table 4 from OpenGIS Web Feature Service 2.0 Interface Standard - Panagiotis (Peter) A. Vretanos, editor - 2010-11-02" /><figcaption>Table 4 from <a href="http://www.opengeospatial.org/standards/wfs">OpenGIS Web Feature Service 2.0 Interface Standard - Panagiotis (Peter) A. Vretanos, editor - 2010-11-02</a></figcaption>
 </figure>
 <p><code>VERSION</code> is required for all operations <em>except</em> the <code>GetCapabilities</code> request</p>
 <h3 id="sample-getcapabilities-requests" class="module04a02a">Sample GetCapabilities Requests</h3>
@@ -239,9 +243,9 @@
     REQUEST=GetCapabilities&amp;
     VERSION=1.0.0</code></pre>
 <h3 id="kvp-for-describefeaturetype-request" class="module04a02a">KVP for DescribeFeatureType Request</h3>
-<p><code>DescribeFeatureType</code> HTTP GET KVP request (Figure {<span class="citation" data-cites="fig:wfsTable15">@fig:wfsTable15</span>})</p>
+<p><code>DescribeFeatureType</code> HTTP GET KVP request</p>
 <figure>
-<img src="images/09-025r1_OGC_Web_Feature_Service_WFS_2-table15.jpg" alt="Table 15 from OpenGIS Web Feature Service 2.0 Interface Standard - Panagiotis (Peter) A. Vretanos, editor - 2010-11-02" id="fig:wfsTable15" /><figcaption>Table 15 from <a href="http://www.opengeospatial.org/standards/wfs">OpenGIS Web Feature Service 2.0 Interface Standard - Panagiotis (Peter) A. Vretanos, editor - 2010-11-02</a></figcaption>
+<img src="images/09-025r1_OGC_Web_Feature_Service_WFS_2-table15.jpg" alt="Table 15 from OpenGIS Web Feature Service 2.0 Interface Standard - Panagiotis (Peter) A. Vretanos, editor - 2010-11-02" /><figcaption>Table 15 from <a href="http://www.opengeospatial.org/standards/wfs">OpenGIS Web Feature Service 2.0 Interface Standard - Panagiotis (Peter) A. Vretanos, editor - 2010-11-02</a></figcaption>
 </figure>
 <h3 id="sample-describefeaturetype-requests" class="module04a02a">Sample DescribeFeatureType Requests</h3>
 <p>USGS Framework Layer (Governmental Units) WFS Service linked from the USGS <a href="http://viewer.nationalmap.gov/tnmaccess/api/servicesForm"><em>TNM Access API page</em></a> <a href="http://viewer.nationalmap.gov/tnmaccess/api/services?">service list</a> - <a href="http://services.nationalmap.gov/arcgis/services/WFS/govunits/MapServer/WFSServer?version=1.1.0&amp;request=DescribeFeatureType&amp;service=WFS&amp;typeName=WFS_govunits:State_or_Territory_High-res">Live Link</a></p>
@@ -257,26 +261,16 @@
     REQUEST=DescribeFeatureType&amp;
     TYPENAME=tl_2010_35_bg10</code></pre>
 <h3 id="kvp-for-getfeature-request" class="module04a02a">KVP for GetFeature Request</h3>
-<p><code>GetFeature</code> HTTP GET KVP request (Figure {<span class="citation" data-cites="fig:wfsTable17">@fig:wfsTable17</span>})</p>
-<figure>
-<img src="images/09-025r1_OGC_Web_Feature_Service_WFS_2-table17.jpg" alt="Table 17 from OpenGIS Web Feature Service 2.0 Interface Standard - Panagiotis (Peter) A. Vretanos, editor - 2010-11-02" id="fig:wfsTable17" /><figcaption>Table 17 from <a href="http://www.opengeospatial.org/standards/wfs">OpenGIS Web Feature Service 2.0 Interface Standard - Panagiotis (Peter) A. Vretanos, editor - 2010-11-02</a></figcaption>
-</figure>
-<h3 id="kvp-for-getfeature-request---presentation-parameters-figure-figwfstable05" class="module04a02a">KVP for GetFeature Request - Presentation Parameters (Figure {<span class="citation" data-cites="fig:wfsTable05">@fig:wfsTable05</span>})</h3>
-<figure>
-<img src="images/09-025r1_OGC_Web_Feature_Service_WFS_2-table05.jpg" alt="Table 5 from OpenGIS Web Feature Service 2.0 Interface Standard - Panagiotis (Peter) A. Vretanos, editor - 2010-11-02" id="fig:wfsTable05" /><figcaption>Table 5 from <a href="http://www.opengeospatial.org/standards/wfs">OpenGIS Web Feature Service 2.0 Interface Standard - Panagiotis (Peter) A. Vretanos, editor - 2010-11-02</a></figcaption>
-</figure>
-<h3 id="kvp-for-getfeature-request---resolve-parameters-figure-figwfstable06" class="module04a02a">KVP for GetFeature Request - Resolve Parameters (Figure {<span class="citation" data-cites="fig:wfsTable06">@fig:wfsTable06</span>})</h3>
-<figure>
-<img src="images/09-025r1_OGC_Web_Feature_Service_WFS_2-table06.jpg" alt="Table 6 from OpenGIS Web Feature Service 2.0 Interface Standard - Panagiotis (Peter) A. Vretanos, editor - 2010-11-02" id="fig:wfsTable06" /><figcaption>Table 6 from <a href="http://www.opengeospatial.org/standards/wfs">OpenGIS Web Feature Service 2.0 Interface Standard - Panagiotis (Peter) A. Vretanos, editor - 2010-11-02</a></figcaption>
-</figure>
-<h3 id="kvp-for-getfeature-request---ad-hoc-query-parameters-figure-figwfstable08" class="module04a02a">KVP for GetFeature Request - Ad-hoc Query Parameters (Figure {<span class="citation" data-cites="fig:wfsTable08">@fig:wfsTable08</span>})</h3>
-<figure>
-<img src="images/09-025r1_OGC_Web_Feature_Service_WFS_2-table08.jpg" alt="Table 8 from OpenGIS Web Feature Service 2.0 Interface Standard - Panagiotis (Peter) A. Vretanos, editor - 2010-11-02" id="fig:wfsTable08" /><figcaption>Table 8 from <a href="http://www.opengeospatial.org/standards/wfs">OpenGIS Web Feature Service 2.0 Interface Standard - Panagiotis (Peter) A. Vretanos, editor - 2010-11-02</a></figcaption>
-</figure>
-<h3 id="kvp-for-getfeature-request---stored-query-parameters-figure-figwfstable08" class="module04a02a">KVP for GetFeature Request - Stored Query Parameters (Figure {<span class="citation" data-cites="fig:wfsTable08">@fig:wfsTable08</span>})</h3>
-<figure>
-<img src="images/09-025r1_OGC_Web_Feature_Service_WFS_2-table10.jpg" alt="Table 10 from OpenGIS Web Feature Service 2.0 Interface Standard - Panagiotis (Peter) A. Vretanos, editor - 2010-11-02" id="fig:wfsTable10" /><figcaption>Table 10 from <a href="http://www.opengeospatial.org/standards/wfs">OpenGIS Web Feature Service 2.0 Interface Standard - Panagiotis (Peter) A. Vretanos, editor - 2010-11-02</a></figcaption>
-</figure>
+<p><code>GetFeature</code> HTTP GET KVP request</p>
+<p><img src="images/09-025r1_OGC_Web_Feature_Service_WFS_2-table17.jpg" alt="Table 17 from OpenGIS Web Feature Service 2.0 Interface Standard - Panagiotis (Peter) A. Vretanos, editor - 2010-11-02" /> </p>
+<h3 id="kvp-for-getfeature-request---presentation-parameters" class="module04a02a">KVP for GetFeature Request - Presentation Parameters</h3>
+<p><img src="images/09-025r1_OGC_Web_Feature_Service_WFS_2-table05.jpg" alt="Table 5 from OpenGIS Web Feature Service 2.0 Interface Standard - Panagiotis (Peter) A. Vretanos, editor - 2010-11-02" /> </p>
+<h3 id="kvp-for-getfeature-request---resolve-parameters" class="module04a02a">KVP for GetFeature Request - Resolve Parameters</h3>
+<p><img src="images/09-025r1_OGC_Web_Feature_Service_WFS_2-table06.jpg" alt="Table 6 from OpenGIS Web Feature Service 2.0 Interface Standard - Panagiotis (Peter) A. Vretanos, editor - 2010-11-02" /> </p>
+<h3 id="kvp-for-getfeature-request---ad-hoc-query-parameters-figure" class="module04a02a">KVP for GetFeature Request - Ad-hoc Query Parameters (Figure )</h3>
+<p><img src="images/09-025r1_OGC_Web_Feature_Service_WFS_2-table08.jpg" alt="Table 8 from OpenGIS Web Feature Service 2.0 Interface Standard - Panagiotis (Peter) A. Vretanos, editor - 2010-11-02" /> </p>
+<h3 id="kvp-for-getfeature-request---stored-query-parameters-figure" class="module04a02a">KVP for GetFeature Request - Stored Query Parameters (Figure )</h3>
+<p><img src="images/09-025r1_OGC_Web_Feature_Service_WFS_2-table10.jpg" alt="Table 10 from OpenGIS Web Feature Service 2.0 Interface Standard - Panagiotis (Peter) A. Vretanos, editor - 2010-11-02" /> </p>
 <h3 id="sample-getfeature-requests" class="module04a02a">Sample GetFeature Requests</h3>
 <p>USGS Framework Layer (Governmental Units) WFS Service linked from the USGS <a href="http://viewer.nationalmap.gov/tnmaccess/api/servicesForm"><em>TNM Access API page</em></a> <a href="http://viewer.nationalmap.gov/tnmaccess/api/services?">service list</a> - <a href="http://services.nationalmap.gov/arcgis/services/WFS/govunits/MapServer/WFSServer?VERSION=1.1.0&amp;REQUEST=GetFeature&amp;SERVICE=WFS&amp;TYPENAME=WFS_govunits:State_or_Territory_High-res">Live Link</a></p>
 <p><em>Note:</em> <code>TYPENAME</code> for <code>VERSION=1.1.0</code> instead of <code>TYPENAMES</code> for <code>VERSION=2.0.0</code></p>
@@ -395,12 +389,12 @@ gfs_4_20160228_0000_384.grb2?
 <h3 id="kvp-for-getcoverage-request" class="module04a02a">KVP for GetCoverage Request</h3>
 <p><code>GetCoverage</code> HTTP GET KVP request (Figure {<span class="citation" data-cites="fig:wcsTable01">@fig:wcsTable01</span>})</p>
 <figure>
-<img src="images/09-147r1_OGC_Web_Coverage_Service_2-table02.jpg" alt="Table 2 from OGC Web Coverage Service 2.0 Interface Standard - KVP Protocol Binding Extension - Peter Baumann, editor - 2010-10-27" id="fig:wcsTable02" /><figcaption>Table 2 from <a href="http://portal.opengeospatial.org/files/?artifact_id=41439"><em>OGC Web Coverage Service 2.0 Interface Standard - KVP Protocol Binding Extension</em> - Peter Baumann, editor - 2010-10-27</a></figcaption>
+<img src="images/09-147r1_OGC_Web_Coverage_Service_2-table02.jpg" alt="Table 2 from OGC Web Coverage Service 2.0 Interface Standard - KVP Protocol Binding Extension - Peter Baumann, editor - 2010-10-27" /><figcaption>Table 2 from <a href="http://portal.opengeospatial.org/files/?artifact_id=41439"><em>OGC Web Coverage Service 2.0 Interface Standard - KVP Protocol Binding Extension</em> - Peter Baumann, editor - 2010-10-27</a></figcaption>
 </figure>
 <h3 id="subset-definition-for-getcoverage-request" class="module04a02a">Subset Definition for GetCoverage Request</h3>
-<p>Subset definition for the <code>GetCoverage</code> HTTP GET KVP request (Figure {<span class="citation" data-cites="fig:wcsReq07">@fig:wcsReq07</span>})</p>
+<p>Subset definition for the <code>GetCoverage</code> HTTP GET KVP request</p>
 <figure>
-<img src="images/09-147r1_OGC_Web_Coverage_Service_2-requirement07.jpg" alt="Requirement 7 from OGC Web Coverage Service 2.0 Interface Standard - KVP Protocol Binding Extension - Peter Baumann, editor - 2010-10-27" id="fig:wcsReq07" /><figcaption>Requirement 7 from <a href="http://portal.opengeospatial.org/files/?artifact_id=41439"><em>OGC Web Coverage Service 2.0 Interface Standard - KVP Protocol Binding Extension</em> - Peter Baumann, editor - 2010-10-27</a></figcaption>
+<img src="images/09-147r1_OGC_Web_Coverage_Service_2-requirement07.jpg" alt="Requirement 7 from OGC Web Coverage Service 2.0 Interface Standard - KVP Protocol Binding Extension - Peter Baumann, editor - 2010-10-27" /><figcaption>Requirement 7 from <a href="http://portal.opengeospatial.org/files/?artifact_id=41439"><em>OGC Web Coverage Service 2.0 Interface Standard - KVP Protocol Binding Extension</em> - Peter Baumann, editor - 2010-10-27</a></figcaption>
 </figure>
 <p>Example from the 2.0 specification:</p>
 <pre><code>http://www.myserver.org:port/path?
