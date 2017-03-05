@@ -49,18 +49,18 @@ At the end of this class students should have an understanding of the following:
 
 You might have noticed in the WMS requests that you generated in the previous lab returned images that didn’t look “quite right” relative to what you may know of the shape of familiar features. 
 
-For example, a WMS request for a 200x200 pixel PNG file (Figure {@fig:bernalillo-01} for an area surrounding Bernalillo County (-107.2,34.7,-106,35.25) from the previous lab would be ([link](http://gstore.unm.edu/apps/rgis/datasets/92403ebf-aec5-404b-ae8a-6db41f388737/services/ogc/wms?VERSION=1.1.1&SERVICE=WMS&REQUEST=GetMap&BBOX=-107.2,34.7,-106,35.25&LAYERS=g_2007fe_35_county&FORMAT=image/png&TRANSPARENT=TRUE&STYLES=&SRS=EPSG:4326&WIDTH=200&HEIGHT=200)):
+For example, a WMS request for a 200x200 pixel PNG file (Figure 1) for an area surrounding Bernalillo County (-107.2,34.7,-106,35.25) from the previous lab would be ([link](http://gstore.unm.edu/apps/rgis/datasets/92403ebf-aec5-404b-ae8a-6db41f388737/services/ogc/wms?VERSION=1.1.1&SERVICE=WMS&REQUEST=GetMap&BBOX=-107.2,34.7,-106,35.25&LAYERS=g_2007fe_35_county&FORMAT=image/png&TRANSPARENT=TRUE&STYLES=&SRS=EPSG:4326&WIDTH=200&HEIGHT=200)):
 
 	http://gstore.unm.edu/apps/rgis/datasets/92403ebf-aec5-404b-ae8a-6db41f388737/
 	services/ogc/wms?VERSION=1.1.1&SERVICE=WMS&REQUEST=GetMap&BBOX=-107.2,34.7,
 	-106,35.25&LAYERS=g_2007fe_35_county&FORMAT=image/png&TRANSPARENT=TRUE&
 	STYLES=&SRS=EPSG:4326&WIDTH=200&HEIGHT=200
 
-![Returned map image for the region surrounding Bernalillo County for a WMS request with `BBOX=-107.2,34.7,-106,35.25`, `WIDTH=200` and `HEIGHT=200`](images/bernalillo_01.png){#fig:bernalillo-01}
+![Returned map image for the region surrounding Bernalillo County for a WMS request with `BBOX=-107.2,34.7,-106,35.25`, `WIDTH=200` and `HEIGHT=200`](images/bernalillo_01.png)
 
-this request results in a map image that does not agree with the standard shape of Bernalillo county (depicted in QGIS - Figure {@fig:bernalillo-qgis}) that we are accustomed to, regardless of the specific map projection being used.
+this request results in a map image that does not agree with the standard shape of Bernalillo county (depicted in QGIS - Figure 2) that we are accustomed to, regardless of the specific map projection being used.
 	
-![Area around Bernalillo County as viewed in QGIS based on the OGC WCS based on the same data source used for the WMS request illustrated above}](images/bernalillo_qgis.png){#fig:bernalillo-qgis} 
+![Area around Bernalillo County as viewed in QGIS based on the OGC WCS based on the same data source used for the WMS request illustrated above}](images/bernalillo_qgis.png) 
 
 This discrepancy is the result of a difference in the aspect ratio of the requested BBOX (-107.2,34.7,-106,35.25) and the requested image dimensions (200x200 pixels). _When you compose a WMS GetMap request, you need to make sure that the aspect ratio of both the image size and BBOX match._ 
 
@@ -125,27 +125,27 @@ Question 2
 :	What would be the height (in whole pixels - round up) for a map image for this region that is 600 pixels wide?
 
 Question 3
-:	Formulate a WMS request that reflects the values determined in 1.1 and 1.2 above for the WMS service used above in the examples and for the `g_2007fe_35_county` layer. Include in your answer both the complete WMS request and the returned map image (either as a static image, or an image that is linked to the live WMS).
+:	Formulate a WMS request that reflects the values determined in 1.1 and 1.2 above for the WMS service used above in the examples and for the `g_2007fe_35_county` layer. Include in your answer the complete WMS request that will return a map image.
  
 Question 4
-:	Formulate a WMS request for a 900x600 pixel map image that represents the full 3-degree width of the geographic region, and is based upon the minimum Y value of 34.5 degrees North Latitude. Include in your answer both the WMS request and the returned map image (either as a static image, or an image that is linked to the live WMS). 
+:	Formulate a WMS request for a 900x600 pixel map image that represents the full 3-degree width of the geographic region, and is based upon the minimum Y value of 34.5 degrees North Latitude. Include in your answer the complete WMS request that will return a map image. 
 
-Given the following set of `GetMap` requests against the *[USGS/EROS Ortho Imagery Service](http://raster.nationalmap.gov/arcgis/rest/services/Orthoimagery/USGS_EROS_Ortho_SCALE/ImageServer)* answer the following questions
+Given the following set of `GetMap` requests against the *[USGS Topo Base Map - Primary Tile Cache  (Tiled)](https://basemap.nationalmap.gov/arcgis/services/USGSTopo/MapServer/WmsServer?service=WMS&request=GetCapabilities)* answer the following questions
 
-1) [http://raster.nationalmap.gov/arcgis/services/Orthoimagery/USGS_EROS_Ortho_SCALE/ImageServer/WMSServer?request=GetMap&service=WMS&VERSION=1.1.0&SRS=EPSG:4326&LAYERS=0&FORMAT=image/jpeg&TRANSPARENT=FALSE&STYLES=&WIDTH=1200&HEIGHT=800&BBOX=-107.1242070,34.7509960,-106.1242070,35.4176960](http://raster.nationalmap.gov/arcgis/services/Orthoimagery/USGS_EROS_Ortho_SCALE/ImageServer/WMSServer?request=GetMap&service=WMS&VERSION=1.1.0&SRS=EPSG:4326&LAYERS=0&FORMAT=image/jpeg&TRANSPARENT=FALSE&STYLES=&WIDTH=1200&HEIGHT=800&BBOX=-107.1242070,34.7509960,-106.1242070,35.4176960)
+1) [https://basemap.nationalmap.gov/arcgis/services/USGSTopo/MapServer/WmsServer?request=GetMap&service=WMS&VERSION=1.1.0&SRS=EPSG:4326&LAYERS=0&FORMAT=image/jpeg&TRANSPARENT=FALSE&STYLES=&WIDTH=1200&HEIGHT=800&BBOX=-107.1242070,34.7509960,-106.1242070,35.4176960](https://basemap.nationalmap.gov/arcgis/services/USGSTopo/MapServer/WmsServer?request=GetMap&service=WMS&VERSION=1.1.0&SRS=EPSG:4326&LAYERS=0&FORMAT=image/jpeg&TRANSPARENT=FALSE&STYLES=&WIDTH=1200&HEIGHT=800&BBOX=-107.1242070,34.7509960,-106.1242070,35.4176960)
 
-2) [http://raster.nationalmap.gov/arcgis/services/Orthoimagery/USGS_EROS_Ortho_SCALE/ImageServer/WMSServer?request=GetMap&service=WMS&VERSION=1.1.0&SRS=EPSG:4326&LAYERS=0&FORMAT=image/jpeg&TRANSPARENT=FALSE&STYLES=&WIDTH=1200&HEIGHT=800&BBOX=-106.6867070,35.0426773,-106.5617070,35.1260148](http://raster.nationalmap.gov/arcgis/services/Orthoimagery/USGS_EROS_Ortho_SCALE/ImageServer/WMSServer?request=GetMap&service=WMS&VERSION=1.1.0&SRS=EPSG:4326&LAYERS=0&FORMAT=image/jpeg&TRANSPARENT=FALSE&STYLES=&WIDTH=1200&HEIGHT=800&BBOX=-106.6867070,35.0426773,-106.5617070,35.1260148)
+2) [https://basemap.nationalmap.gov/arcgis/services/USGSTopo/MapServer/WmsServer?request=GetMap&service=WMS&VERSION=1.1.0&SRS=EPSG:4326&LAYERS=0&FORMAT=image/jpeg&TRANSPARENT=FALSE&STYLES=&WIDTH=1200&HEIGHT=800&BBOX=-106.6867070,35.0426773,-106.5617070,35.1260148](https://basemap.nationalmap.gov/arcgis/services/USGSTopo/MapServer/WmsServer?request=GetMap&service=WMS&VERSION=1.1.0&SRS=EPSG:4326&LAYERS=0&FORMAT=image/jpeg&TRANSPARENT=FALSE&STYLES=&WIDTH=1200&HEIGHT=800&BBOX=-106.6867070,35.0426773,-106.5617070,35.1260148)
 
-3) [http://raster.nationalmap.gov/arcgis/services/Orthoimagery/USGS_EROS_Ortho_SCALE/ImageServer/WMSServer?request=GetMap&service=WMS&VERSION=1.1.0&SRS=EPSG:4326&LAYERS=0&FORMAT=image/jpeg&TRANSPARENT=FALSE&STYLES=&WIDTH=1200&HEIGHT=800&BBOX=-106.6281133,35.0817417,-106.6203008,35.0869503](http://raster.nationalmap.gov/arcgis/services/Orthoimagery/USGS_EROS_Ortho_SCALE/ImageServer/WMSServer?request=GetMap&service=WMS&VERSION=1.1.0&SRS=EPSG:4326&LAYERS=0&FORMAT=image/jpeg&TRANSPARENT=FALSE&STYLES=&WIDTH=1200&HEIGHT=800&BBOX=-106.6281133,35.0817417,-106.6203008,35.0869503)
+3) [https://basemap.nationalmap.gov/arcgis/services/USGSTopo/MapServer/WmsServer?request=GetMap&service=WMS&VERSION=1.1.0&SRS=EPSG:4326&LAYERS=0&FORMAT=image/jpeg&TRANSPARENT=FALSE&STYLES=&WIDTH=1200&HEIGHT=800&BBOX=-106.6281133,35.0817417,-106.6203008,35.0869503](https://basemap.nationalmap.gov/arcgis/services/USGSTopo/MapServer/WmsServer?request=GetMap&service=WMS&VERSION=1.1.0&SRS=EPSG:4326&LAYERS=0&FORMAT=image/jpeg&TRANSPARENT=FALSE&STYLES=&WIDTH=1200&HEIGHT=800&BBOX=-106.6281133,35.0817417,-106.6203008,35.0869503)
 
-4) [http://raster.nationalmap.gov/arcgis/services/Orthoimagery/USGS_EROS_Ortho_SCALE/ImageServer/WMSServer?request=GetMap&service=WMS&VERSION=1.1.0&SRS=EPSG:4326&LAYERS=0&FORMAT=image/jpeg&TRANSPARENT=FALSE&STYLES=&WIDTH=1200&HEIGHT=800&BBOX=-106.6246953,35.0840205,-106.6237187,35.0846715](http://raster.nationalmap.gov/arcgis/services/Orthoimagery/USGS_EROS_Ortho_SCALE/ImageServer/WMSServer?request=GetMap&service=WMS&VERSION=1.1.0&SRS=EPSG:4326&LAYERS=0&FORMAT=image/jpeg&TRANSPARENT=FALSE&STYLES=&WIDTH=1200&HEIGHT=800&BBOX=-106.6246953,35.0840205,-106.6237187,35.0846715)
+4) [https://basemap.nationalmap.gov/arcgis/services/USGSTopo/MapServer/WmsServer?request=GetMap&service=WMS&VERSION=1.1.0&SRS=EPSG:4326&LAYERS=0&FORMAT=image/jpeg&TRANSPARENT=FALSE&STYLES=&WIDTH=1200&HEIGHT=800&BBOX=-106.6246953,35.0840205,-106.6237187,35.0846715](https://basemap.nationalmap.gov/arcgis/services/USGSTopo/MapServer/WmsServer?request=GetMap&service=WMS&VERSION=1.1.0&SRS=EPSG:4326&LAYERS=0&FORMAT=image/jpeg&TRANSPARENT=FALSE&STYLES=&WIDTH=1200&HEIGHT=800&BBOX=-106.6246953,35.0840205,-106.6237187,35.0846715)
 
 
 
-Question 6
+Question 5
 :	Which layer(s) return map images that display image content (i.e. return a non-blank image)? 
 
-Questions 7
+Questions 6
 :	What is the difference between these requests? How might this difference influence whether or not a map image with content is being returned?
 
 
