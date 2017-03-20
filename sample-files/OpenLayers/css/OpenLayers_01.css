@@ -12,7 +12,7 @@ body {
 
 #map_selector li {
 	cursor:pointer;
-	width:150px;
+	width:350px;
 }
 
 #map_selector li:hover {

@@ -72,13 +72,17 @@ var pathFeature = new ol.Feature({
 
 var basemap_tiled = new ol.layer.Tile({
 	source: new ol.source.TileWMS({
-		attributions: new ol.Attribution({
-			html: 'Blue Marble Next Generation:' + 
-			'R. Stockli, E. Vermote, N. Saleous, R. Simmon and D. Herring (2005). The Blue Marble Next Generation - A true color earth dataset including seasonal dynamics from MODIS. Published by the NASA Earth Observatory. Corresponding author: rstockli@climate.gsfc.nasa.gov'
-		}),
-		params: {'LAYERS':'global:BMNG_west'},
-		url: 'http://mapper.karlbenedict.com:8080/geoserver/global/wms?',
-		serverType: 'geoserver'
+	url: 'https://basemap.nationalmap.gov/arcgis/services/USGSTopo/MapServer/WmsServer?',
+	  params: {
+		LAYERS: 0,
+		FORMAT: 'image/png',
+		TRANSPARENT: true
+	  },
+	  attributions: [
+	    new ol.Attribution({
+		  html: 'Data provided by the <a href="http://basemap.nationalmap.gov">National Map</a>.'
+		})
+	  ]
 	})
 })
 
@@ -146,7 +150,7 @@ var local_geoms = new ol.layer.Vector({
 // create our base map objects 
 var kmlMap = new ol.Map({
 	target: 'map_kml',
-	layers: [basemap_tiled,basemap_bern_tiled,blocks_kml,counties_kml],
+	layers: [basemap_tiled,blocks_kml,counties_kml], //[basemap_tiled,basemap_bern_tiled,blocks_kml,counties_kml]
 	//layers: [basemap_tiled,basemap_bern_tiled,counties_kml],
 	view: new ol.View({
 		center: ol.proj.fromLonLat([-106.6224,35.0849]), // the approximate geographic center of the continental US
@@ -157,7 +161,7 @@ var kmlMap = new ol.Map({
 
 var kmlMapStyled = new ol.Map({
 	target: 'map_kml_styled',
-	layers: [basemap_tiled,basemap_bern_tiled,counties_kml_styled],
+	layers: [basemap_tiled,counties_kml_styled], //[basemap_tiled,basemap_bern_tiled,counties_kml_styled]
 	view: new ol.View({
 		center: ol.proj.fromLonLat([-106.6224,35.0849]), // duck pond
 		zoom:5,
@@ -167,7 +171,7 @@ var kmlMapStyled = new ol.Map({
 
 var localFeatures = new ol.Map({
 	target: 'map_local',
-	layers: [basemap_tiled,basemap_bern_tiled,counties_kml,local_geoms],
+	layers: [basemap_tiled,counties_kml,local_geoms], //[basemap_tiled,basemap_bern_tiled,counties_kml,local_geoms]
 	view: new ol.View({
 		center: ol.proj.fromLonLat([-106.6224,35.0849]), // duck pond
 		zoom:14,

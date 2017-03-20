@@ -6,7 +6,7 @@ var myOverviewMap = new ol.control.OverviewMap({collapsible:false, collapsed:fal
 
 var myControls = ol.control.defaults({
 	attribution:true,
-	rotate:false,
+	rotate:true,
 	zoom:true
 }).extend([myNewRotate,myScaleLine,myOverviewMap])
 
@@ -15,7 +15,7 @@ var myMap = new ol.Map({
 	target: 'map',
 	layers: [
   		new ol.layer.Tile({
-		source: new ol.source.MapQuest({layer: 'sat'})
+		source: new ol.source.OSM()
   		})
 	],
 	controls: myControls,

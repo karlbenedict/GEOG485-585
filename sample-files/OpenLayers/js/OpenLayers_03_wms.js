@@ -5,25 +5,33 @@
 
 var basemap_tiled = new ol.layer.Tile({
 	source: new ol.source.TileWMS({
-		attributions: new ol.Attribution({
-			html: 'Blue Marble Next Generation:' + 
-			'R. Stockli, E. Vermote, N. Saleous, R. Simmon and D. Herring (2005). The Blue Marble Next Generation - A true color earth dataset including seasonal dynamics from MODIS. Published by the NASA Earth Observatory. Corresponding author: rstockli@climate.gsfc.nasa.gov'
-		}),
-		params: {'LAYERS':'global:BMNG_west'},
-		url: 'http://mapper.karlbenedict.com:8080/geoserver/global/wms?',
-		serverType: 'geoserver'
+	url: 'https://basemap.nationalmap.gov/arcgis/services/USGSTopo/MapServer/WmsServer?',
+	  params: {
+		LAYERS: 0,
+		FORMAT: 'image/png',
+		TRANSPARENT: true
+	  },
+	  attributions: [
+	    new ol.Attribution({
+		  html: 'Data provided by the <a href="http://basemap.nationalmap.gov">National Map</a>.'
+		})
+	  ]
 	})
 })
 
 var basemap_single = new ol.layer.Image({
 	source: new ol.source.ImageWMS({
-		attributions: new ol.Attribution({
-			html: 'Blue Marble Next Generation:' + 
-			'R. Stockli, E. Vermote, N. Saleous, R. Simmon and D. Herring (2005). The Blue Marble Next Generation - A true color earth dataset including seasonal dynamics from MODIS. Published by the NASA Earth Observatory. Corresponding author: rstockli@climate.gsfc.nasa.gov'
-		}),
-		params: {'LAYERS':'global:BMNG_west'},
-		url: 'http://mapper.karlbenedict.com:8080/geoserver/global/wms?',
-		serverType: 'geoserver'
+		url: 'https://basemap.nationalmap.gov/arcgis/services/USGSTopo/MapServer/WmsServer?',
+	  	params: {
+			LAYERS: 0,
+			FORMAT: 'image/png',
+			TRANSPARENT: true
+	  	},
+	  	attributions: [
+	    	new ol.Attribution({
+		  		html: 'Data provided by the <a href="http://basemap.nationalmap.gov">National Map</a>.'
+			})
+	  	]
 	})
 })
 
@@ -55,7 +63,7 @@ var states_tiled = new ol.layer.Tile({
 // create our base map objects 
 var singleMap = new ol.Map({
 	target: 'map_image',
-	layers: [basemap_single,states_single],
+	layers: [basemap_single], //[basemap_single,states_single]
 	view: new ol.View({
 		center: ol.proj.fromLonLat([-98.58,39.83]), // the approximate geographic center of the continental US
 		zoom: 3,
@@ -66,7 +74,7 @@ var singleMap = new ol.Map({
 
 var tiledMap = new ol.Map({
 	target: 'map_tiled',
-	layers: [basemap_tiled,states_tiled],
+	layers: [basemap_tiled], //[basemap_tiled,states_tiled]
 	view: new ol.View({
 		center: ol.proj.fromLonLat([-98.58,39.83]), // the approximate geographic center of the continental US
 		zoom: 3,
@@ -76,7 +84,7 @@ var tiledMap = new ol.Map({
 	
 var mixedMap = new ol.Map({
 	target: 'map_mixed',
-	layers: [basemap_tiled,states_single],
+	layers: [basemap_tiled], //[basemap_tiled,states_single]
 	view: new ol.View({
 		center: ol.proj.fromLonLat([-98.58,39.83]), // the approximate geographic center of the continental US
 		zoom: 3,

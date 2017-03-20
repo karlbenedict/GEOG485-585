@@ -5,14 +5,6 @@
 
 ///////////////////////////////////////////////////////////////////////////////
 // define my layer groups that will be used to change the basemap for my map
-var Layer_MapQuest = new ol.layer.Group({
-    layers: [
-        new ol.layer.Tile({
-            source: new ol.source.MapQuest({layer: 'hyb'})
-        })
-    ]
-});
-
 var Layer_Stamen_watercolor = new ol.layer.Group({
     layers: [
         new ol.layer.Tile({
@@ -45,6 +37,38 @@ var Layer_OSM = new ol.layer.Group({
         })
     ]
 });
+
+var Layer_Bing_roads = new ol.layer.Group({
+    layers: [
+		new ol.layer.Tile({
+			source: new ol.source.BingMaps({
+				key: 'AgQRwdWCKHZjOU-fQDBXp1sy8t3AJcjhvGeI4FCBMomdQ8wHBHnGsFdhZLD24cUR',
+				imagerySet: 'Road'
+			})
+		})
+    ]
+});
+var Layer_Bing_aerial = new ol.layer.Group({
+    layers: [
+		new ol.layer.Tile({
+			source: new ol.source.BingMaps({
+				key: 'AgQRwdWCKHZjOU-fQDBXp1sy8t3AJcjhvGeI4FCBMomdQ8wHBHnGsFdhZLD24cUR',
+				imagerySet: 'Aerial'
+			})
+		})
+    ]
+});
+var Layer_Bing_aerial_labels = new ol.layer.Group({
+    layers: [
+		new ol.layer.Tile({
+			source: new ol.source.BingMaps({
+				key: 'AgQRwdWCKHZjOU-fQDBXp1sy8t3AJcjhvGeI4FCBMomdQ8wHBHnGsFdhZLD24cUR',
+				imagerySet: 'AerialWithLabels'
+			})
+		})
+    ]
+});
+
 ///////////////////////////////////////////////////////////////////////////////
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -72,8 +96,12 @@ function setMapType(newType) {
         myMap.setLayerGroup(Layer_Stamen_toner);
     } else if (newType == 'STAMEN_Terrain') {
         myMap.setLayerGroup(Layer_Stamen_terrain);
-    } else if (newType == 'MAPQUEST') {
-        myMap.setLayerGroup(Layer_MapQuest);
+    } else if (newType == 'Bing_Roads') {
+        myMap.setLayerGroup(Layer_Bing_roads);
+    } else if (newType == 'Bing_Aerial') {
+        myMap.setLayerGroup(Layer_Bing_aerial);
+    } else if (newType == 'Bing_AerialWlabels') {
+        myMap.setLayerGroup(Layer_Bing_aerial_labels);
     }
 }
 ///////////////////////////////////////////////////////////////////////////////
