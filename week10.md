@@ -45,51 +45,32 @@ At the end of this class students will understand that
 
 # Class Prep # {#week10-prep}
 
-[OpenLayers Quick Start Page](http://openlayers.org/en/v3.14.2/doc/quickstart.html)
+[OpenLayers Quick Start Page](http://openlayers.org/en/latest/doc/quickstart.html)
 
-[OpenLayers Basic Concepts](http://openlayers.org/en/v3.14.2/doc/tutorials/concepts.html)
+[OpenLayers Basic Concepts](http://openlayers.org/en/latest/doc/tutorials/concepts.html)
 
-Gratier, T., Spencer, P., & Hazzard, E. (2015). *Openlayers 3 beginner's guide : Get started with openlayers 3 and enhance your web pages by creating and displaying dynamic maps*. Birmingham, England: Packt Publishing. [eBook](https://unm-on-worldcat-org.libproxy.unm.edu/oclc/903963849?databaseList=1271,143,1487,1533,1540,1672,1708,173,1925,2006,2007,203,2201,2237,2259,2260,2261,2262,2263,2264,2267,2268,2281,2328,3036,3201,638) Chapters 1-3. 
+[OpenLayers Workshop](http://openlayers.org/workshop/en/index.html)
+
+Gratier, T., Spencer, P., & Hazzard, E. (2015). *Openlayers 3 beginner's guide : Get started with openlayers 3 and enhance your web pages by creating and displaying dynamic maps*. Birmingham, England: Packt Publishing. [eBook](https://unm-on-worldcat-org.libproxy.unm.edu/oclc/903963849?databaseList=1271,143,1487,1533,1540,1672,1708,173,1925,2006,2007,203,2201,2237,2259,2260,2261,2262,2263,2264,2267,2268,2281,2328,3036,3201,638) Chapters 1-3. **Read for concepts - the framework has changed enough since the publication of this book that much of the code doesn't work as you would expect**
 
 # Reference Materials # {#week10-reference}
 
-[OpenLayers API Reference](http://openlayers.org/en/v3.14.2/apidoc/)
+[OpenLayers API Reference](http://openlayers.org/en/latest/apidoc/)
 
-[OpenLayers Sample Maps](http://openlayers.org/en/v3.2.1/examples/)
+[OpenLayers Sample Maps](http://openlayers.org/en/latest/examples/)
 
 # Weekly Milestone - OpenLayers Mapping # {#week10-milestone}
 
-Following the model used in Milestone 3 for your first Google Map web page, you should first answer the following questions about what and how you want to map - _relating to a different focus than you have used in your previous assignments_. As you define the type of map you want to build, think about a specific problem or topic that you would like to address with your map. 
+Following the model used in Milestone 3 for your first Google Map web page, you should answer the questions in Learn about what and how you want to map - _relating to a different focus than you have used in your previous assignments_. As you define the type of map you want to build, think about a specific problem or topic that you would like to address with your map. 
 
 In this exercise you will be generating the configuration for the base map (i.e. including one or more OpenLayer enabled background layers), adding controls, and defining an appropriate map center and zoom level for the map. You will add your own custom content (i.e. the answers to the following questions) to a free-standing web page that include an interactive mapper and the reasoning behind the design of the map.
 
-Create a web page that contains your milestone assignment writeup (_including_ the embedded OpenLayers map required by question 5), and link it to your home page (index.html). 
+Once your have answered the questions in Learn about the map that you wantn to create, refer to the examples in the lecture notes, the OpenLayers Examples ([http://openlayers.org/en/latest/examples/](http://openlayers.org/en/latest/examples/)), and this week's reading assignment to create a custom OpenLayers map.
 
-Respond to Question 1-4 with an understanding that you are generating a web page that should be clear, complete, well-formatted, and reasonably styled. 
-
-Question 1
-:	What area do you want to depict in your map? Why?
-
-Question 2
-:	What is the center point (latitude and longitude) of your area of interest?
-
-Question 3
-:	What base map(s) did you select for use in your map? Why?
-
-Question 4
-:	What is the scale of your map (local, regional, continental, global)? How will this translate into your selection of an appropriate default zoom level for your map?
-
-Now that you have answered these questions about the map that you want to create, refer to the examples in the lecture notes, the OpenLayers Examples ([http://openlayers.org/en/v3.2.1/examples/](http://openlayers.org/en/v3.2.1/examples/)), and this week's reading assignment to create a custom OpenLayers map.
-
-Question 5
-:	Embed the OpenLayers Map in your writeup (included with the answers to questions 1-4 above) that is based upon your responses to questions 1-4 above.
+Provide the link to your new OpenLayers map in response to the last question in the assignment in Learn. 
 
 # Peer Review #
 
-_Peer Review:_ This week's assignment will include a peer review component. Specifically, 1/3 of your 20-point peer review score will be based upon _your_ peer-review of _two_ other web pages generated by the students in the class. The required peer-review will consist of two steps:
-
-1. Create a new Discussion Thread in Learn entitled: "Page for Peer-Review &lt;Your Name&gt;" at the same time you link your milestone to your homepage. Include in the post the GitHub address of your Week 10 milestone that you created for this assignment. 
-
-2. Provide a _substantive_, _constructive_, and _civil_ comment (through the "reply" option for a posted thread) to _two_ of the posted discussion threads posted for peer-review. Please complete the peer-review as soon as possible so that your colleagues can benefit most from your input. Complete the peer-review no later than the required end-of-term portfolio review deadline. Think about the following ideas for your review: _what did I learn from this page_, _what was done well_, _what could be improved_
+This week's assignment includes a peer review component that is provided in the Learn environment's assignments area. 
 
 

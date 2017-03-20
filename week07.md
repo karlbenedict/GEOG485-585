@@ -125,7 +125,7 @@ Question 2
 :	What would be the height (in whole pixels - round up) for a map image for this region that is 600 pixels wide?
 
 Question 3
-:	Formulate a WMS request that reflects the values determined in 1.1 and 1.2 above for the WMS service used above in the examples and for the `g_2007fe_35_county` layer. Include in your answer the complete WMS request that will return a map image.
+:	Formulate a WMS request that reflects the values determined in questions 1 and 2 above for the WMS service used above in the examples and for the `g_2007fe_35_county` layer. Include in your answer the complete WMS request that will return a map image.
  
 Question 4
 :	Formulate a WMS request for a 900x600 pixel map image that represents the full 3-degree width of the geographic region, and is based upon the minimum Y value of 34.5 degrees North Latitude. Include in your answer the complete WMS request that will return a map image. 
