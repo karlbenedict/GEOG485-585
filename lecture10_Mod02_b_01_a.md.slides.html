@@ -3,7 +3,7 @@
   <meta charset="utf-8">
   <meta name="generator" content="pandoc">
   <meta name="author" content="Karl Benedict">
-  <title></title>
+  <title>Week 10 - Module 2b - OpenLayers 3 Javascript Framework</title>
   <style type="text/css">code{white-space: pre;}</style>
   <style type="text/css">
 div.sourceCode { overflow-x: auto; }
@@ -46,6 +46,12 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
   <link href="data:text/css;charset=utf-8,footer%20%7B%0Abackground%2Dcolor%3A%20%23010101%3B%0Aopacity%3A%200%2E7%3B%0A%7D%0Asection%23TOC%20%7B%0Adisplay%3A%20%3B%0Aoverflow%3A%20scroll%3B%0Amargin%2Dtop%3A%2020px%3B%0Amargin%2Dbottom%3A%2020px%3B%0A%7D%0Asection%23TOC%20ul%20li%20ul%20%7B%0Adisplay%3A%20none%3B%0A%7D%0Asection%23TOC%20ul%20li%20%7B%0Afont%2Dsize%3A%2018px%3B%0Apadding%3A%205px%3B%0A%7D%0A%23simple%2D%2D%2Dzoomed%2D%2D%2Dmodified%2Dcontrols%2Dcode%20div%2EcodeTable%7B%0Aheight%3A%20450px%3B%09%7D" rel="stylesheet">
 </head>
 <body>
+<section class="title">
+  <h1 class="title">Week 10 - Module 2b - OpenLayers 3 Javascript Framework</h1>
+  <footer>
+    <span class="author">Karl Benedict</span> · <span class="date">GEOG 485L/585L - Spring 2017</span>
+  </footer>
+</section>
 <section class="slide level3">
 
 <!---------------------------------------------------------------------------->
@@ -55,16 +61,17 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <!-- OpenLayers Javascript Framework------------------------------------------>
 <!---------------------------------------------------------------------------->
 </section>
-<section id="week-10---module-2b---openlayers-3-javascript-framework" class="titleslide slide level1 module02b01a"><h1>Week 10 - Module 2b - OpenLayers 3 Javascript Framework</h1></section><section id="overview" class="slide level3 module02b01a">
+<section id="overview" class="slide level3 module02b01a">
 <h1>Overview</h1>
 <ul>
 <li><p>Capabilities</p></li>
 <li><p>OpenLayers = Javascript (by example)</p></li>
 </ul>
-</section><section id="openlayers-capabilities" class="slide level3 module02b01a">
+</section>
+<section id="openlayers-capabilities" class="slide level3 module02b01a">
 <h1>OpenLayers Capabilities</h1>
 <ul>
-<li>Support for Multiple basemaps: <em>BingMaps</em>, <em>MapQuest</em>, <em>OpenStreetMap</em>, <em>Stamen</em></li>
+<li>Support for Multiple basemaps: <em>BingMaps</em>, <em>OpenStreetMap</em>, <em>Stamen</em></li>
 <li>Model for interaction with multiple map server platforms: <em>ArcGIS</em> (REST), <em>MapServer</em>, <em>GeoServer</em></li>
 <li>Support for key OGC standards: <em>WMS</em>, <em>WMTS</em>, <em>WFS</em>, <em>GML</em>, <em>KML</em></li>
 <li>Multiple control types: <em>Attribution</em>, <em>Zoom</em>, <em>Overview</em>, <em>Scale</em>, <em>FullScreen</em>, <em>Graticule</em></li>
@@ -72,7 +79,8 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li>Support for many formats for data read and write: <em>ATOM</em>, <em>GML</em> (1, 2, 3), <em>GeoJSON</em>, <em>GPX</em>, <em>KML</em>, <em>WKT</em>, any many others</li>
 <li>Open Source, enabling modification and integration into other systems (e.g. <a href="http://geoext.org/">GeoExt</a>)</li>
 </ul>
-</section><section id="distinguishing-characteristics-between-openlayers-and-google-maps" class="slide level3 module02b01a">
+</section>
+<section id="distinguishing-characteristics-between-openlayers-and-google-maps" class="slide level3 module02b01a">
 <h1>Distinguishing Characteristics Between OpenLayers and Google Maps</h1>
 <ul>
 <li>Greater emphasis on client-side processing - Client access and rendering of data files that Google's servers otherwise take care of (pros &amp; cons to this approach)</li>
@@ -80,15 +88,17 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li>Support for different projections (adds complexity)</li>
 <li>API more rich in options ==&gt; more complexity</li>
 </ul>
-</section><section id="resources" class="slide level3 module02b01a">
+</section>
+<section id="resources" class="slide level3 module02b01a">
 <h1>Resources</h1>
 <p><a href="http://openlayers.org/">OpenLayers Home Page</a></p>
-<p><a href="http://openlayers.org/en/v3.14.2/apidoc/index.html">Application Programming Interface (API) Reference</a></p>
-<p><a href="http://openlayers.org/en/v3.14.2/examples/">Examples</a></p>
-</section><section id="demonstrations-and-examples" class="slide level3 module02b01a">
+<p><a href="http://openlayers.org/en/latest/apidoc/">Application Programming Interface (API) Reference</a></p>
+<p><a href="http://openlayers.org/en/latest/examples/">Examples</a></p>
+</section>
+<section id="demonstrations-and-examples" class="slide level3 module02b01a">
 <h1>Demonstrations and Examples</h1>
 <ul>
-<li><a href="sample-files/OpenLayers/OpenLayers_01.html">Basic Mapper</a> (with MapQuest base map (<a href="https://github.com/UNM-GEOG-485-585/class-materials/blob/master/sample-files/OpenLayers/OpenLayers_01.html">source</a>))</li>
+<li><a href="http://karlbenedict.com/GEOG485-585/sample-files/OpenLayers/OpenLayers_01.html">Basic Mapper</a> (with Open Street Map base map (<a href="https://github.com/karlbenedict/GEOG485-585/blob/master/sample-files/OpenLayers/OpenLayers_01.html">source</a>))</li>
 </ul>
 <div class="codeTable">
 <p>OpenLayers_01.html</p>
@@ -110,20 +120,16 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 16
 17
 18
-19
-20
 </pre></td><td class="sourceCode"><pre><code class="sourceCode html"><span class="kw">&lt;html&gt;</span>
 
 <span class="kw">&lt;head&gt;</span>
     <span class="kw">&lt;link</span><span class="ot"> rel=</span><span class="st">&quot;stylesheet&quot;</span><span class="ot"> href=</span><span class="st">&quot;css/OpenLayers_01.css&quot;</span><span class="ot"> type=</span><span class="st">&quot;text/css&quot;</span><span class="kw">&gt;</span>
-    <span class="kw">&lt;link</span><span class="ot"> rel=</span><span class="st">&quot;stylesheet&quot;</span><span class="ot"> href=</span><span class="st">&quot;http://openlayers.org/en/v3.14.2/css/ol.css&quot;</span><span class="ot"> type=</span><span class="st">&quot;text/css&quot;</span><span class="kw">&gt;</span>
-    <span class="co">&lt;!-- you can use this line if you want to use the hosted version instead of the local copy --&gt;</span>
-    <span class="co">&lt;!-- &lt;script src=&quot;http://openlayers.org/en/v3.14.2/build/ol.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt; --&gt;</span>
-    <span class="kw">&lt;script</span><span class="ot"> src=</span><span class="st">&quot;js/v3.14.2/build/ol.js&quot;</span><span class="ot"> type=</span><span class="st">&quot;text/javascript&quot;</span><span class="kw">&gt;&lt;/script&gt;</span>
+    <span class="kw">&lt;link</span><span class="ot"> rel=</span><span class="st">&quot;stylesheet&quot;</span><span class="ot"> href=</span><span class="st">&quot;https://cdnjs.cloudflare.com/ajax/libs/openlayers/4.0.1/ol.css&quot;</span><span class="ot"> type=</span><span class="st">&quot;text/css&quot;</span><span class="kw">&gt;</span>
+    <span class="kw">&lt;script</span><span class="ot"> src=</span><span class="st">&quot;https://cdnjs.cloudflare.com/ajax/libs/openlayers/4.0.1/ol.js&quot;</span><span class="ot"> type=</span><span class="st">&quot;text/javascript&quot;</span><span class="kw">&gt;&lt;/script&gt;</span>
 <span class="kw">&lt;/head&gt;</span>
 
 <span class="kw">&lt;body&gt;</span>
-    <span class="kw">&lt;h1&gt;</span>This is a very simple OpenLayers 3 sample map page<span class="kw">&lt;/h1&gt;</span>
+    <span class="kw">&lt;h1&gt;</span>This is a very simple OpenLayers 4 sample map page<span class="kw">&lt;/h1&gt;</span>
 
     <span class="kw">&lt;div</span><span class="ot"> id=</span><span class="st">'map'</span><span class="kw">&gt;</span><span class="co">&lt;!-- This is where the map will be displayed --&gt;</span><span class="kw">&lt;/div&gt;</span>
 
@@ -153,7 +159,7 @@ var myMap = new ol.Map({
     target: 'map',
     layers: [
         new ol.layer.Tile({
-        source: new ol.source.MapQuest({layer: 'sat'})
+            source: new ol.source.OSM()
         })
     ],
     view: new ol.View({
@@ -173,25 +179,59 @@ var myMap = new ol.Map({
 9
 10
 11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
 </pre></td><td class="sourceCode"><pre><code class="sourceCode html">/* OpenLayers_01.css */
 
 body {
     width:100%;
-    hwight:100%
+    height:100%
 }
 
-#map {
+#map,.map {
     width:600px;
-    height:400px
+    height:400px;
+}
+
+#map_selector li {
+    cursor:pointer;
+    width:350px;
+}
+
+#map_selector li:hover {
+    background-color: yellow;
+}
+
+
+
+#map div.ol-viewport div.ol-overlaycontainer-stopevent div.ol-overviewmap.ol-unselectable.ol-control.ol-uncollapsible {
+    top: 200px;
+    bottom: 300px;
 }</code></pre></td></tr></table></div>
 </div>
-</section><section id="demonstration-and-examples---online-resources" class="slide level3 module02b01a">
+</section>
+<section id="demonstration-and-examples---online-resources" class="slide level3 module02b01a">
 <h1>Demonstration and Examples - Online Resources</h1>
 <ul>
-<li><a href="sample-files/OpenLayers/OpenLayers_02_basemaps.html">Mapper</a> (<a href="https://github.com/UNM-GEOG-485-585/class-materials/blob/master/sample-files/OpenLayers/OpenLayers_02_basemaps.html">source</a>) with a variety of base maps (MapQuest, Stamen, OSM) and basic layer selection</li>
-<li>Basic Mapper with Controls: <a href="sample-files/OpenLayers/OpenLayers_01_noControls.html">No Controls</a> (<a href="https://github.com/UNM-GEOG-485-585/class-materials/blob/master/sample-files/OpenLayers/OpenLayers_01_noControls.html">source</a>), <a href="sample-files/OpenLayers/OpenLayers_01_controlArray.html">Customized Controls</a> (<a href="https://github.com/UNM-GEOG-485-585/class-materials/blob/master/sample-files/OpenLayers/OpenLayers_01_controlArray.html">source</a>)</li>
+<li><a href="http://karlbenedict.com/GEOG485-585/sample-files/OpenLayers/OpenLayers_02_basemaps.html">Mapper</a> (<a href="https://github.com/karlbenedict/GEOG485-585/blob/master/sample-files/OpenLayers/OpenLayers_02_basemaps.html">source</a>) with a variety of base maps (Bing, Stamen, OSM) and basic layer selection</li>
+<li>Basic Mapper with Controls: <a href="http://karlbenedict.com/GEOG485-585/sample-files/OpenLayers/OpenLayers_01_noControls.html">No Controls</a> (<a href="https://github.com/karlbenedict/GEOG485-585/blob/master/sample-files/OpenLayers/OpenLayers_01_noControls.html">source</a>), <a href="http://karlbenedict.com/GEOG485-585/sample-files/OpenLayers/OpenLayers_01_controlArray.html">Customized Controls</a> (<a href="https://github.com/karlbenedict/GEOG485-585/blob/master/sample-files/OpenLayers/OpenLayers_01_controlArray.html">source</a>)</li>
 </ul>
-</section><section id="next-week---custom-features-and-wms-layers" class="titleslide slide level2 module02b01a"><h1>Next Week - Custom Features and WMS Layers</h1></section>
+</section>
+<section id="next-week---custom-features-and-wms-layers" class="titleslide slide level2 module02b01a"><h1>Next Week - Custom Features and WMS Layers</h1></section>
 <hr />
 <section>
 <div class="license">

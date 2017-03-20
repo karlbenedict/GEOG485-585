@@ -1,3 +1,7 @@
+---
+title: Week 10 - Module 2b - OpenLayers 3 Javascript Framework
+...
+
 <!---------------------------------------------------------------------------->
 <!-- Week 10 ----------------------------------------------------------------->
 <!-- Lecture 02 b 01 a ------------------------------------------------------->
@@ -5,8 +9,6 @@
 <!-- OpenLayers Javascript Framework------------------------------------------>
 <!---------------------------------------------------------------------------->
  
-
-# Week 10 - Module 2b - OpenLayers 3 Javascript Framework# {.module02b01a}
 
 ### Overview ###  {.module02b01a}
 
@@ -17,7 +19,7 @@
 
 ### OpenLayers Capabilities ###  {.module02b01a}
 
-* Support for Multiple basemaps: _BingMaps_, _MapQuest_, _OpenStreetMap_, _Stamen_
+* Support for Multiple basemaps: _BingMaps_, _OpenStreetMap_, _Stamen_
 * Model for interaction with multiple map server platforms: _ArcGIS_ (REST),  _MapServer_, _GeoServer_
 * Support for key OGC standards: _WMS_, _WMTS_, _WFS_, _GML_, _KML_
 * Multiple control types: _Attribution_, _Zoom_, _Overview_, _Scale_, _FullScreen_, _Graticule_
@@ -38,13 +40,13 @@
 
 [OpenLayers Home Page](http://openlayers.org/)
 
-[Application Programming Interface (API) Reference](http://openlayers.org/en/v3.14.2/apidoc/index.html)
+[Application Programming Interface (API) Reference](http://openlayers.org/en/latest/apidoc/)
 
-[Examples](http://openlayers.org/en/v3.14.2/examples/)
+[Examples](http://openlayers.org/en/latest/examples/)
 
 ### Demonstrations and Examples ###  {.module02b01a}
 
-* [Basic Mapper](sample-files/OpenLayers/OpenLayers_01.html) (with MapQuest base map ([source](https://github.com/UNM-GEOG-485-585/class-materials/blob/master/sample-files/OpenLayers/OpenLayers_01.html)))
+* [Basic Mapper](http://karlbenedict.com/GEOG485-585/sample-files/OpenLayers/OpenLayers_01.html) (with Open Street Map base map ([source](https://github.com/karlbenedict/GEOG485-585/blob/master/sample-files/OpenLayers/OpenLayers_01.html)))
 
 <div class="codeTable">
 
@@ -55,14 +57,12 @@ OpenLayers_01.html
 
 <head>
 	<link rel="stylesheet" href="css/OpenLayers_01.css" type="text/css">
-	<link rel="stylesheet" href="http://openlayers.org/en/v3.14.2/css/ol.css" type="text/css">
-    <!-- you can use this line if you want to use the hosted version instead of the local copy -->
-	<!-- <script src="http://openlayers.org/en/v3.14.2/build/ol.js" type="text/javascript"></script> -->
-	<script src="js/v3.14.2/build/ol.js" type="text/javascript"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/openlayers/4.0.1/ol.css" type="text/css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/openlayers/4.0.1/ol.js" type="text/javascript"></script>
 </head>
 
 <body>
-	<h1>This is a very simple OpenLayers 3 sample map page</h1>
+	<h1>This is a very simple OpenLayers 4 sample map page</h1>
 
 	<div id='map'><!-- This is where the map will be displayed --></div>
 
@@ -82,8 +82,8 @@ var myMap = new ol.Map({
 	target: 'map',
 	layers: [
   		new ol.layer.Tile({
-		source: new ol.source.MapQuest({layer: 'sat'})
-  		})
+            source: new ol.source.OSM()
+        })
 	],
 	view: new ol.View({
 		center: ol.proj.fromLonLat([-106.624083,35.08427]),
@@ -100,21 +100,38 @@ OpenLayers_01.css
 
 body {
 	width:100%;
-	hwight:100%
+	height:100%
 }
 
-#map {
+#map,.map {
 	width:600px;
-	height:400px
+	height:400px;
 }
+
+#map_selector li {
+	cursor:pointer;
+	width:350px;
+}
+
+#map_selector li:hover {
+	background-color: yellow;
+}
+
+
+
+#map div.ol-viewport div.ol-overlaycontainer-stopevent div.ol-overviewmap.ol-unselectable.ol-control.ol-uncollapsible {
+	top: 200px;
+	bottom: 300px;
+}
+
 ~~~~~~~~~~
 
 </div>
 
 
 ### Demonstration and Examples - Online Resources ###  {.module02b01a}
-* [Mapper](sample-files/OpenLayers/OpenLayers_02_basemaps.html) ([source](https://github.com/UNM-GEOG-485-585/class-materials/blob/master/sample-files/OpenLayers/OpenLayers_02_basemaps.html)) with a variety of base maps (MapQuest, Stamen, OSM) and basic layer selection
-* Basic Mapper with Controls: [No Controls](sample-files/OpenLayers/OpenLayers_01_noControls.html) ([source](https://github.com/UNM-GEOG-485-585/class-materials/blob/master/sample-files/OpenLayers/OpenLayers_01_noControls.html)), [Customized Controls](sample-files/OpenLayers/OpenLayers_01_controlArray.html) ([source](https://github.com/UNM-GEOG-485-585/class-materials/blob/master/sample-files/OpenLayers/OpenLayers_01_controlArray.html))
+* [Mapper](http://karlbenedict.com/GEOG485-585/sample-files/OpenLayers/OpenLayers_02_basemaps.html) ([source](https://github.com/karlbenedict/GEOG485-585/blob/master/sample-files/OpenLayers/OpenLayers_02_basemaps.html)) with a variety of base maps (Bing, Stamen, OSM) and basic layer selection
+* Basic Mapper with Controls: [No Controls](http://karlbenedict.com/GEOG485-585/sample-files/OpenLayers/OpenLayers_01_noControls.html) ([source](https://github.com/karlbenedict/GEOG485-585/blob/master/sample-files/OpenLayers/OpenLayers_01_noControls.html)), [Customized Controls](http://karlbenedict.com/GEOG485-585/sample-files/OpenLayers/OpenLayers_01_controlArray.html) ([source](https://github.com/karlbenedict/GEOG485-585/blob/master/sample-files/OpenLayers/OpenLayers_01_controlArray.html))
 
 
 ## Next Week - Custom Features and WMS Layers ##  {.module02b01a}
