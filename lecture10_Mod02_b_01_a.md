@@ -1,5 +1,5 @@
 ---
-title: Week 10 - Module 2b - OpenLayers 3 Javascript Framework
+title: Week 10 - Module 2b - OpenLayers 4 Javascript Framework
 ...
 
 <!---------------------------------------------------------------------------->
