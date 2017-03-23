@@ -107,5 +107,5 @@ function setMapType(newType) {
 ///////////////////////////////////////////////////////////////////////////////
 
 // Set the initial map basemap
-setMapType('STAMEN_Toner')
+setMapType('STAMEN_Terrain')
 
