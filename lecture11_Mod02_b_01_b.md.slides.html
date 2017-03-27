@@ -3,7 +3,7 @@
   <meta charset="utf-8">
   <meta name="generator" content="pandoc">
   <meta name="author" content="Karl Benedict">
-  <title></title>
+  <title>Week 11 - Module 2b - OpenLayers Javascript Framework</title>
   <style type="text/css">code{white-space: pre;}</style>
   <style type="text/css">
 div.sourceCode { overflow-x: auto; }
@@ -46,6 +46,12 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
   <link href="data:text/css;charset=utf-8,footer%20%7B%0Abackground%2Dcolor%3A%20%23010101%3B%0Aopacity%3A%200%2E7%3B%0A%7D%0Asection%23TOC%20%7B%0Adisplay%3A%20%3B%0Aoverflow%3A%20scroll%3B%0Amargin%2Dtop%3A%2020px%3B%0Amargin%2Dbottom%3A%2020px%3B%0A%7D%0Asection%23TOC%20ul%20li%20ul%20%7B%0Adisplay%3A%20none%3B%0A%7D%0Asection%23TOC%20ul%20li%20%7B%0Afont%2Dsize%3A%2018px%3B%0Apadding%3A%205px%3B%0A%7D%0A%23simple%2D%2D%2Dzoomed%2D%2D%2Dmodified%2Dcontrols%2Dcode%20div%2EcodeTable%7B%0Aheight%3A%20450px%3B%09%7D" rel="stylesheet">
 </head>
 <body>
+<section class="title">
+  <h1 class="title">Week 11 - Module 2b - OpenLayers Javascript Framework</h1>
+  <footer>
+    <span class="author">Karl Benedict</span> · <span class="date">GEOG 485L/585L - Spring 2017</span>
+  </footer>
+</section>
 <section class="slide level3">
 
 <!---------------------------------------------------------------------------->
@@ -55,24 +61,26 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <!-- OpenLayers Javascript Framework------------------------------------------>
 <!---------------------------------------------------------------------------->
 </section>
-<section id="week-11---module-2b---openlayers-javascript-framework" class="titleslide slide level1 module02b01b"><h1>Week 11 - Module 2b - OpenLayers Javascript Framework</h1></section><section id="overview" class="slide level3 module02b01b">
+<section id="overview" class="slide level3 module02b01b">
 <h1>Overview</h1>
 <ul>
 <li><p>More detailed Map Object Options</p></li>
 <li><p>More detailed Layer Object Options</p></li>
 <li><p>Additional Map Layer Types - With Examples</p></li>
 </ul>
-</section><section id="map-object-options" class="slide level3">
+</section>
+<section id="map-object-options" class="slide level3">
 <h1>Map Object Options</h1>
 <ul>
-<li>Map Object Options <a href="http://openlayers.org/en/v3.14.2/apidoc/ol.Map.html">API Reference</a></li>
-<li>View Object Options <a href="http://openlayers.org/en/v3.14.2/apidoc/ol.View.html">API Reference</a></li>
+<li>Map Object Options <a href="http://openlayers.org/en/latest/apidoc/ol.Map.html">API Reference</a></li>
+<li>View Object Options <a href="http://openlayers.org/en/latest/apidoc/ol.View.html">API Reference</a></li>
 <li>Layer Object Options
 <ul>
-<li><code>ol.layer.Tile</code> <a href="http://openlayers.org/en/v3.14.2/apidoc/ol.layer.Tile.html">API Reference</a></li>
-<li><code>ol.layer.Image</code> <a href="http://openlayers.org/en/v3.14.2/apidoc/ol.layer.Image.html">API Reference</a></li>
-<li><code>ol.layer.Vector</code> <a href="http://openlayers.org/en/v3.14.2/apidoc/ol.layer.Vector.html">API Reference</a></li>
-<li><code>ol.layer.VectorTile</code> <a href="http://openlayers.org/en/v3.14.2/apidoc/ol.layer.VectorTile.html">API Reference</a></li>
+<li><code>ol.layer.Tile</code> <a href="http://openlayers.org/en/latest/apidoc/ol.layer.Tile.html">API Reference</a></li>
+<li><code>ol.layer.Image</code> <a href="http://openlayers.org/en/latest/apidoc/ol.layer.Image.html">API Reference</a></li>
+<li><code>ol.layer.Vector</code> <a href="http://openlayers.org/en/latest/apidoc/ol.layer.Vector.html">API Reference</a></li>
+<li><code>ol.layer.VectorTile</code> <a href="http://openlayers.org/en/latest/apidoc/ol.layer.VectorTile.html">API Reference</a></li>
+<li><code>ol.layer.Heatmap</code> <a href="http://openlayers.org/en/latest/apidoc/ol.layer.Heatmap.html">API Reference</a></li>
 </ul></li>
 </ul>
 <p>A variety of strategies for constructing a new <code>OpenLayers.Map</code> object</p>
@@ -150,22 +158,24 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 71
 72
 73
+74
 </pre></td><td class="sourceCode"><pre><code class="sourceCode html">// create a map with minimum required elements and default 
 // options in an element with the id &quot;map1&quot;
-var map = new ol.Map({
-    target:'map1',
+var myMap = new ol.Map({
+    target: 'map1',
     // a map without layers can be defined and in that case a map with no layers
     // will be rendered
-    layers: [ 
+    layers: [
         new ol.layer.Tile({
-            source: new ol.source.MapQuest({layer: 'osm'})
-        }) 
-    ], // end layers
+            source: new ol.source.OSM()
+        })
+    ],
     view: new ol.View({
-        center: [0, 0],
-        zoom: 1
-    }), //end view
-});
+        center: ol.proj.fromLonLat([-106.624083,35.08427]),
+        zoom: 18
+        })
+    });
+
 
 // create a map with options specified in a separate 'options' variable and
 // included by reference in the code to create the new map object
@@ -224,32 +234,34 @@ map.setView()
 
 map.setTarget</code></pre></td></tr></table></div>
 </div>
-</section><section id="layer-object-options" class="slide level3">
+</section>
+<section id="layer-object-options" class="slide level3">
 <h1>Layer Object Options</h1>
 <p>Layer Types and a subset of sources for each type</p>
 <ul>
 <li><code>ol.layer.Image</code> - a single map image is rendered for this layer type
 <ul>
-<li><code>ol.source.ImageMapGuide</code> - <a href="http://openlayers.org/en/v3.14.2/apidoc/ol.source.ImageMapGuide.html">API</a> source is a <a href="https://mapguide.osgeo.org/">MapGuide</a> server hosting data of interest.</li>
-<li><code>ol.source.ImageStatic</code> - <a href="http://openlayers.org/en/v3.14.2/apidoc/ol.source.ImageStatic.html">API</a> source renders a specified static image file within a specified extent within the map.</li>
-<li><code>ol.source.ImageWMS</code> - <a href="http://openlayers.org/en/v3.14.2/apidoc/ol.source.ImageWMS.html">API</a> source retrieves a single map image from the specified OGC Web Map Service (WMS).</li>
+<li><code>ol.source.ImageMapGuide</code> - <a href="http://openlayers.org/en/latest/apidoc/ol.source.ImageMapGuide.html">API</a> source is a <a href="https://mapguide.osgeo.org/">MapGuide</a> server hosting data of interest.</li>
+<li><code>ol.source.ImageStatic</code> - <a href="http://openlayers.org/en/latest/apidoc/ol.source.ImageStatic.html">API</a> source renders a specified static image file within a specified extent within the map.</li>
+<li><code>ol.source.ImageWMS</code> - <a href="http://openlayers.org/en/latest/apidoc/ol.source.ImageWMS.html">API</a> source retrieves a single map image from the specified OGC Web Map Service (WMS).</li>
+<li><code>ol.source.ImageArcGISRest</code> - <a href="http://openlayers.org/en/latest/apidoc/ol.source.ImageArcGISRest.html">API</a> source retrieves a single map image from the specified ArcGIS REST service.</li>
 </ul></li>
 <li><code>ol.layer.Tile</code> - map images in a tiled grid are rendered for this layer type
 <ul>
-<li><code>ol.source.TileArcGISRest</code> - <a href="http://openlayers.org/en/v3.14.2/apidoc/ol.source.TileArcGISRest.html">API</a> source is an ArcGIS REST map or image service</li>
-<li><code>ol.source.TileWMS</code> - <a href="http://openlayers.org/en/v3.14.2/apidoc/ol.source.TileWMS.html">API</a> source is an OGC Web Map Service (WMS)</li>
-<li><code>ol.source.WMTS</code> - <a href="http://openlayers.org/en/v3.14.2/apidoc/ol.source.WMTS.html">API</a> source is an OGC Web Map Tile Service (<a href="http://www.opengeospatial.org/standards/wmts">WMTS</a>)</li>
+<li><code>ol.source.TileArcGISRest</code> - <a href="http://openlayers.org/en/latest/apidoc/ol.source.TileArcGISRest.html">API</a> source is an ArcGIS REST map or image service</li>
+<li><code>ol.source.TileWMS</code> - <a href="http://openlayers.org/en/latest/apidoc/ol.source.TileWMS.html">API</a> source is an OGC Web Map Service (WMS)</li>
+<li><code>ol.source.WMTS</code> - <a href="http://openlayers.org/en/latest/apidoc/ol.source.WMTS.html">API</a> source is an OGC Web Map Tile Service (<a href="http://www.opengeospatial.org/standards/wmts">WMTS</a>)</li>
 </ul></li>
 <li><code>ol.layer.VectorTile</code> - map content is delivered vector data that has been divided into a tile grid and cannot be edited
 <ul>
-<li><code>ol.source.VectorTile</code> - <a href="http://openlayers.org/en/v3.14.2/apidoc/ol.source.VectorTile.html">API</a> source delivers vector data tiles for rendering in the client (<a href="http://openlayers.org/en/v3.2.1/examples/tile-vector.html">example</a></li>
+<li><code>ol.source.VectorTile</code> - <a href="http://openlayers.org/en/latest/apidoc/ol.layer.VectorTile.html">API</a> source delivers vector data tiles for rendering in the client</li>
 </ul></li>
 <li><code>ol.layer.Vector</code> - map content is delivered as vector data that is rendered by the client and may be edited within the client
 <ul>
-<li><code>ol.source.Vector</code> - <a href="http://openlayers.org/en/v3.14.2/apidoc/ol.source.Vector.html">API</a> the source for vector feature(s) that constitute a vector layer. The individual features are <a href="http://openlayers.org/en/v3.14.2/apidoc/ol.Feature.html"><code>ol.Feature</code></a> objects that consist of at least one <a href="http://openlayers.org/en/v3.14.2/apidoc/ol.geom.SimpleGeometry.html">geometry</a>, or a <a href="http://openlayers.org/en/v3.14.2/apidoc/ol.geom.GeometryCollection.html">collection</a> of geometries and any additional attributes that are associated with each feature.</li>
+<li><code>ol.source.Vector</code> - <a href="http://openlayers.org/en/latest/apidoc/ol.source.Vector.html">API</a> the source for vector feature(s) that constitute a vector layer. The individual features are <a href="http://openlayers.org/en/latest/apidoc/ol.Feature.html"><code>ol.Feature</code></a> objects that consist of at least one <a href="http://openlayers.org/en/latest/apidoc/ol.geom.html">geometry</a>, or a <a href="http://openlayers.org/en/latest/apidoc/ol.geom.GeometryCollection.html">collection</a> of geometries and any additional attributes that are associated with each feature.</li>
 </ul></li>
 </ul>
-<p>Common Pattern of <a href="http://openlayers.org/en/v3.14.2/apidoc/ol.layer.Base.html">Layer Object</a> Creation (varies some depending upon the specific layer type)</p>
+<p>Common Pattern of <a href="http://openlayers.org/en/latest/apidoc/ol.layer.Base.html">Layer Object</a> Creation (varies some depending upon the specific layer type)</p>
 <div class="codeTable inflow">
 <div class="sourceCode" id="OpenLayers_02_Layer_options"><table class="sourceCode html numberLines"><tr class="sourceCode"><td class="lineNumbers"><pre>1
 2
@@ -264,7 +276,8 @@ map.setTarget</code></pre></td></tr></table></div>
     other options ...
 })</code></pre></td></tr></table></div>
 </div>
-</section><section id="additional-map-and-layer-object-functions-events" class="slide level3">
+</section>
+<section id="additional-map-and-layer-object-functions-events" class="slide level3">
 <h1>Additional Map and Layer Object Functions &amp; Events</h1>
 <p>Both Map and Layer Objects have a number of associated functions as well</p>
 <ul>
@@ -273,11 +286,12 @@ map.setTarget</code></pre></td></tr></table></div>
 <li>Map destruction, and reconfiguration</li>
 <li>Linkage of object events with Javascript functions</li>
 </ul>
-</section><section id="wms-layer-configuration" class="slide level3">
+</section>
+<section id="wms-layer-configuration" class="slide level3">
 <h1>WMS Layer Configuration</h1>
 <p>Some key issues to be aware of when using the two WMS supporting layers (<code>ol.layer.Tile</code>, and <code>ol.layer.Image</code>) and their associated WMS sources (<code>ol.source.TileWMS</code> and <code>ol.source.ImageWMS</code> respectively) include:</p>
 <ul>
-<li>The <em>projection</em> of the map object must be supported by the included WMS service (review the WMS GetCapabilities response to see what projections are supported by the service). If you don't specify a <code>projection</code> parameter as part of the map object's <code>view</code> property a default <em>Web Mercator</em> (EPSG:3857) projection is used for the map. Information about how to define and set map projections in OpenLayers is found <a href="http://openlayers.org/en/v3.14.2/doc/faq.html#how-do-i-change-the-projection-of-my-map-">here</a></li>
+<li>The <em>projection</em> of the map object must be supported by the included WMS service (review the WMS GetCapabilities response to see what projections are supported by the service). If you don't specify a <code>projection</code> parameter as part of the map object's <code>view</code> property a default <em>Web Mercator</em> (EPSG:3857) projection is used for the map. Information about how to define and set map projections in OpenLayers is found <a href="http://openlayers.org/en/latest/doc/faq.html#how-do-i-change-the-projection-of-my-map-">here</a></li>
 <li>The <em>layers</em> parameter as part of the <code>params</code> option must be provided as part of the server-related property list (the layer names may also be found in the GetCapabilities response)</li>
 <li>Other WMS parameters (again as part of the <code>params</code> option) may be provided as well to &quot;adjust&quot; the request automatically generated by OpenLayers</li>
 <li>Use of a tiled WMS may produce unwanted repetition of labels included in the WMS. If that is the case you can use a single-image <code>ol.layer.Image</code> layer type to allow the WMS server to handle the distribution of layers across the entire map image instead of including them in each individual map image.</li>
@@ -318,15 +332,101 @@ map.setTarget</code></pre></td></tr></table></div>
 32
 33
 34
-</pre></td><td class="sourceCode"><pre><code class="sourceCode html">var basemap_single = new ol.layer.Image({
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+</pre></td><td class="sourceCode"><pre><code class="sourceCode html">// OpenLayers_03_wms.js
+
+///////////////////////////////////////////////////////////////////////////////
+// define layer objects
+
+var basemap_tiled = new ol.layer.Tile({
+    source: new ol.source.TileWMS({
+    url: 'https://basemap.nationalmap.gov/arcgis/services/USGSTopo/MapServer/WmsServer?',
+      params: {
+        LAYERS: 0,
+        FORMAT: 'image/png',
+        TRANSPARENT: true
+      },
+      attributions: [
+        new ol.Attribution({
+          html: 'Data provided by the <span class="kw">&lt;a</span><span class="ot"> href=</span><span class="st">&quot;http://basemap.nationalmap.gov&quot;</span><span class="kw">&gt;</span>National Map<span class="kw">&lt;/a&gt;</span>.'
+        })
+      ]
+    })
+})
+
+var basemap_single = new ol.layer.Image({
     source: new ol.source.ImageWMS({
-        attributions: new ol.Attribution({
-            html: 'Blue Marble Next Generation:' + 
-            'R. Stockli, E. Vermote, N. Saleous, R. Simmon and D. Herring (2005). The Blue Marble Next Generation - A true color earth dataset including seasonal dynamics from MODIS. Published by the NASA Earth Observatory. Corresponding author: rstockli@climate.gsfc.nasa.gov'
-        }),
-        params: {'LAYERS':'global:BMNG_west'},
-        url: 'http://mapper.karlbenedict.com:8080/geoserver/global/wms?',
-        serverType: 'geoserver'
+        url: 'https://basemap.nationalmap.gov/arcgis/services/USGSTopo/MapServer/WmsServer?',
+        params: {
+            LAYERS: 0,
+            FORMAT: 'image/png',
+            TRANSPARENT: true
+        },
+        attributions: [
+            new ol.Attribution({
+                html: 'Data provided by the <span class="kw">&lt;a</span><span class="ot"> href=</span><span class="st">&quot;http://basemap.nationalmap.gov&quot;</span><span class="kw">&gt;</span>National Map<span class="kw">&lt;/a&gt;</span>.'
+            })
+        ]
     })
 })
 
@@ -336,14 +436,29 @@ var states_single = new ol.layer.Image({
             html: 'State Boundary Restructured - USGS, National Atlas Release 5-14-12'
         }),
         params: {'LAYERS':'global:statep010'},
-        url: 'http://mapper.karlbenedict.com:8080/geoserver/global/wms?',
+        url: 'http://mapper.internetmapping.net:8081/geoserver/global/wms?',
         serverType: 'geoserver'
     })
 })
 
+var states_tiled = new ol.layer.Tile({
+    source: new ol.source.TileWMS({
+        attributions: new ol.Attribution({
+            html: 'State Boundary Restructured - USGS, National Atlas Release 5-14-12'
+        }),
+        params: {'LAYERS':'global:statep010'},
+        url: 'http://mapper.internetmapping.net:8081/geoserver/global/wms?',
+        serverType: 'geoserver'
+    })
+})
+
+
+
+///////////////////////////////////////////////////////////////////////////////
+// create our base map objects 
 var singleMap = new ol.Map({
     target: 'map_image',
-    layers: [basemap_single,states_single],
+    layers: [basemap_single,states_single], //[basemap_single,states_single]
     view: new ol.View({
         center: ol.proj.fromLonLat([-98.58,39.83]), // the approximate geographic center of the continental US
         zoom: 3,
@@ -351,17 +466,39 @@ var singleMap = new ol.Map({
         })
     });
 
-</code></pre></td></tr></table></div>
+
+var tiledMap = new ol.Map({
+    target: 'map_tiled',
+    layers: [basemap_tiled,states_tiled], //[basemap_tiled,states_tiled]
+    view: new ol.View({
+        center: ol.proj.fromLonLat([-98.58,39.83]), // the approximate geographic center of the continental US
+        zoom: 3,
+        projection: 'EPSG:3857'
+        })
+    });
+    
+var mixedMap = new ol.Map({
+    target: 'map_mixed',
+    layers: [basemap_tiled,states_single], //[basemap_tiled,states_single]
+    view: new ol.View({
+        center: ol.proj.fromLonLat([-98.58,39.83]), // the approximate geographic center of the continental US
+        zoom: 3,
+        projection: 'EPSG:3857'
+        })
+    });
+
+///////////////////////////////////////////////////////////////////////////////</code></pre></td></tr></table></div>
 </div>
-<p>Example: <a href="https://github.com/UNM-GEOG-485-585/class-materials/blob/master/sample-files/OpenLayers/OpenLayers_03_wms.html">HTML</a>, <a href="https://github.com/UNM-GEOG-485-585/class-materials/blob/master/sample-files/OpenLayers/js/OpenLayers_03_wms.js">Javascript</a></p>
-</section><section id="vector-layer-configuration" class="slide level3">
+<p>Example: <a href="https://github.com/karlbenedict/GEOG485-585/blob/master/sample-files/OpenLayers/OpenLayers_03_wms.html">HTML</a>, <a href="https://github.com/karlbenedict/GEOG485-585/blob/master/sample-files/OpenLayers/js/OpenLayers_03_wms.js">Javascript</a></p>
+</section>
+<section id="vector-layer-configuration" class="slide level3">
 <h1>Vector Layer Configuration</h1>
 <p>Vector layers support</p>
 <ul>
-<li>External Data in a Variety of supported <a href="http://openlayers.org/en/v3.14.2/apidoc/ol.format.html">formats</a> for both <em>reading</em> and <em>writing</em> (just a sample): <a href="http://openlayers.org/en/v3.14.2/apidoc/ol.format.GMLBase.html">GML</a>, <a href="http://openlayers.org/en/v3.14.2/apidoc/ol.format.GPX.html">GPX</a>, <a href="http://openlayers.org/en/v3.14.2/apidoc/ol.format.GeoJSON.html">GeoJSON</a>, <a href="http://openlayers.org/en/v3.14.2/apidoc/ol.format.JSONFeature.html">JSON</a>, <a href="http://openlayers.org/en/v3.14.2/apidoc/ol.format.KML.html">KML</a>, <a href="http://openlayers.org/en/v3.14.2/apidoc/ol.format.WFS.html">WFS</a>, <a href="http://openlayers.org/en/v3.14.2/apidoc/ol.format.WKT.html">WKT</a>, <a href="http://openlayers.org/en/v3.14.2/apidoc/ol.format.OSMXML.html">Open Streetmap</a></li>
-<li>Directly encoded <a href="http://openlayers.org/en/v3.14.2/apidoc/ol.geom.html">geometries</a>: Circle, Geometry, GeometryCollection, LinearRing, LineString, MultiLineString, MultiPoint, MultiPolygon, Point, Polygon, SimpleGeometry</li>
+<li>External Data in a Variety of supported <a href="http://openlayers.org/en/latest/apidoc/ol.format.html">formats</a> for both <em>reading</em> and <em>writing</em> (just a sample): <a href="http://openlayers.org/en/latest/apidoc/ol.format.GML2.html">GML 2</a> and <a href="http://openlayers.org/en/latest/apidoc/ol.format.GML3.html">GML 3</a>, <a href="http://openlayers.org/en/latest/apidoc/ol.format.GPX.html">GPX</a>, <a href="http://openlayers.org/en/latest/apidoc/ol.format.GeoJSON.html">GeoJSON</a>, <a href="http://openlayers.org/en/latest/apidoc/ol.format.KML.html">KML</a>, <a href="http://openlayers.org/en/latest/apidoc/ol.format.WFS.html">WFS</a>, <a href="http://openlayers.org/en/latest/apidoc/ol.format.WKT.html">WKT</a>, <a href="http://openlayers.org/en/latest/apidoc/ol.format.OSMXML.html">Open Streetmap XML</a></li>
+<li>Directly encoded <a href="http://openlayers.org/en/latest/apidoc/ol.geom.html">geometries</a>: Circle, Geometry, GeometryCollection, LinearRing, LineString, MultiLineString, MultiPoint, MultiPolygon, Point, Polygon, SimpleGeometry</li>
 <li>User created features, including support for interactive editing of features</li>
-<li><a href="http://openlayers.org/en/v3.14.2/apidoc/ol.style.html">Styling</a> of Vector features</li>
+<li><a href="http://openlayers.org/en/latest/apidoc/ol.style.html">Styling</a> of Vector features</li>
 </ul>
 <div class="codeTable inflow">
 <p>Sample Point Feature Object creation</p>
@@ -373,8 +510,8 @@ var singleMap = new ol.Map({
 </pre></td><td class="sourceCode"><pre><code class="sourceCode html">var classroomCoord = [-106.624073,35.084280]
 var officeCoord = [-106.624899,35.084506]
 
-var classroomPoint = new ol.geom.Point(classroomCoord);
-var officePoint = new ol.geom.Point(officeCoord);</code></pre></td></tr></table></div>
+var classroomPoint = new ol.geom.Point(ol.proj.fromLonLat(classroomCoord, projection));
+var officePoint = new ol.geom.Point(ol.proj.fromLonLat(officeCoord, projection));</code></pre></td></tr></table></div>
 <p>Sample KML Layer Object creation with style</p>
 <div class="sourceCode" id="OpenLayers_02_KMLayer_options01"><table class="sourceCode html numberLines"><tr class="sourceCode"><td class="lineNumbers"><pre>1
 2
@@ -403,7 +540,84 @@ var officePoint = new ol.geom.Point(officeCoord);</code></pre></td></tr></table>
 25
 26
 27
-</pre></td><td class="sourceCode"><pre><code class="sourceCode html">var blocks_kml = new ol.layer.Vector({
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+</pre></td><td class="sourceCode"><pre><code class="sourceCode html">///////////////////////////////////////////////////////////////////////////////
+// define some styles
+
+var block_color = [0,255,0,.1]
+var block_line_color = [0,255,0,1]
+var county_color = [124,124,255,.25]
+var county_line_color = [124,124,255,1]
+
+var county_style = new ol.style.Style({
+    fill: new ol.style.Fill({
+      color: county_color
+    }),
+    stroke: new ol.style.Stroke({
+      color: county_line_color,
+      width: 2
+    }),
+});
+
+var block_style = new ol.style.Style({
+    fill: new ol.style.Fill({
+      color: block_color
+    }),
+    stroke: new ol.style.Stroke({
+      color: block_line_color,
+      width: 1
+    }),
+});
+///////////////////////////////////////////////////////////////////////////////
+
+// unstyled layers
+
+var blocks_kml = new ol.layer.Vector({
     source: new ol.source.Vector({
         url: 'https://s3.amazonaws.com/kkb-web/data/tl_2010_35001_tabblock10.kml',
         projection: projection,
@@ -411,27 +625,42 @@ var officePoint = new ol.geom.Point(officeCoord);</code></pre></td></tr></table>
     })
 })
 
-var county_style = new ol.style.Style({
-    fill: new ol.style.Fill({
-      color: county_color
-    }),
-    stroke: new ol.style.Stroke({
-      color: county_color,
-      width: 1
-    }),
-});
+var counties_kml = new ol.layer.Vector({
+    source: new ol.source.Vector({
+        url: 'https://s3.amazonaws.com/kkb-web/data/2007fe_35_county00.kml',
+        projection: projection,
+        format: new ol.format.KML()
+    })
+})
+
+
+// styled layers 
 
 var counties_kml_styled = new ol.layer.Vector({
     source: new ol.source.Vector({
         url: 'https://s3.amazonaws.com/kkb-web/data/2007fe_35_county00.kml',
         projection: projection,
-        format: new ol.format.KML({'extractStyles':false}),
-        style: county_style
-    })
+        format: new ol.format.KML({
+            extractStyles:false
+        })
+    }),
+    style: county_style
 })
+
+var blocks_kml_styled = new ol.layer.Vector({
+    source: new ol.source.Vector({
+        url: 'https://s3.amazonaws.com/kkb-web/data/tl_2010_35001_tabblock10.kml',
+        projection: projection,
+        format: new ol.format.KML({
+            extractStyles:false
+        })
+    }),
+    style: block_style
+})
+
 </code></pre></td></tr></table></div>
 </div>
-<p>Example: <a href="https://github.com/UNM-GEOG-485-585/class-materials/blob/master/sample-files/OpenLayers/OpenLayers_04_vector.html">HTML</a>, <a href="https://github.com/UNM-GEOG-485-585/class-materials/blob/master/sample-files/OpenLayers/js/OpenLayers_04_vector.js">Javascript</a></p>
+<p>Example: <a href="https://github.com/karlbenedict/GEOG485-585/blob/master/sample-files/OpenLayers/OpenLayers_04_vector.html">HTML</a>, <a href="https://github.com/karlbenedict/GEOG485-585/blob/master/sample-files/OpenLayers/js/OpenLayers_04_vector.js">Javascript</a></p>
 </section>
 <hr />
 <section>
