@@ -57,8 +57,10 @@ OpenLayers_01.html
 
 <head>
 	<link rel="stylesheet" href="css/OpenLayers_01.css" type="text/css">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/openlayers/4.0.1/ol.css" type="text/css">
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/openlayers/4.0.1/ol.js" type="text/javascript"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/
+		openlayers/4.0.1/ol.css" type="text/css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/openlayers/4.0.1/ol.js" 
+		type="text/javascript"></script>
 </head>
 
 <body>
@@ -119,9 +121,11 @@ body {
 
 
 
-#map div.ol-viewport div.ol-overlaycontainer-stopevent div.ol-overviewmap.ol-unselectable.ol-control.ol-uncollapsible {
-	top: 200px;
-	bottom: 300px;
+#map div.ol-viewport 
+	div.ol-overlaycontainer-stopevent 
+	div.ol-overviewmap.ol-unselectable.ol-control.ol-uncollapsible {
+		top: 200px;
+		bottom: 300px;
 }
 
 ~~~~~~~~~~
