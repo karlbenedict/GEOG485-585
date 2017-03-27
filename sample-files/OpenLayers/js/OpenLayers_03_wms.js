@@ -41,7 +41,7 @@ var states_single = new ol.layer.Image({
 			html: 'State Boundary Restructured - USGS, National Atlas Release 5-14-12'
 		}),
 		params: {'LAYERS':'global:statep010'},
-		url: 'http://mapper.karlbenedict.com:8080/geoserver/global/wms?',
+		url: 'http://mapper.internetmapping.net:8081/geoserver/global/wms?',
 		serverType: 'geoserver'
 	})
 })
@@ -52,7 +52,7 @@ var states_tiled = new ol.layer.Tile({
 			html: 'State Boundary Restructured - USGS, National Atlas Release 5-14-12'
 		}),
 		params: {'LAYERS':'global:statep010'},
-		url: 'http://mapper.karlbenedict.com:8080/geoserver/global/wms?',
+		url: 'http://mapper.internetmapping.net:8081/geoserver/global/wms?',
 		serverType: 'geoserver'
 	})
 })
@@ -63,7 +63,7 @@ var states_tiled = new ol.layer.Tile({
 // create our base map objects 
 var singleMap = new ol.Map({
 	target: 'map_image',
-	layers: [basemap_single], //[basemap_single,states_single]
+	layers: [basemap_single,states_single], //[basemap_single,states_single]
 	view: new ol.View({
 		center: ol.proj.fromLonLat([-98.58,39.83]), // the approximate geographic center of the continental US
 		zoom: 3,
@@ -74,7 +74,7 @@ var singleMap = new ol.Map({
 
 var tiledMap = new ol.Map({
 	target: 'map_tiled',
-	layers: [basemap_tiled], //[basemap_tiled,states_tiled]
+	layers: [basemap_tiled,states_tiled], //[basemap_tiled,states_tiled]
 	view: new ol.View({
 		center: ol.proj.fromLonLat([-98.58,39.83]), // the approximate geographic center of the continental US
 		zoom: 3,
@@ -84,7 +84,7 @@ var tiledMap = new ol.Map({
 	
 var mixedMap = new ol.Map({
 	target: 'map_mixed',
-	layers: [basemap_tiled], //[basemap_tiled,states_single]
+	layers: [basemap_tiled,states_single], //[basemap_tiled,states_single]
 	view: new ol.View({
 		center: ol.proj.fromLonLat([-98.58,39.83]), // the approximate geographic center of the continental US
 		zoom: 3,

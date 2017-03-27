@@ -6,15 +6,27 @@ var projection = ol.proj.get('EPSG:3857');
 ///////////////////////////////////////////////////////////////////////////////
 // define some styles
 
-var block_color = [0,255,0,0]
-var county_color = [0,0,255,0]
+var block_color = [0,255,0,.1]
+var block_line_color = [0,255,0,1]
+var county_color = [124,124,255,.25]
+var county_line_color = [124,124,255,1]
 
 var county_style = new ol.style.Style({
 	fill: new ol.style.Fill({
 	  color: county_color
 	}),
 	stroke: new ol.style.Stroke({
-	  color: county_color,
+	  color: county_line_color,
+	  width: 2
+	}),
+});
+
+var block_style = new ol.style.Style({
+	fill: new ol.style.Fill({
+	  color: block_color
+	}),
+	stroke: new ol.style.Stroke({
+	  color: block_line_color,
 	  width: 1
 	}),
 });
@@ -92,8 +104,9 @@ var basemap_bern_tiled = new ol.layer.Tile({
 			html: 'Bernalillo County NAIP (2014) imagery'
 		}),
 		params: {'LAYERS':'global:naip_2015_bernalillo'},
-		url: 'http://mapper.karlbenedict.com:8080/geoserver/global/wms?',
-		serverType: 'geoserver'
+		url: 'http://mapper.internetmapping.net:8081/geoserver/global/wms?',
+		serverType: 'geoserver',
+		projection: projection
 	})
 })
 
@@ -103,7 +116,7 @@ var states_single = new ol.layer.Image({
 			html: 'State Boundary Restructured - USGS, National Atlas Release 5-14-12'
 		}),
 		params: {'LAYERS':'global:statep010'},
-		url: 'http://mapper.karlbenedict.com:8080/geoserver/global/wms?',
+		url: 'http://mapper.internetmapping.net:8081/geoserver/global/wms?',
 		serverType: 'geoserver'
 	})
 })
@@ -131,10 +144,25 @@ var counties_kml_styled = new ol.layer.Vector({
 	source: new ol.source.Vector({
 		url: 'https://s3.amazonaws.com/kkb-web/data/2007fe_35_county00.kml',
 		projection: projection,
-		format: new ol.format.KML({'extractStyles':false}),
-		style: county_style
-	})
+		format: new ol.format.KML({
+			extractStyles:false
+		})
+	}),
+	style: county_style
 })
+
+var blocks_kml_styled = new ol.layer.Vector({
+	source: new ol.source.Vector({
+		url: 'https://s3.amazonaws.com/kkb-web/data/tl_2010_35001_tabblock10.kml',
+		projection: projection,
+		format: new ol.format.KML({
+			extractStyles:false
+		})
+	}),
+	style: block_style
+})
+
+
 
 // layer based on custom geometries
 
@@ -161,7 +189,7 @@ var kmlMap = new ol.Map({
 
 var kmlMapStyled = new ol.Map({
 	target: 'map_kml_styled',
-	layers: [basemap_tiled,counties_kml_styled], //[basemap_tiled,basemap_bern_tiled,counties_kml_styled]
+	layers: [basemap_tiled,counties_kml_styled,blocks_kml_styled], //[basemap_tiled,basemap_bern_tiled,counties_kml_styled]
 	view: new ol.View({
 		center: ol.proj.fromLonLat([-106.6224,35.0849]), // duck pond
 		zoom:5,
@@ -171,7 +199,7 @@ var kmlMapStyled = new ol.Map({
 
 var localFeatures = new ol.Map({
 	target: 'map_local',
-	layers: [basemap_tiled,counties_kml,local_geoms], //[basemap_tiled,basemap_bern_tiled,counties_kml,local_geoms]
+	layers: [basemap_bern_tiled,basemap_tiled,counties_kml,local_geoms], //[basemap_tiled,basemap_bern_tiled,counties_kml,local_geoms]
 	view: new ol.View({
 		center: ol.proj.fromLonLat([-106.6224,35.0849]), // duck pond
 		zoom:14,
