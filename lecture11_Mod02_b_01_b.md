@@ -243,7 +243,8 @@ var singleMap = new ol.Map({
 	target: 'map_image',
 	layers: [basemap_single,states_single], //[basemap_single,states_single]
 	view: new ol.View({
-		center: ol.proj.fromLonLat([-98.58,39.83]), // the approximate geographic center of the continental US
+		// the approximate geographic center of the continental US
+		center: ol.proj.fromLonLat([-98.58,39.83]),
 		zoom: 3,
 		projection: 'EPSG:3857'
 		})
@@ -254,7 +255,8 @@ var tiledMap = new ol.Map({
 	target: 'map_tiled',
 	layers: [basemap_tiled,states_tiled], //[basemap_tiled,states_tiled]
 	view: new ol.View({
-		center: ol.proj.fromLonLat([-98.58,39.83]), // the approximate geographic center of the continental US
+		// the approximate geographic center of the continental US
+		center: ol.proj.fromLonLat([-98.58,39.83]),
 		zoom: 3,
 		projection: 'EPSG:3857'
 		})
@@ -264,7 +266,8 @@ var mixedMap = new ol.Map({
 	target: 'map_mixed',
 	layers: [basemap_tiled,states_single], //[basemap_tiled,states_single]
 	view: new ol.View({
-		center: ol.proj.fromLonLat([-98.58,39.83]), // the approximate geographic center of the continental US
+		// the approximate geographic center of the continental US
+		center: ol.proj.fromLonLat([-98.58,39.83]), 
 		zoom: 3,
 		projection: 'EPSG:3857'
 		})

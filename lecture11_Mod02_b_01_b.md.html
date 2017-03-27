@@ -384,6 +384,9 @@ map.setTarget</code></pre></td></tr></table></div>
 93
 94
 95
+96
+97
+98
 </pre></td><td class="sourceCode"><pre><code class="sourceCode html">// OpenLayers_03_wms.js
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -451,7 +454,8 @@ var singleMap = new ol.Map({
     target: &#39;map_image&#39;,
     layers: [basemap_single,states_single], //[basemap_single,states_single]
     view: new ol.View({
-        center: ol.proj.fromLonLat([-98.58,39.83]), // the approximate geographic center of the continental US
+        // the approximate geographic center of the continental US
+        center: ol.proj.fromLonLat([-98.58,39.83]),
         zoom: 3,
         projection: &#39;EPSG:3857&#39;
         })
@@ -462,7 +466,8 @@ var tiledMap = new ol.Map({
     target: &#39;map_tiled&#39;,
     layers: [basemap_tiled,states_tiled], //[basemap_tiled,states_tiled]
     view: new ol.View({
-        center: ol.proj.fromLonLat([-98.58,39.83]), // the approximate geographic center of the continental US
+        // the approximate geographic center of the continental US
+        center: ol.proj.fromLonLat([-98.58,39.83]),
         zoom: 3,
         projection: &#39;EPSG:3857&#39;
         })
@@ -472,7 +477,8 @@ var mixedMap = new ol.Map({
     target: &#39;map_mixed&#39;,
     layers: [basemap_tiled,states_single], //[basemap_tiled,states_single]
     view: new ol.View({
-        center: ol.proj.fromLonLat([-98.58,39.83]), // the approximate geographic center of the continental US
+        // the approximate geographic center of the continental US
+        center: ol.proj.fromLonLat([-98.58,39.83]), 
         zoom: 3,
         projection: &#39;EPSG:3857&#39;
         })
