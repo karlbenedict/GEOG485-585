@@ -1,3 +1,8 @@
+---
+title: Week 12 - Module 4b - Interoperability Standards - Desktop GIS Integration
+...
+
+
 <!---------------------------------------------------------------------------->
 <!-- Week 12 ----------------------------------------------------------------->
 <!-- Lecture 04 b 01 a ------------------------------------------------------->
@@ -5,8 +10,6 @@
 <!-- Desktop GIS Integration-------------------------------------------------->
 <!---------------------------------------------------------------------------->
 
-
-# Module 4b - Interoperability Standards - Desktop GIS Integration# {.module04b01a}
 
 ### Overview ###  {.module04b01a}
 
@@ -64,7 +67,7 @@ The General Process:
 4. Modify settings for layer(s)
 5. Add layer(s)
 
-[QGIS OGC Documentation](http://docs.qgis.org/2.8/en/docs/user_manual/working_with_ogc/index.html)
+[QGIS OGC Documentation](http://docs.qgis.org/2.14/en/docs/user_manual/working_with_ogc/index.html)
 
 
 ### QGIS - Adding Services and Layers - start ###  {.module04b01a .twoUp}
@@ -120,7 +123,7 @@ After adding the layer, it appears as an available layer in the table of content
 
 WMS, WFS and WCS in QGIS
 
-[Example](https://raw.githubusercontent.com/UNM-GEOG-485-585/class-materials/master/sample-files/QGIS_OGC_demo.qgs)
+[Example](https://github.com/karlbenedict/GEOG485-585/blob/master/sample-files/QGIS_OGC_demo.qgs)
 
 
 
@@ -134,7 +137,7 @@ Based upon the results of a GetCapabilities request against a remote service. Ge
 
 This model applies to ArcGIS just as it did for Quantum GIS - the base URL is provided to the various ArcGIS components that support the addition of OGC services to the client interface.
 
-[ArcGIS OGC Support Documentation](http://resources.arcgis.com/en/help/main/10.2/index.html#/About_using_OGC_service_layers/00sp0000000n000000/)
+[ArcGIS OGC Support Documentation](http://desktop.arcgis.com/en/arcmap/10.4/map/web-maps-and-services/about-using-ogc-service-layers.htm)
 
 
 ### ArcGIS WMS and WCS Configuration ###  {.module04b01a}
@@ -150,13 +153,13 @@ The addition of OGC WMS and WCS layers to ArcMap is through the same process of
 
 ### ArcGIS WMS and WCS Configuration Resources ###  {.module04b01a}
 
-* Adding WMS Services to ArcMap 10.2
+* Adding WMS Services to ArcMap 10.4
 
-[ESRI Documentation](http://resources.arcgis.com/en/help/main/10.2/index.html#/Adding_WMS_services/00sp0000000s000000/)
+[ESRI Documentation](http://desktop.arcgis.com/en/arcmap/10.4/map/web-maps-and-services/adding-wms-services.htm)
 
-* Adding WCS Services to ArcMap 10.2
+* Adding WCS Services to ArcMap 10.4
 
-[ESRI Documentation](http://resources.arcgis.com/en/help/main/10.2/index.html#/Adding_a_WCS_service_to_ArcMap/00sp0000000z000000/)
+[ESRI Documentation](http://desktop.arcgis.com/en/arcmap/10.4/map/web-maps-and-services/adding-a-wcs-service-to-arcmap.htm)
 
 
 ### ArcGIS WFS Configuration ###  {.module04b01a}
@@ -169,13 +172,13 @@ The addition of OGC WMS and WCS layers to ArcMap is through the same process of
 
 ### ArcGIS WFS Configuration Resources ###  {.module04b01a}
 
-* Steps for connecting to an OGC WFS from within ArcCatalog 10.2
+* Steps for connecting to an OGC WFS from within ArcCatalog 10.4
 
-[ESRI Documentation](http://resources.arcgis.com/en/help/main/10.2/index.html#//00370000000p000000)
+[ESRI Documentation](http://desktop.arcgis.com/en/arcmap/10.4/extensions/production-mapping/adding-a-wfs-connection.htm)
 
-* Steps for adding a WFS service to ArcMap 10.2
+* Steps for adding a WFS service to ArcMap 10.4
 
-[ESRI Documentation](http://resources.arcgis.com/en/help/main/10.2/index.html#/Adding_a_WFS_service_to_ArcMap/00sp0000001m000000/)
+[ESRI Documentation](http://desktop.arcgis.com/en/arcmap/10.4/map/web-maps-and-services/adding-a-wfs-service-to-arcmap.htm)
 
 
 

@@ -41,21 +41,19 @@
 </ul>
 <h1 id="week12-prep">Class Prep</h1>
 <ul>
-<li>Quantum GIS <a href="http://docs.qgis.org/2.8/en/docs/user_manual/">documentation</a>, especially
+<li>Quantum GIS <a href="http://docs.qgis.org/2.14/en/docs/user_manual/">documentation</a>, especially
 <ul>
-<li><a href="http://docs.qgis.org/2.8/en/docs/user_manual/working_with_ogc/index.html">Working with OGC Data</a></li>
+<li><a href="http://docs.qgis.org/2.14/en/docs/user_manual/working_with_ogc/index.html">Working with OGC Data</a></li>
 </ul></li>
 <li>ArcGIS <a href=""></a>, especially
 <ul>
-<li><a href="http://desktop.arcgis.com/en/arcmap/10.3/map/web-maps-and-services/about-using-ogc-service-layers.htm">About using OGC service layers</a></li>
-<li><a href="http://desktop.arcgis.com/en/arcmap/10.3/manage-data/using-arccatalog/connecting-to-gis-servers.htm">Connecting to GIS servers</a></li>
-<li><a href="http://desktop.arcgis.com/en/arcmap/10.3/map/web-maps-and-services/adding-wms-services.htm">Adding WMS services</a></li>
-<li><a href="http://desktop.arcgis.com/en/arcmap/10.3/map/web-maps-and-services/adding-a-wcs-service-to-arcmap.htm">Adding a WCS service to ArcMap</a></li>
-<li><a href="http://desktop.arcgis.com/en/arcmap/10.3/map/web-maps-and-services/adding-a-wfs-service-to-arcmap.htm">Adding a WFS service to ArcMap</a></li>
+<li><a href="http://desktop.arcgis.com/en/arcmap/10.4/map/web-maps-and-services/about-using-ogc-service-layers.htm">About using OGC service layers</a></li>
+<li><a href="http://desktop.arcgis.com/en/arcmap/10.4/map/working-with-arcmap/connecting-to-gis-servers.htm">Connecting to GIS servers</a></li>
+<li><a href="http://desktop.arcgis.com/en/arcmap/10.4/map/web-maps-and-services/adding-a-wfs-service-to-arcmap.htm">Adding a WFS service to ArcMap</a></li>
 </ul></li>
 </ul>
 <h1 id="week12-milestone">Weekly Milestone - WMS, WFS and WCS Access in Quantum GIS</h1>
-<p><em>While the focus of these instructions is on using QGIS to interact with remote OGC services you may use ArcGIS instead of QGIS if you prefer.</em></p>
+<p><em>While the focus of these instructions is on using QGIS to interact with remote OGC services you may use ArcGIS instead of QGIS if you prefer (and have access to a copy of ArcGIS that has the </em>interoperabilty extension* installed [for the WFS requests]).*</p>
 <p>Add three WMS layers to a new map project in QGIS, with at least one coming from each of the following collections of WMS services.</p>
 <p>Some things to keep an eye out for:</p>
 <ul>
@@ -64,9 +62,9 @@
 <li>You can double-check the base URL advertised for the service by reviewing the content of the <code>GetCapabilities</code> area of the <code>service</code> metadata provided as part of the <code>GetCapabilities</code> request. If you can't manually request and review the GetCapabilities XML file for the service, your desktop client may not be able to connect to and retrieve the file for its configuration.</li>
 </ul>
 <p><em>USGS's National Maps <em>Small-Scale Web Services</em> Page</em>: <a href="http://nationalmap.gov/small_scale/infodocs/webservices.html" class="uri">http://nationalmap.gov/small_scale/infodocs/webservices.html</a></p>
-<p><em>NASA Earth Observation System</em>: <a href="http://neowms.sci.gsfc.nasa.gov/wms/wms?service=WMS&amp;request=GetCapabilities" class="uri">http://neowms.sci.gsfc.nasa.gov/wms/wms?service=WMS&amp;request=GetCapabilities</a></p>
+<p><em>NASA Earth Observation System</em>: <a href="http://neowms.sci.gsfc.nasa.gov/wms/wms?version=1.3.0&amp;service=WMS&amp;request=GetCapabilities" class="uri">http://neowms.sci.gsfc.nasa.gov/wms/wms?version=1.3.0&amp;service=WMS&amp;request=GetCapabilities</a> [NOTE: the service was down for maintenance on Sunday night - if you run into problems accessing this service try the WMS services from RGIS - see below for connection information]</p>
 <p>In your write-up include the names of the layers you added, which service they came from, and screen shots (one for for each of the added layers) showing each of them in the QGIS client interface.</p>
-<p>Add three WFS layers to the same QGIS project, two based upon data available from the RGIS data browser (<a href="http://rgis.unm.edu/getdata/" class="uri">http://rgis.unm.edu/getdata/</a>), and one based on the GeoServer sample WFS service (<a href="http://demo.boundlessgeo.com/geoserver/wfs?service=wfs&amp;request=GetCapabilities" class="uri">http://demo.boundlessgeo.com/geoserver/wfs?service=wfs&amp;request=GetCapabilities</a>.   In RGIS you can see the available services for a specific data layer by</p>
+<p>Add three WFS layers to the same QGIS project, with at least two based upon data available from the RGIS data browser (<a href="http://rgis.unm.edu/getdata/" class="uri">http://rgis.unm.edu/getdata/</a>), and one based on the GeoServer sample WFS service (<a href="http://mapper.internetmapping.net:8081/geoserver/ows?service=wfs&amp;version=1.1.0&amp;request=GetCapabilities" class="uri">http://mapper.internetmapping.net:8081/geoserver/ows?service=wfs&amp;version=1.1.0&amp;request=GetCapabilities</a>.   In RGIS you can see the available services for a specific data layer by</p>
 <ol type="1">
 <li><p>Selecting the collection you want to view by selecting from the directory tree on the left side of the page;</p></li>
 <li><p>Identifying the data sets that have available OGC WMS and/or WFS services as indicated by the &quot;Services&quot; entry for each dataset, where the provided links are for the GetCapabilities requests for the provided services:</p></li>

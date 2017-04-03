@@ -5,7 +5,7 @@
   <meta name="generator" content="pandoc">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
   <meta name="author" content="Karl Benedict">
-  <title></title>
+  <title>Week 12 - Module 4b - Interoperability Standards - Desktop GIS Integration</title>
   <style type="text/css">code{white-space: pre;}</style>
   <link rel="stylesheet" href="page.css">
   <!--[if lt IE 9]>
@@ -13,13 +13,17 @@
   <![endif]-->
 </head>
 <body>
+<header>
+<h1 class="title">Week 12 - Module 4b - Interoperability Standards - Desktop GIS Integration</h1>
+<h2 class="author">Karl Benedict</h2>
+<h3 class="date">GEOG 485L/585L - Spring 2017</h3>
+</header>
 <!---------------------------------------------------------------------------->
 <!-- Week 12 ----------------------------------------------------------------->
 <!-- Lecture 04 b 01 a ------------------------------------------------------->
 <!-- Interoperability Standards----------------------------------------------->
 <!-- Desktop GIS Integration-------------------------------------------------->
 <!---------------------------------------------------------------------------->
-<h1 id="module-4b---interoperability-standards---desktop-gis-integration" class="module04b01a">Module 4b - Interoperability Standards - Desktop GIS Integration</h1>
 <h3 id="overview" class="module04b01a">Overview</h3>
 <ul>
 <li>Common Model for Client Configuration for Connections to Remote OGC Services</li>
@@ -61,7 +65,7 @@
 <li>Modify settings for layer(s)</li>
 <li>Add layer(s)</li>
 </ol>
-<p><a href="http://docs.qgis.org/2.8/en/docs/user_manual/working_with_ogc/index.html">QGIS OGC Documentation</a></p>
+<p><a href="http://docs.qgis.org/2.14/en/docs/user_manual/working_with_ogc/index.html">QGIS OGC Documentation</a></p>
 <h3 id="qgis---adding-services-and-layers---start" class="module04b01a twoUp">QGIS - Adding Services and Layers - start</h3>
 <figure>
 <img src="images/QGIS-AddLayer-OGC.png" alt="OGC Options in the Add Layer menu options" /><figcaption>OGC Options in the <em>Add Layer</em> menu options</figcaption>
@@ -98,7 +102,7 @@
 </figure>
 <h3 id="qgis-demonstration-with-wms-wfs-and-wcs-services" class="module04b01a">QGIS Demonstration with WMS, WFS and WCS Services</h3>
 <p>WMS, WFS and WCS in QGIS</p>
-<p><a href="https://raw.githubusercontent.com/UNM-GEOG-485-585/class-materials/master/sample-files/QGIS_OGC_demo.qgs">Example</a></p>
+<p><a href="https://github.com/karlbenedict/GEOG485-585/blob/master/sample-files/QGIS_OGC_demo.qgs">Example</a></p>
 <h3 id="arcgis" class="module04b01a">ArcGIS</h3>
 <p>Based upon the results of a GetCapabilities request against a remote service. GetCapabilities request information provided as either:</p>
 <ul>
@@ -106,7 +110,7 @@
 <li>A complete GetCapabilities request against the service</li>
 </ul>
 <p>This model applies to ArcGIS just as it did for Quantum GIS - the base URL is provided to the various ArcGIS components that support the addition of OGC services to the client interface.</p>
-<p><a href="http://resources.arcgis.com/en/help/main/10.2/index.html#/About_using_OGC_service_layers/00sp0000000n000000/">ArcGIS OGC Support Documentation</a></p>
+<p><a href="http://desktop.arcgis.com/en/arcmap/10.4/map/web-maps-and-services/about-using-ogc-service-layers.htm">ArcGIS OGC Support Documentation</a></p>
 <h3 id="arcgis-wms-and-wcs-configuration" class="module04b01a">ArcGIS WMS and WCS Configuration</h3>
 <p>The addition of OGC WMS and WCS layers to ArcMap is through the same process of</p>
 <ul>
@@ -121,13 +125,13 @@
 </ul>
 <h3 id="arcgis-wms-and-wcs-configuration-resources" class="module04b01a">ArcGIS WMS and WCS Configuration Resources</h3>
 <ul>
-<li>Adding WMS Services to ArcMap 10.2</li>
+<li>Adding WMS Services to ArcMap 10.4</li>
 </ul>
-<p><a href="http://resources.arcgis.com/en/help/main/10.2/index.html#/Adding_WMS_services/00sp0000000s000000/">ESRI Documentation</a></p>
+<p><a href="http://desktop.arcgis.com/en/arcmap/10.4/map/web-maps-and-services/adding-wms-services.htm">ESRI Documentation</a></p>
 <ul>
-<li>Adding WCS Services to ArcMap 10.2</li>
+<li>Adding WCS Services to ArcMap 10.4</li>
 </ul>
-<p><a href="http://resources.arcgis.com/en/help/main/10.2/index.html#/Adding_a_WCS_service_to_ArcMap/00sp0000000z000000/">ESRI Documentation</a></p>
+<p><a href="http://desktop.arcgis.com/en/arcmap/10.4/map/web-maps-and-services/adding-a-wcs-service-to-arcmap.htm">ESRI Documentation</a></p>
 <h3 id="arcgis-wfs-configuration" class="module04b01a">ArcGIS WFS Configuration</h3>
 <ul>
 <li>WFS support in ArcGIS 10.0 and beyond requires that the &quot;Data Interoperability Extension&quot; be installed (though it doesn’t have to be enabled)</li>
@@ -137,13 +141,13 @@
 </ul>
 <h3 id="arcgis-wfs-configuration-resources" class="module04b01a">ArcGIS WFS Configuration Resources</h3>
 <ul>
-<li>Steps for connecting to an OGC WFS from within ArcCatalog 10.2</li>
+<li>Steps for connecting to an OGC WFS from within ArcCatalog 10.4</li>
 </ul>
-<p><a href="http://resources.arcgis.com/en/help/main/10.2/index.html#//00370000000p000000">ESRI Documentation</a></p>
+<p><a href="http://desktop.arcgis.com/en/arcmap/10.4/extensions/production-mapping/adding-a-wfs-connection.htm">ESRI Documentation</a></p>
 <ul>
-<li>Steps for adding a WFS service to ArcMap 10.2</li>
+<li>Steps for adding a WFS service to ArcMap 10.4</li>
 </ul>
-<p><a href="http://resources.arcgis.com/en/help/main/10.2/index.html#/Adding_a_WFS_service_to_ArcMap/00sp0000001m000000/">ESRI Documentation</a></p>
+<p><a href="http://desktop.arcgis.com/en/arcmap/10.4/map/web-maps-and-services/adding-a-wfs-service-to-arcmap.htm">ESRI Documentation</a></p>
 <h3 id="conclusions" class="module04b01a">Conclusions</h3>
 <ul>
 <li>A GetCapabilities request is the key for configuring most OGC client applications to access remote services</li>
