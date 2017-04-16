@@ -1,0 +1,2031 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Karl Benedict">
+  <title>Week 4 - Module 2a - Web-based Mapping Clients. Google Maps API (pt. 2)</title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+  </style>
+  <link rel="stylesheet" href="slides.css">
+  <link rel="stylesheet" href="slide_specific.css">
+</head>
+<body>
+<section class="title">
+  <h1 class="title">Week 4 - Module 2a - Web-based Mapping Clients. Google Maps API (pt. 2)</h1>
+  <footer>
+    <span class="author">Karl Benedict</span> · <span class="date">GEOG 485L/585L - Spring 2017</span>
+  </footer>
+</section>
+<section class="slide level3">
+
+<!---------------------------------------------------------------------------->
+<!-- Week 04 ----------------------------------------------------------------->
+<!-- Lecture 02 a 02 b ------------------------------------------------------->
+<!-- Web-based Mapping Clients------------------------------------------------>
+<!-- Google Maps API---------------------------------------------------------->
+<!---------------------------------------------------------------------------->
+</section>
+<section id="overview" class="slide level3 module02a02b">
+<h1>Overview</h1>
+<ul>
+<li>Additional Google Maps API Capabilities to be Aware of
+<ul>
+<li>Styling of the base maps with custom preferences</li>
+<li>Fusion Tables</li>
+</ul></li>
+<li>Bringing it all together in a &quot;real&quot; web page</li>
+</ul>
+</section>
+<section id="getting-started-with-styled-maps---video" class="slide level3">
+<h1><em>Getting Started with Styled Maps</em> - Video</h1>
+<p><a href="https://developers.google.com/maps/documentation/javascript/styling">Styled Maps Documentation</a> | <a href="https://mapstyle.withgoogle.com">Create Map Style wizard</a></p>
+</section>
+<section id="map-example-simple---styled" class="slide level3">
+<h1>Map Example: Simple - Styled</h1>
+<div class="codeTable">
+<p>gmap_styled.html</p>
+<div class="sourceCode"><table class="sourceCode html numberLines"><tr class="sourceCode"><td class="lineNumbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+</pre></td><td class="sourceCode"><pre><code class="sourceCode html"><span class="dt">&lt;!DOCTYPE </span>html<span class="dt">&gt;</span>
+<span class="kw">&lt;html&gt;</span>
+    <span class="kw">&lt;head&gt;</span>
+        <span class="kw">&lt;link</span><span class="ot"> rel=</span><span class="st">&quot;stylesheet&quot;</span><span class="ot"> type=</span><span class="st">&quot;text/css&quot;</span><span class="ot"> href=</span><span class="st">&quot;css/mapPage.css&quot;</span><span class="kw">&gt;</span>
+    <span class="kw">&lt;/head&gt;</span>
+
+    <span class="kw">&lt;body&gt;</span>
+        <span class="kw">&lt;h1&gt;</span>Sample Map - Styled (POIs Highlighted)<span class="kw">&lt;/h1&gt;</span>
+        <span class="kw">&lt;div</span><span class="ot"> id=</span><span class="st">&quot;map_canvas&quot;</span><span class="kw">&gt;&lt;/div&gt;</span>
+
+    <span class="co">&lt;!-- Let&#39;s put our JavaScript down here </span><span class="er">-------------------------------------------</span><span class="co">--&gt;</span>
+        <span class="co">&lt;!-- Load the external JavaScript file with the map definition code --&gt;</span>
+        <span class="kw">&lt;script</span><span class="ot"> src=</span><span class="st">&quot;js/mapPage_styled.js&quot;</span><span class="kw">&gt;&lt;/script&gt;</span>
+        
+        <span class="co">&lt;!-- Load the API in asynchronous mode and execute the initialize function when done --&gt;</span>
+        
+        <span class="kw">&lt;script</span><span class="ot"> async defer</span> 
+<span class="ot">            src=</span><span class="st">&quot;https://maps.googleapis.com/maps/api/js?callback=initialize</span><span class="er">&amp;</span><span class="st">key=</span><span class="er">&lt;</span><span class="st">YourKey&gt;&quot;</span><span class="kw">&gt;</span>
+        <span class="kw">&lt;/script&gt;</span>
+    <span class="kw">&lt;/body&gt;</span>
+<span class="kw">&lt;/html&gt;</span></code></pre></td></tr></table></div>
+<p>mapPage_styled.js</p>
+<div class="sourceCode"><table class="sourceCode html numberLines"><tr class="sourceCode"><td class="lineNumbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+</pre></td><td class="sourceCode"><pre><code class="sourceCode html">function initialize() {
+    var classroom = new google.maps.LatLng(35.084280,-106.624073)
+    var myOptions = {
+        zoom: 8,
+        center: classroom,
+        mapTypeId: google.maps.MapTypeId.ROADMAP,
+        styles: [
+          {
+            featureType: &quot;water&quot;,
+            stylers: [
+              { visibility: &quot;on&quot; },
+              { hue: &quot;#0008ff&quot; }
+            ]
+          },{
+            featureType: &quot;road.highway&quot;,
+            stylers: [
+              { hue: &quot;#ff1a00&quot; }
+            ]
+          },{
+            featureType: &quot;road.arterial&quot;,
+            stylers: [
+              { hue: &quot;#ffa200&quot; },
+              { visibility: &quot;simplified&quot; }
+            ]
+          },{
+            featureType: &quot;road.local&quot;,
+            stylers: [
+              { visibility: &quot;off&quot; }
+            ]
+          },{
+            featureType: &quot;administrative&quot;,
+            stylers: [
+              { visibility: &quot;simplified&quot; }
+            ]
+          },{
+            featureType: &quot;poi&quot;,
+            stylers: [
+              { visibility: &quot;on&quot; },
+              { hue: &quot;#00ffff&quot; }
+            ]
+          },{
+            featureType: &quot;poi&quot;,
+            stylers: [
+              { visibility: &quot;on&quot; }
+            ]
+          }
+        ]
+
+        };
+    var map = new google.maps.Map(
+        document.getElementById(&quot;map_canvas&quot;), 
+        myOptions);
+}</code></pre></td></tr></table></div>
+</div>
+</section>
+<section id="google-fusion-tables" class="slide level3">
+<h1>Google Fusion Tables</h1>
+<p><a href="https://support.google.com/fusiontables/answer/2571232?hl=en&amp;ref_topic=1652595">Fusion Tables Introduction</a></p>
+<p>Sample Fusion Table from the previous NAWRS Mapper example: <a href="https://www.google.com/fusiontables/DataSource?docid=1v2IlIFJqat2tTSBA8e4guqlzMGRe8iW4yXP25Kg" class="uri">https://www.google.com/fusiontables/DataSource?docid=1v2IlIFJqat2tTSBA8e4guqlzMGRe8iW4yXP25Kg</a></p>
+<p>NAWRS Mapper Javascript File: <a href="https://github.com/nawrs/nawrs-web/blob/master/js/core.js" class="uri">https://github.com/nawrs/nawrs-web/blob/master/js/core.js</a></p>
+</section>
+<section id="bringing-it-all-together---link" class="slide level3">
+<h1>Bringing It All Together - <a href="http://karlbenedict.com/GEOG485-585/sample-files/GoogleMaps/gmaps_events.html">link</a></h1>
+<p>###</p>
+<div class="codeTable">
+<p>gmaps_events.html</p>
+<div class="sourceCode"><table class="sourceCode html numberLines"><tr class="sourceCode"><td class="lineNumbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+</pre></td><td class="sourceCode"><pre><code class="sourceCode html"><span class="dt">&lt;!DOCTYPE </span>html<span class="dt">&gt;</span>
+<span class="kw">&lt;html&gt;</span>
+    <span class="kw">&lt;head&gt;</span>
+        <span class="kw">&lt;link</span><span class="ot"> rel=</span><span class="st">&quot;stylesheet&quot;</span><span class="ot"> type=</span><span class="st">&quot;text/css&quot;</span><span class="ot"> href=</span><span class="st">&quot;css/event_mapPage.css&quot;</span><span class="kw">&gt;</span>
+        <span class="kw">&lt;title&gt;</span>Karl&#39;s Event Diary<span class="kw">&lt;/title&gt;</span>
+    <span class="kw">&lt;/head&gt;</span>
+
+    <span class="kw">&lt;body&gt;</span>
+        <span class="kw">&lt;h1&gt;</span>My diary of endurance events that I&#39;ve participated in since joining 
+        Team in Training
+        <span class="kw">&lt;/h1&gt;</span>
+        
+        <span class="kw">&lt;p&gt;</span>In 2008 Cynthia and I joined the Leukemia and Lymphoma Society&#39;s 
+        (<span class="kw">&lt;a</span><span class="ot"> href=</span><span class="st">&quot;http://www.lls.org/&quot;</span><span class="kw">&gt;</span>LLS<span class="kw">&lt;/a&gt;</span>) Team in Training 
+        (<span class="kw">&lt;a</span><span class="ot"> href=</span><span class="st">&quot;http://www.teamintraining.org/&quot;</span><span class="kw">&gt;</span>TNT<span class="kw">&lt;/a&gt;</span>, 
+        <span class="kw">&lt;a</span><span class="ot"> href=</span><span class="st">&quot;http://youtu.be/GMSKG8L6K78&quot;</span><span class="kw">&gt;</span>info video<span class="kw">&lt;/a&gt;</span>) program as 
+        participants to train for the Animas Valley/Steamworks Half Marathon and
+         raise money for blood cancer research and patient services. In spite of
+          our not having any direct connection to blood cancer (at that time),  
+          we found the goals of LLS admirable, the combined training and 
+          fund-raising program of TNT a great idea, and made many new friends 
+          over the many seasons that we have been involved with TNT.<span class="kw">&lt;/p&gt;</span>
+        
+        <span class="kw">&lt;p&gt;</span>From 2008 through early 2015 we  continued to volunteer with TNT, as 
+        participants, mentors, and since 2010 I was a coach  (check out my 
+        <span class="kw">&lt;a</span><span class="ot"> href=</span><span class="st">&quot;http://youtu.be/GMSKG8L6K78&quot;</span><span class="kw">&gt;</span>half-second<span class="kw">&lt;/a&gt;</span> of fame in the 
+        info video at 2:13) for TNT with an emphasis on training walkers for 
+        full- or half-marathons. This page provides a summary of the events that
+         I&#39;ve participated in in some capacity since 2008. <span class="kw">&lt;/p&gt;</span>
+        
+        <span class="co">&lt;!-- based on the example provided by Google - </span>
+<span class="co">        https://developers.google.com/maps/documentation/javascript/examples/</span>
+<span class="co">        style-selector --&gt;</span>
+        <span class="kw">&lt;div</span><span class="ot"> id=</span><span class="st">&quot;style-selector-control&quot;</span><span class="ot">  class=</span><span class="st">&quot;map-control&quot;</span><span class="kw">&gt;</span>
+          <span class="kw">&lt;select</span><span class="ot"> id=</span><span class="st">&quot;style-selector&quot;</span><span class="ot"> class=</span><span class="st">&quot;selector-control&quot;</span><span class="kw">&gt;</span>
+            <span class="kw">&lt;option</span><span class="ot"> value=</span><span class="st">&quot;default&quot;</span><span class="kw">&gt;</span>Default<span class="kw">&lt;/option&gt;</span>
+            <span class="kw">&lt;option</span><span class="ot"> value=</span><span class="st">&quot;silver&quot;</span><span class="kw">&gt;</span>Silver<span class="kw">&lt;/option&gt;</span>
+            <span class="kw">&lt;option</span><span class="ot"> value=</span><span class="st">&quot;night&quot;</span><span class="kw">&gt;</span>Night mode<span class="kw">&lt;/option&gt;</span>
+            <span class="kw">&lt;option</span><span class="ot"> value=</span><span class="st">&quot;retro&quot;</span><span class="ot"> selected=</span><span class="st">&quot;selected&quot;</span><span class="kw">&gt;</span>Retro<span class="kw">&lt;/option&gt;</span>
+            <span class="kw">&lt;option</span><span class="ot"> value=</span><span class="st">&quot;hiding&quot;</span><span class="kw">&gt;</span>Hide features<span class="kw">&lt;/option&gt;</span>
+          <span class="kw">&lt;/select&gt;</span>
+        <span class="kw">&lt;/div&gt;</span>
+        
+        <span class="kw">&lt;div</span><span class="ot"> id=</span><span class="st">&quot;event-map&quot;</span><span class="ot"> name=</span><span class="st">&quot;event-map&quot;</span><span class="kw">&gt;&lt;/div&gt;</span>
+
+        <span class="kw">&lt;table&gt;</span>
+        
+        <span class="kw">&lt;thead&gt;</span>
+        <span class="kw">&lt;th&gt;</span>Date<span class="kw">&lt;/th&gt;</span>
+        <span class="kw">&lt;th&gt;</span>Event Name<span class="kw">&lt;/th&gt;</span>
+        <span class="kw">&lt;th&gt;</span>Event Time<span class="kw">&lt;/th&gt;</span>
+        <span class="kw">&lt;th&gt;</span>Location on Map<span class="kw">&lt;/th&gt;</span>    
+        <span class="kw">&lt;/thead&gt;</span>
+        
+        <span class="kw">&lt;tbody&gt;</span>
+        <span class="kw">&lt;tr&gt;</span>
+            <span class="kw">&lt;td&gt;</span>1/8/2017<span class="kw">&lt;/td&gt;</span> 
+            <span class="kw">&lt;td&gt;</span>Disney World  Marathon<span class="kw">&lt;/td&gt;</span>
+            <span class="kw">&lt;td&gt;</span>7:14<span class="kw">&lt;/td&gt;</span> 
+            <span class="kw">&lt;td&gt;&lt;a</span><span class="ot"> href=</span><span class="st">&quot;#event-map&quot;</span><span class="ot"> onclick=</span><span class="st">&quot;recenter(map, eventPlaces[4].point, </span>
+<span class="st">            10)&quot;</span><span class="kw">&gt;</span>approx. map<span class="kw">&lt;/a&gt;&lt;/td&gt;</span>
+        <span class="kw">&lt;/tr&gt;</span>
+        
+        <span class="kw">&lt;tr&gt;</span>
+            <span class="kw">&lt;td&gt;</span>10/16/2016<span class="kw">&lt;/td&gt;</span> 
+            <span class="kw">&lt;td&gt;</span>Duke City Half Marathon <span class="kw">&lt;/td&gt;</span>
+            <span class="kw">&lt;td&gt;</span>~2:55<span class="kw">&lt;/td&gt;</span> 
+            <span class="kw">&lt;td&gt;&lt;a</span><span class="ot"> href=</span><span class="st">&quot;#event-map&quot;</span><span class="ot"> onclick=</span><span class="st">&quot;recenter(map, eventPlaces[0].point,</span>
+<span class="st">             11)&quot;</span><span class="kw">&gt;</span>map<span class="kw">&lt;/a&gt;&lt;/td&gt;</span>
+        <span class="kw">&lt;/tr&gt;</span>
+        
+        <span class="kw">&lt;tr&gt;</span>
+            <span class="kw">&lt;td&gt;</span>11/13/2015<span class="kw">&lt;/td&gt;</span> 
+            <span class="kw">&lt;td&gt;</span>Avengers Half Marathon <span class="kw">&lt;/td&gt;</span>
+            <span class="kw">&lt;td&gt;</span>3:17:55<span class="kw">&lt;/td&gt;</span> 
+            <span class="kw">&lt;td&gt;&lt;a</span><span class="ot"> href=</span><span class="st">&quot;#event-map&quot;</span><span class="ot"> onclick=</span><span class="st">&quot;recenter(map, eventPlaces[5].point,</span>
+<span class="st">             12)&quot;</span><span class="kw">&gt;</span>approx. map<span class="kw">&lt;/a&gt;&lt;/td&gt;</span>
+        <span class="kw">&lt;/tr&gt;</span>
+
+        <span class="kw">&lt;tr&gt;</span>
+            <span class="kw">&lt;td&gt;</span>1/11/2015<span class="kw">&lt;/td&gt;</span> 
+            <span class="kw">&lt;td&gt;</span>Disney World  Marathon (Goofy - Day 2)<span class="kw">&lt;/td&gt;</span>
+            <span class="kw">&lt;td&gt;</span>6:21:01<span class="kw">&lt;/td&gt;</span> 
+            <span class="kw">&lt;td&gt;&lt;a</span><span class="ot"> href=</span><span class="st">&quot;#event-map&quot;</span><span class="ot"> onclick=</span><span class="st">&quot;recenter(map, eventPlaces[4].point,</span>
+<span class="st">             10)&quot;</span><span class="kw">&gt;</span>approx. map<span class="kw">&lt;/a&gt;&lt;/td&gt;</span>
+        <span class="kw">&lt;/tr&gt;</span>
+        
+
+        <span class="kw">&lt;tr&gt;</span>
+            <span class="kw">&lt;td&gt;</span>1/10/2015<span class="kw">&lt;/td&gt;</span> 
+            <span class="kw">&lt;td&gt;</span>Disney World Half Marathon (Goofy - Day 1)<span class="kw">&lt;/td&gt;</span>
+            <span class="kw">&lt;td&gt;</span>2:45:55<span class="kw">&lt;/td&gt;</span> 
+            <span class="kw">&lt;td&gt;&lt;a</span><span class="ot"> href=</span><span class="st">&quot;#event-map&quot;</span><span class="ot"> onclick=</span><span class="st">&quot;recenter(map, eventPlaces[4].point,</span>
+<span class="st">             10)&quot;</span><span class="kw">&gt;</span>approx. map<span class="kw">&lt;/a&gt;&lt;/td&gt;</span>
+        <span class="kw">&lt;/tr&gt;</span>
+        
+        <span class="kw">&lt;tr&gt;</span>
+            <span class="kw">&lt;td&gt;</span>10/19/2014<span class="kw">&lt;/td&gt;</span> 
+            <span class="kw">&lt;td&gt;</span>Duke City Half Marathon<span class="kw">&lt;/td&gt;</span> 
+            <span class="kw">&lt;td&gt;</span>2:45:17<span class="kw">&lt;/td&gt;</span> 
+            <span class="kw">&lt;td&gt;&lt;a</span><span class="ot"> href=</span><span class="st">&quot;#event-map&quot;</span><span class="ot"> onclick=</span><span class="st">&quot;recenter(map, eventPlaces[0].point,</span>
+<span class="st">             11)&quot;</span><span class="kw">&gt;</span>map<span class="kw">&lt;/a&gt;&lt;/td&gt;</span>
+        <span class="kw">&lt;/tr&gt;</span>
+        
+        <span class="kw">&lt;tr&gt;</span>
+            <span class="kw">&lt;td&gt;</span>2/23/2014<span class="kw">&lt;/td&gt;</span> 
+            <span class="kw">&lt;td&gt;</span>Princess Half Marathon<span class="kw">&lt;/td&gt;</span>
+            <span class="kw">&lt;td&gt;</span>3:07:11<span class="kw">&lt;/td&gt;</span> 
+            <span class="kw">&lt;td&gt;&lt;a</span><span class="ot"> href=</span><span class="st">&quot;#event-map&quot;</span><span class="ot"> onclick=</span><span class="st">&quot;recenter(map, eventPlaces[4].point,</span>
+<span class="st">             10)&quot;</span><span class="kw">&gt;</span>approx. map<span class="kw">&lt;/a&gt;&lt;/td&gt;</span>
+        <span class="kw">&lt;/tr&gt;</span>
+        
+        <span class="kw">&lt;tr&gt;</span>
+            <span class="kw">&lt;td&gt;</span>2/22/2014<span class="kw">&lt;/td&gt;</span> 
+            <span class="kw">&lt;td&gt;</span>Princess Enchanted 10k<span class="kw">&lt;/td&gt;</span>
+            <span class="kw">&lt;td&gt;</span>1:42:43<span class="kw">&lt;/td&gt;</span> 
+            <span class="kw">&lt;td&gt;&lt;a</span><span class="ot"> href=</span><span class="st">&quot;#event-map&quot;</span><span class="ot"> onclick=</span><span class="st">&quot;recenter(map, eventPlaces[4].point,</span>
+<span class="st">             10)&quot;</span><span class="kw">&gt;</span>approx. map<span class="kw">&lt;/a&gt;&lt;/td&gt;</span>
+        <span class="kw">&lt;/tr&gt;</span>
+        
+        <span class="kw">&lt;tr&gt;</span>
+            <span class="kw">&lt;td&gt;</span>9/1/2013<span class="kw">&lt;/td&gt;</span> 
+            <span class="kw">&lt;td&gt;</span>Disneyland Half Marathon<span class="kw">&lt;/td&gt;</span> 
+            <span class="kw">&lt;td&gt;</span>2:56:57<span class="kw">&lt;/td&gt;</span> 
+            <span class="kw">&lt;td&gt;&lt;a</span><span class="ot"> href=</span><span class="st">&quot;#event-map&quot;</span><span class="ot"> onclick=</span><span class="st">&quot;recenter(map, eventPlaces[5].point,</span>
+<span class="st">             12)&quot;</span><span class="kw">&gt;</span>approx. map<span class="kw">&lt;/a&gt;&lt;/td&gt;</span>
+        <span class="kw">&lt;/tr&gt;</span>
+        
+
+        <span class="kw">&lt;tr&gt;</span>
+            <span class="kw">&lt;td&gt;</span>1/13/2013<span class="kw">&lt;/td&gt;</span> 
+            <span class="kw">&lt;td&gt;</span>Disney World  Marathon (Goofy - Day 2)<span class="kw">&lt;/td&gt;</span>
+            <span class="kw">&lt;td&gt;</span>6:46:57<span class="kw">&lt;/td&gt;</span> 
+            <span class="kw">&lt;td&gt;&lt;a</span><span class="ot"> href=</span><span class="st">&quot;#event-map&quot;</span><span class="ot"> onclick=</span><span class="st">&quot;recenter(map, eventPlaces[4].point,</span>
+<span class="st">             10)&quot;</span><span class="kw">&gt;</span>approx. map<span class="kw">&lt;/a&gt;&lt;/td&gt;</span>
+        <span class="kw">&lt;/tr&gt;</span>
+        
+
+        <span class="kw">&lt;tr&gt;</span>
+            <span class="kw">&lt;td&gt;</span>1/12/2013<span class="kw">&lt;/td&gt;</span> 
+            <span class="kw">&lt;td&gt;</span>Disney World Half Marathon (Goofy - Day 1)<span class="kw">&lt;/td&gt;</span>
+            <span class="kw">&lt;td&gt;</span>3:22:48<span class="kw">&lt;/td&gt;</span> 
+            <span class="kw">&lt;td&gt;&lt;a</span><span class="ot"> href=</span><span class="st">&quot;#event-map&quot;</span><span class="ot"> onclick=</span><span class="st">&quot;recenter(map, eventPlaces[4].point,</span>
+<span class="st">             10)&quot;</span><span class="kw">&gt;</span>approx. map<span class="kw">&lt;/a&gt;&lt;/td&gt;</span>
+        <span class="kw">&lt;/tr&gt;</span>
+        
+    
+        <span class="kw">&lt;tr&gt;</span>
+            <span class="kw">&lt;td&gt;</span>9/29/2012<span class="kw">&lt;/td&gt;</span> 
+            <span class="kw">&lt;td&gt;</span>Hot Chocolate 15k <span class="kw">&lt;/td&gt;</span>
+            <span class="kw">&lt;td&gt;</span>1:56:46<span class="kw">&lt;/td&gt;</span> 
+            <span class="kw">&lt;td&gt;&lt;a</span><span class="ot"> href=</span><span class="st">&quot;#event-map&quot;</span><span class="ot"> onclick=</span><span class="st">&quot;recenter(map, eventPlaces[6].point,</span>
+<span class="st">             10)&quot;</span><span class="kw">&gt;</span>map<span class="kw">&lt;/a&gt;&lt;/td&gt;</span>
+        <span class="kw">&lt;/tr&gt;</span>
+        
+
+        <span class="kw">&lt;tr&gt;</span>
+            <span class="kw">&lt;td&gt;</span>6/9/2012<span class="kw">&lt;/td&gt;</span> 
+            <span class="kw">&lt;td&gt;</span>Animas Valley/Steamworks Half Marathon<span class="kw">&lt;/td&gt;</span> 
+            <span class="kw">&lt;td&gt;</span>no time: coached<span class="kw">&lt;/td&gt;</span> 
+            <span class="kw">&lt;td&gt;&lt;a</span><span class="ot"> href=</span><span class="st">&quot;#event-map&quot;</span><span class="ot"> onclick=</span><span class="st">&quot;recenter(map, eventPlaces[1].point,</span>
+<span class="st">             10)&quot;</span><span class="kw">&gt;</span>map<span class="kw">&lt;/a&gt;&lt;/td&gt;</span>
+        <span class="kw">&lt;/tr&gt;</span>
+        
+
+        <span class="kw">&lt;tr&gt;</span>
+            <span class="kw">&lt;td&gt;</span>1/9/2012<span class="kw">&lt;/td&gt;</span> 
+            <span class="kw">&lt;td&gt;</span>Disney World  Marathon (Goofy - Day 2)<span class="kw">&lt;/td&gt;</span>
+            <span class="kw">&lt;td&gt;</span>6:56:28<span class="kw">&lt;/td&gt;</span> 
+            <span class="kw">&lt;td&gt;&lt;a</span><span class="ot"> href=</span><span class="st">&quot;#event-map&quot;</span><span class="ot"> onclick=</span><span class="st">&quot;recenter(map, eventPlaces[4].point,</span>
+<span class="st">             10)&quot;</span><span class="kw">&gt;</span>map<span class="kw">&lt;/a&gt;&lt;/td&gt;</span>
+        <span class="kw">&lt;/tr&gt;</span>
+        
+
+        <span class="kw">&lt;tr&gt;</span>
+            <span class="kw">&lt;td&gt;</span>1/8/2011<span class="kw">&lt;/td&gt;</span> 
+            <span class="kw">&lt;td&gt;</span>Disney World Half Marathon (Goofy - Day 1)<span class="kw">&lt;/td&gt;</span>
+            <span class="kw">&lt;td&gt;</span>3:29:00<span class="kw">&lt;/td&gt;</span> 
+            <span class="kw">&lt;td&gt;&lt;a</span><span class="ot"> href=</span><span class="st">&quot;#event-map&quot;</span><span class="ot"> onclick=</span><span class="st">&quot;recenter(map, eventPlaces[4].point,</span>
+<span class="st">             10)&quot;</span><span class="kw">&gt;</span>map<span class="kw">&lt;/a&gt;&lt;/td&gt;</span>
+        <span class="kw">&lt;/tr&gt;</span>
+        
+
+        <span class="kw">&lt;tr&gt;</span>
+            <span class="kw">&lt;td&gt;</span>6/19/2010<span class="kw">&lt;/td&gt;</span> 
+            <span class="kw">&lt;td&gt;</span>Animas Valley/Steamworks Half Marathon<span class="kw">&lt;/td&gt;</span> 
+            <span class="kw">&lt;td&gt;</span>no time: coached<span class="kw">&lt;/td&gt;</span> 
+            <span class="kw">&lt;td&gt;&lt;a</span><span class="ot"> href=</span><span class="st">&quot;#event-map&quot;</span><span class="ot"> onclick=</span><span class="st">&quot;recenter(map, eventPlaces[1].point,</span>
+<span class="st">             10)&quot;</span><span class="kw">&gt;</span>map<span class="kw">&lt;/a&gt;&lt;/td&gt;</span>
+        <span class="kw">&lt;/tr&gt;</span>
+        
+
+        <span class="kw">&lt;tr&gt;</span>
+            <span class="kw">&lt;td&gt;</span>6/6/2010<span class="kw">&lt;/td&gt;</span> 
+            <span class="kw">&lt;td&gt;</span>San Diego Rock &#39;n&#39; Roll Marathon<span class="kw">&lt;/td&gt;</span> 
+            <span class="kw">&lt;td&gt;</span>no time: coached<span class="kw">&lt;/td&gt;</span> 
+            <span class="kw">&lt;td&gt;&lt;a</span><span class="ot"> href=</span><span class="st">&quot;#event-map&quot;</span><span class="ot"> onclick=</span><span class="st">&quot;recenter(map, eventPlaces[2].point,</span>
+<span class="st">             11)&quot;</span><span class="kw">&gt;</span>map<span class="kw">&lt;/a&gt;&lt;/td&gt;</span>
+        <span class="kw">&lt;/tr&gt;</span>
+        
+
+        <span class="kw">&lt;tr&gt;</span>
+            <span class="kw">&lt;td&gt;</span>10/18/09<span class="kw">&lt;/td&gt;</span> 
+            <span class="kw">&lt;td&gt;</span>Nike Women&#39;s Marathon<span class="kw">&lt;/td&gt;</span> 
+            <span class="kw">&lt;td&gt;</span>7:13:05<span class="kw">&lt;/td&gt;</span> 
+            <span class="kw">&lt;td&gt;&lt;a</span><span class="ot"> href=</span><span class="st">&quot;#event-map&quot;</span><span class="ot"> onclick=</span><span class="st">&quot;recenter(map, eventPlaces[3].point,</span>
+<span class="st">             12)&quot;</span><span class="kw">&gt;</span>map<span class="kw">&lt;/a&gt;&lt;/td&gt;</span>
+        <span class="kw">&lt;/tr&gt;</span>
+        
+
+        <span class="kw">&lt;tr&gt;</span>
+            <span class="kw">&lt;td&gt;</span>9/6/2009<span class="kw">&lt;/td&gt;</span> 
+            <span class="kw">&lt;td&gt;</span>Disneyland Half Marathon<span class="kw">&lt;/td&gt;</span> 
+            <span class="kw">&lt;td&gt;</span>3:43:05<span class="kw">&lt;/td&gt;</span> 
+            <span class="kw">&lt;td&gt;&lt;a</span><span class="ot"> href=</span><span class="st">&quot;#event-map&quot;</span><span class="ot"> onclick=</span><span class="st">&quot;recenter(map, eventPlaces[5].point,</span>
+<span class="st">             12)&quot;</span><span class="kw">&gt;</span>map<span class="kw">&lt;/a&gt;&lt;/td&gt;</span>
+        <span class="kw">&lt;/tr&gt;</span>
+        
+
+        <span class="kw">&lt;tr&gt;</span>
+            <span class="kw">&lt;td&gt;</span>1/11/2009<span class="kw">&lt;/td&gt;</span> 
+            <span class="kw">&lt;td&gt;</span>Disney World Marathon<span class="kw">&lt;/td&gt;</span> 
+            <span class="kw">&lt;td&gt;</span>6:57:42<span class="kw">&lt;/td&gt;</span> 
+            <span class="kw">&lt;td&gt;&lt;a</span><span class="ot"> href=</span><span class="st">&quot;#event-map&quot;</span><span class="ot"> onclick=</span><span class="st">&quot;recenter(map, eventPlaces[4].point,</span>
+<span class="st">             10)&quot;</span><span class="kw">&gt;</span>map<span class="kw">&lt;/a&gt;&lt;/td&gt;</span>
+        <span class="kw">&lt;/tr&gt;</span>
+        
+
+        <span class="kw">&lt;tr&gt;</span>
+            <span class="kw">&lt;td&gt;</span>10/19/2008<span class="kw">&lt;/td&gt;</span> 
+            <span class="kw">&lt;td&gt;</span>Duke City Half Marathon<span class="kw">&lt;/td&gt;</span> 
+            <span class="kw">&lt;td&gt;</span>3:09:42<span class="kw">&lt;/td&gt;</span> 
+            <span class="kw">&lt;td&gt;&lt;a</span><span class="ot"> href=</span><span class="st">&quot;#event-map&quot;</span><span class="ot"> onclick=</span><span class="st">&quot;recenter(map, eventPlaces[0].point,</span>
+<span class="st">             11)&quot;</span><span class="kw">&gt;</span>map<span class="kw">&lt;/a&gt;&lt;/td&gt;</span>
+        <span class="kw">&lt;/tr&gt;</span>
+        
+
+        <span class="kw">&lt;tr&gt;</span>
+            <span class="kw">&lt;td&gt;</span>6/21/2008<span class="kw">&lt;/td&gt;</span> 
+            <span class="kw">&lt;td&gt;</span>Animas Valley/Steamworks Half Marathon<span class="kw">&lt;/td&gt;</span> 
+            <span class="kw">&lt;td&gt;</span>3:14:52<span class="kw">&lt;/td&gt;</span> 
+            <span class="kw">&lt;td&gt;&lt;a</span><span class="ot"> href=</span><span class="st">&quot;#event-map&quot;</span><span class="ot"> onclick=</span><span class="st">&quot;recenter(map, eventPlaces[1].point,</span>
+<span class="st">             10)&quot;</span><span class="kw">&gt;</span>map<span class="kw">&lt;/a&gt;&lt;/td&gt;</span>
+        <span class="kw">&lt;/tr&gt;</span>
+        <span class="kw">&lt;/tbody&gt;</span>
+        <span class="kw">&lt;/table&gt;</span>
+        
+
+    <span class="kw">&lt;/body&gt;</span>
+
+    <span class="co">&lt;!-- Let&#39;s put our JavaScript down here </span><span class="er">-------------------------------------------</span><span class="co">--&gt;</span>
+        <span class="co">&lt;!-- Load the external JavaScript file with the map definition code --&gt;</span>
+        <span class="kw">&lt;script</span><span class="ot"> src=</span><span class="st">&quot;js/mapPage_events.js&quot;</span><span class="kw">&gt;&lt;/script&gt;</span>
+        
+        <span class="co">&lt;!-- Load the API in asynchronous mode and execute the initialize </span>
+<span class="co">        function when done --&gt;</span>
+        
+        <span class="kw">&lt;script</span><span class="ot"> async defer</span> 
+<span class="ot">            src=</span><span class="st">&quot;https://maps.googleapis.com/maps/api/js?callback=initialize</span><span class="er">&amp;</span>
+<span class="st">            key=</span><span class="er">&lt;</span><span class="st">YourKey&gt;&quot;</span><span class="kw">&gt;</span>
+        <span class="kw">&lt;/script&gt;</span>
+    <span class="kw">&lt;/body&gt;</span>
+<span class="kw">&lt;/html&gt;</span></code></pre></td></tr></table></div>
+<p>gmaps_events.js</p>
+<div class="sourceCode"><table class="sourceCode html numberLines"><tr class="sourceCode"><td class="lineNumbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265
+266
+267
+268
+269
+270
+271
+272
+273
+274
+275
+276
+277
+278
+279
+280
+281
+282
+283
+284
+285
+286
+287
+288
+289
+290
+291
+292
+293
+294
+295
+296
+297
+298
+299
+300
+301
+302
+303
+304
+305
+306
+307
+308
+309
+310
+311
+312
+313
+314
+315
+316
+317
+318
+319
+320
+321
+322
+323
+324
+325
+326
+327
+328
+329
+330
+331
+332
+333
+334
+335
+336
+337
+338
+339
+340
+341
+342
+343
+344
+345
+346
+347
+348
+349
+350
+351
+352
+353
+354
+355
+356
+357
+358
+359
+360
+361
+362
+363
+364
+365
+366
+367
+368
+369
+370
+371
+372
+373
+374
+375
+376
+377
+378
+379
+380
+381
+382
+383
+384
+385
+386
+387
+</pre></td><td class="sourceCode"><pre><code class="sourceCode html">var map;
+var eventPlaces;
+
+function initialize() {
+    // Define a set of global coordinates for use throughout the web site
+    // Place coordinates derived from GNIS database: http://geonames.usgs.gov/
+    // pls/gnispublic
+    // from https://tools.wmflabs.org/geohack/geohack.php?
+    // pagename=Geographic_center_of_the_contiguous_United_States<span class="er">&amp;</span>
+    // params=39.828175_N_98.579500_W_region:US_type:landmark
+    geoCenter = new google.maps.LatLng(39.828175,-98.5795) 
+    eventPlaces = [
+        {
+            name: &quot;Albuquerque&quot;, 
+            point: new google.maps.LatLng(35.0889356,-106.5747462),
+            label: &quot;Albuquerque: Duke City Half Marathon&quot;
+        }, 
+        {
+            name: &quot;Durango&quot;, 
+            point: new google.maps.LatLng(37.2752800,-107.8800667),
+            label: &quot;Durango: Animas Valley/Steamworks Half Marathon&quot;
+        },
+        {
+            name: &quot;San Diego&quot;, 
+            point: new google.maps.LatLng(32.7153292,-117.1572551),
+            label: &quot;San Diego: San Diego Rock &#39;n&#39; Roll Marathon&quot;
+        },
+        {
+            name: &quot;San Francisco&quot;, 
+            point: new google.maps.LatLng(37.7749295,-122.4194155),
+            label: &quot;San Francisco: Nike Women&#39;s Marathon&quot;
+        },
+        {
+            name: &quot;Orlando&quot;, 
+            point: new google.maps.LatLng(28.5383355,-81.3792365),
+            label: &quot;Orlando: Walt Disney World half- and full-marathon&quot;
+        },
+        {
+            name: &quot;Anaheim&quot;, 
+            point: new google.maps.LatLng(33.8352932,-117.9145036),
+            label: &quot;Anaheim: Disneyland Half Marathon&quot;
+        },
+        {
+            name: &quot;Albuquerque&quot;, 
+            point: new google.maps.LatLng(35.0889356,-106.5747462),
+            label: &quot;Hot Chocolate 15k&quot;
+        } 
+
+    ];
+
+    var myOptions = {
+        zoom: 4,
+        center: geoCenter,
+        mapTypeId: google.maps.MapTypeId.ROADMAP,
+        mapTypeControl: false};
+
+    map = new google.maps.Map(
+        document.getElementById(&quot;event-map&quot;), 
+        myOptions);
+
+    addMarkers(map,eventPlaces)
+    
+    // Add a style-selector control to the map.
+    var styleControl = document.getElementById(&#39;style-selector-control&#39;);
+    map.controls[google.maps.ControlPosition.TOP_LEFT].push(styleControl);
+    
+    // Set the map&#39;s style to the initial value of the selector.
+    var styleSelector = document.getElementById(&#39;style-selector&#39;);
+    map.setOptions({styles: styles[styleSelector.value]});
+    
+    // Apply new JSON when the user selects a different style.
+    styleSelector.addEventListener(&#39;change&#39;, function() {
+         map.setOptions({styles: styles[styleSelector.value]});
+    });
+}
+
+function recenter(mapName, latlon, zoomLevel) {
+    mapName.setCenter(latlon);
+    mapName.setZoom(zoomLevel)
+}
+
+function addMarkers(mapName, markerArray) {
+    for (index = 0; index <span class="er">&lt;</span> markerArray.length; index++) {
+        myMarker = new google.maps.Marker({
+            position: markerArray[index].point,
+            title: markerArray[index].label
+        });
+        myMarker.setMap(mapName)
+    }
+}
+
+// styles generated by https://mapstyle.withgoogle.com
+var styles = {
+default: null,
+silver: [
+  {
+    elementType: &#39;geometry&#39;,
+    stylers: [{color: &#39;#f5f5f5&#39;}]
+  },
+  {
+    elementType: &#39;labels.icon&#39;,
+    stylers: [{visibility: &#39;off&#39;}]
+  },
+  {
+    elementType: &#39;labels.text.fill&#39;,
+    stylers: [{color: &#39;#616161&#39;}]
+  },
+  {
+    elementType: &#39;labels.text.stroke&#39;,
+    stylers: [{color: &#39;#f5f5f5&#39;}]
+  },
+  {
+    featureType: &#39;administrative.land_parcel&#39;,
+    elementType: &#39;labels.text.fill&#39;,
+    stylers: [{color: &#39;#bdbdbd&#39;}]
+  },
+  {
+    featureType: &#39;poi&#39;,
+    elementType: &#39;geometry&#39;,
+    stylers: [{color: &#39;#eeeeee&#39;}]
+  },
+  {
+    featureType: &#39;poi&#39;,
+    elementType: &#39;labels.text.fill&#39;,
+    stylers: [{color: &#39;#757575&#39;}]
+  },
+  {
+    featureType: &#39;poi.park&#39;,
+    elementType: &#39;geometry&#39;,
+    stylers: [{color: &#39;#e5e5e5&#39;}]
+  },
+  {
+    featureType: &#39;poi.park&#39;,
+    elementType: &#39;labels.text.fill&#39;,
+    stylers: [{color: &#39;#9e9e9e&#39;}]
+  },
+  {
+    featureType: &#39;road&#39;,
+    elementType: &#39;geometry&#39;,
+    stylers: [{color: &#39;#ffffff&#39;}]
+  },
+  {
+    featureType: &#39;road.arterial&#39;,
+    elementType: &#39;labels.text.fill&#39;,
+    stylers: [{color: &#39;#757575&#39;}]
+  },
+  {
+    featureType: &#39;road.highway&#39;,
+    elementType: &#39;geometry&#39;,
+    stylers: [{color: &#39;#dadada&#39;}]
+  },
+  {
+    featureType: &#39;road.highway&#39;,
+    elementType: &#39;labels.text.fill&#39;,
+    stylers: [{color: &#39;#616161&#39;}]
+  },
+  {
+    featureType: &#39;road.local&#39;,
+    elementType: &#39;labels.text.fill&#39;,
+    stylers: [{color: &#39;#9e9e9e&#39;}]
+  },
+  {
+    featureType: &#39;transit.line&#39;,
+    elementType: &#39;geometry&#39;,
+    stylers: [{color: &#39;#e5e5e5&#39;}]
+  },
+  {
+    featureType: &#39;transit.station&#39;,
+    elementType: &#39;geometry&#39;,
+    stylers: [{color: &#39;#eeeeee&#39;}]
+  },
+  {
+    featureType: &#39;water&#39;,
+    elementType: &#39;geometry&#39;,
+    stylers: [{color: &#39;#c9c9c9&#39;}]
+  },
+  {
+    featureType: &#39;water&#39;,
+    elementType: &#39;labels.text.fill&#39;,
+    stylers: [{color: &#39;#9e9e9e&#39;}]
+  }
+],
+
+night: [
+  {elementType: &#39;geometry&#39;, stylers: [{color: &#39;#242f3e&#39;}]},
+  {elementType: &#39;labels.text.stroke&#39;, stylers: [{color: &#39;#242f3e&#39;}]},
+  {elementType: &#39;labels.text.fill&#39;, stylers: [{color: &#39;#746855&#39;}]},
+  {
+    featureType: &#39;administrative.locality&#39;,
+    elementType: &#39;labels.text.fill&#39;,
+    stylers: [{color: &#39;#d59563&#39;}]
+  },
+  {
+    featureType: &#39;poi&#39;,
+    elementType: &#39;labels.text.fill&#39;,
+    stylers: [{color: &#39;#d59563&#39;}]
+  },
+  {
+    featureType: &#39;poi.park&#39;,
+    elementType: &#39;geometry&#39;,
+    stylers: [{color: &#39;#263c3f&#39;}]
+  },
+  {
+    featureType: &#39;poi.park&#39;,
+    elementType: &#39;labels.text.fill&#39;,
+    stylers: [{color: &#39;#6b9a76&#39;}]
+  },
+  {
+    featureType: &#39;road&#39;,
+    elementType: &#39;geometry&#39;,
+    stylers: [{color: &#39;#38414e&#39;}]
+  },
+  {
+    featureType: &#39;road&#39;,
+    elementType: &#39;geometry.stroke&#39;,
+    stylers: [{color: &#39;#212a37&#39;}]
+  },
+  {
+    featureType: &#39;road&#39;,
+    elementType: &#39;labels.text.fill&#39;,
+    stylers: [{color: &#39;#9ca5b3&#39;}]
+  },
+  {
+    featureType: &#39;road.highway&#39;,
+    elementType: &#39;geometry&#39;,
+    stylers: [{color: &#39;#746855&#39;}]
+  },
+  {
+    featureType: &#39;road.highway&#39;,
+    elementType: &#39;geometry.stroke&#39;,
+    stylers: [{color: &#39;#1f2835&#39;}]
+  },
+  {
+    featureType: &#39;road.highway&#39;,
+    elementType: &#39;labels.text.fill&#39;,
+    stylers: [{color: &#39;#f3d19c&#39;}]
+  },
+  {
+    featureType: &#39;transit&#39;,
+    elementType: &#39;geometry&#39;,
+    stylers: [{color: &#39;#2f3948&#39;}]
+  },
+  {
+    featureType: &#39;transit.station&#39;,
+    elementType: &#39;labels.text.fill&#39;,
+    stylers: [{color: &#39;#d59563&#39;}]
+  },
+  {
+    featureType: &#39;water&#39;,
+    elementType: &#39;geometry&#39;,
+    stylers: [{color: &#39;#17263c&#39;}]
+  },
+  {
+    featureType: &#39;water&#39;,
+    elementType: &#39;labels.text.fill&#39;,
+    stylers: [{color: &#39;#515c6d&#39;}]
+  },
+  {
+    featureType: &#39;water&#39;,
+    elementType: &#39;labels.text.stroke&#39;,
+    stylers: [{color: &#39;#17263c&#39;}]
+  }
+],
+
+retro: [
+  {elementType: &#39;geometry&#39;, stylers: [{color: &#39;#ebe3cd&#39;}]},
+  {elementType: &#39;labels.text.fill&#39;, stylers: [{color: &#39;#523735&#39;}]},
+  {elementType: &#39;labels.text.stroke&#39;, stylers: [{color: &#39;#f5f1e6&#39;}]},
+  {
+    featureType: &#39;administrative&#39;,
+    elementType: &#39;geometry.stroke&#39;,
+    stylers: [{color: &#39;#c9b2a6&#39;}]
+  },
+  {
+    featureType: &#39;administrative.land_parcel&#39;,
+    elementType: &#39;geometry.stroke&#39;,
+    stylers: [{color: &#39;#dcd2be&#39;}]
+  },
+  {
+    featureType: &#39;administrative.land_parcel&#39;,
+    elementType: &#39;labels.text.fill&#39;,
+    stylers: [{color: &#39;#ae9e90&#39;}]
+  },
+  {
+    featureType: &#39;landscape.natural&#39;,
+    elementType: &#39;geometry&#39;,
+    stylers: [{color: &#39;#dfd2ae&#39;}]
+  },
+  {
+    featureType: &#39;poi&#39;,
+    elementType: &#39;geometry&#39;,
+    stylers: [{color: &#39;#dfd2ae&#39;}]
+  },
+  {
+    featureType: &#39;poi&#39;,
+    elementType: &#39;labels.text.fill&#39;,
+    stylers: [{color: &#39;#93817c&#39;}]
+  },
+  {
+    featureType: &#39;poi.park&#39;,
+    elementType: &#39;geometry.fill&#39;,
+    stylers: [{color: &#39;#a5b076&#39;}]
+  },
+  {
+    featureType: &#39;poi.park&#39;,
+    elementType: &#39;labels.text.fill&#39;,
+    stylers: [{color: &#39;#447530&#39;}]
+  },
+  {
+    featureType: &#39;road&#39;,
+    elementType: &#39;geometry&#39;,
+    stylers: [{color: &#39;#f5f1e6&#39;}]
+  },
+  {
+    featureType: &#39;road.arterial&#39;,
+    elementType: &#39;geometry&#39;,
+    stylers: [{color: &#39;#fdfcf8&#39;}]
+  },
+  {
+    featureType: &#39;road.highway&#39;,
+    elementType: &#39;geometry&#39;,
+    stylers: [{color: &#39;#f8c967&#39;}]
+  },
+  {
+    featureType: &#39;road.highway&#39;,
+    elementType: &#39;geometry.stroke&#39;,
+    stylers: [{color: &#39;#e9bc62&#39;}]
+  },
+  {
+    featureType: &#39;road.highway.controlled_access&#39;,
+    elementType: &#39;geometry&#39;,
+    stylers: [{color: &#39;#e98d58&#39;}]
+  },
+  {
+    featureType: &#39;road.highway.controlled_access&#39;,
+    elementType: &#39;geometry.stroke&#39;,
+    stylers: [{color: &#39;#db8555&#39;}]
+  },
+  {
+    featureType: &#39;road.local&#39;,
+    elementType: &#39;labels.text.fill&#39;,
+    stylers: [{color: &#39;#806b63&#39;}]
+  },
+  {
+    featureType: &#39;transit.line&#39;,
+    elementType: &#39;geometry&#39;,
+    stylers: [{color: &#39;#dfd2ae&#39;}]
+  },
+  {
+    featureType: &#39;transit.line&#39;,
+    elementType: &#39;labels.text.fill&#39;,
+    stylers: [{color: &#39;#8f7d77&#39;}]
+  },
+  {
+    featureType: &#39;transit.line&#39;,
+    elementType: &#39;labels.text.stroke&#39;,
+    stylers: [{color: &#39;#ebe3cd&#39;}]
+  },
+  {
+    featureType: &#39;transit.station&#39;,
+    elementType: &#39;geometry&#39;,
+    stylers: [{color: &#39;#dfd2ae&#39;}]
+  },
+  {
+    featureType: &#39;water&#39;,
+    elementType: &#39;geometry.fill&#39;,
+    stylers: [{color: &#39;#b9d3c2&#39;}]
+  },
+  {
+    featureType: &#39;water&#39;,
+    elementType: &#39;labels.text.fill&#39;,
+    stylers: [{color: &#39;#92998d&#39;}]
+  }
+],
+
+hiding: [
+  {
+    featureType: &#39;poi.business&#39;,
+    stylers: [{visibility: &#39;off&#39;}]
+  },
+  {
+    featureType: &#39;transit&#39;,
+    elementType: &#39;labels.icon&#39;,
+    stylers: [{visibility: &#39;off&#39;}]
+  }
+]
+};</code></pre></td></tr></table></div>
+</div>
+</section>
+<hr />
+<section>
+<div class="license">
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />This work by <span xmlns:cc="http://creativecommons.org/ns#" property="cc:attributionName">Karl Benedict</span> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+</div>
+</section>
+<!-- {{{{ dzslides core
+#
+#
+#     __  __  __       .  __   ___  __
+#    |  \  / /__` |    | |  \ |__  /__`
+#    |__/ /_ .__/ |___ | |__/ |___ .__/ core :€
+#
+#
+# The following block of code is not supposed to be edited.
+# But if you want to change the behavior of these slides,
+# feel free to hack it!
+#
+-->
+
+<div id="progress-bar"></div>
+
+<!-- Default Style -->
+<style>
+  * { margin: 0; padding: 0; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+  [role="note"] { display: none; }
+  body {
+    width: 800px; height: 600px;
+    margin-left: -400px; margin-top: -300px;
+    position: absolute; top: 50%; left: 50%;
+    overflow: hidden;
+    display: none;
+  }
+  .view body {
+    position: static;
+    margin: 0; padding: 0;
+    width: 100%; height: 100%;
+    display: inline-block;
+    overflow: visible; overflow-x: hidden;
+    /* undo Dz.onresize */
+    transform: none !important;
+    -moz-transform: none !important;
+    -webkit-transform: none !important;
+    -o-transform: none !important;
+    -ms-transform: none !important;
+  }
+  .view head, .view head > title { display: block }
+  section {
+    position: absolute;
+    pointer-events: none;
+    width: 100%; height: 100%;
+  }
+  .view section {
+    pointer-events: auto;
+    position: static;
+    width: 800px; height: 600px;
+    margin: -150px -200px;
+    float: left;
+
+    transform: scale(.4);
+    -moz-transform: scale(.4);
+    -webkit-transform: scale(.4);
+    -o-transform: scale(.4);
+    -ms-transform: scale(.4);
+  }
+  .view section > * { pointer-events: none; }
+  section[aria-selected] { pointer-events: auto; }
+  html { overflow: hidden; }
+  html.view { overflow: visible; }
+  body.loaded { display: block; }
+  .incremental {visibility: hidden; }
+  .incremental[active] {visibility: visible; }
+  #progress-bar{
+    bottom: 0;
+    position: absolute;
+    -moz-transition: width 400ms linear 0s;
+    -webkit-transition: width 400ms linear 0s;
+    -ms-transition: width 400ms linear 0s;
+    transition: width 400ms linear 0s;
+  }
+  .view #progress-bar {
+    display: none;
+  }
+</style>
+
+<script>
+  var Dz = {
+    remoteWindows: [],
+    idx: -1,
+    step: 0,
+    html: null,
+    slides: null,
+    progressBar : null,
+    params: {
+      autoplay: "1"
+    }
+  };
+
+  Dz.init = function() {
+    document.body.className = "loaded";
+    this.slides = Array.prototype.slice.call($$("body > section"));
+    this.progressBar = $("#progress-bar");
+    this.html = document.body.parentNode;
+    this.setupParams();
+    this.onhashchange();
+    this.setupTouchEvents();
+    this.onresize();
+    this.setupView();
+  }
+
+  Dz.setupParams = function() {
+    var p = window.location.search.substr(1).split('&');
+    p.forEach(function(e, i, a) {
+      var keyVal = e.split('=');
+      Dz.params[keyVal[0]] = decodeURIComponent(keyVal[1]);
+    });
+  // Specific params handling
+    if (!+this.params.autoplay)
+      $$.forEach($$("video"), function(v){ v.controls = true });
+  }
+
+  Dz.onkeydown = function(aEvent) {
+    // Don't intercept keyboard shortcuts
+    if (aEvent.altKey
+      || aEvent.ctrlKey
+      || aEvent.metaKey
+      || aEvent.shiftKey) {
+      return;
+    }
+    if ( aEvent.keyCode == 37 // left arrow
+      || aEvent.keyCode == 38 // up arrow
+      || aEvent.keyCode == 33 // page up
+    ) {
+      aEvent.preventDefault();
+      this.back();
+    }
+    if ( aEvent.keyCode == 39 // right arrow
+      || aEvent.keyCode == 40 // down arrow
+      || aEvent.keyCode == 34 // page down
+    ) {
+      aEvent.preventDefault();
+      this.forward();
+    }
+    if (aEvent.keyCode == 35) { // end
+      aEvent.preventDefault();
+      this.goEnd();
+    }
+    if (aEvent.keyCode == 36) { // home
+      aEvent.preventDefault();
+      this.goStart();
+    }
+    if (aEvent.keyCode == 32) { // space
+      aEvent.preventDefault();
+      this.toggleContent();
+    }
+    if (aEvent.keyCode == 70) { // f
+      aEvent.preventDefault();
+      this.goFullscreen();
+    }
+    if (aEvent.keyCode == 79) { // o
+      aEvent.preventDefault();
+      this.toggleView();
+    }
+  }
+
+  /* Touch Events */
+
+  Dz.setupTouchEvents = function() {
+    var orgX, newX;
+    var tracking = false;
+
+    var db = document.body;
+    db.addEventListener("touchstart", start.bind(this), false);
+    db.addEventListener("touchmove", move.bind(this), false);
+
+    function start(aEvent) {
+      aEvent.preventDefault();
+      tracking = true;
+      orgX = aEvent.changedTouches[0].pageX;
+    }
+
+    function move(aEvent) {
+      if (!tracking) return;
+      newX = aEvent.changedTouches[0].pageX;
+      if (orgX - newX > 100) {
+        tracking = false;
+        this.forward();
+      } else {
+        if (orgX - newX < -100) {
+          tracking = false;
+          this.back();
+        }
+      }
+    }
+  }
+
+  Dz.setupView = function() {
+    document.body.addEventListener("click", function ( e ) {
+      if (!Dz.html.classList.contains("view")) return;
+      if (!e.target || e.target.nodeName != "SECTION") return;
+
+      Dz.html.classList.remove("view");
+      Dz.setCursor(Dz.slides.indexOf(e.target) + 1);
+    }, false);
+  }
+
+  /* Adapt the size of the slides to the window */
+
+  Dz.onresize = function() {
+    var db = document.body;
+    var sx = db.clientWidth / window.innerWidth;
+    var sy = db.clientHeight / window.innerHeight;
+    var transform = "scale(" + (1/Math.max(sx, sy)) + ")";
+
+    db.style.MozTransform = transform;
+    db.style.WebkitTransform = transform;
+    db.style.OTransform = transform;
+    db.style.msTransform = transform;
+    db.style.transform = transform;
+  }
+
+
+  Dz.getNotes = function(aIdx) {
+    var s = $("section:nth-of-type(" + aIdx + ")");
+    var d = s.$("[role='note']");
+    return d ? d.innerHTML : "";
+  }
+
+  Dz.onmessage = function(aEvent) {
+    var argv = aEvent.data.split(" "), argc = argv.length;
+    argv.forEach(function(e, i, a) { a[i] = decodeURIComponent(e) });
+    var win = aEvent.source;
+    if (argv[0] === "REGISTER" && argc === 1) {
+      this.remoteWindows.push(win);
+      this.postMsg(win, "REGISTERED", document.title, this.slides.length);
+      this.postMsg(win, "CURSOR", this.idx + "." + this.step);
+      return;
+    }
+    if (argv[0] === "BACK" && argc === 1)
+      this.back();
+    if (argv[0] === "FORWARD" && argc === 1)
+      this.forward();
+    if (argv[0] === "START" && argc === 1)
+      this.goStart();
+    if (argv[0] === "END" && argc === 1)
+      this.goEnd();
+    if (argv[0] === "TOGGLE_CONTENT" && argc === 1)
+      this.toggleContent();
+    if (argv[0] === "SET_CURSOR" && argc === 2)
+      window.location.hash = "#" + argv[1];
+    if (argv[0] === "GET_CURSOR" && argc === 1)
+      this.postMsg(win, "CURSOR", this.idx + "." + this.step);
+    if (argv[0] === "GET_NOTES" && argc === 1)
+      this.postMsg(win, "NOTES", this.getNotes(this.idx));
+  }
+
+  Dz.toggleContent = function() {
+    // If a Video is present in this new slide, play it.
+    // If a Video is present in the previous slide, stop it.
+    var s = $("section[aria-selected]");
+    if (s) {
+      var video = s.$("video");
+      if (video) {
+        if (video.ended || video.paused) {
+          video.play();
+        } else {
+          video.pause();
+        }
+      }
+    }
+  }
+
+  Dz.setCursor = function(aIdx, aStep) {
+    // If the user change the slide number in the URL bar, jump
+    // to this slide.
+    aStep = (aStep != 0 && typeof aStep !== "undefined") ? "." + aStep : ".0";
+    window.location.hash = "#" + aIdx + aStep;
+  }
+
+  Dz.onhashchange = function() {
+    var cursor = window.location.hash.split("#"),
+        newidx = 1,
+        newstep = 0;
+    if (cursor.length == 2) {
+      newidx = ~~cursor[1].split(".")[0];
+      newstep = ~~cursor[1].split(".")[1];
+      if (newstep > Dz.slides[newidx - 1].$$('.incremental > *').length) {
+        newstep = 0;
+        newidx++;
+      }
+    }
+    this.setProgress(newidx, newstep);
+    if (newidx != this.idx) {
+      this.setSlide(newidx);
+    }
+    if (newstep != this.step) {
+      this.setIncremental(newstep);
+    }
+    for (var i = 0; i < this.remoteWindows.length; i++) {
+      this.postMsg(this.remoteWindows[i], "CURSOR", this.idx + "." + this.step);
+    }
+  }
+
+  Dz.back = function() {
+    if (this.idx == 1 && this.step == 0) {
+      return;
+    }
+    if (this.step == 0) {
+      this.setCursor(this.idx - 1,
+                     this.slides[this.idx - 2].$$('.incremental > *').length);
+    } else {
+      this.setCursor(this.idx, this.step - 1);
+    }
+  }
+
+  Dz.forward = function() {
+    if (this.idx >= this.slides.length &&
+        this.step >= this.slides[this.idx - 1].$$('.incremental > *').length) {
+        return;
+    }
+    if (this.step >= this.slides[this.idx - 1].$$('.incremental > *').length) {
+      this.setCursor(this.idx + 1, 0);
+    } else {
+      this.setCursor(this.idx, this.step + 1);
+    }
+  }
+
+  Dz.goStart = function() {
+    this.setCursor(1, 0);
+  }
+
+  Dz.goEnd = function() {
+    var lastIdx = this.slides.length;
+    var lastStep = this.slides[lastIdx - 1].$$('.incremental > *').length;
+    this.setCursor(lastIdx, lastStep);
+  }
+
+  Dz.toggleView = function() {
+    this.html.classList.toggle("view");
+
+    if (this.html.classList.contains("view")) {
+      $("section[aria-selected]").scrollIntoView(true);
+    }
+  }
+
+  Dz.setSlide = function(aIdx) {
+    this.idx = aIdx;
+    var old = $("section[aria-selected]");
+    var next = $("section:nth-of-type("+ this.idx +")");
+    if (old) {
+      old.removeAttribute("aria-selected");
+      var video = old.$("video");
+      if (video) {
+        video.pause();
+      }
+    }
+    if (next) {
+      next.setAttribute("aria-selected", "true");
+      if (this.html.classList.contains("view")) {
+        next.scrollIntoView();
+      }
+      var video = next.$("video");
+      if (video && !!+this.params.autoplay) {
+        video.play();
+      }
+    } else {
+      // That should not happen
+      this.idx = -1;
+      // console.warn("Slide doesn't exist.");
+    }
+  }
+
+  Dz.setIncremental = function(aStep) {
+    this.step = aStep;
+    var old = this.slides[this.idx - 1].$('.incremental > *[aria-selected]');
+    if (old) {
+      old.removeAttribute('aria-selected');
+    }
+    var incrementals = $$('.incremental');
+    if (this.step <= 0) {
+      $$.forEach(incrementals, function(aNode) {
+        aNode.removeAttribute('active');
+      });
+      return;
+    }
+    var next = this.slides[this.idx - 1].$$('.incremental > *')[this.step - 1];
+    if (next) {
+      next.setAttribute('aria-selected', true);
+      next.parentNode.setAttribute('active', true);
+      var found = false;
+      $$.forEach(incrementals, function(aNode) {
+        if (aNode != next.parentNode)
+          if (found)
+            aNode.removeAttribute('active');
+          else
+            aNode.setAttribute('active', true);
+        else
+          found = true;
+      });
+    } else {
+      setCursor(this.idx, 0);
+    }
+    return next;
+  }
+
+  Dz.goFullscreen = function() {
+    var html = $('html'),
+        requestFullscreen = html.requestFullscreen || html.requestFullScreen || html.mozRequestFullScreen || html.webkitRequestFullScreen;
+    if (requestFullscreen) {
+      requestFullscreen.apply(html);
+    }
+  }
+  
+  Dz.setProgress = function(aIdx, aStep) {
+    var slide = $("section:nth-of-type("+ aIdx +")");
+    if (!slide)
+      return;
+    var steps = slide.$$('.incremental > *').length + 1,
+        slideSize = 100 / (this.slides.length - 1),
+        stepSize = slideSize / steps;
+    this.progressBar.style.width = ((aIdx - 1) * slideSize + aStep * stepSize) + '%';
+  }
+  
+  Dz.postMsg = function(aWin, aMsg) { // [arg0, [arg1...]]
+    aMsg = [aMsg];
+    for (var i = 2; i < arguments.length; i++)
+      aMsg.push(encodeURIComponent(arguments[i]));
+    aWin.postMessage(aMsg.join(" "), "*");
+  }
+  
+  function init() {
+    Dz.init();
+    window.onkeydown = Dz.onkeydown.bind(Dz);
+    window.onresize = Dz.onresize.bind(Dz);
+    window.onhashchange = Dz.onhashchange.bind(Dz);
+    window.onmessage = Dz.onmessage.bind(Dz);
+  }
+
+  window.onload = init;
+</script>
+
+
+<script> // Helpers
+  if (!Function.prototype.bind) {
+    Function.prototype.bind = function (oThis) {
+
+      // closest thing possible to the ECMAScript 5 internal IsCallable
+      // function 
+      if (typeof this !== "function")
+      throw new TypeError(
+        "Function.prototype.bind - what is trying to be fBound is not callable"
+      );
+
+      var aArgs = Array.prototype.slice.call(arguments, 1),
+          fToBind = this,
+          fNOP = function () {},
+          fBound = function () {
+            return fToBind.apply( this instanceof fNOP ? this : oThis || window,
+                   aArgs.concat(Array.prototype.slice.call(arguments)));
+          };
+
+      fNOP.prototype = this.prototype;
+      fBound.prototype = new fNOP();
+
+      return fBound;
+    };
+  }
+
+  var $ = (HTMLElement.prototype.$ = function(aQuery) {
+    return this.querySelector(aQuery);
+  }).bind(document);
+
+  var $$ = (HTMLElement.prototype.$$ = function(aQuery) {
+    return this.querySelectorAll(aQuery);
+  }).bind(document);
+
+  $$.forEach = function(nodeList, fun) {
+    Array.prototype.forEach.call(nodeList, fun);
+  }
+
+</script>
+<!-- vim: set fdm=marker: }}} -->
+</body>
+</html>

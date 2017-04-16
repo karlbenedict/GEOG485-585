@@ -1,0 +1,1816 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Karl Benedict">
+  <title>Week 3- Module 2a - Web-based Mapping Clients. Google Maps API</title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+  </style>
+  <link rel="stylesheet" href="slides.css">
+  <link rel="stylesheet" href="slide_specific.css">
+</head>
+<body>
+<section class="title">
+  <h1 class="title">Week 3- Module 2a - Web-based Mapping Clients. Google Maps API</h1>
+  <footer>
+    <span class="author">Karl Benedict</span> · <span class="date">GEOG 485L/585L - Spring 2017</span>
+  </footer>
+</section>
+<section class="slide level3">
+
+<!---------------------------------------------------------------------------->
+<!-- Week 03 ----------------------------------------------------------------->
+<!-- Lecture 02 a 02 a ------------------------------------------------------->
+<!-- Web-based Mapping Clients------------------------------------------------>
+<!-- Google Maps API---------------------------------------------------------->
+<!---------------------------------------------------------------------------->
+</section>
+<section id="outline" class="slide level3 module02a02a">
+<h1>Outline</h1>
+<ul>
+<li><p>What is an API</p></li>
+<li>The Google Maps API
+<ul>
+<li>Version</li>
+<li>Reference Information</li>
+<li>Key Components</li>
+<li>Examples</li>
+</ul></li>
+</ul>
+</section>
+<section id="what-is-an-api" class="slide level3 module02a02a">
+<h1>What is an API</h1>
+<ul>
+<li>API Stands for Application Programming Interface</li>
+</ul>
+<blockquote>
+<p>An Application Programming Interface (API) is a particular set of rules and specifications that a software program can follow to access and make use of the services and resources provided by another particular software program that implements that API. It serves as an interface between different software programs and facilitates their interaction, similar to the way the user interface facilitates interaction between humans and computers. -- From Wikipedia: <a href="http://en.wikipedia.org/wiki/Api" class="uri">http://en.wikipedia.org/wiki/Api</a></p>
+</blockquote>
+<ul>
+<li>The Google Maps API provides an interface for interacting with Google’s mapping services from external web applications</li>
+</ul>
+</section>
+<section id="google-maps-api-version" class="slide level3 module02a02a">
+<h1>Google Maps API Version</h1>
+<ul>
+<li>The version of the Google Maps API used in this class is v3 of the Javascript API
+<ul>
+<li>Freely usable for free applications</li>
+<li>Subject to Google’s Terms of Service</li>
+<li>Google <a href="https://developers.google.com/maps/faq?hl=en#using-google-maps-apis">API key is now required</a></li>
+</ul></li>
+<li>Key capabilities in v3
+<ul>
+<li>Interactive maps based on Google’s mapping engine (contrast w. static maps API)</li>
+<li>Optimized for desktop and mobile platforms and applications</li>
+</ul></li>
+</ul>
+</section>
+<section id="reference-information" class="slide level3 module02a02a">
+<h1>Reference Information</h1>
+<dl>
+<dt>Google Maps API Family</dt>
+<dd><a href="https://developers.google.com/maps/?csw=1">http://code.google.com/apis/maps/</a>
+</dd>
+<dt>Javascript API Home Page</dt>
+<dd><a href="https://developers.google.com/maps/documentation/javascript/?csw=1" class="uri">https://developers.google.com/maps/documentation/javascript/?csw=1</a>
+</dd>
+<dt>Javascript API v3 Tutorial Page</dt>
+<dd><a href="https://developers.google.com/maps/documentation/javascript/tutorial?csw=1">http://code.google.com/apis/maps/documentation/javascript/tutorial.html</a>
+</dd>
+</dl>
+</section>
+<section id="key-components" class="slide level3 module02a02a">
+<h1>Key Components</h1>
+<ul>
+<li>Map <a href="https://developers.google.com/maps/documentation/javascript/reference?csw=1#MapOptions">object options</a></li>
+</ul>
+<dl>
+<dt>Types (required)</dt>
+<dd>ROADMAP
+</dd>
+<dd>SATELLITE
+</dd>
+<dd>HYBRID
+</dd>
+<dd>TERRAIN
+</dd>
+<dt>Latitude and Longitude (required)</dt>
+<dd>specification of where the map should initially be centered
+</dd>
+<dt>Zoom Level (required)</dt>
+<dd>0=global, higher values increasingly local. Limited by map type
+</dd>
+</dl>
+</section>
+<section id="controls" class="slide level3 module02a02a">
+<h1>Controls</h1>
+<ul>
+<li>Available Controls (enabled through map options) <a href="https://developers.google.com/maps/documentation/javascript/controls?csw=1#DefaultUI">default controls</a>
+<ul>
+<li>Zoom Control</li>
+<li>Scale Control</li>
+<li>MapType Control</li>
+<li>Street View Control</li>
+<li>Rotate (for maps that contain 45-degree imagery)</li>
+<li>Fullscreen Control</li>
+</ul></li>
+<li>Different control styles may be defined</li>
+<li>Controls may be positioned <a href="https://developers.google.com/maps/documentation/javascript/controls?csw=1#ControlPositioning">positioning options</a></li>
+<li>Custom controls may be defined and attached to fixed location in the map</li>
+</ul>
+</section>
+<section id="overlays" class="slide level3 module02a02a">
+<h1>Overlays</h1>
+<p>Overlay Types <a href="https://developers.google.com/maps/documentation/javascript/overlays?csw=1">documentation</a></p>
+<dl>
+<dt>Marker</dt>
+<dd>points depicted by specified or defined icons at locations within the map (<a href="https://developers.google.com/maps/documentation/javascript/markers">reference</a>)
+</dd>
+<dt>Polyline</dt>
+<dd>linear features defined by multiple points with a defined style for the line (<a href="https://developers.google.com/maps/documentation/javascript/shapes">reference</a>)
+</dd>
+<dt>Polygon</dt>
+<dd>closed features defined by multiple points. Supports multi-polygons, and donuts. Line and fill styles may be specified. (<a href="https://developers.google.com/maps/documentation/javascript/shapes">reference</a>)
+</dd>
+<dt>(Ground) Overlay Maps</dt>
+<dd>Image-based map layers that replace or overlay Google layers - registered to the map coordinates (<a href="https://developers.google.com/maps/documentation/javascript/groundoverlays">reference</a>)
+</dd>
+<dt>Info Windows</dt>
+<dd>floating content windows for displaying content defined as HTML, a DOM element, or text string (<a href="https://developers.google.com/maps/documentation/javascript/infowindows">reference</a>)
+</dd>
+<dt>Layers</dt>
+<dd>Grouped display content assigned to a specific layer type: Data (including GeoJSON), KmlLayer (&amp; GeoRSS), Heatmap, FusionTablesLayer, TrafficLayer, TransitLayer, BicyclingLayer (<a href="https://developers.google.com/maps/documentation/javascript/layers">reference</a>)
+</dd>
+<dt>Custom Overlays</dt>
+<dd>definition of programmatically controlled layers (<a href="https://developers.google.com/maps/documentation/javascript/customoverlays">reference</a>)
+</dd>
+</dl>
+</section>
+<section id="services" class="slide level3 module02a02a">
+<h1>Services</h1>
+<ul>
+<li>Geocoding Service
+<ul>
+<li>Forward and reverse geocoding:
+<ul>
+<li>address to LatLon</li>
+<li>LatLon to Nearest Address</li>
+</ul></li>
+<li>May be biased to current viewport, region</li>
+</ul></li>
+<li>Directions
+<ul>
+<li>Based upon an origin, destination, and a variety of additional options</li>
+<li>Available directions and rendered route</li>
+</ul></li>
+<li>Distance Matrix
+<ul>
+<li>Travel distance and duration given a specific mode of travel</li>
+</ul></li>
+<li>Elevation
+<ul>
+<li>Delivery of elevation data for locations or paths</li>
+</ul></li>
+<li>Streetview
+<ul>
+<li>Integration of Google Streetview within a DOM element</li>
+</ul></li>
+<li>Maximum Zoom
+<ul>
+<li>Provides information about the maximum available zoom level</li>
+</ul></li>
+</ul>
+</section>
+<section id="events" class="slide level3 module02a02a">
+<h1>Events</h1>
+<ul>
+<li>Events provide the ability to attach custom behaviors to events in the interface. For example:
+<ul>
+<li>Changing items in the interface as the user zooms in on a map</li>
+<li>Displaying additional information outside the map when the user clicks a location in the map</li>
+<li>Synchronizing the behavior of multiple maps as the user interacts with one map</li>
+</ul></li>
+<li>Requires higher-level Javascript than we will cover in this course</li>
+</ul>
+</section>
+<section id="examples" class="slide level3 module02a02a">
+<h1>Examples</h1>
+</section>
+<section id="simple---roadmap" class="slide level3 module02a02a">
+<h1>Simple - Roadmap</h1>
+<p><img src="images/gmaps01.png" alt="gmaps01.html preview" /> </p>
+</section>
+<section id="simple---roadmap-code" class="slide level3 module02a02a">
+<h1>Simple - Roadmap Code</h1>
+<div class="codeTable">
+<p><a href="http://karlbenedict.com/GEOG485-585/sample-files/GoogleMaps/gmaps01.html">gmaps01.html</a></p>
+<div class="sourceCode"><table class="sourceCode html numberLines"><tr class="sourceCode"><td class="lineNumbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+</pre></td><td class="sourceCode"><pre><code class="sourceCode html"><span class="dt">&lt;!DOCTYPE </span>html<span class="dt">&gt;</span>
+<span class="kw">&lt;html&gt;</span>
+    <span class="kw">&lt;head&gt;</span>
+        <span class="kw">&lt;link</span><span class="ot"> rel=</span><span class="st">&quot;stylesheet&quot;</span><span class="ot"> type=</span><span class="st">&quot;text/css&quot;</span><span class="ot"> href=</span><span class="st">&quot;css/mapPage.css&quot;</span><span class="kw">&gt;</span>
+    <span class="kw">&lt;/head&gt;</span>
+
+    <span class="kw">&lt;body&gt;</span>
+        <span class="kw">&lt;h1&gt;</span>Sample Map<span class="kw">&lt;/h1&gt;</span>
+        <span class="kw">&lt;div</span><span class="ot"> id=</span><span class="st">&quot;map_canvas&quot;</span><span class="kw">&gt;&lt;/div&gt;</span>
+
+    <span class="co">&lt;!-- Let&#39;s put our JavaScript down here </span><span class="er">-------------------------------------------</span><span class="co">--&gt;</span>
+        <span class="co">&lt;!-- Load the external JavaScript file with the map definition code --&gt;</span>
+        <span class="kw">&lt;script</span><span class="ot"> src=</span><span class="st">&quot;js/mapPage_01.js&quot;</span><span class="kw">&gt;&lt;/script&gt;</span>
+        
+        <span class="co">&lt;!-- Load the API in asynchronous mode and execute the initialize </span>
+<span class="co">            function when done --&gt;</span>
+        <span class="kw">&lt;script</span><span class="ot"> async defer</span> 
+<span class="ot">            src=</span><span class="st">&quot;https://maps.googleapis.com/maps/api/js?callback=initialize</span><span class="er">&amp;</span><span class="st">key=</span><span class="er">&lt;</span><span class="st">mykey&gt;&quot;</span><span class="kw">&gt;</span>
+        <span class="kw">&lt;/script&gt;</span>
+    <span class="kw">&lt;/body&gt;</span>
+<span class="kw">&lt;/html&gt;</span></code></pre></td></tr></table></div>
+<p><a href="http://karlbenedict.com/GEOG485-585/sample-files/GoogleMaps/css/mapPage.css">mapPage.css</a></p>
+<div class="sourceCode"><table class="sourceCode css numberLines"><tr class="sourceCode"><td class="lineNumbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+</pre></td><td class="sourceCode"><pre><code class="sourceCode css"><span class="co">/* You must set the height of either the &#39;html&#39; or &#39;body&#39; elements for some </span>
+<span class="co">    browsers to properly render the map with a hight taller than 0px */</span>
+html <span class="kw">{</span> 
+    <span class="kw">height:</span> <span class="dt">100%</span> <span class="kw">}</span>
+
+body <span class="kw">{</span> 
+    <span class="kw">height:</span> <span class="dt">100%</span><span class="kw">;</span> 
+    <span class="kw">margin:</span> <span class="dt">0px</span><span class="kw">;</span> 
+    <span class="kw">padding:</span> <span class="dt">0px</span><span class="kw">;</span> 
+    <span class="kw">background-color:</span> <span class="dt">black</span><span class="kw">;</span> 
+    <span class="kw">color:</span> <span class="dt">#CCCCCC</span><span class="kw">;</span>
+    <span class="kw">text-align:</span> <span class="dt">center</span><span class="kw">}</span>
+    
+<span class="fl">#map_canvas</span> <span class="kw">{</span> 
+    <span class="kw">width:</span><span class="dt">90%</span><span class="kw">;</span> 
+    <span class="kw">height:</span><span class="dt">80%</span><span class="kw">;</span> 
+    <span class="kw">margin-left:</span><span class="dt">auto</span><span class="kw">;</span> 
+    <span class="kw">margin-right:</span> <span class="dt">auto</span> <span class="kw">}</span>
+    
+<span class="fl">.infoBox</span> <span class="kw">{</span> 
+    <span class="kw">color:</span><span class="dt">black</span> <span class="kw">}</span></code></pre></td></tr></table></div>
+<p><a href="http://karlbenedict.com/GEOG485-585/sample-files/GoogleMaps/js/mapPage_01.js">mapPage_01.js</a></p>
+<div class="sourceCode"><table class="sourceCode js numberLines"><tr class="sourceCode"><td class="lineNumbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+</pre></td><td class="sourceCode"><pre><code class="sourceCode">function initialize() {
+    var classroom = new google.maps.LatLng(35.084280,-106.624073)
+    var mapOptions = {
+        zoom: 8,
+        center: classroom,
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+    };
+    var map = new google.maps.Map(
+        document.getElementById(&quot;map_canvas&quot;),
+        mapOptions);
+}
+</code></pre></td></tr></table></div>
+</div>
+</section>
+<section id="simple---satellite" class="slide level3 module02a02a">
+<h1>Simple - Satellite</h1>
+<p><img src="images/gmaps02.png" alt="gmaps02.html preview" /> </p>
+</section>
+<section id="simple---satellite-code" class="slide level3 module02a02a">
+<h1>Simple - Satellite Code</h1>
+<div class="codeTable">
+<p><a href="http://karlbenedict.com/GEOG485-585/sample-files/GoogleMaps/gmaps02.html">gmaps02.html</a></p>
+<div class="sourceCode"><table class="sourceCode html numberLines"><tr class="sourceCode"><td class="lineNumbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+</pre></td><td class="sourceCode"><pre><code class="sourceCode html"><span class="dt">&lt;!DOCTYPE </span>html<span class="dt">&gt;</span>
+<span class="kw">&lt;html&gt;</span>
+    <span class="kw">&lt;head&gt;</span>
+        <span class="kw">&lt;link</span><span class="ot"> rel=</span><span class="st">&quot;stylesheet&quot;</span><span class="ot"> type=</span><span class="st">&quot;text/css&quot;</span><span class="ot"> href=</span><span class="st">&quot;css/mapPage.css&quot;</span><span class="kw">&gt;</span>
+    <span class="kw">&lt;/head&gt;</span>
+
+    <span class="kw">&lt;body&gt;</span>
+        <span class="kw">&lt;h1&gt;</span>Sample Map<span class="kw">&lt;/h1&gt;</span>
+        <span class="kw">&lt;div</span><span class="ot"> id=</span><span class="st">&quot;map_canvas&quot;</span><span class="kw">&gt;&lt;/div&gt;</span>
+
+    <span class="co">&lt;!-- Let&#39;s put our JavaScript down here </span><span class="er">-------------------------------------------</span><span class="co">--&gt;</span>
+        <span class="co">&lt;!-- Load the external JavaScript file with the map definition code --&gt;</span>
+        <span class="kw">&lt;script</span><span class="ot"> src=</span><span class="st">&quot;js/mapPage_02.js&quot;</span><span class="kw">&gt;&lt;/script&gt;</span>
+        
+        <span class="co">&lt;!-- Load the API in asynchronous mode and execute the initialize </span>
+<span class="co">            function when done --&gt;</span>
+        
+        <span class="kw">&lt;script</span><span class="ot"> async defer</span> 
+<span class="ot">            src=</span><span class="st">&quot;https://maps.googleapis.com/maps/api/js?callback=initialize</span><span class="er">&amp;</span><span class="st">key=</span><span class="er">&lt;</span><span class="st">mykey&gt;&quot;</span><span class="kw">&gt;</span>
+        <span class="kw">&lt;/script&gt;</span>
+    <span class="kw">&lt;/body&gt;</span>
+<span class="kw">&lt;/html&gt;</span></code></pre></td></tr></table></div>
+<p><a href="http://karlbenedict.com/GEOG485-585/sample-files/GoogleMaps/js/mapPage_02.js">mapPage_02.js</a></p>
+<div class="sourceCode"><table class="sourceCode js numberLines"><tr class="sourceCode"><td class="lineNumbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+</pre></td><td class="sourceCode"><pre><code class="sourceCode">function initialize() {
+    var classroom = new google.maps.LatLng(35.084280,-106.624073)
+    var mapOptions = {
+        zoom: 8,
+        center: classroom,
+        mapTypeId: google.maps.MapTypeId.SATELLITE
+    };
+    var map = new google.maps.Map(
+        document.getElementById(&quot;map_canvas&quot;),
+        mapOptions);
+}
+</code></pre></td></tr></table></div>
+</div>
+</section>
+<section id="simple---hybrid" class="slide level3 module02a02a">
+<h1>Simple - Hybrid</h1>
+<p><img src="images/gmaps03.png" alt="gmaps03.html preview" /> </p>
+</section>
+<section id="simple---hybrid-code" class="slide level3 module02a02a">
+<h1>Simple - Hybrid Code</h1>
+<div class="codeTable">
+<p><a href="http://karlbenedict.com/GEOG485-585/sample-files/GoogleMaps/gmaps03.html">gmaps03.html</a></p>
+<div class="sourceCode"><table class="sourceCode html numberLines"><tr class="sourceCode"><td class="lineNumbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+</pre></td><td class="sourceCode"><pre><code class="sourceCode html"><span class="dt">&lt;!DOCTYPE </span>html<span class="dt">&gt;</span>
+<span class="kw">&lt;html&gt;</span>
+    <span class="kw">&lt;head&gt;</span>
+        <span class="kw">&lt;link</span><span class="ot"> rel=</span><span class="st">&quot;stylesheet&quot;</span><span class="ot"> type=</span><span class="st">&quot;text/css&quot;</span><span class="ot"> href=</span><span class="st">&quot;css/mapPage.css&quot;</span><span class="kw">&gt;</span>
+    <span class="kw">&lt;/head&gt;</span>
+
+    <span class="kw">&lt;body&gt;</span>
+        <span class="kw">&lt;h1&gt;</span>Sample Map<span class="kw">&lt;/h1&gt;</span>
+        <span class="kw">&lt;div</span><span class="ot"> id=</span><span class="st">&quot;map_canvas&quot;</span><span class="kw">&gt;&lt;/div&gt;</span>
+
+    <span class="co">&lt;!-- Let&#39;s put our JavaScript down here </span><span class="er">-------------------------------------------</span><span class="co">--&gt;</span>
+        <span class="co">&lt;!-- Load the external JavaScript file with the map definition code --&gt;</span>
+        <span class="kw">&lt;script</span><span class="ot"> src=</span><span class="st">&quot;js/mapPage_03.js&quot;</span><span class="kw">&gt;&lt;/script&gt;</span>
+        
+        <span class="co">&lt;!-- Load the API in asynchronous mode and execute the initialize </span>
+<span class="co">            function when done --&gt;</span>
+        
+        <span class="kw">&lt;script</span><span class="ot"> async defer</span> 
+<span class="ot">            src=</span><span class="st">&quot;https://maps.googleapis.com/maps/api/js?callback=initialize</span><span class="er">&amp;</span><span class="st">key=</span><span class="er">&lt;</span><span class="st">mykey&gt;&quot;</span><span class="kw">&gt;</span>
+        <span class="kw">&lt;/script&gt;</span>
+    <span class="kw">&lt;/body&gt;</span>
+<span class="kw">&lt;/html&gt;</span></code></pre></td></tr></table></div>
+<p><a href="http://karlbenedict.com/GEOG485-585/sample-files/GoogleMaps/js/mapPage_03.js">mapPage_03.js</a></p>
+<div class="sourceCode"><table class="sourceCode js numberLines"><tr class="sourceCode"><td class="lineNumbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+</pre></td><td class="sourceCode"><pre><code class="sourceCode">function initialize() {
+    var classroom = new google.maps.LatLng(35.084280,-106.624073)
+    var mapOptions = {
+        zoom: 8,
+        center: classroom,
+        mapTypeId: google.maps.MapTypeId.HYBRID
+    };
+    var map = new google.maps.Map(
+        document.getElementById(&quot;map_canvas&quot;),
+        mapOptions);
+}
+</code></pre></td></tr></table></div>
+</div>
+</section>
+<section id="simple---terrain" class="slide level3 module02a02a">
+<h1>Simple - Terrain</h1>
+<p><img src="images/gmaps04.png" alt="gmaps04.html preview" /> </p>
+</section>
+<section id="simple---terrain-code" class="slide level3 module02a02a">
+<h1>Simple - Terrain Code</h1>
+<div class="codeTable">
+<p><a href="http://karlbenedict.com/GEOG485-585/sample-files/GoogleMaps/gmaps04.html">gmaps04.html</a></p>
+<div class="sourceCode"><table class="sourceCode html numberLines"><tr class="sourceCode"><td class="lineNumbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+</pre></td><td class="sourceCode"><pre><code class="sourceCode html"><span class="dt">&lt;!DOCTYPE </span>html<span class="dt">&gt;</span>
+<span class="kw">&lt;html&gt;</span>
+    <span class="kw">&lt;head&gt;</span>
+        <span class="kw">&lt;link</span><span class="ot"> rel=</span><span class="st">&quot;stylesheet&quot;</span><span class="ot"> type=</span><span class="st">&quot;text/css&quot;</span><span class="ot"> href=</span><span class="st">&quot;css/mapPage.css&quot;</span><span class="kw">&gt;</span>
+    <span class="kw">&lt;/head&gt;</span>
+
+    <span class="kw">&lt;body&gt;</span>
+        <span class="kw">&lt;h1&gt;</span>Sample Map<span class="kw">&lt;/h1&gt;</span>
+        <span class="kw">&lt;div</span><span class="ot"> id=</span><span class="st">&quot;map_canvas&quot;</span><span class="kw">&gt;&lt;/div&gt;</span>
+
+    <span class="co">&lt;!-- Let&#39;s put our JavaScript down here </span><span class="er">-------------------------------------------</span><span class="co">--&gt;</span>
+        <span class="co">&lt;!-- Load the external JavaScript file with the map definition code --&gt;</span>
+        <span class="kw">&lt;script</span><span class="ot"> src=</span><span class="st">&quot;js/mapPage_04.js&quot;</span><span class="kw">&gt;&lt;/script&gt;</span>
+        
+        <span class="co">&lt;!-- Load the API in asynchronous mode and execute the initialize </span>
+<span class="co">            function when done --&gt;</span>
+        
+        <span class="kw">&lt;script</span><span class="ot"> async defer</span> 
+<span class="ot">            src=</span><span class="st">&quot;https://maps.googleapis.com/maps/api/js?callback=initialize</span><span class="er">&amp;</span><span class="st">key=</span><span class="er">&lt;</span><span class="st">mykey&gt;&quot;</span><span class="kw">&gt;</span>
+        <span class="kw">&lt;/script&gt;</span>
+    <span class="kw">&lt;/body&gt;</span>
+<span class="kw">&lt;/html&gt;</span></code></pre></td></tr></table></div>
+<p><a href="http://karlbenedict.com/GEOG485-585/sample-files/GoogleMaps/js/mapPage_04.js">mapPage_04.js</a></p>
+<div class="sourceCode"><table class="sourceCode js numberLines"><tr class="sourceCode"><td class="lineNumbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+</pre></td><td class="sourceCode"><pre><code class="sourceCode">function initialize() {
+    var classroom = new google.maps.LatLng(35.084280,-106.624073)
+    var mapOptions = {
+        zoom: 8,
+        center: classroom,
+        mapTypeId: google.maps.MapTypeId.TERRAIN
+    };
+    var map = new google.maps.Map(
+        document.getElementById(&quot;map_canvas&quot;),
+        mapOptions);
+}
+</code></pre></td></tr></table></div>
+</div>
+</section>
+<section id="simple---hybrid---zoomed" class="slide level3 module02a02a">
+<h1>Simple - Hybrid - Zoomed</h1>
+<p><img src="images/gmaps05.png" alt="gmaps05.html preview" /> </p>
+</section>
+<section id="simple---hybrid---zoomed-code" class="slide level3 module02a02a">
+<h1>Simple - Hybrid - Zoomed Code</h1>
+<div class="codeTable">
+<p><a href="http://karlbenedict.com/GEOG485-585/sample-files/GoogleMaps/gmaps05.html">gmaps05.html</a></p>
+<div class="sourceCode"><table class="sourceCode html numberLines"><tr class="sourceCode"><td class="lineNumbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+</pre></td><td class="sourceCode"><pre><code class="sourceCode html"><span class="dt">&lt;!DOCTYPE </span>html<span class="dt">&gt;</span>
+<span class="kw">&lt;html&gt;</span>
+    <span class="kw">&lt;head&gt;</span>
+        <span class="kw">&lt;link</span><span class="ot"> rel=</span><span class="st">&quot;stylesheet&quot;</span><span class="ot"> type=</span><span class="st">&quot;text/css&quot;</span><span class="ot"> href=</span><span class="st">&quot;css/mapPage.css&quot;</span><span class="kw">&gt;</span>
+    <span class="kw">&lt;/head&gt;</span>
+
+    <span class="kw">&lt;body&gt;</span>
+        <span class="kw">&lt;h1&gt;</span>Sample Map<span class="kw">&lt;/h1&gt;</span>
+        <span class="kw">&lt;div</span><span class="ot"> id=</span><span class="st">&quot;map_canvas&quot;</span><span class="kw">&gt;&lt;/div&gt;</span>
+
+    <span class="co">&lt;!-- Let&#39;s put our JavaScript down here </span><span class="er">-------------------------------------------</span><span class="co">--&gt;</span>
+        <span class="co">&lt;!-- Load the external JavaScript file with the map definition code --&gt;</span>
+        <span class="kw">&lt;script</span><span class="ot"> src=</span><span class="st">&quot;js/mapPage_05.js&quot;</span><span class="kw">&gt;&lt;/script&gt;</span>
+        
+        <span class="co">&lt;!-- Load the API in asynchronous mode and execute the initialize </span>
+<span class="co">            function when done --&gt;</span>
+        
+        <span class="kw">&lt;script</span><span class="ot"> async defer</span> 
+<span class="ot">            src=</span><span class="st">&quot;https://maps.googleapis.com/maps/api/js?callback=initialize</span><span class="er">&amp;</span><span class="st">key=</span><span class="er">&lt;</span><span class="st">mykey&gt;&quot;</span><span class="kw">&gt;</span>
+        <span class="kw">&lt;/script&gt;</span>
+    <span class="kw">&lt;/body&gt;</span>
+<span class="kw">&lt;/html&gt;</span></code></pre></td></tr></table></div>
+<p><a href="http://karlbenedict.com/GEOG485-585/sample-files/GoogleMaps/js/mapPage_05.js">mapPage_05.js</a></p>
+<div class="sourceCode"><table class="sourceCode js numberLines"><tr class="sourceCode"><td class="lineNumbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+</pre></td><td class="sourceCode"><pre><code class="sourceCode">function initialize() {
+    var classroom = new google.maps.LatLng(35.084280,-106.624073)
+    var mapOptions = {
+        zoom: 18,
+        center: classroom,
+        mapTypeId: google.maps.MapTypeId.TERRAIN
+    };
+    var map = new google.maps.Map(
+        document.getElementById(&quot;map_canvas&quot;),
+        mapOptions);
+}
+</code></pre></td></tr></table></div>
+</div>
+</section>
+<section id="simple---zoomed---modified-controls" class="slide level3 module02a02a">
+<h1>Simple - Zoomed - Modified Controls</h1>
+<p><img src="images/gmaps06.png" alt="gmaps06.html preview" /> </p>
+</section>
+<section id="simple---zoomed---modified-controls-code" class="slide level3 module02a02a">
+<h1>Simple - Zoomed - Modified Controls Code</h1>
+<div class="codeTable">
+<p><a href="http://karlbenedict.com/GEOG485-585/sample-files/GoogleMaps/gmaps06.html">gmaps06.html</a></p>
+<div class="sourceCode"><table class="sourceCode html numberLines"><tr class="sourceCode"><td class="lineNumbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+</pre></td><td class="sourceCode"><pre><code class="sourceCode html"><span class="dt">&lt;!DOCTYPE </span>html<span class="dt">&gt;</span>
+<span class="kw">&lt;html&gt;</span>
+    <span class="kw">&lt;head&gt;</span>
+        <span class="kw">&lt;link</span><span class="ot"> rel=</span><span class="st">&quot;stylesheet&quot;</span><span class="ot"> type=</span><span class="st">&quot;text/css&quot;</span><span class="ot"> href=</span><span class="st">&quot;css/mapPage.css&quot;</span><span class="kw">&gt;</span>
+    <span class="kw">&lt;/head&gt;</span>
+
+    <span class="kw">&lt;body&gt;</span>
+        <span class="kw">&lt;h1&gt;</span>Sample Map<span class="kw">&lt;/h1&gt;</span>
+        <span class="kw">&lt;div</span><span class="ot"> id=</span><span class="st">&quot;map_canvas&quot;</span><span class="kw">&gt;&lt;/div&gt;</span>
+
+    <span class="co">&lt;!-- Let&#39;s put our JavaScript down here </span><span class="er">-------------------------------------------</span><span class="co">--&gt;</span>
+        <span class="co">&lt;!-- Load the external JavaScript file with the map definition code --&gt;</span>
+        <span class="kw">&lt;script</span><span class="ot"> src=</span><span class="st">&quot;js/mapPage_06.js&quot;</span><span class="kw">&gt;&lt;/script&gt;</span>
+        
+        <span class="co">&lt;!-- Load the API in asynchronous mode and execute the initialize </span>
+<span class="co">            function when done --&gt;</span>
+        
+        <span class="kw">&lt;script</span><span class="ot"> async defer</span> 
+<span class="ot">            src=</span><span class="st">&quot;https://maps.googleapis.com/maps/api/js?callback=initialize</span><span class="er">&amp;</span><span class="st">key=</span><span class="er">&lt;</span><span class="st">mykey&gt;&quot;</span><span class="kw">&gt;</span>
+        <span class="kw">&lt;/script&gt;</span>
+    <span class="kw">&lt;/body&gt;</span>
+<span class="kw">&lt;/html&gt;</span></code></pre></td></tr></table></div>
+<p><a href="http://karlbenedict.com/GEOG485-585/sample-files/GoogleMaps/js/mapPage_06.js">mapPage_06.js</a></p>
+<div class="sourceCode"><table class="sourceCode js numberLines"><tr class="sourceCode"><td class="lineNumbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+</pre></td><td class="sourceCode"><pre><code class="sourceCode">function initialize() {
+var classroom = new google.maps.LatLng(35.084280,-106.624073)
+var myOptions = {
+    zoom: 18,
+    center: classroom,
+    mapTypeId: google.maps.MapTypeId.HYBRID,
+    zoomControl: true,
+    zoomControlOptions: {style: google.maps.ZoomControlStyle.SMALL},
+    mapTypeControl: true,
+    mapTypeControlOptions: {
+    style: google.maps.MapTypeControlStyle.DROPDOWN_MENU},
+    streetViewControl: false
+};
+var map = new google.maps.Map(
+    document.getElementById(&quot;map_canvas&quot;),
+    myOptions);
+}
+</code></pre></td></tr></table></div>
+</div>
+</section>
+<section id="markers" class="slide level3 module02a02a">
+<h1>Markers</h1>
+<p><img src="images/gmaps07.png" alt="gmaps07.html preview" /> </p>
+</section>
+<section id="markers-code" class="slide level3 module02a02a">
+<h1>Markers Code</h1>
+<div class="codeTable">
+<p><a href="http://karlbenedict.com/GEOG485-585/sample-files/GoogleMaps/gmaps07.html">gmaps07.html</a></p>
+<div class="sourceCode"><table class="sourceCode html numberLines"><tr class="sourceCode"><td class="lineNumbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+</pre></td><td class="sourceCode"><pre><code class="sourceCode html"><span class="dt">&lt;!DOCTYPE </span>html<span class="dt">&gt;</span>
+<span class="kw">&lt;html&gt;</span>
+    <span class="kw">&lt;head&gt;</span>
+        <span class="kw">&lt;link</span><span class="ot"> rel=</span><span class="st">&quot;stylesheet&quot;</span><span class="ot"> type=</span><span class="st">&quot;text/css&quot;</span><span class="ot"> href=</span><span class="st">&quot;css/mapPage.css&quot;</span><span class="kw">&gt;</span>
+    <span class="kw">&lt;/head&gt;</span>
+
+    <span class="kw">&lt;body&gt;</span>
+        <span class="kw">&lt;h1&gt;</span>Sample Map<span class="kw">&lt;/h1&gt;</span>
+        <span class="kw">&lt;div</span><span class="ot"> id=</span><span class="st">&quot;map_canvas&quot;</span><span class="kw">&gt;&lt;/div&gt;</span>
+
+    <span class="co">&lt;!-- Let&#39;s put our JavaScript down here </span><span class="er">-------------------------------------------</span><span class="co">--&gt;</span>
+        <span class="co">&lt;!-- Load the external JavaScript file with the map definition code --&gt;</span>
+        <span class="kw">&lt;script</span><span class="ot"> src=</span><span class="st">&quot;js/mapPage_07.js&quot;</span><span class="kw">&gt;&lt;/script&gt;</span>
+        
+        <span class="co">&lt;!-- Load the API in asynchronous mode and execute the initialize </span>
+<span class="co">            function when done --&gt;</span>
+        
+        <span class="kw">&lt;script</span><span class="ot"> async defer</span> 
+<span class="ot">            src=</span><span class="st">&quot;https://maps.googleapis.com/maps/api/js?callback=initialize</span><span class="er">&amp;</span><span class="st">key=</span><span class="er">&lt;</span><span class="st">mykey&gt;&quot;</span><span class="kw">&gt;</span>
+        <span class="kw">&lt;/script&gt;</span>
+    <span class="kw">&lt;/body&gt;</span>
+<span class="kw">&lt;/html&gt;</span></code></pre></td></tr></table></div>
+<p><a href="http://karlbenedict.com/GEOG485-585/sample-files/GoogleMaps/js/mapPage_07.js">mapPage_07.js</a></p>
+<div class="sourceCode"><table class="sourceCode js numberLines"><tr class="sourceCode"><td class="lineNumbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+</pre></td><td class="sourceCode"><pre><code class="sourceCode">function initialize() {
+    var classroom = new google.maps.LatLng(35.084280,-106.624073)
+    var office = new google.maps.LatLng(35.084506,-106.624899)
+    var myOptions = {
+        zoom: 18,
+        center: classroom,
+        mapTypeId: google.maps.MapTypeId.HYBRID
+        };
+    var map = new google.maps.Map(
+        document.getElementById(&quot;map_canvas&quot;), 
+        myOptions);
+
+    var classroomMarker = new google.maps.Marker({
+        position: classroom,
+        title:&quot;Geography 485L/585L Classroom, Bandelier East, Room 106&quot;
+        });
+    classroomMarker.setMap(map);
+
+    var officeMarker = new google.maps.Marker({
+        position: office,
+        title:&quot;Office, Bandelier West, Room 107&quot;
+        });
+    officeMarker.setMap(map);
+}
+</code></pre></td></tr></table></div>
+</div>
+</section>
+<section id="polyline" class="slide level3 module02a02a">
+<h1>Polyline</h1>
+<p><img src="images/gmaps08.png" alt="gmaps08.html preview" /> </p>
+</section>
+<section id="polyline-code" class="slide level3 module02a02a">
+<h1>Polyline Code</h1>
+<div class="codeTable">
+<p><a href="http://karlbenedict.com/GEOG485-585/sample-files/GoogleMaps/gmaps08.html">gmaps08.html</a></p>
+<div class="sourceCode"><table class="sourceCode html numberLines"><tr class="sourceCode"><td class="lineNumbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+</pre></td><td class="sourceCode"><pre><code class="sourceCode html"><span class="dt">&lt;!DOCTYPE </span>html<span class="dt">&gt;</span>
+<span class="kw">&lt;html&gt;</span>
+    <span class="kw">&lt;head&gt;</span>
+        <span class="kw">&lt;link</span><span class="ot"> rel=</span><span class="st">&quot;stylesheet&quot;</span><span class="ot"> type=</span><span class="st">&quot;text/css&quot;</span><span class="ot"> href=</span><span class="st">&quot;css/mapPage.css&quot;</span><span class="kw">&gt;</span>
+    <span class="kw">&lt;/head&gt;</span>
+
+    <span class="kw">&lt;body&gt;</span>
+        <span class="kw">&lt;h1&gt;</span>Sample Map<span class="kw">&lt;/h1&gt;</span>
+        <span class="kw">&lt;div</span><span class="ot"> id=</span><span class="st">&quot;map_canvas&quot;</span><span class="kw">&gt;&lt;/div&gt;</span>
+
+    <span class="co">&lt;!-- Let&#39;s put our JavaScript down here </span><span class="er">-------------------------------------------</span><span class="co">--&gt;</span>
+        <span class="co">&lt;!-- Load the external JavaScript file with the map definition code --&gt;</span>
+        <span class="kw">&lt;script</span><span class="ot"> src=</span><span class="st">&quot;js/mapPage_08.js&quot;</span><span class="kw">&gt;&lt;/script&gt;</span>
+        
+        <span class="co">&lt;!-- Load the API in asynchronous mode and execute the initialize </span>
+<span class="co">            function when done --&gt;</span>
+        
+        <span class="kw">&lt;script</span><span class="ot"> async defer</span> 
+<span class="ot">            src=</span><span class="st">&quot;https://maps.googleapis.com/maps/api/js?callback=initialize</span><span class="er">&amp;</span><span class="st">key=</span><span class="er">&lt;</span><span class="st">mykey&gt;&quot;</span><span class="kw">&gt;</span>
+        <span class="kw">&lt;/script&gt;</span>
+    <span class="kw">&lt;/body&gt;</span>
+<span class="kw">&lt;/html&gt;</span></code></pre></td></tr></table></div>
+<p><a href="http://karlbenedict.com/GEOG485-585/sample-files/GoogleMaps/js/mapPage_08.js">mapPage_08.js</a></p>
+<div class="sourceCode"><table class="sourceCode js numberLines"><tr class="sourceCode"><td class="lineNumbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+</pre></td><td class="sourceCode"><pre><code class="sourceCode">    var classroom = new google.maps.LatLng(35.084280,-106.624073)
+    var office = new google.maps.LatLng(35.084506,-106.624899)
+    var myOptions = {
+        zoom: 18,
+        center: classroom,
+        mapTypeId: google.maps.MapTypeId.HYBRID
+        };
+    var map = new google.maps.Map(
+        document.getElementById(&quot;map_canvas&quot;), 
+        myOptions);
+
+    var classroomMarker = new google.maps.Marker({
+        position: classroom,
+        title:&quot;Geography 485L/585L Classroom, Bandelier East, Room 106&quot;
+        });
+    classroomMarker.setMap(map);
+
+    var officeMarker = new google.maps.Marker({
+        position: office,
+        title:&quot;Office, Bandelier West, Room 107&quot;
+        });
+    officeMarker.setMap(map); 
+
+    var officeVisitCoordinates = [
+        office,
+        new google.maps.LatLng(35.084445,-106.624327),
+        new google.maps.LatLng(35.084309,-106.624308),
+        classroom
+        ];
+    var officePath = new google.maps.Polyline({
+        path: officeVisitCoordinates,
+        strokeColor: &quot;#FF0000&quot;,
+        strokeOpacity: 1.0,
+        strokeWeight: 2
+    });
+    officePath.setMap(map)
+}
+</code></pre></td></tr></table></div>
+</div>
+</section>
+<section id="polygon" class="slide level3 module02a02a">
+<h1>Polygon</h1>
+<p><img src="images/gmaps09.png" alt="gmaps09.html preview" /> </p>
+</section>
+<section id="polygon-code" class="slide level3 module02a02a">
+<h1>Polygon Code</h1>
+<div class="codeTable">
+<p><a href="http://karlbenedict.com/GEOG485-585/sample-files/GoogleMaps/gmaps09.html">gmaps09.html</a></p>
+<div class="sourceCode"><table class="sourceCode html numberLines"><tr class="sourceCode"><td class="lineNumbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+</pre></td><td class="sourceCode"><pre><code class="sourceCode html"><span class="dt">&lt;!DOCTYPE </span>html<span class="dt">&gt;</span>
+<span class="kw">&lt;html&gt;</span>
+    <span class="kw">&lt;head&gt;</span>
+        <span class="kw">&lt;link</span><span class="ot"> rel=</span><span class="st">&quot;stylesheet&quot;</span><span class="ot"> type=</span><span class="st">&quot;text/css&quot;</span><span class="ot"> href=</span><span class="st">&quot;css/mapPage.css&quot;</span><span class="kw">&gt;</span>
+    <span class="kw">&lt;/head&gt;</span>
+
+    <span class="kw">&lt;body&gt;</span>
+        <span class="kw">&lt;h1&gt;</span>Sample Map<span class="kw">&lt;/h1&gt;</span>
+        <span class="kw">&lt;div</span><span class="ot"> id=</span><span class="st">&quot;map_canvas&quot;</span><span class="kw">&gt;&lt;/div&gt;</span>
+
+    <span class="co">&lt;!-- Let&#39;s put our JavaScript down here </span><span class="er">-------------------------------------------</span><span class="co">--&gt;</span>
+        <span class="co">&lt;!-- Load the external JavaScript file with the map definition code --&gt;</span>
+        <span class="kw">&lt;script</span><span class="ot"> src=</span><span class="st">&quot;js/mapPage_09.js&quot;</span><span class="kw">&gt;&lt;/script&gt;</span>
+        
+        <span class="co">&lt;!-- Load the API in asynchronous mode and execute the initialize </span>
+<span class="co">            function when done --&gt;</span>
+        
+        <span class="kw">&lt;script</span><span class="ot"> async defer</span> 
+<span class="ot">            src=</span><span class="st">&quot;https://maps.googleapis.com/maps/api/js?callback=initialize</span><span class="er">&amp;</span><span class="st">key=</span><span class="er">&lt;</span><span class="st">mykey&gt;&quot;</span><span class="kw">&gt;</span>
+        <span class="kw">&lt;/script&gt;</span>
+    <span class="kw">&lt;/body&gt;</span>
+<span class="kw">&lt;/html&gt;</span></code></pre></td></tr></table></div>
+<p><a href="http://karlbenedict.com/GEOG485-585/sample-files/GoogleMaps/js/mapPage_09.js">mapPage_09.js</a></p>
+<div class="sourceCode"><table class="sourceCode js numberLines"><tr class="sourceCode"><td class="lineNumbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+</pre></td><td class="sourceCode"><pre><code class="sourceCode">function initialize() {
+    var classroom = new google.maps.LatLng(35.084280,-106.624073)
+    var office = new google.maps.LatLng(35.084506,-106.624899)
+    var myOptions = {
+        zoom: 18,
+        center: classroom,
+        mapTypeId: google.maps.MapTypeId.HYBRID
+        };
+    var map = new google.maps.Map(
+        document.getElementById(&quot;map_canvas&quot;), 
+        myOptions);
+    var classroomMarker = new google.maps.Marker({
+        position: classroom,
+        title:&quot;Geography 485L/585L Classroom, Bandelier East, Room 106&quot;
+        });
+    classroomMarker.setMap(map);
+    var officeMarker = new google.maps.Marker({
+        position: office,
+        title:&quot;Office, Bandelier West, Room 107&quot;
+        });
+    officeMarker.setMap(map); 
+    var buildingCoordinates = [
+        new google.maps.LatLng(35.084498,-106.624921),
+        new google.maps.LatLng(35.084558,-106.624911),
+        new google.maps.LatLng(35.084566,-106.624970),
+        new google.maps.LatLng(35.084609,-106.624966),
+        new google.maps.LatLng(35.084544,-106.624383),
+        new google.maps.LatLng(35.084438,-106.624317),
+        new google.maps.LatLng(35.084384,-106.623922),
+        new google.maps.LatLng(35.084164,-106.623970),
+        new google.maps.LatLng(35.084214,-106.624324),
+        new google.maps.LatLng(35.084214,-106.624324),
+        new google.maps.LatLng(35.084391,-106.624284)
+        ];
+    var bldgPoly = new google.maps.Polygon({
+        paths: buildingCoordinates,
+        strokeColor: &quot;#FF0000&quot;,
+        strokeOpacity: 0.8,
+        strokeWeight: 2,
+        fillColor: &quot;#FF0000&quot;,
+        fillOpacity: 0.35
+    });
+    bldgPoly.setMap(map)
+}
+</code></pre></td></tr></table></div>
+</div>
+</section>
+<section id="adding-an-info-window" class="slide level3 module02a02a">
+<h1>Adding an Info Window</h1>
+<p><img src="images/gmaps10.png" alt="gmaps10.html preview" /> </p>
+</section>
+<section id="adding-an-info-window-code" class="slide level3 module02a02a">
+<h1>Adding an Info Window Code</h1>
+<div class="codeTable">
+<p><a href="http://karlbenedict.com/GEOG485-585/sample-files/GoogleMaps/gmaps10.html">gmaps10.html</a></p>
+<div class="sourceCode"><table class="sourceCode html numberLines"><tr class="sourceCode"><td class="lineNumbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+</pre></td><td class="sourceCode"><pre><code class="sourceCode html"><span class="dt">&lt;!DOCTYPE </span>html<span class="dt">&gt;</span>
+<span class="kw">&lt;html&gt;</span>
+    <span class="kw">&lt;head&gt;</span>
+        <span class="kw">&lt;link</span><span class="ot"> rel=</span><span class="st">&quot;stylesheet&quot;</span><span class="ot"> type=</span><span class="st">&quot;text/css&quot;</span><span class="ot"> href=</span><span class="st">&quot;css/mapPage.css&quot;</span><span class="kw">&gt;</span>
+    <span class="kw">&lt;/head&gt;</span>
+
+    <span class="kw">&lt;body&gt;</span>
+        <span class="kw">&lt;h1&gt;</span>Sample Map<span class="kw">&lt;/h1&gt;</span>
+        <span class="kw">&lt;div</span><span class="ot"> id=</span><span class="st">&quot;map_canvas&quot;</span><span class="kw">&gt;&lt;/div&gt;</span>
+
+    <span class="co">&lt;!-- Let&#39;s put our JavaScript down here </span><span class="er">-------------------------------------------</span><span class="co">--&gt;</span>
+        <span class="co">&lt;!-- Load the external JavaScript file with the map definition code --&gt;</span>
+        <span class="kw">&lt;script</span><span class="ot"> src=</span><span class="st">&quot;js/mapPage_10.js&quot;</span><span class="kw">&gt;&lt;/script&gt;</span>
+        
+        <span class="co">&lt;!-- Load the API in asynchronous mode and execute the initialize </span>
+<span class="co">            function when done --&gt;</span>
+        
+        <span class="kw">&lt;script</span><span class="ot"> async defer</span> 
+<span class="ot">            src=</span><span class="st">&quot;https://maps.googleapis.com/maps/api/js?callback=initialize</span><span class="er">&amp;</span><span class="st">key=</span><span class="er">&lt;</span><span class="st">mykey&gt;&quot;</span><span class="kw">&gt;</span>
+        <span class="kw">&lt;/script&gt;</span>
+    <span class="kw">&lt;/body&gt;</span>
+<span class="kw">&lt;/html&gt;</span></code></pre></td></tr></table></div>
+<p><a href="http://karlbenedict.com/GEOG485-585/sample-files/GoogleMaps/js/mapPage_10.js">mapPage_10.js</a></p>
+<div class="sourceCode"><table class="sourceCode js numberLines"><tr class="sourceCode"><td class="lineNumbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+</pre></td><td class="sourceCode"><pre><code class="sourceCode">function initialize() {
+    var classroom = new google.maps.LatLng(35.084280,-106.624073)
+    var office = new google.maps.LatLng(35.084506,-106.624899)
+    var myOptions = {
+        zoom: 18,
+        center: classroom,
+        mapTypeId: google.maps.MapTypeId.HYBRID
+        };
+    var map = new google.maps.Map(
+        document.getElementById(&quot;map_canvas&quot;), 
+        myOptions);
+    var classroomMarker = new google.maps.Marker({
+        position: classroom,
+        title:&quot;Geography 485L/585L Classroom, Bandelier East, Room 106&quot;
+        });
+    classroomMarker.setMap(map);
+    var officeMarker = new google.maps.Marker({
+        position: office,
+        title:&quot;Office, Bandelier West, Room 107&quot;
+        });
+    officeMarker.setMap(map); 
+    var buildingCoordinates = [
+        new google.maps.LatLng(35.084498,-106.624921),
+        new google.maps.LatLng(35.084558,-106.624911),
+        new google.maps.LatLng(35.084566,-106.624970),
+        new google.maps.LatLng(35.084609,-106.624966),
+        new google.maps.LatLng(35.084544,-106.624383),
+        new google.maps.LatLng(35.084438,-106.624317),
+        new google.maps.LatLng(35.084384,-106.623922),
+        new google.maps.LatLng(35.084164,-106.623970),
+        new google.maps.LatLng(35.084214,-106.624324),
+        new google.maps.LatLng(35.084214,-106.624324),
+        new google.maps.LatLng(35.084391,-106.624284)
+        ];
+    var bldgPoly = new google.maps.Polygon({
+        paths: buildingCoordinates,
+        strokeColor: &quot;#FF0000&quot;,
+        strokeOpacity: 0.8,
+        strokeWeight: 2,
+        fillColor: &quot;#FF0000&quot;,
+        fillOpacity: 0.35
+        });
+    bldgPoly.setMap(map);
+    var classInfoContent = &#39;&lt;div class=&quot;infoBox&quot;&gt;&#39; +
+        &#39;&lt;p&gt;This is the location for the Geography 485L/585L class&lt;/p&gt;&#39; +
+        &#39;&lt;/div&gt;&#39;
+    var classInfoWindow = new google.maps.InfoWindow({
+        content: classInfoContent
+        });
+    google.maps.event.addListener(classroomMarker, &#39;click&#39;, function() {
+        classInfoWindow.open(map,classroomMarker);
+        });
+    var bldgInfoContent = &#39;&lt;div class=&quot;infoBox&quot;&gt;&#39; +
+        &#39;&lt;p&gt;This is the location of Bandelier East and West on the UNM Campus&lt;/p&gt;&#39; +
+        &#39;&lt;iframe src=&quot;https://www.google.com/maps/embed?pb=!1m0!3m2!1sen!2sus!4v1486322485343!6m8!1m7!1sneDc4DwioOJ-TytixzvJEg!2m2!1d35.08459518161192!2d-106.6243050674837!3f207.5327084691508!4f-4.850942482843806!5f0.7820865974627469&quot; width=&quot;300&quot; height=&quot;225&quot; frameborder=&quot;0&quot; style=&quot;border:0&quot; allowfullscreen&gt;&lt;/iframe&gt;&#39; +
+        &#39;&lt;/div&gt;&#39;
+    var bldgInfoWindow = new google.maps.InfoWindow({
+        content: bldgInfoContent
+        });
+    google.maps.event.addListener(bldgPoly, &#39;click&#39;, function() {
+        var position = new google.maps.LatLng(35.084438,-106.624317)
+        bldgInfoWindow.setPosition(position)
+        bldgInfoWindow.open(map);
+        });
+}
+
+</code></pre></td></tr></table></div>
+</div>
+</section>
+<hr />
+<section>
+<div class="license">
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />This work by <span xmlns:cc="http://creativecommons.org/ns#" property="cc:attributionName">Karl Benedict</span> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+</div>
+</section>
+<!-- {{{{ dzslides core
+#
+#
+#     __  __  __       .  __   ___  __
+#    |  \  / /__` |    | |  \ |__  /__`
+#    |__/ /_ .__/ |___ | |__/ |___ .__/ core :€
+#
+#
+# The following block of code is not supposed to be edited.
+# But if you want to change the behavior of these slides,
+# feel free to hack it!
+#
+-->
+
+<div id="progress-bar"></div>
+
+<!-- Default Style -->
+<style>
+  * { margin: 0; padding: 0; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+  [role="note"] { display: none; }
+  body {
+    width: 800px; height: 600px;
+    margin-left: -400px; margin-top: -300px;
+    position: absolute; top: 50%; left: 50%;
+    overflow: hidden;
+    display: none;
+  }
+  .view body {
+    position: static;
+    margin: 0; padding: 0;
+    width: 100%; height: 100%;
+    display: inline-block;
+    overflow: visible; overflow-x: hidden;
+    /* undo Dz.onresize */
+    transform: none !important;
+    -moz-transform: none !important;
+    -webkit-transform: none !important;
+    -o-transform: none !important;
+    -ms-transform: none !important;
+  }
+  .view head, .view head > title { display: block }
+  section {
+    position: absolute;
+    pointer-events: none;
+    width: 100%; height: 100%;
+  }
+  .view section {
+    pointer-events: auto;
+    position: static;
+    width: 800px; height: 600px;
+    margin: -150px -200px;
+    float: left;
+
+    transform: scale(.4);
+    -moz-transform: scale(.4);
+    -webkit-transform: scale(.4);
+    -o-transform: scale(.4);
+    -ms-transform: scale(.4);
+  }
+  .view section > * { pointer-events: none; }
+  section[aria-selected] { pointer-events: auto; }
+  html { overflow: hidden; }
+  html.view { overflow: visible; }
+  body.loaded { display: block; }
+  .incremental {visibility: hidden; }
+  .incremental[active] {visibility: visible; }
+  #progress-bar{
+    bottom: 0;
+    position: absolute;
+    -moz-transition: width 400ms linear 0s;
+    -webkit-transition: width 400ms linear 0s;
+    -ms-transition: width 400ms linear 0s;
+    transition: width 400ms linear 0s;
+  }
+  .view #progress-bar {
+    display: none;
+  }
+</style>
+
+<script>
+  var Dz = {
+    remoteWindows: [],
+    idx: -1,
+    step: 0,
+    html: null,
+    slides: null,
+    progressBar : null,
+    params: {
+      autoplay: "1"
+    }
+  };
+
+  Dz.init = function() {
+    document.body.className = "loaded";
+    this.slides = Array.prototype.slice.call($$("body > section"));
+    this.progressBar = $("#progress-bar");
+    this.html = document.body.parentNode;
+    this.setupParams();
+    this.onhashchange();
+    this.setupTouchEvents();
+    this.onresize();
+    this.setupView();
+  }
+
+  Dz.setupParams = function() {
+    var p = window.location.search.substr(1).split('&');
+    p.forEach(function(e, i, a) {
+      var keyVal = e.split('=');
+      Dz.params[keyVal[0]] = decodeURIComponent(keyVal[1]);
+    });
+  // Specific params handling
+    if (!+this.params.autoplay)
+      $$.forEach($$("video"), function(v){ v.controls = true });
+  }
+
+  Dz.onkeydown = function(aEvent) {
+    // Don't intercept keyboard shortcuts
+    if (aEvent.altKey
+      || aEvent.ctrlKey
+      || aEvent.metaKey
+      || aEvent.shiftKey) {
+      return;
+    }
+    if ( aEvent.keyCode == 37 // left arrow
+      || aEvent.keyCode == 38 // up arrow
+      || aEvent.keyCode == 33 // page up
+    ) {
+      aEvent.preventDefault();
+      this.back();
+    }
+    if ( aEvent.keyCode == 39 // right arrow
+      || aEvent.keyCode == 40 // down arrow
+      || aEvent.keyCode == 34 // page down
+    ) {
+      aEvent.preventDefault();
+      this.forward();
+    }
+    if (aEvent.keyCode == 35) { // end
+      aEvent.preventDefault();
+      this.goEnd();
+    }
+    if (aEvent.keyCode == 36) { // home
+      aEvent.preventDefault();
+      this.goStart();
+    }
+    if (aEvent.keyCode == 32) { // space
+      aEvent.preventDefault();
+      this.toggleContent();
+    }
+    if (aEvent.keyCode == 70) { // f
+      aEvent.preventDefault();
+      this.goFullscreen();
+    }
+    if (aEvent.keyCode == 79) { // o
+      aEvent.preventDefault();
+      this.toggleView();
+    }
+  }
+
+  /* Touch Events */
+
+  Dz.setupTouchEvents = function() {
+    var orgX, newX;
+    var tracking = false;
+
+    var db = document.body;
+    db.addEventListener("touchstart", start.bind(this), false);
+    db.addEventListener("touchmove", move.bind(this), false);
+
+    function start(aEvent) {
+      aEvent.preventDefault();
+      tracking = true;
+      orgX = aEvent.changedTouches[0].pageX;
+    }
+
+    function move(aEvent) {
+      if (!tracking) return;
+      newX = aEvent.changedTouches[0].pageX;
+      if (orgX - newX > 100) {
+        tracking = false;
+        this.forward();
+      } else {
+        if (orgX - newX < -100) {
+          tracking = false;
+          this.back();
+        }
+      }
+    }
+  }
+
+  Dz.setupView = function() {
+    document.body.addEventListener("click", function ( e ) {
+      if (!Dz.html.classList.contains("view")) return;
+      if (!e.target || e.target.nodeName != "SECTION") return;
+
+      Dz.html.classList.remove("view");
+      Dz.setCursor(Dz.slides.indexOf(e.target) + 1);
+    }, false);
+  }
+
+  /* Adapt the size of the slides to the window */
+
+  Dz.onresize = function() {
+    var db = document.body;
+    var sx = db.clientWidth / window.innerWidth;
+    var sy = db.clientHeight / window.innerHeight;
+    var transform = "scale(" + (1/Math.max(sx, sy)) + ")";
+
+    db.style.MozTransform = transform;
+    db.style.WebkitTransform = transform;
+    db.style.OTransform = transform;
+    db.style.msTransform = transform;
+    db.style.transform = transform;
+  }
+
+
+  Dz.getNotes = function(aIdx) {
+    var s = $("section:nth-of-type(" + aIdx + ")");
+    var d = s.$("[role='note']");
+    return d ? d.innerHTML : "";
+  }
+
+  Dz.onmessage = function(aEvent) {
+    var argv = aEvent.data.split(" "), argc = argv.length;
+    argv.forEach(function(e, i, a) { a[i] = decodeURIComponent(e) });
+    var win = aEvent.source;
+    if (argv[0] === "REGISTER" && argc === 1) {
+      this.remoteWindows.push(win);
+      this.postMsg(win, "REGISTERED", document.title, this.slides.length);
+      this.postMsg(win, "CURSOR", this.idx + "." + this.step);
+      return;
+    }
+    if (argv[0] === "BACK" && argc === 1)
+      this.back();
+    if (argv[0] === "FORWARD" && argc === 1)
+      this.forward();
+    if (argv[0] === "START" && argc === 1)
+      this.goStart();
+    if (argv[0] === "END" && argc === 1)
+      this.goEnd();
+    if (argv[0] === "TOGGLE_CONTENT" && argc === 1)
+      this.toggleContent();
+    if (argv[0] === "SET_CURSOR" && argc === 2)
+      window.location.hash = "#" + argv[1];
+    if (argv[0] === "GET_CURSOR" && argc === 1)
+      this.postMsg(win, "CURSOR", this.idx + "." + this.step);
+    if (argv[0] === "GET_NOTES" && argc === 1)
+      this.postMsg(win, "NOTES", this.getNotes(this.idx));
+  }
+
+  Dz.toggleContent = function() {
+    // If a Video is present in this new slide, play it.
+    // If a Video is present in the previous slide, stop it.
+    var s = $("section[aria-selected]");
+    if (s) {
+      var video = s.$("video");
+      if (video) {
+        if (video.ended || video.paused) {
+          video.play();
+        } else {
+          video.pause();
+        }
+      }
+    }
+  }
+
+  Dz.setCursor = function(aIdx, aStep) {
+    // If the user change the slide number in the URL bar, jump
+    // to this slide.
+    aStep = (aStep != 0 && typeof aStep !== "undefined") ? "." + aStep : ".0";
+    window.location.hash = "#" + aIdx + aStep;
+  }
+
+  Dz.onhashchange = function() {
+    var cursor = window.location.hash.split("#"),
+        newidx = 1,
+        newstep = 0;
+    if (cursor.length == 2) {
+      newidx = ~~cursor[1].split(".")[0];
+      newstep = ~~cursor[1].split(".")[1];
+      if (newstep > Dz.slides[newidx - 1].$$('.incremental > *').length) {
+        newstep = 0;
+        newidx++;
+      }
+    }
+    this.setProgress(newidx, newstep);
+    if (newidx != this.idx) {
+      this.setSlide(newidx);
+    }
+    if (newstep != this.step) {
+      this.setIncremental(newstep);
+    }
+    for (var i = 0; i < this.remoteWindows.length; i++) {
+      this.postMsg(this.remoteWindows[i], "CURSOR", this.idx + "." + this.step);
+    }
+  }
+
+  Dz.back = function() {
+    if (this.idx == 1 && this.step == 0) {
+      return;
+    }
+    if (this.step == 0) {
+      this.setCursor(this.idx - 1,
+                     this.slides[this.idx - 2].$$('.incremental > *').length);
+    } else {
+      this.setCursor(this.idx, this.step - 1);
+    }
+  }
+
+  Dz.forward = function() {
+    if (this.idx >= this.slides.length &&
+        this.step >= this.slides[this.idx - 1].$$('.incremental > *').length) {
+        return;
+    }
+    if (this.step >= this.slides[this.idx - 1].$$('.incremental > *').length) {
+      this.setCursor(this.idx + 1, 0);
+    } else {
+      this.setCursor(this.idx, this.step + 1);
+    }
+  }
+
+  Dz.goStart = function() {
+    this.setCursor(1, 0);
+  }
+
+  Dz.goEnd = function() {
+    var lastIdx = this.slides.length;
+    var lastStep = this.slides[lastIdx - 1].$$('.incremental > *').length;
+    this.setCursor(lastIdx, lastStep);
+  }
+
+  Dz.toggleView = function() {
+    this.html.classList.toggle("view");
+
+    if (this.html.classList.contains("view")) {
+      $("section[aria-selected]").scrollIntoView(true);
+    }
+  }
+
+  Dz.setSlide = function(aIdx) {
+    this.idx = aIdx;
+    var old = $("section[aria-selected]");
+    var next = $("section:nth-of-type("+ this.idx +")");
+    if (old) {
+      old.removeAttribute("aria-selected");
+      var video = old.$("video");
+      if (video) {
+        video.pause();
+      }
+    }
+    if (next) {
+      next.setAttribute("aria-selected", "true");
+      if (this.html.classList.contains("view")) {
+        next.scrollIntoView();
+      }
+      var video = next.$("video");
+      if (video && !!+this.params.autoplay) {
+        video.play();
+      }
+    } else {
+      // That should not happen
+      this.idx = -1;
+      // console.warn("Slide doesn't exist.");
+    }
+  }
+
+  Dz.setIncremental = function(aStep) {
+    this.step = aStep;
+    var old = this.slides[this.idx - 1].$('.incremental > *[aria-selected]');
+    if (old) {
+      old.removeAttribute('aria-selected');
+    }
+    var incrementals = $$('.incremental');
+    if (this.step <= 0) {
+      $$.forEach(incrementals, function(aNode) {
+        aNode.removeAttribute('active');
+      });
+      return;
+    }
+    var next = this.slides[this.idx - 1].$$('.incremental > *')[this.step - 1];
+    if (next) {
+      next.setAttribute('aria-selected', true);
+      next.parentNode.setAttribute('active', true);
+      var found = false;
+      $$.forEach(incrementals, function(aNode) {
+        if (aNode != next.parentNode)
+          if (found)
+            aNode.removeAttribute('active');
+          else
+            aNode.setAttribute('active', true);
+        else
+          found = true;
+      });
+    } else {
+      setCursor(this.idx, 0);
+    }
+    return next;
+  }
+
+  Dz.goFullscreen = function() {
+    var html = $('html'),
+        requestFullscreen = html.requestFullscreen || html.requestFullScreen || html.mozRequestFullScreen || html.webkitRequestFullScreen;
+    if (requestFullscreen) {
+      requestFullscreen.apply(html);
+    }
+  }
+  
+  Dz.setProgress = function(aIdx, aStep) {
+    var slide = $("section:nth-of-type("+ aIdx +")");
+    if (!slide)
+      return;
+    var steps = slide.$$('.incremental > *').length + 1,
+        slideSize = 100 / (this.slides.length - 1),
+        stepSize = slideSize / steps;
+    this.progressBar.style.width = ((aIdx - 1) * slideSize + aStep * stepSize) + '%';
+  }
+  
+  Dz.postMsg = function(aWin, aMsg) { // [arg0, [arg1...]]
+    aMsg = [aMsg];
+    for (var i = 2; i < arguments.length; i++)
+      aMsg.push(encodeURIComponent(arguments[i]));
+    aWin.postMessage(aMsg.join(" "), "*");
+  }
+  
+  function init() {
+    Dz.init();
+    window.onkeydown = Dz.onkeydown.bind(Dz);
+    window.onresize = Dz.onresize.bind(Dz);
+    window.onhashchange = Dz.onhashchange.bind(Dz);
+    window.onmessage = Dz.onmessage.bind(Dz);
+  }
+
+  window.onload = init;
+</script>
+
+
+<script> // Helpers
+  if (!Function.prototype.bind) {
+    Function.prototype.bind = function (oThis) {
+
+      // closest thing possible to the ECMAScript 5 internal IsCallable
+      // function 
+      if (typeof this !== "function")
+      throw new TypeError(
+        "Function.prototype.bind - what is trying to be fBound is not callable"
+      );
+
+      var aArgs = Array.prototype.slice.call(arguments, 1),
+          fToBind = this,
+          fNOP = function () {},
+          fBound = function () {
+            return fToBind.apply( this instanceof fNOP ? this : oThis || window,
+                   aArgs.concat(Array.prototype.slice.call(arguments)));
+          };
+
+      fNOP.prototype = this.prototype;
+      fBound.prototype = new fNOP();
+
+      return fBound;
+    };
+  }
+
+  var $ = (HTMLElement.prototype.$ = function(aQuery) {
+    return this.querySelector(aQuery);
+  }).bind(document);
+
+  var $$ = (HTMLElement.prototype.$$ = function(aQuery) {
+    return this.querySelectorAll(aQuery);
+  }).bind(document);
+
+  $$.forEach = function(nodeList, fun) {
+    Array.prototype.forEach.call(nodeList, fun);
+  }
+
+</script>
+<!-- vim: set fdm=marker: }}} -->
+</body>
+</html>

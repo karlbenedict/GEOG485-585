@@ -16,3 +16,5 @@
 -->
 
 # Week 16 - Course Review and Emerging Technologies Discussion
+
+This week is an open class session in which we will discuss any remaining questions relating to the technologies used, next steps for continued use of the developed skills, and specific questions relating to the milestones and deep dive assignments that are due for submission for the second-half portfolio review at the end of the week. 

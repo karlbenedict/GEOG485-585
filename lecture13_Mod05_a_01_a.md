@@ -1,3 +1,9 @@
+---
+title: Week 12 - Module 5 - Platforms and GeoServer Introduction
+...
+
+
+
 <!---------------------------------------------------------------------------->
 <!-- Week 13 ----------------------------------------------------------------->
 <!-- Lecture 05 a 01 a ------------------------------------------------------->
@@ -5,8 +11,6 @@
 <!-- Platforms and GeoServer Introduction------------------------------------->
 <!---------------------------------------------------------------------------->
 
-
-# Module 5 - Platforms and GeoServer Introduction# {.module05a01a}
 
 ###Overview ###{.module05a01a}
 
@@ -18,7 +22,7 @@
 * Demonstration
 
 
-### SOA Review ###{.module05a01a}
+### SOA Review ###{.module05a01a .oneup}
 
 ![SOA Illustration](./images/SOAillustration.png)
 
@@ -48,7 +52,7 @@ In the context of server platforms for online mapping with OGC services, there a
 
 Sample Commercial Off-the-Shelf (COTS)
 
-* ArcGIS Server ([info](http://www.esri.com/software/arcgis/arcgisserver))
+* ArcGIS Enterprise ([info](http://www.esri.com/en/arcgis/products/arcgis-enterprise/overview))
 * CubeWerx SDI Suite ([info](http://www.cubewerx.com/solutions/sdi/))
 * ERDAS APOLLO ([info](http://www.hexagongeospatial.com/products/provider-suite/erdas-apollo))
 
@@ -56,7 +60,7 @@ Sample Open Source
 
 * MapServer ([info](http://mapserver.org/))
 * GeoServer ([info](http://geoserver.org/))
-* QGIS ([info](http://docs.qgis.org/2.8/en/docs/user_manual/working_with_ogc/ogc_server_support.html))
+* QGIS ([info](http://docs.qgis.org/2.14/en/docs/user_manual/working_with_ogc/ogc_server_support.html))
 
 
 ### What is GeoServer ###{.module05a01a}
@@ -84,10 +88,10 @@ OS-Specific Installers are also Available
 * Include an integrated HTTP server
 * Windows and Mac OS X
 
-[Installation Information[(http://docs.geoserver.org/2.8.x/en/user/installation/index.html)
+[Installation Information]    (http://docs.geoserver.org/stable/en/user/installation/)
 
 
-### What is Happening Behind the Scenes ###{.module05a01a}
+### What is Happening Behind the Scenes ###{.module05a01a .oneup}
 
 ![Interaction Between GeoServer Components](images/GeoServerInteraction.png)
 
@@ -96,11 +100,11 @@ OS-Specific Installers are also Available
 
 * After the initial setup as part of the installation process, other setup and configuration is performed through the web interface
 * All configuration activities require that you are logged in as an administrator
-* Default username and password for a new GeoServer are `admin:geoserver`
+* Default username and password for a new GeoServer are `admin:geoserver` - this should be changed as soon as you start up a new server instance.
 * After logging in you can view and modify the configuration of the server and services - some of the configuration elements inform the OGC service capabilities
 
 
-### Server Configuration Options ###{.module05a01a}
+### Server Configuration Options ###{.module05a01a .oneup}
 
 
 ![Geoserver Configuration Menu](images/GeoServer_ServerConfig.jpg)
@@ -110,12 +114,11 @@ OS-Specific Installers are also Available
 * GeoServer Logs - access to the application logs for diagnosing issues with the server
 * Contact Information - contact information for the person responsible for providing support for the server and services. This information is used to build parts of the Capabilities XML metadata returned by the services
 * About GeoServer - links to information about GeoServer
-* Global Settings - settings that apply to the whole server - primarily focussed on options for logging
-* JAI Settings - settings related to the Java Advanced Imagery engine within GeoServer
-* Coverage Access - configuration information for the tuning of processing resources for the server
+* Image Processing - advanced image processing and raster encoding
+* Raster Access - settings for accessing raster data
 
 
-### WxS Service Configuration Options ###{.module05a01a}
+### WxS Service Configuration Options ###{.module05a01a .oneup}
 
 ![Geoserver Service Configuration Menu](images/GeoServer_ServiceConfig.jpg)
 
@@ -131,12 +134,12 @@ Options Common to all WxS services
 
 Options specific to individual services
 
-* WFS - max. no. features, service type (basic/transactional/complete), GML-specific styles, other options
+* WFS - max. no. features, service type (basic/transactional/complete), GML-specific styles, SRS styes, other options
 * WMS - SRS subset specification, interpolation method, resource consumption limits, KML options, map image watermarking, PNG/JPEG/SVG format options, and others
 * WCS - SRS subset specification, policies for overviews to be used, subsampling, and resource consumption limits, other options
 
 
-### Data Component Configuration Options ###{.module05a01a}
+### Data Component Configuration Options ###{.module05a01a .oneup}
 
 ![GeoServer Data Configuration Menu](images/GeoServer_DataConfig.jpg)
 
@@ -149,12 +152,12 @@ Options specific to individual services
 * _Styles_ - A listing of defined layer styles for the server through which those styles may be accessed and managed. 
 
 
-### Data Integration Process ###{.module05a01a}
+### Data Integration Process ###{.module05a01a .oneup}
 
 ![Data integration workflow](images/GeoServer_DataWorkflow.png)
 
 
-### Security Settings ###{.module05a01a}
+### Security Settings ###{.module05a01a .oneup}
 
 ![GeoServer Security Configuration Menu](images/GeoServer_SecurityConfig.jpg)
 
@@ -167,9 +170,9 @@ Options specific to individual services
 * _Service_ - Settings for managing service-level (i.e. WMS, WFS, WCS and related request types) access privileges by user role. 
 
 
-### Demonstration of GeoServer Interface ###{.module05a01a}
+### Demonstration of GeoServer Interface ###{.module05a01a .oneup}
 
-[Class GeoServer Instance](http://geog485.unm.edu:8080/geoserver/web/)
+[Class GeoServer Instance](http://mapper.internetmapping.net:8081/geoserver/web/)
 
 ![GeoServer Home Page](images/GeoServer_Home.jpg)
 

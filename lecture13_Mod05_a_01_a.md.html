@@ -5,7 +5,7 @@
   <meta name="generator" content="pandoc">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
   <meta name="author" content="Karl Benedict">
-  <title></title>
+  <title>Week 12 - Module 5 - Platforms and GeoServer Introduction</title>
   <style type="text/css">code{white-space: pre;}</style>
   <link rel="stylesheet" href="page.css">
   <!--[if lt IE 9]>
@@ -13,13 +13,17 @@
   <![endif]-->
 </head>
 <body>
+<header>
+<h1 class="title">Week 12 - Module 5 - Platforms and GeoServer Introduction</h1>
+<h2 class="author">Karl Benedict</h2>
+<h3 class="date">GEOG 485L/585L - Spring 2017</h3>
+</header>
 <!---------------------------------------------------------------------------->
 <!-- Week 13 ----------------------------------------------------------------->
 <!-- Lecture 05 a 01 a ------------------------------------------------------->
 <!-- Developing and Hosting OGC Services-------------------------------------->
 <!-- Platforms and GeoServer Introduction------------------------------------->
 <!---------------------------------------------------------------------------->
-<h1 id="module-5---platforms-and-geoserver-introduction" class="module05a01a">Module 5 - Platforms and GeoServer Introduction</h1>
 <h3 id="overview" class="module05a01a">Overview</h3>
 <ul>
 <li>SOA Review</li>
@@ -29,7 +33,7 @@
 <li>Working with GeoServer</li>
 <li>Demonstration</li>
 </ul>
-<h3 id="soa-review" class="module05a01a">SOA Review</h3>
+<h3 id="soa-review" class="module05a01a oneup">SOA Review</h3>
 <figure>
 <img src="./images/SOAillustration.png" alt="SOA Illustration" /><figcaption>SOA Illustration</figcaption>
 </figure>
@@ -63,7 +67,7 @@
 <h3 id="online-mapping-server-applications" class="module05a01a">Online Mapping Server Applications</h3>
 <p>Sample Commercial Off-the-Shelf (COTS)</p>
 <ul>
-<li>ArcGIS Server (<a href="http://www.esri.com/software/arcgis/arcgisserver">info</a>)</li>
+<li>ArcGIS Enterprise (<a href="http://www.esri.com/en/arcgis/products/arcgis-enterprise/overview">info</a>)</li>
 <li>CubeWerx SDI Suite (<a href="http://www.cubewerx.com/solutions/sdi/">info</a>)</li>
 <li>ERDAS APOLLO (<a href="http://www.hexagongeospatial.com/products/provider-suite/erdas-apollo">info</a>)</li>
 </ul>
@@ -71,7 +75,7 @@
 <ul>
 <li>MapServer (<a href="http://mapserver.org/">info</a>)</li>
 <li>GeoServer (<a href="http://geoserver.org/">info</a>)</li>
-<li>QGIS (<a href="http://docs.qgis.org/2.8/en/docs/user_manual/working_with_ogc/ogc_server_support.html">info</a>)</li>
+<li>QGIS (<a href="http://docs.qgis.org/2.14/en/docs/user_manual/working_with_ogc/ogc_server_support.html">info</a>)</li>
 </ul>
 <h3 id="what-is-geoserver" class="module05a01a">What is GeoServer</h3>
 <p>GeoServer is an Open Source, Open Standards supporting geospatial web services platform</p>
@@ -94,8 +98,8 @@
 <li>Include an integrated HTTP server</li>
 <li>Windows and Mac OS X</li>
 </ul>
-<p>[Installation Information[(http://docs.geoserver.org/2.8.x/en/user/installation/index.html)</p>
-<h3 id="what-is-happening-behind-the-scenes" class="module05a01a">What is Happening Behind the Scenes</h3>
+<p>[Installation Information] (http://docs.geoserver.org/stable/en/user/installation/)</p>
+<h3 id="what-is-happening-behind-the-scenes" class="module05a01a oneup">What is Happening Behind the Scenes</h3>
 <figure>
 <img src="images/GeoServerInteraction.png" alt="Interaction Between GeoServer Components" /><figcaption>Interaction Between GeoServer Components</figcaption>
 </figure>
@@ -103,10 +107,10 @@
 <ul>
 <li>After the initial setup as part of the installation process, other setup and configuration is performed through the web interface</li>
 <li>All configuration activities require that you are logged in as an administrator</li>
-<li>Default username and password for a new GeoServer are <code>admin:geoserver</code></li>
+<li>Default username and password for a new GeoServer are <code>admin:geoserver</code> - this should be changed as soon as you start up a new server instance.</li>
 <li>After logging in you can view and modify the configuration of the server and services - some of the configuration elements inform the OGC service capabilities</li>
 </ul>
-<h3 id="server-configuration-options" class="module05a01a">Server Configuration Options</h3>
+<h3 id="server-configuration-options" class="module05a01a oneup">Server Configuration Options</h3>
 <figure>
 <img src="images/GeoServer_ServerConfig.jpg" alt="Geoserver Configuration Menu" /><figcaption>Geoserver Configuration Menu</figcaption>
 </figure>
@@ -115,11 +119,10 @@
 <li>GeoServer Logs - access to the application logs for diagnosing issues with the server</li>
 <li>Contact Information - contact information for the person responsible for providing support for the server and services. This information is used to build parts of the Capabilities XML metadata returned by the services</li>
 <li>About GeoServer - links to information about GeoServer</li>
-<li>Global Settings - settings that apply to the whole server - primarily focussed on options for logging</li>
-<li>JAI Settings - settings related to the Java Advanced Imagery engine within GeoServer</li>
-<li>Coverage Access - configuration information for the tuning of processing resources for the server</li>
+<li>Image Processing - advanced image processing and raster encoding</li>
+<li>Raster Access - settings for accessing raster data</li>
 </ul>
-<h3 id="wxs-service-configuration-options" class="module05a01a">WxS Service Configuration Options</h3>
+<h3 id="wxs-service-configuration-options" class="module05a01a oneup">WxS Service Configuration Options</h3>
 <figure>
 <img src="images/GeoServer_ServiceConfig.jpg" alt="Geoserver Service Configuration Menu" /><figcaption>Geoserver Service Configuration Menu</figcaption>
 </figure>
@@ -133,11 +136,11 @@
 </ul>
 <p>Options specific to individual services</p>
 <ul>
-<li>WFS - max. no. features, service type (basic/transactional/complete), GML-specific styles, other options</li>
+<li>WFS - max. no. features, service type (basic/transactional/complete), GML-specific styles, SRS styes, other options</li>
 <li>WMS - SRS subset specification, interpolation method, resource consumption limits, KML options, map image watermarking, PNG/JPEG/SVG format options, and others</li>
 <li>WCS - SRS subset specification, policies for overviews to be used, subsampling, and resource consumption limits, other options</li>
 </ul>
-<h3 id="data-component-configuration-options" class="module05a01a">Data Component Configuration Options</h3>
+<h3 id="data-component-configuration-options" class="module05a01a oneup">Data Component Configuration Options</h3>
 <figure>
 <img src="images/GeoServer_DataConfig.jpg" alt="GeoServer Data Configuration Menu" /><figcaption>GeoServer Data Configuration Menu</figcaption>
 </figure>
@@ -149,11 +152,11 @@
 <li><em>Layer Groups</em> - Collections of <em>Layers</em> for specific projects/applications or other logical groupings.</li>
 <li><em>Styles</em> - A listing of defined layer styles for the server through which those styles may be accessed and managed.</li>
 </ul>
-<h3 id="data-integration-process" class="module05a01a">Data Integration Process</h3>
+<h3 id="data-integration-process" class="module05a01a oneup">Data Integration Process</h3>
 <figure>
 <img src="images/GeoServer_DataWorkflow.png" alt="Data integration workflow" /><figcaption>Data integration workflow</figcaption>
 </figure>
-<h3 id="security-settings" class="module05a01a">Security Settings</h3>
+<h3 id="security-settings" class="module05a01a oneup">Security Settings</h3>
 <figure>
 <img src="images/GeoServer_SecurityConfig.jpg" alt="GeoServer Security Configuration Menu" /><figcaption>GeoServer Security Configuration Menu</figcaption>
 </figure>
@@ -165,8 +168,8 @@
 <li><em>Data</em> - Settings for read/write access to data products within the server, settings for the system's <em>catalog mode</em></li>
 <li><em>Service</em> - Settings for managing service-level (i.e. WMS, WFS, WCS and related request types) access privileges by user role.</li>
 </ul>
-<h3 id="demonstration-of-geoserver-interface" class="module05a01a">Demonstration of GeoServer Interface</h3>
-<p><a href="http://geog485.unm.edu:8080/geoserver/web/">Class GeoServer Instance</a></p>
+<h3 id="demonstration-of-geoserver-interface" class="module05a01a oneup">Demonstration of GeoServer Interface</h3>
+<p><a href="http://mapper.internetmapping.net:8081/geoserver/web/">Class GeoServer Instance</a></p>
 <figure>
 <img src="images/GeoServer_Home.jpg" alt="GeoServer Home Page" /><figcaption>GeoServer Home Page</figcaption>
 </figure>

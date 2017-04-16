@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Karl Benedict">
+  <title>Week 12 - Module 5 - Platforms and GeoServer Introduction</title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <link rel="stylesheet" href="slides.css">
+  <link rel="stylesheet" href="slide_specific.css">
+</head>
+<body>
+<section class="title">
+  <h1 class="title">Week 12 - Module 5 - Platforms and GeoServer Introduction</h1>
+  <footer>
+    <span class="author">Karl Benedict</span> · <span class="date">GEOG 485L/585L - Spring 2017</span>
+  </footer>
+</section>
+<section class="slide level3">
+
+<!---------------------------------------------------------------------------->
+<!-- Week 13 ----------------------------------------------------------------->
+<!-- Lecture 05 a 01 a ------------------------------------------------------->
+<!-- Developing and Hosting OGC Services-------------------------------------->
+<!-- Platforms and GeoServer Introduction------------------------------------->
+<!---------------------------------------------------------------------------->
+</section>
+<section id="overview" class="slide level3 module05a01a">
+<h1>Overview</h1>
+<ul>
+<li>SOA Review</li>
+<li>Server Platform</li>
+<li>Online Mapping Server Applications: COTS &amp; Open Source</li>
+<li>What is GeoServer</li>
+<li>Working with GeoServer</li>
+<li>Demonstration</li>
+</ul>
+</section>
+<section id="soa-review" class="slide level3 module05a01a oneup">
+<h1>SOA Review</h1>
+<figure>
+<img src="./images/SOAillustration.png" alt="SOA Illustration" /><figcaption>SOA Illustration</figcaption>
+</figure>
+<ul>
+<li>Services Oriented Architecture (SOA) for Geospatial Data and Processing
+<ul>
+<li>Data, Processing &amp; Client Tiers</li>
+</ul></li>
+<li>Open Geospatial Consortium Interoperability Standards
+<ul>
+<li>WMS, WFS, WCS</li>
+</ul></li>
+<li>Geospatial Metadata Standards
+<ul>
+<li>ISO 19115, FGDC</li>
+</ul></li>
+<li>Internet Standards
+<ul>
+<li>Web: HTML, CSS, JavaScript, XML</li>
+<li>SOAP - Simple Object Access Protocol</li>
+<li>REST - Representation State Transformation</li>
+</ul></li>
+</ul>
+</section>
+<section id="server-platform" class="slide level3 module05a01a">
+<h1>Server Platform</h1>
+<p>In the context of server platforms for online mapping with OGC services, there are several components that are of interest</p>
+<ul>
+<li>The operating system - the software environment in which all applications on a computer operate (e.g. Windows, Mac OS X, Linux)</li>
+<li>The web server - the application that listens for incoming requests from the Internet (e.g. Apache, IIS)</li>
+<li>The mapping server - the application (that may also include the web server) that enables online mapping applications, that may include support for one or more OGC service interfaces (e.g. GeoServer, MapServer, CubeWerx, ArcGIS Server)</li>
+</ul>
+</section>
+<section id="online-mapping-server-applications" class="slide level3 module05a01a">
+<h1>Online Mapping Server Applications</h1>
+<p>Sample Commercial Off-the-Shelf (COTS)</p>
+<ul>
+<li>ArcGIS Enterprise (<a href="http://www.esri.com/en/arcgis/products/arcgis-enterprise/overview">info</a>)</li>
+<li>CubeWerx SDI Suite (<a href="http://www.cubewerx.com/solutions/sdi/">info</a>)</li>
+<li>ERDAS APOLLO (<a href="http://www.hexagongeospatial.com/products/provider-suite/erdas-apollo">info</a>)</li>
+</ul>
+<p>Sample Open Source</p>
+<ul>
+<li>MapServer (<a href="http://mapserver.org/">info</a>)</li>
+<li>GeoServer (<a href="http://geoserver.org/">info</a>)</li>
+<li>QGIS (<a href="http://docs.qgis.org/2.14/en/docs/user_manual/working_with_ogc/ogc_server_support.html">info</a>)</li>
+</ul>
+</section>
+<section id="what-is-geoserver" class="slide level3 module05a01a">
+<h1>What is GeoServer</h1>
+<p>GeoServer is an Open Source, Open Standards supporting geospatial web services platform</p>
+<ul>
+<li>GNU General Public License</li>
+<li>WMS, WFS, WCS</li>
+<li>Written in Java as a web application commonly hosted on the Jetty HTTP server and Java servlet engine</li>
+<li>An appropriate version of Java must already be installed</li>
+</ul>
+</section>
+<section id="working-with-geoserver" class="slide level3 module05a01a">
+<h1>Working with GeoServer</h1>
+<p>OS-Independent Binaries are Available for Multiple Platforms (these are just ‘run’ to start the server)</p>
+<ul>
+<li>Includes the Jetty HTTP server</li>
+<li>Windows, Mac OS X, Linux</li>
+<li>There are OS-specific configuration instructions for each operating system</li>
+</ul>
+<p>GeoServer may be integrated into existing Java web servlet applications (such as Apache Tomcat) using the available Web Archive (WAR) file.</p>
+<p>OS-Specific Installers are also Available</p>
+<ul>
+<li>Include an integrated HTTP server</li>
+<li>Windows and Mac OS X</li>
+</ul>
+<p>[Installation Information] (http://docs.geoserver.org/stable/en/user/installation/)</p>
+</section>
+<section id="what-is-happening-behind-the-scenes" class="slide level3 module05a01a oneup">
+<h1>What is Happening Behind the Scenes</h1>
+<figure>
+<img src="images/GeoServerInteraction.png" alt="Interaction Between GeoServer Components" /><figcaption>Interaction Between GeoServer Components</figcaption>
+</figure>
+</section>
+<section id="setup-and-configuration" class="slide level3 module05a01a">
+<h1>Setup and Configuration</h1>
+<ul>
+<li>After the initial setup as part of the installation process, other setup and configuration is performed through the web interface</li>
+<li>All configuration activities require that you are logged in as an administrator</li>
+<li>Default username and password for a new GeoServer are <code>admin:geoserver</code> - this should be changed as soon as you start up a new server instance.</li>
+<li>After logging in you can view and modify the configuration of the server and services - some of the configuration elements inform the OGC service capabilities</li>
+</ul>
+</section>
+<section id="server-configuration-options" class="slide level3 module05a01a oneup">
+<h1>Server Configuration Options</h1>
+<figure>
+<img src="images/GeoServer_ServerConfig.jpg" alt="Geoserver Configuration Menu" /><figcaption>Geoserver Configuration Menu</figcaption>
+</figure>
+<ul>
+<li>Server Status - summary information about the status of the currently running server</li>
+<li>GeoServer Logs - access to the application logs for diagnosing issues with the server</li>
+<li>Contact Information - contact information for the person responsible for providing support for the server and services. This information is used to build parts of the Capabilities XML metadata returned by the services</li>
+<li>About GeoServer - links to information about GeoServer</li>
+<li>Image Processing - advanced image processing and raster encoding</li>
+<li>Raster Access - settings for accessing raster data</li>
+</ul>
+</section>
+<section id="wxs-service-configuration-options" class="slide level3 module05a01a oneup">
+<h1>WxS Service Configuration Options</h1>
+<figure>
+<img src="images/GeoServer_ServiceConfig.jpg" alt="Geoserver Service Configuration Menu" /><figcaption>Geoserver Service Configuration Menu</figcaption>
+</figure>
+<p>Options Common to all WxS services</p>
+<ul>
+<li>Enable/disable the service, with or without strict CITE compliance</li>
+<li>Maintainer and Online Resource URLs</li>
+<li>Title/Abstract</li>
+<li>Fees/Access Constraints</li>
+<li>Keywords</li>
+</ul>
+<p>Options specific to individual services</p>
+<ul>
+<li>WFS - max. no. features, service type (basic/transactional/complete), GML-specific styles, SRS styes, other options</li>
+<li>WMS - SRS subset specification, interpolation method, resource consumption limits, KML options, map image watermarking, PNG/JPEG/SVG format options, and others</li>
+<li>WCS - SRS subset specification, policies for overviews to be used, subsampling, and resource consumption limits, other options</li>
+</ul>
+</section>
+<section id="data-component-configuration-options" class="slide level3 module05a01a oneup">
+<h1>Data Component Configuration Options</h1>
+<figure>
+<img src="images/GeoServer_DataConfig.jpg" alt="GeoServer Data Configuration Menu" /><figcaption>GeoServer Data Configuration Menu</figcaption>
+</figure>
+<ul>
+<li><em>Layer Preview</em> - An interface through which a <em>Layers</em> may be previewed in a variety of formats</li>
+<li><em>Workspaces</em> - Defined containers for related data products</li>
+<li><em>Stores</em> - Specific data sources (file or service based) with required data type and connection information provided in the <em>Store</em> configuration</li>
+<li><em>Layers</em> - Defined layers that are published by the server, with the layers based upon data provided by a <em>Store</em>, but with additional layer-specific settings (such as bounding box, applied and available styles,and attribution).</li>
+<li><em>Layer Groups</em> - Collections of <em>Layers</em> for specific projects/applications or other logical groupings.</li>
+<li><em>Styles</em> - A listing of defined layer styles for the server through which those styles may be accessed and managed.</li>
+</ul>
+</section>
+<section id="data-integration-process" class="slide level3 module05a01a oneup">
+<h1>Data Integration Process</h1>
+<figure>
+<img src="images/GeoServer_DataWorkflow.png" alt="Data integration workflow" /><figcaption>Data integration workflow</figcaption>
+</figure>
+</section>
+<section id="security-settings" class="slide level3 module05a01a oneup">
+<h1>Security Settings</h1>
+<figure>
+<img src="images/GeoServer_SecurityConfig.jpg" alt="GeoServer Security Configuration Menu" /><figcaption>GeoServer Security Configuration Menu</figcaption>
+</figure>
+<ul>
+<li><em>Settings</em> - Basic security configuration settings: role service, encryption options</li>
+<li><em>Authentication</em> - Configuration settings for authentication providers for users</li>
+<li><em>Passwords</em> - Settings related to underlying password providers and policies</li>
+<li><em>Users, Groups, Roles</em> - Management of system users, groups and defined roles</li>
+<li><em>Data</em> - Settings for read/write access to data products within the server, settings for the system's <em>catalog mode</em></li>
+<li><em>Service</em> - Settings for managing service-level (i.e. WMS, WFS, WCS and related request types) access privileges by user role.</li>
+</ul>
+</section>
+<section id="demonstration-of-geoserver-interface" class="slide level3 module05a01a oneup">
+<h1>Demonstration of GeoServer Interface</h1>
+<p><a href="http://mapper.internetmapping.net:8081/geoserver/web/">Class GeoServer Instance</a></p>
+<figure>
+<img src="images/GeoServer_Home.jpg" alt="GeoServer Home Page" /><figcaption>GeoServer Home Page</figcaption>
+</figure>
+</section>
+<hr />
+<section>
+<div class="license">
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />This work by <span xmlns:cc="http://creativecommons.org/ns#" property="cc:attributionName">Karl Benedict</span> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+</div>
+</section>
+<!-- {{{{ dzslides core
+#
+#
+#     __  __  __       .  __   ___  __
+#    |  \  / /__` |    | |  \ |__  /__`
+#    |__/ /_ .__/ |___ | |__/ |___ .__/ core :€
+#
+#
+# The following block of code is not supposed to be edited.
+# But if you want to change the behavior of these slides,
+# feel free to hack it!
+#
+-->
+
+<div id="progress-bar"></div>
+
+<!-- Default Style -->
+<style>
+  * { margin: 0; padding: 0; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+  [role="note"] { display: none; }
+  body {
+    width: 800px; height: 600px;
+    margin-left: -400px; margin-top: -300px;
+    position: absolute; top: 50%; left: 50%;
+    overflow: hidden;
+    display: none;
+  }
+  .view body {
+    position: static;
+    margin: 0; padding: 0;
+    width: 100%; height: 100%;
+    display: inline-block;
+    overflow: visible; overflow-x: hidden;
+    /* undo Dz.onresize */
+    transform: none !important;
+    -moz-transform: none !important;
+    -webkit-transform: none !important;
+    -o-transform: none !important;
+    -ms-transform: none !important;
+  }
+  .view head, .view head > title { display: block }
+  section {
+    position: absolute;
+    pointer-events: none;
+    width: 100%; height: 100%;
+  }
+  .view section {
+    pointer-events: auto;
+    position: static;
+    width: 800px; height: 600px;
+    margin: -150px -200px;
+    float: left;
+
+    transform: scale(.4);
+    -moz-transform: scale(.4);
+    -webkit-transform: scale(.4);
+    -o-transform: scale(.4);
+    -ms-transform: scale(.4);
+  }
+  .view section > * { pointer-events: none; }
+  section[aria-selected] { pointer-events: auto; }
+  html { overflow: hidden; }
+  html.view { overflow: visible; }
+  body.loaded { display: block; }
+  .incremental {visibility: hidden; }
+  .incremental[active] {visibility: visible; }
+  #progress-bar{
+    bottom: 0;
+    position: absolute;
+    -moz-transition: width 400ms linear 0s;
+    -webkit-transition: width 400ms linear 0s;
+    -ms-transition: width 400ms linear 0s;
+    transition: width 400ms linear 0s;
+  }
+  .view #progress-bar {
+    display: none;
+  }
+</style>
+
+<script>
+  var Dz = {
+    remoteWindows: [],
+    idx: -1,
+    step: 0,
+    html: null,
+    slides: null,
+    progressBar : null,
+    params: {
+      autoplay: "1"
+    }
+  };
+
+  Dz.init = function() {
+    document.body.className = "loaded";
+    this.slides = Array.prototype.slice.call($$("body > section"));
+    this.progressBar = $("#progress-bar");
+    this.html = document.body.parentNode;
+    this.setupParams();
+    this.onhashchange();
+    this.setupTouchEvents();
+    this.onresize();
+    this.setupView();
+  }
+
+  Dz.setupParams = function() {
+    var p = window.location.search.substr(1).split('&');
+    p.forEach(function(e, i, a) {
+      var keyVal = e.split('=');
+      Dz.params[keyVal[0]] = decodeURIComponent(keyVal[1]);
+    });
+  // Specific params handling
+    if (!+this.params.autoplay)
+      $$.forEach($$("video"), function(v){ v.controls = true });
+  }
+
+  Dz.onkeydown = function(aEvent) {
+    // Don't intercept keyboard shortcuts
+    if (aEvent.altKey
+      || aEvent.ctrlKey
+      || aEvent.metaKey
+      || aEvent.shiftKey) {
+      return;
+    }
+    if ( aEvent.keyCode == 37 // left arrow
+      || aEvent.keyCode == 38 // up arrow
+      || aEvent.keyCode == 33 // page up
+    ) {
+      aEvent.preventDefault();
+      this.back();
+    }
+    if ( aEvent.keyCode == 39 // right arrow
+      || aEvent.keyCode == 40 // down arrow
+      || aEvent.keyCode == 34 // page down
+    ) {
+      aEvent.preventDefault();
+      this.forward();
+    }
+    if (aEvent.keyCode == 35) { // end
+      aEvent.preventDefault();
+      this.goEnd();
+    }
+    if (aEvent.keyCode == 36) { // home
+      aEvent.preventDefault();
+      this.goStart();
+    }
+    if (aEvent.keyCode == 32) { // space
+      aEvent.preventDefault();
+      this.toggleContent();
+    }
+    if (aEvent.keyCode == 70) { // f
+      aEvent.preventDefault();
+      this.goFullscreen();
+    }
+    if (aEvent.keyCode == 79) { // o
+      aEvent.preventDefault();
+      this.toggleView();
+    }
+  }
+
+  /* Touch Events */
+
+  Dz.setupTouchEvents = function() {
+    var orgX, newX;
+    var tracking = false;
+
+    var db = document.body;
+    db.addEventListener("touchstart", start.bind(this), false);
+    db.addEventListener("touchmove", move.bind(this), false);
+
+    function start(aEvent) {
+      aEvent.preventDefault();
+      tracking = true;
+      orgX = aEvent.changedTouches[0].pageX;
+    }
+
+    function move(aEvent) {
+      if (!tracking) return;
+      newX = aEvent.changedTouches[0].pageX;
+      if (orgX - newX > 100) {
+        tracking = false;
+        this.forward();
+      } else {
+        if (orgX - newX < -100) {
+          tracking = false;
+          this.back();
+        }
+      }
+    }
+  }
+
+  Dz.setupView = function() {
+    document.body.addEventListener("click", function ( e ) {
+      if (!Dz.html.classList.contains("view")) return;
+      if (!e.target || e.target.nodeName != "SECTION") return;
+
+      Dz.html.classList.remove("view");
+      Dz.setCursor(Dz.slides.indexOf(e.target) + 1);
+    }, false);
+  }
+
+  /* Adapt the size of the slides to the window */
+
+  Dz.onresize = function() {
+    var db = document.body;
+    var sx = db.clientWidth / window.innerWidth;
+    var sy = db.clientHeight / window.innerHeight;
+    var transform = "scale(" + (1/Math.max(sx, sy)) + ")";
+
+    db.style.MozTransform = transform;
+    db.style.WebkitTransform = transform;
+    db.style.OTransform = transform;
+    db.style.msTransform = transform;
+    db.style.transform = transform;
+  }
+
+
+  Dz.getNotes = function(aIdx) {
+    var s = $("section:nth-of-type(" + aIdx + ")");
+    var d = s.$("[role='note']");
+    return d ? d.innerHTML : "";
+  }
+
+  Dz.onmessage = function(aEvent) {
+    var argv = aEvent.data.split(" "), argc = argv.length;
+    argv.forEach(function(e, i, a) { a[i] = decodeURIComponent(e) });
+    var win = aEvent.source;
+    if (argv[0] === "REGISTER" && argc === 1) {
+      this.remoteWindows.push(win);
+      this.postMsg(win, "REGISTERED", document.title, this.slides.length);
+      this.postMsg(win, "CURSOR", this.idx + "." + this.step);
+      return;
+    }
+    if (argv[0] === "BACK" && argc === 1)
+      this.back();
+    if (argv[0] === "FORWARD" && argc === 1)
+      this.forward();
+    if (argv[0] === "START" && argc === 1)
+      this.goStart();
+    if (argv[0] === "END" && argc === 1)
+      this.goEnd();
+    if (argv[0] === "TOGGLE_CONTENT" && argc === 1)
+      this.toggleContent();
+    if (argv[0] === "SET_CURSOR" && argc === 2)
+      window.location.hash = "#" + argv[1];
+    if (argv[0] === "GET_CURSOR" && argc === 1)
+      this.postMsg(win, "CURSOR", this.idx + "." + this.step);
+    if (argv[0] === "GET_NOTES" && argc === 1)
+      this.postMsg(win, "NOTES", this.getNotes(this.idx));
+  }
+
+  Dz.toggleContent = function() {
+    // If a Video is present in this new slide, play it.
+    // If a Video is present in the previous slide, stop it.
+    var s = $("section[aria-selected]");
+    if (s) {
+      var video = s.$("video");
+      if (video) {
+        if (video.ended || video.paused) {
+          video.play();
+        } else {
+          video.pause();
+        }
+      }
+    }
+  }
+
+  Dz.setCursor = function(aIdx, aStep) {
+    // If the user change the slide number in the URL bar, jump
+    // to this slide.
+    aStep = (aStep != 0 && typeof aStep !== "undefined") ? "." + aStep : ".0";
+    window.location.hash = "#" + aIdx + aStep;
+  }
+
+  Dz.onhashchange = function() {
+    var cursor = window.location.hash.split("#"),
+        newidx = 1,
+        newstep = 0;
+    if (cursor.length == 2) {
+      newidx = ~~cursor[1].split(".")[0];
+      newstep = ~~cursor[1].split(".")[1];
+      if (newstep > Dz.slides[newidx - 1].$$('.incremental > *').length) {
+        newstep = 0;
+        newidx++;
+      }
+    }
+    this.setProgress(newidx, newstep);
+    if (newidx != this.idx) {
+      this.setSlide(newidx);
+    }
+    if (newstep != this.step) {
+      this.setIncremental(newstep);
+    }
+    for (var i = 0; i < this.remoteWindows.length; i++) {
+      this.postMsg(this.remoteWindows[i], "CURSOR", this.idx + "." + this.step);
+    }
+  }
+
+  Dz.back = function() {
+    if (this.idx == 1 && this.step == 0) {
+      return;
+    }
+    if (this.step == 0) {
+      this.setCursor(this.idx - 1,
+                     this.slides[this.idx - 2].$$('.incremental > *').length);
+    } else {
+      this.setCursor(this.idx, this.step - 1);
+    }
+  }
+
+  Dz.forward = function() {
+    if (this.idx >= this.slides.length &&
+        this.step >= this.slides[this.idx - 1].$$('.incremental > *').length) {
+        return;
+    }
+    if (this.step >= this.slides[this.idx - 1].$$('.incremental > *').length) {
+      this.setCursor(this.idx + 1, 0);
+    } else {
+      this.setCursor(this.idx, this.step + 1);
+    }
+  }
+
+  Dz.goStart = function() {
+    this.setCursor(1, 0);
+  }
+
+  Dz.goEnd = function() {
+    var lastIdx = this.slides.length;
+    var lastStep = this.slides[lastIdx - 1].$$('.incremental > *').length;
+    this.setCursor(lastIdx, lastStep);
+  }
+
+  Dz.toggleView = function() {
+    this.html.classList.toggle("view");
+
+    if (this.html.classList.contains("view")) {
+      $("section[aria-selected]").scrollIntoView(true);
+    }
+  }
+
+  Dz.setSlide = function(aIdx) {
+    this.idx = aIdx;
+    var old = $("section[aria-selected]");
+    var next = $("section:nth-of-type("+ this.idx +")");
+    if (old) {
+      old.removeAttribute("aria-selected");
+      var video = old.$("video");
+      if (video) {
+        video.pause();
+      }
+    }
+    if (next) {
+      next.setAttribute("aria-selected", "true");
+      if (this.html.classList.contains("view")) {
+        next.scrollIntoView();
+      }
+      var video = next.$("video");
+      if (video && !!+this.params.autoplay) {
+        video.play();
+      }
+    } else {
+      // That should not happen
+      this.idx = -1;
+      // console.warn("Slide doesn't exist.");
+    }
+  }
+
+  Dz.setIncremental = function(aStep) {
+    this.step = aStep;
+    var old = this.slides[this.idx - 1].$('.incremental > *[aria-selected]');
+    if (old) {
+      old.removeAttribute('aria-selected');
+    }
+    var incrementals = $$('.incremental');
+    if (this.step <= 0) {
+      $$.forEach(incrementals, function(aNode) {
+        aNode.removeAttribute('active');
+      });
+      return;
+    }
+    var next = this.slides[this.idx - 1].$$('.incremental > *')[this.step - 1];
+    if (next) {
+      next.setAttribute('aria-selected', true);
+      next.parentNode.setAttribute('active', true);
+      var found = false;
+      $$.forEach(incrementals, function(aNode) {
+        if (aNode != next.parentNode)
+          if (found)
+            aNode.removeAttribute('active');
+          else
+            aNode.setAttribute('active', true);
+        else
+          found = true;
+      });
+    } else {
+      setCursor(this.idx, 0);
+    }
+    return next;
+  }
+
+  Dz.goFullscreen = function() {
+    var html = $('html'),
+        requestFullscreen = html.requestFullscreen || html.requestFullScreen || html.mozRequestFullScreen || html.webkitRequestFullScreen;
+    if (requestFullscreen) {
+      requestFullscreen.apply(html);
+    }
+  }
+  
+  Dz.setProgress = function(aIdx, aStep) {
+    var slide = $("section:nth-of-type("+ aIdx +")");
+    if (!slide)
+      return;
+    var steps = slide.$$('.incremental > *').length + 1,
+        slideSize = 100 / (this.slides.length - 1),
+        stepSize = slideSize / steps;
+    this.progressBar.style.width = ((aIdx - 1) * slideSize + aStep * stepSize) + '%';
+  }
+  
+  Dz.postMsg = function(aWin, aMsg) { // [arg0, [arg1...]]
+    aMsg = [aMsg];
+    for (var i = 2; i < arguments.length; i++)
+      aMsg.push(encodeURIComponent(arguments[i]));
+    aWin.postMessage(aMsg.join(" "), "*");
+  }
+  
+  function init() {
+    Dz.init();
+    window.onkeydown = Dz.onkeydown.bind(Dz);
+    window.onresize = Dz.onresize.bind(Dz);
+    window.onhashchange = Dz.onhashchange.bind(Dz);
+    window.onmessage = Dz.onmessage.bind(Dz);
+  }
+
+  window.onload = init;
+</script>
+
+
+<script> // Helpers
+  if (!Function.prototype.bind) {
+    Function.prototype.bind = function (oThis) {
+
+      // closest thing possible to the ECMAScript 5 internal IsCallable
+      // function 
+      if (typeof this !== "function")
+      throw new TypeError(
+        "Function.prototype.bind - what is trying to be fBound is not callable"
+      );
+
+      var aArgs = Array.prototype.slice.call(arguments, 1),
+          fToBind = this,
+          fNOP = function () {},
+          fBound = function () {
+            return fToBind.apply( this instanceof fNOP ? this : oThis || window,
+                   aArgs.concat(Array.prototype.slice.call(arguments)));
+          };
+
+      fNOP.prototype = this.prototype;
+      fBound.prototype = new fNOP();
+
+      return fBound;
+    };
+  }
+
+  var $ = (HTMLElement.prototype.$ = function(aQuery) {
+    return this.querySelector(aQuery);
+  }).bind(document);
+
+  var $$ = (HTMLElement.prototype.$$ = function(aQuery) {
+    return this.querySelectorAll(aQuery);
+  }).bind(document);
+
+  $$.forEach = function(nodeList, fun) {
+    Array.prototype.forEach.call(nodeList, fun);
+  }
+
+</script>
+<!-- vim: set fdm=marker: }}} -->
+</body>
+</html>

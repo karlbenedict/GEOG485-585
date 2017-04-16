@@ -38,7 +38,7 @@ At the end of this class, students will understand:
 
 This week's milestone provides an opportunity to experiment with vector layer styling. Please define two custom styles for each of the vector datasets that you added to GeoServer during last week's lab assignment. Take a screenshot of the layer preview for each of your styles - including the options tools above the OpenLayers preview displaying the name of the custom style that is being used for the current map display. 
 
-Include in your writeup the layer name, the name of the two custom styles and the associated screenshots for each of the vector datasets. 
+Include in your assignment the layer name, the name of the two custom styles and the associated screenshots for each of the vector datasets. 
 
 
 
