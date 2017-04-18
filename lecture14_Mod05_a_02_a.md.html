@@ -5,7 +5,7 @@
   <meta name="generator" content="pandoc">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
   <meta name="author" content="Karl Benedict">
-  <title></title>
+  <title>Week 14 - Module 5 - OGC Services and Styling in GeoServer</title>
   <style type="text/css">code{white-space: pre;}</style>
   <style type="text/css">
 div.sourceCode { overflow-x: auto; }
@@ -50,13 +50,17 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
   <![endif]-->
 </head>
 <body>
+<header>
+<h1 class="title">Week 14 - Module 5 - OGC Services and Styling in GeoServer</h1>
+<h2 class="author">Karl Benedict</h2>
+<h3 class="date">GEOG 485L/585L - Spring 2017</h3>
+</header>
 <!---------------------------------------------------------------------------->
 <!-- Week 14 ----------------------------------------------------------------->
 <!-- Lecture 05 a 02 a ------------------------------------------------------->
 <!-- Developing and Hosting OGC Services-------------------------------------->
 <!-- OGC Services and Styling in GeoServer------------------------------------>
 <!---------------------------------------------------------------------------->
-<h1 id="module-5---ogc-services-and-styling-in-geoserver" class="module05a02a">Module 5 - OGC Services and Styling in GeoServer</h1>
 <h3 id="overview">Overview</h3>
 <ul>
 <li>GeoServer Styled Layer Descriptor (SLD) Foundation: OGC Specification</li>
@@ -83,21 +87,21 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </dd>
 </dl>
 <ul>
-<li><a href="http://docs.geoserver.org/stable/en/user/styling/sld-reference/pointsymbolizer.html">Point</a></li>
-<li><a href="http://docs.geoserver.org/stable/en/user/styling/sld-reference/linesymbolizer.html">Line</a></li>
-<li><a href="http://docs.geoserver.org/stable/en/user/styling/sld-reference/polygonsymbolizer.html">Polygon</a></li>
-<li><a href="http://docs.geoserver.org/stable/en/user/styling/sld-reference/rastersymbolizer.html">Raster</a></li>
-<li><a href="http://docs.geoserver.org/stable/en/user/styling/sld-reference/textsymbolizer.html">Text</a></li>
+<li><a href="http://docs.geoserver.org/stable/en/user/styling/sld/reference/pointsymbolizer.html">Point</a></li>
+<li><a href="http://docs.geoserver.org/stable/en/user/styling/sld/reference/linesymbolizer.html">Line</a></li>
+<li><a href="http://docs.geoserver.org/stable/en/user/styling/sld/reference/polygonsymbolizer.html">Polygon</a></li>
+<li><a href="http://docs.geoserver.org/stable/en/user/styling/sld/reference/rastersymbolizer.html">Raster</a></li>
+<li><a href="http://docs.geoserver.org/stable/en/user/styling/sld/reference/textsymbolizer.html">Text</a></li>
 </ul>
 <dl>
 <dt>Labels</dt>
-<dd>Defining the placement of <a href="http://docs.geoserver.org/stable/en/user/styling/sld-reference/labeling.html">labels</a>
+<dd>Defining the placement of <a href="http://docs.geoserver.org/stable/en/user/styling/sld/reference/labeling.html">labels</a>
 </dd>
 <dt>Filters</dt>
-<dd>Allow for the application different symbolizers to <a href="http://docs.geoserver.org/stable/en/user/styling/sld-reference/filters.html">defined sets</a> of features
+<dd>Allow for the application different symbolizers to <a href="http://docs.geoserver.org/stable/en/user/styling/sld/reference/filters.html">defined sets</a> of features
 </dd>
 <dt>Scale Elements</dt>
-<dd>Allow for the application of different symbolizers at different map scales through the definition of <a href="http://docs.geoserver.org/stable/en/user/styling/sld-reference/rules.html">styling rules</a>
+<dd>Allow for the application of different symbolizers at different map scales through the definition of <a href="http://docs.geoserver.org/stable/en/user/styling/sld/reference/rules.html">styling rules</a>
 </dd>
 </dl>
 <h3 id="definitionOfStyles_03">Definition of Styles - Header Content</h3>
@@ -113,6 +117,7 @@ one or more <span class="kw">&lt;NamedLayer&gt;</span> ...  <span class="kw">&lt
 
 <span class="kw">&lt;/StyledLayerDescriptor&gt;</span></code></pre></div>
 <h3 id="definitionOfStyles_04">Definition of Styles - Sample SLD File</h3>
+<p><code>point_simplepoint.sld</code></p>
 <div class="sourceCode" id="sampleSLD"><pre class="sourceCode xml"><code class="sourceCode xml"><span class="kw">&lt;?xml</span> version=&quot;1.0&quot; encoding=&quot;ISO-8859-1&quot;<span class="kw">?&gt;</span>
 <span class="kw">&lt;StyledLayerDescriptor</span><span class="ot"> version=</span><span class="st">&quot;1.0.0&quot;</span> 
 <span class="ot">  xsi:schemaLocation=</span><span class="st">&quot;http://www.opengis.net/sld StyledLayerDescriptor.xsd&quot;</span> 
@@ -172,7 +177,7 @@ one or more <span class="kw">&lt;NamedLayer&gt;</span> ...  <span class="kw">&lt
 <figure>
 <img src="images/line_simpleline.png" alt="Sample simple styled line layer" /><figcaption>Sample simple styled line layer</figcaption>
 </figure>
-<p>SLD Snippet (<a href="https://github.com/UNM-GEOG-485-585/class-materials/blob/master/sample-files/SLD/line_simpleline.sld">Full SLD</a>)</p>
+<p>SLD Snippet (<a href="https://github.com/karlbenedict/GEOG485-585/blob/master/sample-files/SLD/point_simplepoint.sld">Full SLD</a>)</p>
 <div class="sourceCode" id="sampleSLD_simpleLine"><pre class="sourceCode xml"><code class="sourceCode xml"><span class="kw">&lt;NamedLayer&gt;</span>
   <span class="kw">&lt;Name&gt;</span>Simple Line<span class="kw">&lt;/Name&gt;</span>
   <span class="kw">&lt;UserStyle&gt;</span>
@@ -193,7 +198,7 @@ one or more <span class="kw">&lt;NamedLayer&gt;</span> ...  <span class="kw">&lt
 <figure>
 <img src="images/polygon_simplepolygon.png" alt="Sample simple styled polygon layer" /><figcaption>Sample simple styled polygon layer</figcaption>
 </figure>
-<p>SLD Snippet (<a href="https://github.com/UNM-GEOG-485-585/class-materials/blob/master/sample-files/SLD/polygon_simplepolygon.sld">Full SLD</a>)</p>
+<p>SLD Snippet (<a href="https://github.com/karlbenedict/GEOG485-585/blob/master/sample-files/SLD/polygon_simplepolygon.sld">Full SLD</a>)</p>
 <div class="sourceCode" id="sampleSLD_simplepoly"><pre class="sourceCode xml"><code class="sourceCode xml"><span class="kw">&lt;NamedLayer&gt;</span>
   <span class="kw">&lt;Name&gt;</span>Simple polygon<span class="kw">&lt;/Name&gt;</span>
   <span class="kw">&lt;UserStyle&gt;</span>
@@ -213,7 +218,7 @@ one or more <span class="kw">&lt;NamedLayer&gt;</span> ...  <span class="kw">&lt
 <figure>
 <img src="images/raster_twocolorgradient.png" alt="Sample simple styled raster layer" /><figcaption>Sample simple styled raster layer</figcaption>
 </figure>
-<p>SLD Snippet (<a href="https://github.com/UNM-GEOG-485-585/class-materials/blob/master/sample-files/SLD/raster_twocolorgradient.sld">Full SLD</a>)</p>
+<p>SLD Snippet (<a href="https://github.com/karlbenedict/GEOG485-585/blob/master/sample-files/SLD/raster_twocolorgradient.sld">Full SLD</a>)</p>
 <div class="sourceCode" id="sampleSLD_simpleraster"><pre class="sourceCode xml"><code class="sourceCode xml"><span class="kw">&lt;NamedLayer&gt;</span>
   <span class="kw">&lt;Name&gt;</span>Two color gradient<span class="kw">&lt;/Name&gt;</span>
   <span class="kw">&lt;UserStyle&gt;</span>
@@ -316,7 +321,7 @@ one or more <span class="kw">&lt;NamedLayer&gt;</span> ...  <span class="kw">&lt
 <p>For example:</p>
 <pre><code>ogrinfo -fields=YES -geom=NO kb_gpsrdsdd.shp kb_gpsrdsdd</code></pre>
 <p>Where this command requests that the fields and their values be displayed, but that the detailed geometry information (i.e. all of the nodes associated with each feature) be suppressed in the output</p>
-<p><a href="https://github.com/UNM-GEOG-485-585/class-materials/blob/master/sample-files/SLD/SimpleRoads.sld">Full SLD</a></p>
+<p><a href="https://github.com/karlbenedict/GEOG485-585/blob/master/sample-files/SLD/SimpleRoads.sld">Full SLD</a></p>
 <div class="sourceCode" id="styledNMRoads"><pre class="sourceCode xml"><code class="sourceCode xml"><span class="kw">&lt;?xml</span> version=&quot;1.0&quot; encoding=&quot;ISO-8859-1&quot;<span class="kw">?&gt;</span>
 <span class="kw">&lt;StyledLayerDescriptor</span><span class="ot"> version=</span><span class="st">&quot;1.0.0&quot;</span> 
 <span class="ot">  xsi:schemaLocation=</span><span class="st">&quot;http://www.opengis.net/sld StyledLayerDescriptor.xsd&quot;</span> 
@@ -419,7 +424,7 @@ one or more <span class="kw">&lt;NamedLayer&gt;</span> ...  <span class="kw">&lt
 <span class="kw">&lt;/StyledLayerDescriptor&gt;</span></code></pre></div>
 <h3 id="attributeFilterWscaleFactor_01">Attribute Filter with Scale Factor</h3>
 <p>The only change needed to introduce scale-dependencies into styles is to include <code>&lt;MaxScaleDenominator&gt;</code> or <code>&lt;MinScaleDenominator&gt;</code> elements within a rule where they should be applied. These elements should be placed just before the symbolizer element so that GeoServer can properly validate the provided SLD.</p>
-<p><a href="https://github.com/UNM-GEOG-485-585/class-materials/blob/master/sample-files/SLD/SimpleRoadsScaled.sld">Full SLD</a> </p>
+<p><a href="https://github.com/karlbenedict/GEOG485-585/blob/master/sample-files/SLD/SimpleRoadsScaled.sld">Full SLD</a> </p>
 <div class="sourceCode" id="attributeFilterWscale_highways"><pre class="sourceCode xml"><code class="sourceCode xml"><span class="kw">&lt;?xml</span> version=&quot;1.0&quot; encoding=&quot;ISO-8859-1&quot;<span class="kw">?&gt;</span>
 <span class="kw">&lt;StyledLayerDescriptor</span><span class="ot"> version=</span><span class="st">&quot;1.0.0&quot;</span> 
 <span class="ot">  xsi:schemaLocation=</span><span class="st">&quot;http://www.opengis.net/sld StyledLayerDescriptor.xsd&quot;</span> 
@@ -523,7 +528,7 @@ one or more <span class="kw">&lt;NamedLayer&gt;</span> ...  <span class="kw">&lt
 
 <span class="kw">&lt;/StyledLayerDescriptor&gt;</span></code></pre></div>
 <h3 id="demonstrations">Demonstrations</h3>
-<p>Class GeoServer Instance: <a href="http://geog485.unm.edu:8080/geoserver/web/" class="uri">http://geog485.unm.edu:8080/geoserver/web/</a></p>
+<p>Class GeoServer Instance: <a href="http://mapper.internetmapping.net:8081/geoserver/web/" class="uri">http://mapper.internetmapping.net:8081/geoserver/web/</a></p>
 <p>SLD Creation Using QGIS: Link to the <a href="http://docs.qgis.org/2.8/en/docs/user_manual/working_with_vector/vector_properties.html#style-menu">QGIS Vector Properties Dialog</a> Documentation.</p>
 <hr />
 <section>

@@ -1,3 +1,7 @@
+---
+title: Week 15 - Module 5 - OGC Services and Styling in GeoServer
+...
+
 <!---------------------------------------------------------------------------->
 <!-- Week 15 ----------------------------------------------------------------->
 <!-- Lecture 05 a 03 a ------------------------------------------------------->
@@ -5,8 +9,6 @@
 <!-- Integrating GeoServer OGC Services into OpenLayers Clients--------------->
 <!---------------------------------------------------------------------------->
 
-
-# Module 5 - OGC Services and Styling in GeoServer# {.module05a03a}
 
 ### Overview ###  {.module02c01a}
 * Review of Raster Styling  in GeoServer
@@ -226,7 +228,7 @@ Gamma
 ### GeoServer Demo/Q&A ###
 
 
-Class GeoServer Instance: [http://geog485.unm.edu:8080/geoserver/web/](http://geog485.unm.edu:8080/geoserver/web/)
+Class GeoServer Instance: [http://mapper.internetmapping.net:8081/geoserver/web/](http://mapper.internetmapping.net:8081/geoserver/web/)
 
 
 # Epilogue - Geography 485L/585L Closing Comments and Next Steps #

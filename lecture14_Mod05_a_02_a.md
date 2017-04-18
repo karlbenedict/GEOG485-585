@@ -1,3 +1,8 @@
+---
+title: Week 14 - Module 5 - OGC Services and Styling in GeoServer
+...
+
+
 <!---------------------------------------------------------------------------->
 <!-- Week 14 ----------------------------------------------------------------->
 <!-- Lecture 05 a 02 a ------------------------------------------------------->
@@ -5,8 +10,6 @@
 <!-- OGC Services and Styling in GeoServer------------------------------------>
 <!---------------------------------------------------------------------------->
 
-
-# Module 5 - OGC Services and Styling in GeoServer# {.module05a02a}
 
 ### Overview ###
 
@@ -35,20 +38,20 @@ Styles are XML documents that conform to the OGC SLD standard, and consist of fo
 Symbolizers
 :	SLD components that define the rendering style of specific types of content
 
-* [Point](http://docs.geoserver.org/stable/en/user/styling/sld-reference/pointsymbolizer.html)
-* [Line](http://docs.geoserver.org/stable/en/user/styling/sld-reference/linesymbolizer.html)
-* [Polygon](http://docs.geoserver.org/stable/en/user/styling/sld-reference/polygonsymbolizer.html)
-* [Raster](http://docs.geoserver.org/stable/en/user/styling/sld-reference/rastersymbolizer.html)
-* [Text](http://docs.geoserver.org/stable/en/user/styling/sld-reference/textsymbolizer.html)
+* [Point](http://docs.geoserver.org/stable/en/user/styling/sld/reference/pointsymbolizer.html)
+* [Line](http://docs.geoserver.org/stable/en/user/styling/sld/reference/linesymbolizer.html)
+* [Polygon](http://docs.geoserver.org/stable/en/user/styling/sld/reference/polygonsymbolizer.html)
+* [Raster](http://docs.geoserver.org/stable/en/user/styling/sld/reference/rastersymbolizer.html)
+* [Text](http://docs.geoserver.org/stable/en/user/styling/sld/reference/textsymbolizer.html)
 
 Labels
-:	Defining the placement of [labels](http://docs.geoserver.org/stable/en/user/styling/sld-reference/labeling.html)
+:	Defining the placement of [labels](http://docs.geoserver.org/stable/en/user/styling/sld/reference/labeling.html)
 
 Filters
-:	Allow for the application different symbolizers to [defined sets](http://docs.geoserver.org/stable/en/user/styling/sld-reference/filters.html) of features
+:	Allow for the application different symbolizers to [defined sets](http://docs.geoserver.org/stable/en/user/styling/sld/reference/filters.html) of features
 
 Scale Elements
-:	Allow for the application of different symbolizers at different map scales through the definition of [styling rules](http://docs.geoserver.org/stable/en/user/styling/sld-reference/rules.html)
+:	Allow for the application of different symbolizers at different map scales through the definition of [styling rules](http://docs.geoserver.org/stable/en/user/styling/sld/reference/rules.html)
 
 
 ### Definition of Styles - Header Content ###  {#definitionOfStyles_03}
@@ -69,6 +72,8 @@ one or more <NamedLayer> ...  </NamedLayer> elements
 
 
 ### Definition of Styles - Sample SLD File ###   {#definitionOfStyles_04}
+
+`point_simplepoint.sld`
 
 ~~~~~~~~~~ {#sampleSLD .xml }
 <?xml version="1.0" encoding="ISO-8859-1"?>
@@ -139,7 +144,7 @@ SLD Snippet ([Full SLD](https://github.com/UNM-GEOG-485-585/class-materials/blob
 
 ![Sample simple styled line layer](images/line_simpleline.png)
 
-SLD Snippet ([Full SLD](https://github.com/UNM-GEOG-485-585/class-materials/blob/master/sample-files/SLD/line_simpleline.sld))
+SLD Snippet ([Full SLD](https://github.com/karlbenedict/GEOG485-585/blob/master/sample-files/SLD/point_simplepoint.sld))
 
 ~~~~~~~~~~ {#sampleSLD_simpleLine .xml }
 <NamedLayer>
@@ -165,7 +170,7 @@ SLD Snippet ([Full SLD](https://github.com/UNM-GEOG-485-585/class-materials/blob
 
 ![Sample simple styled polygon layer](images/polygon_simplepolygon.png)
 
-SLD Snippet ([Full SLD](https://github.com/UNM-GEOG-485-585/class-materials/blob/master/sample-files/SLD/polygon_simplepolygon.sld))
+SLD Snippet ([Full SLD](https://github.com/karlbenedict/GEOG485-585/blob/master/sample-files/SLD/polygon_simplepolygon.sld))
 
 ~~~~~~~~~~ {#sampleSLD_simplepoly .xml }
 <NamedLayer>
@@ -190,7 +195,7 @@ SLD Snippet ([Full SLD](https://github.com/UNM-GEOG-485-585/class-materials/blob
 
 ![Sample simple styled raster layer](images/raster_twocolorgradient.png)
 
-SLD Snippet ([Full SLD](https://github.com/UNM-GEOG-485-585/class-materials/blob/master/sample-files/SLD/raster_twocolorgradient.sld))
+SLD Snippet ([Full SLD](https://github.com/karlbenedict/GEOG485-585/blob/master/sample-files/SLD/raster_twocolorgradient.sld))
 
 ~~~~~~~~~~ {#sampleSLD_simpleraster .xml }
 <NamedLayer>
@@ -348,7 +353,7 @@ ogrinfo -fields=YES -geom=NO kb_gpsrdsdd.shp kb_gpsrdsdd
 
 Where this command requests that the fields and their values be displayed, but that the detailed geometry information (i.e. all of the nodes associated with each feature) be suppressed in the output
 
-[Full SLD](https://github.com/UNM-GEOG-485-585/class-materials/blob/master/sample-files/SLD/SimpleRoads.sld)
+[Full SLD](https://github.com/karlbenedict/GEOG485-585/blob/master/sample-files/SLD/SimpleRoads.sld)
 
 
 ~~~~~~~~~~ {#styledNMRoads .xml }
@@ -463,7 +468,7 @@ Where this command requests that the fields and their values be displayed, but t
 The only change needed to introduce scale-dependencies into styles is to include `<MaxScaleDenominator>` or `<MinScaleDenominator>` elements within a rule where they should be applied. These elements should be placed just before the symbolizer element so that GeoServer can properly validate the provided SLD. 
 
 
-[Full SLD](https://github.com/UNM-GEOG-485-585/class-materials/blob/master/sample-files/SLD/SimpleRoadsScaled.sld)\ 
+[Full SLD](https://github.com/karlbenedict/GEOG485-585/blob/master/sample-files/SLD/SimpleRoadsScaled.sld)\ 
 
 ~~~~~~~~~~ {#attributeFilterWscale_highways .xml }
 <?xml version="1.0" encoding="ISO-8859-1"?>
@@ -574,7 +579,7 @@ The only change needed to introduce scale-dependencies into styles is to include
 
 ### Demonstrations ###
 
-Class GeoServer Instance: [http://geog485.unm.edu:8080/geoserver/web/](http://geog485.unm.edu:8080/geoserver/web/)
+Class GeoServer Instance: [http://mapper.internetmapping.net:8081/geoserver/web/](http://mapper.internetmapping.net:8081/geoserver/web/)
 
 SLD Creation Using QGIS:
 Link to the [QGIS Vector Properties Dialog](http://docs.qgis.org/2.8/en/docs/user_manual/working_with_vector/vector_properties.html#style-menu) Documentation. 

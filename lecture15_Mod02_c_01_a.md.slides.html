@@ -3,7 +3,7 @@
   <meta charset="utf-8">
   <meta name="generator" content="pandoc">
   <meta name="author" content="Karl Benedict">
-  <title></title>
+  <title>Week 15 - Module 5 - OGC Services and Styling in GeoServer</title>
   <style type="text/css">code{white-space: pre;}</style>
   <style type="text/css">
 div.sourceCode { overflow-x: auto; }
@@ -46,6 +46,12 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
   <link href="data:text/css;charset=utf-8,footer%20%7B%0Abackground%2Dcolor%3A%20%23010101%3B%0Aopacity%3A%200%2E7%3B%0A%7D%0Asection%23TOC%20%7B%0Adisplay%3A%20%3B%0Aoverflow%3A%20scroll%3B%0Amargin%2Dtop%3A%2020px%3B%0Amargin%2Dbottom%3A%2020px%3B%0A%7D%0Asection%23TOC%20ul%20li%20ul%20%7B%0Adisplay%3A%20none%3B%0A%7D%0Asection%23TOC%20ul%20li%20%7B%0Afont%2Dsize%3A%2018px%3B%0Apadding%3A%205px%3B%0A%7D%0A%23simple%2D%2D%2Dzoomed%2D%2D%2Dmodified%2Dcontrols%2Dcode%20div%2EcodeTable%7B%0Aheight%3A%20450px%3B%09%7D%0A%2Eoneup%20figure%20%7B%0Aposition%3A%20absolute%3B%0Awidth%3A%20100%25%3B%0A%7D%0A%2Eoneup%20img%20%7B%0Amargin%2Dleft%3A%20200px%3B%0Amargin%2Dright%3A%20auto%3B%0Amax%2Dheight%3A%2070%25%3B%0Amax%2Dwidth%3A%20100%25%3B%0A%7D" rel="stylesheet">
 </head>
 <body>
+<section class="title">
+  <h1 class="title">Week 15 - Module 5 - OGC Services and Styling in GeoServer</h1>
+  <footer>
+    <span class="author">Karl Benedict</span> · <span class="date">GEOG 485L/585L - Spring 2017</span>
+  </footer>
+</section>
 <section class="slide level3">
 
 <!---------------------------------------------------------------------------->
@@ -55,13 +61,14 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <!-- Integrating GeoServer OGC Services into OpenLayers Clients--------------->
 <!---------------------------------------------------------------------------->
 </section>
-<section id="module-5---ogc-services-and-styling-in-geoserver" class="titleslide slide level1 module05a03a"><h1>Module 5 - OGC Services and Styling in GeoServer</h1></section><section id="overview" class="slide level3 module02c01a">
+<section id="overview" class="slide level3 module02c01a">
 <h1>Overview</h1>
 <ul>
 <li><p>Review of Raster Styling in GeoServer</p></li>
 <li><p>Raster Styling Demonstration</p></li>
 </ul>
-</section><section id="raster-symbolizer---review" class="slide level3">
+</section>
+<section id="raster-symbolizer---review" class="slide level3">
 <h1>Raster Symbolizer - Review</h1>
 <div class="sourceCode" id="rasterSymbolizerElements"><pre class="sourceCode xml"><code class="sourceCode xml"><span class="kw">&lt;Opacity&gt;</span>
 <span class="kw">&lt;ColorMap</span><span class="ot"> type=</span><span class="er">ramp|values|intervals</span> <span class="er">extended=true|false</span> <span class="er">/&gt;</span>
@@ -75,7 +82,8 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <span class="kw">&lt;ShadedRelief&gt;</span> (not implemented in ver 2.0)
 <span class="kw">&lt;OverlapBehavior&gt;</span> (not implemented in ver 2.0)
 <span class="kw">&lt;ImageOutline&gt;</span> (not implemented in ver 2.0)</code></pre></div>
-</section><section id="sample-raster-sld-for-color-map-examples" class="slide level3">
+</section>
+<section id="sample-raster-sld-for-color-map-examples" class="slide level3">
 <h1>Sample Raster SLD for Color Map Examples</h1>
 <div class="sourceCode" id="simpleRasterSymbolizer"><pre class="sourceCode xml"><code class="sourceCode xml"><span class="kw">&lt;?xml</span> version=&quot;1.0&quot; encoding=&quot;ISO-8859-1&quot;<span class="kw">?&gt;</span>
 <span class="kw">&lt;StyledLayerDescriptor</span><span class="ot"> version=</span><span class="st">&quot;1.0.0&quot;</span> 
@@ -115,18 +123,21 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 
 <span class="kw">&lt;/NamedLayer&gt;</span>
 <span class="kw">&lt;/StyledLayerDescriptor&gt;</span></code></pre></div>
-</section><section id="colormap-types" class="slide level3">
+</section>
+<section id="colormap-types" class="slide level3">
 <h1>ColorMap Types</h1>
 <pre><code>&lt;ColorMap&gt; or &lt;ColorMap type=&quot;ramp&quot;&gt;
 
 &lt;ColorMap type=&quot;intervals&quot;&gt;
 
 &lt;ColorMap type=&quot;values&quot;&gt;</code></pre>
-</section><section id="extend-or-not-to-extend" class="slide level3">
+</section>
+<section id="extend-or-not-to-extend" class="slide level3">
 <h1>Extend or Not To Extend?</h1>
 <div class="sourceCode" id="extendedRamp"><pre class="sourceCode xml"><code class="sourceCode xml"><span class="kw">&lt;ColorMap</span><span class="ot"> type=</span><span class="st">&quot;ramp&quot;</span><span class="ot"> extended=</span><span class="st">&quot;false&quot;</span><span class="kw">&gt;</span>  = 256 colors in ramp (default)
 <span class="kw">&lt;ColorMap</span><span class="ot"> type=</span><span class="st">&quot;ramp&quot;</span><span class="ot"> extended=</span><span class="st">&quot;true&quot;</span><span class="kw">&gt;</span> = 65536 colors in ramp</code></pre></div>
-</section><section id="opacity" class="slide level3">
+</section>
+<section id="opacity" class="slide level3">
 <h1>Opacity</h1>
 <p>Options for defining <code>opacity</code> appear in two places in the <em>raster symbolizer</em>.</p>
 <p>At the level of the entire raster dataset</p>
@@ -139,7 +150,8 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
    ...
    <span class="kw">&lt;ColorMapEntry</span><span class="ot"> color=</span><span class="st">&quot;#FFFFFF&quot;</span><span class="ot"> quantity=</span><span class="st">&quot;3500&quot;</span><span class="ot"> label=</span><span class="st">&quot;3500&quot;</span> <span class="kw">/&gt;</span>
 <span class="kw">&lt;/ColorMap&gt;</span></code></pre></div>
-</section><section id="channel-selection" class="slide level3">
+</section>
+<section id="channel-selection" class="slide level3">
 <h1>Channel Selection</h1>
 <p>Many raster datasets contain multiple <em>bands</em> of values which may be viewed individually or assigned to the colors <em>red</em>, <em>green</em>, and <em>blue</em> to generate a color image representing a combination of band values. GeoServer allows for the specification of a single band for display as a <code>GrayChannel</code> or three bands as <code>RedChannel</code>, <code>GreenChannel</code>, and <code>BlueChannel</code>.</p>
 <div class="sourceCode" id="channelSelection"><pre class="sourceCode xml"><code class="sourceCode xml"><span class="kw">&lt;?xml</span> version=&quot;1.0&quot; encoding=&quot;ISO-8859-1&quot;<span class="kw">?&gt;</span>
@@ -178,7 +190,8 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 
 <span class="kw">&lt;/NamedLayer&gt;</span>
 <span class="kw">&lt;/StyledLayerDescriptor&gt;</span></code></pre></div>
-</section><section id="contrast-enhancement" class="slide level3">
+</section>
+<section id="contrast-enhancement" class="slide level3">
 <h1>Contrast Enhancement</h1>
 <p>Some raster data may need adjustment to increase the contrast (the range between the darkest and lightest values) displayed. GeoServer provides three options for contrast enhancement, each of which have a different effect on the resulting image.</p>
 <dl>
@@ -192,7 +205,8 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <dd>The image is brightened or darkened by a specified factor (negative numbers darken, positive numbers brighten)
 </dd>
 </dl>
-</section><section id="sample-contrast-enhancement-sld-for-examples" class="slide level3">
+</section>
+<section id="sample-contrast-enhancement-sld-for-examples" class="slide level3">
 <h1>Sample Contrast Enhancement SLD for Examples</h1>
 <div class="sourceCode" id="contrastEnhancement"><pre class="sourceCode xml"><code class="sourceCode xml"><span class="kw">&lt;RasterSymbolizer&gt;</span>
   <span class="kw">&lt;Opacity&gt;</span>1.0<span class="kw">&lt;/Opacity&gt;</span>
@@ -226,9 +240,10 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <div class="sourceCode" id="contrastEnhancementGamma"><pre class="sourceCode xml"><code class="sourceCode xml"><span class="kw">&lt;ContrastEnhancement&gt;</span>
   <span class="kw">&lt;GammaValue&gt;</span>.5<span class="kw">&lt;/GammaValue&gt;</span>
 <span class="kw">&lt;/ContrastEnhancement&gt;</span></code></pre></div>
-</section><section id="geoserver-demoqa" class="slide level3">
+</section>
+<section id="geoserver-demoqa" class="slide level3">
 <h1>GeoServer Demo/Q&amp;A</h1>
-<p>Class GeoServer Instance: <a href="http://geog485.unm.edu:8080/geoserver/web/" class="uri">http://geog485.unm.edu:8080/geoserver/web/</a></p>
+<p>Class GeoServer Instance: <a href="http://mapper.internetmapping.net:8081/geoserver/web/" class="uri">http://mapper.internetmapping.net:8081/geoserver/web/</a></p>
 </section>
 <section id="epilogue---geography-485l585l-closing-comments-and-next-steps" class="titleslide slide level1"><h1>Epilogue - Geography 485L/585L Closing Comments and Next Steps</h1></section><section id="what-weve-done-..." class="slide level3">
 <h1>What We've Done ...</h1>
