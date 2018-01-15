@@ -2,7 +2,7 @@
 title: Week 1 - Goals and Objectives
 ...
 
-# Goals and Objectives # {#goals}
+# Week 1 - Goals and Objectives: Introduction # {#goals}
 
 Internet mapping technologies are an important component of geospatial data capture, sharing, visualization, and delivery. This course provides a survey of current and emerging internet and geospatial interoperability standards, technologies, and capabilities. The emphasis of the work in this class will be hands-on experience in four critical aspects of Internet-enabled mapping:
 
