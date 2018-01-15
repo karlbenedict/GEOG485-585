@@ -1,12 +1,17 @@
 <!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
 <head>
-  <meta charset="utf-8">
-  <meta name="generator" content="pandoc">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-  <meta name="author" content="Karl Benedict">
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="Karl Benedict" />
   <title>Week 5 - Module 3 - GIS and Services Oriented Architectures</title>
-  <style type="text/css">code{white-space: pre;}</style>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
   <link rel="stylesheet" href="page.css">
   <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
@@ -15,8 +20,8 @@
 <body>
 <header>
 <h1 class="title">Week 5 - Module 3 - GIS and Services Oriented Architectures</h1>
-<h2 class="author">Karl Benedict</h2>
-<h3 class="date">GEOG 485L/585L - Spring 2017</h3>
+<p class="author">Karl Benedict</p>
+<p class="date">GEOG 485L/585L - Spring 2018</p>
 </header>
 <!---------------------------------------------------------------------------->
 <!-- Week 05 ----------------------------------------------------------------->
@@ -57,14 +62,14 @@
 <p>For example, a census vector data product might include the geometries that define census tracts and attributes associated with each geometry: population, income, etc.</p>
 <h3 id="data-types---raster" class="module03a01a">Data Types - Raster</h3>
 <ul>
-<li><p>Raster data are frequently used to represent values for phenomena that vary continuously across space (e.g. elevation, concentration of air pollutants, depth to ground water, etc. )</p></li>
-<li><p>These values are encoded over a regular grid of observation locations with a specified grid spacing - often referred to as the spatial resolution of the dataset (i.e. 10m resolution for a standard USGS Digital Elevation Model product)</p></li>
-<li><p>Often parts of data collections that are repeated (i.e. remote sensing data products)</p></li>
+<li><p>Raster data are frequently used to represent values for phenomena that vary continuously across space (e.g. elevation, concentration of air pollutants, depth to ground water, etc. )</p></li>
+<li><p>These values are encoded over a regular grid of observation locations with a specified grid spacing - often referred to as the spatial resolution of the dataset (i.e. 10m resolution for a standard USGS Digital Elevation Model product)</p></li>
+<li><p>Often parts of data collections that are repeated (i.e. remote sensing data products)</p></li>
 </ul>
 <h3 id="accessing-and-processing-raster-and-vector-data">Accessing and Processing Raster and Vector Data</h3>
 <ul>
 <li>ArcGIS - ArcCatalog</li>
-<li>QGIS - Dataset properties available through the &quot;Metadata&quot; tab</li>
+<li>QGIS - Dataset properties available through the “Metadata” tab</li>
 <li>Through metadata files available from the provider web site or embedded in the downloaded file</li>
 </ul>
 <h3 id="accessing-and-processing-raster-and-vector-data---programmatically" class="module03a01a">Accessing and Processing Raster and Vector Data - Programmatically</h3>
@@ -151,7 +156,7 @@
 <li>NSFNET opened to commercial connections (1988). Led to interconnection of multiple, previously separate networks into an “Internet”</li>
 <li>Growth of internet users has expanded rapidly over the past decade</li>
 </ul>
-<h3 id="in-a-phrase-..." class="module03a01a">In a Phrase ...</h3>
+<h3 id="in-a-phrase" class="module03a01a">In a Phrase …</h3>
 <p>The current networking computing model consists of <em>Components Interacting</em> with Each Other</p>
 <h3 id="so---we-need-to-answer-the-following-questions" class="module03a01a">So - We Need to Answer the Following Questions</h3>
 <p>What are components?</p>
@@ -198,19 +203,19 @@
 <p>File-based data</p>
 <ul>
 <li>Often stored on the file system</li>
-<li>Sometimes difficult represent data within a database structure (i.e. binary data)</li>
+<li>Sometimes difficult represent data within a database structure (i.e. binary data)</li>
 <li>May be in a wide variety of formats
 <ul>
 <li>XML</li>
-<li>ASCII Text (e.g. CSV, tab-delimited)</li>
+<li>ASCII Text (e.g. CSV, tab-delimited)</li>
 <li>Binary files</li>
 <li>Excel Spreadsheets</li>
 <li>Word Processing Documents</li>
-<li>Geospatial data (e.g. imagery)</li>
+<li>Geospatial data (e.g. imagery)</li>
 </ul></li>
 <li>Remotely Accessible Data
 <ul>
-<li>Some data may be provided through reference to an external network resource (i.e. a web address, or other identifier) or service</li>
+<li>Some data may be provided through reference to an external network resource (i.e. a web address, or other identifier) or service</li>
 </ul></li>
 </ul>
 <h3 id="key-components---processing-services" class="module03a01a">Key Components - Processing Services</h3>
@@ -221,7 +226,7 @@
 <ul>
 <li>Extraction of a subset of a large data set based upon provided search criteria</li>
 <li>Generation of a map from a collection of data</li>
-<li>Fusion of two data products into a single derived product (e.g. vegetation indices calculated from multiple remote sensing images)</li>
+<li>Fusion of two data products into a single derived product (e.g. vegetation indices calculated from multiple remote sensing images)</li>
 <li>Calculation of statistical information for an input product, and delivery of the statistical summary</li>
 </ul></li>
 </ul>
@@ -417,16 +422,16 @@ services/ogc/wms?
 <p>The OGC data and representation standards support data exchange and higher level representation</p>
 <dl>
 <dt>GML</dt>
-<dd>XML schema for the representation of features and associated attributes. It may be extended for use by specific communities of users (i.e. ecological data models)
+<dd>XML schema for the representation of features and associated attributes. It may be extended for use by specific communities of users (i.e. ecological data models)
 </dd>
 <dt>KML</dt>
-<dd>XML schema that supports the combination of embedded data and external data into a complete representation model that may be used by client applications to present the data through a user interface (e.g. Google Earth, WorldWind)
+<dd>XML schema that supports the combination of embedded data and external data into a complete representation model that may be used by client applications to present the data through a user interface (e.g. Google Earth, WorldWind)
 </dd>
 </dl>
 <hr />
 <section>
 <div class="license">
-<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />This work by <span xmlns:cc="http://creativecommons.org/ns#" property="cc:attributionName">Karl Benedict</span> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />This work by <span data-xmlns:cc="http://creativecommons.org/ns#" data-property="cc:attributionName">Karl Benedict</span> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
 </div>
 </section>
 </body>

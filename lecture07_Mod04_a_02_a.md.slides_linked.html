@@ -4,7 +4,12 @@
   <meta name="generator" content="pandoc">
   <meta name="author" content="Karl Benedict">
   <title>Week 7 - Module 4a - Interoperability Standards. WFS &amp; WCS</title>
-  <style type="text/css">code{white-space: pre;}</style>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
   <link rel="stylesheet" href="slides.css">
   <link rel="stylesheet" href="slide_specific.css">
 </head>
@@ -12,7 +17,7 @@
 <section class="title">
   <h1 class="title">Week 7 - Module 4a - Interoperability Standards. WFS &amp; WCS</h1>
   <footer>
-    <span class="author">Karl Benedict</span> · <span class="date">GEOG 485L/585L - Spring 2017</span>
+    <span class="author">Karl Benedict</span> · <span class="date">GEOG 485L/585L - Spring 2018</span>
   </footer>
 </section>
 <section class="slide level3">
@@ -25,7 +30,7 @@
 <!---------------------------------------------------------------------------->
 </section>
 <section id="overview" class="slide level3 module04a02a">
-<h1>Overview</h1>
+<h3>Overview</h3>
 <ul>
 <li>OGC Web Feature Services (WFS)
 <ul>
@@ -41,8 +46,8 @@
 </ul></li>
 </ul>
 </section>
-<section id="ogc-web-feature-service-wfs" class="titleslide slide level2 module04a02a"><h1>OGC Web Feature Service (WFS)</h1></section><section id="background" class="slide level3 module04a02a">
-<h1>Background</h1>
+<section id="ogc-web-feature-service-wfs" class="title-slide slide level2 module04a02a"><h2>OGC Web Feature Service (WFS)</h2></section><section id="background" class="slide level3 module04a02a">
+<h3>Background</h3>
 <p>The documents related to the OGC WFS standard are available from: <a href="http://www.opengeospatial.org/standards/wfs"><code>http://www.opengeospatial.org/standards/wfs</code></a> and all operation parameter tables presented here are based upon the <a href="http://www.opengeospatial.org/standards/wfs">OpenGIS Web Feature Service 2.0 Interface Standard - Panagiotis (Peter) A. Vretanos, editor - 2010-11-02</a></p>
 <p>From the Version 2.0.0 WFS Scope Section:</p>
 <blockquote>
@@ -64,7 +69,7 @@
 <p>Stored query operations allow clients to create, drop, list and described parameterized query expressions that are stored by the server and can be repeatedly invoked using different parameter values.</p>
 </blockquote>
 </section><section id="wfs-requestsoperations" class="slide level3 module04a02a">
-<h1>WFS Requests/Operations</h1>
+<h3>WFS Requests/Operations</h3>
 <p>These request types are submitted as part of the required <code>REQUEST</code> key in a KVP HTTP GET request.</p>
 <dl>
 <dt><code>GetCapabilities</code></dt>
@@ -99,7 +104,7 @@
 </dd>
 </dl>
 </section><section id="wfs-conformance-levels" class="slide level3 module04a02a">
-<h1>WFS Conformance Levels</h1>
+<h3>WFS Conformance Levels</h3>
 <p>WFS 2.0.0 Requests and their corresponding WFS Compliance Levels</p>
 <table>
 <thead>
@@ -216,7 +221,7 @@
 </tbody>
 </table>
 </section><section id="request-composition" class="slide level3 module04a02a">
-<h1>Request Composition</h1>
+<h3>Request Composition</h3>
 <p>Requests submitted to a WFS may be submitted either via</p>
 <dl>
 <dt>HTTP GET</dt>
@@ -232,14 +237,14 @@
 <p>Servers implementing WFS may support either the HTTP GET, POST, or SOAP request model</p>
 <p>Conceptually <em>FeatureType</em> = <em>Layer</em></p>
 </section><section id="kvp-for-base-wfs-requests" class="slide level3 module04a02a">
-<h1>KVP for Base WFS Requests</h1>
+<h3>KVP for Base WFS Requests</h3>
 <p>Base request parameters for all HTTP GET KVP requests</p>
 <figure>
 <img src="images/09-025r1_OGC_Web_Feature_Service_WFS_2-table04.jpg" alt="Table 4 from OpenGIS Web Feature Service 2.0 Interface Standard - Panagiotis (Peter) A. Vretanos, editor - 2010-11-02" /><figcaption>Table 4 from <a href="http://www.opengeospatial.org/standards/wfs">OpenGIS Web Feature Service 2.0 Interface Standard - Panagiotis (Peter) A. Vretanos, editor - 2010-11-02</a></figcaption>
 </figure>
 <p><code>VERSION</code> is required for all operations <em>except</em> the <code>GetCapabilities</code> request</p>
 </section><section id="sample-getcapabilities-requests" class="slide level3 module04a02a">
-<h1>Sample GetCapabilities Requests</h1>
+<h3>Sample GetCapabilities Requests</h3>
 <p>Sample request to USGS Framework Layer (Governmental Units) WFS Service advertised by the USGS <a href="http://viewer.nationalmap.gov/tnmaccess/api/servicesForm"><em>TNM Access API page</em></a> <a href="http://viewer.nationalmap.gov/tnmaccess/api/services?">service list</a> - <a href="http://services.nationalmap.gov/arcgis/services/WFS/govunits/MapServer/WFSServer?request=GetCapabilities&amp;service=WFS">Live Link</a></p>
 <pre><code>http://services.nationalmap.gov/arcgis/services/WFS/govunits/MapServer/WFSServer?
     request=GetCapabilities&amp;
@@ -250,13 +255,13 @@
     REQUEST=GetCapabilities&amp;
     VERSION=1.0.0</code></pre>
 </section><section id="kvp-for-describefeaturetype-request" class="slide level3 module04a02a">
-<h1>KVP for DescribeFeatureType Request</h1>
+<h3>KVP for DescribeFeatureType Request</h3>
 <p><code>DescribeFeatureType</code> HTTP GET KVP request</p>
 <figure>
 <img src="images/09-025r1_OGC_Web_Feature_Service_WFS_2-table15.jpg" alt="Table 15 from OpenGIS Web Feature Service 2.0 Interface Standard - Panagiotis (Peter) A. Vretanos, editor - 2010-11-02" /><figcaption>Table 15 from <a href="http://www.opengeospatial.org/standards/wfs">OpenGIS Web Feature Service 2.0 Interface Standard - Panagiotis (Peter) A. Vretanos, editor - 2010-11-02</a></figcaption>
 </figure>
 </section><section id="sample-describefeaturetype-requests" class="slide level3 module04a02a">
-<h1>Sample DescribeFeatureType Requests</h1>
+<h3>Sample DescribeFeatureType Requests</h3>
 <p>USGS Framework Layer (Governmental Units) WFS Service linked from the USGS <a href="http://viewer.nationalmap.gov/tnmaccess/api/servicesForm"><em>TNM Access API page</em></a> <a href="http://viewer.nationalmap.gov/tnmaccess/api/services?">service list</a> - <a href="http://services.nationalmap.gov/arcgis/services/WFS/govunits/MapServer/WFSServer?version=1.1.0&amp;request=DescribeFeatureType&amp;service=WFS&amp;typeName=WFS_govunits:State_or_Territory_High-res">Live Link</a></p>
 <pre><code>http://services.nationalmap.gov/arcgis/services/WFS/govunits/MapServer/WFSServer?
     version=1.1.0&amp;
@@ -270,23 +275,23 @@
     REQUEST=DescribeFeatureType&amp;
     TYPENAME=tl_2010_35_bg10</code></pre>
 </section><section id="kvp-for-getfeature-request" class="slide level3 module04a02a">
-<h1>KVP for GetFeature Request</h1>
+<h3>KVP for GetFeature Request</h3>
 <p><code>GetFeature</code> HTTP GET KVP request</p>
 <p><img src="images/09-025r1_OGC_Web_Feature_Service_WFS_2-table17.jpg" alt="Table 17 from OpenGIS Web Feature Service 2.0 Interface Standard - Panagiotis (Peter) A. Vretanos, editor - 2010-11-02" /> </p>
 </section><section id="kvp-for-getfeature-request---presentation-parameters" class="slide level3 module04a02a">
-<h1>KVP for GetFeature Request - Presentation Parameters</h1>
+<h3>KVP for GetFeature Request - Presentation Parameters</h3>
 <p><img src="images/09-025r1_OGC_Web_Feature_Service_WFS_2-table05.jpg" alt="Table 5 from OpenGIS Web Feature Service 2.0 Interface Standard - Panagiotis (Peter) A. Vretanos, editor - 2010-11-02" /> </p>
 </section><section id="kvp-for-getfeature-request---resolve-parameters" class="slide level3 module04a02a">
-<h1>KVP for GetFeature Request - Resolve Parameters</h1>
+<h3>KVP for GetFeature Request - Resolve Parameters</h3>
 <p><img src="images/09-025r1_OGC_Web_Feature_Service_WFS_2-table06.jpg" alt="Table 6 from OpenGIS Web Feature Service 2.0 Interface Standard - Panagiotis (Peter) A. Vretanos, editor - 2010-11-02" /> </p>
 </section><section id="kvp-for-getfeature-request---ad-hoc-query-parameters-figure" class="slide level3 module04a02a">
-<h1>KVP for GetFeature Request - Ad-hoc Query Parameters (Figure )</h1>
+<h3>KVP for GetFeature Request - Ad-hoc Query Parameters (Figure )</h3>
 <p><img src="images/09-025r1_OGC_Web_Feature_Service_WFS_2-table08.jpg" alt="Table 8 from OpenGIS Web Feature Service 2.0 Interface Standard - Panagiotis (Peter) A. Vretanos, editor - 2010-11-02" /> </p>
 </section><section id="kvp-for-getfeature-request---stored-query-parameters-figure" class="slide level3 module04a02a">
-<h1>KVP for GetFeature Request - Stored Query Parameters (Figure )</h1>
+<h3>KVP for GetFeature Request - Stored Query Parameters (Figure )</h3>
 <p><img src="images/09-025r1_OGC_Web_Feature_Service_WFS_2-table10.jpg" alt="Table 10 from OpenGIS Web Feature Service 2.0 Interface Standard - Panagiotis (Peter) A. Vretanos, editor - 2010-11-02" /> </p>
 </section><section id="sample-getfeature-requests" class="slide level3 module04a02a">
-<h1>Sample GetFeature Requests</h1>
+<h3>Sample GetFeature Requests</h3>
 <p>USGS Framework Layer (Governmental Units) WFS Service linked from the USGS <a href="http://viewer.nationalmap.gov/tnmaccess/api/servicesForm"><em>TNM Access API page</em></a> <a href="http://viewer.nationalmap.gov/tnmaccess/api/services?">service list</a> - <a href="http://services.nationalmap.gov/arcgis/services/WFS/govunits/MapServer/WFSServer?VERSION=1.1.0&amp;REQUEST=GetFeature&amp;SERVICE=WFS&amp;TYPENAME=WFS_govunits:State_or_Territory_High-res">Live Link</a></p>
 <p><em>Note:</em> <code>TYPENAME</code> for <code>VERSION=1.1.0</code> instead of <code>TYPENAMES</code> for <code>VERSION=2.0.0</code></p>
 <pre><code>http://services.nationalmap.gov/arcgis/services/WFS/govunits/MapServer/WFSServer?
@@ -302,21 +307,21 @@
     TYPENAME=WFS_govunits:State_or_Territory_High-res&amp;
     OUTPUTFORMAT=text/xml;%20subType=gml/3.1.1/profiles/gmlsf/1.0.0/0</code></pre>
 </section>
-<section id="ogc-web-coverage-services" class="titleslide slide level2 module04a02a"><h1>OGC Web Coverage Services</h1></section><section id="background-1" class="slide level3 module04a02a">
-<h1>Background</h1>
+<section id="ogc-web-coverage-services" class="title-slide slide level2 module04a02a"><h2>OGC Web Coverage Services</h2></section><section id="background-1" class="slide level3 module04a02a">
+<h3>Background</h3>
 <p>The documents related to the OGC WCS standard are available from: [http://www.opengeospatial.org/standards/wcs][wcs] with the sample parameters in the following slides based upon the <a href="http://portal.opengeospatial.org/files/?artifact_id=41439"><em>OGC Web Coverage Service 2.0 Interface Standard - KVP Protocol Binding Extension</em> - Peter Baumann, editor - 2010-10-27</a></p>
 <p>From the OGC WCS 2.0 <em>Introduction</em></p>
 <blockquote>
-<p>The OGC Web Coverage Service (WCS) supports electronic retrieval of geospatial data as &quot;coverages&quot; – that is, digital geospatial information representing space/time-varying phenomena.</p>
+<p>The OGC Web Coverage Service (WCS) supports electronic retrieval of geospatial data as “coverages” – that is, digital geospatial information representing space/time-varying phenomena.</p>
 </blockquote>
 <blockquote>
 <p>This document specifies the WCS core; every implementation of a WCS shall adhere to this standard. This standard thus defines only basic requirements. Extensions to the core will define extensions to meet additional requirements, such as the response encoding. Indeed, additional extensions are required in order to completely specify a WCS for implementation.</p>
 </blockquote>
 <blockquote>
-<p>A WCS provides access to coverage data in forms that are useful for client-side rendering, as input into scientific models, and for other clients. The WCS may be compared to the OGC Web Feature Service (WFS) and the Web Map Service (WMS). As WMS and WFS service instances, a WCS allows clients to choose portions of a server's information holdings based on spatial constraints and other query criteria.</p>
+<p>A WCS provides access to coverage data in forms that are useful for client-side rendering, as input into scientific models, and for other clients. The WCS may be compared to the OGC Web Feature Service (WFS) and the Web Map Service (WMS). As WMS and WFS service instances, a WCS allows clients to choose portions of a server’s information holdings based on spatial constraints and other query criteria.</p>
 </blockquote>
 </section><section id="wcs-requestsoperations" class="slide level3 module04a02a">
-<h1>WCS Requests/Operations</h1>
+<h3>WCS Requests/Operations</h3>
 <dl>
 <dt><code>GetCapabilities</code></dt>
 <dd>service metadata (XML) that documents the service, including brief information about the data coverages available from the service
@@ -329,7 +334,7 @@
 </dd>
 </dl>
 </section><section id="request-composition-1" class="slide level3 module04a02a">
-<h1>Request Composition</h1>
+<h3>Request Composition</h3>
 <p>Requests submitted to a WCS may be submitted either via the following protocols, as defined in the three extensions developed thus far for the <em>core</em> WCS standard.</p>
 <dl>
 <dt>HTTP GET</dt>
@@ -343,39 +348,39 @@
 </dd>
 </dl>
 </section><section id="kvp-for-base-wcs-requests" class="slide level3 module04a02a">
-<h1>KVP for Base WCS Requests</h1>
+<h3>KVP for Base WCS Requests</h3>
 <table>
 <thead>
 <tr class="header">
-<th style="text-align: left;">Name</th>
+<th>Name</th>
 <th style="text-align: center;">Mandatory/Optional</th>
-<th style="text-align: left;">Definition</th>
-<th style="text-align: left;">Data Type</th>
+<th>Definition</th>
+<th>Data Type</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">service</td>
+<td>service</td>
 <td style="text-align: center;">M</td>
-<td style="text-align: left;">Identifier of the OGC service</td>
-<td style="text-align: left;"><code>String</code>, fixed to &quot;WCS&quot;</td>
+<td>Identifier of the OGC service</td>
+<td><code>String</code>, fixed to “WCS”</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">request</td>
+<td>request</td>
 <td style="text-align: center;">M</td>
-<td style="text-align: left;">Request type name</td>
-<td style="text-align: left;"><code>String</code>, set to operation name</td>
+<td>Request type name</td>
+<td><code>String</code>, set to operation name</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">version</td>
+<td>version</td>
 <td style="text-align: center;">M (except for GetCapabilities)</td>
-<td style="text-align: left;">Request protocol version</td>
-<td style="text-align: left;"><code>String</code></td>
+<td>Request protocol version</td>
+<td><code>String</code></td>
 </tr>
 </tbody>
 </table>
 </section><section id="sample-wcs-getcapabilities-requests" class="slide level3 module04a02a">
-<h1>Sample WCS <code>GetCapabilities</code> requests</h1>
+<h3>Sample WCS <code>GetCapabilities</code> requests</h3>
 <p>NOAA Global Forecast System <a href="http://nomads.ncdc.noaa.gov/thredds/catalog/gfs-004/catalog.html">THREDDS catalog</a>. <a href="http://nomads.ncdc.noaa.gov/thredds/wcs/gfs-004/201602/20160228/gfs_4_20160228_0000_384.grb2?service=WCS&amp;version=1.0.0&amp;request=GetCapabilities">Live Link</a></p>
 <pre><code>http://nomads.ncdc.noaa.gov/thredds/wcs/gfs-004/201602/20160228/
     gfs_4_20160228_0000_384.grb2?
@@ -388,13 +393,13 @@
     REQUEST=GetCapabilities&amp;
     VERSION=1.1.2</code></pre>
 </section><section id="kvp-for-describecoverage-request" class="slide level3 module04a02a">
-<h1>KVP for DescribeCoverage Request</h1>
-<p><code>DescribeCoverage</code> HTTP GET KVP request (Figure 1)</p>
+<h3>KVP for DescribeCoverage Request</h3>
+<p><code>DescribeCoverage</code> HTTP GET KVP request (Figure <a href="#fig:wcsTable01">1</a>)</p>
 <figure>
-<img src="images/09-147r1_OGC_Web_Coverage_Service_2-table01.jpg" alt="Figure 1. Table 1 from OGC Web Coverage Service 2.0 Interface Standard - KVP Protocol Binding Extension - Peter Baumann, editor - 2010-10-27" id="fig:wcsTable01" /><figcaption>Figure 1. Table 1 from <a href="http://portal.opengeospatial.org/files/?artifact_id=41439"><em>OGC Web Coverage Service 2.0 Interface Standard - KVP Protocol Binding Extension</em> - Peter Baumann, editor - 2010-10-27</a></figcaption>
+<img src="images/09-147r1_OGC_Web_Coverage_Service_2-table01.jpg" alt="Figure 1: Table 1 from OGC Web Coverage Service 2.0 Interface Standard - KVP Protocol Binding Extension - Peter Baumann, editor - 2010-10-27" id="fig:wcsTable01" /><figcaption>Figure 1: Table 1 from <a href="http://portal.opengeospatial.org/files/?artifact_id=41439"><em>OGC Web Coverage Service 2.0 Interface Standard - KVP Protocol Binding Extension</em> - Peter Baumann, editor - 2010-10-27</a></figcaption>
 </figure>
 </section><section id="sample-describecoverage-request" class="slide level3 module04a02a">
-<h1>Sample DescribeCoverage Request</h1>
+<h3>Sample DescribeCoverage Request</h3>
 <p>NOAA Global Forecast System <a href="http://nomads.ncdc.noaa.gov/thredds/catalog/gfs-004/catalog.html">THREDDS catalog</a>. <a href="http://nomads.ncdc.noaa.gov/thredds/wcs/gfs-004/201602/20160228/gfs_4_20160228_0000_384.grb2?service=WCS&amp;version=1.0.0&amp;request=DescribeCoverage&amp;COVERAGE=Categorical_Rain">Live Link</a></p>
 <pre><code>http://nomads.ncdc.noaa.gov/thredds/wcs/gfs-004/201602/20160228/
 gfs_4_20160228_0000_384.grb2?
@@ -409,13 +414,13 @@ gfs_4_20160228_0000_384.grb2?
     VERSION=1.1.2&amp;
     COVERAGE=us_ppt_1971_2000_11</code></pre>
 </section><section id="kvp-for-getcoverage-request" class="slide level3 module04a02a">
-<h1>KVP for GetCoverage Request</h1>
-<p><code>GetCoverage</code> HTTP GET KVP request (Figure 1)</p>
+<h3>KVP for GetCoverage Request</h3>
+<p><code>GetCoverage</code> HTTP GET KVP request (Figure <a href="#fig:wcsTable01">1</a>)</p>
 <figure>
 <img src="images/09-147r1_OGC_Web_Coverage_Service_2-table02.jpg" alt="Table 2 from OGC Web Coverage Service 2.0 Interface Standard - KVP Protocol Binding Extension - Peter Baumann, editor - 2010-10-27" /><figcaption>Table 2 from <a href="http://portal.opengeospatial.org/files/?artifact_id=41439"><em>OGC Web Coverage Service 2.0 Interface Standard - KVP Protocol Binding Extension</em> - Peter Baumann, editor - 2010-10-27</a></figcaption>
 </figure>
 </section><section id="subset-definition-for-getcoverage-request" class="slide level3 module04a02a">
-<h1>Subset Definition for GetCoverage Request</h1>
+<h3>Subset Definition for GetCoverage Request</h3>
 <p>Subset definition for the <code>GetCoverage</code> HTTP GET KVP request</p>
 <figure>
 <img src="images/09-147r1_OGC_Web_Coverage_Service_2-requirement07.jpg" alt="Requirement 7 from OGC Web Coverage Service 2.0 Interface Standard - KVP Protocol Binding Extension - Peter Baumann, editor - 2010-10-27" /><figcaption>Requirement 7 from <a href="http://portal.opengeospatial.org/files/?artifact_id=41439"><em>OGC Web Coverage Service 2.0 Interface Standard - KVP Protocol Binding Extension</em> - Peter Baumann, editor - 2010-10-27</a></figcaption>
@@ -430,7 +435,7 @@ gfs_4_20160228_0000_384.grb2?
     &amp;subset=lat,http://www.opengis.net/def/crs/EPSG/0/4326(-66,51)
     &amp;subset=t,http://www.opengis.net/def/trs/ISO- 8601/0/Gregorian+UTC(&quot;2009-11-06T23:20:52Z&quot;)</code></pre>
 </section><section id="sample-getcoverage-request" class="slide level3 module04a02a">
-<h1>Sample GetCoverage Request</h1>
+<h3>Sample GetCoverage Request</h3>
 <p>New Mexico Resource Geographic Information System PRISM Precipitation Normals WCS Service. <a href="http://gstore.unm.edu/apps/rgis/datasets/2ce10b57-3925-4971-b876-b6fc66d3cca2/services/ogc/wcs?SERVICE=wcs&amp;REQUEST=GetCoverage&amp;VERSION=1.1.2&amp;COVERAGE=us_ppt_1971_2000_11&amp;CRS=urn:ogc:def:crs:EPSG::4326&amp;BBOX=24.0625,-125.02083333333,49.93749998965,-66.47916669008&amp;FORMAT=image/tiff&amp;WIDTH=2048&amp;HEIGHT=905">Live Link</a></p>
 <pre><code>http://gstore.unm.edu/apps/rgis/datasets/2ce10b57-3925-4971-b876-b6fc66d3cca2/services/ogc/wcs?
     SERVICE=wcs&amp;
@@ -446,7 +451,7 @@ gfs_4_20160228_0000_384.grb2?
 <hr />
 <section>
 <div class="license">
-<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />This work by <span xmlns:cc="http://creativecommons.org/ns#" property="cc:attributionName">Karl Benedict</span> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />This work by <span data-xmlns:cc="http://creativecommons.org/ns#" data-property="cc:attributionName">Karl Benedict</span> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
 </div>
 </section>
 <!-- {{{{ dzslides core

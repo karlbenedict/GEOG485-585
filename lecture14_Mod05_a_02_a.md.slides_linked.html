@@ -4,43 +4,76 @@
   <meta name="generator" content="pandoc">
   <meta name="author" content="Karl Benedict">
   <title>Week 14 - Module 5 - OGC Services and Styling in GeoServer</title>
-  <style type="text/css">code{white-space: pre;}</style>
   <style type="text/css">
-div.sourceCode { overflow-x: auto; }
-table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
-  margin: 0; padding: 0; vertical-align: baseline; border: none; }
-table.sourceCode { width: 100%; line-height: 100%; }
-td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
-td.sourceCode { padding-left: 5px; }
-code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code > span.dt { color: #902000; } /* DataType */
-code > span.dv { color: #40a070; } /* DecVal */
-code > span.bn { color: #40a070; } /* BaseN */
-code > span.fl { color: #40a070; } /* Float */
-code > span.ch { color: #4070a0; } /* Char */
-code > span.st { color: #4070a0; } /* String */
-code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code > span.ot { color: #007020; } /* Other */
-code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code > span.fu { color: #06287e; } /* Function */
-code > span.er { color: #ff0000; font-weight: bold; } /* Error */
-code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-code > span.cn { color: #880000; } /* Constant */
-code > span.sc { color: #4070a0; } /* SpecialChar */
-code > span.vs { color: #4070a0; } /* VerbatimString */
-code > span.ss { color: #bb6688; } /* SpecialString */
-code > span.im { } /* Import */
-code > span.va { color: #19177c; } /* Variable */
-code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code > span.op { color: #666666; } /* Operator */
-code > span.bu { } /* BuiltIn */
-code > span.ex { } /* Extension */
-code > span.pp { color: #bc7a00; } /* Preprocessor */
-code > span.at { color: #7d9029; } /* Attribute */
-code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; position: absolute; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; }
+pre.numberSource a.sourceLine:empty
+  { position: absolute; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: absolute; left: -5em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="slides.css">
   <link rel="stylesheet" href="slide_specific.css">
@@ -49,7 +82,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <section class="title">
   <h1 class="title">Week 14 - Module 5 - OGC Services and Styling in GeoServer</h1>
   <footer>
-    <span class="author">Karl Benedict</span> · <span class="date">GEOG 485L/585L - Spring 2017</span>
+    <span class="author">Karl Benedict</span> · <span class="date">GEOG 485L/585L - Spring 2018</span>
   </footer>
 </section>
 <section class="slide level3">
@@ -62,7 +95,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <!---------------------------------------------------------------------------->
 </section>
 <section id="overview" class="slide level3">
-<h1>Overview</h1>
+<h3>Overview</h3>
 <ul>
 <li>GeoServer Styled Layer Descriptor (SLD) Foundation: OGC Specification</li>
 <li>Creation and Management of Styles in GeoServer
@@ -74,15 +107,15 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </ul></li>
 </ul>
 </section>
-<section id="ogc-styled-layer-descriptor-sld" class="titleslide slide level2"><h1>OGC Styled Layer Descriptor (SLD)</h1></section><section id="ogc-styled-layer-descriptor-sld-1" class="slide level3">
-<h1>OGC Styled Layer Descriptor (SLD)</h1>
+<section id="ogc-styled-layer-descriptor-sld" class="title-slide slide level2"><h2>OGC Styled Layer Descriptor (SLD)</h2></section><section id="ogc-styled-layer-descriptor-sld-1" class="slide level3">
+<h3>OGC Styled Layer Descriptor (SLD)</h3>
 <ul>
 <li>GeoServer uses the OGC standard for definition of symbolization both for user and server definition (<a href="http://www.opengeospatial.org/standards/sld">OGC SLD Standard</a>)</li>
 <li>Most, but not all of the OGC standard has been implemented with GeoServer</li>
 <li>The materials presented here are based upon the SLD reference distributed as part of the <a href="http://docs.geoserver.org/stable/en/user/index.html">Current GeoServer HTML documentation</a>, and in particular the <a href="http://docs.geoserver.org/stable/en/user/styling/sld-cookbook/index.html">GeoServer SLD Cookbook</a>.</li>
 </ul>
 </section><section id="definitionOfStyles_01" class="slide level3">
-<h1>Definition of Styles</h1>
+<h3>Definition of Styles</h3>
 <p>Styles are XML documents that conform to the OGC SLD standard, and consist of four major components</p>
 <dl>
 <dt>Symbolizers</dt>
@@ -108,198 +141,198 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </dd>
 </dl>
 </section><section id="definitionOfStyles_03" class="slide level3">
-<h1>Definition of Styles - Header Content</h1>
-<div class="sourceCode" id="SLD-header-styles_01"><pre class="sourceCode xml"><code class="sourceCode xml"><span class="kw">&lt;?xml</span> version=&quot;1.0&quot; encoding=&quot;ISO-8859-1&quot;<span class="kw">?&gt;</span>
-<span class="kw">&lt;StyledLayerDescriptor</span><span class="ot"> version=</span><span class="st">&quot;1.0.0&quot;</span> 
-<span class="ot">  xsi:schemaLocation=</span><span class="st">&quot;http://www.opengis.net/sld StyledLayerDescriptor.xsd&quot;</span> 
-<span class="ot">  xmlns=</span><span class="st">&quot;http://www.opengis.net/sld&quot;</span> 
-<span class="ot">  xmlns:ogc=</span><span class="st">&quot;http://www.opengis.net/ogc&quot;</span> 
-<span class="ot">  xmlns:xlink=</span><span class="st">&quot;http://www.w3.org/1999/xlink&quot;</span> 
-<span class="ot">  xmlns:xsi=</span><span class="st">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span><span class="kw">&gt;</span>
-
-one or more <span class="kw">&lt;NamedLayer&gt;</span> ...  <span class="kw">&lt;/NamedLayer&gt;</span> elements
-
-<span class="kw">&lt;/StyledLayerDescriptor&gt;</span></code></pre></div>
+<h3>Definition of Styles - Header Content</h3>
+<div class="sourceCode" id="SLD-header-styles_01"><pre class="sourceCode xml"><code class="sourceCode xml"><a class="sourceLine" id="SLD-header-styles_01-1" data-line-number="1"><span class="kw">&lt;?xml</span> version=&quot;1.0&quot; encoding=&quot;ISO-8859-1&quot;<span class="kw">?&gt;</span></a>
+<a class="sourceLine" id="SLD-header-styles_01-2" data-line-number="2"><span class="kw">&lt;StyledLayerDescriptor</span><span class="ot"> version=</span><span class="st">&quot;1.0.0&quot;</span> </a>
+<a class="sourceLine" id="SLD-header-styles_01-3" data-line-number="3"><span class="ot">  xsi:schemaLocation=</span><span class="st">&quot;http://www.opengis.net/sld StyledLayerDescriptor.xsd&quot;</span> </a>
+<a class="sourceLine" id="SLD-header-styles_01-4" data-line-number="4"><span class="ot">  xmlns=</span><span class="st">&quot;http://www.opengis.net/sld&quot;</span> </a>
+<a class="sourceLine" id="SLD-header-styles_01-5" data-line-number="5"><span class="ot">  xmlns:ogc=</span><span class="st">&quot;http://www.opengis.net/ogc&quot;</span> </a>
+<a class="sourceLine" id="SLD-header-styles_01-6" data-line-number="6"><span class="ot">  xmlns:xlink=</span><span class="st">&quot;http://www.w3.org/1999/xlink&quot;</span> </a>
+<a class="sourceLine" id="SLD-header-styles_01-7" data-line-number="7"><span class="ot">  xmlns:xsi=</span><span class="st">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="SLD-header-styles_01-8" data-line-number="8"></a>
+<a class="sourceLine" id="SLD-header-styles_01-9" data-line-number="9">one or more <span class="kw">&lt;NamedLayer&gt;</span> ...  <span class="kw">&lt;/NamedLayer&gt;</span> elements</a>
+<a class="sourceLine" id="SLD-header-styles_01-10" data-line-number="10"></a>
+<a class="sourceLine" id="SLD-header-styles_01-11" data-line-number="11"><span class="kw">&lt;/StyledLayerDescriptor&gt;</span></a></code></pre></div>
 </section><section id="definitionOfStyles_04" class="slide level3">
-<h1>Definition of Styles - Sample SLD File</h1>
+<h3>Definition of Styles - Sample SLD File</h3>
 <p><code>point_simplepoint.sld</code></p>
-<div class="sourceCode" id="sampleSLD"><pre class="sourceCode xml"><code class="sourceCode xml"><span class="kw">&lt;?xml</span> version=&quot;1.0&quot; encoding=&quot;ISO-8859-1&quot;<span class="kw">?&gt;</span>
-<span class="kw">&lt;StyledLayerDescriptor</span><span class="ot"> version=</span><span class="st">&quot;1.0.0&quot;</span> 
-<span class="ot">  xsi:schemaLocation=</span><span class="st">&quot;http://www.opengis.net/sld StyledLayerDescriptor.xsd&quot;</span> 
-<span class="ot">  xmlns=</span><span class="st">&quot;http://www.opengis.net/sld&quot;</span> 
-<span class="ot">  xmlns:ogc=</span><span class="st">&quot;http://www.opengis.net/ogc&quot;</span> 
-<span class="ot">  xmlns:xlink=</span><span class="st">&quot;http://www.w3.org/1999/xlink&quot;</span> 
-<span class="ot">  xmlns:xsi=</span><span class="st">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span><span class="kw">&gt;</span>
-  <span class="kw">&lt;NamedLayer&gt;</span>
-    <span class="kw">&lt;Name&gt;</span>Simple Point<span class="kw">&lt;/Name&gt;</span>
-    <span class="kw">&lt;UserStyle&gt;</span>
-      <span class="kw">&lt;Title&gt;</span>SLD Cook Book: Simple Point With Stroke<span class="kw">&lt;/Title&gt;</span>
-      <span class="kw">&lt;FeatureTypeStyle&gt;</span>
-        <span class="kw">&lt;Rule&gt;</span>
-          <span class="kw">&lt;PointSymbolizer&gt;</span>
-            <span class="kw">&lt;Graphic&gt;</span>
-              <span class="kw">&lt;Mark&gt;</span>
-                <span class="kw">&lt;WellKnownName&gt;</span>circle<span class="kw">&lt;/WellKnownName&gt;</span>
-                <span class="kw">&lt;Fill&gt;</span>
-                  <span class="kw">&lt;CssParameter</span><span class="ot"> name=</span><span class="st">&quot;fill&quot;</span><span class="kw">&gt;</span>#FF0000<span class="kw">&lt;/CssParameter&gt;</span>
-                <span class="kw">&lt;/Fill&gt;</span>
-              <span class="kw">&lt;/Mark&gt;</span>
-              <span class="kw">&lt;Size&gt;</span>6<span class="kw">&lt;/Size&gt;</span>
-            <span class="kw">&lt;/Graphic&gt;</span>
-          <span class="kw">&lt;/PointSymbolizer&gt;</span>
-        <span class="kw">&lt;/Rule&gt;</span>
-      <span class="kw">&lt;/FeatureTypeStyle&gt;</span>
-    <span class="kw">&lt;/UserStyle&gt;</span>
-  <span class="kw">&lt;/NamedLayer&gt;</span>
-<span class="kw">&lt;/StyledLayerDescriptor&gt;</span></code></pre></div>
+<div class="sourceCode" id="sampleSLD"><pre class="sourceCode xml"><code class="sourceCode xml"><a class="sourceLine" id="sampleSLD-1" data-line-number="1"><span class="kw">&lt;?xml</span> version=&quot;1.0&quot; encoding=&quot;ISO-8859-1&quot;<span class="kw">?&gt;</span></a>
+<a class="sourceLine" id="sampleSLD-2" data-line-number="2"><span class="kw">&lt;StyledLayerDescriptor</span><span class="ot"> version=</span><span class="st">&quot;1.0.0&quot;</span> </a>
+<a class="sourceLine" id="sampleSLD-3" data-line-number="3"><span class="ot">  xsi:schemaLocation=</span><span class="st">&quot;http://www.opengis.net/sld StyledLayerDescriptor.xsd&quot;</span> </a>
+<a class="sourceLine" id="sampleSLD-4" data-line-number="4"><span class="ot">  xmlns=</span><span class="st">&quot;http://www.opengis.net/sld&quot;</span> </a>
+<a class="sourceLine" id="sampleSLD-5" data-line-number="5"><span class="ot">  xmlns:ogc=</span><span class="st">&quot;http://www.opengis.net/ogc&quot;</span> </a>
+<a class="sourceLine" id="sampleSLD-6" data-line-number="6"><span class="ot">  xmlns:xlink=</span><span class="st">&quot;http://www.w3.org/1999/xlink&quot;</span> </a>
+<a class="sourceLine" id="sampleSLD-7" data-line-number="7"><span class="ot">  xmlns:xsi=</span><span class="st">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="sampleSLD-8" data-line-number="8">  <span class="kw">&lt;NamedLayer&gt;</span></a>
+<a class="sourceLine" id="sampleSLD-9" data-line-number="9">    <span class="kw">&lt;Name&gt;</span>Simple Point<span class="kw">&lt;/Name&gt;</span></a>
+<a class="sourceLine" id="sampleSLD-10" data-line-number="10">    <span class="kw">&lt;UserStyle&gt;</span></a>
+<a class="sourceLine" id="sampleSLD-11" data-line-number="11">      <span class="kw">&lt;Title&gt;</span>SLD Cook Book: Simple Point With Stroke<span class="kw">&lt;/Title&gt;</span></a>
+<a class="sourceLine" id="sampleSLD-12" data-line-number="12">      <span class="kw">&lt;FeatureTypeStyle&gt;</span></a>
+<a class="sourceLine" id="sampleSLD-13" data-line-number="13">        <span class="kw">&lt;Rule&gt;</span></a>
+<a class="sourceLine" id="sampleSLD-14" data-line-number="14">          <span class="kw">&lt;PointSymbolizer&gt;</span></a>
+<a class="sourceLine" id="sampleSLD-15" data-line-number="15">            <span class="kw">&lt;Graphic&gt;</span></a>
+<a class="sourceLine" id="sampleSLD-16" data-line-number="16">              <span class="kw">&lt;Mark&gt;</span></a>
+<a class="sourceLine" id="sampleSLD-17" data-line-number="17">                <span class="kw">&lt;WellKnownName&gt;</span>circle<span class="kw">&lt;/WellKnownName&gt;</span></a>
+<a class="sourceLine" id="sampleSLD-18" data-line-number="18">                <span class="kw">&lt;Fill&gt;</span></a>
+<a class="sourceLine" id="sampleSLD-19" data-line-number="19">                  <span class="kw">&lt;CssParameter</span><span class="ot"> name=</span><span class="st">&quot;fill&quot;</span><span class="kw">&gt;</span>#FF0000<span class="kw">&lt;/CssParameter&gt;</span></a>
+<a class="sourceLine" id="sampleSLD-20" data-line-number="20">                <span class="kw">&lt;/Fill&gt;</span></a>
+<a class="sourceLine" id="sampleSLD-21" data-line-number="21">              <span class="kw">&lt;/Mark&gt;</span></a>
+<a class="sourceLine" id="sampleSLD-22" data-line-number="22">              <span class="kw">&lt;Size&gt;</span>6<span class="kw">&lt;/Size&gt;</span></a>
+<a class="sourceLine" id="sampleSLD-23" data-line-number="23">            <span class="kw">&lt;/Graphic&gt;</span></a>
+<a class="sourceLine" id="sampleSLD-24" data-line-number="24">          <span class="kw">&lt;/PointSymbolizer&gt;</span></a>
+<a class="sourceLine" id="sampleSLD-25" data-line-number="25">        <span class="kw">&lt;/Rule&gt;</span></a>
+<a class="sourceLine" id="sampleSLD-26" data-line-number="26">      <span class="kw">&lt;/FeatureTypeStyle&gt;</span></a>
+<a class="sourceLine" id="sampleSLD-27" data-line-number="27">    <span class="kw">&lt;/UserStyle&gt;</span></a>
+<a class="sourceLine" id="sampleSLD-28" data-line-number="28">  <span class="kw">&lt;/NamedLayer&gt;</span></a>
+<a class="sourceLine" id="sampleSLD-29" data-line-number="29"><span class="kw">&lt;/StyledLayerDescriptor&gt;</span></a></code></pre></div>
 </section><section id="simple-geoserver-point-style" class="slide level3">
-<h1>Simple GeoServer Point Style</h1>
+<h3>Simple GeoServer Point Style</h3>
 <figure>
 <img src="images/point_simplepoint.png" alt="Sample simple styled point layer" /><figcaption>Sample simple styled point layer</figcaption>
 </figure>
 <p>SLD Snippet (<a href="https://github.com/UNM-GEOG-485-585/class-materials/blob/master/sample-files/SLD/point_simplepoint.sld">Full SLD</a>)</p>
-<div class="sourceCode" id="sampleSLD_simplePoint"><pre class="sourceCode xml"><code class="sourceCode xml"><span class="kw">&lt;NamedLayer&gt;</span>
-  <span class="kw">&lt;Name&gt;</span>Simple Point<span class="kw">&lt;/Name&gt;</span>
-  <span class="kw">&lt;UserStyle&gt;</span>
-    <span class="kw">&lt;Title&gt;</span>SLD Cook Book: Simple Point With Stroke<span class="kw">&lt;/Title&gt;</span>
-    <span class="kw">&lt;FeatureTypeStyle&gt;</span>
-      <span class="kw">&lt;Rule&gt;</span>
-        <span class="kw">&lt;PointSymbolizer&gt;</span>
-          <span class="kw">&lt;Graphic&gt;</span>
-            <span class="kw">&lt;Mark&gt;</span>
-              <span class="kw">&lt;WellKnownName&gt;</span>circle<span class="kw">&lt;/WellKnownName&gt;</span>
-              <span class="kw">&lt;Fill&gt;</span>
-                <span class="kw">&lt;CssParameter</span><span class="ot"> name=</span><span class="st">&quot;fill&quot;</span><span class="kw">&gt;</span>#FF0000<span class="kw">&lt;/CssParameter&gt;</span>
-              <span class="kw">&lt;/Fill&gt;</span>
-            <span class="kw">&lt;/Mark&gt;</span>
-            <span class="kw">&lt;Size&gt;</span>6<span class="kw">&lt;/Size&gt;</span>
-          <span class="kw">&lt;/Graphic&gt;</span>
-        <span class="kw">&lt;/PointSymbolizer&gt;</span>
-      <span class="kw">&lt;/Rule&gt;</span>
-    <span class="kw">&lt;/FeatureTypeStyle&gt;</span>
-  <span class="kw">&lt;/UserStyle&gt;</span>
-<span class="kw">&lt;/NamedLayer&gt;</span></code></pre></div>
+<div class="sourceCode" id="sampleSLD_simplePoint"><pre class="sourceCode xml"><code class="sourceCode xml"><a class="sourceLine" id="sampleSLD_simplePoint-1" data-line-number="1"><span class="kw">&lt;NamedLayer&gt;</span></a>
+<a class="sourceLine" id="sampleSLD_simplePoint-2" data-line-number="2">  <span class="kw">&lt;Name&gt;</span>Simple Point<span class="kw">&lt;/Name&gt;</span></a>
+<a class="sourceLine" id="sampleSLD_simplePoint-3" data-line-number="3">  <span class="kw">&lt;UserStyle&gt;</span></a>
+<a class="sourceLine" id="sampleSLD_simplePoint-4" data-line-number="4">    <span class="kw">&lt;Title&gt;</span>SLD Cook Book: Simple Point With Stroke<span class="kw">&lt;/Title&gt;</span></a>
+<a class="sourceLine" id="sampleSLD_simplePoint-5" data-line-number="5">    <span class="kw">&lt;FeatureTypeStyle&gt;</span></a>
+<a class="sourceLine" id="sampleSLD_simplePoint-6" data-line-number="6">      <span class="kw">&lt;Rule&gt;</span></a>
+<a class="sourceLine" id="sampleSLD_simplePoint-7" data-line-number="7">        <span class="kw">&lt;PointSymbolizer&gt;</span></a>
+<a class="sourceLine" id="sampleSLD_simplePoint-8" data-line-number="8">          <span class="kw">&lt;Graphic&gt;</span></a>
+<a class="sourceLine" id="sampleSLD_simplePoint-9" data-line-number="9">            <span class="kw">&lt;Mark&gt;</span></a>
+<a class="sourceLine" id="sampleSLD_simplePoint-10" data-line-number="10">              <span class="kw">&lt;WellKnownName&gt;</span>circle<span class="kw">&lt;/WellKnownName&gt;</span></a>
+<a class="sourceLine" id="sampleSLD_simplePoint-11" data-line-number="11">              <span class="kw">&lt;Fill&gt;</span></a>
+<a class="sourceLine" id="sampleSLD_simplePoint-12" data-line-number="12">                <span class="kw">&lt;CssParameter</span><span class="ot"> name=</span><span class="st">&quot;fill&quot;</span><span class="kw">&gt;</span>#FF0000<span class="kw">&lt;/CssParameter&gt;</span></a>
+<a class="sourceLine" id="sampleSLD_simplePoint-13" data-line-number="13">              <span class="kw">&lt;/Fill&gt;</span></a>
+<a class="sourceLine" id="sampleSLD_simplePoint-14" data-line-number="14">            <span class="kw">&lt;/Mark&gt;</span></a>
+<a class="sourceLine" id="sampleSLD_simplePoint-15" data-line-number="15">            <span class="kw">&lt;Size&gt;</span>6<span class="kw">&lt;/Size&gt;</span></a>
+<a class="sourceLine" id="sampleSLD_simplePoint-16" data-line-number="16">          <span class="kw">&lt;/Graphic&gt;</span></a>
+<a class="sourceLine" id="sampleSLD_simplePoint-17" data-line-number="17">        <span class="kw">&lt;/PointSymbolizer&gt;</span></a>
+<a class="sourceLine" id="sampleSLD_simplePoint-18" data-line-number="18">      <span class="kw">&lt;/Rule&gt;</span></a>
+<a class="sourceLine" id="sampleSLD_simplePoint-19" data-line-number="19">    <span class="kw">&lt;/FeatureTypeStyle&gt;</span></a>
+<a class="sourceLine" id="sampleSLD_simplePoint-20" data-line-number="20">  <span class="kw">&lt;/UserStyle&gt;</span></a>
+<a class="sourceLine" id="sampleSLD_simplePoint-21" data-line-number="21"><span class="kw">&lt;/NamedLayer&gt;</span></a></code></pre></div>
 </section><section id="simple-geoserver-line-style" class="slide level3">
-<h1>Simple GeoServer Line Style</h1>
+<h3>Simple GeoServer Line Style</h3>
 <figure>
 <img src="images/line_simpleline.png" alt="Sample simple styled line layer" /><figcaption>Sample simple styled line layer</figcaption>
 </figure>
 <p>SLD Snippet (<a href="https://github.com/karlbenedict/GEOG485-585/blob/master/sample-files/SLD/point_simplepoint.sld">Full SLD</a>)</p>
-<div class="sourceCode" id="sampleSLD_simpleLine"><pre class="sourceCode xml"><code class="sourceCode xml"><span class="kw">&lt;NamedLayer&gt;</span>
-  <span class="kw">&lt;Name&gt;</span>Simple Line<span class="kw">&lt;/Name&gt;</span>
-  <span class="kw">&lt;UserStyle&gt;</span>
-    <span class="kw">&lt;Title&gt;</span>SLD Cook Book: Simple Line<span class="kw">&lt;/Title&gt;</span>
-    <span class="kw">&lt;FeatureTypeStyle&gt;</span>
-      <span class="kw">&lt;Rule&gt;</span>
-        <span class="kw">&lt;LineSymbolizer&gt;</span>
-          <span class="kw">&lt;Stroke&gt;</span>
-            <span class="kw">&lt;CssParameter</span><span class="ot"> name=</span><span class="st">&quot;stroke&quot;</span><span class="kw">&gt;</span>#000000<span class="kw">&lt;/CssParameter&gt;</span>
-            <span class="kw">&lt;CssParameter</span><span class="ot"> name=</span><span class="st">&quot;stroke-width&quot;</span><span class="kw">&gt;</span>3<span class="kw">&lt;/CssParameter&gt;</span>    
-          <span class="kw">&lt;/Stroke&gt;</span>
-        <span class="kw">&lt;/LineSymbolizer&gt;</span>
-      <span class="kw">&lt;/Rule&gt;</span>
-    <span class="kw">&lt;/FeatureTypeStyle&gt;</span>
-  <span class="kw">&lt;/UserStyle&gt;</span>
-<span class="kw">&lt;/NamedLayer&gt;</span></code></pre></div>
+<div class="sourceCode" id="sampleSLD_simpleLine"><pre class="sourceCode xml"><code class="sourceCode xml"><a class="sourceLine" id="sampleSLD_simpleLine-1" data-line-number="1"><span class="kw">&lt;NamedLayer&gt;</span></a>
+<a class="sourceLine" id="sampleSLD_simpleLine-2" data-line-number="2">  <span class="kw">&lt;Name&gt;</span>Simple Line<span class="kw">&lt;/Name&gt;</span></a>
+<a class="sourceLine" id="sampleSLD_simpleLine-3" data-line-number="3">  <span class="kw">&lt;UserStyle&gt;</span></a>
+<a class="sourceLine" id="sampleSLD_simpleLine-4" data-line-number="4">    <span class="kw">&lt;Title&gt;</span>SLD Cook Book: Simple Line<span class="kw">&lt;/Title&gt;</span></a>
+<a class="sourceLine" id="sampleSLD_simpleLine-5" data-line-number="5">    <span class="kw">&lt;FeatureTypeStyle&gt;</span></a>
+<a class="sourceLine" id="sampleSLD_simpleLine-6" data-line-number="6">      <span class="kw">&lt;Rule&gt;</span></a>
+<a class="sourceLine" id="sampleSLD_simpleLine-7" data-line-number="7">        <span class="kw">&lt;LineSymbolizer&gt;</span></a>
+<a class="sourceLine" id="sampleSLD_simpleLine-8" data-line-number="8">          <span class="kw">&lt;Stroke&gt;</span></a>
+<a class="sourceLine" id="sampleSLD_simpleLine-9" data-line-number="9">            <span class="kw">&lt;CssParameter</span><span class="ot"> name=</span><span class="st">&quot;stroke&quot;</span><span class="kw">&gt;</span>#000000<span class="kw">&lt;/CssParameter&gt;</span></a>
+<a class="sourceLine" id="sampleSLD_simpleLine-10" data-line-number="10">            <span class="kw">&lt;CssParameter</span><span class="ot"> name=</span><span class="st">&quot;stroke-width&quot;</span><span class="kw">&gt;</span>3<span class="kw">&lt;/CssParameter&gt;</span>    </a>
+<a class="sourceLine" id="sampleSLD_simpleLine-11" data-line-number="11">          <span class="kw">&lt;/Stroke&gt;</span></a>
+<a class="sourceLine" id="sampleSLD_simpleLine-12" data-line-number="12">        <span class="kw">&lt;/LineSymbolizer&gt;</span></a>
+<a class="sourceLine" id="sampleSLD_simpleLine-13" data-line-number="13">      <span class="kw">&lt;/Rule&gt;</span></a>
+<a class="sourceLine" id="sampleSLD_simpleLine-14" data-line-number="14">    <span class="kw">&lt;/FeatureTypeStyle&gt;</span></a>
+<a class="sourceLine" id="sampleSLD_simpleLine-15" data-line-number="15">  <span class="kw">&lt;/UserStyle&gt;</span></a>
+<a class="sourceLine" id="sampleSLD_simpleLine-16" data-line-number="16"><span class="kw">&lt;/NamedLayer&gt;</span></a></code></pre></div>
 </section><section id="simple-geoserver-polygon-style" class="slide level3">
-<h1>Simple GeoServer Polygon Style</h1>
+<h3>Simple GeoServer Polygon Style</h3>
 <figure>
 <img src="images/polygon_simplepolygon.png" alt="Sample simple styled polygon layer" /><figcaption>Sample simple styled polygon layer</figcaption>
 </figure>
 <p>SLD Snippet (<a href="https://github.com/karlbenedict/GEOG485-585/blob/master/sample-files/SLD/polygon_simplepolygon.sld">Full SLD</a>)</p>
-<div class="sourceCode" id="sampleSLD_simplepoly"><pre class="sourceCode xml"><code class="sourceCode xml"><span class="kw">&lt;NamedLayer&gt;</span>
-  <span class="kw">&lt;Name&gt;</span>Simple polygon<span class="kw">&lt;/Name&gt;</span>
-  <span class="kw">&lt;UserStyle&gt;</span>
-    <span class="kw">&lt;Title&gt;</span>SLD Cook Book: Simple polygon<span class="kw">&lt;/Title&gt;</span>
-    <span class="kw">&lt;FeatureTypeStyle&gt;</span>
-      <span class="kw">&lt;Rule&gt;</span>
-        <span class="kw">&lt;PolygonSymbolizer&gt;</span>
-          <span class="kw">&lt;Fill&gt;</span>
-            <span class="kw">&lt;CssParameter</span><span class="ot"> name=</span><span class="st">&quot;fill&quot;</span><span class="kw">&gt;</span>#000080<span class="kw">&lt;/CssParameter&gt;</span>
-          <span class="kw">&lt;/Fill&gt;</span>
-        <span class="kw">&lt;/PolygonSymbolizer&gt;</span>
-      <span class="kw">&lt;/Rule&gt;</span>
-    <span class="kw">&lt;/FeatureTypeStyle&gt;</span>
-  <span class="kw">&lt;/UserStyle&gt;</span>
-<span class="kw">&lt;/NamedLayer&gt;</span></code></pre></div>
+<div class="sourceCode" id="sampleSLD_simplepoly"><pre class="sourceCode xml"><code class="sourceCode xml"><a class="sourceLine" id="sampleSLD_simplepoly-1" data-line-number="1"><span class="kw">&lt;NamedLayer&gt;</span></a>
+<a class="sourceLine" id="sampleSLD_simplepoly-2" data-line-number="2">  <span class="kw">&lt;Name&gt;</span>Simple polygon<span class="kw">&lt;/Name&gt;</span></a>
+<a class="sourceLine" id="sampleSLD_simplepoly-3" data-line-number="3">  <span class="kw">&lt;UserStyle&gt;</span></a>
+<a class="sourceLine" id="sampleSLD_simplepoly-4" data-line-number="4">    <span class="kw">&lt;Title&gt;</span>SLD Cook Book: Simple polygon<span class="kw">&lt;/Title&gt;</span></a>
+<a class="sourceLine" id="sampleSLD_simplepoly-5" data-line-number="5">    <span class="kw">&lt;FeatureTypeStyle&gt;</span></a>
+<a class="sourceLine" id="sampleSLD_simplepoly-6" data-line-number="6">      <span class="kw">&lt;Rule&gt;</span></a>
+<a class="sourceLine" id="sampleSLD_simplepoly-7" data-line-number="7">        <span class="kw">&lt;PolygonSymbolizer&gt;</span></a>
+<a class="sourceLine" id="sampleSLD_simplepoly-8" data-line-number="8">          <span class="kw">&lt;Fill&gt;</span></a>
+<a class="sourceLine" id="sampleSLD_simplepoly-9" data-line-number="9">            <span class="kw">&lt;CssParameter</span><span class="ot"> name=</span><span class="st">&quot;fill&quot;</span><span class="kw">&gt;</span>#000080<span class="kw">&lt;/CssParameter&gt;</span></a>
+<a class="sourceLine" id="sampleSLD_simplepoly-10" data-line-number="10">          <span class="kw">&lt;/Fill&gt;</span></a>
+<a class="sourceLine" id="sampleSLD_simplepoly-11" data-line-number="11">        <span class="kw">&lt;/PolygonSymbolizer&gt;</span></a>
+<a class="sourceLine" id="sampleSLD_simplepoly-12" data-line-number="12">      <span class="kw">&lt;/Rule&gt;</span></a>
+<a class="sourceLine" id="sampleSLD_simplepoly-13" data-line-number="13">    <span class="kw">&lt;/FeatureTypeStyle&gt;</span></a>
+<a class="sourceLine" id="sampleSLD_simplepoly-14" data-line-number="14">  <span class="kw">&lt;/UserStyle&gt;</span></a>
+<a class="sourceLine" id="sampleSLD_simplepoly-15" data-line-number="15"><span class="kw">&lt;/NamedLayer&gt;</span></a></code></pre></div>
 </section><section id="simple-geoserver-raster-style" class="slide level3">
-<h1>Simple GeoServer Raster Style</h1>
+<h3>Simple GeoServer Raster Style</h3>
 <figure>
 <img src="images/raster_twocolorgradient.png" alt="Sample simple styled raster layer" /><figcaption>Sample simple styled raster layer</figcaption>
 </figure>
 <p>SLD Snippet (<a href="https://github.com/karlbenedict/GEOG485-585/blob/master/sample-files/SLD/raster_twocolorgradient.sld">Full SLD</a>)</p>
-<div class="sourceCode" id="sampleSLD_simpleraster"><pre class="sourceCode xml"><code class="sourceCode xml"><span class="kw">&lt;NamedLayer&gt;</span>
-  <span class="kw">&lt;Name&gt;</span>Two color gradient<span class="kw">&lt;/Name&gt;</span>
-  <span class="kw">&lt;UserStyle&gt;</span>
-    <span class="kw">&lt;Title&gt;</span>SLD Cook Book: Two color gradient<span class="kw">&lt;/Title&gt;</span>
-      <span class="kw">&lt;FeatureTypeStyle&gt;</span>
-        <span class="kw">&lt;Rule&gt;</span>
-          <span class="kw">&lt;RasterSymbolizer&gt;</span>
-            <span class="kw">&lt;ColorMap&gt;</span>
-              <span class="kw">&lt;ColorMapEntry</span><span class="ot"> color=</span><span class="st">&quot;#008000&quot;</span> 
-<span class="ot">                quantity=</span><span class="st">&quot;70&quot;</span> <span class="kw">/&gt;</span>
-              <span class="kw">&lt;ColorMapEntry</span><span class="ot"> color=</span><span class="st">&quot;#663333&quot;</span> 
-<span class="ot">                quantity=</span><span class="st">&quot;256&quot;</span> <span class="kw">/&gt;</span>
-            <span class="kw">&lt;/ColorMap&gt;</span>
-          <span class="kw">&lt;/RasterSymbolizer&gt;</span>
-        <span class="kw">&lt;/Rule&gt;</span>
-      <span class="kw">&lt;/FeatureTypeStyle&gt;</span>
-  <span class="kw">&lt;/UserStyle&gt;</span>
-<span class="kw">&lt;/NamedLayer&gt;</span></code></pre></div>
+<div class="sourceCode" id="sampleSLD_simpleraster"><pre class="sourceCode xml"><code class="sourceCode xml"><a class="sourceLine" id="sampleSLD_simpleraster-1" data-line-number="1"><span class="kw">&lt;NamedLayer&gt;</span></a>
+<a class="sourceLine" id="sampleSLD_simpleraster-2" data-line-number="2">  <span class="kw">&lt;Name&gt;</span>Two color gradient<span class="kw">&lt;/Name&gt;</span></a>
+<a class="sourceLine" id="sampleSLD_simpleraster-3" data-line-number="3">  <span class="kw">&lt;UserStyle&gt;</span></a>
+<a class="sourceLine" id="sampleSLD_simpleraster-4" data-line-number="4">    <span class="kw">&lt;Title&gt;</span>SLD Cook Book: Two color gradient<span class="kw">&lt;/Title&gt;</span></a>
+<a class="sourceLine" id="sampleSLD_simpleraster-5" data-line-number="5">      <span class="kw">&lt;FeatureTypeStyle&gt;</span></a>
+<a class="sourceLine" id="sampleSLD_simpleraster-6" data-line-number="6">        <span class="kw">&lt;Rule&gt;</span></a>
+<a class="sourceLine" id="sampleSLD_simpleraster-7" data-line-number="7">          <span class="kw">&lt;RasterSymbolizer&gt;</span></a>
+<a class="sourceLine" id="sampleSLD_simpleraster-8" data-line-number="8">            <span class="kw">&lt;ColorMap&gt;</span></a>
+<a class="sourceLine" id="sampleSLD_simpleraster-9" data-line-number="9">              <span class="kw">&lt;ColorMapEntry</span><span class="ot"> color=</span><span class="st">&quot;#008000&quot;</span> </a>
+<a class="sourceLine" id="sampleSLD_simpleraster-10" data-line-number="10"><span class="ot">                quantity=</span><span class="st">&quot;70&quot;</span> <span class="kw">/&gt;</span></a>
+<a class="sourceLine" id="sampleSLD_simpleraster-11" data-line-number="11">              <span class="kw">&lt;ColorMapEntry</span><span class="ot"> color=</span><span class="st">&quot;#663333&quot;</span> </a>
+<a class="sourceLine" id="sampleSLD_simpleraster-12" data-line-number="12"><span class="ot">                quantity=</span><span class="st">&quot;256&quot;</span> <span class="kw">/&gt;</span></a>
+<a class="sourceLine" id="sampleSLD_simpleraster-13" data-line-number="13">            <span class="kw">&lt;/ColorMap&gt;</span></a>
+<a class="sourceLine" id="sampleSLD_simpleraster-14" data-line-number="14">          <span class="kw">&lt;/RasterSymbolizer&gt;</span></a>
+<a class="sourceLine" id="sampleSLD_simpleraster-15" data-line-number="15">        <span class="kw">&lt;/Rule&gt;</span></a>
+<a class="sourceLine" id="sampleSLD_simpleraster-16" data-line-number="16">      <span class="kw">&lt;/FeatureTypeStyle&gt;</span></a>
+<a class="sourceLine" id="sampleSLD_simpleraster-17" data-line-number="17">  <span class="kw">&lt;/UserStyle&gt;</span></a>
+<a class="sourceLine" id="sampleSLD_simpleraster-18" data-line-number="18"><span class="kw">&lt;/NamedLayer&gt;</span></a></code></pre></div>
 </section><section id="pointsymbolizer" class="slide level3">
-<h1>PointSymbolizer</h1>
-<div class="sourceCode" id="pointSymbolizer"><pre class="sourceCode xml"><code class="sourceCode xml"><span class="kw">&lt;Graphic&gt;</span>
-  <span class="kw">&lt;ExternalGraphic&gt;</span>
-    <span class="kw">&lt;OnlineResource&gt;</span> (Required)
-    <span class="kw">&lt;Format&gt;</span>
-  <span class="kw">&lt;Mark&gt;</span>
-    <span class="kw">&lt;WellKnownName&gt;</span> (Required)
-    <span class="kw">&lt;Fill&gt;</span>
-    <span class="kw">&lt;Stroke&gt;</span>
-    <span class="kw">&lt;Opacity&gt;</span>
-    <span class="kw">&lt;Size&gt;</span>
-    <span class="kw">&lt;Rotation&gt;</span></code></pre></div>
+<h3>PointSymbolizer</h3>
+<div class="sourceCode" id="pointSymbolizer"><pre class="sourceCode xml"><code class="sourceCode xml"><a class="sourceLine" id="pointSymbolizer-1" data-line-number="1"><span class="kw">&lt;Graphic&gt;</span></a>
+<a class="sourceLine" id="pointSymbolizer-2" data-line-number="2">  <span class="kw">&lt;ExternalGraphic&gt;</span></a>
+<a class="sourceLine" id="pointSymbolizer-3" data-line-number="3">    <span class="kw">&lt;OnlineResource&gt;</span> (Required)</a>
+<a class="sourceLine" id="pointSymbolizer-4" data-line-number="4">    <span class="kw">&lt;Format&gt;</span></a>
+<a class="sourceLine" id="pointSymbolizer-5" data-line-number="5">  <span class="kw">&lt;Mark&gt;</span></a>
+<a class="sourceLine" id="pointSymbolizer-6" data-line-number="6">    <span class="kw">&lt;WellKnownName&gt;</span> (Required)</a>
+<a class="sourceLine" id="pointSymbolizer-7" data-line-number="7">    <span class="kw">&lt;Fill&gt;</span></a>
+<a class="sourceLine" id="pointSymbolizer-8" data-line-number="8">    <span class="kw">&lt;Stroke&gt;</span></a>
+<a class="sourceLine" id="pointSymbolizer-9" data-line-number="9">    <span class="kw">&lt;Opacity&gt;</span></a>
+<a class="sourceLine" id="pointSymbolizer-10" data-line-number="10">    <span class="kw">&lt;Size&gt;</span></a>
+<a class="sourceLine" id="pointSymbolizer-11" data-line-number="11">    <span class="kw">&lt;Rotation&gt;</span></a></code></pre></div>
 </section><section id="linesybolizer" class="slide level3">
-<h1>LineSybolizer</h1>
-<div class="sourceCode" id="lineSymbolizer"><pre class="sourceCode xml"><code class="sourceCode xml"><span class="kw">&lt;Stroke&gt;</span>
-  <span class="kw">&lt;GraphicFill&gt;</span>
-    <span class="kw">&lt;Graphic&gt;</span> contents same as PointSymbolizer
-  <span class="kw">&lt;GraphicStroke&gt;</span>
-    <span class="kw">&lt;Graphic&gt;</span> contents same as PointSymbolizer
-  <span class="kw">&lt;CssParameter</span><span class="ot"> name=</span><span class="st">&quot;...&quot;</span><span class="kw">&gt;</span>
-    name=&quot;stroke&quot;
-    name=&quot;stroke-width&quot;
-    name=&quot;stroke-opacity&quot;
-    name=&quot;stroke-linejoin&quot;
-    name=&quot;stroke-linecap&quot;
-    name=&quot;stroke-dasharray&quot;
-    name=&quot;stroke-dashoffset&quot;</code></pre></div>
+<h3>LineSybolizer</h3>
+<div class="sourceCode" id="lineSymbolizer"><pre class="sourceCode xml"><code class="sourceCode xml"><a class="sourceLine" id="lineSymbolizer-1" data-line-number="1"><span class="kw">&lt;Stroke&gt;</span></a>
+<a class="sourceLine" id="lineSymbolizer-2" data-line-number="2">  <span class="kw">&lt;GraphicFill&gt;</span></a>
+<a class="sourceLine" id="lineSymbolizer-3" data-line-number="3">    <span class="kw">&lt;Graphic&gt;</span> contents same as PointSymbolizer</a>
+<a class="sourceLine" id="lineSymbolizer-4" data-line-number="4">  <span class="kw">&lt;GraphicStroke&gt;</span></a>
+<a class="sourceLine" id="lineSymbolizer-5" data-line-number="5">    <span class="kw">&lt;Graphic&gt;</span> contents same as PointSymbolizer</a>
+<a class="sourceLine" id="lineSymbolizer-6" data-line-number="6">  <span class="kw">&lt;CssParameter</span><span class="ot"> name=</span><span class="st">&quot;...&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="lineSymbolizer-7" data-line-number="7">    name=&quot;stroke&quot;</a>
+<a class="sourceLine" id="lineSymbolizer-8" data-line-number="8">    name=&quot;stroke-width&quot;</a>
+<a class="sourceLine" id="lineSymbolizer-9" data-line-number="9">    name=&quot;stroke-opacity&quot;</a>
+<a class="sourceLine" id="lineSymbolizer-10" data-line-number="10">    name=&quot;stroke-linejoin&quot;</a>
+<a class="sourceLine" id="lineSymbolizer-11" data-line-number="11">    name=&quot;stroke-linecap&quot;</a>
+<a class="sourceLine" id="lineSymbolizer-12" data-line-number="12">    name=&quot;stroke-dasharray&quot;</a>
+<a class="sourceLine" id="lineSymbolizer-13" data-line-number="13">    name=&quot;stroke-dashoffset&quot;</a></code></pre></div>
 </section><section id="polygonsymbolizer" class="slide level3">
-<h1>PolygonSymbolizer</h1>
-<div class="sourceCode" id="polySymbolizer"><pre class="sourceCode xml"><code class="sourceCode xml"><span class="kw">&lt;Fill&gt;</span>
-  <span class="kw">&lt;GraphicFill&gt;</span>
-    <span class="kw">&lt;Graphic&gt;</span> contents same as PointSymbolizer
-  <span class="kw">&lt;CssParameter</span><span class="ot"> name=</span><span class="st">&quot;...&quot;</span><span class="kw">&gt;</span>
-    name=&quot;fill&quot;
-    name=&quot;fill-opacity&quot;
-  <span class="kw">&lt;Stroke&gt;</span> same as the LineSymbolizer</code></pre></div>
+<h3>PolygonSymbolizer</h3>
+<div class="sourceCode" id="polySymbolizer"><pre class="sourceCode xml"><code class="sourceCode xml"><a class="sourceLine" id="polySymbolizer-1" data-line-number="1"><span class="kw">&lt;Fill&gt;</span></a>
+<a class="sourceLine" id="polySymbolizer-2" data-line-number="2">  <span class="kw">&lt;GraphicFill&gt;</span></a>
+<a class="sourceLine" id="polySymbolizer-3" data-line-number="3">    <span class="kw">&lt;Graphic&gt;</span> contents same as PointSymbolizer</a>
+<a class="sourceLine" id="polySymbolizer-4" data-line-number="4">  <span class="kw">&lt;CssParameter</span><span class="ot"> name=</span><span class="st">&quot;...&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="polySymbolizer-5" data-line-number="5">    name=&quot;fill&quot;</a>
+<a class="sourceLine" id="polySymbolizer-6" data-line-number="6">    name=&quot;fill-opacity&quot;</a>
+<a class="sourceLine" id="polySymbolizer-7" data-line-number="7">  <span class="kw">&lt;Stroke&gt;</span> same as the LineSymbolizer</a></code></pre></div>
 </section><section id="raster-symbolizer" class="slide level3">
-<h1>Raster Symbolizer</h1>
-<div class="sourceCode" id="rasterSymbolizer"><pre class="sourceCode xml"><code class="sourceCode xml"><span class="kw">&lt;Opacity&gt;</span>
-<span class="kw">&lt;ColorMap</span><span class="ot"> type=</span><span class="st">&quot;ramp | values | intervals&quot;</span><span class="ot"> extended=</span><span class="st">&quot;true | false&quot;</span><span class="kw">&gt;</span>
-  <span class="kw">&lt;ColorMapEntry</span><span class="ot"> color=</span><span class="st">&quot;&quot;</span><span class="ot"> quantity=</span><span class="st">&quot;&quot;</span><span class="ot"> label=</span><span class="st">&quot;&quot;</span><span class="ot"> opacity=</span><span class="st">&quot;&quot;</span><span class="kw">/&gt;</span>
-<span class="kw">&lt;ChannelSelection&gt;</span>
-  <span class="kw">&lt;RedChannel&gt;</span> <span class="kw">&lt;GreenChannel&gt;</span> <span class="kw">&lt;BlueChannel&gt;</span>
-    <span class="kw">&lt;SourceChannelName&gt;</span>
-  <span class="kw">&lt;GrayChannel&gt;</span>
-    <span class="kw">&lt;SourceChannelName&gt;</span>
-<span class="kw">&lt;ContrastEnhancement&gt;</span>
-<span class="kw">&lt;ShadedRelief&gt;</span> (not implemented in ver 2.0)
-<span class="kw">&lt;OverlapBehavior&gt;</span> (not implemented in ver 2.0)
-<span class="kw">&lt;ImageOutline&gt;</span> (not implemented in ver 2.0)</code></pre></div>
+<h3>Raster Symbolizer</h3>
+<div class="sourceCode" id="rasterSymbolizer"><pre class="sourceCode xml"><code class="sourceCode xml"><a class="sourceLine" id="rasterSymbolizer-1" data-line-number="1"><span class="kw">&lt;Opacity&gt;</span></a>
+<a class="sourceLine" id="rasterSymbolizer-2" data-line-number="2"><span class="kw">&lt;ColorMap</span><span class="ot"> type=</span><span class="st">&quot;ramp | values | intervals&quot;</span><span class="ot"> extended=</span><span class="st">&quot;true | false&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="rasterSymbolizer-3" data-line-number="3">  <span class="kw">&lt;ColorMapEntry</span><span class="ot"> color=</span><span class="st">&quot;&quot;</span><span class="ot"> quantity=</span><span class="st">&quot;&quot;</span><span class="ot"> label=</span><span class="st">&quot;&quot;</span><span class="ot"> opacity=</span><span class="st">&quot;&quot;</span><span class="kw">/&gt;</span></a>
+<a class="sourceLine" id="rasterSymbolizer-4" data-line-number="4"><span class="kw">&lt;ChannelSelection&gt;</span></a>
+<a class="sourceLine" id="rasterSymbolizer-5" data-line-number="5">  <span class="kw">&lt;RedChannel&gt;</span> <span class="kw">&lt;GreenChannel&gt;</span> <span class="kw">&lt;BlueChannel&gt;</span></a>
+<a class="sourceLine" id="rasterSymbolizer-6" data-line-number="6">    <span class="kw">&lt;SourceChannelName&gt;</span></a>
+<a class="sourceLine" id="rasterSymbolizer-7" data-line-number="7">  <span class="kw">&lt;GrayChannel&gt;</span></a>
+<a class="sourceLine" id="rasterSymbolizer-8" data-line-number="8">    <span class="kw">&lt;SourceChannelName&gt;</span></a>
+<a class="sourceLine" id="rasterSymbolizer-9" data-line-number="9"><span class="kw">&lt;ContrastEnhancement&gt;</span></a>
+<a class="sourceLine" id="rasterSymbolizer-10" data-line-number="10"><span class="kw">&lt;ShadedRelief&gt;</span> (not implemented in ver 2.0)</a>
+<a class="sourceLine" id="rasterSymbolizer-11" data-line-number="11"><span class="kw">&lt;OverlapBehavior&gt;</span> (not implemented in ver 2.0)</a>
+<a class="sourceLine" id="rasterSymbolizer-12" data-line-number="12"><span class="kw">&lt;ImageOutline&gt;</span> (not implemented in ver 2.0)</a></code></pre></div>
 </section>
-<section id="filters" class="titleslide slide level2"><h1>Filters</h1></section><section id="SLDrulesVectorSymbolization_01" class="slide level3">
-<h1>SLD Filter Rules and Vector Symbolization</h1>
+<section id="filters" class="title-slide slide level2"><h2>Filters</h2></section><section id="SLDrulesVectorSymbolization_01" class="slide level3">
+<h3>SLD Filter Rules and Vector Symbolization</h3>
 <p>Filters based upon Attribute Values</p>
 <pre><code>&lt;PropertyIsEqualTo&gt;
 &lt;PropertyIsNotEqualTo&gt;
@@ -326,232 +359,232 @@ one or more <span class="kw">&lt;NamedLayer&gt;</span> ...  <span class="kw">&lt
 <pre><code>&lt;MaxScaleDenominator&gt;
 &lt;MinScaleDenominator&gt;</code></pre>
 </section><section id="attributeFilterExample_01" class="slide level3">
-<h1>Attribute Filter Example</h1>
+<h3>Attribute Filter Example</h3>
 <p>To define an <em>Attribute Filter</em> you need to know both the <em>Attribute Name</em> of the layer(s) that will use the filter and the <em>value(s)</em> of that field that will be used for the filter. <em>How do you determine the attribute name and values?</em></p>
 <ul>
 <li>If available, this information should be available through the documentation (metadata) for the data that is published by the data provider.</li>
-<li>In GeoServer you can view a list of attribute names in the <em>data</em> tab of the layer information under the <em>Feature Type Details</em> at the bottom of the web page, but you can't view the actual field values.</li>
+<li>In GeoServer you can view a list of attribute names in the <em>data</em> tab of the layer information under the <em>Feature Type Details</em> at the bottom of the web page, but you can’t view the actual field values.</li>
 <li>For vector data you can view both the attribute names and their values using the <code>ogrinfo</code> command from the command line on the class linux server.</li>
 </ul>
 <p>For example:</p>
 <pre><code>ogrinfo -fields=YES -geom=NO kb_gpsrdsdd.shp kb_gpsrdsdd</code></pre>
-<p>Where this command requests that the fields and their values be displayed, but that the detailed geometry information (i.e. all of the nodes associated with each feature) be suppressed in the output</p>
+<p>Where this command requests that the fields and their values be displayed, but that the detailed geometry information (i.e. all of the nodes associated with each feature) be suppressed in the output</p>
 <p><a href="https://github.com/karlbenedict/GEOG485-585/blob/master/sample-files/SLD/SimpleRoads.sld">Full SLD</a></p>
-<div class="sourceCode" id="styledNMRoads"><pre class="sourceCode xml"><code class="sourceCode xml"><span class="kw">&lt;?xml</span> version=&quot;1.0&quot; encoding=&quot;ISO-8859-1&quot;<span class="kw">?&gt;</span>
-<span class="kw">&lt;StyledLayerDescriptor</span><span class="ot"> version=</span><span class="st">&quot;1.0.0&quot;</span> 
-<span class="ot">  xsi:schemaLocation=</span><span class="st">&quot;http://www.opengis.net/sld StyledLayerDescriptor.xsd&quot;</span> 
-<span class="ot">  xmlns=</span><span class="st">&quot;http://www.opengis.net/sld&quot;</span> 
-<span class="ot">  xmlns:ogc=</span><span class="st">&quot;http://www.opengis.net/ogc&quot;</span> 
-<span class="ot">  xmlns:xlink=</span><span class="st">&quot;http://www.w3.org/1999/xlink&quot;</span> 
-<span class="ot">  xmlns:xsi=</span><span class="st">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span><span class="kw">&gt;</span>
-
-<span class="co">&lt;!-- New Mexico Highways --&gt;</span>
-<span class="kw">&lt;NamedLayer&gt;</span>
-<span class="kw">&lt;Name&gt;</span>NM Roads<span class="kw">&lt;/Name&gt;</span>
-  <span class="kw">&lt;UserStyle&gt;</span>
-    <span class="kw">&lt;Name&gt;</span>NM Roads<span class="kw">&lt;/Name&gt;</span>
-    <span class="kw">&lt;FeatureTypeStyle&gt;</span>
-        <span class="kw">&lt;Rule&gt;</span>
-          <span class="kw">&lt;Title&gt;</span>NM Highways<span class="kw">&lt;/Title&gt;</span>
-          <span class="kw">&lt;ogc:Filter&gt;</span>
-            <span class="kw">&lt;ogc:PropertyIsEqualTo&gt;</span>
-              <span class="kw">&lt;ogc:PropertyName&gt;</span>TYPE<span class="kw">&lt;/ogc:PropertyName&gt;</span>
-              <span class="kw">&lt;ogc:Literal&gt;</span>State Highway<span class="kw">&lt;/ogc:Literal&gt;</span>
-            <span class="kw">&lt;/ogc:PropertyIsEqualTo&gt;</span>
-          <span class="kw">&lt;/ogc:Filter&gt;</span>
-          <span class="kw">&lt;LineSymbolizer&gt;</span>
-            <span class="kw">&lt;Stroke&gt;</span>
-              <span class="kw">&lt;CssParameter</span><span class="ot"> name=</span><span class="st">&quot;stroke&quot;</span><span class="kw">&gt;</span>
-                <span class="kw">&lt;ogc:Literal&gt;</span>#CCCCCC<span class="kw">&lt;/ogc:Literal&gt;</span>
-              <span class="kw">&lt;/CssParameter&gt;</span>
-              <span class="kw">&lt;CssParameter</span><span class="ot"> name=</span><span class="st">&quot;stroke-width&quot;</span><span class="kw">&gt;</span>
-                <span class="kw">&lt;ogc:Literal&gt;</span>2<span class="kw">&lt;/ogc:Literal&gt;</span>
-              <span class="kw">&lt;/CssParameter&gt;</span>
-            <span class="kw">&lt;/Stroke&gt;</span>
-          <span class="kw">&lt;/LineSymbolizer&gt;</span>
-        <span class="kw">&lt;/Rule&gt;</span>
-
-<span class="co">&lt;!-- US Highways --&gt;</span>
-        <span class="kw">&lt;Rule&gt;</span>
-            <span class="kw">&lt;Title&gt;</span>US Highways<span class="kw">&lt;/Title&gt;</span>
-            <span class="kw">&lt;ogc:Filter&gt;</span>
-            <span class="kw">&lt;ogc:PropertyIsEqualTo&gt;</span>
-                <span class="kw">&lt;ogc:PropertyName&gt;</span>TYPE<span class="kw">&lt;/ogc:PropertyName&gt;</span>
-                <span class="kw">&lt;ogc:Literal&gt;</span>US Highway<span class="kw">&lt;/ogc:Literal&gt;</span>
-            <span class="kw">&lt;/ogc:PropertyIsEqualTo&gt;</span>
-            <span class="kw">&lt;/ogc:Filter&gt;</span>
-            <span class="kw">&lt;LineSymbolizer&gt;</span>
-            <span class="kw">&lt;Stroke&gt;</span>
-              <span class="kw">&lt;CssParameter</span><span class="ot"> name=</span><span class="st">&quot;stroke&quot;</span><span class="kw">&gt;</span>
-                <span class="kw">&lt;ogc:Literal&gt;</span>#ff0000<span class="kw">&lt;/ogc:Literal&gt;</span>
-              <span class="kw">&lt;/CssParameter&gt;</span>
-              <span class="kw">&lt;CssParameter</span><span class="ot"> name=</span><span class="st">&quot;stroke-width&quot;</span><span class="kw">&gt;</span>
-                <span class="kw">&lt;ogc:Literal&gt;</span>3<span class="kw">&lt;/ogc:Literal&gt;</span>
-              <span class="kw">&lt;/CssParameter&gt;</span>
-            <span class="kw">&lt;/Stroke&gt;</span>
-            <span class="kw">&lt;/LineSymbolizer&gt;</span>
-            <span class="kw">&lt;LineSymbolizer&gt;</span>
-            <span class="kw">&lt;Stroke&gt;</span>
-              <span class="kw">&lt;CssParameter</span><span class="ot"> name=</span><span class="st">&quot;stroke&quot;</span><span class="kw">&gt;</span>
-                <span class="kw">&lt;ogc:Literal&gt;</span>#CCCCCC<span class="kw">&lt;/ogc:Literal&gt;</span>
-              <span class="kw">&lt;/CssParameter&gt;</span>
-              <span class="kw">&lt;CssParameter</span><span class="ot"> name=</span><span class="st">&quot;stroke-width&quot;</span><span class="kw">&gt;</span>
-                <span class="kw">&lt;ogc:Literal&gt;</span>1<span class="kw">&lt;/ogc:Literal&gt;</span>
-              <span class="kw">&lt;/CssParameter&gt;</span>
-            <span class="kw">&lt;/Stroke&gt;</span>
-            <span class="kw">&lt;/LineSymbolizer&gt;</span>
-        <span class="kw">&lt;/Rule&gt;</span>
-
-<span class="co">&lt;!-- Interstate Highways --&gt;</span>
-        <span class="kw">&lt;Rule&gt;</span>
-          <span class="kw">&lt;Title&gt;</span>Interstates<span class="kw">&lt;/Title&gt;</span>
-          <span class="kw">&lt;ogc:Filter&gt;</span>
-            <span class="kw">&lt;ogc:PropertyIsEqualTo&gt;</span>
-              <span class="kw">&lt;ogc:PropertyName&gt;</span>TYPE<span class="kw">&lt;/ogc:PropertyName&gt;</span>
-              <span class="kw">&lt;ogc:Literal&gt;</span>Interstate<span class="kw">&lt;/ogc:Literal&gt;</span>
-            <span class="kw">&lt;/ogc:PropertyIsEqualTo&gt;</span>
-          <span class="kw">&lt;/ogc:Filter&gt;</span>
-          <span class="kw">&lt;LineSymbolizer&gt;</span>
-            <span class="kw">&lt;Stroke&gt;</span>
-              <span class="kw">&lt;CssParameter</span><span class="ot"> name=</span><span class="st">&quot;stroke&quot;</span><span class="kw">&gt;</span>
-                <span class="kw">&lt;ogc:Literal&gt;</span>#fcff00<span class="kw">&lt;/ogc:Literal&gt;</span>
-              <span class="kw">&lt;/CssParameter&gt;</span>
-              <span class="kw">&lt;CssParameter</span><span class="ot"> name=</span><span class="st">&quot;stroke-width&quot;</span><span class="kw">&gt;</span>
-                <span class="kw">&lt;ogc:Literal&gt;</span>5<span class="kw">&lt;/ogc:Literal&gt;</span>
-              <span class="kw">&lt;/CssParameter&gt;</span>
-            <span class="kw">&lt;/Stroke&gt;</span>
-          <span class="kw">&lt;/LineSymbolizer&gt;</span>
-          <span class="kw">&lt;LineSymbolizer&gt;</span>
-            <span class="kw">&lt;Stroke&gt;</span>
-              <span class="kw">&lt;CssParameter</span><span class="ot"> name=</span><span class="st">&quot;stroke&quot;</span><span class="kw">&gt;</span>
-                <span class="kw">&lt;ogc:Literal&gt;</span>#222222<span class="kw">&lt;/ogc:Literal&gt;</span>
-              <span class="kw">&lt;/CssParameter&gt;</span>
-              <span class="kw">&lt;CssParameter</span><span class="ot"> name=</span><span class="st">&quot;stroke-width&quot;</span><span class="kw">&gt;</span>
-                <span class="kw">&lt;ogc:Literal&gt;</span>3<span class="kw">&lt;/ogc:Literal&gt;</span>
-              <span class="kw">&lt;/CssParameter&gt;</span>
-            <span class="kw">&lt;/Stroke&gt;</span>
-          <span class="kw">&lt;/LineSymbolizer&gt;</span>
-        <span class="kw">&lt;/Rule&gt;</span>
-    <span class="kw">&lt;/FeatureTypeStyle&gt;</span>
-  <span class="kw">&lt;/UserStyle&gt;</span>
-<span class="kw">&lt;/NamedLayer&gt;</span>
-
-<span class="kw">&lt;/StyledLayerDescriptor&gt;</span></code></pre></div>
+<div class="sourceCode" id="styledNMRoads"><pre class="sourceCode xml"><code class="sourceCode xml"><a class="sourceLine" id="styledNMRoads-1" data-line-number="1"><span class="kw">&lt;?xml</span> version=&quot;1.0&quot; encoding=&quot;ISO-8859-1&quot;<span class="kw">?&gt;</span></a>
+<a class="sourceLine" id="styledNMRoads-2" data-line-number="2"><span class="kw">&lt;StyledLayerDescriptor</span><span class="ot"> version=</span><span class="st">&quot;1.0.0&quot;</span> </a>
+<a class="sourceLine" id="styledNMRoads-3" data-line-number="3"><span class="ot">  xsi:schemaLocation=</span><span class="st">&quot;http://www.opengis.net/sld StyledLayerDescriptor.xsd&quot;</span> </a>
+<a class="sourceLine" id="styledNMRoads-4" data-line-number="4"><span class="ot">  xmlns=</span><span class="st">&quot;http://www.opengis.net/sld&quot;</span> </a>
+<a class="sourceLine" id="styledNMRoads-5" data-line-number="5"><span class="ot">  xmlns:ogc=</span><span class="st">&quot;http://www.opengis.net/ogc&quot;</span> </a>
+<a class="sourceLine" id="styledNMRoads-6" data-line-number="6"><span class="ot">  xmlns:xlink=</span><span class="st">&quot;http://www.w3.org/1999/xlink&quot;</span> </a>
+<a class="sourceLine" id="styledNMRoads-7" data-line-number="7"><span class="ot">  xmlns:xsi=</span><span class="st">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="styledNMRoads-8" data-line-number="8"></a>
+<a class="sourceLine" id="styledNMRoads-9" data-line-number="9"><span class="co">&lt;!-- New Mexico Highways --&gt;</span></a>
+<a class="sourceLine" id="styledNMRoads-10" data-line-number="10"><span class="kw">&lt;NamedLayer&gt;</span></a>
+<a class="sourceLine" id="styledNMRoads-11" data-line-number="11"><span class="kw">&lt;Name&gt;</span>NM Roads<span class="kw">&lt;/Name&gt;</span></a>
+<a class="sourceLine" id="styledNMRoads-12" data-line-number="12">  <span class="kw">&lt;UserStyle&gt;</span></a>
+<a class="sourceLine" id="styledNMRoads-13" data-line-number="13">    <span class="kw">&lt;Name&gt;</span>NM Roads<span class="kw">&lt;/Name&gt;</span></a>
+<a class="sourceLine" id="styledNMRoads-14" data-line-number="14">    <span class="kw">&lt;FeatureTypeStyle&gt;</span></a>
+<a class="sourceLine" id="styledNMRoads-15" data-line-number="15">        <span class="kw">&lt;Rule&gt;</span></a>
+<a class="sourceLine" id="styledNMRoads-16" data-line-number="16">          <span class="kw">&lt;Title&gt;</span>NM Highways<span class="kw">&lt;/Title&gt;</span></a>
+<a class="sourceLine" id="styledNMRoads-17" data-line-number="17">          <span class="kw">&lt;ogc:Filter&gt;</span></a>
+<a class="sourceLine" id="styledNMRoads-18" data-line-number="18">            <span class="kw">&lt;ogc:PropertyIsEqualTo&gt;</span></a>
+<a class="sourceLine" id="styledNMRoads-19" data-line-number="19">              <span class="kw">&lt;ogc:PropertyName&gt;</span>TYPE<span class="kw">&lt;/ogc:PropertyName&gt;</span></a>
+<a class="sourceLine" id="styledNMRoads-20" data-line-number="20">              <span class="kw">&lt;ogc:Literal&gt;</span>State Highway<span class="kw">&lt;/ogc:Literal&gt;</span></a>
+<a class="sourceLine" id="styledNMRoads-21" data-line-number="21">            <span class="kw">&lt;/ogc:PropertyIsEqualTo&gt;</span></a>
+<a class="sourceLine" id="styledNMRoads-22" data-line-number="22">          <span class="kw">&lt;/ogc:Filter&gt;</span></a>
+<a class="sourceLine" id="styledNMRoads-23" data-line-number="23">          <span class="kw">&lt;LineSymbolizer&gt;</span></a>
+<a class="sourceLine" id="styledNMRoads-24" data-line-number="24">            <span class="kw">&lt;Stroke&gt;</span></a>
+<a class="sourceLine" id="styledNMRoads-25" data-line-number="25">              <span class="kw">&lt;CssParameter</span><span class="ot"> name=</span><span class="st">&quot;stroke&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="styledNMRoads-26" data-line-number="26">                <span class="kw">&lt;ogc:Literal&gt;</span>#CCCCCC<span class="kw">&lt;/ogc:Literal&gt;</span></a>
+<a class="sourceLine" id="styledNMRoads-27" data-line-number="27">              <span class="kw">&lt;/CssParameter&gt;</span></a>
+<a class="sourceLine" id="styledNMRoads-28" data-line-number="28">              <span class="kw">&lt;CssParameter</span><span class="ot"> name=</span><span class="st">&quot;stroke-width&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="styledNMRoads-29" data-line-number="29">                <span class="kw">&lt;ogc:Literal&gt;</span>2<span class="kw">&lt;/ogc:Literal&gt;</span></a>
+<a class="sourceLine" id="styledNMRoads-30" data-line-number="30">              <span class="kw">&lt;/CssParameter&gt;</span></a>
+<a class="sourceLine" id="styledNMRoads-31" data-line-number="31">            <span class="kw">&lt;/Stroke&gt;</span></a>
+<a class="sourceLine" id="styledNMRoads-32" data-line-number="32">          <span class="kw">&lt;/LineSymbolizer&gt;</span></a>
+<a class="sourceLine" id="styledNMRoads-33" data-line-number="33">        <span class="kw">&lt;/Rule&gt;</span></a>
+<a class="sourceLine" id="styledNMRoads-34" data-line-number="34"></a>
+<a class="sourceLine" id="styledNMRoads-35" data-line-number="35"><span class="co">&lt;!-- US Highways --&gt;</span></a>
+<a class="sourceLine" id="styledNMRoads-36" data-line-number="36">        <span class="kw">&lt;Rule&gt;</span></a>
+<a class="sourceLine" id="styledNMRoads-37" data-line-number="37">            <span class="kw">&lt;Title&gt;</span>US Highways<span class="kw">&lt;/Title&gt;</span></a>
+<a class="sourceLine" id="styledNMRoads-38" data-line-number="38">            <span class="kw">&lt;ogc:Filter&gt;</span></a>
+<a class="sourceLine" id="styledNMRoads-39" data-line-number="39">            <span class="kw">&lt;ogc:PropertyIsEqualTo&gt;</span></a>
+<a class="sourceLine" id="styledNMRoads-40" data-line-number="40">                <span class="kw">&lt;ogc:PropertyName&gt;</span>TYPE<span class="kw">&lt;/ogc:PropertyName&gt;</span></a>
+<a class="sourceLine" id="styledNMRoads-41" data-line-number="41">                <span class="kw">&lt;ogc:Literal&gt;</span>US Highway<span class="kw">&lt;/ogc:Literal&gt;</span></a>
+<a class="sourceLine" id="styledNMRoads-42" data-line-number="42">            <span class="kw">&lt;/ogc:PropertyIsEqualTo&gt;</span></a>
+<a class="sourceLine" id="styledNMRoads-43" data-line-number="43">            <span class="kw">&lt;/ogc:Filter&gt;</span></a>
+<a class="sourceLine" id="styledNMRoads-44" data-line-number="44">            <span class="kw">&lt;LineSymbolizer&gt;</span></a>
+<a class="sourceLine" id="styledNMRoads-45" data-line-number="45">            <span class="kw">&lt;Stroke&gt;</span></a>
+<a class="sourceLine" id="styledNMRoads-46" data-line-number="46">              <span class="kw">&lt;CssParameter</span><span class="ot"> name=</span><span class="st">&quot;stroke&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="styledNMRoads-47" data-line-number="47">                <span class="kw">&lt;ogc:Literal&gt;</span>#ff0000<span class="kw">&lt;/ogc:Literal&gt;</span></a>
+<a class="sourceLine" id="styledNMRoads-48" data-line-number="48">              <span class="kw">&lt;/CssParameter&gt;</span></a>
+<a class="sourceLine" id="styledNMRoads-49" data-line-number="49">              <span class="kw">&lt;CssParameter</span><span class="ot"> name=</span><span class="st">&quot;stroke-width&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="styledNMRoads-50" data-line-number="50">                <span class="kw">&lt;ogc:Literal&gt;</span>3<span class="kw">&lt;/ogc:Literal&gt;</span></a>
+<a class="sourceLine" id="styledNMRoads-51" data-line-number="51">              <span class="kw">&lt;/CssParameter&gt;</span></a>
+<a class="sourceLine" id="styledNMRoads-52" data-line-number="52">            <span class="kw">&lt;/Stroke&gt;</span></a>
+<a class="sourceLine" id="styledNMRoads-53" data-line-number="53">            <span class="kw">&lt;/LineSymbolizer&gt;</span></a>
+<a class="sourceLine" id="styledNMRoads-54" data-line-number="54">            <span class="kw">&lt;LineSymbolizer&gt;</span></a>
+<a class="sourceLine" id="styledNMRoads-55" data-line-number="55">            <span class="kw">&lt;Stroke&gt;</span></a>
+<a class="sourceLine" id="styledNMRoads-56" data-line-number="56">              <span class="kw">&lt;CssParameter</span><span class="ot"> name=</span><span class="st">&quot;stroke&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="styledNMRoads-57" data-line-number="57">                <span class="kw">&lt;ogc:Literal&gt;</span>#CCCCCC<span class="kw">&lt;/ogc:Literal&gt;</span></a>
+<a class="sourceLine" id="styledNMRoads-58" data-line-number="58">              <span class="kw">&lt;/CssParameter&gt;</span></a>
+<a class="sourceLine" id="styledNMRoads-59" data-line-number="59">              <span class="kw">&lt;CssParameter</span><span class="ot"> name=</span><span class="st">&quot;stroke-width&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="styledNMRoads-60" data-line-number="60">                <span class="kw">&lt;ogc:Literal&gt;</span>1<span class="kw">&lt;/ogc:Literal&gt;</span></a>
+<a class="sourceLine" id="styledNMRoads-61" data-line-number="61">              <span class="kw">&lt;/CssParameter&gt;</span></a>
+<a class="sourceLine" id="styledNMRoads-62" data-line-number="62">            <span class="kw">&lt;/Stroke&gt;</span></a>
+<a class="sourceLine" id="styledNMRoads-63" data-line-number="63">            <span class="kw">&lt;/LineSymbolizer&gt;</span></a>
+<a class="sourceLine" id="styledNMRoads-64" data-line-number="64">        <span class="kw">&lt;/Rule&gt;</span></a>
+<a class="sourceLine" id="styledNMRoads-65" data-line-number="65"></a>
+<a class="sourceLine" id="styledNMRoads-66" data-line-number="66"><span class="co">&lt;!-- Interstate Highways --&gt;</span></a>
+<a class="sourceLine" id="styledNMRoads-67" data-line-number="67">        <span class="kw">&lt;Rule&gt;</span></a>
+<a class="sourceLine" id="styledNMRoads-68" data-line-number="68">          <span class="kw">&lt;Title&gt;</span>Interstates<span class="kw">&lt;/Title&gt;</span></a>
+<a class="sourceLine" id="styledNMRoads-69" data-line-number="69">          <span class="kw">&lt;ogc:Filter&gt;</span></a>
+<a class="sourceLine" id="styledNMRoads-70" data-line-number="70">            <span class="kw">&lt;ogc:PropertyIsEqualTo&gt;</span></a>
+<a class="sourceLine" id="styledNMRoads-71" data-line-number="71">              <span class="kw">&lt;ogc:PropertyName&gt;</span>TYPE<span class="kw">&lt;/ogc:PropertyName&gt;</span></a>
+<a class="sourceLine" id="styledNMRoads-72" data-line-number="72">              <span class="kw">&lt;ogc:Literal&gt;</span>Interstate<span class="kw">&lt;/ogc:Literal&gt;</span></a>
+<a class="sourceLine" id="styledNMRoads-73" data-line-number="73">            <span class="kw">&lt;/ogc:PropertyIsEqualTo&gt;</span></a>
+<a class="sourceLine" id="styledNMRoads-74" data-line-number="74">          <span class="kw">&lt;/ogc:Filter&gt;</span></a>
+<a class="sourceLine" id="styledNMRoads-75" data-line-number="75">          <span class="kw">&lt;LineSymbolizer&gt;</span></a>
+<a class="sourceLine" id="styledNMRoads-76" data-line-number="76">            <span class="kw">&lt;Stroke&gt;</span></a>
+<a class="sourceLine" id="styledNMRoads-77" data-line-number="77">              <span class="kw">&lt;CssParameter</span><span class="ot"> name=</span><span class="st">&quot;stroke&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="styledNMRoads-78" data-line-number="78">                <span class="kw">&lt;ogc:Literal&gt;</span>#fcff00<span class="kw">&lt;/ogc:Literal&gt;</span></a>
+<a class="sourceLine" id="styledNMRoads-79" data-line-number="79">              <span class="kw">&lt;/CssParameter&gt;</span></a>
+<a class="sourceLine" id="styledNMRoads-80" data-line-number="80">              <span class="kw">&lt;CssParameter</span><span class="ot"> name=</span><span class="st">&quot;stroke-width&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="styledNMRoads-81" data-line-number="81">                <span class="kw">&lt;ogc:Literal&gt;</span>5<span class="kw">&lt;/ogc:Literal&gt;</span></a>
+<a class="sourceLine" id="styledNMRoads-82" data-line-number="82">              <span class="kw">&lt;/CssParameter&gt;</span></a>
+<a class="sourceLine" id="styledNMRoads-83" data-line-number="83">            <span class="kw">&lt;/Stroke&gt;</span></a>
+<a class="sourceLine" id="styledNMRoads-84" data-line-number="84">          <span class="kw">&lt;/LineSymbolizer&gt;</span></a>
+<a class="sourceLine" id="styledNMRoads-85" data-line-number="85">          <span class="kw">&lt;LineSymbolizer&gt;</span></a>
+<a class="sourceLine" id="styledNMRoads-86" data-line-number="86">            <span class="kw">&lt;Stroke&gt;</span></a>
+<a class="sourceLine" id="styledNMRoads-87" data-line-number="87">              <span class="kw">&lt;CssParameter</span><span class="ot"> name=</span><span class="st">&quot;stroke&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="styledNMRoads-88" data-line-number="88">                <span class="kw">&lt;ogc:Literal&gt;</span>#222222<span class="kw">&lt;/ogc:Literal&gt;</span></a>
+<a class="sourceLine" id="styledNMRoads-89" data-line-number="89">              <span class="kw">&lt;/CssParameter&gt;</span></a>
+<a class="sourceLine" id="styledNMRoads-90" data-line-number="90">              <span class="kw">&lt;CssParameter</span><span class="ot"> name=</span><span class="st">&quot;stroke-width&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="styledNMRoads-91" data-line-number="91">                <span class="kw">&lt;ogc:Literal&gt;</span>3<span class="kw">&lt;/ogc:Literal&gt;</span></a>
+<a class="sourceLine" id="styledNMRoads-92" data-line-number="92">              <span class="kw">&lt;/CssParameter&gt;</span></a>
+<a class="sourceLine" id="styledNMRoads-93" data-line-number="93">            <span class="kw">&lt;/Stroke&gt;</span></a>
+<a class="sourceLine" id="styledNMRoads-94" data-line-number="94">          <span class="kw">&lt;/LineSymbolizer&gt;</span></a>
+<a class="sourceLine" id="styledNMRoads-95" data-line-number="95">        <span class="kw">&lt;/Rule&gt;</span></a>
+<a class="sourceLine" id="styledNMRoads-96" data-line-number="96">    <span class="kw">&lt;/FeatureTypeStyle&gt;</span></a>
+<a class="sourceLine" id="styledNMRoads-97" data-line-number="97">  <span class="kw">&lt;/UserStyle&gt;</span></a>
+<a class="sourceLine" id="styledNMRoads-98" data-line-number="98"><span class="kw">&lt;/NamedLayer&gt;</span></a>
+<a class="sourceLine" id="styledNMRoads-99" data-line-number="99"></a>
+<a class="sourceLine" id="styledNMRoads-100" data-line-number="100"><span class="kw">&lt;/StyledLayerDescriptor&gt;</span></a></code></pre></div>
 </section><section id="attributeFilterWscaleFactor_01" class="slide level3">
-<h1>Attribute Filter with Scale Factor</h1>
+<h3>Attribute Filter with Scale Factor</h3>
 <p>The only change needed to introduce scale-dependencies into styles is to include <code>&lt;MaxScaleDenominator&gt;</code> or <code>&lt;MinScaleDenominator&gt;</code> elements within a rule where they should be applied. These elements should be placed just before the symbolizer element so that GeoServer can properly validate the provided SLD.</p>
 <p><a href="https://github.com/karlbenedict/GEOG485-585/blob/master/sample-files/SLD/SimpleRoadsScaled.sld">Full SLD</a> </p>
-<div class="sourceCode" id="attributeFilterWscale_highways"><pre class="sourceCode xml"><code class="sourceCode xml"><span class="kw">&lt;?xml</span> version=&quot;1.0&quot; encoding=&quot;ISO-8859-1&quot;<span class="kw">?&gt;</span>
-<span class="kw">&lt;StyledLayerDescriptor</span><span class="ot"> version=</span><span class="st">&quot;1.0.0&quot;</span> 
-<span class="ot">  xsi:schemaLocation=</span><span class="st">&quot;http://www.opengis.net/sld StyledLayerDescriptor.xsd&quot;</span> 
-<span class="ot">  xmlns=</span><span class="st">&quot;http://www.opengis.net/sld&quot;</span> 
-<span class="ot">  xmlns:ogc=</span><span class="st">&quot;http://www.opengis.net/ogc&quot;</span> 
-<span class="ot">  xmlns:xlink=</span><span class="st">&quot;http://www.w3.org/1999/xlink&quot;</span> 
-<span class="ot">  xmlns:xsi=</span><span class="st">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span><span class="kw">&gt;</span>
-
-<span class="co">&lt;!-- New Mexico Highways --&gt;</span>
-<span class="kw">&lt;NamedLayer&gt;</span>
-<span class="kw">&lt;Name&gt;</span>NM Roads<span class="kw">&lt;/Name&gt;</span>
-  <span class="kw">&lt;UserStyle&gt;</span>
-    <span class="kw">&lt;Name&gt;</span>NM Roads<span class="kw">&lt;/Name&gt;</span>
-    <span class="kw">&lt;FeatureTypeStyle&gt;</span>
-        <span class="kw">&lt;Rule&gt;</span>
-          <span class="kw">&lt;Title&gt;</span>NM Highways<span class="kw">&lt;/Title&gt;</span>
-          <span class="kw">&lt;ogc:Filter&gt;</span>
-            <span class="kw">&lt;ogc:PropertyIsEqualTo&gt;</span>
-              <span class="kw">&lt;ogc:PropertyName&gt;</span>TYPE<span class="kw">&lt;/ogc:PropertyName&gt;</span>
-              <span class="kw">&lt;ogc:Literal&gt;</span>State Highway<span class="kw">&lt;/ogc:Literal&gt;</span>
-            <span class="kw">&lt;/ogc:PropertyIsEqualTo&gt;</span>
-          <span class="kw">&lt;/ogc:Filter&gt;</span>
-          <span class="kw">&lt;MaxScaleDenominator&gt;</span>1000000<span class="kw">&lt;/MaxScaleDenominator&gt;</span>
-          <span class="kw">&lt;LineSymbolizer&gt;</span>
-            <span class="kw">&lt;Stroke&gt;</span>
-              <span class="kw">&lt;CssParameter</span><span class="ot"> name=</span><span class="st">&quot;stroke&quot;</span><span class="kw">&gt;</span>
-                <span class="kw">&lt;ogc:Literal&gt;</span>#CCCCCC<span class="kw">&lt;/ogc:Literal&gt;</span>
-              <span class="kw">&lt;/CssParameter&gt;</span>
-              <span class="kw">&lt;CssParameter</span><span class="ot"> name=</span><span class="st">&quot;stroke-width&quot;</span><span class="kw">&gt;</span>
-                <span class="kw">&lt;ogc:Literal&gt;</span>2<span class="kw">&lt;/ogc:Literal&gt;</span>
-              <span class="kw">&lt;/CssParameter&gt;</span>
-            <span class="kw">&lt;/Stroke&gt;</span>
-          <span class="kw">&lt;/LineSymbolizer&gt;</span>
-        <span class="kw">&lt;/Rule&gt;</span>
-
-<span class="co">&lt;!-- US Highways --&gt;</span>
-        <span class="kw">&lt;Rule&gt;</span>
-            <span class="kw">&lt;Title&gt;</span>US Highways<span class="kw">&lt;/Title&gt;</span>
-            <span class="kw">&lt;ogc:Filter&gt;</span>
-            <span class="kw">&lt;ogc:PropertyIsEqualTo&gt;</span>
-                <span class="kw">&lt;ogc:PropertyName&gt;</span>TYPE<span class="kw">&lt;/ogc:PropertyName&gt;</span>
-                <span class="kw">&lt;ogc:Literal&gt;</span>US Highway<span class="kw">&lt;/ogc:Literal&gt;</span>
-            <span class="kw">&lt;/ogc:PropertyIsEqualTo&gt;</span>
-            <span class="kw">&lt;/ogc:Filter&gt;</span>
-            <span class="kw">&lt;MaxScaleDenominator&gt;</span>5000000<span class="kw">&lt;/MaxScaleDenominator&gt;</span>
-            <span class="kw">&lt;LineSymbolizer&gt;</span>
-            <span class="kw">&lt;Stroke&gt;</span>
-              <span class="kw">&lt;CssParameter</span><span class="ot"> name=</span><span class="st">&quot;stroke&quot;</span><span class="kw">&gt;</span>
-                <span class="kw">&lt;ogc:Literal&gt;</span>#ff0000<span class="kw">&lt;/ogc:Literal&gt;</span>
-              <span class="kw">&lt;/CssParameter&gt;</span>
-              <span class="kw">&lt;CssParameter</span><span class="ot"> name=</span><span class="st">&quot;stroke-width&quot;</span><span class="kw">&gt;</span>
-                <span class="kw">&lt;ogc:Literal&gt;</span>3<span class="kw">&lt;/ogc:Literal&gt;</span>
-              <span class="kw">&lt;/CssParameter&gt;</span>
-            <span class="kw">&lt;/Stroke&gt;</span>
-            <span class="kw">&lt;/LineSymbolizer&gt;</span>
-            <span class="kw">&lt;LineSymbolizer&gt;</span>
-            <span class="kw">&lt;Stroke&gt;</span>
-              <span class="kw">&lt;CssParameter</span><span class="ot"> name=</span><span class="st">&quot;stroke&quot;</span><span class="kw">&gt;</span>
-                <span class="kw">&lt;ogc:Literal&gt;</span>#CCCCCC<span class="kw">&lt;/ogc:Literal&gt;</span>
-              <span class="kw">&lt;/CssParameter&gt;</span>
-              <span class="kw">&lt;CssParameter</span><span class="ot"> name=</span><span class="st">&quot;stroke-width&quot;</span><span class="kw">&gt;</span>
-                <span class="kw">&lt;ogc:Literal&gt;</span>1<span class="kw">&lt;/ogc:Literal&gt;</span>
-              <span class="kw">&lt;/CssParameter&gt;</span>
-            <span class="kw">&lt;/Stroke&gt;</span>
-            <span class="kw">&lt;/LineSymbolizer&gt;</span>
-        <span class="kw">&lt;/Rule&gt;</span>
-
-<span class="co">&lt;!-- Interstate Highways --&gt;</span>
-        <span class="kw">&lt;Rule&gt;</span>
-          <span class="kw">&lt;Title&gt;</span>Interstates<span class="kw">&lt;/Title&gt;</span>
-          <span class="kw">&lt;ogc:Filter&gt;</span>
-            <span class="kw">&lt;ogc:PropertyIsEqualTo&gt;</span>
-              <span class="kw">&lt;ogc:PropertyName&gt;</span>TYPE<span class="kw">&lt;/ogc:PropertyName&gt;</span>
-              <span class="kw">&lt;ogc:Literal&gt;</span>Interstate<span class="kw">&lt;/ogc:Literal&gt;</span>
-            <span class="kw">&lt;/ogc:PropertyIsEqualTo&gt;</span>
-          <span class="kw">&lt;/ogc:Filter&gt;</span>
-          <span class="kw">&lt;LineSymbolizer&gt;</span>
-            <span class="kw">&lt;Stroke&gt;</span>
-              <span class="kw">&lt;CssParameter</span><span class="ot"> name=</span><span class="st">&quot;stroke&quot;</span><span class="kw">&gt;</span>
-                <span class="kw">&lt;ogc:Literal&gt;</span>#fcff00<span class="kw">&lt;/ogc:Literal&gt;</span>
-              <span class="kw">&lt;/CssParameter&gt;</span>
-              <span class="kw">&lt;CssParameter</span><span class="ot"> name=</span><span class="st">&quot;stroke-width&quot;</span><span class="kw">&gt;</span>
-                <span class="kw">&lt;ogc:Literal&gt;</span>5<span class="kw">&lt;/ogc:Literal&gt;</span>
-              <span class="kw">&lt;/CssParameter&gt;</span>
-            <span class="kw">&lt;/Stroke&gt;</span>
-          <span class="kw">&lt;/LineSymbolizer&gt;</span>
-          <span class="kw">&lt;LineSymbolizer&gt;</span>
-            <span class="kw">&lt;Stroke&gt;</span>
-              <span class="kw">&lt;CssParameter</span><span class="ot"> name=</span><span class="st">&quot;stroke&quot;</span><span class="kw">&gt;</span>
-                <span class="kw">&lt;ogc:Literal&gt;</span>#222222<span class="kw">&lt;/ogc:Literal&gt;</span>
-              <span class="kw">&lt;/CssParameter&gt;</span>
-              <span class="kw">&lt;CssParameter</span><span class="ot"> name=</span><span class="st">&quot;stroke-width&quot;</span><span class="kw">&gt;</span>
-                <span class="kw">&lt;ogc:Literal&gt;</span>3<span class="kw">&lt;/ogc:Literal&gt;</span>
-              <span class="kw">&lt;/CssParameter&gt;</span>
-            <span class="kw">&lt;/Stroke&gt;</span>
-          <span class="kw">&lt;/LineSymbolizer&gt;</span>
-        <span class="kw">&lt;/Rule&gt;</span>
-    <span class="kw">&lt;/FeatureTypeStyle&gt;</span>
-  <span class="kw">&lt;/UserStyle&gt;</span>
-<span class="kw">&lt;/NamedLayer&gt;</span>
-
-<span class="kw">&lt;/StyledLayerDescriptor&gt;</span></code></pre></div>
+<div class="sourceCode" id="attributeFilterWscale_highways"><pre class="sourceCode xml"><code class="sourceCode xml"><a class="sourceLine" id="attributeFilterWscale_highways-1" data-line-number="1"><span class="kw">&lt;?xml</span> version=&quot;1.0&quot; encoding=&quot;ISO-8859-1&quot;<span class="kw">?&gt;</span></a>
+<a class="sourceLine" id="attributeFilterWscale_highways-2" data-line-number="2"><span class="kw">&lt;StyledLayerDescriptor</span><span class="ot"> version=</span><span class="st">&quot;1.0.0&quot;</span> </a>
+<a class="sourceLine" id="attributeFilterWscale_highways-3" data-line-number="3"><span class="ot">  xsi:schemaLocation=</span><span class="st">&quot;http://www.opengis.net/sld StyledLayerDescriptor.xsd&quot;</span> </a>
+<a class="sourceLine" id="attributeFilterWscale_highways-4" data-line-number="4"><span class="ot">  xmlns=</span><span class="st">&quot;http://www.opengis.net/sld&quot;</span> </a>
+<a class="sourceLine" id="attributeFilterWscale_highways-5" data-line-number="5"><span class="ot">  xmlns:ogc=</span><span class="st">&quot;http://www.opengis.net/ogc&quot;</span> </a>
+<a class="sourceLine" id="attributeFilterWscale_highways-6" data-line-number="6"><span class="ot">  xmlns:xlink=</span><span class="st">&quot;http://www.w3.org/1999/xlink&quot;</span> </a>
+<a class="sourceLine" id="attributeFilterWscale_highways-7" data-line-number="7"><span class="ot">  xmlns:xsi=</span><span class="st">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="attributeFilterWscale_highways-8" data-line-number="8"></a>
+<a class="sourceLine" id="attributeFilterWscale_highways-9" data-line-number="9"><span class="co">&lt;!-- New Mexico Highways --&gt;</span></a>
+<a class="sourceLine" id="attributeFilterWscale_highways-10" data-line-number="10"><span class="kw">&lt;NamedLayer&gt;</span></a>
+<a class="sourceLine" id="attributeFilterWscale_highways-11" data-line-number="11"><span class="kw">&lt;Name&gt;</span>NM Roads<span class="kw">&lt;/Name&gt;</span></a>
+<a class="sourceLine" id="attributeFilterWscale_highways-12" data-line-number="12">  <span class="kw">&lt;UserStyle&gt;</span></a>
+<a class="sourceLine" id="attributeFilterWscale_highways-13" data-line-number="13">    <span class="kw">&lt;Name&gt;</span>NM Roads<span class="kw">&lt;/Name&gt;</span></a>
+<a class="sourceLine" id="attributeFilterWscale_highways-14" data-line-number="14">    <span class="kw">&lt;FeatureTypeStyle&gt;</span></a>
+<a class="sourceLine" id="attributeFilterWscale_highways-15" data-line-number="15">        <span class="kw">&lt;Rule&gt;</span></a>
+<a class="sourceLine" id="attributeFilterWscale_highways-16" data-line-number="16">          <span class="kw">&lt;Title&gt;</span>NM Highways<span class="kw">&lt;/Title&gt;</span></a>
+<a class="sourceLine" id="attributeFilterWscale_highways-17" data-line-number="17">          <span class="kw">&lt;ogc:Filter&gt;</span></a>
+<a class="sourceLine" id="attributeFilterWscale_highways-18" data-line-number="18">            <span class="kw">&lt;ogc:PropertyIsEqualTo&gt;</span></a>
+<a class="sourceLine" id="attributeFilterWscale_highways-19" data-line-number="19">              <span class="kw">&lt;ogc:PropertyName&gt;</span>TYPE<span class="kw">&lt;/ogc:PropertyName&gt;</span></a>
+<a class="sourceLine" id="attributeFilterWscale_highways-20" data-line-number="20">              <span class="kw">&lt;ogc:Literal&gt;</span>State Highway<span class="kw">&lt;/ogc:Literal&gt;</span></a>
+<a class="sourceLine" id="attributeFilterWscale_highways-21" data-line-number="21">            <span class="kw">&lt;/ogc:PropertyIsEqualTo&gt;</span></a>
+<a class="sourceLine" id="attributeFilterWscale_highways-22" data-line-number="22">          <span class="kw">&lt;/ogc:Filter&gt;</span></a>
+<a class="sourceLine" id="attributeFilterWscale_highways-23" data-line-number="23">          <span class="kw">&lt;MaxScaleDenominator&gt;</span>1000000<span class="kw">&lt;/MaxScaleDenominator&gt;</span></a>
+<a class="sourceLine" id="attributeFilterWscale_highways-24" data-line-number="24">          <span class="kw">&lt;LineSymbolizer&gt;</span></a>
+<a class="sourceLine" id="attributeFilterWscale_highways-25" data-line-number="25">            <span class="kw">&lt;Stroke&gt;</span></a>
+<a class="sourceLine" id="attributeFilterWscale_highways-26" data-line-number="26">              <span class="kw">&lt;CssParameter</span><span class="ot"> name=</span><span class="st">&quot;stroke&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="attributeFilterWscale_highways-27" data-line-number="27">                <span class="kw">&lt;ogc:Literal&gt;</span>#CCCCCC<span class="kw">&lt;/ogc:Literal&gt;</span></a>
+<a class="sourceLine" id="attributeFilterWscale_highways-28" data-line-number="28">              <span class="kw">&lt;/CssParameter&gt;</span></a>
+<a class="sourceLine" id="attributeFilterWscale_highways-29" data-line-number="29">              <span class="kw">&lt;CssParameter</span><span class="ot"> name=</span><span class="st">&quot;stroke-width&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="attributeFilterWscale_highways-30" data-line-number="30">                <span class="kw">&lt;ogc:Literal&gt;</span>2<span class="kw">&lt;/ogc:Literal&gt;</span></a>
+<a class="sourceLine" id="attributeFilterWscale_highways-31" data-line-number="31">              <span class="kw">&lt;/CssParameter&gt;</span></a>
+<a class="sourceLine" id="attributeFilterWscale_highways-32" data-line-number="32">            <span class="kw">&lt;/Stroke&gt;</span></a>
+<a class="sourceLine" id="attributeFilterWscale_highways-33" data-line-number="33">          <span class="kw">&lt;/LineSymbolizer&gt;</span></a>
+<a class="sourceLine" id="attributeFilterWscale_highways-34" data-line-number="34">        <span class="kw">&lt;/Rule&gt;</span></a>
+<a class="sourceLine" id="attributeFilterWscale_highways-35" data-line-number="35"></a>
+<a class="sourceLine" id="attributeFilterWscale_highways-36" data-line-number="36"><span class="co">&lt;!-- US Highways --&gt;</span></a>
+<a class="sourceLine" id="attributeFilterWscale_highways-37" data-line-number="37">        <span class="kw">&lt;Rule&gt;</span></a>
+<a class="sourceLine" id="attributeFilterWscale_highways-38" data-line-number="38">            <span class="kw">&lt;Title&gt;</span>US Highways<span class="kw">&lt;/Title&gt;</span></a>
+<a class="sourceLine" id="attributeFilterWscale_highways-39" data-line-number="39">            <span class="kw">&lt;ogc:Filter&gt;</span></a>
+<a class="sourceLine" id="attributeFilterWscale_highways-40" data-line-number="40">            <span class="kw">&lt;ogc:PropertyIsEqualTo&gt;</span></a>
+<a class="sourceLine" id="attributeFilterWscale_highways-41" data-line-number="41">                <span class="kw">&lt;ogc:PropertyName&gt;</span>TYPE<span class="kw">&lt;/ogc:PropertyName&gt;</span></a>
+<a class="sourceLine" id="attributeFilterWscale_highways-42" data-line-number="42">                <span class="kw">&lt;ogc:Literal&gt;</span>US Highway<span class="kw">&lt;/ogc:Literal&gt;</span></a>
+<a class="sourceLine" id="attributeFilterWscale_highways-43" data-line-number="43">            <span class="kw">&lt;/ogc:PropertyIsEqualTo&gt;</span></a>
+<a class="sourceLine" id="attributeFilterWscale_highways-44" data-line-number="44">            <span class="kw">&lt;/ogc:Filter&gt;</span></a>
+<a class="sourceLine" id="attributeFilterWscale_highways-45" data-line-number="45">            <span class="kw">&lt;MaxScaleDenominator&gt;</span>5000000<span class="kw">&lt;/MaxScaleDenominator&gt;</span></a>
+<a class="sourceLine" id="attributeFilterWscale_highways-46" data-line-number="46">            <span class="kw">&lt;LineSymbolizer&gt;</span></a>
+<a class="sourceLine" id="attributeFilterWscale_highways-47" data-line-number="47">            <span class="kw">&lt;Stroke&gt;</span></a>
+<a class="sourceLine" id="attributeFilterWscale_highways-48" data-line-number="48">              <span class="kw">&lt;CssParameter</span><span class="ot"> name=</span><span class="st">&quot;stroke&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="attributeFilterWscale_highways-49" data-line-number="49">                <span class="kw">&lt;ogc:Literal&gt;</span>#ff0000<span class="kw">&lt;/ogc:Literal&gt;</span></a>
+<a class="sourceLine" id="attributeFilterWscale_highways-50" data-line-number="50">              <span class="kw">&lt;/CssParameter&gt;</span></a>
+<a class="sourceLine" id="attributeFilterWscale_highways-51" data-line-number="51">              <span class="kw">&lt;CssParameter</span><span class="ot"> name=</span><span class="st">&quot;stroke-width&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="attributeFilterWscale_highways-52" data-line-number="52">                <span class="kw">&lt;ogc:Literal&gt;</span>3<span class="kw">&lt;/ogc:Literal&gt;</span></a>
+<a class="sourceLine" id="attributeFilterWscale_highways-53" data-line-number="53">              <span class="kw">&lt;/CssParameter&gt;</span></a>
+<a class="sourceLine" id="attributeFilterWscale_highways-54" data-line-number="54">            <span class="kw">&lt;/Stroke&gt;</span></a>
+<a class="sourceLine" id="attributeFilterWscale_highways-55" data-line-number="55">            <span class="kw">&lt;/LineSymbolizer&gt;</span></a>
+<a class="sourceLine" id="attributeFilterWscale_highways-56" data-line-number="56">            <span class="kw">&lt;LineSymbolizer&gt;</span></a>
+<a class="sourceLine" id="attributeFilterWscale_highways-57" data-line-number="57">            <span class="kw">&lt;Stroke&gt;</span></a>
+<a class="sourceLine" id="attributeFilterWscale_highways-58" data-line-number="58">              <span class="kw">&lt;CssParameter</span><span class="ot"> name=</span><span class="st">&quot;stroke&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="attributeFilterWscale_highways-59" data-line-number="59">                <span class="kw">&lt;ogc:Literal&gt;</span>#CCCCCC<span class="kw">&lt;/ogc:Literal&gt;</span></a>
+<a class="sourceLine" id="attributeFilterWscale_highways-60" data-line-number="60">              <span class="kw">&lt;/CssParameter&gt;</span></a>
+<a class="sourceLine" id="attributeFilterWscale_highways-61" data-line-number="61">              <span class="kw">&lt;CssParameter</span><span class="ot"> name=</span><span class="st">&quot;stroke-width&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="attributeFilterWscale_highways-62" data-line-number="62">                <span class="kw">&lt;ogc:Literal&gt;</span>1<span class="kw">&lt;/ogc:Literal&gt;</span></a>
+<a class="sourceLine" id="attributeFilterWscale_highways-63" data-line-number="63">              <span class="kw">&lt;/CssParameter&gt;</span></a>
+<a class="sourceLine" id="attributeFilterWscale_highways-64" data-line-number="64">            <span class="kw">&lt;/Stroke&gt;</span></a>
+<a class="sourceLine" id="attributeFilterWscale_highways-65" data-line-number="65">            <span class="kw">&lt;/LineSymbolizer&gt;</span></a>
+<a class="sourceLine" id="attributeFilterWscale_highways-66" data-line-number="66">        <span class="kw">&lt;/Rule&gt;</span></a>
+<a class="sourceLine" id="attributeFilterWscale_highways-67" data-line-number="67"></a>
+<a class="sourceLine" id="attributeFilterWscale_highways-68" data-line-number="68"><span class="co">&lt;!-- Interstate Highways --&gt;</span></a>
+<a class="sourceLine" id="attributeFilterWscale_highways-69" data-line-number="69">        <span class="kw">&lt;Rule&gt;</span></a>
+<a class="sourceLine" id="attributeFilterWscale_highways-70" data-line-number="70">          <span class="kw">&lt;Title&gt;</span>Interstates<span class="kw">&lt;/Title&gt;</span></a>
+<a class="sourceLine" id="attributeFilterWscale_highways-71" data-line-number="71">          <span class="kw">&lt;ogc:Filter&gt;</span></a>
+<a class="sourceLine" id="attributeFilterWscale_highways-72" data-line-number="72">            <span class="kw">&lt;ogc:PropertyIsEqualTo&gt;</span></a>
+<a class="sourceLine" id="attributeFilterWscale_highways-73" data-line-number="73">              <span class="kw">&lt;ogc:PropertyName&gt;</span>TYPE<span class="kw">&lt;/ogc:PropertyName&gt;</span></a>
+<a class="sourceLine" id="attributeFilterWscale_highways-74" data-line-number="74">              <span class="kw">&lt;ogc:Literal&gt;</span>Interstate<span class="kw">&lt;/ogc:Literal&gt;</span></a>
+<a class="sourceLine" id="attributeFilterWscale_highways-75" data-line-number="75">            <span class="kw">&lt;/ogc:PropertyIsEqualTo&gt;</span></a>
+<a class="sourceLine" id="attributeFilterWscale_highways-76" data-line-number="76">          <span class="kw">&lt;/ogc:Filter&gt;</span></a>
+<a class="sourceLine" id="attributeFilterWscale_highways-77" data-line-number="77">          <span class="kw">&lt;LineSymbolizer&gt;</span></a>
+<a class="sourceLine" id="attributeFilterWscale_highways-78" data-line-number="78">            <span class="kw">&lt;Stroke&gt;</span></a>
+<a class="sourceLine" id="attributeFilterWscale_highways-79" data-line-number="79">              <span class="kw">&lt;CssParameter</span><span class="ot"> name=</span><span class="st">&quot;stroke&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="attributeFilterWscale_highways-80" data-line-number="80">                <span class="kw">&lt;ogc:Literal&gt;</span>#fcff00<span class="kw">&lt;/ogc:Literal&gt;</span></a>
+<a class="sourceLine" id="attributeFilterWscale_highways-81" data-line-number="81">              <span class="kw">&lt;/CssParameter&gt;</span></a>
+<a class="sourceLine" id="attributeFilterWscale_highways-82" data-line-number="82">              <span class="kw">&lt;CssParameter</span><span class="ot"> name=</span><span class="st">&quot;stroke-width&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="attributeFilterWscale_highways-83" data-line-number="83">                <span class="kw">&lt;ogc:Literal&gt;</span>5<span class="kw">&lt;/ogc:Literal&gt;</span></a>
+<a class="sourceLine" id="attributeFilterWscale_highways-84" data-line-number="84">              <span class="kw">&lt;/CssParameter&gt;</span></a>
+<a class="sourceLine" id="attributeFilterWscale_highways-85" data-line-number="85">            <span class="kw">&lt;/Stroke&gt;</span></a>
+<a class="sourceLine" id="attributeFilterWscale_highways-86" data-line-number="86">          <span class="kw">&lt;/LineSymbolizer&gt;</span></a>
+<a class="sourceLine" id="attributeFilterWscale_highways-87" data-line-number="87">          <span class="kw">&lt;LineSymbolizer&gt;</span></a>
+<a class="sourceLine" id="attributeFilterWscale_highways-88" data-line-number="88">            <span class="kw">&lt;Stroke&gt;</span></a>
+<a class="sourceLine" id="attributeFilterWscale_highways-89" data-line-number="89">              <span class="kw">&lt;CssParameter</span><span class="ot"> name=</span><span class="st">&quot;stroke&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="attributeFilterWscale_highways-90" data-line-number="90">                <span class="kw">&lt;ogc:Literal&gt;</span>#222222<span class="kw">&lt;/ogc:Literal&gt;</span></a>
+<a class="sourceLine" id="attributeFilterWscale_highways-91" data-line-number="91">              <span class="kw">&lt;/CssParameter&gt;</span></a>
+<a class="sourceLine" id="attributeFilterWscale_highways-92" data-line-number="92">              <span class="kw">&lt;CssParameter</span><span class="ot"> name=</span><span class="st">&quot;stroke-width&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="attributeFilterWscale_highways-93" data-line-number="93">                <span class="kw">&lt;ogc:Literal&gt;</span>3<span class="kw">&lt;/ogc:Literal&gt;</span></a>
+<a class="sourceLine" id="attributeFilterWscale_highways-94" data-line-number="94">              <span class="kw">&lt;/CssParameter&gt;</span></a>
+<a class="sourceLine" id="attributeFilterWscale_highways-95" data-line-number="95">            <span class="kw">&lt;/Stroke&gt;</span></a>
+<a class="sourceLine" id="attributeFilterWscale_highways-96" data-line-number="96">          <span class="kw">&lt;/LineSymbolizer&gt;</span></a>
+<a class="sourceLine" id="attributeFilterWscale_highways-97" data-line-number="97">        <span class="kw">&lt;/Rule&gt;</span></a>
+<a class="sourceLine" id="attributeFilterWscale_highways-98" data-line-number="98">    <span class="kw">&lt;/FeatureTypeStyle&gt;</span></a>
+<a class="sourceLine" id="attributeFilterWscale_highways-99" data-line-number="99">  <span class="kw">&lt;/UserStyle&gt;</span></a>
+<a class="sourceLine" id="attributeFilterWscale_highways-100" data-line-number="100"><span class="kw">&lt;/NamedLayer&gt;</span></a>
+<a class="sourceLine" id="attributeFilterWscale_highways-101" data-line-number="101"></a>
+<a class="sourceLine" id="attributeFilterWscale_highways-102" data-line-number="102"><span class="kw">&lt;/StyledLayerDescriptor&gt;</span></a></code></pre></div>
 </section><section id="demonstrations" class="slide level3">
-<h1>Demonstrations</h1>
+<h3>Demonstrations</h3>
 <p>Class GeoServer Instance: <a href="http://mapper.internetmapping.net:8081/geoserver/web/" class="uri">http://mapper.internetmapping.net:8081/geoserver/web/</a></p>
 <p>SLD Creation Using QGIS: Link to the <a href="http://docs.qgis.org/2.8/en/docs/user_manual/working_with_vector/vector_properties.html#style-menu">QGIS Vector Properties Dialog</a> Documentation.</p>
 </section>
 <hr />
 <section>
 <div class="license">
-<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />This work by <span xmlns:cc="http://creativecommons.org/ns#" property="cc:attributionName">Karl Benedict</span> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />This work by <span data-xmlns:cc="http://creativecommons.org/ns#" data-property="cc:attributionName">Karl Benedict</span> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
 </div>
 </section>
 <!-- {{{{ dzslides core

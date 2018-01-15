@@ -4,7 +4,12 @@
   <meta name="generator" content="pandoc">
   <meta name="author" content="Karl Benedict">
   <title>Week 13 - Module 5 - Platforms and GeoServer Introduction</title>
-  <style type="text/css">code{white-space: pre;}</style>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
   <link rel="stylesheet" href="slides.css">
   <link rel="stylesheet" href="slide_specific.css">
 </head>
@@ -12,7 +17,7 @@
 <section class="title">
   <h1 class="title">Week 13 - Module 5 - Platforms and GeoServer Introduction</h1>
   <footer>
-    <span class="author">Karl Benedict</span> · <span class="date">GEOG 485L/585L - Spring 2017</span>
+    <span class="author">Karl Benedict</span> · <span class="date">GEOG 485L/585L - Spring 2018</span>
   </footer>
 </section>
 <section class="slide level3">
@@ -23,9 +28,7 @@
 <!-- Developing and Hosting OGC Services-------------------------------------->
 <!-- Platforms and GeoServer Introduction------------------------------------->
 <!---------------------------------------------------------------------------->
-</section>
-<section id="overview" class="slide level3 module05a01a">
-<h1>Overview</h1>
+<p>###Overview ###{.module05a01a}</p>
 <ul>
 <li>SOA Review</li>
 <li>Server Platform</li>
@@ -36,7 +39,7 @@
 </ul>
 </section>
 <section id="soa-review" class="slide level3 module05a01a oneup">
-<h1>SOA Review</h1>
+<h3>SOA Review</h3>
 <figure>
 <img src="./images/SOAillustration.png" alt="SOA Illustration" /><figcaption>SOA Illustration</figcaption>
 </figure>
@@ -62,16 +65,16 @@
 </ul>
 </section>
 <section id="server-platform" class="slide level3 module05a01a">
-<h1>Server Platform</h1>
+<h3>Server Platform</h3>
 <p>In the context of server platforms for online mapping with OGC services, there are several components that are of interest</p>
 <ul>
-<li>The operating system - the software environment in which all applications on a computer operate (e.g. Windows, Mac OS X, Linux)</li>
-<li>The web server - the application that listens for incoming requests from the Internet (e.g. Apache, IIS)</li>
-<li>The mapping server - the application (that may also include the web server) that enables online mapping applications, that may include support for one or more OGC service interfaces (e.g. GeoServer, MapServer, CubeWerx, ArcGIS Server)</li>
+<li>The operating system - the software environment in which all applications on a computer operate (e.g. Windows, Mac OS X, Linux)</li>
+<li>The web server - the application that listens for incoming requests from the Internet (e.g. Apache, IIS)</li>
+<li>The mapping server - the application (that may also include the web server) that enables online mapping applications, that may include support for one or more OGC service interfaces (e.g. GeoServer, MapServer, CubeWerx, ArcGIS Server)</li>
 </ul>
 </section>
 <section id="online-mapping-server-applications" class="slide level3 module05a01a">
-<h1>Online Mapping Server Applications</h1>
+<h3>Online Mapping Server Applications</h3>
 <p>Sample Commercial Off-the-Shelf (COTS)</p>
 <ul>
 <li>ArcGIS Enterprise (<a href="http://www.esri.com/en/arcgis/products/arcgis-enterprise/overview">info</a>)</li>
@@ -86,7 +89,7 @@
 </ul>
 </section>
 <section id="what-is-geoserver" class="slide level3 module05a01a">
-<h1>What is GeoServer</h1>
+<h3>What is GeoServer</h3>
 <p>GeoServer is an Open Source, Open Standards supporting geospatial web services platform</p>
 <ul>
 <li>GNU General Public License</li>
@@ -96,7 +99,7 @@
 </ul>
 </section>
 <section id="working-with-geoserver" class="slide level3 module05a01a">
-<h1>Working with GeoServer</h1>
+<h3>Working with GeoServer</h3>
 <p>OS-Independent Binaries are Available for Multiple Platforms (these are just ‘run’ to start the server)</p>
 <ul>
 <li>Includes the Jetty HTTP server</li>
@@ -112,13 +115,13 @@
 <p>[Installation Information] (http://docs.geoserver.org/stable/en/user/installation/)</p>
 </section>
 <section id="what-is-happening-behind-the-scenes" class="slide level3 module05a01a oneup">
-<h1>What is Happening Behind the Scenes</h1>
+<h3>What is Happening Behind the Scenes</h3>
 <figure>
 <img src="images/GeoServerInteraction.png" alt="Interaction Between GeoServer Components" /><figcaption>Interaction Between GeoServer Components</figcaption>
 </figure>
 </section>
 <section id="setup-and-configuration" class="slide level3 module05a01a">
-<h1>Setup and Configuration</h1>
+<h3>Setup and Configuration</h3>
 <ul>
 <li>After the initial setup as part of the installation process, other setup and configuration is performed through the web interface</li>
 <li>All configuration activities require that you are logged in as an administrator</li>
@@ -127,7 +130,7 @@
 </ul>
 </section>
 <section id="server-configuration-options" class="slide level3 module05a01a oneup">
-<h1>Server Configuration Options</h1>
+<h3>Server Configuration Options</h3>
 <figure>
 <img src="images/GeoServer_ServerConfig.jpg" alt="Geoserver Configuration Menu" /><figcaption>Geoserver Configuration Menu</figcaption>
 </figure>
@@ -141,7 +144,7 @@
 </ul>
 </section>
 <section id="wxs-service-configuration-options" class="slide level3 module05a01a oneup">
-<h1>WxS Service Configuration Options</h1>
+<h3>WxS Service Configuration Options</h3>
 <figure>
 <img src="images/GeoServer_ServiceConfig.jpg" alt="Geoserver Service Configuration Menu" /><figcaption>Geoserver Service Configuration Menu</figcaption>
 </figure>
@@ -161,7 +164,7 @@
 </ul>
 </section>
 <section id="data-component-configuration-options" class="slide level3 module05a01a oneup">
-<h1>Data Component Configuration Options</h1>
+<h3>Data Component Configuration Options</h3>
 <figure>
 <img src="images/GeoServer_DataConfig.jpg" alt="GeoServer Data Configuration Menu" /><figcaption>GeoServer Data Configuration Menu</figcaption>
 </figure>
@@ -175,13 +178,13 @@
 </ul>
 </section>
 <section id="data-integration-process" class="slide level3 module05a01a oneup">
-<h1>Data Integration Process</h1>
+<h3>Data Integration Process</h3>
 <figure>
 <img src="images/GeoServer_DataWorkflow.png" alt="Data integration workflow" /><figcaption>Data integration workflow</figcaption>
 </figure>
 </section>
 <section id="security-settings" class="slide level3 module05a01a oneup">
-<h1>Security Settings</h1>
+<h3>Security Settings</h3>
 <figure>
 <img src="images/GeoServer_SecurityConfig.jpg" alt="GeoServer Security Configuration Menu" /><figcaption>GeoServer Security Configuration Menu</figcaption>
 </figure>
@@ -190,12 +193,12 @@
 <li><em>Authentication</em> - Configuration settings for authentication providers for users</li>
 <li><em>Passwords</em> - Settings related to underlying password providers and policies</li>
 <li><em>Users, Groups, Roles</em> - Management of system users, groups and defined roles</li>
-<li><em>Data</em> - Settings for read/write access to data products within the server, settings for the system's <em>catalog mode</em></li>
-<li><em>Service</em> - Settings for managing service-level (i.e. WMS, WFS, WCS and related request types) access privileges by user role.</li>
+<li><em>Data</em> - Settings for read/write access to data products within the server, settings for the system’s <em>catalog mode</em></li>
+<li><em>Service</em> - Settings for managing service-level (i.e. WMS, WFS, WCS and related request types) access privileges by user role.</li>
 </ul>
 </section>
 <section id="demonstration-of-geoserver-interface" class="slide level3 module05a01a oneup">
-<h1>Demonstration of GeoServer Interface</h1>
+<h3>Demonstration of GeoServer Interface</h3>
 <p><a href="http://mapper.internetmapping.net:8081/geoserver/web/">Class GeoServer Instance</a></p>
 <figure>
 <img src="images/GeoServer_Home.jpg" alt="GeoServer Home Page" /><figcaption>GeoServer Home Page</figcaption>
@@ -204,7 +207,7 @@
 <hr />
 <section>
 <div class="license">
-<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />This work by <span xmlns:cc="http://creativecommons.org/ns#" property="cc:attributionName">Karl Benedict</span> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />This work by <span data-xmlns:cc="http://creativecommons.org/ns#" data-property="cc:attributionName">Karl Benedict</span> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
 </div>
 </section>
 <!-- {{{{ dzslides core

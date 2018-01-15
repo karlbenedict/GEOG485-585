@@ -4,43 +4,76 @@
   <meta name="generator" content="pandoc">
   <meta name="author" content="Karl Benedict">
   <title>Week 10 - Module 2b - OpenLayers 4 Javascript Framework</title>
-  <style type="text/css">code{white-space: pre;}</style>
   <style type="text/css">
-div.sourceCode { overflow-x: auto; }
-table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
-  margin: 0; padding: 0; vertical-align: baseline; border: none; }
-table.sourceCode { width: 100%; line-height: 100%; }
-td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
-td.sourceCode { padding-left: 5px; }
-code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code > span.dt { color: #902000; } /* DataType */
-code > span.dv { color: #40a070; } /* DecVal */
-code > span.bn { color: #40a070; } /* BaseN */
-code > span.fl { color: #40a070; } /* Float */
-code > span.ch { color: #4070a0; } /* Char */
-code > span.st { color: #4070a0; } /* String */
-code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code > span.ot { color: #007020; } /* Other */
-code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code > span.fu { color: #06287e; } /* Function */
-code > span.er { color: #ff0000; font-weight: bold; } /* Error */
-code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-code > span.cn { color: #880000; } /* Constant */
-code > span.sc { color: #4070a0; } /* SpecialChar */
-code > span.vs { color: #4070a0; } /* VerbatimString */
-code > span.ss { color: #bb6688; } /* SpecialString */
-code > span.im { } /* Import */
-code > span.va { color: #19177c; } /* Variable */
-code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code > span.op { color: #666666; } /* Operator */
-code > span.bu { } /* BuiltIn */
-code > span.ex { } /* Extension */
-code > span.pp { color: #bc7a00; } /* Preprocessor */
-code > span.at { color: #7d9029; } /* Attribute */
-code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; position: absolute; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; }
+pre.numberSource a.sourceLine:empty
+  { position: absolute; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: absolute; left: -5em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="slides.css">
   <link rel="stylesheet" href="slide_specific.css">
@@ -49,7 +82,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <section class="title">
   <h1 class="title">Week 10 - Module 2b - OpenLayers 4 Javascript Framework</h1>
   <footer>
-    <span class="author">Karl Benedict</span> · <span class="date">GEOG 485L/585L - Spring 2017</span>
+    <span class="author">Karl Benedict</span> · <span class="date">GEOG 485L/585L - Spring 2018</span>
   </footer>
 </section>
 <section class="slide level3">
@@ -62,14 +95,14 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <!---------------------------------------------------------------------------->
 </section>
 <section id="overview" class="slide level3 module02b01a">
-<h1>Overview</h1>
+<h3>Overview</h3>
 <ul>
 <li><p>Capabilities</p></li>
 <li><p>OpenLayers = Javascript (by example)</p></li>
 </ul>
 </section>
 <section id="openlayers-capabilities" class="slide level3 module02b01a">
-<h1>OpenLayers Capabilities</h1>
+<h3>OpenLayers Capabilities</h3>
 <ul>
 <li>Support for Multiple basemaps: <em>BingMaps</em>, <em>OpenStreetMap</em>, <em>Stamen</em></li>
 <li>Model for interaction with multiple map server platforms: <em>ArcGIS</em> (REST), <em>MapServer</em>, <em>GeoServer</em></li>
@@ -81,169 +114,106 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </ul>
 </section>
 <section id="distinguishing-characteristics-between-openlayers-and-google-maps" class="slide level3 module02b01a">
-<h1>Distinguishing Characteristics Between OpenLayers and Google Maps</h1>
+<h3>Distinguishing Characteristics Between OpenLayers and Google Maps</h3>
 <ul>
-<li>Greater emphasis on client-side processing - Client access and rendering of data files that Google's servers otherwise take care of (pros &amp; cons to this approach)</li>
+<li>Greater emphasis on client-side processing - Client access and rendering of data files that Google’s servers otherwise take care of (pros &amp; cons to this approach)</li>
 <li>Integrated support for OGC services and their products</li>
 <li>Support for different projections (adds complexity)</li>
 <li>API more rich in options ==&gt; more complexity</li>
 </ul>
 </section>
 <section id="resources" class="slide level3 module02b01a">
-<h1>Resources</h1>
+<h3>Resources</h3>
 <p><a href="http://openlayers.org/">OpenLayers Home Page</a></p>
 <p><a href="http://openlayers.org/en/latest/apidoc/">Application Programming Interface (API) Reference</a></p>
 <p><a href="http://openlayers.org/en/latest/examples/">Examples</a></p>
 </section>
 <section id="demonstrations-and-examples" class="slide level3 module02b01a">
-<h1>Demonstrations and Examples</h1>
+<h3>Demonstrations and Examples</h3>
 <ul>
 <li><a href="http://karlbenedict.com/GEOG485-585/sample-files/OpenLayers/OpenLayers_01.html">Basic Mapper</a> (with Open Street Map base map (<a href="https://github.com/karlbenedict/GEOG485-585/blob/master/sample-files/OpenLayers/OpenLayers_01.html">source</a>))</li>
 </ul>
 <div class="codeTable">
 <p>OpenLayers_01.html</p>
-<div class="sourceCode" id="OpenLayers_01_demo"><table class="sourceCode html numberLines"><tr class="sourceCode"><td class="lineNumbers"><pre>1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-</pre></td><td class="sourceCode"><pre><code class="sourceCode html"><span class="kw">&lt;html&gt;</span>
-
-<span class="kw">&lt;head&gt;</span>
-    <span class="kw">&lt;link</span><span class="ot"> rel=</span><span class="st">&quot;stylesheet&quot;</span><span class="ot"> href=</span><span class="st">&quot;css/OpenLayers_01.css&quot;</span><span class="ot"> type=</span><span class="st">&quot;text/css&quot;</span><span class="kw">&gt;</span>
-    <span class="kw">&lt;link</span><span class="ot"> rel=</span><span class="st">&quot;stylesheet&quot;</span><span class="ot"> href=</span><span class="st">&quot;https://cdnjs.cloudflare.com/ajax/libs/</span>
-<span class="st">        openlayers/4.0.1/ol.css&quot;</span><span class="ot"> type=</span><span class="st">&quot;text/css&quot;</span><span class="kw">&gt;</span>
-    <span class="kw">&lt;script</span><span class="ot"> src=</span><span class="st">&quot;https://cdnjs.cloudflare.com/ajax/libs/openlayers/4.0.1/ol.js&quot;</span> 
-<span class="ot">        type=</span><span class="st">&quot;text/javascript&quot;</span><span class="kw">&gt;&lt;/script&gt;</span>
-<span class="kw">&lt;/head&gt;</span>
-
-<span class="kw">&lt;body&gt;</span>
-    <span class="kw">&lt;h1&gt;</span>This is a very simple OpenLayers 4 sample map page<span class="kw">&lt;/h1&gt;</span>
-
-    <span class="kw">&lt;div</span><span class="ot"> id=</span><span class="st">&#39;map&#39;</span><span class="kw">&gt;</span><span class="co">&lt;!-- This is where the map will be displayed --&gt;</span><span class="kw">&lt;/div&gt;</span>
-
-    <span class="co">&lt;!-- import the external Javascript file with the map configuration code --&gt;</span>
-    <span class="kw">&lt;script</span><span class="ot"> src=</span><span class="st">&quot;js/OpenLayers_01.js&quot;</span><span class="ot"> type=</span><span class="st">&quot;text/javascript&quot;</span><span class="kw">&gt;&lt;/script&gt;</span>
-<span class="kw">&lt;/body&gt;</span>
-
-<span class="kw">&lt;/html&gt;</span></code></pre></td></tr></table></div>
+<div class="sourceCode" id="OpenLayers_01_demo"><pre class="sourceCode numberSource html numberLines"><code class="sourceCode html"><a class="sourceLine" id="OpenLayers_01_demo-1" data-line-number="1"><span class="kw">&lt;html&gt;</span></a>
+<a class="sourceLine" id="OpenLayers_01_demo-2" data-line-number="2"></a>
+<a class="sourceLine" id="OpenLayers_01_demo-3" data-line-number="3"><span class="kw">&lt;head&gt;</span></a>
+<a class="sourceLine" id="OpenLayers_01_demo-4" data-line-number="4">    <span class="kw">&lt;link</span><span class="ot"> rel=</span><span class="st">&quot;stylesheet&quot;</span><span class="ot"> href=</span><span class="st">&quot;css/OpenLayers_01.css&quot;</span><span class="ot"> type=</span><span class="st">&quot;text/css&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="OpenLayers_01_demo-5" data-line-number="5">    <span class="kw">&lt;link</span><span class="ot"> rel=</span><span class="st">&quot;stylesheet&quot;</span><span class="ot"> href=</span><span class="st">&quot;https://cdnjs.cloudflare.com/ajax/libs/</span></a>
+<a class="sourceLine" id="OpenLayers_01_demo-6" data-line-number="6"><span class="st">        openlayers/4.0.1/ol.css&quot;</span><span class="ot"> type=</span><span class="st">&quot;text/css&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="OpenLayers_01_demo-7" data-line-number="7">    <span class="kw">&lt;script</span><span class="ot"> src=</span><span class="st">&quot;https://cdnjs.cloudflare.com/ajax/libs/openlayers/4.0.1/ol.js&quot;</span> </a>
+<a class="sourceLine" id="OpenLayers_01_demo-8" data-line-number="8"><span class="ot">        type=</span><span class="st">&quot;text/javascript&quot;</span><span class="kw">&gt;&lt;/script&gt;</span></a>
+<a class="sourceLine" id="OpenLayers_01_demo-9" data-line-number="9"><span class="kw">&lt;/head&gt;</span></a>
+<a class="sourceLine" id="OpenLayers_01_demo-10" data-line-number="10"></a>
+<a class="sourceLine" id="OpenLayers_01_demo-11" data-line-number="11"><span class="kw">&lt;body&gt;</span></a>
+<a class="sourceLine" id="OpenLayers_01_demo-12" data-line-number="12">    <span class="kw">&lt;h1&gt;</span>This is a very simple OpenLayers 4 sample map page<span class="kw">&lt;/h1&gt;</span></a>
+<a class="sourceLine" id="OpenLayers_01_demo-13" data-line-number="13"></a>
+<a class="sourceLine" id="OpenLayers_01_demo-14" data-line-number="14">    <span class="kw">&lt;div</span><span class="ot"> id=</span><span class="st">&#39;map&#39;</span><span class="kw">&gt;</span><span class="co">&lt;!-- This is where the map will be displayed --&gt;</span><span class="kw">&lt;/div&gt;</span></a>
+<a class="sourceLine" id="OpenLayers_01_demo-15" data-line-number="15"></a>
+<a class="sourceLine" id="OpenLayers_01_demo-16" data-line-number="16">    <span class="co">&lt;!-- import the external Javascript file with the map configuration code --&gt;</span></a>
+<a class="sourceLine" id="OpenLayers_01_demo-17" data-line-number="17">    <span class="kw">&lt;script</span><span class="ot"> src=</span><span class="st">&quot;js/OpenLayers_01.js&quot;</span><span class="ot"> type=</span><span class="st">&quot;text/javascript&quot;</span><span class="kw">&gt;&lt;/script&gt;</span></a>
+<a class="sourceLine" id="OpenLayers_01_demo-18" data-line-number="18"><span class="kw">&lt;/body&gt;</span></a>
+<a class="sourceLine" id="OpenLayers_01_demo-19" data-line-number="19"></a>
+<a class="sourceLine" id="OpenLayers_01_demo-20" data-line-number="20"><span class="kw">&lt;/html&gt;</span></a></code></pre></div>
 <p>OpenLayers_01.js</p>
-<div class="sourceCode"><table class="sourceCode html numberLines"><tr class="sourceCode"><td class="lineNumbers"><pre>1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-</pre></td><td class="sourceCode"><pre><code class="sourceCode html">// OpenLayers_01.js
-
-var myMap = new ol.Map({
-    target: &#39;map&#39;,
-    layers: [
-        new ol.layer.Tile({
-            source: new ol.source.OSM()
-        })
-    ],
-    view: new ol.View({
-        center: ol.proj.fromLonLat([-106.624083,35.08427]),
-        zoom: 18
-        })
-    });</code></pre></td></tr></table></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource html numberLines"><code class="sourceCode html"><a class="sourceLine" id="cb1-1" data-line-number="1">// OpenLayers_01.js</a>
+<a class="sourceLine" id="cb1-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb1-3" data-line-number="3">var myMap = new ol.Map({</a>
+<a class="sourceLine" id="cb1-4" data-line-number="4">    target: &#39;map&#39;,</a>
+<a class="sourceLine" id="cb1-5" data-line-number="5">    layers: [</a>
+<a class="sourceLine" id="cb1-6" data-line-number="6">        new ol.layer.Tile({</a>
+<a class="sourceLine" id="cb1-7" data-line-number="7">            source: new ol.source.OSM()</a>
+<a class="sourceLine" id="cb1-8" data-line-number="8">        })</a>
+<a class="sourceLine" id="cb1-9" data-line-number="9">    ],</a>
+<a class="sourceLine" id="cb1-10" data-line-number="10">    view: new ol.View({</a>
+<a class="sourceLine" id="cb1-11" data-line-number="11">        center: ol.proj.fromLonLat([-106.624083,35.08427]),</a>
+<a class="sourceLine" id="cb1-12" data-line-number="12">        zoom: 18</a>
+<a class="sourceLine" id="cb1-13" data-line-number="13">        })</a>
+<a class="sourceLine" id="cb1-14" data-line-number="14">    });</a></code></pre></div>
 <p>OpenLayers_01.css</p>
-<div class="sourceCode"><table class="sourceCode html numberLines"><tr class="sourceCode"><td class="lineNumbers"><pre>1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28
-29
-</pre></td><td class="sourceCode"><pre><code class="sourceCode html">/* OpenLayers_01.css */
-
-body {
-    width:100%;
-    height:100%
-}
-
-#map,.map {
-    width:600px;
-    height:400px;
-}
-
-#map_selector li {
-    cursor:pointer;
-    width:350px;
-}
-
-#map_selector li:hover {
-    background-color: yellow;
-}
-
-
-
-#map div.ol-viewport 
-    div.ol-overlaycontainer-stopevent 
-    div.ol-overviewmap.ol-unselectable.ol-control.ol-uncollapsible {
-        top: 200px;
-        bottom: 300px;
-}</code></pre></td></tr></table></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource html numberLines"><code class="sourceCode html"><a class="sourceLine" id="cb2-1" data-line-number="1">/* OpenLayers_01.css */</a>
+<a class="sourceLine" id="cb2-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb2-3" data-line-number="3">body {</a>
+<a class="sourceLine" id="cb2-4" data-line-number="4">    width:100%;</a>
+<a class="sourceLine" id="cb2-5" data-line-number="5">    height:100%</a>
+<a class="sourceLine" id="cb2-6" data-line-number="6">}</a>
+<a class="sourceLine" id="cb2-7" data-line-number="7"></a>
+<a class="sourceLine" id="cb2-8" data-line-number="8">#map,.map {</a>
+<a class="sourceLine" id="cb2-9" data-line-number="9">    width:600px;</a>
+<a class="sourceLine" id="cb2-10" data-line-number="10">    height:400px;</a>
+<a class="sourceLine" id="cb2-11" data-line-number="11">}</a>
+<a class="sourceLine" id="cb2-12" data-line-number="12"></a>
+<a class="sourceLine" id="cb2-13" data-line-number="13">#map_selector li {</a>
+<a class="sourceLine" id="cb2-14" data-line-number="14">    cursor:pointer;</a>
+<a class="sourceLine" id="cb2-15" data-line-number="15">    width:350px;</a>
+<a class="sourceLine" id="cb2-16" data-line-number="16">}</a>
+<a class="sourceLine" id="cb2-17" data-line-number="17"></a>
+<a class="sourceLine" id="cb2-18" data-line-number="18">#map_selector li:hover {</a>
+<a class="sourceLine" id="cb2-19" data-line-number="19">    background-color: yellow;</a>
+<a class="sourceLine" id="cb2-20" data-line-number="20">}</a>
+<a class="sourceLine" id="cb2-21" data-line-number="21"></a>
+<a class="sourceLine" id="cb2-22" data-line-number="22"></a>
+<a class="sourceLine" id="cb2-23" data-line-number="23"></a>
+<a class="sourceLine" id="cb2-24" data-line-number="24">#map div.ol-viewport </a>
+<a class="sourceLine" id="cb2-25" data-line-number="25">    div.ol-overlaycontainer-stopevent </a>
+<a class="sourceLine" id="cb2-26" data-line-number="26">    div.ol-overviewmap.ol-unselectable.ol-control.ol-uncollapsible {</a>
+<a class="sourceLine" id="cb2-27" data-line-number="27">        top: 200px;</a>
+<a class="sourceLine" id="cb2-28" data-line-number="28">        bottom: 300px;</a>
+<a class="sourceLine" id="cb2-29" data-line-number="29">}</a></code></pre></div>
 </div>
 </section>
 <section id="demonstration-and-examples---online-resources" class="slide level3 module02b01a">
-<h1>Demonstration and Examples - Online Resources</h1>
+<h3>Demonstration and Examples - Online Resources</h3>
 <ul>
 <li><a href="http://karlbenedict.com/GEOG485-585/sample-files/OpenLayers/OpenLayers_02_basemaps.html">Mapper</a> (<a href="https://github.com/karlbenedict/GEOG485-585/blob/master/sample-files/OpenLayers/OpenLayers_02_basemaps.html">source</a>) with a variety of base maps (Bing, Stamen, OSM) and basic layer selection</li>
 <li>Basic Mapper with Controls: <a href="http://karlbenedict.com/GEOG485-585/sample-files/OpenLayers/OpenLayers_01_noControls.html">No Controls</a> (<a href="https://github.com/karlbenedict/GEOG485-585/blob/master/sample-files/OpenLayers/OpenLayers_01_noControls.html">source</a>), <a href="http://karlbenedict.com/GEOG485-585/sample-files/OpenLayers/OpenLayers_01_controlArray.html">Customized Controls</a> (<a href="https://github.com/karlbenedict/GEOG485-585/blob/master/sample-files/OpenLayers/OpenLayers_01_controlArray.html">source</a>)</li>
 </ul>
 </section>
-<section id="next-week---custom-features-and-wms-layers" class="titleslide slide level2 module02b01a"><h1>Next Week - Custom Features and WMS Layers</h1></section>
+<section id="next-week---custom-features-and-wms-layers" class="title-slide slide level2 module02b01a"><h2>Next Week - Custom Features and WMS Layers</h2></section>
 <hr />
 <section>
 <div class="license">
-<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />This work by <span xmlns:cc="http://creativecommons.org/ns#" property="cc:attributionName">Karl Benedict</span> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />This work by <span data-xmlns:cc="http://creativecommons.org/ns#" data-property="cc:attributionName">Karl Benedict</span> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
 </div>
 </section>
 <!-- {{{{ dzslides core

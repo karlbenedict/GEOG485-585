@@ -4,7 +4,12 @@
   <meta name="generator" content="pandoc">
   <meta name="author" content="Karl Benedict">
   <title>Week 12 - Module 4b - Interoperability Standards - Desktop GIS Integration</title>
-  <style type="text/css">code{white-space: pre;}</style>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
   <link rel="stylesheet" href="slides.css">
   <link rel="stylesheet" href="slide_specific.css">
 </head>
@@ -12,7 +17,7 @@
 <section class="title">
   <h1 class="title">Week 12 - Module 4b - Interoperability Standards - Desktop GIS Integration</h1>
   <footer>
-    <span class="author">Karl Benedict</span> · <span class="date">GEOG 485L/585L - Spring 2017</span>
+    <span class="author">Karl Benedict</span> · <span class="date">GEOG 485L/585L - Spring 2018</span>
   </footer>
 </section>
 <section class="slide level3">
@@ -25,7 +30,7 @@
 <!---------------------------------------------------------------------------->
 </section>
 <section id="overview" class="slide level3 module04b01a">
-<h1>Overview</h1>
+<h3>Overview</h3>
 <ul>
 <li>Common Model for Client Configuration for Connections to Remote OGC Services</li>
 <li>Specific Client Examples</li>
@@ -44,7 +49,7 @@
 </ul>
 </section>
 <section id="common-model" class="slide level3 module04b01a">
-<h1>Common Model</h1>
+<h3>Common Model</h3>
 <p>Based upon the results of a GetCapabilities request against a remote service. GetCapabilities request information provided as either:</p>
 <ul>
 <li>The base URL to which the OGC service parameters would be added</li>
@@ -52,19 +57,19 @@
 </ul>
 </section>
 <section id="full-getcapabilities-request" class="slide level3 module04b01a">
-<h1>Full GetCapabilities Request</h1>
+<h3>Full GetCapabilities Request</h3>
 <p>NASA Earth Observations (NEO) Imagery WMS</p>
 <p><a href="http://neowms.sci.gsfc.nasa.gov/wms/wms?version=1.3.0&amp;service=WMS&amp;request=GetCapabilities"><code>http://neowms.sci.gsfc.nasa.gov/wms/wms?version=1.3.0&amp;service=WMS&amp;request=GetCapabilities</code></a></p>
 <p>USGS <a href="http://viewer.nationalmap.gov/services/">Service Endpoints</a> - <a href="http://services.nationalmap.gov/arcgis/services/USGSTopoLarge/MapServer/WMSServer?request=GetCapabilities&amp;service=WMS" class="uri">http://services.nationalmap.gov/arcgis/services/USGSTopoLarge/MapServer/WMSServer?request=GetCapabilities&amp;service=WMS</a></p>
 </section>
 <section id="base-url-for-getcapabilities" class="slide level3 module04b01a">
-<h1>Base URL for GetCapabilities</h1>
+<h3>Base URL for GetCapabilities</h3>
 <p>NASA Earth Observations (NEO) Imagery WMS</p>
 <p><a href="http://neowms.sci.gsfc.nasa.gov/wms/wms?"><code>http://neowms.sci.gsfc.nasa.gov/wms/wms?</code></a></p>
 <p>USGS <a href="http://viewer.nationalmap.gov/services/">Service Endpoints</a> - <a href="http://services.nationalmap.gov/arcgis/services/USGSTopoLarge/MapServer/WMSServer?"><code>http://services.nationalmap.gov/arcgis/services/USGSTopoLarge/MapServer/WMSServer?</code></a></p>
 </section>
 <section id="quantum-gis-qgis" class="slide level3 module04b01a">
-<h1>Quantum GIS (QGIS)</h1>
+<h3>Quantum GIS (QGIS)</h3>
 <p>QGIS uses the Base URL approach for adding WMS, WFS or WCS layers to a project.</p>
 <p>The General Process:</p>
 <ol type="1">
@@ -77,7 +82,7 @@
 <p><a href="http://docs.qgis.org/2.14/en/docs/user_manual/working_with_ogc/index.html">QGIS OGC Documentation</a></p>
 </section>
 <section id="qgis---adding-services-and-layers---start" class="slide level3 module04b01a twoUp">
-<h1>QGIS - Adding Services and Layers - start</h1>
+<h3>QGIS - Adding Services and Layers - start</h3>
 <figure>
 <img src="images/QGIS-AddLayer-OGC.png" alt="OGC Options in the Add Layer menu options" /><figcaption>OGC Options in the <em>Add Layer</em> menu options</figcaption>
 </figure>
@@ -90,43 +95,43 @@
 <p><code>http://services.nationalmap.gov/arcgis/services/USGSTopoLarge/MapServer/WMSServer</code></p>
 <p>in this case</p>
 <p>If in doubt, check the information in the metadata</p>
-<p>Select the layer type you would like to from &quot;Layer&quot; menu, or click the button in the interface to add a specific layer type.</p>
+<p>Select the layer type you would like to from “Layer” menu, or click the button in the interface to add a specific layer type.</p>
 </section>
 <section id="qgis---adding-services-and-layers---adding-a-service" class="slide level3 module04b01a">
-<h1>QGIS - Adding Services and Layers - adding a service</h1>
-<p>Add a service to the list of services in the menu (if necessary - QGIS retains information about previously added services) by selecting the &quot;New&quot; option under the service list in the &quot;Add Layer(s) from a Server&quot; dialog</p>
+<h3>QGIS - Adding Services and Layers - adding a service</h3>
+<p>Add a service to the list of services in the menu (if necessary - QGIS retains information about previously added services) by selecting the “New” option under the service list in the “Add Layer(s) from a Server” dialog</p>
 <figure>
-<img src="images/QGIS-AddLayer_s_fromAWM_T_SServer.png" alt="&quot;Add Layer(s) from a Server&quot; dialog" /><figcaption>&quot;Add Layer(s) from a Server&quot; dialog</figcaption>
+<img src="images/QGIS-AddLayer_s_fromAWM_T_SServer.png" alt="“Add Layer(s) from a Server” dialog" /><figcaption>“Add Layer(s) from a Server” dialog</figcaption>
 </figure>
 </section>
 <section id="qgis---adding-services-and-layers---adding-connection-information" class="slide level3 module04b01a">
-<h1>QGIS - Adding Services and Layers - adding connection information</h1>
+<h3>QGIS - Adding Services and Layers - adding connection information</h3>
 <p>Add the name, base URL and any additional information about the service to the connection dialog box</p>
 <figure>
 <img src="images/QGIS-AddConnectionDialog.png" alt="Connection dialog box" /><figcaption>Connection dialog box</figcaption>
 </figure>
 </section>
 <section id="qgis---adding-services-and-layers---connecting-to-and-adding-layers-from-the-service" class="slide level3 module04b01a">
-<h1>QGIS - Adding Services and Layers - connecting to and adding layers from the service</h1>
-<p>After adding the service, you can select it from the service list in the &quot;Add Layer(s) from a Server&quot; dialog box, connect to the service to retrieve the GetCapabilities response from the service, select the layers and other options advertised by the service through its response, and add them to your map.</p>
+<h3>QGIS - Adding Services and Layers - connecting to and adding layers from the service</h3>
+<p>After adding the service, you can select it from the service list in the “Add Layer(s) from a Server” dialog box, connect to the service to retrieve the GetCapabilities response from the service, select the layers and other options advertised by the service through its response, and add them to your map.</p>
 <figure>
-<img src="images/QGIS-AddLayerFromSource.png" alt="&quot;Add Layer(s) from a Server&quot; dialog with service connection and layer selection process" /><figcaption>&quot;Add Layer(s) from a Server&quot; dialog with service connection and layer selection process</figcaption>
+<img src="images/QGIS-AddLayerFromSource.png" alt="“Add Layer(s) from a Server” dialog with service connection and layer selection process" /><figcaption>“Add Layer(s) from a Server” dialog with service connection and layer selection process</figcaption>
 </figure>
 </section>
 <section id="qgis---adding-services-and-layers---the-final-added-layer" class="slide level3 module04b01a">
-<h1>QGIS - Adding Services and Layers - the final added layer</h1>
+<h3>QGIS - Adding Services and Layers - the final added layer</h3>
 <p>After adding the layer, it appears as an available layer in the table of contents for your map.</p>
 <figure>
 <img src="images/QGIS-AddedOGCLayers.png" alt="QGIS map with added WMS layer in the TOC" /><figcaption>QGIS map with added WMS layer in the TOC</figcaption>
 </figure>
 </section>
 <section id="qgis-demonstration-with-wms-wfs-and-wcs-services" class="slide level3 module04b01a">
-<h1>QGIS Demonstration with WMS, WFS and WCS Services</h1>
+<h3>QGIS Demonstration with WMS, WFS and WCS Services</h3>
 <p>WMS, WFS and WCS in QGIS</p>
 <p><a href="https://github.com/karlbenedict/GEOG485-585/blob/master/sample-files/QGIS_OGC_demo.qgs">Example</a></p>
 </section>
 <section id="arcgis" class="slide level3 module04b01a">
-<h1>ArcGIS</h1>
+<h3>ArcGIS</h3>
 <p>Based upon the results of a GetCapabilities request against a remote service. GetCapabilities request information provided as either:</p>
 <ul>
 <li>The base URL to which the OGC service parameters would be added</li>
@@ -136,21 +141,21 @@
 <p><a href="http://desktop.arcgis.com/en/arcmap/10.4/map/web-maps-and-services/about-using-ogc-service-layers.htm">ArcGIS OGC Support Documentation</a></p>
 </section>
 <section id="arcgis-wms-and-wcs-configuration" class="slide level3 module04b01a">
-<h1>ArcGIS WMS and WCS Configuration</h1>
+<h3>ArcGIS WMS and WCS Configuration</h3>
 <p>The addition of OGC WMS and WCS layers to ArcMap is through the same process of</p>
 <ul>
-<li>Select the &quot;add data&quot; button</li>
-<li>WMS/WCS services are added through the &quot;GIS Servers&quot; option in the &quot;Add Data&quot; dialog</li>
-<li>If you have not previously added the service from which you want to add layers, you select &quot;Add WMS Server&quot; or &quot;Add WCS Server&quot; from the list of options in the &quot;Add Data&quot; dialog
+<li>Select the “add data” button</li>
+<li>WMS/WCS services are added through the “GIS Servers” option in the “Add Data” dialog</li>
+<li>If you have not previously added the service from which you want to add layers, you select “Add WMS Server” or “Add WCS Server” from the list of options in the “Add Data” dialog
 <ul>
-<li>You then provide the BASE GetCapabilities URL to the &quot;ADD WMS/WCS Server&quot; dialog that appears</li>
-<li>Click &quot;OK&quot;, and the new WMS/WCS service is added to the list of services that is available when you choose to add a WMS service.</li>
+<li>You then provide the BASE GetCapabilities URL to the “ADD WMS/WCS Server” dialog that appears</li>
+<li>Click “OK”, and the new WMS/WCS service is added to the list of services that is available when you choose to add a WMS service.</li>
 </ul></li>
-<li>You then select the layer(s) from the service that you want to add to your map and click the &quot;add&quot; button in the dialog.</li>
+<li>You then select the layer(s) from the service that you want to add to your map and click the “add” button in the dialog.</li>
 </ul>
 </section>
 <section id="arcgis-wms-and-wcs-configuration-resources" class="slide level3 module04b01a">
-<h1>ArcGIS WMS and WCS Configuration Resources</h1>
+<h3>ArcGIS WMS and WCS Configuration Resources</h3>
 <ul>
 <li>Adding WMS Services to ArcMap 10.4</li>
 </ul>
@@ -161,16 +166,16 @@
 <p><a href="http://desktop.arcgis.com/en/arcmap/10.4/map/web-maps-and-services/adding-a-wcs-service-to-arcmap.htm">ESRI Documentation</a></p>
 </section>
 <section id="arcgis-wfs-configuration" class="slide level3 module04b01a">
-<h1>ArcGIS WFS Configuration</h1>
+<h3>ArcGIS WFS Configuration</h3>
 <ul>
-<li>WFS support in ArcGIS 10.0 and beyond requires that the &quot;Data Interoperability Extension&quot; be installed (though it doesn’t have to be enabled)</li>
-<li>Connections to WFS services are defined through ArcCatalog's &quot;Interoperabilty Connections&quot; &quot;Add Interoperability Connection&quot; option</li>
+<li>WFS support in ArcGIS 10.0 and beyond requires that the “Data Interoperability Extension” be installed (though it doesn’t have to be enabled)</li>
+<li>Connections to WFS services are defined through ArcCatalog’s “Interoperabilty Connections” “Add Interoperability Connection” option</li>
 <li>After defining the connection in ArcCatalog (including the specification of the interoperabilty connection type, desired feature types, and maximum number of features to return), its feature types are available through that Interoperability Connection that may be added to ArcMap and other ArcGIS components</li>
-<li>Once the connection is created, WFS data may be added through the &quot;Add Data&quot; dialog in ArcMap</li>
+<li>Once the connection is created, WFS data may be added through the “Add Data” dialog in ArcMap</li>
 </ul>
 </section>
 <section id="arcgis-wfs-configuration-resources" class="slide level3 module04b01a">
-<h1>ArcGIS WFS Configuration Resources</h1>
+<h3>ArcGIS WFS Configuration Resources</h3>
 <ul>
 <li>Steps for connecting to an OGC WFS from within ArcCatalog 10.4</li>
 </ul>
@@ -181,7 +186,7 @@
 <p><a href="http://desktop.arcgis.com/en/arcmap/10.4/map/web-maps-and-services/adding-a-wfs-service-to-arcmap.htm">ESRI Documentation</a></p>
 </section>
 <section id="conclusions" class="slide level3 module04b01a">
-<h1>Conclusions</h1>
+<h3>Conclusions</h3>
 <ul>
 <li>A GetCapabilities request is the key for configuring most OGC client applications to access remote services</li>
 <li>The specific way in which the GetCapabilities request is given to the client varies from client to client</li>
@@ -191,7 +196,7 @@
 <hr />
 <section>
 <div class="license">
-<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />This work by <span xmlns:cc="http://creativecommons.org/ns#" property="cc:attributionName">Karl Benedict</span> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />This work by <span data-xmlns:cc="http://creativecommons.org/ns#" data-property="cc:attributionName">Karl Benedict</span> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
 </div>
 </section>
 <!-- {{{{ dzslides core

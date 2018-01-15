@@ -4,7 +4,12 @@
   <meta name="generator" content="pandoc">
   <meta name="author" content="Karl Benedict">
   <title>Week 5 - Module 3 - GIS and Services Oriented Architectures</title>
-  <style type="text/css">code{white-space: pre;}</style>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
   <link rel="stylesheet" href="slides.css">
   <link rel="stylesheet" href="slide_specific.css">
 </head>
@@ -12,7 +17,7 @@
 <section class="title">
   <h1 class="title">Week 5 - Module 3 - GIS and Services Oriented Architectures</h1>
   <footer>
-    <span class="author">Karl Benedict</span> · <span class="date">GEOG 485L/585L - Spring 2017</span>
+    <span class="author">Karl Benedict</span> · <span class="date">GEOG 485L/585L - Spring 2018</span>
   </footer>
 </section>
 <section class="slide level3">
@@ -25,7 +30,7 @@
 <!---------------------------------------------------------------------------->
 </section>
 <section id="overview" class="slide level3 module03a01a">
-<h1>Overview</h1>
+<h3>Overview</h3>
 <ul>
 <li>Geographic Information Systems
 <ul>
@@ -41,8 +46,8 @@
 </ul></li>
 </ul>
 </section>
-<section id="geographic-information-systems" class="titleslide slide level2 module03a01a"><h1>Geographic Information Systems</h1></section><section id="data-types---vector" class="slide level3 module03a01a">
-<h1>Data Types - Vector</h1>
+<section id="geographic-information-systems" class="title-slide slide level2 module03a01a"><h2>Geographic Information Systems</h2></section><section id="data-types---vector" class="slide level3 module03a01a">
+<h3>Data Types - Vector</h3>
 <ul>
 <li>Vector data represent phenomena that are associated with specific bounded locations, typically represented by:
 <ul>
@@ -58,21 +63,21 @@
 </ul>
 <p>For example, a census vector data product might include the geometries that define census tracts and attributes associated with each geometry: population, income, etc.</p>
 </section><section id="data-types---raster" class="slide level3 module03a01a">
-<h1>Data Types - Raster</h1>
+<h3>Data Types - Raster</h3>
 <ul>
-<li><p>Raster data are frequently used to represent values for phenomena that vary continuously across space (e.g. elevation, concentration of air pollutants, depth to ground water, etc. )</p></li>
-<li><p>These values are encoded over a regular grid of observation locations with a specified grid spacing - often referred to as the spatial resolution of the dataset (i.e. 10m resolution for a standard USGS Digital Elevation Model product)</p></li>
-<li><p>Often parts of data collections that are repeated (i.e. remote sensing data products)</p></li>
+<li><p>Raster data are frequently used to represent values for phenomena that vary continuously across space (e.g. elevation, concentration of air pollutants, depth to ground water, etc. )</p></li>
+<li><p>These values are encoded over a regular grid of observation locations with a specified grid spacing - often referred to as the spatial resolution of the dataset (i.e. 10m resolution for a standard USGS Digital Elevation Model product)</p></li>
+<li><p>Often parts of data collections that are repeated (i.e. remote sensing data products)</p></li>
 </ul>
 </section><section id="accessing-and-processing-raster-and-vector-data" class="slide level3">
-<h1>Accessing and Processing Raster and Vector Data</h1>
+<h3>Accessing and Processing Raster and Vector Data</h3>
 <ul>
 <li>ArcGIS - ArcCatalog</li>
-<li>QGIS - Dataset properties available through the &quot;Metadata&quot; tab</li>
+<li>QGIS - Dataset properties available through the “Metadata” tab</li>
 <li>Through metadata files available from the provider web site or embedded in the downloaded file</li>
 </ul>
 </section><section id="accessing-and-processing-raster-and-vector-data---programmatically" class="slide level3 module03a01a">
-<h1>Accessing and Processing Raster and Vector Data - Programmatically</h1>
+<h3>Accessing and Processing Raster and Vector Data - Programmatically</h3>
 <ul>
 <li>Two geospatial libraries and their related utility programs provide information about and tools for modifying vector and raster data sets</li>
 </ul>
@@ -87,20 +92,20 @@
 <p>These libraries are the data access and processing foundation for a growing number of open source and commercial mapping systems</p>
 <p>Information and documentation: <a href="http://gdal.org/">GDAL Home Page</a> | <a href="http://www.gdal.org/ogr/">OGR Home Page</a></p>
 </section><section id="coordinate-systemsprojections" class="slide level3 module03a01a">
-<h1>Coordinate Systems/Projections</h1>
+<h3>Coordinate Systems/Projections</h3>
 <ul>
 <li>To convert locations from a 3-dimensional oblate spherical coordinate system (such as is commonly used to represent the surface of the earth) to a 2-dimensional representation in a map, a coordinate transformation must be performed.</li>
 <li>There are a limitless number of potential coordinate transformations possible, and a large number have been named and defined that meet specific cartographic or other requirements</li>
 </ul>
 </section><section id="epsg-codes" class="slide level3 module03a01a">
-<h1>EPSG Codes</h1>
+<h3>EPSG Codes</h3>
 <ul>
 <li><p>A catalog of numeric codes and associated coordinate transformation parameters is maintained by the International Association of Oil &amp; Gas Producers (OGP) - the successor scientific organization to the European Petroleum Survey Group (EPSG)</p></li>
 <li><p>These numeric codes are used by many desktop and online mapping systems to document and represent the coordinate systems of available data and services</p></li>
 <li><p>Links to an online version of the registry and downloadable databases of the registry are available from: <a href="http://www.epsg.org">http://www.epsg.org/Geodetic.html</a>.</p></li>
 </ul>
 </section><section id="projection-parameters" class="slide level3 module03a01a">
-<h1>Projection Parameters</h1>
+<h3>Projection Parameters</h3>
 <p>The parameters that define a map projection may be looked up in a number of online locations:</p>
 <dl>
 <dt>EPSG registry</dt>
@@ -114,8 +119,8 @@
 </dd>
 </dl>
 </section>
-<section id="services-oriented-architectures" class="titleslide slide level2 module03a01a"><h1>Services Oriented Architectures</h1></section><section id="where-have-we-come-from---eniac-1946" class="slide level3 module03a01a oneUp">
-<h1>Where have we come from - ENIAC (1946)</h1>
+<section id="services-oriented-architectures" class="title-slide slide level2 module03a01a"><h2>Services Oriented Architectures</h2></section><section id="where-have-we-come-from---eniac-1946" class="slide level3 module03a01a oneUp">
+<h3>Where have we come from - ENIAC (1946)</h3>
 <figure>
 <img src="./images/Eniac.jpg" alt="ENIAC Computer" class="oneUp" /><figcaption>ENIAC Computer</figcaption>
 </figure>
@@ -124,7 +129,7 @@
 <li>Programmable, but could not store programs</li>
 </ul>
 </section><section id="where-have-we-come-from---early-client-server-computing-1960s" class="slide level3 module03a01a threeUp">
-<h1>Where have we come from - Early Client-Server Computing (1960s)</h1>
+<h3>Where have we come from - Early Client-Server Computing (1960s)</h3>
 <figure>
 <img src="./images/IBM_704_mainframe.jpg" alt="IBM 704 Mainframe Computer" class="threeUp" /><figcaption>IBM 704 Mainframe Computer</figcaption>
 </figure>
@@ -139,7 +144,7 @@
 <li>Computing performed by server, client purely a display device</li>
 </ul>
 </section><section id="where-have-we-come-from---personal-computers-1970s" class="slide level3 module03a01a twoUp">
-<h1>Where have we come from - Personal Computers (1970s)</h1>
+<h3>Where have we come from - Personal Computers (1970s)</h3>
 <figure>
 <img src="./images/ibm_pc_5150.jpg" alt="IBM 5150 Personal Computer" class="twoUp" /><figcaption>IBM 5150 Personal Computer</figcaption>
 </figure>
@@ -151,12 +156,12 @@
 <li>In some environments can be interconnected to a central local server</li>
 </ul>
 </section><section id="now---network-computing" class="slide level3 module03a01a oneUp">
-<h1>Now - Network computing</h1>
+<h3>Now - Network computing</h3>
 <figure>
 <img src="./images/hosts.png" alt="World Internet Hosts 1/94-1/13. Image courtesy IWS - http://www.isc.org/services/survey/" class="oneUP" /><figcaption>World Internet Hosts 1/94-1/13. Image courtesy <a href="http://www.isc.org/services/survey/">IWS - http://www.isc.org/services/survey/</a></figcaption>
 </figure>
 </section><section id="network-computing-timeline" class="slide level3 module03a01a">
-<h1>Network Computing Timeline</h1>
+<h3>Network Computing Timeline</h3>
 <ul>
 <li>Predecessor to the Internet - ARPANET (1969). Interconnection between UCLA and SRI (Menlo Park)</li>
 <li>Adoption of TCP/IP as next generation protocol for ARPANET (1983)</li>
@@ -164,15 +169,15 @@
 <li>NSFNET opened to commercial connections (1988). Led to interconnection of multiple, previously separate networks into an “Internet”</li>
 <li>Growth of internet users has expanded rapidly over the past decade</li>
 </ul>
-</section><section id="in-a-phrase-..." class="slide level3 module03a01a">
-<h1>In a Phrase ...</h1>
+</section><section id="in-a-phrase" class="slide level3 module03a01a">
+<h3>In a Phrase …</h3>
 <p>The current networking computing model consists of <em>Components Interacting</em> with Each Other</p>
 </section><section id="so---we-need-to-answer-the-following-questions" class="slide level3 module03a01a">
-<h1>So - We Need to Answer the Following Questions</h1>
+<h3>So - We Need to Answer the Following Questions</h3>
 <p>What are components?</p>
 <p>What does it mean to interact?</p>
 </section><section id="the-big-picture---services-oriented-architectures" class="slide level3 module03a01a floatLeft">
-<h1>The Big Picture - Services Oriented Architectures</h1>
+<h3>The Big Picture - Services Oriented Architectures</h3>
 <figure>
 <img src="./images/SOAillustration.png" alt="SOA Illustration" /><figcaption>SOA Illustration</figcaption>
 </figure>
@@ -197,8 +202,8 @@
 </ul></li>
 </ul>
 </section>
-<section id="the-pieces---components" class="titleslide slide level2 module03a01a"><h1>The Pieces - Components</h1></section><section id="key-components---data" class="slide level3 module03a01a">
-<h1>Key Components - Data</h1>
+<section id="the-pieces---components" class="title-slide slide level2 module03a01a"><h2>The Pieces - Components</h2></section><section id="key-components---data" class="slide level3 module03a01a">
+<h3>Key Components - Data</h3>
 <p>Database systems</p>
 <ul>
 <li>Optimized for storing massive quantities of tabular data</li>
@@ -212,27 +217,27 @@
 </ul></li>
 </ul>
 </section><section id="key-components---data-1" class="slide level3 module03a01a">
-<h1>Key Components - Data</h1>
+<h3>Key Components - Data</h3>
 <p>File-based data</p>
 <ul>
 <li>Often stored on the file system</li>
-<li>Sometimes difficult represent data within a database structure (i.e. binary data)</li>
+<li>Sometimes difficult represent data within a database structure (i.e. binary data)</li>
 <li>May be in a wide variety of formats
 <ul>
 <li>XML</li>
-<li>ASCII Text (e.g. CSV, tab-delimited)</li>
+<li>ASCII Text (e.g. CSV, tab-delimited)</li>
 <li>Binary files</li>
 <li>Excel Spreadsheets</li>
 <li>Word Processing Documents</li>
-<li>Geospatial data (e.g. imagery)</li>
+<li>Geospatial data (e.g. imagery)</li>
 </ul></li>
 <li>Remotely Accessible Data
 <ul>
-<li>Some data may be provided through reference to an external network resource (i.e. a web address, or other identifier) or service</li>
+<li>Some data may be provided through reference to an external network resource (i.e. a web address, or other identifier) or service</li>
 </ul></li>
 </ul>
 </section><section id="key-components---processing-services" class="slide level3 module03a01a">
-<h1>Key Components - Processing Services</h1>
+<h3>Key Components - Processing Services</h3>
 <ul>
 <li>Perform modification of source data to generate a new data product</li>
 <li><p>May be “chained” together to create a processing “workflow”. Output from one processing service may be used as the input to another</p></li>
@@ -240,12 +245,12 @@
 <ul>
 <li>Extraction of a subset of a large data set based upon provided search criteria</li>
 <li>Generation of a map from a collection of data</li>
-<li>Fusion of two data products into a single derived product (e.g. vegetation indices calculated from multiple remote sensing images)</li>
+<li>Fusion of two data products into a single derived product (e.g. vegetation indices calculated from multiple remote sensing images)</li>
 <li>Calculation of statistical information for an input product, and delivery of the statistical summary</li>
 </ul></li>
 </ul>
 </section><section id="key-components---clients" class="slide level3 module03a01a">
-<h1>Key Components - Clients</h1>
+<h3>Key Components - Clients</h3>
 <ul>
 <li>Any system that accesses the services provided by the system may be considered a “client”</li>
 <li>That system may be manually operated by a human user, or triggered automatically by software</li>
@@ -261,9 +266,9 @@
 </ul></li>
 </ul>
 </section>
-<section id="the-glue---interoperability-standards-service-interfaces" class="titleslide slide level2 module03a01a"><h1>The Glue - Interoperability Standards / Service Interfaces</h1></section>
-<section id="open-geospatial-consortium-interoperability-standards" class="titleslide slide level2 module03a01a"><h1>Open Geospatial Consortium Interoperability Standards</h1></section><section id="open-geospatial-consortium-ogc-standards" class="slide level3 module03a01a">
-<h1>Open Geospatial Consortium (OGC) Standards</h1>
+<section id="the-glue---interoperability-standards-service-interfaces" class="title-slide slide level2 module03a01a"><h2>The Glue - Interoperability Standards / Service Interfaces</h2></section>
+<section id="open-geospatial-consortium-interoperability-standards" class="title-slide slide level2 module03a01a"><h2>Open Geospatial Consortium Interoperability Standards</h2></section><section id="open-geospatial-consortium-ogc-standards" class="slide level3 module03a01a">
+<h3>Open Geospatial Consortium (OGC) Standards</h3>
 <ul>
 <li>Two Classes of Standards Considered Here
 <ul>
@@ -283,12 +288,12 @@
 </ul></li>
 </ul>
 </section><section id="comparison-of-ogc-service-models" class="slide level3 module03a01a center">
-<h1>Comparison of OGC Service Models</h1>
+<h3>Comparison of OGC Service Models</h3>
 <figure>
 <img src="./images/ogcComparison.png" alt="Comparison of OGC Service Models" /><figcaption>Comparison of OGC Service Models</figcaption>
 </figure>
 </section><section id="ogc-web-map-services-wms" class="slide level3 module03a01a oneUp">
-<h1>OGC Web Map Services (WMS)</h1>
+<h3>OGC Web Map Services (WMS)</h3>
 <figure>
 <img src="./images/wms_landsat_BernCo.jpeg" alt="WMS request result for Bernalillo County Landsat Mosaic from NM RGIS link" /><figcaption>WMS request result for Bernalillo County Landsat Mosaic from NM RGIS <a href="http://tinyurl.com/nue486n">link</a></figcaption>
 </figure>
@@ -309,7 +314,7 @@ services/ogc/wms?
     bbox=-107.207,34.8404,-106.143,35.2487</code></pre>
 </div>
 </section><section id="ogc-web-feature-services-wms-characteristics" class="slide level3 module03a01a">
-<h1>OGC Web Feature Services (WMS) Characteristics</h1>
+<h3>OGC Web Feature Services (WMS) Characteristics</h3>
 <ul>
 <li>HTTP GET (required), HTTP POST (optional)</li>
 <li>Requests:
@@ -326,7 +331,7 @@ services/ogc/wms?
 <li>Includes support for time-based requests</li>
 </ul>
 </section><section id="ogc-web-feature-services-wfs-characteristics" class="slide level3 module03a01a">
-<h1>OGC Web Feature Services (WFS) Characteristics</h1>
+<h3>OGC Web Feature Services (WFS) Characteristics</h3>
 <ul>
 <li>Either HTTP GET or POST required</li>
 <li>Requests
@@ -346,7 +351,7 @@ services/ogc/wms?
 </ul></li>
 </ul>
 </section><section id="ogc-web-coverage-services-wcs-characteristics" class="slide level3 module03a01a">
-<h1>OGC Web Coverage Services (WCS) Characteristics</h1>
+<h3>OGC Web Coverage Services (WCS) Characteristics</h3>
 <ul>
 <li>Either HTTP GET or POST required</li>
 <li>Requests
@@ -363,7 +368,7 @@ services/ogc/wms?
 <li>Includes support for time-based requests</li>
 </ul>
 </section><section id="ogc-geography-markup-language-gml" class="slide level3 module03a01a">
-<h1>OGC Geography Markup Language (GML)</h1>
+<h3>OGC Geography Markup Language (GML)</h3>
 <ul>
 <li>GML is an XML grammar for representing geospatial features and their associated attributes</li>
 <li>In its generic form it can encode points, lines, and polygons and their associated attributes</li>
@@ -371,7 +376,7 @@ services/ogc/wms?
 <li>GML documents representing large complex geometries can be quite large - therefore slow to transfer over the Internet</li>
 </ul>
 </section><section id="ogc-kml" class="slide level3 module03a01a">
-<h1>OGC KML</h1>
+<h3>OGC KML</h3>
 <ul>
 <li>An XML specification that supports the encoding of representation and embedding of geospatial data for use in geospatial viewers</li>
 <li>Began as the underlying representation language of Google Earth (originally developed by Keyhole for their virtual Earth viewer)</li>
@@ -384,7 +389,7 @@ services/ogc/wms?
 <li>Includes support for the representation of time in relation to data objects</li>
 </ul>
 </section><section id="implementation-of-the-ogc-standards" class="slide level3 module03a01a twoColumn">
-<h1>Implementation of the OGC Standards</h1>
+<h3>Implementation of the OGC Standards</h3>
 <ul>
 <li>WMS
 <ul>
@@ -430,7 +435,7 @@ services/ogc/wms?
 </ul>
 <p>Implementation information based upon <a href="http://www.opengeospatial.org/resource/products/stats">OGC Implementation Statistics</a> - Accessed 2/2017</p>
 </section><section id="ogc-summary" class="slide level3 module03a01a">
-<h1>OGC Summary</h1>
+<h3>OGC Summary</h3>
 <p>The OGC web service specifications support key geospatial data access requirements</p>
 <dl>
 <dt>WMS</dt>
@@ -444,21 +449,21 @@ services/ogc/wms?
 </dd>
 </dl>
 </section><section id="ogc-summary-1" class="slide level3 module03a01a">
-<h1>OGC Summary</h1>
+<h3>OGC Summary</h3>
 <p>The OGC data and representation standards support data exchange and higher level representation</p>
 <dl>
 <dt>GML</dt>
-<dd>XML schema for the representation of features and associated attributes. It may be extended for use by specific communities of users (i.e. ecological data models)
+<dd>XML schema for the representation of features and associated attributes. It may be extended for use by specific communities of users (i.e. ecological data models)
 </dd>
 <dt>KML</dt>
-<dd>XML schema that supports the combination of embedded data and external data into a complete representation model that may be used by client applications to present the data through a user interface (e.g. Google Earth, WorldWind)
+<dd>XML schema that supports the combination of embedded data and external data into a complete representation model that may be used by client applications to present the data through a user interface (e.g. Google Earth, WorldWind)
 </dd>
 </dl>
 </section>
 <hr />
 <section>
 <div class="license">
-<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />This work by <span xmlns:cc="http://creativecommons.org/ns#" property="cc:attributionName">Karl Benedict</span> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />This work by <span data-xmlns:cc="http://creativecommons.org/ns#" data-property="cc:attributionName">Karl Benedict</span> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
 </div>
 </section>
 <!-- {{{{ dzslides core

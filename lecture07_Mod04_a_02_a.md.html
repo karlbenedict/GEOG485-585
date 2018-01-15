@@ -1,12 +1,17 @@
 <!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
 <head>
-  <meta charset="utf-8">
-  <meta name="generator" content="pandoc">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-  <meta name="author" content="Karl Benedict">
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="Karl Benedict" />
   <title>Week 7 - Module 4a - Interoperability Standards. WFS &amp; WCS</title>
-  <style type="text/css">code{white-space: pre;}</style>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
   <link rel="stylesheet" href="page.css">
   <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
@@ -15,8 +20,8 @@
 <body>
 <header>
 <h1 class="title">Week 7 - Module 4a - Interoperability Standards. WFS &amp; WCS</h1>
-<h2 class="author">Karl Benedict</h2>
-<h3 class="date">GEOG 485L/585L - Spring 2017</h3>
+<p class="author">Karl Benedict</p>
+<p class="date">GEOG 485L/585L - Spring 2018</p>
 </header>
 <!---------------------------------------------------------------------------->
 <!-- Week 07 ----------------------------------------------------------------->
@@ -291,13 +296,13 @@
 <p>The documents related to the OGC WCS standard are available from: [http://www.opengeospatial.org/standards/wcs][wcs] with the sample parameters in the following slides based upon the <a href="http://portal.opengeospatial.org/files/?artifact_id=41439"><em>OGC Web Coverage Service 2.0 Interface Standard - KVP Protocol Binding Extension</em> - Peter Baumann, editor - 2010-10-27</a></p>
 <p>From the OGC WCS 2.0 <em>Introduction</em></p>
 <blockquote>
-<p>The OGC Web Coverage Service (WCS) supports electronic retrieval of geospatial data as &quot;coverages&quot; – that is, digital geospatial information representing space/time-varying phenomena.</p>
+<p>The OGC Web Coverage Service (WCS) supports electronic retrieval of geospatial data as “coverages” – that is, digital geospatial information representing space/time-varying phenomena.</p>
 </blockquote>
 <blockquote>
 <p>This document specifies the WCS core; every implementation of a WCS shall adhere to this standard. This standard thus defines only basic requirements. Extensions to the core will define extensions to meet additional requirements, such as the response encoding. Indeed, additional extensions are required in order to completely specify a WCS for implementation.</p>
 </blockquote>
 <blockquote>
-<p>A WCS provides access to coverage data in forms that are useful for client-side rendering, as input into scientific models, and for other clients. The WCS may be compared to the OGC Web Feature Service (WFS) and the Web Map Service (WMS). As WMS and WFS service instances, a WCS allows clients to choose portions of a server's information holdings based on spatial constraints and other query criteria.</p>
+<p>A WCS provides access to coverage data in forms that are useful for client-side rendering, as input into scientific models, and for other clients. The WCS may be compared to the OGC Web Feature Service (WFS) and the Web Map Service (WMS). As WMS and WFS service instances, a WCS allows clients to choose portions of a server’s information holdings based on spatial constraints and other query criteria.</p>
 </blockquote>
 <h3 id="wcs-requestsoperations" class="module04a02a">WCS Requests/Operations</h3>
 <dl>
@@ -328,30 +333,30 @@
 <table>
 <thead>
 <tr class="header">
-<th style="text-align: left;">Name</th>
+<th>Name</th>
 <th style="text-align: center;">Mandatory/Optional</th>
-<th style="text-align: left;">Definition</th>
-<th style="text-align: left;">Data Type</th>
+<th>Definition</th>
+<th>Data Type</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">service</td>
+<td>service</td>
 <td style="text-align: center;">M</td>
-<td style="text-align: left;">Identifier of the OGC service</td>
-<td style="text-align: left;"><code>String</code>, fixed to &quot;WCS&quot;</td>
+<td>Identifier of the OGC service</td>
+<td><code>String</code>, fixed to “WCS”</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">request</td>
+<td>request</td>
 <td style="text-align: center;">M</td>
-<td style="text-align: left;">Request type name</td>
-<td style="text-align: left;"><code>String</code>, set to operation name</td>
+<td>Request type name</td>
+<td><code>String</code>, set to operation name</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">version</td>
+<td>version</td>
 <td style="text-align: center;">M (except for GetCapabilities)</td>
-<td style="text-align: left;">Request protocol version</td>
-<td style="text-align: left;"><code>String</code></td>
+<td>Request protocol version</td>
+<td><code>String</code></td>
 </tr>
 </tbody>
 </table>
@@ -420,7 +425,7 @@ gfs_4_20160228_0000_384.grb2?
 <hr />
 <section>
 <div class="license">
-<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />This work by <span xmlns:cc="http://creativecommons.org/ns#" property="cc:attributionName">Karl Benedict</span> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />This work by <span data-xmlns:cc="http://creativecommons.org/ns#" data-property="cc:attributionName">Karl Benedict</span> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
 </div>
 </section>
 </body>

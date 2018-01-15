@@ -1,12 +1,17 @@
 <!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
 <head>
-  <meta charset="utf-8">
-  <meta name="generator" content="pandoc">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-  <meta name="author" content="Karl Benedict">
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="Karl Benedict" />
   <title>Week 12 - Module 4b - Interoperability Standards - Desktop GIS Integration</title>
-  <style type="text/css">code{white-space: pre;}</style>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
   <link rel="stylesheet" href="page.css">
   <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
@@ -15,8 +20,8 @@
 <body>
 <header>
 <h1 class="title">Week 12 - Module 4b - Interoperability Standards - Desktop GIS Integration</h1>
-<h2 class="author">Karl Benedict</h2>
-<h3 class="date">GEOG 485L/585L - Spring 2017</h3>
+<p class="author">Karl Benedict</p>
+<p class="date">GEOG 485L/585L - Spring 2018</p>
 </header>
 <!---------------------------------------------------------------------------->
 <!-- Week 12 ----------------------------------------------------------------->
@@ -79,11 +84,11 @@
 <p><code>http://services.nationalmap.gov/arcgis/services/USGSTopoLarge/MapServer/WMSServer</code></p>
 <p>in this case</p>
 <p>If in doubt, check the information in the metadata</p>
-<p>Select the layer type you would like to from &quot;Layer&quot; menu, or click the button in the interface to add a specific layer type.</p>
+<p>Select the layer type you would like to from “Layer” menu, or click the button in the interface to add a specific layer type.</p>
 <h3 id="qgis---adding-services-and-layers---adding-a-service" class="module04b01a">QGIS - Adding Services and Layers - adding a service</h3>
-<p>Add a service to the list of services in the menu (if necessary - QGIS retains information about previously added services) by selecting the &quot;New&quot; option under the service list in the &quot;Add Layer(s) from a Server&quot; dialog</p>
+<p>Add a service to the list of services in the menu (if necessary - QGIS retains information about previously added services) by selecting the “New” option under the service list in the “Add Layer(s) from a Server” dialog</p>
 <figure>
-<img src="images/QGIS-AddLayer_s_fromAWM_T_SServer.png" alt="&quot;Add Layer(s) from a Server&quot; dialog" /><figcaption>&quot;Add Layer(s) from a Server&quot; dialog</figcaption>
+<img src="images/QGIS-AddLayer_s_fromAWM_T_SServer.png" alt="“Add Layer(s) from a Server” dialog" /><figcaption>“Add Layer(s) from a Server” dialog</figcaption>
 </figure>
 <h3 id="qgis---adding-services-and-layers---adding-connection-information" class="module04b01a">QGIS - Adding Services and Layers - adding connection information</h3>
 <p>Add the name, base URL and any additional information about the service to the connection dialog box</p>
@@ -91,9 +96,9 @@
 <img src="images/QGIS-AddConnectionDialog.png" alt="Connection dialog box" /><figcaption>Connection dialog box</figcaption>
 </figure>
 <h3 id="qgis---adding-services-and-layers---connecting-to-and-adding-layers-from-the-service" class="module04b01a">QGIS - Adding Services and Layers - connecting to and adding layers from the service</h3>
-<p>After adding the service, you can select it from the service list in the &quot;Add Layer(s) from a Server&quot; dialog box, connect to the service to retrieve the GetCapabilities response from the service, select the layers and other options advertised by the service through its response, and add them to your map.</p>
+<p>After adding the service, you can select it from the service list in the “Add Layer(s) from a Server” dialog box, connect to the service to retrieve the GetCapabilities response from the service, select the layers and other options advertised by the service through its response, and add them to your map.</p>
 <figure>
-<img src="images/QGIS-AddLayerFromSource.png" alt="&quot;Add Layer(s) from a Server&quot; dialog with service connection and layer selection process" /><figcaption>&quot;Add Layer(s) from a Server&quot; dialog with service connection and layer selection process</figcaption>
+<img src="images/QGIS-AddLayerFromSource.png" alt="“Add Layer(s) from a Server” dialog with service connection and layer selection process" /><figcaption>“Add Layer(s) from a Server” dialog with service connection and layer selection process</figcaption>
 </figure>
 <h3 id="qgis---adding-services-and-layers---the-final-added-layer" class="module04b01a">QGIS - Adding Services and Layers - the final added layer</h3>
 <p>After adding the layer, it appears as an available layer in the table of contents for your map.</p>
@@ -114,14 +119,14 @@
 <h3 id="arcgis-wms-and-wcs-configuration" class="module04b01a">ArcGIS WMS and WCS Configuration</h3>
 <p>The addition of OGC WMS and WCS layers to ArcMap is through the same process of</p>
 <ul>
-<li>Select the &quot;add data&quot; button</li>
-<li>WMS/WCS services are added through the &quot;GIS Servers&quot; option in the &quot;Add Data&quot; dialog</li>
-<li>If you have not previously added the service from which you want to add layers, you select &quot;Add WMS Server&quot; or &quot;Add WCS Server&quot; from the list of options in the &quot;Add Data&quot; dialog
+<li>Select the “add data” button</li>
+<li>WMS/WCS services are added through the “GIS Servers” option in the “Add Data” dialog</li>
+<li>If you have not previously added the service from which you want to add layers, you select “Add WMS Server” or “Add WCS Server” from the list of options in the “Add Data” dialog
 <ul>
-<li>You then provide the BASE GetCapabilities URL to the &quot;ADD WMS/WCS Server&quot; dialog that appears</li>
-<li>Click &quot;OK&quot;, and the new WMS/WCS service is added to the list of services that is available when you choose to add a WMS service.</li>
+<li>You then provide the BASE GetCapabilities URL to the “ADD WMS/WCS Server” dialog that appears</li>
+<li>Click “OK”, and the new WMS/WCS service is added to the list of services that is available when you choose to add a WMS service.</li>
 </ul></li>
-<li>You then select the layer(s) from the service that you want to add to your map and click the &quot;add&quot; button in the dialog.</li>
+<li>You then select the layer(s) from the service that you want to add to your map and click the “add” button in the dialog.</li>
 </ul>
 <h3 id="arcgis-wms-and-wcs-configuration-resources" class="module04b01a">ArcGIS WMS and WCS Configuration Resources</h3>
 <ul>
@@ -134,10 +139,10 @@
 <p><a href="http://desktop.arcgis.com/en/arcmap/10.4/map/web-maps-and-services/adding-a-wcs-service-to-arcmap.htm">ESRI Documentation</a></p>
 <h3 id="arcgis-wfs-configuration" class="module04b01a">ArcGIS WFS Configuration</h3>
 <ul>
-<li>WFS support in ArcGIS 10.0 and beyond requires that the &quot;Data Interoperability Extension&quot; be installed (though it doesn’t have to be enabled)</li>
-<li>Connections to WFS services are defined through ArcCatalog's &quot;Interoperabilty Connections&quot; &quot;Add Interoperability Connection&quot; option</li>
+<li>WFS support in ArcGIS 10.0 and beyond requires that the “Data Interoperability Extension” be installed (though it doesn’t have to be enabled)</li>
+<li>Connections to WFS services are defined through ArcCatalog’s “Interoperabilty Connections” “Add Interoperability Connection” option</li>
 <li>After defining the connection in ArcCatalog (including the specification of the interoperabilty connection type, desired feature types, and maximum number of features to return), its feature types are available through that Interoperability Connection that may be added to ArcMap and other ArcGIS components</li>
-<li>Once the connection is created, WFS data may be added through the &quot;Add Data&quot; dialog in ArcMap</li>
+<li>Once the connection is created, WFS data may be added through the “Add Data” dialog in ArcMap</li>
 </ul>
 <h3 id="arcgis-wfs-configuration-resources" class="module04b01a">ArcGIS WFS Configuration Resources</h3>
 <ul>
@@ -157,7 +162,7 @@
 <hr />
 <section>
 <div class="license">
-<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />This work by <span xmlns:cc="http://creativecommons.org/ns#" property="cc:attributionName">Karl Benedict</span> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />This work by <span data-xmlns:cc="http://creativecommons.org/ns#" data-property="cc:attributionName">Karl Benedict</span> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
 </div>
 </section>
 </body>
