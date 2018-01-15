@@ -16,16 +16,33 @@ This week we will review the content and structure for the course and spend some
 
 * [Wikipedia article - History of the World Wide web](http://en.wikipedia.org/wiki/History_of_the_World_Wide_Web)
 
-* [Lynda.com tutorials](http://www.lynda.com/SharedPlaylist/2b710369c9ec4d8c964467225c6610ad?org=unm.edu)
+* Web Development tutorials (for weeks 1 & 2)
 
-	* *Web Design Fundamentals*
-		* Introduction
-		* 1. Exploring Web Design
-	* *Version Control for Everyone*
-		* Introduction
-		* 1. Introducing Version Control
-		* 2. Version Control Basics
-		* 3. Setting Up Your First Project 
+	* [*HTML: A Beginner’s Tutorial by Chris Coremans*](https://www.safaribooksonline.com/library/view/html-a-beginners/9781771970181/)
+		* [Introduction](https://www.safaribooksonline.com/library/view/html-a-beginners/9781771970181/Text/ch00.xhtml)
+		* 1. [Chapter 1: Getting Started](https://www.safaribooksonline.com/library/view/html-a-beginners/9781771970181/Text/ch01.xhtml)
+		* 2. [Chapter 2: Working with Text](https://www.safaribooksonline.com/library/view/html-a-beginners/9781771970181/Text/ch02.xhtml)
+		* 3. [Chapter 3: Links](https://www.safaribooksonline.com/library/view/html-a-beginners/9781771970181/Text/ch03.xhtml)
+		* 4. [Chapter 4: Images](https://www.safaribooksonline.com/library/view/html-a-beginners/9781771970181/Text/ch04.xhtml)
+		* 5. [Chapter 5: Lists](https://www.safaribooksonline.com/library/view/html-a-beginners/9781771970181/Text/ch05.xhtml)
+		* 6. [Chapter 6: Tables](https://www.safaribooksonline.com/library/view/html-a-beginners/9781771970181/Text/ch06.xhtml)
+		* 7. [Chapter 9: Styling with CSS](https://www.safaribooksonline.com/library/view/html-a-beginners/9781771970181/Text/ch09.xhtml)
+	* [*An Introduction to Web in HTML & CSS, by Cassidy & Camryn Williams* - Video Tutorial (basic)](https://www.safaribooksonline.com/library/view/learning-path-learn/9781491958032/video226859.html)
+	* [*Modern Web Development with HTML5 and CSS, by Rachel Andrew* - Video Tutorial (in-depth)](https://www.safaribooksonline.com/library/view/learning-path-learn/9781491958032/video226903.html)
+	* [*Introduction to Javascript (Tutorial)*](https://www.safaribooksonline.com/tutorials/introduction-to-javascript-ots/)
+		* 1. [*Nuts 'n' Bolts*](https://www.safaribooksonline.com/library/tutorials/introduction-to-javascript-ots/1747/)
+		* 2. [*The DOM*](https://www.safaribooksonline.com/library/tutorials/introduction-to-javascript-ots/1755/)
+		
+
+* Version Control using Git and Github (for weeks 1 & 2)
+
+	* Ferdinando Santacroce. (2017). *Git Essentials** - Second Edition. [https://www.safaribooksonline.com/library/view/git-essentials-/9781787120723/](https://www.safaribooksonline.com/library/view/git-essentials-/9781787120723/)
+		* [*Getting Started with Git*](https://www.safaribooksonline.com/library/view/git-essentials-/9781787120723/831d785f-1ea2-4ea1-b175-21a22d9fb26a.xhtml)
+		* [*Git Fundamentals - Working Locally*](https://www.safaribooksonline.com/library/view/git-essentials-/9781787120723/99b661ad-e978-4ef2-bd8c-cce55c6a318e.xhtml)
+		* [*Git Fundamentals - Working Remotely*](https://www.safaribooksonline.com/library/view/git-essentials-/9781787120723/20e98db3-d248-436e-88d5-069be7808998.xhtml) 
+	* Peter Bell. (2014). *Git and GitHub LiveLessons—Workshop (Video Training)*. [*https://www.safaribooksonline.com/library/view/git-and-github/9780133992748/*](https://www.safaribooksonline.com/library/view/git-and-github/9780133992748/)
+		* Lessons 1, 2, 3, 7, and 8
+
 
 # Reference Materials # {#week01-reference}
 
@@ -75,6 +92,8 @@ After your successfully create your `portfolio` repository you should see the ho
 ![Repository home page](images/github_portfolioHome.jpg){width=70%}
 
 **Make note of the web address of this page (even email it to yourself) to make it easy to get back here later** - `https://github.com/<your username>/portfolio`
+
+**Respond to the "GitHub Username and Repository Survey" in the assignments section of Learn with the GitHub username and repository that you will be using for the class**
 
 ## Create Your First Web Page
 

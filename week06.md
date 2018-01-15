@@ -65,7 +65,7 @@ There are a large number of WMS services available on the web. One way to find i
 
 `“REQUEST=GetCapabilities” and “SERVICE=WMS”`
 
-as a single search phrase
+**as a single search phrase**
 
 Question 1
 :	What search engine did you use?
@@ -85,7 +85,7 @@ Question 4 (service #1)
 
 	What Format(s) are available for GetMap requests from the service?
 
-	How many layers are included in the service (*including nesting layers*)?
+	How many layers are included in the service (*including nesting/nested layers*)?
 
 Question 4 (service #2)
 :	What is the URL for the full GetCapabilities request to the service?
@@ -94,7 +94,7 @@ Question 4 (service #2)
 
 	What Format(s) are available for GetMap requests from the service?
 
-	How many layers are included in the service (*including nesting layers*)?
+	How many layers are included in the service (*including nesting/nested layers*)?
 
 Question 5: For one of the layers in the first service, 
 :	What is the name of the layer?

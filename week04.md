@@ -44,15 +44,9 @@ You should also understand
 
 # Class Prep # {#week04-prep}
 
-* [Lynda.com tutorials](http://www.lynda.com/SharedPlaylist/2b710369c9ec4d8c964467225c6610ad?org=unm.edu)
-
-	* *Javascript for Web Designers* (continued)
-		* 5. Using the Google Maps API
-
+Continue with materials from last Week
 
 # Reference Materials # {#week04-reference}
-
-*  Duckett, Jon, and Larsen, Rob. *Beginning HTML and CSS*. Somerset, NJ, USA: John Wiley & Sons, 2013. ProQuest ebrary. Web. 28 December 2015. This book is available online through the [University Library](http://site.ebrary.com.libproxy.unm.edu/lib/unma/detail.action?docID=10667426) - Chapters 2,3,4 and 8
 
 * [Google Maps API Tutorial](http://code.google.com/apis/maps/documentation/javascript/tutorial.html)
 

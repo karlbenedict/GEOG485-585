@@ -58,7 +58,7 @@ Question 1
 
 Download three data products from one or more of the following online data repositories or another data repository that has data that interest you.
 
-* [New Mexico Resource Geographic Information System](http://rgis.unm.edu/)
+* [New Mexico Resource Geographic Information System](http://rgis.unm.edu/getdata/)
 * [The US National Map Data Download Site](http://nationalmap.gov/small_scale/atlasftp.html)
 * [NOAA's National Climate Data Center *Climate data online: Data discovery* site](http://www.ncdc.noaa.gov/cdo-web/datasets)
 * [US Census Bureau - Geography - TIGER Data](http://www.census.gov/geo/maps-data/data/tiger.html)
@@ -69,7 +69,7 @@ Question 2
 * The name of the dataset
 * The filename(s) for the dataset
 * A short (1-2 sentence) description of the dataset's contents
-* The bounding box (provided as the minimum and maximum extent in the N-S and E-W directions) in the native units and coordinate system
-* The coordinate reference system - by name and EPSG code   
+* The bounding box (provided as the minimum and maximum extent in the N-S and E-W directions) in the **native units and coordinate system**
+* The coordinate reference system - by **name and EPSG code**  
 
 

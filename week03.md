@@ -38,26 +38,22 @@ By the end of this class module you should understand the following:
 
 # Class Prep # {#week03-prep}
 
-* [Lynda.com tutorials](http://www.lynda.com/SharedPlaylist/2b710369c9ec4d8c964467225c6610ad?org=unm.edu)
-
-	* *Javascript for Web Designers* (included as a reference source last week)
-		* 5. Using the Google Maps API
-
 * w3schools [JavaScript Tutorial](http://www.w3schools.com/js/)
 
 * [Google Maps API Tutorial](http://code.google.com/apis/maps/documentation/javascript/tutorial.html)
 
+* Balkan Uraz, & Alper Dincer. (2013). *Google Maps JavaScript API Cookbook**. (Weeks 3 and 4)[https://www.safaribooksonline.com/library/view/google-maps-javascript/9781849698825/](https://www.safaribooksonline.com/library/view/google-maps-javascript/9781849698825/)
+	* [*Google Maps API Basics*](https://www.safaribooksonline.com/library/view/google-maps-javascript/9781849698825/ch01.html)
+	* [*Adding Raster Layers*](https://www.safaribooksonline.com/library/view/google-maps-javascript/9781849698825/ch02.html)
+	* [*Adding Vector Layers*](https://www.safaribooksonline.com/library/view/google-maps-javascript/9781849698825/ch03.html)
+	* [*Working with Controls*](https://www.safaribooksonline.com/library/view/google-maps-javascript/9781849698825/ch04.html)
+ 
 * Google Maps API Key - a Google Maps API key is now required to write web pages that make use of the Google Maps API. You can get your API key [here](https://developers.google.com/maps/documentation/javascript/get-api-key)
-
-
-Continue reviewing:
-
-*  Duckett, Jon, and Larsen, Rob. *Beginning HTML and CSS*. Somerset, NJ, USA: John Wiley & Sons, 2013. ProQuest ebrary. Web. 28 December 2015. This book is available online through the [University Library](http://site.ebrary.com.libproxy.unm.edu/lib/unma/detail.action?docID=10667426) - Chapters 1, 7, 10
 
 
 # Reference Materials # {#week03-reference}
 
-*  Duckett, Jon, and Larsen, Rob. *Beginning HTML and CSS*. Somerset, NJ, USA: John Wiley & Sons, 2013. ProQuest ebrary. Web. 28 December 2015. This book is available online through the [University Library](http://site.ebrary.com.libproxy.unm.edu/lib/unma/detail.action?docID=10667426) - Chapters 2,3,4 and 8
+
 
 # Weekly Milestone - Creation of a Web Page with an Embedded Google Map# {#week03-milestone}
 
