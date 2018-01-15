@@ -1,4 +1,9 @@
-# Geography 485L/585L - Internet Mapping Syllabus #
+---
+title: Geography 485L/585L - Internet Mapping Syllabus
+...
+
+<!-- # Geography 485L/585L - Internet Mapping Syllabus # -->
+
 
 ## Course Instructor ##
 
