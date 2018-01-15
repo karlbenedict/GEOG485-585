@@ -1,12 +1,17 @@
 <!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
 <head>
-  <meta charset="utf-8">
-  <meta name="generator" content="pandoc">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-  <meta name="author" content="Karl Benedict">
-  <title>Week 13 - Platforms and GeoServer Introduction</title>
-  <style type="text/css">code{white-space: pre;}</style>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="Karl Benedict" />
+  <title>GEOG 485L/585L - Spring 2018</title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
   <link rel="stylesheet" href="page.css">
   <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
@@ -14,9 +19,9 @@
 </head>
 <body>
 <header>
-<h1 class="title">Week 13 - Platforms and GeoServer Introduction</h1>
-<h2 class="author">Karl Benedict</h2>
-<h3 class="date">GEOG 485L/585L - Spring 2017</h3>
+<h1 class="title">GEOG 485L/585L - Spring 2018</h1>
+<p class="author">Karl Benedict</p>
+<p class="date">Spring 2018</p>
 </header>
 <!---------------------------------------------------------------------------->
 <!-- Week 13 ----------------------------------------------------------------->
@@ -54,17 +59,17 @@
 </ul>
 <h1 id="week13-milestone">Weekly Milestone - Linux Basics and GeoServer Data Import</h1>
 <h2 id="working-on-the-class-server">Working on the Class Server</h2>
-<p>For the GeoServer portion of our work, you will be working on a Linux server that has been created for the class. While we won't be doing a lot of Linux work, some basic familiarity with moving around, copying files, and working with files is needed. The class server is running Ubuntu Linux which is a broadly deployed, well supported operating system and computing platform that has excellent support for many Open Source geospatial applications, including those that we will be using in this class.</p>
+<p>For the GeoServer portion of our work, you will be working on a Linux server that has been created for the class. While we won’t be doing a lot of Linux work, some basic familiarity with moving around, copying files, and working with files is needed. The class server is running Ubuntu Linux which is a broadly deployed, well supported operating system and computing platform that has excellent support for many Open Source geospatial applications, including those that we will be using in this class.</p>
 <p>The first set of exercises relate to learning some basics about working with the Linux Operating system, applicable on just about any Linux server including the class server.</p>
-<p>Review (but don't worry about memorizing) the following materials (in addition to watching the Lynda.com video tutorial sections listed above):</p>
-<p><a href="http://www.webmonkey.com/2010/02/unix-guide/">Webmonkey &quot;Unix Guide&quot;</a></p>
+<p>Review (but don’t worry about memorizing) the following materials (in addition to watching the Lynda.com video tutorial sections listed above):</p>
+<p><a href="http://www.webmonkey.com/2010/02/unix-guide/">Webmonkey “Unix Guide”</a></p>
 <p><a href="http://www.cheatography.com/davechild/cheat-sheets/linux-command-line/">Linux Command Line Cheatsheet</a></p>
 <dl>
 <dt>QUESTION 1</dt>
 <dd>What command would you use to list the contents of a directory on a linux system?
 </dd>
 <dt>QUESTION 2</dt>
-<dd>What command would you use to read the &quot;manual page&quot; for a specific command?
+<dd>What command would you use to read the “manual page” for a specific command?
 </dd>
 </dl>
 <p>Log into the class Linux server - <code>mapper.internetmapping.net</code>. <em>This is different from the address referenced in the below linked videos</em> The rest of the process is the same as demonstrated in the videos. The class username and password are posted in Learn in an announcement to the class.</p>
@@ -75,7 +80,7 @@
 <p>Start a session on the class Linux server, which is located at at the hostname <code>mapper.internetmapping.net</code> (you will use your class server username and password [provided in an announcement in Learn] to open the connection)</p>
 <dl>
 <dt>Task</dt>
-<dd>Use the <code>mkdir &lt;your netid&gt;</code> command (replacing the <code>&lt;your netid&gt;</code> element with your UNM netid [the username you use when logging into UNM's email system]) to create a directory called <code>&lt;your netid&gt;</code> in the shared class home directory (the directory that you are in when you login, and where you go when you type the <code>cd</code> command with no options, located at <code>/shared-data/classdata</code> on the class server).
+<dd>Use the <code>mkdir &lt;your netid&gt;</code> command (replacing the <code>&lt;your netid&gt;</code> element with your UNM netid [the username you use when logging into UNM’s email system]) to create a directory called <code>&lt;your netid&gt;</code> in the shared class home directory (the directory that you are in when you login, and where you go when you type the <code>cd</code> command with no options, located at <code>/shared-data/classdata</code> on the class server).
 </dd>
 </dl>
 <h2 id="adding-data-to-geoserver">Adding data to GeoServer</h2>
@@ -86,7 +91,7 @@
 </dd>
 <dt>Task</dt>
 <dd><p>Copy all of the data files located in the <code>/shared-data/classdata/wk13Data</code> directory by executing the following command from <em>inside your <code>&lt;your netid&gt;</code> directory</em>.</p>
-<p>cp -r ../wk13data/* . (make sure to include final '.')</p>
+<p>cp -r ../wk13data/* . (make sure to include final ‘.’)</p>
 </dd>
 </dl>
 <p>This will place a copy of these data files in your <code>&lt;your netid&gt;</code> directory. Rename (using the linux <code>mv</code> command) each of the copied files and directories (and their contents) to replace my initials at the beginning of each file and directory name with yours. For example, rename <code>kb_m_3510659_ne_13_1_20110523.tif</code> as <code>xy_m_3510659_ne_13_1_20110523.tif</code>. This will help avoid some issues with layers based on source files with the same name later in our work.</p>
@@ -98,7 +103,7 @@
 <p>Create a new <em>workspace</em> based on your net id. For example <code>ws_&lt;your netid&gt;</code></p>
 <p>Create a new <em>store</em> for each of the datasets added to your <code>&lt;your netid&gt;</code> directory above (4 .tif files and 3 shape files). Assign the new store to the workspace that you created above. When specifying the the <code>Connection Parameters</code> for pointing to the file, the format is: <code>file:data/shared-data/classdata/&lt;your netid&gt;/&lt;filename including any additional directories&gt;</code> </p>
 <p>for example file:data/shared-data/classdata/wk13data/kb_2007fe_35_county00_shp/kb_2007fe_35_county00.shp</p>
-<p>You can also browse to the file by clicking on the &quot;Browse ...&quot; link next to the location field, for example for a shapefile:</p>
+<p>You can also browse to the file by clicking on the “Browse …” link next to the location field, for example for a shapefile:</p>
 <p><img src="images/GeoServer_Browse.jpg" /> </p>
 <p>and navigating to your data directory (data_dir/data/shared-data/classdata/&lt;your username&gt;) to see the data to select from.</p>
 <p><img src="images/GeoServer_SelectData.jpg" /> </p>
@@ -112,7 +117,7 @@
 </dl>
 <hr />
 <div class="license">
-<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />This work by <span xmlns:cc="http://creativecommons.org/ns#" property="cc:attributionName">Karl Benedict</span> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />This work by <span data-xmlns:cc="http://creativecommons.org/ns#" data-property="cc:attributionName">Karl Benedict</span> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
 </div>
 </body>
 </html>

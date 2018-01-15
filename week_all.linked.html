@@ -1,47 +1,80 @@
 <!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
 <head>
-  <meta charset="utf-8">
-  <meta name="generator" content="pandoc">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
   <title>Week 1 - Goals and Objectives</title>
-  <style type="text/css">code{white-space: pre;}</style>
   <style type="text/css">
-div.sourceCode { overflow-x: auto; }
-table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
-  margin: 0; padding: 0; vertical-align: baseline; border: none; }
-table.sourceCode { width: 100%; line-height: 100%; }
-td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
-td.sourceCode { padding-left: 5px; }
-code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code > span.dt { color: #902000; } /* DataType */
-code > span.dv { color: #40a070; } /* DecVal */
-code > span.bn { color: #40a070; } /* BaseN */
-code > span.fl { color: #40a070; } /* Float */
-code > span.ch { color: #4070a0; } /* Char */
-code > span.st { color: #4070a0; } /* String */
-code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code > span.ot { color: #007020; } /* Other */
-code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code > span.fu { color: #06287e; } /* Function */
-code > span.er { color: #ff0000; font-weight: bold; } /* Error */
-code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-code > span.cn { color: #880000; } /* Constant */
-code > span.sc { color: #4070a0; } /* SpecialChar */
-code > span.vs { color: #4070a0; } /* VerbatimString */
-code > span.ss { color: #bb6688; } /* SpecialString */
-code > span.im { } /* Import */
-code > span.va { color: #19177c; } /* Variable */
-code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code > span.op { color: #666666; } /* Operator */
-code > span.bu { } /* BuiltIn */
-code > span.ex { } /* Extension */
-code > span.pp { color: #bc7a00; } /* Preprocessor */
-code > span.at { color: #7d9029; } /* Attribute */
-code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; position: absolute; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; }
+pre.numberSource a.sourceLine:empty
+  { position: absolute; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: absolute; left: -5em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="page.css">
   <!--[if lt IE 9]>
@@ -64,7 +97,6 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </ul></li>
 <li><a href="#week02">Introduction</a></li>
 <li><a href="#week02-prep">Class Prep</a></li>
-<li><a href="#week02-reference">Reference Materials</a></li>
 <li><a href="#week02-milestone">Weekly Milestone - Create a More Complex Web Page and Style It</a></li>
 <li><a href="#week03">Introduction</a></li>
 <li><a href="#week03-prep">Class Prep</a></li>
@@ -149,27 +181,56 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <h1 id="week01-prep">Class Prep</h1>
 <ul>
 <li><p><a href="http://en.wikipedia.org/wiki/History_of_the_World_Wide_Web">Wikipedia article - History of the World Wide web</a></p></li>
-<li><p><a href="http://www.lynda.com/SharedPlaylist/2b710369c9ec4d8c964467225c6610ad?org=unm.edu">Lynda.com tutorials</a></p>
+<li><p>Web Development tutorials (for weeks 1 &amp; 2)</p>
 <ul>
-<li><em>Web Design Fundamentals</em>
+<li><a href="https://www.safaribooksonline.com/library/view/html-a-beginners/9781771970181/"><em>HTML: A Beginner’s Tutorial by Chris Coremans</em></a>
 <ul>
-<li>Introduction</li>
+<li><a href="https://www.safaribooksonline.com/library/view/html-a-beginners/9781771970181/Text/ch00.xhtml">Introduction</a></li>
 <li><ol type="1">
-<li>Exploring Web Design</li>
-</ol></li>
-</ul></li>
-<li><em>Version Control for Everyone</em>
-<ul>
-<li>Introduction</li>
-<li><ol type="1">
-<li>Introducing Version Control</li>
+<li><a href="https://www.safaribooksonline.com/library/view/html-a-beginners/9781771970181/Text/ch01.xhtml">Chapter 1: Getting Started</a></li>
 </ol></li>
 <li><ol start="2" type="1">
-<li>Version Control Basics</li>
+<li><a href="https://www.safaribooksonline.com/library/view/html-a-beginners/9781771970181/Text/ch02.xhtml">Chapter 2: Working with Text</a></li>
 </ol></li>
 <li><ol start="3" type="1">
-<li>Setting Up Your First Project</li>
+<li><a href="https://www.safaribooksonline.com/library/view/html-a-beginners/9781771970181/Text/ch03.xhtml">Chapter 3: Links</a></li>
 </ol></li>
+<li><ol start="4" type="1">
+<li><a href="https://www.safaribooksonline.com/library/view/html-a-beginners/9781771970181/Text/ch04.xhtml">Chapter 4: Images</a></li>
+</ol></li>
+<li><ol start="5" type="1">
+<li><a href="https://www.safaribooksonline.com/library/view/html-a-beginners/9781771970181/Text/ch05.xhtml">Chapter 5: Lists</a></li>
+</ol></li>
+<li><ol start="6" type="1">
+<li><a href="https://www.safaribooksonline.com/library/view/html-a-beginners/9781771970181/Text/ch06.xhtml">Chapter 6: Tables</a></li>
+</ol></li>
+<li><ol start="7" type="1">
+<li><a href="https://www.safaribooksonline.com/library/view/html-a-beginners/9781771970181/Text/ch09.xhtml">Chapter 9: Styling with CSS</a></li>
+</ol></li>
+</ul></li>
+<li><a href="https://www.safaribooksonline.com/library/view/learning-path-learn/9781491958032/video226859.html"><em>An Introduction to Web in HTML &amp; CSS, by Cassidy &amp; Camryn Williams</em> - Video Tutorial (basic)</a></li>
+<li><a href="https://www.safaribooksonline.com/library/view/learning-path-learn/9781491958032/video226903.html"><em>Modern Web Development with HTML5 and CSS, by Rachel Andrew</em> - Video Tutorial (in-depth)</a></li>
+<li><a href="https://www.safaribooksonline.com/tutorials/introduction-to-javascript-ots/"><em>Introduction to Javascript (Tutorial)</em></a>
+<ul>
+<li><ol type="1">
+<li><a href="https://www.safaribooksonline.com/library/tutorials/introduction-to-javascript-ots/1747/"><em>Nuts ‘n’ Bolts</em></a></li>
+</ol></li>
+<li><ol start="2" type="1">
+<li><a href="https://www.safaribooksonline.com/library/tutorials/introduction-to-javascript-ots/1755/"><em>The DOM</em></a></li>
+</ol></li>
+</ul></li>
+</ul></li>
+<li><p>Version Control using Git and Github (for weeks 1 &amp; 2)</p>
+<ul>
+<li>Ferdinando Santacroce. (2017). *Git Essentials** - Second Edition. <a href="https://www.safaribooksonline.com/library/view/git-essentials-/9781787120723/" class="uri">https://www.safaribooksonline.com/library/view/git-essentials-/9781787120723/</a>
+<ul>
+<li><a href="https://www.safaribooksonline.com/library/view/git-essentials-/9781787120723/831d785f-1ea2-4ea1-b175-21a22d9fb26a.xhtml"><em>Getting Started with Git</em></a></li>
+<li><a href="https://www.safaribooksonline.com/library/view/git-essentials-/9781787120723/99b661ad-e978-4ef2-bd8c-cce55c6a318e.xhtml"><em>Git Fundamentals - Working Locally</em></a></li>
+<li><a href="https://www.safaribooksonline.com/library/view/git-essentials-/9781787120723/20e98db3-d248-436e-88d5-069be7808998.xhtml"><em>Git Fundamentals - Working Remotely</em></a></li>
+</ul></li>
+<li>Peter Bell. (2014). <em>Git and GitHub LiveLessons—Workshop (Video Training)</em>. <a href="https://www.safaribooksonline.com/library/view/git-and-github/9780133992748/"><em>https://www.safaribooksonline.com/library/view/git-and-github/9780133992748/</em></a>
+<ul>
+<li>Lessons 1, 2, 3, 7, and 8</li>
 </ul></li>
 </ul></li>
 </ul>
@@ -181,90 +242,84 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>While the work we do this and next week will be directly through the editor integrated into the GitHub system, you will need to install a desktop application (such as the <a href="https://www.sourcetreeapp.com/">SourceTree</a> application [recommended for the class], the <a href="https://desktop.github.com">GitHub Desktop application</a>, or, for the more adventurous, one of the Git <a href="https://git-scm.com/downloads">command line tools</a>) that allows you to develop your web pages on your local computer and then update the files on the GitHub system when you want to share a new version.</p>
 <p>For this milestone we will walk through the process of creating your repository in GitHub, creating your first web page, previewing that page on your local computer, changing the page, and updating the page on GitHub. For this milestone we will do this as a manual process which we will streamline in the coming weeks.</p>
 <h2 id="create-your-github-account-and-portfolio-repository">Create Your GitHub Account and Portfolio Repository</h2>
-<p>For your work in this class you will build your portfolio within your account - which you will need to create if you don't already have one.</p>
+<p>For your work in this class you will build your portfolio within your account - which you will need to create if you don’t already have one.</p>
 <p>The first step in the process of creating your portfolio is to create a new (or log into an existing) GitHub account, and create <em>repository</em> in GitHub within which you will put your portfolio materials for sharing within the class. Please follow the following steps to create your repository:</p>
 <ol type="1">
 <li>Go to the <a href="https://github.com/">GitHub homepage</a> and follow the onscreen instructions for creating a new account. If you already have an account you can skip this step. Once you have created your account you can login and continue the process of creating your class repository.</li>
 </ol>
 <figure>
-<img src="images/github_home.jpg" alt="GitHub home page" style="width:70.0%" /><figcaption>GitHub home page</figcaption>
+<img src="images/github_home.jpg" alt="GitHub home page" /><figcaption>GitHub home page</figcaption>
 </figure>
 <p>Unless you have specific reasons to do otherwise select the default options for step 2 of the account creation process.</p>
 <figure>
-<img src="images/github_step2.jpg" alt="GitHub setup step 2" style="width:70.0%" /><figcaption>GitHub setup step 2</figcaption>
+<img src="images/github_step2.jpg" alt="GitHub setup step 2" /><figcaption>GitHub setup step 2</figcaption>
 </figure>
 <p>(optional) Complete the online survey from GitHub associated with your account.</p>
 <figure>
-<img src="images/github_step3.jpg" alt="GitHub online survey" style="width:70.0%" /><figcaption>GitHub online survey</figcaption>
+<img src="images/github_step3.jpg" alt="GitHub online survey" /><figcaption>GitHub online survey</figcaption>
 </figure>
 <ol start="2" type="1">
 <li><p>Check your email inbox and verify your newly created GitHub account.</p></li>
-<li><p>Select &quot;Start a project&quot; from the web page that is presented when you confirm your email address (or complete the account creation steps above).</p></li>
+<li><p>Select “Start a project” from the web page that is presented when you confirm your email address (or complete the account creation steps above).</p></li>
 </ol>
 <figure>
-<img src="images/github_start.jpg" alt="Start project page" style="width:70.0%" /><figcaption>Start project page</figcaption>
+<img src="images/github_start.jpg" alt="Start project page" /><figcaption>Start project page</figcaption>
 </figure>
 <ol start="4" type="1">
-<li>Create your portfolio repository by choosing the following options in the page that is presented when you choose &quot;Start a project&quot; in step (3) above.</li>
+<li>Create your portfolio repository by choosing the following options in the page that is presented when you choose “Start a project” in step (3) above.</li>
 </ol>
 <figure>
-<img src="images/github_createRepo.jpg" alt="Create repository page" style="width:70.0%" /><figcaption>Create repository page</figcaption>
+<img src="images/github_createRepo.jpg" alt="Create repository page" /><figcaption>Create repository page</figcaption>
 </figure>
 <p>After your successfully create your <code>portfolio</code> repository you should see the home page for your new repo:</p>
 <figure>
-<img src="images/github_portfolioHome.jpg" alt="Repository home page" style="width:70.0%" /><figcaption>Repository home page</figcaption>
+<img src="images/github_portfolioHome.jpg" alt="Repository home page" /><figcaption>Repository home page</figcaption>
 </figure>
 <p><strong>Make note of the web address of this page (even email it to yourself) to make it easy to get back here later</strong> - <code>https://github.com/&lt;your username&gt;/portfolio</code></p>
+<p><strong>Respond to the “GitHub Username and Repository Survey” in the assignments section of Learn with the GitHub username and repository that you will be using for the class</strong></p>
 <h2 id="create-your-first-web-page">Create Your First Web Page</h2>
 <p>To create your first web page within your portfolio repository you need to first enter your repository, add a new file, modify its contents, and commit your modifications back to the repository to save your changes.</p>
 <ol type="1">
 <li><p>Go to your <code>portfolio</code> home page - <code>https://github.com/&lt;your username&gt;/portfolio</code> - either by going directly to the link (above) for your repository or by selecting the repository from your account home page - <code>https://github.com/&lt;your username&gt;</code>.</p></li>
-<li><p>On the page that comes up listing the files in your repository, click the &quot;Create new file&quot; button above the list of files.</p></li>
+<li><p>On the page that comes up listing the files in your repository, click the “Create new file” button above the list of files.</p></li>
 </ol>
 <figure>
-<img src="images/github_createButton.jpg" alt="Create a new file" style="width:70.0%" /><figcaption>Create a new file</figcaption>
+<img src="images/github_createButton.jpg" alt="Create a new file" /><figcaption>Create a new file</figcaption>
 </figure>
 <p>Which will take you to the editor for your new file.</p>
 <ol start="3" type="1">
-<li><p>Enter the name of the file ((1) on the figure below) that you are creating as &quot;hello-world.html&quot;</p></li>
+<li><p>Enter the name of the file ((1) on the figure below) that you are creating as “hello-world.html”</p></li>
 <li><p>Enter the following text into the text entry area (2) under the filename field.</p></li>
 </ol>
-<div class="sourceCode" startFrom="1"><table class="sourceCode html numberLines"><tr class="sourceCode"><td class="lineNumbers"><pre>1
-2
-3
-4
-5
-6
-7
-</pre></td><td class="sourceCode"><pre><code class="sourceCode html"><span class="kw">&lt;html&gt;</span>
-    <span class="kw">&lt;head&gt;</span>
-    <span class="kw">&lt;/head&gt;</span>     
-    <span class="kw">&lt;body&gt;</span>
-        Hello World !!!
-    <span class="kw">&lt;/body&gt;</span> 
-<span class="kw">&lt;/html&gt;</span></code></pre></td></tr></table></div>
+<div class="sourceCode" id="cb1" data-startFrom="1"><pre class="sourceCode numberSource html numberLines"><code class="sourceCode html"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw">&lt;html&gt;</span></a>
+<a class="sourceLine" id="cb1-2" data-line-number="2">    <span class="kw">&lt;head&gt;</span></a>
+<a class="sourceLine" id="cb1-3" data-line-number="3">    <span class="kw">&lt;/head&gt;</span>     </a>
+<a class="sourceLine" id="cb1-4" data-line-number="4">    <span class="kw">&lt;body&gt;</span></a>
+<a class="sourceLine" id="cb1-5" data-line-number="5">        Hello World !!!</a>
+<a class="sourceLine" id="cb1-6" data-line-number="6">    <span class="kw">&lt;/body&gt;</span> </a>
+<a class="sourceLine" id="cb1-7" data-line-number="7"><span class="kw">&lt;/html&gt;</span></a></code></pre></div>
 <ol start="5" type="1">
-<li><p>Add a brief comment (such as &quot;Created hello-world.html from provided text&quot;) in the first field under the &quot;Commit new file&quot; title (3). You can optionally add a more detailed description in the next field (4) if you like.</p></li>
-<li><p>Keep the default option to &quot;Commit directly to the master branch&quot;</p></li>
-<li><p>Click the &quot;Commit New File&quot; button (5) to commit your change and save the file</p></li>
+<li><p>Add a brief comment (such as “Created hello-world.html from provided text”) in the first field under the “Commit new file” title (3). You can optionally add a more detailed description in the next field (4) if you like.</p></li>
+<li><p>Keep the default option to “Commit directly to the master branch”</p></li>
+<li><p>Click the “Commit New File” button (5) to commit your change and save the file</p></li>
 </ol>
 <figure>
-<img src="images/github_editor.jpg" alt="GitHub file creation/editor page" style="width:70.0%" /><figcaption>GitHub file creation/editor page</figcaption>
+<img src="images/github_editor.jpg" alt="GitHub file creation/editor page" /><figcaption>GitHub file creation/editor page</figcaption>
 </figure>
 <p><em>Step 3</em> - Preview Your Web Page in a Browser</p>
-<p>Since your repository in GitHub is public you can use GitHub to host your portfolio and its content on the web. GitHub's hosting capabilities are limited to static content (i.e. files directly accessible over the web), but this will meet our needs for the class very well. To enable GitHub's web hosting capabilities for your repository you need to change the <code>GitHub Pages</code> option in the settings for your repository. First, click the <code>Settings</code> button near the top of your repository home page:</p>
+<p>Since your repository in GitHub is public you can use GitHub to host your portfolio and its content on the web. GitHub’s hosting capabilities are limited to static content (i.e. files directly accessible over the web), but this will meet our needs for the class very well. To enable GitHub’s web hosting capabilities for your repository you need to change the <code>GitHub Pages</code> option in the settings for your repository. First, click the <code>Settings</code> button near the top of your repository home page:</p>
 <figure>
-<img src="images/github_settingsButton.jpg" alt="Settings button in GitHub" style="width:70.0%" /><figcaption>Settings button in GitHub</figcaption>
+<img src="images/github_settingsButton.jpg" alt="Settings button in GitHub" /><figcaption>Settings button in GitHub</figcaption>
 </figure>
 <p>Then modify the <code>GitHub Pages</code> setting to use the <code>Master</code> branch as the source for your GitHub pages web site. Click the <code>Save</code> button next to your update.</p>
 <figure>
-<img src="images/github_settingsForWeb.jpg" alt="Update settings for GitHub web publishing" style="width:70.0%" /><figcaption>Update settings for GitHub web publishing</figcaption>
+<img src="images/github_settingsForWeb.jpg" alt="Update settings for GitHub web publishing" /><figcaption>Update settings for GitHub web publishing</figcaption>
 </figure>
 <p>After saving your changed <code>GitHub Pages</code> setting you can view your web page using the following pattern:</p>
 <p><code>https://&lt;your username&gt;.github.io/&lt;repository name&gt;/&lt;page name&gt;</code></p>
 <p>which translates into the following (assuming that you followed the instructions above for naming your repository and file:</p>
 <p><code>https://&lt;your username&gt;.github.io/portfolio/htllo-world.html</code></p>
-<p>Using this approach you can modify and preview your site in real time as you commit your changes within GitHub. You can also preview your portfolio based on files on your local computer by installing a GitHub client onto your computer and <code>cloning</code> your GitHub repository to your local computer. This is done using a desktop application such as <a href="https://www.sourcetreeapp.com"><em>Sourcetree</em></a>, the <a href="https://desktop.github.com"><em>GitHub Desktop Client</em></a>, or another <a href="https://git-scm.com/downloads"><em>Git</em> client</a> appropriate to your operating system. Once you've cloned your repository you can work with the files (including previewing them) on your local computer and when ready <code>push</code> those files back into GitHub for online access, viewing and sharing. <strong>While you can work on your files locally - peer review, troubleshooting, and grading will be based on the content in your public GitHub repository</strong>.</p>
+<p>Using this approach you can modify and preview your site in real time as you commit your changes within GitHub. You can also preview your portfolio based on files on your local computer by installing a GitHub client onto your computer and <code>cloning</code> your GitHub repository to your local computer. This is done using a desktop application such as <a href="https://www.sourcetreeapp.com"><em>Sourcetree</em></a>, the <a href="https://desktop.github.com"><em>GitHub Desktop Client</em></a>, or another <a href="https://git-scm.com/downloads"><em>Git</em> client</a> appropriate to your operating system. Once you’ve cloned your repository you can work with the files (including previewing them) on your local computer and when ready <code>push</code> those files back into GitHub for online access, viewing and sharing. <strong>While you can work on your files locally - peer review, troubleshooting, and grading will be based on the content in your public GitHub repository</strong>.</p>
 <p>Confirm that the display resembles something like the following:</p>
 <figure>
 <img src="images/hello-world.png" alt="Sample hello-world.html file when viewed in a web browser" style="width:70.0%" /><figcaption>Sample <code>hello-world.html</code> file when viewed in a web browser</figcaption>
@@ -300,35 +355,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </ul>
 <h1 id="week02-prep">Class Prep</h1>
 <ul>
-<li><p><a href="http://www.lynda.com/SharedPlaylist/2b710369c9ec4d8c964467225c6610ad?org=unm.edu">Lynda.com tutorials</a></p>
-<ul>
-<li><em>Web Design Fundamentals</em>
-<ul>
-<li><ol start="3" type="1">
-<li>Getting Started</li>
-</ol></li>
-<li><ol start="4" type="1">
-<li>Exploring Tools</li>
-</ol></li>
-</ul></li>
-<li><em>Version Control for Everyone</em>
-<ul>
-<li><ol start="5" type="1">
-<li>Basic Project Sharing</li>
-</ol></li>
-<li>Conclusion</li>
-</ul></li>
-</ul></li>
-<li><p>Duckett, Jon, and Larsen, Rob. <em>Beginning HTML and CSS</em>. Somerset, NJ, USA: John Wiley &amp; Sons, 2013. ProQuest ebrary. Web. 28 December 2015. This book is available online through the <a href="http://site.ebrary.com.libproxy.unm.edu/lib/unma/detail.action?docID=10667426">University Library</a> - Chapters 1, 7, 10</p></li>
-</ul>
-<h1 id="week02-reference">Reference Materials</h1>
-<ul>
-<li><p>Duckett, Jon, and Larsen, Rob. <em>Beginning HTML and CSS</em>. Somerset, NJ, USA: John Wiley &amp; Sons, 2013. ProQuest ebrary. Web. 28 December 2015. This book is available online through the <a href="http://site.ebrary.com.libproxy.unm.edu/lib/unma/detail.action?docID=10667426">University Library</a> - Chapters 2,3,4 and 8</p></li>
-<li><p><a href="http://www.lynda.com/SharedPlaylist/2b710369c9ec4d8c964467225c6610ad?org=unm.edu">Lynda.com tutorials</a></p>
-<ul>
-<li><em>CSS Fundamentals</em></li>
-<li><em>Javascript for Web Designers</em></li>
-</ul></li>
+<li>Complete readings and video tutorials from week 1.</li>
 </ul>
 <h1 id="week02-milestone">Weekly Milestone - Create a More Complex Web Page and Style It</h1>
 <p>This week’s milestone activity takes you through the process of creating two more web pages in preparation for next week’s work with the Google Maps API in developing your first web mapping page. These pages will be:</p>
@@ -340,21 +367,13 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p><em>Step 2</em> - Copy the code in the home page template into a new file named <code>index.html</code> in your GitHub repository.</p>
 <p><em>Step 3</em> - After you have committed the <code>index.html</code> file to your repository preview it in your browser to see what it looks like when accessed as a static web page. Verify that it looks the same as the <a href="http://karlbenedict.com/GEOG485-585/sample-files/homePageTemplate.html">preview of the template file</a> as a web page.</p>
 <p><em>Step 4</em> - Answer the questions in the Milestone 2 assignment in Learn</p>
-<p><em>Step 5</em> - Flesh out the <code>index.html</code> page that you created above (<em>Step 2</em>) with information specific to you and your interests based upon the content areas in the page. After making sure that your <code>index.html</code> is in the same directory as the <code>hello-world.html</code> file you created in Milestone 1, add a <em>relative</em> link to your <code>hello-world.html</code> file to the &quot;milestones&quot; section of your <code>index.html</code> page by modifying the line</p>
+<p><em>Step 5</em> - Flesh out the <code>index.html</code> page that you created above (<em>Step 2</em>) with information specific to you and your interests based upon the content areas in the page. After making sure that your <code>index.html</code> is in the same directory as the <code>hello-world.html</code> file you created in Milestone 1, add a <em>relative</em> link to your <code>hello-world.html</code> file to the “milestones” section of your <code>index.html</code> page by modifying the line</p>
 <pre><code>&lt;p&gt;&lt;a href=&quot;&quot;&gt;Hello World&lt;/a&gt;&lt;/p&gt;</code></pre>
 <p>to look like this</p>
 <pre><code>&lt;p&gt;&lt;a href=&quot;hello-world.html&quot;&gt;Hello World&lt;/a&gt;&lt;/p&gt;</code></pre>
 <p>Save your change and test it in the browser by clicking the link on your <code>index.html</code> page in the browser. If it successfully opens your <code>hello-world.html</code> page you have properly built your link.</p>
 <p><em>Step 6</em> - Make a copy of your <code>index.html</code> page by copying the content of the page and pasting it into a new document in your repository named <code>index_styled.html</code>.</p>
 <p>Experiment with some of the styling capabilities described in the W3Schools CSS Examples page (<a href="http://www.w3schools.com/css/css_examples.asp" class="uri">http://www.w3schools.com/css/css_examples.asp</a>) on <code>index_styled.html</code> page you created above. Make at least three stylistic changes to the <code>index_styled.html</code> page. Add a link to your <code>index_styled.html</code> page to your home page (<code>index.html</code>) under the <code>milestones</code> section.</p>
-<!-- # Deep Dive - # {#week02-deepDive} -->
-<!-- # Peer Review - # {#week02-peerReview} 
-
-You will perform your first peer-review based upon the *styled* home page that was created as part of this week's milestone. Specifically, 1/4 of your 20-point peer review score will be based upon _your_ submission for review of your Milestone 2 styled home page and your peer-review of _two_ other web pages generated by the students in the class. The required peer-review will consist of two steps:
-
-1. **DUE Beginning of Week 3** Create a new Discussion Thread in the Learn *Milestone 2 Peer Review* forum entitled: "Page for Peer-Review &lt;Your Name&gt;" at the same time you link your milestone to your styled homepage. Include in the post the preview address of your Week 2 styled home page that you created for this assignment. 
-
-2. **DUE Beginning of Week 4**Provide a _substantive_, _constructive_, and _civil_ comment (through the "reply" option for a posted thread) to _two_ of the posted discussion threads posted for peer-review.  Think about the following ideas for your review: _what did I learn from this page_, _what was done well_, _what could be improved_. -->
 <!---------------------------------------------------------------------------->
 <!-- Week 03 ----------------------------------------------------------------->
 <!-- Lecture 02 a 02 a ------------------------------------------------------->
@@ -362,7 +381,7 @@ You will perform your first peer-review based upon the *styled* home page that w
 <!-- Google Maps API---------------------------------------------------------->
 <!---------------------------------------------------------------------------->
 <h1 id="week03">Introduction</h1>
-<p>This week we will begin our work with the popular Google Maps <em>Application Programming Interface</em> (API) in developing an interactive web-based mapping client. This development activity will build upon the the work you've done over the last couple of weeks in developing basic web pages by using the capabilities that Google has made available for building mapping interfaces based upon their Maps platform. You will begin working with javascript as a client programming language to both interact with Google's servers and to provide the needed information for Google's mapping tool in your web page.</p>
+<p>This week we will begin our work with the popular Google Maps <em>Application Programming Interface</em> (API) in developing an interactive web-based mapping client. This development activity will build upon the the work you’ve done over the last couple of weeks in developing basic web pages by using the capabilities that Google has made available for building mapping interfaces based upon their Maps platform. You will begin working with javascript as a client programming language to both interact with Google’s servers and to provide the needed information for Google’s mapping tool in your web page.</p>
 <p><em>Expected Outcomes</em></p>
 <p>By the end of this class module you should understand the following:</p>
 <ul>
@@ -379,31 +398,22 @@ You will perform your first peer-review based upon the *styled* home page that w
 </ul>
 <h1 id="week03-prep">Class Prep</h1>
 <ul>
-<li><p><a href="http://www.lynda.com/SharedPlaylist/2b710369c9ec4d8c964467225c6610ad?org=unm.edu">Lynda.com tutorials</a></p>
-<ul>
-<li><em>Javascript for Web Designers</em> (included as a reference source last week)
-<ul>
-<li><ol start="5" type="1">
-<li>Using the Google Maps API</li>
-</ol></li>
-</ul></li>
-</ul></li>
 <li><p>w3schools <a href="http://www.w3schools.com/js/">JavaScript Tutorial</a></p></li>
 <li><p><a href="http://code.google.com/apis/maps/documentation/javascript/tutorial.html">Google Maps API Tutorial</a></p></li>
+<li>Balkan Uraz, &amp; Alper Dincer. (2013). *Google Maps JavaScript API Cookbook**. (Weeks 3 and 4)<a href="https://www.safaribooksonline.com/library/view/google-maps-javascript/9781849698825/" class="uri">https://www.safaribooksonline.com/library/view/google-maps-javascript/9781849698825/</a>
+<ul>
+<li><a href="https://www.safaribooksonline.com/library/view/google-maps-javascript/9781849698825/ch01.html"><em>Google Maps API Basics</em></a></li>
+<li><a href="https://www.safaribooksonline.com/library/view/google-maps-javascript/9781849698825/ch02.html"><em>Adding Raster Layers</em></a></li>
+<li><a href="https://www.safaribooksonline.com/library/view/google-maps-javascript/9781849698825/ch03.html"><em>Adding Vector Layers</em></a></li>
+<li><a href="https://www.safaribooksonline.com/library/view/google-maps-javascript/9781849698825/ch04.html"><em>Working with Controls</em></a></li>
+</ul></li>
 <li><p>Google Maps API Key - a Google Maps API key is now required to write web pages that make use of the Google Maps API. You can get your API key <a href="https://developers.google.com/maps/documentation/javascript/get-api-key">here</a></p></li>
 </ul>
-<p>Continue reviewing:</p>
-<ul>
-<li>Duckett, Jon, and Larsen, Rob. <em>Beginning HTML and CSS</em>. Somerset, NJ, USA: John Wiley &amp; Sons, 2013. ProQuest ebrary. Web. 28 December 2015. This book is available online through the <a href="http://site.ebrary.com.libproxy.unm.edu/lib/unma/detail.action?docID=10667426">University Library</a> - Chapters 1, 7, 10</li>
-</ul>
 <h1 id="week03-reference">Reference Materials</h1>
-<ul>
-<li>Duckett, Jon, and Larsen, Rob. <em>Beginning HTML and CSS</em>. Somerset, NJ, USA: John Wiley &amp; Sons, 2013. ProQuest ebrary. Web. 28 December 2015. This book is available online through the <a href="http://site.ebrary.com.libproxy.unm.edu/lib/unma/detail.action?docID=10667426">University Library</a> - Chapters 2,3,4 and 8</li>
-</ul>
 <h1 id="week03-milestone">Weekly Milestone - Creation of a Web Page with an Embedded Google Map</h1>
 <p>In preparation for creating a web page with an embedded Google Map you should first answer the questions provided in Learn about what and how you want to map. As you define the type of map you want to build, think about a specific problem or topic that you would like to address with your map. In other words - <em>what is the story you want to tell with your map?</em></p>
-<p>In this exercise you will be generating the configuration for the base map (i.e. The Google Maps background layers). In future assignments you will add your own custom content to free-standing web pages that include a mapper based upon the base map you define here.</p>
-<p>Once you have answered the questions in Learn about the map that you want to create, refer to the examples in the lecture notes, the <a href="http://code.google.com/apis/maps/documentation/javascript/tutorial.html">Google Maps Tutorial</a>, and this week's reading and video tutorial assignment to create a custom Google map.</p>
+<p>In this exercise you will be generating the configuration for the base map (i.e. The Google Maps background layers). In future assignments you will add your own custom content to free-standing web pages that include a mapper based upon the base map you define here.</p>
+<p>Once you have answered the questions in Learn about the map that you want to create, refer to the examples in the lecture notes, the <a href="http://code.google.com/apis/maps/documentation/javascript/tutorial.html">Google Maps Tutorial</a>, and this week’s reading and video tutorial assignment to create a custom Google map.</p>
 <p>Provide the link to your Google map in response to the last question in the assignment in Learn.</p>
 <!---------------------------------------------------------------------------->
 <!-- Week 04 ----------------------------------------------------------------->
@@ -412,7 +422,7 @@ You will perform your first peer-review based upon the *styled* home page that w
 <!-- Google Maps API---------------------------------------------------------->
 <!---------------------------------------------------------------------------->
 <h1 id="week04">Introduction</h1>
-<p>This week covers some additional topics related to the Google Maps API, particularly focusing on styling the Maps base maps using the <a href="https://mapstyle.withgoogle.com">Create Map Style wizard</a> and integrating the javascript generated by the wizard into the base web page code developed last week; and, using <a href="http://www.google.com/fusiontables/public/tour/index.html">Google's Fusion Tables</a> tool to create and manage tabular data for mapping and other visualization. We complete our work with the Maps API with an example of a more &quot;real&quot; example of a maps-enabled web page.</p>
+<p>This week covers some additional topics related to the Google Maps API, particularly focusing on styling the Maps base maps using the <a href="https://mapstyle.withgoogle.com">Create Map Style wizard</a> and integrating the javascript generated by the wizard into the base web page code developed last week; and, using <a href="http://www.google.com/fusiontables/public/tour/index.html">Google’s Fusion Tables</a> tool to create and manage tabular data for mapping and other visualization. We complete our work with the Maps API with an example of a more “real” example of a maps-enabled web page.</p>
 <p><em>Expected Outcomes</em></p>
 <p>By the end of this class module you should be able to:</p>
 <ul>
@@ -432,26 +442,15 @@ You will perform your first peer-review based upon the *styled* home page that w
 <li><p>Separation of structure, presentation, and behavior in web development</p></li>
 </ul>
 <h1 id="week04-prep">Class Prep</h1>
-<ul>
-<li><p><a href="http://www.lynda.com/SharedPlaylist/2b710369c9ec4d8c964467225c6610ad?org=unm.edu">Lynda.com tutorials</a></p>
-<ul>
-<li><em>Javascript for Web Designers</em> (continued)
-<ul>
-<li><ol start="5" type="1">
-<li>Using the Google Maps API</li>
-</ol></li>
-</ul></li>
-</ul></li>
-</ul>
+<p>Continue with materials from last Week</p>
 <h1 id="week04-reference">Reference Materials</h1>
 <ul>
-<li><p>Duckett, Jon, and Larsen, Rob. <em>Beginning HTML and CSS</em>. Somerset, NJ, USA: John Wiley &amp; Sons, 2013. ProQuest ebrary. Web. 28 December 2015. This book is available online through the <a href="http://site.ebrary.com.libproxy.unm.edu/lib/unma/detail.action?docID=10667426">University Library</a> - Chapters 2,3,4 and 8</p></li>
 <li><p><a href="http://code.google.com/apis/maps/documentation/javascript/tutorial.html">Google Maps API Tutorial</a></p></li>
 <li><p><a href="https://developers.google.com/maps/documentation/javascript/styling">Google Maps Styling Reference</a></p></li>
 <li><p><a href="https://support.google.com/fusiontables/answer/184641?hl=en">Google Maps Fusion Mapper</a></p></li>
 </ul>
 <h1 id="week04-milestone">Weekly Milestone - Styling of an Embedded Google Map</h1>
-<p>Make a free-standing web page based upon the Google Map that you created as part of last week's milestone. Use the Google <a href="https://mapstyle.withgoogle.com">Create Map Style wizard</a> to define <em>at least</em> three modified base map styles and integrate the JSON generated by the wizard into your new Google Map page.</p>
+<p>Make a free-standing web page based upon the Google Map that you created as part of last week’s milestone. Use the Google <a href="https://mapstyle.withgoogle.com">Create Map Style wizard</a> to define <em>at least</em> three modified base map styles and integrate the JSON generated by the wizard into your new Google Map page.</p>
 <h1 id="week04-deepDive">Deep Dive - Creation of a a Google Maps Web Page with Custom Points and Labels</h1>
 <p>In your milestone for this week you built a styled Google Maps base map for a particular region of interest. For this <em>deep dive</em> assignment create a new free-standing web page that includes a brief description of the topical focus of your mapper:</p>
 <ul>
@@ -471,7 +470,7 @@ You will perform your first peer-review based upon the *styled* home page that w
 <!---------------------------------------------------------------------------->
 <!---------------------------------------------------------------------------->
 <h1 id="week05">Introduction</h1>
-<p>Core the the development of distributed mapping systems over the internet is the concept of web services and the interoperability upon which they are based as the means of communication between systems. This week's lecture and focuses on the core concepts of geospatial <em>Services Oriented Architectures</em> and the open interoperability standards from the <em>Open Geospatial Consortium</em> that enable the exchange of map images and data over the web.</p>
+<p>Core the the development of distributed mapping systems over the internet is the concept of web services and the interoperability upon which they are based as the means of communication between systems. This week’s lecture and focuses on the core concepts of geospatial <em>Services Oriented Architectures</em> and the open interoperability standards from the <em>Open Geospatial Consortium</em> that enable the exchange of map images and data over the web.</p>
 <p><em>Expected Outcomes</em></p>
 <p>By the end of this class module you should understand the following:</p>
 <ul>
@@ -503,9 +502,9 @@ You will perform your first peer-review based upon the *styled* home page that w
 </dl>
 <p>Download three data products from one or more of the following online data repositories or another data repository that has data that interest you.</p>
 <ul>
-<li><a href="http://rgis.unm.edu/">New Mexico Resource Geographic Information System</a></li>
+<li><a href="http://rgis.unm.edu/getdata/">New Mexico Resource Geographic Information System</a></li>
 <li><a href="http://nationalmap.gov/small_scale/atlasftp.html">The US National Map Data Download Site</a></li>
-<li><a href="http://www.ncdc.noaa.gov/cdo-web/datasets">NOAA's National Climate Data Center <em>Climate data online: Data discovery</em> site</a></li>
+<li><a href="http://www.ncdc.noaa.gov/cdo-web/datasets">NOAA’s National Climate Data Center <em>Climate data online: Data discovery</em> site</a></li>
 <li><a href="http://www.census.gov/geo/maps-data/data/tiger.html">US Census Bureau - Geography - TIGER Data</a></li>
 </ul>
 <dl>
@@ -516,15 +515,15 @@ You will perform your first peer-review based upon the *styled* home page that w
 <ul>
 <li>The name of the dataset</li>
 <li>The filename(s) for the dataset</li>
-<li>A short (1-2 sentence) description of the dataset's contents</li>
-<li>The bounding box (provided as the minimum and maximum extent in the N-S and E-W directions) in the native units and coordinate system</li>
-<li>The coordinate reference system - by name and EPSG code</li>
+<li>A short (1-2 sentence) description of the dataset’s contents</li>
+<li>The bounding box (provided as the minimum and maximum extent in the N-S and E-W directions) in the <strong>native units and coordinate system</strong></li>
+<li>The coordinate reference system - by <strong>name and EPSG code</strong></li>
 </ul>
 <!---------------------------------------------------------------------------->
 <!-- Week 06 ----------------------------------------------------------------->
 <!---------------------------------------------------------------------------->
 <h1 id="week06">Introduction</h1>
-<p>This week's class focuses on three open interoperability standards that are the most broadly used of the standards that we will be covering.</p>
+<p>This week’s class focuses on three open interoperability standards that are the most broadly used of the standards that we will be covering.</p>
 <dl>
 <dt>Extensible Markup Language (XML)</dt>
 <dd><p>The World Wide Web Consortium (W3C) standard that is the foundation for many other service and data standards including: the service metadata (GetCapabilities) for the OGC WMS, WFS, and WCS, Geography Markup Language (GML), and KML.</p>
@@ -563,7 +562,7 @@ You will perform your first peer-review based upon the *styled* home page that w
 <h1 id="week06-milestone">Weekly Milestone - WMS</h1>
 <p>There are a large number of WMS services available on the web. One way to find interesting services is to search for them using standard search engines such as Google. Try searching for the following search phrase:</p>
 <p><code>“REQUEST=GetCapabilities” and “SERVICE=WMS”</code></p>
-<p>as a single search phrase</p>
+<p><strong>as a single search phrase</strong></p>
 <dl>
 <dt>Question 1</dt>
 <dd>What search engine did you use?
@@ -575,19 +574,19 @@ You will perform your first peer-review based upon the *styled* home page that w
 <dd>How useful (generally in terms of getting a pointers to live WMS services [defined as a <em>functioning</em> GetCapabilities request]) were the ‘hits’?
 </dd>
 </dl>
-<p>Pick two of the services that included live &quot;GetCapabilities&quot; requests that you found above, and answer the following questions about each.</p>
+<p>Pick two of the services that included live “GetCapabilities” requests that you found above, and answer the following questions about each.</p>
 <dl>
 <dt>Question 4 (service #1)</dt>
 <dd><p>What is the URL for the full GetCapabilities request to the service?</p>
 <p>What is the Name of the service?</p>
 <p>What Format(s) are available for GetMap requests from the service?</p>
-<p>How many layers are included in the service (<em>including nesting layers</em>)?</p>
+<p>How many layers are included in the service (<em>including nesting/nested layers</em>)?</p>
 </dd>
 <dt>Question 4 (service #2)</dt>
 <dd><p>What is the URL for the full GetCapabilities request to the service?</p>
 <p>What is the Name of the service?</p>
 <p>What Format(s) are available for GetMap requests from the service?</p>
-<p>How many layers are included in the service (<em>including nesting layers</em>)?</p>
+<p>How many layers are included in the service (<em>including nesting/nested layers</em>)?</p>
 </dd>
 <dt>Question 5: For one of the layers in the first service,</dt>
 <dd><p>What is the name of the layer?</p>
@@ -628,7 +627,7 @@ You will perform your first peer-review based upon the *styled* home page that w
 <dd>What OGC request would you use to inform the configuration of a client application (like ArcGIS or QGIS) about an OGC service that you want to add layers from?
 </dd>
 </dl>
-<p>Which OGC request would you submit under the following circumstances (<em>include both the service type</em> [e.g. WMS, WFS, WCS], and the <em>request</em> [e.g. GetMap, GetCapabilities, GetCoverage, etc.] in your answer)</p>
+<p>Which OGC request would you submit under the following circumstances (<em>include both the service type</em> [e.g. WMS, WFS, WCS], and the <em>request</em> [e.g. GetMap, GetCapabilities, GetCoverage, etc.] in your answer)</p>
 <dl>
 <dt>Question 5</dt>
 <dd><p>You want a map image representing three layers of data in a single JPEG for a specified area of interest.</p>
@@ -651,7 +650,7 @@ You will perform your first peer-review based upon the *styled* home page that w
 <p>What are the SRS/CRS’s for which layers from this service are available (remember that nested layers inherit the SRS/CRS of their parent layers).</p>
 </dd>
 <dt>Question 8</dt>
-<dd>Formulate a GetMap request for the “tl_2010_35_bg10” layer from this service, for a 500x500 pixel map image that is 0.05-degrees wide and 0.05-degress high, with the SW corner of the map image located at 35°N and -106°45'E (EPSG:4326). Include in your write-up the complete GetMap request.
+<dd>Formulate a GetMap request for the “tl_2010_35_bg10” layer from this service, for a 500x500 pixel map image that is 0.05-degrees wide and 0.05-degress high, with the SW corner of the map image located at 35°N and -106°45’E (EPSG:4326). Include in your write-up the complete GetMap request.
 </dd>
 </dl>
 <!-- http://gstore.unm.edu/apps/rgis/datasets/715663ba-c1c3-414c-84a7-c671526f8316/services/ogc/wms?SERVICE=wms&REQUEST=GetMap&VERSION=1.1.1&FORMAT=PNG&BBOX=-106.75,35,-106.667,35.05&SRS=EPSG:4326&WIDTH=500&HEIGHT=500&LAYERS=tl_2010_35_bg10&STYLES=  -->
@@ -659,7 +658,7 @@ You will perform your first peer-review based upon the *styled* home page that w
 <!-- Week 07 ----------------------------------------------------------------->
 <!---------------------------------------------------------------------------->
 <h1 id="week07">Introduction</h1>
-<p>This week's class focuses on two other key Open Geospatial Consortium standards that were created to enable access to geospatial <em>data</em> of a variety of types.</p>
+<p>This week’s class focuses on two other key Open Geospatial Consortium standards that were created to enable access to geospatial <em>data</em> of a variety of types.</p>
 <dl>
 <dt>Web Feature Service (WFS)</dt>
 <dd><p>A standard designed for providing on-demand access to features (typically points, lines, and polygons and more complex combinations of these feature types) and their associated attributes, in a variety of formats, and optionally filtered by spatial and other query parameters.</p>
@@ -673,7 +672,7 @@ You will perform your first peer-review based upon the *styled* home page that w
 <ul>
 <li><p>The request-response model for OGC WFS, including the required and optional request parameters for the <em>GetCapabilities</em>, <em>DescribeFeatureType</em>, and <em>GetFeature</em> requests; and the response types generated in response to those requests.</p></li>
 <li><p>The request-response model for OGC WCS, including the required and optional request parameters for the <em>GetCapabilities</em>, <em>DescribeCoverage</em>, and <em>GetCoverage</em> requests; and the response types generated in response to those requests.</p></li>
-<li><p>An understanding of the distinction between WMS, WFS, and WCS for use in different usage scenarios (e.g. map images, vector, raster data access)</p></li>
+<li><p>An understanding of the distinction between WMS, WFS, and WCS for use in different usage scenarios (e.g. map images, vector, raster data access)</p></li>
 </ul>
 <p><em>Key Concepts</em></p>
 <ul>
@@ -702,14 +701,14 @@ STYLES=&amp;SRS=EPSG:4326&amp;WIDTH=200&amp;HEIGHT=200</code></pre>
 </figure>
 <p>This discrepancy is the result of a difference in the aspect ratio of the requested BBOX (-107.2,34.7,-106,35.25) and the requested image dimensions (200x200 pixels). <em>When you compose a WMS GetMap request, you need to make sure that the aspect ratio of both the image size and BBOX match.</em></p>
 <p>For example, if we calculate the aspect ratio of the BBOX we obtain the following values (remember that the BBOX is specified as a comma separated list of x,y coordinates: minx,miny,maxx,maxy):</p>
-<p><span class="math inline"><em>B</em><em>B</em><em>O</em><em>X</em><sub><em>w</em><em>i</em><em>d</em><em>t</em><em>h</em></sub> = <em>x</em><sub><em>m</em><em>a</em><em>x</em></sub> − <em>x</em><sub><em>m</em><em>i</em><em>n</em></sub> = ( − 106)−(−107.2)=1.2<sup>∘</sup></span></p>
+<p><span class="math inline"><em>B</em><em>B</em><em>O</em><em>X</em><sub><em>w</em><em>i</em><em>d</em><em>t</em><em>h</em></sub> = <em>x</em><sub><em>m</em><em>a</em><em>x</em></sub> − <em>x</em><sub><em>m</em><em>i</em><em>n</em></sub> = ( − 106) − ( − 107.2) = 1.2<sup>∘</sup></span></p>
 <p><span class="math inline"><em>B</em><em>B</em><em>O</em><em>X</em><sub><em>h</em><em>e</em><em>i</em><em>g</em><em>h</em><em>t</em></sub> = <em>y</em><sub><em>m</em><em>a</em><em>x</em></sub> − <em>y</em><sub><em>m</em><em>i</em><em>n</em></sub> = 35.25 − 34.7 = 0.55<sup>∘</sup></span></p>
 <p><span class="math inline"><em>B</em><em>B</em><em>O</em><em>X</em><sub><em>a</em><em>s</em><em>p</em><em>e</em><em>c</em><em>t</em> − <em>r</em><em>a</em><em>t</em><em>i</em><em>o</em></sub> = <em>B</em><em>B</em><em>O</em><em>X</em><sub><em>w</em><em>i</em><em>d</em><em>t</em><em>h</em></sub>/<em>B</em><em>B</em><em>O</em><em>X</em><sub><em>h</em><em>e</em><em>i</em><em>g</em><em>h</em><em>t</em></sub> = 1.2<sup>∘</sup>/0.55<sup>∘</sup> = 2.1818</span></p>
 <p>If we want to retrieve a map image that is 200 pixels wide, we need to calculate an image height that yields an aspect ratio that matches the BBOX aspect ratio. Harking back to basic algebra:</p>
 <p><span class="math inline"><em>I</em><em>m</em><em>a</em><em>g</em><em>e</em><sub><em>w</em><em>i</em><em>d</em><em>t</em><em>h</em></sub> = 200<em>p</em><em>x</em></span></p>
 <p><span class="math inline"><em>I</em><em>m</em><em>a</em><em>g</em><em>e</em><sub><em>a</em><em>s</em><em>p</em><em>e</em><em>c</em><em>t</em> − <em>r</em><em>a</em><em>t</em><em>i</em><em>o</em></sub> = <em>I</em><em>m</em><em>a</em><em>g</em><em>e</em><sub><em>w</em><em>i</em><em>d</em><em>t</em><em>h</em></sub>/<em>I</em><em>m</em><em>a</em><em>g</em><em>e</em><sub><em>h</em><em>e</em><em>i</em><em>g</em><em>h</em><em>t</em></sub> = 200<em>p</em><em>x</em>/<em>I</em><em>m</em><em>a</em><em>g</em><em>e</em><sub><em>h</em><em>e</em><em>i</em><em>g</em><em>h</em><em>t</em></sub> = 2.1818</span></p>
 <p><span class="math inline"><em>I</em><em>m</em><em>a</em><em>g</em><em>e</em><sub><em>h</em><em>e</em><em>i</em><em>g</em><em>h</em><em>t</em></sub> = <em>I</em><em>m</em><em>a</em><em>g</em><em>e</em><sub><em>w</em><em>i</em><em>d</em><em>t</em><em>h</em></sub>/<em>a</em><em>s</em><em>p</em><em>e</em><em>c</em><em>t</em> − <em>r</em><em>a</em><em>t</em><em>i</em><em>o</em> = 200<em>p</em><em>x</em>/2.1818 = 91.667<em>p</em><em>x</em></span></p>
-<p>So, if we request an image that is 200x92 (we have to request pixel dimensions in integers, so rounding to the nearest integer) we should get a representation that closely approximates the proper shape of features. The modified WMS request with the new image's size is the following (<a href="http://gstore.unm.edu/apps/rgis/datasets/92403ebf-aec5-404b-ae8a-6db41f388737/services/ogc/wms?VERSION=1.1.1&amp;SERVICE=WMS&amp;REQUEST=GetMap&amp;BBOX=-107.2,34.7,-106,35.25&amp;LAYERS=g_2007fe_35_county&amp;FORMAT=image/png&amp;TRANSPARENT=TRUE&amp;STYLES=&amp;SRS=EPSG:4326&amp;WIDTH=200&amp;HEIGHT=92">link</a>):</p>
+<p>So, if we request an image that is 200x92 (we have to request pixel dimensions in integers, so rounding to the nearest integer) we should get a representation that closely approximates the proper shape of features. The modified WMS request with the new image’s size is the following (<a href="http://gstore.unm.edu/apps/rgis/datasets/92403ebf-aec5-404b-ae8a-6db41f388737/services/ogc/wms?VERSION=1.1.1&amp;SERVICE=WMS&amp;REQUEST=GetMap&amp;BBOX=-107.2,34.7,-106,35.25&amp;LAYERS=g_2007fe_35_county&amp;FORMAT=image/png&amp;TRANSPARENT=TRUE&amp;STYLES=&amp;SRS=EPSG:4326&amp;WIDTH=200&amp;HEIGHT=92">link</a>):</p>
 <pre><code>http://gstore.unm.edu/apps/rgis/datasets/92403ebf-aec5-404b-ae8a-6db41f388737/
 services/ogc/wms?VERSION=1.1.1&amp;SERVICE=WMS&amp;REQUEST=GetMap&amp;BBOX=-107.2,34.7,-106,35.25&amp;
 LAYERS=g_2007fe_35_county&amp;FORMAT=image/png&amp;TRANSPARENT=TRUE&amp;STYLES=&amp;
@@ -719,7 +718,7 @@ SRS=EPSG:4326&amp;WIDTH=200&amp;HEIGHT=92</code></pre>
 </figure>
 <p>This process may be reversed to request images of a fixed size for use in a client interface, with the requested BBOX modified to match the aspect ratio of the target image. If, for example, images are being requested for a client interface with a fixed map size of 600x400 pixels, a corresponding BBOX can be derived using the same calculation.</p>
 <p>If, for example, the area of interest for a map is 2 degrees wide, we can calculate the target height (in degrees) using the aspect ratio of the desired image.</p>
-<p><span class="math inline"><em>I</em><em>m</em><em>a</em><em>g</em><em>e</em><sub><em>a</em><em>s</em><em>p</em><em>e</em><em>c</em><em>t</em> − <em>r</em><em>a</em><em>t</em><em>i</em><em>o</em></sub> = <em>I</em><em>m</em><em>a</em><em>g</em><em>e</em><sub><em>w</em><em>i</em><em>d</em><em>t</em><em>h</em></sub>/<em>I</em><em>m</em><em>a</em><em>g</em><em>e</em><sub><em>h</em><em>e</em><em>i</em><em>g</em><em>h</em><em>t</em></sub> = (600<em>p</em><em>x</em>)/(400<em>p</em><em>x</em>)=1.5</span></p>
+<p><span class="math inline"><em>I</em><em>m</em><em>a</em><em>g</em><em>e</em><sub><em>a</em><em>s</em><em>p</em><em>e</em><em>c</em><em>t</em> − <em>r</em><em>a</em><em>t</em><em>i</em><em>o</em></sub> = <em>I</em><em>m</em><em>a</em><em>g</em><em>e</em><sub><em>w</em><em>i</em><em>d</em><em>t</em><em>h</em></sub>/<em>I</em><em>m</em><em>a</em><em>g</em><em>e</em><sub><em>h</em><em>e</em><em>i</em><em>g</em><em>h</em><em>t</em></sub> = (600<em>p</em><em>x</em>)/(400<em>p</em><em>x</em>) = 1.5</span></p>
 <p><span class="math inline"><em>B</em><em>B</em><em>O</em><em>X</em><sub><em>a</em><em>s</em><em>p</em><em>e</em><em>c</em><em>t</em> − <em>r</em><em>a</em><em>t</em><em>i</em><em>o</em></sub> = <em>B</em><em>B</em><em>O</em><em>X</em><sub><em>w</em><em>i</em><em>d</em><em>t</em><em>h</em></sub>/<em>B</em><em>B</em><em>O</em><em>X</em><sub><em>h</em><em>e</em><em>i</em><em>g</em><em>h</em><em>t</em></sub> = 2<sup>∘</sup>/<em>B</em><em>B</em><em>O</em><em>X</em><sub><em>h</em><em>e</em><em>i</em><em>g</em><em>h</em><em>t</em></sub> = 1.5</span></p>
 <p><span class="math inline"><em>B</em><em>B</em><em>O</em><em>X</em><sub><em>h</em><em>e</em><em>i</em><em>g</em><em>h</em><em>t</em></sub> = <em>B</em><em>B</em><em>O</em><em>X</em><sub><em>w</em><em>i</em><em>d</em><em>t</em><em>h</em></sub>/<em>B</em><em>B</em><em>O</em><em>X</em><sub><em>a</em><em>s</em><em>p</em><em>e</em><em>c</em><em>t</em> − <em>r</em><em>a</em><em>t</em><em>i</em><em>o</em></sub> = 2<sup>∘</sup>/1.5 = 1.3333<sup>∘</sup></span></p>
 <p>If our area of interest extends from -106 to -108 degrees East Longitude, we can use the known target height of 1.3333 to generate a WMS BBOX of the appropriate aspect ratio. If the minimum Latitude of interest is 34.7 degrees North Latitude, the maximum BBOX Y value would be</p>
@@ -756,7 +755,7 @@ SRS=EPSG:4326&amp;WIDTH=600&amp;HEIGHT=400</code></pre>
 </ol>
 <dl>
 <dt>Question 5</dt>
-<dd>Which layer(s) return map images that display image content (i.e. return a non-blank image)?
+<dd>Which layer(s) return map images that display image content (i.e. return a non-blank image)?
 </dd>
 <dt>Questions 6</dt>
 <dd>What is the difference between these requests? How might this difference influence whether or not a map image with content is being returned?
@@ -796,17 +795,17 @@ SRS=EPSG:4326&amp;WIDTH=600&amp;HEIGHT=400</code></pre>
 ## Peer Review - ## {#week09-peerReview}
 -->
 <h2 id="week-9---spring-break"># Week 9 - Spring Break</h2>
-<p>title: Week 10 - Web-based Mapping Clients - OpenLayers Javascript Framework ...</p>
+<p>title: Week 10 - Web-based Mapping Clients - OpenLayers Javascript Framework …</p>
 <!---------------------------------------------------------------------------->
 <!-- Week 10 ----------------------------------------------------------------->
 <!---------------------------------------------------------------------------->
 <h1 id="week10">Introduction</h1>
-<p>The Google Maps API provides one method for presenting an interactive mapping tool within a web browser, but there are restrictions for free use based upon Google's <a href="https://developers.google.com/maps/licensing">license</a> agreement, and the API is completely controlled by Google - changes are limited to those that Google enables. The <a href="http://openlayers.org/">OpenLayers</a> Javascript framework which (as quoted from the OpenLayers 2 project home page)</p>
+<p>The Google Maps API provides one method for presenting an interactive mapping tool within a web browser, but there are restrictions for free use based upon Google’s <a href="https://developers.google.com/maps/licensing">license</a> agreement, and the API is completely controlled by Google - changes are limited to those that Google enables. The <a href="http://openlayers.org/">OpenLayers</a> Javascript framework which (as quoted from the OpenLayers 2 project home page)</p>
 <blockquote>
 <p>has been developed to further the use of geographic information of all kinds. OpenLayers is completely free, Open Source JavaScript, released under the 2-clause BSD License (also known as the FreeBSD).</p>
 </blockquote>
 <p>Given its Open Source model, OpenLayers is managed as a community software project, with the development of specific capabilities driven by particular project or functionality needs that come out of the community.</p>
-<p>This week's class focuses on the basics of designing an OpenLayers interactive mapping client, including</p>
+<p>This week’s class focuses on the basics of designing an OpenLayers interactive mapping client, including</p>
 <ul>
 <li>The required structural (HTML) and behavioral (Javascript) components</li>
 <li>Examples of creating and adding layer objects to a map</li>
@@ -833,23 +832,23 @@ SRS=EPSG:4326&amp;WIDTH=600&amp;HEIGHT=400</code></pre>
 <p><a href="http://openlayers.org/en/latest/doc/quickstart.html">OpenLayers Quick Start Page</a></p>
 <p><a href="http://openlayers.org/en/latest/doc/tutorials/concepts.html">OpenLayers Basic Concepts</a></p>
 <p><a href="http://openlayers.org/workshop/en/index.html">OpenLayers Workshop</a></p>
-<p>Gratier, T., Spencer, P., &amp; Hazzard, E. (2015). <em>Openlayers 3 beginner's guide : Get started with openlayers 3 and enhance your web pages by creating and displaying dynamic maps</em>. Birmingham, England: Packt Publishing. <a href="https://unm-on-worldcat-org.libproxy.unm.edu/oclc/903963849?databaseList=1271,143,1487,1533,1540,1672,1708,173,1925,2006,2007,203,2201,2237,2259,2260,2261,2262,2263,2264,2267,2268,2281,2328,3036,3201,638">eBook</a> Chapters 1-3. <strong>Read for concepts - the framework has changed enough since the publication of this book that much of the code doesn't work as you would expect</strong></p>
+<p>Gratier, T., Spencer, P., &amp; Hazzard, E. (2015). <em>Openlayers 3 beginner’s guide : Get started with openlayers 3 and enhance your web pages by creating and displaying dynamic maps</em>. Birmingham, England: Packt Publishing. <a href="https://unm-on-worldcat-org.libproxy.unm.edu/oclc/903963849?databaseList=1271,143,1487,1533,1540,1672,1708,173,1925,2006,2007,203,2201,2237,2259,2260,2261,2262,2263,2264,2267,2268,2281,2328,3036,3201,638">eBook</a> Chapters 1-3. <strong>Read for concepts - the framework has changed enough since the publication of this book that much of the code doesn’t work as you would expect</strong></p>
 <h1 id="week10-reference">Reference Materials</h1>
 <p><a href="http://openlayers.org/en/latest/apidoc/">OpenLayers API Reference</a></p>
 <p><a href="http://openlayers.org/en/latest/examples/">OpenLayers Sample Maps</a></p>
 <h1 id="week10-milestone">Weekly Milestone - OpenLayers Mapping</h1>
 <p>Following the model used in Milestone 3 for your first Google Map web page, you should answer the questions in Learn about what and how you want to map - <em>relating to a different focus than you have used in your previous assignments</em>. As you define the type of map you want to build, think about a specific problem or topic that you would like to address with your map.</p>
-<p>In this exercise you will be generating the configuration for the base map (i.e. including one or more OpenLayer enabled background layers), adding controls, and defining an appropriate map center and zoom level for the map. You will add your own custom content (i.e. the answers to the following questions) to a free-standing web page that include an interactive mapper and the reasoning behind the design of the map.</p>
-<p>Once your have answered the questions in Learn about the map that you wantn to create, refer to the examples in the lecture notes, the OpenLayers Examples (<a href="http://openlayers.org/en/latest/examples/" class="uri">http://openlayers.org/en/latest/examples/</a>), and this week's reading assignment to create a custom OpenLayers map.</p>
+<p>In this exercise you will be generating the configuration for the base map (i.e. including one or more OpenLayer enabled background layers), adding controls, and defining an appropriate map center and zoom level for the map. You will add your own custom content (i.e. the answers to the following questions) to a free-standing web page that include an interactive mapper and the reasoning behind the design of the map.</p>
+<p>Once your have answered the questions in Learn about the map that you wantn to create, refer to the examples in the lecture notes, the OpenLayers Examples (<a href="http://openlayers.org/en/latest/examples/" class="uri">http://openlayers.org/en/latest/examples/</a>), and this week’s reading assignment to create a custom OpenLayers map.</p>
 <p>Provide the link to your new OpenLayers map in response to the last question in the assignment in Learn.</p>
 <h1 id="peer-review">Peer Review</h1>
-<p>This week's assignment includes a peer review component that is provided in the Learn environment's assignments area.</p>
+<p>This week’s assignment includes a peer review component that is provided in the Learn environment’s assignments area.</p>
 <!---------------------------------------------------------------------------->
 <!-- Week 11 ----------------------------------------------------------------->
 <!---------------------------------------------------------------------------->
 <h1 id="week11">Introduction</h1>
 <p><em>Background</em></p>
-<p>As we learned in our introduction to OpenLayers in last week's class, it provides a flexible platform for integrating geospatial data from a variety of sources in a single interactive mapping environment. These capabilities include data integration from OGC Web Map Services and a wide variety of data formats for display in the mapper. This week's class provides an overview of the options for the OpenLayers <code>Map</code> and <code>Layer</code> objects, and specific information about configuring OGC WMS, KML, and Vector Geometry Layers and a brief overview of styling of vector data layers.</p>
+<p>As we learned in our introduction to OpenLayers in last week’s class, it provides a flexible platform for integrating geospatial data from a variety of sources in a single interactive mapping environment. These capabilities include data integration from OGC Web Map Services and a wide variety of data formats for display in the mapper. This week’s class provides an overview of the options for the OpenLayers <code>Map</code> and <code>Layer</code> objects, and specific information about configuring OGC WMS, KML, and Vector Geometry Layers and a brief overview of styling of vector data layers.</p>
 <p><em>Expected Outcomes</em></p>
 <p>At the end of this class, students should be able to:</p>
 <ul>
@@ -869,7 +868,7 @@ SRS=EPSG:4326&amp;WIDTH=600&amp;HEIGHT=400</code></pre>
 <li>There exist a variety of styling options for vector data that are added to a map</li>
 </ul>
 <h1 id="week11-prep">Class Prep</h1>
-<p>Gratier, T., Spencer, P., &amp; Hazzard, E. (2015). <em>Openlayers 3 beginner's guide : Get started with openlayers 3 and enhance your web pages by creating and displaying dynamic maps</em>. Birmingham, England: Packt Publishing. <a href="https://unm-on-worldcat-org.libproxy.unm.edu/oclc/903963849?databaseList=1271,143,1487,1533,1540,1672,1708,173,1925,2006,2007,203,2201,2237,2259,2260,2261,2262,2263,2264,2267,2268,2281,2328,3036,3201,638">eBook</a> Chapters 4-6. <strong>Read for concepts - the framework has changed enough since the publication of this book that much of the code doesn't work as you would expect</strong></p>
+<p>Gratier, T., Spencer, P., &amp; Hazzard, E. (2015). <em>Openlayers 3 beginner’s guide : Get started with openlayers 3 and enhance your web pages by creating and displaying dynamic maps</em>. Birmingham, England: Packt Publishing. <a href="https://unm-on-worldcat-org.libproxy.unm.edu/oclc/903963849?databaseList=1271,143,1487,1533,1540,1672,1708,173,1925,2006,2007,203,2201,2237,2259,2260,2261,2262,2263,2264,2267,2268,2281,2328,3036,3201,638">eBook</a> Chapters 4-6. <strong>Read for concepts - the framework has changed enough since the publication of this book that much of the code doesn’t work as you would expect</strong></p>
 <p>OpenLayers 3 Examples:</p>
 <ul>
 <li><a href="http://openlayers.org/en/latest/examples/wms-image.html"><em>Single Image WMS Example</em></a></li>
@@ -880,7 +879,7 @@ SRS=EPSG:4326&amp;WIDTH=600&amp;HEIGHT=400</code></pre>
 <p><a href="http://openlayers.org/en/latest/apidoc/">OpenLayers API Reference</a></p>
 <p><a href="http://openlayers.org/en/latest/examples/">OpenLayers Sample Maps</a></p>
 <h1 id="week11-milestone">Weekly Milestone - A Customized OpenLayers Mapping Client</h1>
-<p>Please create a new OpenLayers mapping page that is based upon the initial map (and thematic focus) that you created for last week's milestone, and add the following to your map:</p>
+<p>Please create a new OpenLayers mapping page that is based upon the initial map (and thematic focus) that you created for last week’s milestone, and add the following to your map:</p>
 <ol type="1">
 <li><p>Five Vector Features (based upon Point, LineString, or LinearRing Geometries), each assigned its own style.</p></li>
 <li><p>One KML Layer, also styled. Make sure to give some thought to the size of the KML file that you use as large (e.g. &gt; 1-2 MB) KML files can cause slow page loads and in some cases can crash your browser.</p></li>
@@ -893,8 +892,8 @@ SRS=EPSG:4326&amp;WIDTH=600&amp;HEIGHT=400</code></pre>
 <ul>
 <li><p>What is the high-level description of the problem/question you want to help answer through the presentation of a collection of geographic data over the internet? Please answer in a short paragraph.</p></li>
 <li><p>Who is the target audience for the information you want to provide?</p></li>
-<li><p>What geographic region does your problem area represent? Please describe it in words (e.g. New Mexico, Alberta Canada, etc.) and define it in terms of a geographic (WGS84) (latitude and longitude) bounding box.</p></li>
-<li><p>What types of data do you want to include in your project? Include a description (data content: e.g. elevation data, hydrographic survey, etc.) and types (i.e. raster, vector).</p></li>
+<li><p>What geographic region does your problem area represent? Please describe it in words (e.g. New Mexico, Alberta Canada, etc.) and define it in terms of a geographic (WGS84) (latitude and longitude) bounding box.</p></li>
+<li><p>What types of data do you want to include in your project? Include a description (data content: e.g. elevation data, hydrographic survey, etc.) and types (i.e. raster, vector).</p></li>
 <li><p>What projection will you use for the presentation of your project data? Again, describe it, provide your reasoning for selection, and provide the corresponding EPSG code.</p></li>
 <li><p>Where do you anticipate acquiring data for the project from?</p></li>
 <li><p>What barriers to acquiring and processing the needed data do you anticipate?</p></li>
@@ -907,7 +906,7 @@ SRS=EPSG:4326&amp;WIDTH=600&amp;HEIGHT=400</code></pre>
 <li><p>What is its coordinate reference system?</p></li>
 <li><p>What are the spatial extents of the dataset?</p></li>
 </ul>
-<p>For a dataset to be useful, you should be able to answer all five of these questions about it. Furthermore, you should seek out datasets that are in common formats that you know you can work with in a variety of applications (i.e. QGIS, ArcGIS, gdalinfo, ogrinfo, etc.). If you can’t access and use a dataset in one of these applications, you will probably have problems trying to use it in your project.</p>
+<p>For a dataset to be useful, you should be able to answer all five of these questions about it. Furthermore, you should seek out datasets that are in common formats that you know you can work with in a variety of applications (i.e. QGIS, ArcGIS, gdalinfo, ogrinfo, etc.). If you can’t access and use a dataset in one of these applications, you will probably have problems trying to use it in your project.</p>
 <p>Also, below are links to the documentation for GeoServer - the platform that we will work with in a couple of weeks for publishing data - relating to the supported raster and vector formats in the default GeoServer installation.</p>
 <p>Vector Data: <a href="http://docs.geoserver.org/stable/en/user/data/vector/index.html" class="uri">http://docs.geoserver.org/stable/en/user/data/vector/index.html</a></p>
 <p>Raster Data <a href="http://docs.geoserver.org/stable/en/user/data/raster/index.html" class="uri">http://docs.geoserver.org/stable/en/user/data/raster/index.html</a></p>
@@ -915,7 +914,7 @@ SRS=EPSG:4326&amp;WIDTH=600&amp;HEIGHT=400</code></pre>
 <!-- Week 12 ----------------------------------------------------------------->
 <!---------------------------------------------------------------------------->
 <h1 id="week12">Introduction</h1>
-<p>As we've discussed the components of the client tier of our tiered geospatial services oriented architecture we have concentrated on the open standards that can support client applications and the web-based clients that can consume them. Desktop GIS applications can also consume standards-based services, specifically OGC services. This week's class concentrates on the methods for integrating OGC services into two GIS client applications Quantum GIS and ArcGIS, demonstrating the utility of using external standards-based services as a data and map image source within desktop applications.</p>
+<p>As we’ve discussed the components of the client tier of our tiered geospatial services oriented architecture we have concentrated on the open standards that can support client applications and the web-based clients that can consume them. Desktop GIS applications can also consume standards-based services, specifically OGC services. This week’s class concentrates on the methods for integrating OGC services into two GIS client applications Quantum GIS and ArcGIS, demonstrating the utility of using external standards-based services as a data and map image source within desktop applications.</p>
 <p><em>Expected Outcomes</em></p>
 <p>At the end of this class, students should be able to:</p>
 <ul>
@@ -952,20 +951,20 @@ SRS=EPSG:4326&amp;WIDTH=600&amp;HEIGHT=400</code></pre>
 <ul>
 <li>Any scale limits described for the various layers</li>
 <li>Layer names can sometimes be a bit confusing</li>
-<li>You can double-check the base URL advertised for the service by reviewing the content of the <code>GetCapabilities</code> area of the <code>service</code> metadata provided as part of the <code>GetCapabilities</code> request. If you can't manually request and review the GetCapabilities XML file for the service, your desktop client may not be able to connect to and retrieve the file for its configuration.</li>
+<li>You can double-check the base URL advertised for the service by reviewing the content of the <code>GetCapabilities</code> area of the <code>service</code> metadata provided as part of the <code>GetCapabilities</code> request. If you can’t manually request and review the GetCapabilities XML file for the service, your desktop client may not be able to connect to and retrieve the file for its configuration.</li>
 </ul>
-<p><em>USGS's National Maps <em>Small-Scale Web Services</em> Page</em>: <a href="http://nationalmap.gov/small_scale/infodocs/webservices.html" class="uri">http://nationalmap.gov/small_scale/infodocs/webservices.html</a></p>
+<p><em>USGS’s National Maps <em>Small-Scale Web Services</em> Page</em>: <a href="http://nationalmap.gov/small_scale/infodocs/webservices.html" class="uri">http://nationalmap.gov/small_scale/infodocs/webservices.html</a></p>
 <p><em>NASA Earth Observation System</em>: <a href="http://neowms.sci.gsfc.nasa.gov/wms/wms?version=1.3.0&amp;service=WMS&amp;request=GetCapabilities" class="uri">http://neowms.sci.gsfc.nasa.gov/wms/wms?version=1.3.0&amp;service=WMS&amp;request=GetCapabilities</a> [NOTE: the service was down for maintenance on Sunday night - if you run into problems accessing this service try the WMS services from RGIS - see below for connection information]</p>
 <p>In your write-up include the names of the layers you added, which service they came from, and screen shots (one for for each of the added layers) showing each of them in the QGIS client interface.</p>
 <p>Add three WFS layers to the same QGIS project, with at least two based upon data available from the RGIS data browser (<a href="http://rgis.unm.edu/getdata/" class="uri">http://rgis.unm.edu/getdata/</a>), and one based on the GeoServer sample WFS service (<a href="http://mapper.internetmapping.net:8081/geoserver/ows?service=wfs&amp;version=1.1.0&amp;request=GetCapabilities" class="uri">http://mapper.internetmapping.net:8081/geoserver/ows?service=wfs&amp;version=1.1.0&amp;request=GetCapabilities</a>.   In RGIS you can see the available services for a specific data layer by</p>
 <ol type="1">
 <li><p>Selecting the collection you want to view by selecting from the directory tree on the left side of the page;</p></li>
-<li><p>Identifying the data sets that have available OGC WMS and/or WFS services as indicated by the &quot;Services&quot; entry for each dataset, where the provided links are for the GetCapabilities requests for the provided services:</p></li>
+<li><p>Identifying the data sets that have available OGC WMS and/or WFS services as indicated by the “Services” entry for each dataset, where the provided links are for the GetCapabilities requests for the provided services:</p></li>
 </ol>
 <figure>
 <img src="images/RGIS_OGCLinkScreenshot.jpg" alt="Illustration highlighting where to see if a spacific dataset has an available OGC service" id="fig:RGIS_OGC_LINKS" /><figcaption>Illustration highlighting where to see if a spacific dataset has an available OGC service</figcaption>
 </figure>
-<p><em>Important</em>: When adding any WFS layer, you may need to go into the preferences for QGIS and under the &quot;Network&quot; options increase the &quot;Timeout for Network Requests(ms)&quot; value to a larger number than the default 60000 (1 minute). If you don't do this, QGIS might give up on the request before it has been fulfilled by the server. You may also want to zoom into a limited area and check the box in the QGIS &quot;Add WFS Layer ...&quot; dialog for &quot;Only Request Features Overlapping the Current View Extent&quot; as this will reduce the number of features recovered - a significant issue if the WFS service is publishing a large number of features.</p>
+<p><em>Important</em>: When adding any WFS layer, you may need to go into the preferences for QGIS and under the “Network” options increase the “Timeout for Network Requests(ms)” value to a larger number than the default 60000 (1 minute). If you don’t do this, QGIS might give up on the request before it has been fulfilled by the server. You may also want to zoom into a limited area and check the box in the QGIS “Add WFS Layer …” dialog for “Only Request Features Overlapping the Current View Extent” as this will reduce the number of features recovered - a significant issue if the WFS service is publishing a large number of features.</p>
 <p>In your write-up include the names of the layers you added, and the GetCapabilities requests related to those layers. Also include screen shots (again, one for each added layer) showing each layer in your QGIS project.  </p>
 <!---------------------------------------------------------------------------->
 <!-- Week 13 ----------------------------------------------------------------->
@@ -1003,17 +1002,17 @@ SRS=EPSG:4326&amp;WIDTH=600&amp;HEIGHT=400</code></pre>
 </ul>
 <h1 id="week13-milestone">Weekly Milestone - Linux Basics and GeoServer Data Import</h1>
 <h2 id="working-on-the-class-server">Working on the Class Server</h2>
-<p>For the GeoServer portion of our work, you will be working on a Linux server that has been created for the class. While we won't be doing a lot of Linux work, some basic familiarity with moving around, copying files, and working with files is needed. The class server is running Ubuntu Linux which is a broadly deployed, well supported operating system and computing platform that has excellent support for many Open Source geospatial applications, including those that we will be using in this class.</p>
+<p>For the GeoServer portion of our work, you will be working on a Linux server that has been created for the class. While we won’t be doing a lot of Linux work, some basic familiarity with moving around, copying files, and working with files is needed. The class server is running Ubuntu Linux which is a broadly deployed, well supported operating system and computing platform that has excellent support for many Open Source geospatial applications, including those that we will be using in this class.</p>
 <p>The first set of exercises relate to learning some basics about working with the Linux Operating system, applicable on just about any Linux server including the class server.</p>
-<p>Review (but don't worry about memorizing) the following materials (in addition to watching the Lynda.com video tutorial sections listed above):</p>
-<p><a href="http://www.webmonkey.com/2010/02/unix-guide/">Webmonkey &quot;Unix Guide&quot;</a></p>
+<p>Review (but don’t worry about memorizing) the following materials (in addition to watching the Lynda.com video tutorial sections listed above):</p>
+<p><a href="http://www.webmonkey.com/2010/02/unix-guide/">Webmonkey “Unix Guide”</a></p>
 <p><a href="http://www.cheatography.com/davechild/cheat-sheets/linux-command-line/">Linux Command Line Cheatsheet</a></p>
 <dl>
 <dt>QUESTION 1</dt>
 <dd>What command would you use to list the contents of a directory on a linux system?
 </dd>
 <dt>QUESTION 2</dt>
-<dd>What command would you use to read the &quot;manual page&quot; for a specific command?
+<dd>What command would you use to read the “manual page” for a specific command?
 </dd>
 </dl>
 <p>Log into the class Linux server - <code>mapper.internetmapping.net</code>. <em>This is different from the address referenced in the below linked videos</em> The rest of the process is the same as demonstrated in the videos. The class username and password are posted in Learn in an announcement to the class.</p>
@@ -1024,7 +1023,7 @@ SRS=EPSG:4326&amp;WIDTH=600&amp;HEIGHT=400</code></pre>
 <p>Start a session on the class Linux server, which is located at at the hostname <code>mapper.internetmapping.net</code> (you will use your class server username and password [provided in an announcement in Learn] to open the connection)</p>
 <dl>
 <dt>Task</dt>
-<dd>Use the <code>mkdir &lt;your netid&gt;</code> command (replacing the <code>&lt;your netid&gt;</code> element with your UNM netid [the username you use when logging into UNM's email system]) to create a directory called <code>&lt;your netid&gt;</code> in the shared class home directory (the directory that you are in when you login, and where you go when you type the <code>cd</code> command with no options, located at <code>/shared-data/classdata</code> on the class server).
+<dd>Use the <code>mkdir &lt;your netid&gt;</code> command (replacing the <code>&lt;your netid&gt;</code> element with your UNM netid [the username you use when logging into UNM’s email system]) to create a directory called <code>&lt;your netid&gt;</code> in the shared class home directory (the directory that you are in when you login, and where you go when you type the <code>cd</code> command with no options, located at <code>/shared-data/classdata</code> on the class server).
 </dd>
 </dl>
 <h2 id="adding-data-to-geoserver">Adding data to GeoServer</h2>
@@ -1035,7 +1034,7 @@ SRS=EPSG:4326&amp;WIDTH=600&amp;HEIGHT=400</code></pre>
 </dd>
 <dt>Task</dt>
 <dd><p>Copy all of the data files located in the <code>/shared-data/classdata/wk13Data</code> directory by executing the following command from <em>inside your <code>&lt;your netid&gt;</code> directory</em>.</p>
-<p>cp -r ../wk13data/* . (make sure to include final '.')</p>
+<p>cp -r ../wk13data/* . (make sure to include final ‘.’)</p>
 </dd>
 </dl>
 <p>This will place a copy of these data files in your <code>&lt;your netid&gt;</code> directory. Rename (using the linux <code>mv</code> command) each of the copied files and directories (and their contents) to replace my initials at the beginning of each file and directory name with yours. For example, rename <code>kb_m_3510659_ne_13_1_20110523.tif</code> as <code>xy_m_3510659_ne_13_1_20110523.tif</code>. This will help avoid some issues with layers based on source files with the same name later in our work.</p>
@@ -1047,7 +1046,7 @@ SRS=EPSG:4326&amp;WIDTH=600&amp;HEIGHT=400</code></pre>
 <p>Create a new <em>workspace</em> based on your net id. For example <code>ws_&lt;your netid&gt;</code></p>
 <p>Create a new <em>store</em> for each of the datasets added to your <code>&lt;your netid&gt;</code> directory above (4 .tif files and 3 shape files). Assign the new store to the workspace that you created above. When specifying the the <code>Connection Parameters</code> for pointing to the file, the format is: <code>file:data/shared-data/classdata/&lt;your netid&gt;/&lt;filename including any additional directories&gt;</code> </p>
 <p>for example file:data/shared-data/classdata/wk13data/kb_2007fe_35_county00_shp/kb_2007fe_35_county00.shp</p>
-<p>You can also browse to the file by clicking on the &quot;Browse ...&quot; link next to the location field, for example for a shapefile:</p>
+<p>You can also browse to the file by clicking on the “Browse …” link next to the location field, for example for a shapefile:</p>
 <p><img src="images/GeoServer_Browse.jpg" /> </p>
 <p>and navigating to your data directory (data_dir/data/shared-data/classdata/&lt;your username&gt;) to see the data to select from.</p>
 <p><img src="images/GeoServer_SelectData.jpg" /> </p>
@@ -1063,7 +1062,7 @@ SRS=EPSG:4326&amp;WIDTH=600&amp;HEIGHT=400</code></pre>
 <!-- Week 14 ----------------------------------------------------------------->
 <!---------------------------------------------------------------------------->
 <h1 id="week14">Introduction</h1>
-<p>While integrating data into a web mapping platform is a critical first step, a robust geospatial data service system must also support the development and use of cartographically informative representations of the published data. GeoServer accomplishes this through the integration of the Open Geospatial Consortium's Styled Layer Descriptor standard into the system for publishing alternative styles for vector and raster data products. This standard allows for the configuration of attribute and scale-based representations that may be advertised by name and requested by reference through the published OGC WMS services.</p>
+<p>While integrating data into a web mapping platform is a critical first step, a robust geospatial data service system must also support the development and use of cartographically informative representations of the published data. GeoServer accomplishes this through the integration of the Open Geospatial Consortium’s Styled Layer Descriptor standard into the system for publishing alternative styles for vector and raster data products. This standard allows for the configuration of attribute and scale-based representations that may be advertised by name and requested by reference through the published OGC WMS services.</p>
 <p><em>Expected Outcomes</em></p>
 <p>At the end of this class students will be able to:</p>
 <ul>
@@ -1083,7 +1082,7 @@ SRS=EPSG:4326&amp;WIDTH=600&amp;HEIGHT=400</code></pre>
 <li>GeoServer <a href="http://docs.geoserver.org/stable/en/user/index.html">Online Documentation</a>: sections <a href="http://docs.geoserver.org/latest/en/user/data/index.html#data">Data Management</a>, <a href="http://docs.geoserver.org/latest/en/user/styling/index.html#styling">Styling</a></li>
 </ul>
 <h1 id="weekly-milestone---styling-of-layers-in-geoserver">Weekly Milestone - Styling of Layers in GeoServer</h1>
-<p>This week's milestone provides an opportunity to experiment with vector layer styling. Please define two custom styles for each of the vector datasets that you added to GeoServer during last week's lab assignment. Take a screenshot of the layer preview for each of your styles - including the options tools above the OpenLayers preview displaying the name of the custom style that is being used for the current map display.</p>
+<p>This week’s milestone provides an opportunity to experiment with vector layer styling. Please define two custom styles for each of the vector datasets that you added to GeoServer during last week’s lab assignment. Take a screenshot of the layer preview for each of your styles - including the options tools above the OpenLayers preview displaying the name of the custom style that is being used for the current map display.</p>
 <p>Include in your assignment the layer name, the name of the two custom styles and the associated screenshots for each of the vector datasets.</p>
 <h1 id="deep-dive---data-integration-and-styling-in-geoserver">Deep Dive - Data Integration and Styling in GeoServer</h1>
 <p>Add each of the datasets that you acquired for Deep Dive 3 to GeoServer and style at least three of the layers with a custom style designed to best display the data for your envisioned map. Include in your writeup the names of the datasets, associated styles, and screenshots of the layers in the OpenLayers previewer, with the style name displayed in the OpenLayers preview tool set.</p>
@@ -1132,10 +1131,10 @@ SRS=EPSG:4326&amp;WIDTH=600&amp;HEIGHT=400</code></pre>
 -->
 <h1 id="week-16---course-review-and-emerging-technologies-discussion">Week 16 - Course Review and Emerging Technologies Discussion</h1>
 <h2 id="this-week-is-an-open-class-session-in-which-we-will-discuss-any-remaining-questions-relating-to-the-technologies-used-next-steps-for-continued-use-of-the-developed-skills-and-specific-questions-relating-to-the-milestones-and-deep-dive-assignments-that-are-due-for-submission-for-the-second-half-portfolio-review-at-the-end-of-the-week.">This week is an open class session in which we will discuss any remaining questions relating to the technologies used, next steps for continued use of the developed skills, and specific questions relating to the milestones and deep dive assignments that are due for submission for the second-half portfolio review at the end of the week.</h2>
-author: Karl Benedict date: GEOG 485L/585L - Spring 2017 include-after: | ------------------------------------------------------------------------------------------
+author: Karl Benedict title: GEOG 485L/585L - Spring 2018 date: Spring 2018 include-after: | ——————————————————————————————
 <div class="license">
-<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />This work by <span xmlns:cc="http://creativecommons.org/ns#" property="cc:attributionName">Karl Benedict</span> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />This work by <span data-xmlns:cc="http://creativecommons.org/ns#" data-property="cc:attributionName">Karl Benedict</span> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
 </div>
-<p>...</p>
+<p>…</p>
 </body>
 </html>

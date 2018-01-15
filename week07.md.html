@@ -1,12 +1,17 @@
 <!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
 <head>
-  <meta charset="utf-8">
-  <meta name="generator" content="pandoc">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-  <meta name="author" content="Karl Benedict">
-  <title>Week 7 - Module 4.2 - Interoperability Standards - WFS &amp; WCS</title>
-  <style type="text/css">code{white-space: pre;}</style>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="Karl Benedict" />
+  <title>GEOG 485L/585L - Spring 2018</title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
   <link rel="stylesheet" href="page.css">
   <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
@@ -14,15 +19,15 @@
 </head>
 <body>
 <header>
-<h1 class="title">Week 7 - Module 4.2 - Interoperability Standards - WFS &amp; WCS</h1>
-<h2 class="author">Karl Benedict</h2>
-<h3 class="date">GEOG 485L/585L - Spring 2017</h3>
+<h1 class="title">GEOG 485L/585L - Spring 2018</h1>
+<p class="author">Karl Benedict</p>
+<p class="date">Spring 2018</p>
 </header>
 <!---------------------------------------------------------------------------->
 <!-- Week 07 ----------------------------------------------------------------->
 <!---------------------------------------------------------------------------->
 <h1 id="week07">Introduction</h1>
-<p>This week's class focuses on two other key Open Geospatial Consortium standards that were created to enable access to geospatial <em>data</em> of a variety of types.</p>
+<p>This week’s class focuses on two other key Open Geospatial Consortium standards that were created to enable access to geospatial <em>data</em> of a variety of types.</p>
 <dl>
 <dt>Web Feature Service (WFS)</dt>
 <dd><p>A standard designed for providing on-demand access to features (typically points, lines, and polygons and more complex combinations of these feature types) and their associated attributes, in a variety of formats, and optionally filtered by spatial and other query parameters.</p>
@@ -36,7 +41,7 @@
 <ul>
 <li><p>The request-response model for OGC WFS, including the required and optional request parameters for the <em>GetCapabilities</em>, <em>DescribeFeatureType</em>, and <em>GetFeature</em> requests; and the response types generated in response to those requests.</p></li>
 <li><p>The request-response model for OGC WCS, including the required and optional request parameters for the <em>GetCapabilities</em>, <em>DescribeCoverage</em>, and <em>GetCoverage</em> requests; and the response types generated in response to those requests.</p></li>
-<li><p>An understanding of the distinction between WMS, WFS, and WCS for use in different usage scenarios (e.g. map images, vector, raster data access)</p></li>
+<li><p>An understanding of the distinction between WMS, WFS, and WCS for use in different usage scenarios (e.g. map images, vector, raster data access)</p></li>
 </ul>
 <p><em>Key Concepts</em></p>
 <ul>
@@ -65,14 +70,14 @@ STYLES=&amp;SRS=EPSG:4326&amp;WIDTH=200&amp;HEIGHT=200</code></pre>
 </figure>
 <p>This discrepancy is the result of a difference in the aspect ratio of the requested BBOX (-107.2,34.7,-106,35.25) and the requested image dimensions (200x200 pixels). <em>When you compose a WMS GetMap request, you need to make sure that the aspect ratio of both the image size and BBOX match.</em></p>
 <p>For example, if we calculate the aspect ratio of the BBOX we obtain the following values (remember that the BBOX is specified as a comma separated list of x,y coordinates: minx,miny,maxx,maxy):</p>
-<p><span class="math inline"><em>B</em><em>B</em><em>O</em><em>X</em><sub><em>w</em><em>i</em><em>d</em><em>t</em><em>h</em></sub> = <em>x</em><sub><em>m</em><em>a</em><em>x</em></sub> − <em>x</em><sub><em>m</em><em>i</em><em>n</em></sub> = ( − 106)−(−107.2)=1.2<sup>∘</sup></span></p>
+<p><span class="math inline"><em>B</em><em>B</em><em>O</em><em>X</em><sub><em>w</em><em>i</em><em>d</em><em>t</em><em>h</em></sub> = <em>x</em><sub><em>m</em><em>a</em><em>x</em></sub> − <em>x</em><sub><em>m</em><em>i</em><em>n</em></sub> = ( − 106) − ( − 107.2) = 1.2<sup>∘</sup></span></p>
 <p><span class="math inline"><em>B</em><em>B</em><em>O</em><em>X</em><sub><em>h</em><em>e</em><em>i</em><em>g</em><em>h</em><em>t</em></sub> = <em>y</em><sub><em>m</em><em>a</em><em>x</em></sub> − <em>y</em><sub><em>m</em><em>i</em><em>n</em></sub> = 35.25 − 34.7 = 0.55<sup>∘</sup></span></p>
 <p><span class="math inline"><em>B</em><em>B</em><em>O</em><em>X</em><sub><em>a</em><em>s</em><em>p</em><em>e</em><em>c</em><em>t</em> − <em>r</em><em>a</em><em>t</em><em>i</em><em>o</em></sub> = <em>B</em><em>B</em><em>O</em><em>X</em><sub><em>w</em><em>i</em><em>d</em><em>t</em><em>h</em></sub>/<em>B</em><em>B</em><em>O</em><em>X</em><sub><em>h</em><em>e</em><em>i</em><em>g</em><em>h</em><em>t</em></sub> = 1.2<sup>∘</sup>/0.55<sup>∘</sup> = 2.1818</span></p>
 <p>If we want to retrieve a map image that is 200 pixels wide, we need to calculate an image height that yields an aspect ratio that matches the BBOX aspect ratio. Harking back to basic algebra:</p>
 <p><span class="math inline"><em>I</em><em>m</em><em>a</em><em>g</em><em>e</em><sub><em>w</em><em>i</em><em>d</em><em>t</em><em>h</em></sub> = 200<em>p</em><em>x</em></span></p>
 <p><span class="math inline"><em>I</em><em>m</em><em>a</em><em>g</em><em>e</em><sub><em>a</em><em>s</em><em>p</em><em>e</em><em>c</em><em>t</em> − <em>r</em><em>a</em><em>t</em><em>i</em><em>o</em></sub> = <em>I</em><em>m</em><em>a</em><em>g</em><em>e</em><sub><em>w</em><em>i</em><em>d</em><em>t</em><em>h</em></sub>/<em>I</em><em>m</em><em>a</em><em>g</em><em>e</em><sub><em>h</em><em>e</em><em>i</em><em>g</em><em>h</em><em>t</em></sub> = 200<em>p</em><em>x</em>/<em>I</em><em>m</em><em>a</em><em>g</em><em>e</em><sub><em>h</em><em>e</em><em>i</em><em>g</em><em>h</em><em>t</em></sub> = 2.1818</span></p>
 <p><span class="math inline"><em>I</em><em>m</em><em>a</em><em>g</em><em>e</em><sub><em>h</em><em>e</em><em>i</em><em>g</em><em>h</em><em>t</em></sub> = <em>I</em><em>m</em><em>a</em><em>g</em><em>e</em><sub><em>w</em><em>i</em><em>d</em><em>t</em><em>h</em></sub>/<em>a</em><em>s</em><em>p</em><em>e</em><em>c</em><em>t</em> − <em>r</em><em>a</em><em>t</em><em>i</em><em>o</em> = 200<em>p</em><em>x</em>/2.1818 = 91.667<em>p</em><em>x</em></span></p>
-<p>So, if we request an image that is 200x92 (we have to request pixel dimensions in integers, so rounding to the nearest integer) we should get a representation that closely approximates the proper shape of features. The modified WMS request with the new image's size is the following (<a href="http://gstore.unm.edu/apps/rgis/datasets/92403ebf-aec5-404b-ae8a-6db41f388737/services/ogc/wms?VERSION=1.1.1&amp;SERVICE=WMS&amp;REQUEST=GetMap&amp;BBOX=-107.2,34.7,-106,35.25&amp;LAYERS=g_2007fe_35_county&amp;FORMAT=image/png&amp;TRANSPARENT=TRUE&amp;STYLES=&amp;SRS=EPSG:4326&amp;WIDTH=200&amp;HEIGHT=92">link</a>):</p>
+<p>So, if we request an image that is 200x92 (we have to request pixel dimensions in integers, so rounding to the nearest integer) we should get a representation that closely approximates the proper shape of features. The modified WMS request with the new image’s size is the following (<a href="http://gstore.unm.edu/apps/rgis/datasets/92403ebf-aec5-404b-ae8a-6db41f388737/services/ogc/wms?VERSION=1.1.1&amp;SERVICE=WMS&amp;REQUEST=GetMap&amp;BBOX=-107.2,34.7,-106,35.25&amp;LAYERS=g_2007fe_35_county&amp;FORMAT=image/png&amp;TRANSPARENT=TRUE&amp;STYLES=&amp;SRS=EPSG:4326&amp;WIDTH=200&amp;HEIGHT=92">link</a>):</p>
 <pre><code>http://gstore.unm.edu/apps/rgis/datasets/92403ebf-aec5-404b-ae8a-6db41f388737/
 services/ogc/wms?VERSION=1.1.1&amp;SERVICE=WMS&amp;REQUEST=GetMap&amp;BBOX=-107.2,34.7,-106,35.25&amp;
 LAYERS=g_2007fe_35_county&amp;FORMAT=image/png&amp;TRANSPARENT=TRUE&amp;STYLES=&amp;
@@ -82,7 +87,7 @@ SRS=EPSG:4326&amp;WIDTH=200&amp;HEIGHT=92</code></pre>
 </figure>
 <p>This process may be reversed to request images of a fixed size for use in a client interface, with the requested BBOX modified to match the aspect ratio of the target image. If, for example, images are being requested for a client interface with a fixed map size of 600x400 pixels, a corresponding BBOX can be derived using the same calculation.</p>
 <p>If, for example, the area of interest for a map is 2 degrees wide, we can calculate the target height (in degrees) using the aspect ratio of the desired image.</p>
-<p><span class="math inline"><em>I</em><em>m</em><em>a</em><em>g</em><em>e</em><sub><em>a</em><em>s</em><em>p</em><em>e</em><em>c</em><em>t</em> − <em>r</em><em>a</em><em>t</em><em>i</em><em>o</em></sub> = <em>I</em><em>m</em><em>a</em><em>g</em><em>e</em><sub><em>w</em><em>i</em><em>d</em><em>t</em><em>h</em></sub>/<em>I</em><em>m</em><em>a</em><em>g</em><em>e</em><sub><em>h</em><em>e</em><em>i</em><em>g</em><em>h</em><em>t</em></sub> = (600<em>p</em><em>x</em>)/(400<em>p</em><em>x</em>)=1.5</span></p>
+<p><span class="math inline"><em>I</em><em>m</em><em>a</em><em>g</em><em>e</em><sub><em>a</em><em>s</em><em>p</em><em>e</em><em>c</em><em>t</em> − <em>r</em><em>a</em><em>t</em><em>i</em><em>o</em></sub> = <em>I</em><em>m</em><em>a</em><em>g</em><em>e</em><sub><em>w</em><em>i</em><em>d</em><em>t</em><em>h</em></sub>/<em>I</em><em>m</em><em>a</em><em>g</em><em>e</em><sub><em>h</em><em>e</em><em>i</em><em>g</em><em>h</em><em>t</em></sub> = (600<em>p</em><em>x</em>)/(400<em>p</em><em>x</em>) = 1.5</span></p>
 <p><span class="math inline"><em>B</em><em>B</em><em>O</em><em>X</em><sub><em>a</em><em>s</em><em>p</em><em>e</em><em>c</em><em>t</em> − <em>r</em><em>a</em><em>t</em><em>i</em><em>o</em></sub> = <em>B</em><em>B</em><em>O</em><em>X</em><sub><em>w</em><em>i</em><em>d</em><em>t</em><em>h</em></sub>/<em>B</em><em>B</em><em>O</em><em>X</em><sub><em>h</em><em>e</em><em>i</em><em>g</em><em>h</em><em>t</em></sub> = 2<sup>∘</sup>/<em>B</em><em>B</em><em>O</em><em>X</em><sub><em>h</em><em>e</em><em>i</em><em>g</em><em>h</em><em>t</em></sub> = 1.5</span></p>
 <p><span class="math inline"><em>B</em><em>B</em><em>O</em><em>X</em><sub><em>h</em><em>e</em><em>i</em><em>g</em><em>h</em><em>t</em></sub> = <em>B</em><em>B</em><em>O</em><em>X</em><sub><em>w</em><em>i</em><em>d</em><em>t</em><em>h</em></sub>/<em>B</em><em>B</em><em>O</em><em>X</em><sub><em>a</em><em>s</em><em>p</em><em>e</em><em>c</em><em>t</em> − <em>r</em><em>a</em><em>t</em><em>i</em><em>o</em></sub> = 2<sup>∘</sup>/1.5 = 1.3333<sup>∘</sup></span></p>
 <p>If our area of interest extends from -106 to -108 degrees East Longitude, we can use the known target height of 1.3333 to generate a WMS BBOX of the appropriate aspect ratio. If the minimum Latitude of interest is 34.7 degrees North Latitude, the maximum BBOX Y value would be</p>
@@ -119,7 +124,7 @@ SRS=EPSG:4326&amp;WIDTH=600&amp;HEIGHT=400</code></pre>
 </ol>
 <dl>
 <dt>Question 5</dt>
-<dd>Which layer(s) return map images that display image content (i.e. return a non-blank image)?
+<dd>Which layer(s) return map images that display image content (i.e. return a non-blank image)?
 </dd>
 <dt>Questions 6</dt>
 <dd>What is the difference between these requests? How might this difference influence whether or not a map image with content is being returned?
@@ -127,7 +132,7 @@ SRS=EPSG:4326&amp;WIDTH=600&amp;HEIGHT=400</code></pre>
 </dl>
 <hr />
 <div class="license">
-<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />This work by <span xmlns:cc="http://creativecommons.org/ns#" property="cc:attributionName">Karl Benedict</span> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />This work by <span data-xmlns:cc="http://creativecommons.org/ns#" data-property="cc:attributionName">Karl Benedict</span> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
 </div>
 </body>
 </html>

@@ -1,48 +1,81 @@
 <!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
 <head>
-  <meta charset="utf-8">
-  <meta name="generator" content="pandoc">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-  <meta name="author" content="Karl Benedict">
-  <title>Week 1 - Introductions, Course Outline &amp; Web Concepts</title>
-  <style type="text/css">code{white-space: pre;}</style>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="Karl Benedict" />
+  <title>GEOG 485L/585L - Spring 2018</title>
   <style type="text/css">
-div.sourceCode { overflow-x: auto; }
-table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
-  margin: 0; padding: 0; vertical-align: baseline; border: none; }
-table.sourceCode { width: 100%; line-height: 100%; }
-td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
-td.sourceCode { padding-left: 5px; }
-code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code > span.dt { color: #902000; } /* DataType */
-code > span.dv { color: #40a070; } /* DecVal */
-code > span.bn { color: #40a070; } /* BaseN */
-code > span.fl { color: #40a070; } /* Float */
-code > span.ch { color: #4070a0; } /* Char */
-code > span.st { color: #4070a0; } /* String */
-code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code > span.ot { color: #007020; } /* Other */
-code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code > span.fu { color: #06287e; } /* Function */
-code > span.er { color: #ff0000; font-weight: bold; } /* Error */
-code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-code > span.cn { color: #880000; } /* Constant */
-code > span.sc { color: #4070a0; } /* SpecialChar */
-code > span.vs { color: #4070a0; } /* VerbatimString */
-code > span.ss { color: #bb6688; } /* SpecialString */
-code > span.im { } /* Import */
-code > span.va { color: #19177c; } /* Variable */
-code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code > span.op { color: #666666; } /* Operator */
-code > span.bu { } /* BuiltIn */
-code > span.ex { } /* Extension */
-code > span.pp { color: #bc7a00; } /* Preprocessor */
-code > span.at { color: #7d9029; } /* Attribute */
-code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; position: absolute; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; }
+pre.numberSource a.sourceLine:empty
+  { position: absolute; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: absolute; left: -5em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="page.css">
   <!--[if lt IE 9]>
@@ -51,9 +84,9 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </head>
 <body>
 <header>
-<h1 class="title">Week 1 - Introductions, Course Outline &amp; Web Concepts</h1>
-<h2 class="author">Karl Benedict</h2>
-<h3 class="date">GEOG 485L/585L - Spring 2017</h3>
+<h1 class="title">GEOG 485L/585L - Spring 2018</h1>
+<p class="author">Karl Benedict</p>
+<p class="date">Spring 2018</p>
 </header>
 <!---------------------------------------------------------------------------->
 <!-- Week 01 ----------------------------------------------------------------->
@@ -63,27 +96,56 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <h1 id="week01-prep">Class Prep</h1>
 <ul>
 <li><p><a href="http://en.wikipedia.org/wiki/History_of_the_World_Wide_Web">Wikipedia article - History of the World Wide web</a></p></li>
-<li><p><a href="http://www.lynda.com/SharedPlaylist/2b710369c9ec4d8c964467225c6610ad?org=unm.edu">Lynda.com tutorials</a></p>
+<li><p>Web Development tutorials (for weeks 1 &amp; 2)</p>
 <ul>
-<li><em>Web Design Fundamentals</em>
+<li><a href="https://www.safaribooksonline.com/library/view/html-a-beginners/9781771970181/"><em>HTML: A Beginner’s Tutorial by Chris Coremans</em></a>
 <ul>
-<li>Introduction</li>
+<li><a href="https://www.safaribooksonline.com/library/view/html-a-beginners/9781771970181/Text/ch00.xhtml">Introduction</a></li>
 <li><ol type="1">
-<li>Exploring Web Design</li>
-</ol></li>
-</ul></li>
-<li><em>Version Control for Everyone</em>
-<ul>
-<li>Introduction</li>
-<li><ol type="1">
-<li>Introducing Version Control</li>
+<li><a href="https://www.safaribooksonline.com/library/view/html-a-beginners/9781771970181/Text/ch01.xhtml">Chapter 1: Getting Started</a></li>
 </ol></li>
 <li><ol start="2" type="1">
-<li>Version Control Basics</li>
+<li><a href="https://www.safaribooksonline.com/library/view/html-a-beginners/9781771970181/Text/ch02.xhtml">Chapter 2: Working with Text</a></li>
 </ol></li>
 <li><ol start="3" type="1">
-<li>Setting Up Your First Project</li>
+<li><a href="https://www.safaribooksonline.com/library/view/html-a-beginners/9781771970181/Text/ch03.xhtml">Chapter 3: Links</a></li>
 </ol></li>
+<li><ol start="4" type="1">
+<li><a href="https://www.safaribooksonline.com/library/view/html-a-beginners/9781771970181/Text/ch04.xhtml">Chapter 4: Images</a></li>
+</ol></li>
+<li><ol start="5" type="1">
+<li><a href="https://www.safaribooksonline.com/library/view/html-a-beginners/9781771970181/Text/ch05.xhtml">Chapter 5: Lists</a></li>
+</ol></li>
+<li><ol start="6" type="1">
+<li><a href="https://www.safaribooksonline.com/library/view/html-a-beginners/9781771970181/Text/ch06.xhtml">Chapter 6: Tables</a></li>
+</ol></li>
+<li><ol start="7" type="1">
+<li><a href="https://www.safaribooksonline.com/library/view/html-a-beginners/9781771970181/Text/ch09.xhtml">Chapter 9: Styling with CSS</a></li>
+</ol></li>
+</ul></li>
+<li><a href="https://www.safaribooksonline.com/library/view/learning-path-learn/9781491958032/video226859.html"><em>An Introduction to Web in HTML &amp; CSS, by Cassidy &amp; Camryn Williams</em> - Video Tutorial (basic)</a></li>
+<li><a href="https://www.safaribooksonline.com/library/view/learning-path-learn/9781491958032/video226903.html"><em>Modern Web Development with HTML5 and CSS, by Rachel Andrew</em> - Video Tutorial (in-depth)</a></li>
+<li><a href="https://www.safaribooksonline.com/tutorials/introduction-to-javascript-ots/"><em>Introduction to Javascript (Tutorial)</em></a>
+<ul>
+<li><ol type="1">
+<li><a href="https://www.safaribooksonline.com/library/tutorials/introduction-to-javascript-ots/1747/"><em>Nuts ‘n’ Bolts</em></a></li>
+</ol></li>
+<li><ol start="2" type="1">
+<li><a href="https://www.safaribooksonline.com/library/tutorials/introduction-to-javascript-ots/1755/"><em>The DOM</em></a></li>
+</ol></li>
+</ul></li>
+</ul></li>
+<li><p>Version Control using Git and Github (for weeks 1 &amp; 2)</p>
+<ul>
+<li>Ferdinando Santacroce. (2017). *Git Essentials** - Second Edition. <a href="https://www.safaribooksonline.com/library/view/git-essentials-/9781787120723/" class="uri">https://www.safaribooksonline.com/library/view/git-essentials-/9781787120723/</a>
+<ul>
+<li><a href="https://www.safaribooksonline.com/library/view/git-essentials-/9781787120723/831d785f-1ea2-4ea1-b175-21a22d9fb26a.xhtml"><em>Getting Started with Git</em></a></li>
+<li><a href="https://www.safaribooksonline.com/library/view/git-essentials-/9781787120723/99b661ad-e978-4ef2-bd8c-cce55c6a318e.xhtml"><em>Git Fundamentals - Working Locally</em></a></li>
+<li><a href="https://www.safaribooksonline.com/library/view/git-essentials-/9781787120723/20e98db3-d248-436e-88d5-069be7808998.xhtml"><em>Git Fundamentals - Working Remotely</em></a></li>
+</ul></li>
+<li>Peter Bell. (2014). <em>Git and GitHub LiveLessons—Workshop (Video Training)</em>. <a href="https://www.safaribooksonline.com/library/view/git-and-github/9780133992748/"><em>https://www.safaribooksonline.com/library/view/git-and-github/9780133992748/</em></a>
+<ul>
+<li>Lessons 1, 2, 3, 7, and 8</li>
 </ul></li>
 </ul></li>
 </ul>
@@ -95,90 +157,84 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>While the work we do this and next week will be directly through the editor integrated into the GitHub system, you will need to install a desktop application (such as the <a href="https://www.sourcetreeapp.com/">SourceTree</a> application [recommended for the class], the <a href="https://desktop.github.com">GitHub Desktop application</a>, or, for the more adventurous, one of the Git <a href="https://git-scm.com/downloads">command line tools</a>) that allows you to develop your web pages on your local computer and then update the files on the GitHub system when you want to share a new version.</p>
 <p>For this milestone we will walk through the process of creating your repository in GitHub, creating your first web page, previewing that page on your local computer, changing the page, and updating the page on GitHub. For this milestone we will do this as a manual process which we will streamline in the coming weeks.</p>
 <h2 id="create-your-github-account-and-portfolio-repository">Create Your GitHub Account and Portfolio Repository</h2>
-<p>For your work in this class you will build your portfolio within your account - which you will need to create if you don't already have one.</p>
+<p>For your work in this class you will build your portfolio within your account - which you will need to create if you don’t already have one.</p>
 <p>The first step in the process of creating your portfolio is to create a new (or log into an existing) GitHub account, and create <em>repository</em> in GitHub within which you will put your portfolio materials for sharing within the class. Please follow the following steps to create your repository:</p>
 <ol type="1">
 <li>Go to the <a href="https://github.com/">GitHub homepage</a> and follow the onscreen instructions for creating a new account. If you already have an account you can skip this step. Once you have created your account you can login and continue the process of creating your class repository.</li>
 </ol>
 <figure>
-<img src="images/github_home.jpg" alt="GitHub home page" style="width:70.0%" /><figcaption>GitHub home page</figcaption>
+<img src="images/github_home.jpg" alt="GitHub home page" /><figcaption>GitHub home page</figcaption>
 </figure>
 <p>Unless you have specific reasons to do otherwise select the default options for step 2 of the account creation process.</p>
 <figure>
-<img src="images/github_step2.jpg" alt="GitHub setup step 2" style="width:70.0%" /><figcaption>GitHub setup step 2</figcaption>
+<img src="images/github_step2.jpg" alt="GitHub setup step 2" /><figcaption>GitHub setup step 2</figcaption>
 </figure>
 <p>(optional) Complete the online survey from GitHub associated with your account.</p>
 <figure>
-<img src="images/github_step3.jpg" alt="GitHub online survey" style="width:70.0%" /><figcaption>GitHub online survey</figcaption>
+<img src="images/github_step3.jpg" alt="GitHub online survey" /><figcaption>GitHub online survey</figcaption>
 </figure>
 <ol start="2" type="1">
 <li><p>Check your email inbox and verify your newly created GitHub account.</p></li>
-<li><p>Select &quot;Start a project&quot; from the web page that is presented when you confirm your email address (or complete the account creation steps above).</p></li>
+<li><p>Select “Start a project” from the web page that is presented when you confirm your email address (or complete the account creation steps above).</p></li>
 </ol>
 <figure>
-<img src="images/github_start.jpg" alt="Start project page" style="width:70.0%" /><figcaption>Start project page</figcaption>
+<img src="images/github_start.jpg" alt="Start project page" /><figcaption>Start project page</figcaption>
 </figure>
 <ol start="4" type="1">
-<li>Create your portfolio repository by choosing the following options in the page that is presented when you choose &quot;Start a project&quot; in step (3) above.</li>
+<li>Create your portfolio repository by choosing the following options in the page that is presented when you choose “Start a project” in step (3) above.</li>
 </ol>
 <figure>
-<img src="images/github_createRepo.jpg" alt="Create repository page" style="width:70.0%" /><figcaption>Create repository page</figcaption>
+<img src="images/github_createRepo.jpg" alt="Create repository page" /><figcaption>Create repository page</figcaption>
 </figure>
 <p>After your successfully create your <code>portfolio</code> repository you should see the home page for your new repo:</p>
 <figure>
-<img src="images/github_portfolioHome.jpg" alt="Repository home page" style="width:70.0%" /><figcaption>Repository home page</figcaption>
+<img src="images/github_portfolioHome.jpg" alt="Repository home page" /><figcaption>Repository home page</figcaption>
 </figure>
 <p><strong>Make note of the web address of this page (even email it to yourself) to make it easy to get back here later</strong> - <code>https://github.com/&lt;your username&gt;/portfolio</code></p>
+<p><strong>Respond to the “GitHub Username and Repository Survey” in the assignments section of Learn with the GitHub username and repository that you will be using for the class</strong></p>
 <h2 id="create-your-first-web-page">Create Your First Web Page</h2>
 <p>To create your first web page within your portfolio repository you need to first enter your repository, add a new file, modify its contents, and commit your modifications back to the repository to save your changes.</p>
 <ol type="1">
 <li><p>Go to your <code>portfolio</code> home page - <code>https://github.com/&lt;your username&gt;/portfolio</code> - either by going directly to the link (above) for your repository or by selecting the repository from your account home page - <code>https://github.com/&lt;your username&gt;</code>.</p></li>
-<li><p>On the page that comes up listing the files in your repository, click the &quot;Create new file&quot; button above the list of files.</p></li>
+<li><p>On the page that comes up listing the files in your repository, click the “Create new file” button above the list of files.</p></li>
 </ol>
 <figure>
-<img src="images/github_createButton.jpg" alt="Create a new file" style="width:70.0%" /><figcaption>Create a new file</figcaption>
+<img src="images/github_createButton.jpg" alt="Create a new file" /><figcaption>Create a new file</figcaption>
 </figure>
 <p>Which will take you to the editor for your new file.</p>
 <ol start="3" type="1">
-<li><p>Enter the name of the file ((1) on the figure below) that you are creating as &quot;hello-world.html&quot;</p></li>
+<li><p>Enter the name of the file ((1) on the figure below) that you are creating as “hello-world.html”</p></li>
 <li><p>Enter the following text into the text entry area (2) under the filename field.</p></li>
 </ol>
-<div class="sourceCode" startFrom="1"><table class="sourceCode html numberLines"><tr class="sourceCode"><td class="lineNumbers"><pre>1
-2
-3
-4
-5
-6
-7
-</pre></td><td class="sourceCode"><pre><code class="sourceCode html"><span class="kw">&lt;html&gt;</span>
-    <span class="kw">&lt;head&gt;</span>
-    <span class="kw">&lt;/head&gt;</span>     
-    <span class="kw">&lt;body&gt;</span>
-        Hello World !!!
-    <span class="kw">&lt;/body&gt;</span> 
-<span class="kw">&lt;/html&gt;</span></code></pre></td></tr></table></div>
+<div class="sourceCode" id="cb1" data-startFrom="1"><pre class="sourceCode numberSource html numberLines"><code class="sourceCode html"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw">&lt;html&gt;</span></a>
+<a class="sourceLine" id="cb1-2" data-line-number="2">    <span class="kw">&lt;head&gt;</span></a>
+<a class="sourceLine" id="cb1-3" data-line-number="3">    <span class="kw">&lt;/head&gt;</span>     </a>
+<a class="sourceLine" id="cb1-4" data-line-number="4">    <span class="kw">&lt;body&gt;</span></a>
+<a class="sourceLine" id="cb1-5" data-line-number="5">        Hello World !!!</a>
+<a class="sourceLine" id="cb1-6" data-line-number="6">    <span class="kw">&lt;/body&gt;</span> </a>
+<a class="sourceLine" id="cb1-7" data-line-number="7"><span class="kw">&lt;/html&gt;</span></a></code></pre></div>
 <ol start="5" type="1">
-<li><p>Add a brief comment (such as &quot;Created hello-world.html from provided text&quot;) in the first field under the &quot;Commit new file&quot; title (3). You can optionally add a more detailed description in the next field (4) if you like.</p></li>
-<li><p>Keep the default option to &quot;Commit directly to the master branch&quot;</p></li>
-<li><p>Click the &quot;Commit New File&quot; button (5) to commit your change and save the file</p></li>
+<li><p>Add a brief comment (such as “Created hello-world.html from provided text”) in the first field under the “Commit new file” title (3). You can optionally add a more detailed description in the next field (4) if you like.</p></li>
+<li><p>Keep the default option to “Commit directly to the master branch”</p></li>
+<li><p>Click the “Commit New File” button (5) to commit your change and save the file</p></li>
 </ol>
 <figure>
-<img src="images/github_editor.jpg" alt="GitHub file creation/editor page" style="width:70.0%" /><figcaption>GitHub file creation/editor page</figcaption>
+<img src="images/github_editor.jpg" alt="GitHub file creation/editor page" /><figcaption>GitHub file creation/editor page</figcaption>
 </figure>
 <p><em>Step 3</em> - Preview Your Web Page in a Browser</p>
-<p>Since your repository in GitHub is public you can use GitHub to host your portfolio and its content on the web. GitHub's hosting capabilities are limited to static content (i.e. files directly accessible over the web), but this will meet our needs for the class very well. To enable GitHub's web hosting capabilities for your repository you need to change the <code>GitHub Pages</code> option in the settings for your repository. First, click the <code>Settings</code> button near the top of your repository home page:</p>
+<p>Since your repository in GitHub is public you can use GitHub to host your portfolio and its content on the web. GitHub’s hosting capabilities are limited to static content (i.e. files directly accessible over the web), but this will meet our needs for the class very well. To enable GitHub’s web hosting capabilities for your repository you need to change the <code>GitHub Pages</code> option in the settings for your repository. First, click the <code>Settings</code> button near the top of your repository home page:</p>
 <figure>
-<img src="images/github_settingsButton.jpg" alt="Settings button in GitHub" style="width:70.0%" /><figcaption>Settings button in GitHub</figcaption>
+<img src="images/github_settingsButton.jpg" alt="Settings button in GitHub" /><figcaption>Settings button in GitHub</figcaption>
 </figure>
 <p>Then modify the <code>GitHub Pages</code> setting to use the <code>Master</code> branch as the source for your GitHub pages web site. Click the <code>Save</code> button next to your update.</p>
 <figure>
-<img src="images/github_settingsForWeb.jpg" alt="Update settings for GitHub web publishing" style="width:70.0%" /><figcaption>Update settings for GitHub web publishing</figcaption>
+<img src="images/github_settingsForWeb.jpg" alt="Update settings for GitHub web publishing" /><figcaption>Update settings for GitHub web publishing</figcaption>
 </figure>
 <p>After saving your changed <code>GitHub Pages</code> setting you can view your web page using the following pattern:</p>
 <p><code>https://&lt;your username&gt;.github.io/&lt;repository name&gt;/&lt;page name&gt;</code></p>
 <p>which translates into the following (assuming that you followed the instructions above for naming your repository and file:</p>
 <p><code>https://&lt;your username&gt;.github.io/portfolio/htllo-world.html</code></p>
-<p>Using this approach you can modify and preview your site in real time as you commit your changes within GitHub. You can also preview your portfolio based on files on your local computer by installing a GitHub client onto your computer and <code>cloning</code> your GitHub repository to your local computer. This is done using a desktop application such as <a href="https://www.sourcetreeapp.com"><em>Sourcetree</em></a>, the <a href="https://desktop.github.com"><em>GitHub Desktop Client</em></a>, or another <a href="https://git-scm.com/downloads"><em>Git</em> client</a> appropriate to your operating system. Once you've cloned your repository you can work with the files (including previewing them) on your local computer and when ready <code>push</code> those files back into GitHub for online access, viewing and sharing. <strong>While you can work on your files locally - peer review, troubleshooting, and grading will be based on the content in your public GitHub repository</strong>.</p>
+<p>Using this approach you can modify and preview your site in real time as you commit your changes within GitHub. You can also preview your portfolio based on files on your local computer by installing a GitHub client onto your computer and <code>cloning</code> your GitHub repository to your local computer. This is done using a desktop application such as <a href="https://www.sourcetreeapp.com"><em>Sourcetree</em></a>, the <a href="https://desktop.github.com"><em>GitHub Desktop Client</em></a>, or another <a href="https://git-scm.com/downloads"><em>Git</em> client</a> appropriate to your operating system. Once you’ve cloned your repository you can work with the files (including previewing them) on your local computer and when ready <code>push</code> those files back into GitHub for online access, viewing and sharing. <strong>While you can work on your files locally - peer review, troubleshooting, and grading will be based on the content in your public GitHub repository</strong>.</p>
 <p>Confirm that the display resembles something like the following:</p>
 <figure>
 <img src="images/hello-world.png" alt="Sample hello-world.html file when viewed in a web browser" style="width:70.0%" /><figcaption>Sample <code>hello-world.html</code> file when viewed in a web browser</figcaption>
@@ -188,7 +244,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </ol>
 <hr />
 <div class="license">
-<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />This work by <span xmlns:cc="http://creativecommons.org/ns#" property="cc:attributionName">Karl Benedict</span> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />This work by <span data-xmlns:cc="http://creativecommons.org/ns#" data-property="cc:attributionName">Karl Benedict</span> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
 </div>
 </body>
 </html>

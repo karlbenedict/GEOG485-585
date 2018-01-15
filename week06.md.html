@@ -1,12 +1,17 @@
 <!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
 <head>
-  <meta charset="utf-8">
-  <meta name="generator" content="pandoc">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-  <meta name="author" content="Karl Benedict">
-  <title>Week 6 - Module 4.1 - Interoperability Standards - XML, KML, and WMS</title>
-  <style type="text/css">code{white-space: pre;}</style>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="Karl Benedict" />
+  <title>GEOG 485L/585L - Spring 2018</title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
   <link rel="stylesheet" href="page.css">
   <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
@@ -14,15 +19,15 @@
 </head>
 <body>
 <header>
-<h1 class="title">Week 6 - Module 4.1 - Interoperability Standards - XML, KML, and WMS</h1>
-<h2 class="author">Karl Benedict</h2>
-<h3 class="date">GEOG 485L/585L - Spring 2017</h3>
+<h1 class="title">GEOG 485L/585L - Spring 2018</h1>
+<p class="author">Karl Benedict</p>
+<p class="date">Spring 2018</p>
 </header>
 <!---------------------------------------------------------------------------->
 <!-- Week 06 ----------------------------------------------------------------->
 <!---------------------------------------------------------------------------->
 <h1 id="week06">Introduction</h1>
-<p>This week's class focuses on three open interoperability standards that are the most broadly used of the standards that we will be covering.</p>
+<p>This week’s class focuses on three open interoperability standards that are the most broadly used of the standards that we will be covering.</p>
 <dl>
 <dt>Extensible Markup Language (XML)</dt>
 <dd><p>The World Wide Web Consortium (W3C) standard that is the foundation for many other service and data standards including: the service metadata (GetCapabilities) for the OGC WMS, WFS, and WCS, Geography Markup Language (GML), and KML.</p>
@@ -61,7 +66,7 @@
 <h1 id="week06-milestone">Weekly Milestone - WMS</h1>
 <p>There are a large number of WMS services available on the web. One way to find interesting services is to search for them using standard search engines such as Google. Try searching for the following search phrase:</p>
 <p><code>“REQUEST=GetCapabilities” and “SERVICE=WMS”</code></p>
-<p>as a single search phrase</p>
+<p><strong>as a single search phrase</strong></p>
 <dl>
 <dt>Question 1</dt>
 <dd>What search engine did you use?
@@ -73,19 +78,19 @@
 <dd>How useful (generally in terms of getting a pointers to live WMS services [defined as a <em>functioning</em> GetCapabilities request]) were the ‘hits’?
 </dd>
 </dl>
-<p>Pick two of the services that included live &quot;GetCapabilities&quot; requests that you found above, and answer the following questions about each.</p>
+<p>Pick two of the services that included live “GetCapabilities” requests that you found above, and answer the following questions about each.</p>
 <dl>
 <dt>Question 4 (service #1)</dt>
 <dd><p>What is the URL for the full GetCapabilities request to the service?</p>
 <p>What is the Name of the service?</p>
 <p>What Format(s) are available for GetMap requests from the service?</p>
-<p>How many layers are included in the service (<em>including nesting layers</em>)?</p>
+<p>How many layers are included in the service (<em>including nesting/nested layers</em>)?</p>
 </dd>
 <dt>Question 4 (service #2)</dt>
 <dd><p>What is the URL for the full GetCapabilities request to the service?</p>
 <p>What is the Name of the service?</p>
 <p>What Format(s) are available for GetMap requests from the service?</p>
-<p>How many layers are included in the service (<em>including nesting layers</em>)?</p>
+<p>How many layers are included in the service (<em>including nesting/nested layers</em>)?</p>
 </dd>
 <dt>Question 5: For one of the layers in the first service,</dt>
 <dd><p>What is the name of the layer?</p>
@@ -126,7 +131,7 @@
 <dd>What OGC request would you use to inform the configuration of a client application (like ArcGIS or QGIS) about an OGC service that you want to add layers from?
 </dd>
 </dl>
-<p>Which OGC request would you submit under the following circumstances (<em>include both the service type</em> [e.g. WMS, WFS, WCS], and the <em>request</em> [e.g. GetMap, GetCapabilities, GetCoverage, etc.] in your answer)</p>
+<p>Which OGC request would you submit under the following circumstances (<em>include both the service type</em> [e.g. WMS, WFS, WCS], and the <em>request</em> [e.g. GetMap, GetCapabilities, GetCoverage, etc.] in your answer)</p>
 <dl>
 <dt>Question 5</dt>
 <dd><p>You want a map image representing three layers of data in a single JPEG for a specified area of interest.</p>
@@ -149,13 +154,13 @@
 <p>What are the SRS/CRS’s for which layers from this service are available (remember that nested layers inherit the SRS/CRS of their parent layers).</p>
 </dd>
 <dt>Question 8</dt>
-<dd>Formulate a GetMap request for the “tl_2010_35_bg10” layer from this service, for a 500x500 pixel map image that is 0.05-degrees wide and 0.05-degress high, with the SW corner of the map image located at 35°N and -106°45'E (EPSG:4326). Include in your write-up the complete GetMap request.
+<dd>Formulate a GetMap request for the “tl_2010_35_bg10” layer from this service, for a 500x500 pixel map image that is 0.05-degrees wide and 0.05-degress high, with the SW corner of the map image located at 35°N and -106°45’E (EPSG:4326). Include in your write-up the complete GetMap request.
 </dd>
 </dl>
 <!-- http://gstore.unm.edu/apps/rgis/datasets/715663ba-c1c3-414c-84a7-c671526f8316/services/ogc/wms?SERVICE=wms&REQUEST=GetMap&VERSION=1.1.1&FORMAT=PNG&BBOX=-106.75,35,-106.667,35.05&SRS=EPSG:4326&WIDTH=500&HEIGHT=500&LAYERS=tl_2010_35_bg10&STYLES=  -->
 <hr />
 <div class="license">
-<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />This work by <span xmlns:cc="http://creativecommons.org/ns#" property="cc:attributionName">Karl Benedict</span> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />This work by <span data-xmlns:cc="http://creativecommons.org/ns#" data-property="cc:attributionName">Karl Benedict</span> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
 </div>
 </body>
 </html>

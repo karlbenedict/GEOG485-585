@@ -1,12 +1,17 @@
 <!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
 <head>
-  <meta charset="utf-8">
-  <meta name="generator" content="pandoc">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-  <meta name="author" content="Karl Benedict">
-  <title>Week 12 - Module 4.3 - Interoperability Standards - Desktop GIS Integration</title>
-  <style type="text/css">code{white-space: pre;}</style>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="Karl Benedict" />
+  <title>GEOG 485L/585L - Spring 2018</title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
   <link rel="stylesheet" href="page.css">
   <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
@@ -14,15 +19,15 @@
 </head>
 <body>
 <header>
-<h1 class="title">Week 12 - Module 4.3 - Interoperability Standards - Desktop GIS Integration</h1>
-<h2 class="author">Karl Benedict</h2>
-<h3 class="date">GEOG 485L/585L - Spring 2017</h3>
+<h1 class="title">GEOG 485L/585L - Spring 2018</h1>
+<p class="author">Karl Benedict</p>
+<p class="date">Spring 2018</p>
 </header>
 <!---------------------------------------------------------------------------->
 <!-- Week 12 ----------------------------------------------------------------->
 <!---------------------------------------------------------------------------->
 <h1 id="week12">Introduction</h1>
-<p>As we've discussed the components of the client tier of our tiered geospatial services oriented architecture we have concentrated on the open standards that can support client applications and the web-based clients that can consume them. Desktop GIS applications can also consume standards-based services, specifically OGC services. This week's class concentrates on the methods for integrating OGC services into two GIS client applications Quantum GIS and ArcGIS, demonstrating the utility of using external standards-based services as a data and map image source within desktop applications.</p>
+<p>As we’ve discussed the components of the client tier of our tiered geospatial services oriented architecture we have concentrated on the open standards that can support client applications and the web-based clients that can consume them. Desktop GIS applications can also consume standards-based services, specifically OGC services. This week’s class concentrates on the methods for integrating OGC services into two GIS client applications Quantum GIS and ArcGIS, demonstrating the utility of using external standards-based services as a data and map image source within desktop applications.</p>
 <p><em>Expected Outcomes</em></p>
 <p>At the end of this class, students should be able to:</p>
 <ul>
@@ -59,24 +64,24 @@
 <ul>
 <li>Any scale limits described for the various layers</li>
 <li>Layer names can sometimes be a bit confusing</li>
-<li>You can double-check the base URL advertised for the service by reviewing the content of the <code>GetCapabilities</code> area of the <code>service</code> metadata provided as part of the <code>GetCapabilities</code> request. If you can't manually request and review the GetCapabilities XML file for the service, your desktop client may not be able to connect to and retrieve the file for its configuration.</li>
+<li>You can double-check the base URL advertised for the service by reviewing the content of the <code>GetCapabilities</code> area of the <code>service</code> metadata provided as part of the <code>GetCapabilities</code> request. If you can’t manually request and review the GetCapabilities XML file for the service, your desktop client may not be able to connect to and retrieve the file for its configuration.</li>
 </ul>
-<p><em>USGS's National Maps <em>Small-Scale Web Services</em> Page</em>: <a href="http://nationalmap.gov/small_scale/infodocs/webservices.html" class="uri">http://nationalmap.gov/small_scale/infodocs/webservices.html</a></p>
+<p><em>USGS’s National Maps <em>Small-Scale Web Services</em> Page</em>: <a href="http://nationalmap.gov/small_scale/infodocs/webservices.html" class="uri">http://nationalmap.gov/small_scale/infodocs/webservices.html</a></p>
 <p><em>NASA Earth Observation System</em>: <a href="http://neowms.sci.gsfc.nasa.gov/wms/wms?version=1.3.0&amp;service=WMS&amp;request=GetCapabilities" class="uri">http://neowms.sci.gsfc.nasa.gov/wms/wms?version=1.3.0&amp;service=WMS&amp;request=GetCapabilities</a> [NOTE: the service was down for maintenance on Sunday night - if you run into problems accessing this service try the WMS services from RGIS - see below for connection information]</p>
 <p>In your write-up include the names of the layers you added, which service they came from, and screen shots (one for for each of the added layers) showing each of them in the QGIS client interface.</p>
 <p>Add three WFS layers to the same QGIS project, with at least two based upon data available from the RGIS data browser (<a href="http://rgis.unm.edu/getdata/" class="uri">http://rgis.unm.edu/getdata/</a>), and one based on the GeoServer sample WFS service (<a href="http://mapper.internetmapping.net:8081/geoserver/ows?service=wfs&amp;version=1.1.0&amp;request=GetCapabilities" class="uri">http://mapper.internetmapping.net:8081/geoserver/ows?service=wfs&amp;version=1.1.0&amp;request=GetCapabilities</a>.   In RGIS you can see the available services for a specific data layer by</p>
 <ol type="1">
 <li><p>Selecting the collection you want to view by selecting from the directory tree on the left side of the page;</p></li>
-<li><p>Identifying the data sets that have available OGC WMS and/or WFS services as indicated by the &quot;Services&quot; entry for each dataset, where the provided links are for the GetCapabilities requests for the provided services:</p></li>
+<li><p>Identifying the data sets that have available OGC WMS and/or WFS services as indicated by the “Services” entry for each dataset, where the provided links are for the GetCapabilities requests for the provided services:</p></li>
 </ol>
 <figure>
 <img src="images/RGIS_OGCLinkScreenshot.jpg" alt="Illustration highlighting where to see if a spacific dataset has an available OGC service" id="fig:RGIS_OGC_LINKS" /><figcaption>Illustration highlighting where to see if a spacific dataset has an available OGC service</figcaption>
 </figure>
-<p><em>Important</em>: When adding any WFS layer, you may need to go into the preferences for QGIS and under the &quot;Network&quot; options increase the &quot;Timeout for Network Requests(ms)&quot; value to a larger number than the default 60000 (1 minute). If you don't do this, QGIS might give up on the request before it has been fulfilled by the server. You may also want to zoom into a limited area and check the box in the QGIS &quot;Add WFS Layer ...&quot; dialog for &quot;Only Request Features Overlapping the Current View Extent&quot; as this will reduce the number of features recovered - a significant issue if the WFS service is publishing a large number of features.</p>
+<p><em>Important</em>: When adding any WFS layer, you may need to go into the preferences for QGIS and under the “Network” options increase the “Timeout for Network Requests(ms)” value to a larger number than the default 60000 (1 minute). If you don’t do this, QGIS might give up on the request before it has been fulfilled by the server. You may also want to zoom into a limited area and check the box in the QGIS “Add WFS Layer …” dialog for “Only Request Features Overlapping the Current View Extent” as this will reduce the number of features recovered - a significant issue if the WFS service is publishing a large number of features.</p>
 <p>In your write-up include the names of the layers you added, and the GetCapabilities requests related to those layers. Also include screen shots (again, one for each added layer) showing each layer in your QGIS project.  </p>
 <hr />
 <div class="license">
-<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />This work by <span xmlns:cc="http://creativecommons.org/ns#" property="cc:attributionName">Karl Benedict</span> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />This work by <span data-xmlns:cc="http://creativecommons.org/ns#" data-property="cc:attributionName">Karl Benedict</span> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
 </div>
 </body>
 </html>

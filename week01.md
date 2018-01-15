@@ -67,29 +67,29 @@ The first step in the process of creating your portfolio is to create a new (or 
 
 1. Go to the [GitHub homepage](https://github.com/) and follow the onscreen instructions for creating a new account. If you already have an account you can skip this step. Once you have created your account you can login and continue the process of creating your class repository. 
 
-![GitHub home page](images/github_home.jpg){width=70%}
+![GitHub home page](images/github_home.jpg)
 
 Unless you have specific reasons to do otherwise select the default options for step 2 of the account creation process. 
 
-![GitHub setup step 2](images/github_step2.jpg){width=70%}
+![GitHub setup step 2](images/github_step2.jpg)
 
 (optional) Complete the online survey from GitHub associated with your account. 
 
-![GitHub online survey](images/github_step3.jpg){width=70%}
+![GitHub online survey](images/github_step3.jpg)
  
 2. Check your email inbox and verify your newly created GitHub account. 
 
 3. Select "Start a project" from the web page that is presented when you confirm your email address (or complete the account creation steps above).
 
-![Start project page](images/github_start.jpg){width=70%}
+![Start project page](images/github_start.jpg)
 
 4. Create your portfolio repository by choosing the following options in the page that is presented when you choose "Start a project" in step (3) above. 
 
-![Create repository page](images/github_createRepo.jpg){width=70%}
+![Create repository page](images/github_createRepo.jpg)
 
 After your successfully create your `portfolio` repository you should see the home page for your new repo:
 
-![Repository home page](images/github_portfolioHome.jpg){width=70%}
+![Repository home page](images/github_portfolioHome.jpg)
 
 **Make note of the web address of this page (even email it to yourself) to make it easy to get back here later** - `https://github.com/<your username>/portfolio`
 
@@ -103,7 +103,7 @@ To create your first web page within your portfolio repository you need to first
 
 2. On the page that comes up listing the files in your repository, click the "Create new file" button above the list of files. 
 
-![Create a new file](images/github_createButton.jpg){width=70%}
+![Create a new file](images/github_createButton.jpg)
 
 Which will take you to the editor for your new file. 
 
@@ -127,18 +127,18 @@ Which will take you to the editor for your new file.
 
 7. Click the "Commit New File" button (5) to commit your change and save the file
 
-![GitHub file creation/editor page](images/github_editor.jpg){width=70%}
+![GitHub file creation/editor page](images/github_editor.jpg)
 
 
 *Step 3* - Preview Your Web Page in a Browser
 
 Since your repository in GitHub is public you can use GitHub to host your portfolio and its content on the web. GitHub's hosting capabilities are limited to static content (i.e. files directly accessible over the web), but this will meet our needs for the class very well. To enable GitHub's web hosting capabilities for your repository you need to change the `GitHub Pages` option in the settings for your repository. First, click the `Settings` button near the top of your repository home page:
 
-![Settings button in GitHub](images/github_settingsButton.jpg){width=70%}
+![Settings button in GitHub](images/github_settingsButton.jpg)
 
 Then modify the `GitHub Pages` setting to use the `Master` branch as the source for your GitHub pages web site. Click the `Save` button next to your update. 
 
-![Update settings for GitHub web publishing](images/github_settingsForWeb.jpg){width=70%}
+![Update settings for GitHub web publishing](images/github_settingsForWeb.jpg)
 
 After saving your changed `GitHub Pages` setting you can view your web page using the following pattern: 
 
