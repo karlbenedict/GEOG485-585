@@ -1,5 +1,4 @@
 ---
-title: Week 6 - Module 4a - Interoperability Standards. WMS, KML and XML
 ...
 
 <!---------------------------------------------------------------------------->
@@ -9,6 +8,7 @@ title: Week 6 - Module 4a - Interoperability Standards. WMS, KML and XML
 <!-- WMS, KML and XML--------------------------------------------------------->
 <!---------------------------------------------------------------------------->
 
+# Week 6 - Module 4a - Interoperability Standards. WMS, KML and XML
 
 ### Overview ###  {.module04a01a}
 

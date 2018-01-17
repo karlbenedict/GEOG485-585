@@ -3,7 +3,7 @@
   <meta charset="utf-8">
   <meta name="generator" content="pandoc">
   <meta name="author" content="Karl Benedict">
-  <title>Week 13 - Module 5 - Platforms and GeoServer Introduction</title>
+  <title>Geography 485L/585L - Internet Mapping</title>
   <style type="text/css">
       code{white-space: pre-wrap;}
       span.smallcaps{font-variant: small-caps;}
@@ -15,9 +15,9 @@
 </head>
 <body>
 <section class="title">
-  <h1 class="title">Week 13 - Module 5 - Platforms and GeoServer Introduction</h1>
+  <h1 class="title">Geography 485L/585L - Internet Mapping</h1>
   <footer>
-    <span class="author">Karl Benedict</span> · <span class="date">GEOG 485L/585L - Spring 2018</span>
+    <span class="author">Karl Benedict</span> · <span class="date">Spring 2018</span>
   </footer>
 </section>
 <section class="slide level3">
@@ -28,17 +28,8 @@
 <!-- Developing and Hosting OGC Services-------------------------------------->
 <!-- Platforms and GeoServer Introduction------------------------------------->
 <!---------------------------------------------------------------------------->
-<p>###Overview ###{.module05a01a}</p>
-<ul>
-<li>SOA Review</li>
-<li>Server Platform</li>
-<li>Online Mapping Server Applications: COTS &amp; Open Source</li>
-<li>What is GeoServer</li>
-<li>Working with GeoServer</li>
-<li>Demonstration</li>
-</ul>
 </section>
-<section id="soa-review" class="slide level3 module05a01a oneup">
+<section id="week-13---module-5---platforms-and-geoserver-introduction" class="title-slide slide level1"><h1>Week 13 - Module 5 - Platforms and GeoServer Introduction</h1></section><section id="soa-review" class="slide level3 module05a01a oneup">
 <h3>SOA Review</h3>
 <figure>
 <img src="./images/SOAillustration.png" alt="SOA Illustration" /><figcaption>SOA Illustration</figcaption>
@@ -63,8 +54,7 @@
 <li>REST - Representation State Transformation</li>
 </ul></li>
 </ul>
-</section>
-<section id="server-platform" class="slide level3 module05a01a">
+</section><section id="server-platform" class="slide level3 module05a01a">
 <h3>Server Platform</h3>
 <p>In the context of server platforms for online mapping with OGC services, there are several components that are of interest</p>
 <ul>
@@ -72,8 +62,7 @@
 <li>The web server - the application that listens for incoming requests from the Internet (e.g. Apache, IIS)</li>
 <li>The mapping server - the application (that may also include the web server) that enables online mapping applications, that may include support for one or more OGC service interfaces (e.g. GeoServer, MapServer, CubeWerx, ArcGIS Server)</li>
 </ul>
-</section>
-<section id="online-mapping-server-applications" class="slide level3 module05a01a">
+</section><section id="online-mapping-server-applications" class="slide level3 module05a01a">
 <h3>Online Mapping Server Applications</h3>
 <p>Sample Commercial Off-the-Shelf (COTS)</p>
 <ul>
@@ -87,8 +76,7 @@
 <li>GeoServer (<a href="http://geoserver.org/">info</a>)</li>
 <li>QGIS (<a href="http://docs.qgis.org/2.14/en/docs/user_manual/working_with_ogc/ogc_server_support.html">info</a>)</li>
 </ul>
-</section>
-<section id="what-is-geoserver" class="slide level3 module05a01a">
+</section><section id="what-is-geoserver" class="slide level3 module05a01a">
 <h3>What is GeoServer</h3>
 <p>GeoServer is an Open Source, Open Standards supporting geospatial web services platform</p>
 <ul>
@@ -97,8 +85,7 @@
 <li>Written in Java as a web application commonly hosted on the Jetty HTTP server and Java servlet engine</li>
 <li>An appropriate version of Java must already be installed</li>
 </ul>
-</section>
-<section id="working-with-geoserver" class="slide level3 module05a01a">
+</section><section id="working-with-geoserver" class="slide level3 module05a01a">
 <h3>Working with GeoServer</h3>
 <p>OS-Independent Binaries are Available for Multiple Platforms (these are just ‘run’ to start the server)</p>
 <ul>
@@ -113,14 +100,12 @@
 <li>Windows and Mac OS X</li>
 </ul>
 <p>[Installation Information] (http://docs.geoserver.org/stable/en/user/installation/)</p>
-</section>
-<section id="what-is-happening-behind-the-scenes" class="slide level3 module05a01a oneup">
+</section><section id="what-is-happening-behind-the-scenes" class="slide level3 module05a01a oneup">
 <h3>What is Happening Behind the Scenes</h3>
 <figure>
 <img src="images/GeoServerInteraction.png" alt="Interaction Between GeoServer Components" /><figcaption>Interaction Between GeoServer Components</figcaption>
 </figure>
-</section>
-<section id="setup-and-configuration" class="slide level3 module05a01a">
+</section><section id="setup-and-configuration" class="slide level3 module05a01a">
 <h3>Setup and Configuration</h3>
 <ul>
 <li>After the initial setup as part of the installation process, other setup and configuration is performed through the web interface</li>
@@ -128,8 +113,7 @@
 <li>Default username and password for a new GeoServer are <code>admin:geoserver</code> - this should be changed as soon as you start up a new server instance.</li>
 <li>After logging in you can view and modify the configuration of the server and services - some of the configuration elements inform the OGC service capabilities</li>
 </ul>
-</section>
-<section id="server-configuration-options" class="slide level3 module05a01a oneup">
+</section><section id="server-configuration-options" class="slide level3 module05a01a oneup">
 <h3>Server Configuration Options</h3>
 <figure>
 <img src="images/GeoServer_ServerConfig.jpg" alt="Geoserver Configuration Menu" /><figcaption>Geoserver Configuration Menu</figcaption>
@@ -142,8 +126,7 @@
 <li>Image Processing - advanced image processing and raster encoding</li>
 <li>Raster Access - settings for accessing raster data</li>
 </ul>
-</section>
-<section id="wxs-service-configuration-options" class="slide level3 module05a01a oneup">
+</section><section id="wxs-service-configuration-options" class="slide level3 module05a01a oneup">
 <h3>WxS Service Configuration Options</h3>
 <figure>
 <img src="images/GeoServer_ServiceConfig.jpg" alt="Geoserver Service Configuration Menu" /><figcaption>Geoserver Service Configuration Menu</figcaption>
@@ -162,8 +145,7 @@
 <li>WMS - SRS subset specification, interpolation method, resource consumption limits, KML options, map image watermarking, PNG/JPEG/SVG format options, and others</li>
 <li>WCS - SRS subset specification, policies for overviews to be used, subsampling, and resource consumption limits, other options</li>
 </ul>
-</section>
-<section id="data-component-configuration-options" class="slide level3 module05a01a oneup">
+</section><section id="data-component-configuration-options" class="slide level3 module05a01a oneup">
 <h3>Data Component Configuration Options</h3>
 <figure>
 <img src="images/GeoServer_DataConfig.jpg" alt="GeoServer Data Configuration Menu" /><figcaption>GeoServer Data Configuration Menu</figcaption>
@@ -176,14 +158,12 @@
 <li><em>Layer Groups</em> - Collections of <em>Layers</em> for specific projects/applications or other logical groupings.</li>
 <li><em>Styles</em> - A listing of defined layer styles for the server through which those styles may be accessed and managed.</li>
 </ul>
-</section>
-<section id="data-integration-process" class="slide level3 module05a01a oneup">
+</section><section id="data-integration-process" class="slide level3 module05a01a oneup">
 <h3>Data Integration Process</h3>
 <figure>
 <img src="images/GeoServer_DataWorkflow.png" alt="Data integration workflow" /><figcaption>Data integration workflow</figcaption>
 </figure>
-</section>
-<section id="security-settings" class="slide level3 module05a01a oneup">
+</section><section id="security-settings" class="slide level3 module05a01a oneup">
 <h3>Security Settings</h3>
 <figure>
 <img src="images/GeoServer_SecurityConfig.jpg" alt="GeoServer Security Configuration Menu" /><figcaption>GeoServer Security Configuration Menu</figcaption>
@@ -196,8 +176,7 @@
 <li><em>Data</em> - Settings for read/write access to data products within the server, settings for the system’s <em>catalog mode</em></li>
 <li><em>Service</em> - Settings for managing service-level (i.e. WMS, WFS, WCS and related request types) access privileges by user role.</li>
 </ul>
-</section>
-<section id="demonstration-of-geoserver-interface" class="slide level3 module05a01a oneup">
+</section><section id="demonstration-of-geoserver-interface" class="slide level3 module05a01a oneup">
 <h3>Demonstration of GeoServer Interface</h3>
 <p><a href="http://mapper.internetmapping.net:8081/geoserver/web/">Class GeoServer Instance</a></p>
 <figure>

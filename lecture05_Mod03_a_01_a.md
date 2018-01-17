@@ -1,5 +1,4 @@
 ---
-title: Week 5 -  Module 3 - GIS and Services Oriented Architectures
 ...
 
 
@@ -9,6 +8,8 @@ title: Week 5 -  Module 3 - GIS and Services Oriented Architectures
 <!-- GIS and Services Oriented Architectures---------------------------------->
 <!---------------------------------------------------------------------------->
 <!---------------------------------------------------------------------------->
+
+# Week 5 -  Module 3 - GIS and Services Oriented Architectures
 
 ### Overview ###  {.module03a01a}
 

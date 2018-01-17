@@ -1,5 +1,4 @@
 ---
-title: Week 1 - Module 1 - Introduction and Outline
 ...
 
 <!---------------------------------------------------------------------------->
@@ -7,6 +6,8 @@ title: Week 1 - Module 1 - Introduction and Outline
 <!-- Lecture 01 a 01 --------------------------------------------------------->
 <!-- Introduction and Outline ------------------------------------------------>
 <!---------------------------------------------------------------------------->
+
+# Week 1 - Module 1 - Introduction and Outline
 
 ### Overview ### {.module01}
 

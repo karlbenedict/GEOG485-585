@@ -1,5 +1,4 @@
 ---
-title: Week 11 - Module 2b - OpenLayers Javascript Framework
 ...
 
 
@@ -9,6 +8,8 @@ title: Week 11 - Module 2b - OpenLayers Javascript Framework
 <!-- Web-based Mapping Clients------------------------------------------------>
 <!-- OpenLayers Javascript Framework------------------------------------------>
 <!---------------------------------------------------------------------------->
+
+#  Week 11 - Module 2b - OpenLayers Javascript Framework
 
 
 ### Overview ###  {.module02b01b}

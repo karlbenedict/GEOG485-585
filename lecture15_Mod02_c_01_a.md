@@ -1,5 +1,4 @@
 ---
-title: Week 15 - Module 5 - OGC Services and Styling in GeoServer
 ...
 
 <!---------------------------------------------------------------------------->
@@ -8,6 +7,8 @@ title: Week 15 - Module 5 - OGC Services and Styling in GeoServer
 <!-- Web-based Mapping Clients------------------------------------------------>
 <!-- Integrating GeoServer OGC Services into OpenLayers Clients--------------->
 <!---------------------------------------------------------------------------->
+
+# Week 15 - Module 5 - OGC Services and Styling in GeoServer
 
 
 ### Overview ###  {.module02c01a}

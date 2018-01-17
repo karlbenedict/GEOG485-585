@@ -1,5 +1,4 @@
 ---
-title: Week 3- Module 2a - Web-based Mapping Clients. Google Maps API
 ...
 
 <!---------------------------------------------------------------------------->
@@ -8,6 +7,8 @@ title: Week 3- Module 2a - Web-based Mapping Clients. Google Maps API
 <!-- Web-based Mapping Clients------------------------------------------------>
 <!-- Google Maps API---------------------------------------------------------->
 <!---------------------------------------------------------------------------->
+
+# Week 3- Module 2a - Web-based Mapping Clients. Google Maps API
 
 
 ### Outline ### {.module02a02a}

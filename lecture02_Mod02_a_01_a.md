@@ -1,5 +1,4 @@
 ---
-title: Week 2 - Module 2a - Web-based Mapping Clients. HTML, CSS & Javascript
 ...
 
 <!---------------------------------------------------------------------------->
@@ -9,6 +8,7 @@ title: Week 2 - Module 2a - Web-based Mapping Clients. HTML, CSS & Javascript
 <!-- Introduction to HTML, CSS and Javascript--------------------------------->
 <!---------------------------------------------------------------------------->
 
+# Week 2 - Module 2a - Web-based Mapping Clients. HTML, CSS & Javascript
 
 ### Overview ###  {.module02a01}
 

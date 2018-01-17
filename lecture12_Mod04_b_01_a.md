@@ -1,5 +1,4 @@
 ---
-title: Week 12 - Module 4b - Interoperability Standards - Desktop GIS Integration
 ...
 
 
@@ -9,6 +8,8 @@ title: Week 12 - Module 4b - Interoperability Standards - Desktop GIS Integratio
 <!-- Interoperability Standards----------------------------------------------->
 <!-- Desktop GIS Integration-------------------------------------------------->
 <!---------------------------------------------------------------------------->
+
+# Week 12 - Module 4b - Interoperability Standards - Desktop GIS Integration
 
 
 ### Overview ###  {.module04b01a}

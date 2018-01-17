@@ -1,5 +1,4 @@
 ---
-title: Week 14 - Module 5 - OGC Services and Styling in GeoServer
 ...
 
 
@@ -9,6 +8,8 @@ title: Week 14 - Module 5 - OGC Services and Styling in GeoServer
 <!-- Developing and Hosting OGC Services-------------------------------------->
 <!-- OGC Services and Styling in GeoServer------------------------------------>
 <!---------------------------------------------------------------------------->
+
+# Week 14 - Module 5 - OGC Services and Styling in GeoServer
 
 
 ### Overview ###

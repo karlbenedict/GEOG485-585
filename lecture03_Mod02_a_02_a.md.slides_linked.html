@@ -3,7 +3,7 @@
   <meta charset="utf-8">
   <meta name="generator" content="pandoc">
   <meta name="author" content="Karl Benedict">
-  <title>Week 3- Module 2a - Web-based Mapping Clients. Google Maps API</title>
+  <title>Geography 485L/585L - Internet Mapping</title>
   <style type="text/css">
       code{white-space: pre-wrap;}
       span.smallcaps{font-variant: small-caps;}
@@ -80,9 +80,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </head>
 <body>
 <section class="title">
-  <h1 class="title">Week 3- Module 2a - Web-based Mapping Clients. Google Maps API</h1>
+  <h1 class="title">Geography 485L/585L - Internet Mapping</h1>
   <footer>
-    <span class="author">Karl Benedict</span> · <span class="date">GEOG 485L/585L - Spring 2018</span>
+    <span class="author">Karl Benedict</span> · <span class="date">Spring 2018</span>
   </footer>
 </section>
 <section class="slide level3">
@@ -94,7 +94,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <!-- Google Maps API---------------------------------------------------------->
 <!---------------------------------------------------------------------------->
 </section>
-<section id="outline" class="slide level3 module02a02a">
+<section id="week-3--module-2a---web-based-mapping-clients.-google-maps-api" class="title-slide slide level1"><h1>Week 3- Module 2a - Web-based Mapping Clients. Google Maps API</h1></section><section id="outline" class="slide level3 module02a02a">
 <h3>Outline</h3>
 <ul>
 <li><p>What is an API</p></li>
@@ -106,8 +106,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Examples</li>
 </ul></li>
 </ul>
-</section>
-<section id="what-is-an-api" class="slide level3 module02a02a">
+</section><section id="what-is-an-api" class="slide level3 module02a02a">
 <h3>What is an API</h3>
 <ul>
 <li>API Stands for Application Programming Interface</li>
@@ -118,8 +117,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li>The Google Maps API provides an interface for interacting with Google’s mapping services from external web applications</li>
 </ul>
-</section>
-<section id="google-maps-api-version" class="slide level3 module02a02a">
+</section><section id="google-maps-api-version" class="slide level3 module02a02a">
 <h3>Google Maps API Version</h3>
 <ul>
 <li>The version of the Google Maps API used in this class is v3 of the Javascript API
@@ -134,8 +132,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Optimized for desktop and mobile platforms and applications</li>
 </ul></li>
 </ul>
-</section>
-<section id="reference-information" class="slide level3 module02a02a">
+</section><section id="reference-information" class="slide level3 module02a02a">
 <h3>Reference Information</h3>
 <dl>
 <dt>Google Maps API Family</dt>
@@ -148,8 +145,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <dd><a href="https://developers.google.com/maps/documentation/javascript/tutorial?csw=1">http://code.google.com/apis/maps/documentation/javascript/tutorial.html</a>
 </dd>
 </dl>
-</section>
-<section id="key-components" class="slide level3 module02a02a">
+</section><section id="key-components" class="slide level3 module02a02a">
 <h3>Key Components</h3>
 <ul>
 <li>Map <a href="https://developers.google.com/maps/documentation/javascript/reference?csw=1#MapOptions">object options</a></li>
@@ -171,8 +167,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <dd>0=global, higher values increasingly local. Limited by map type
 </dd>
 </dl>
-</section>
-<section id="controls" class="slide level3 module02a02a">
+</section><section id="controls" class="slide level3 module02a02a">
 <h3>Controls</h3>
 <ul>
 <li>Available Controls (enabled through map options) <a href="https://developers.google.com/maps/documentation/javascript/controls?csw=1#DefaultUI">default controls</a>
@@ -188,8 +183,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Controls may be positioned <a href="https://developers.google.com/maps/documentation/javascript/controls?csw=1#ControlPositioning">positioning options</a></li>
 <li>Custom controls may be defined and attached to fixed location in the map</li>
 </ul>
-</section>
-<section id="overlays" class="slide level3 module02a02a">
+</section><section id="overlays" class="slide level3 module02a02a">
 <h3>Overlays</h3>
 <p>Overlay Types <a href="https://developers.google.com/maps/documentation/javascript/overlays?csw=1">documentation</a></p>
 <dl>
@@ -215,8 +209,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <dd>definition of programmatically controlled layers (<a href="https://developers.google.com/maps/documentation/javascript/customoverlays">reference</a>)
 </dd>
 </dl>
-</section>
-<section id="services" class="slide level3 module02a02a">
+</section><section id="services" class="slide level3 module02a02a">
 <h3>Services</h3>
 <ul>
 <li>Geocoding Service
@@ -250,8 +243,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Provides information about the maximum available zoom level</li>
 </ul></li>
 </ul>
-</section>
-<section id="events" class="slide level3 module02a02a">
+</section><section id="events" class="slide level3 module02a02a">
 <h3>Events</h3>
 <ul>
 <li>Events provide the ability to attach custom behaviors to events in the interface. For example:
@@ -262,15 +254,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li>Requires higher-level Javascript than we will cover in this course</li>
 </ul>
-</section>
-<section id="examples" class="slide level3 module02a02a">
+</section><section id="examples" class="slide level3 module02a02a">
 <h3>Examples</h3>
-</section>
-<section id="simple---roadmap" class="slide level3 module02a02a">
+</section><section id="simple---roadmap" class="slide level3 module02a02a">
 <h3>Simple - Roadmap</h3>
 <p><img src="images/gmaps01.png" alt="gmaps01.html preview" /> </p>
-</section>
-<section id="simple---roadmap-code" class="slide level3 module02a02a">
+</section><section id="simple---roadmap-code" class="slide level3 module02a02a">
 <h3>Simple - Roadmap Code</h3>
 <div class="codeTable">
 <p><a href="http://karlbenedict.com/GEOG485-585/sample-files/GoogleMaps/gmaps01.html">gmaps01.html</a></p>
@@ -331,12 +320,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <a class="sourceLine" id="cb3-11" data-line-number="11"><span class="op">}</span></a>
 <a class="sourceLine" id="cb3-12" data-line-number="12"></a></code></pre></div>
 </div>
-</section>
-<section id="simple---satellite" class="slide level3 module02a02a">
+</section><section id="simple---satellite" class="slide level3 module02a02a">
 <h3>Simple - Satellite</h3>
 <p><img src="images/gmaps02.png" alt="gmaps02.html preview" /> </p>
-</section>
-<section id="simple---satellite-code" class="slide level3 module02a02a">
+</section><section id="simple---satellite-code" class="slide level3 module02a02a">
 <h3>Simple - Satellite Code</h3>
 <div class="codeTable">
 <p><a href="http://karlbenedict.com/GEOG485-585/sample-files/GoogleMaps/gmaps02.html">gmaps02.html</a></p>
@@ -376,12 +363,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <a class="sourceLine" id="cb5-11" data-line-number="11"><span class="op">}</span></a>
 <a class="sourceLine" id="cb5-12" data-line-number="12"></a></code></pre></div>
 </div>
-</section>
-<section id="simple---hybrid" class="slide level3 module02a02a">
+</section><section id="simple---hybrid" class="slide level3 module02a02a">
 <h3>Simple - Hybrid</h3>
 <p><img src="images/gmaps03.png" alt="gmaps03.html preview" /> </p>
-</section>
-<section id="simple---hybrid-code" class="slide level3 module02a02a">
+</section><section id="simple---hybrid-code" class="slide level3 module02a02a">
 <h3>Simple - Hybrid Code</h3>
 <div class="codeTable">
 <p><a href="http://karlbenedict.com/GEOG485-585/sample-files/GoogleMaps/gmaps03.html">gmaps03.html</a></p>
@@ -421,12 +406,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <a class="sourceLine" id="cb7-11" data-line-number="11"><span class="op">}</span></a>
 <a class="sourceLine" id="cb7-12" data-line-number="12"></a></code></pre></div>
 </div>
-</section>
-<section id="simple---terrain" class="slide level3 module02a02a">
+</section><section id="simple---terrain" class="slide level3 module02a02a">
 <h3>Simple - Terrain</h3>
 <p><img src="images/gmaps04.png" alt="gmaps04.html preview" /> </p>
-</section>
-<section id="simple---terrain-code" class="slide level3 module02a02a">
+</section><section id="simple---terrain-code" class="slide level3 module02a02a">
 <h3>Simple - Terrain Code</h3>
 <div class="codeTable">
 <p><a href="http://karlbenedict.com/GEOG485-585/sample-files/GoogleMaps/gmaps04.html">gmaps04.html</a></p>
@@ -466,12 +449,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <a class="sourceLine" id="cb9-11" data-line-number="11"><span class="op">}</span></a>
 <a class="sourceLine" id="cb9-12" data-line-number="12"></a></code></pre></div>
 </div>
-</section>
-<section id="simple---hybrid---zoomed" class="slide level3 module02a02a">
+</section><section id="simple---hybrid---zoomed" class="slide level3 module02a02a">
 <h3>Simple - Hybrid - Zoomed</h3>
 <p><img src="images/gmaps05.png" alt="gmaps05.html preview" /> </p>
-</section>
-<section id="simple---hybrid---zoomed-code" class="slide level3 module02a02a">
+</section><section id="simple---hybrid---zoomed-code" class="slide level3 module02a02a">
 <h3>Simple - Hybrid - Zoomed Code</h3>
 <div class="codeTable">
 <p><a href="http://karlbenedict.com/GEOG485-585/sample-files/GoogleMaps/gmaps05.html">gmaps05.html</a></p>
@@ -511,12 +492,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <a class="sourceLine" id="cb11-11" data-line-number="11"><span class="op">}</span></a>
 <a class="sourceLine" id="cb11-12" data-line-number="12"></a></code></pre></div>
 </div>
-</section>
-<section id="simple---zoomed---modified-controls" class="slide level3 module02a02a">
+</section><section id="simple---zoomed---modified-controls" class="slide level3 module02a02a">
 <h3>Simple - Zoomed - Modified Controls</h3>
 <p><img src="images/gmaps06.png" alt="gmaps06.html preview" /> </p>
-</section>
-<section id="simple---zoomed---modified-controls-code" class="slide level3 module02a02a">
+</section><section id="simple---zoomed---modified-controls-code" class="slide level3 module02a02a">
 <h3>Simple - Zoomed - Modified Controls Code</h3>
 <div class="codeTable">
 <p><a href="http://karlbenedict.com/GEOG485-585/sample-files/GoogleMaps/gmaps06.html">gmaps06.html</a></p>
@@ -562,12 +541,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <a class="sourceLine" id="cb13-17" data-line-number="17"><span class="op">}</span></a>
 <a class="sourceLine" id="cb13-18" data-line-number="18"></a></code></pre></div>
 </div>
-</section>
-<section id="markers" class="slide level3 module02a02a">
+</section><section id="markers" class="slide level3 module02a02a">
 <h3>Markers</h3>
 <p><img src="images/gmaps07.png" alt="gmaps07.html preview" /> </p>
-</section>
-<section id="markers-code" class="slide level3 module02a02a">
+</section><section id="markers-code" class="slide level3 module02a02a">
 <h3>Markers Code</h3>
 <div class="codeTable">
 <p><a href="http://karlbenedict.com/GEOG485-585/sample-files/GoogleMaps/gmaps07.html">gmaps07.html</a></p>
@@ -620,12 +597,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <a class="sourceLine" id="cb15-24" data-line-number="24"><span class="op">}</span></a>
 <a class="sourceLine" id="cb15-25" data-line-number="25"></a></code></pre></div>
 </div>
-</section>
-<section id="polyline" class="slide level3 module02a02a">
+</section><section id="polyline" class="slide level3 module02a02a">
 <h3>Polyline</h3>
 <p><img src="images/gmaps08.png" alt="gmaps08.html preview" /> </p>
-</section>
-<section id="polyline-code" class="slide level3 module02a02a">
+</section><section id="polyline-code" class="slide level3 module02a02a">
 <h3>Polyline Code</h3>
 <div class="codeTable">
 <p><a href="http://karlbenedict.com/GEOG485-585/sample-files/GoogleMaps/gmaps08.html">gmaps08.html</a></p>
@@ -691,12 +666,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <a class="sourceLine" id="cb17-37" data-line-number="37">}</a>
 <a class="sourceLine" id="cb17-38" data-line-number="38"></a></code></pre></div>
 </div>
-</section>
-<section id="polygon" class="slide level3 module02a02a">
+</section><section id="polygon" class="slide level3 module02a02a">
 <h3>Polygon</h3>
 <p><img src="images/gmaps09.png" alt="gmaps09.html preview" /> </p>
-</section>
-<section id="polygon-code" class="slide level3 module02a02a">
+</section><section id="polygon-code" class="slide level3 module02a02a">
 <h3>Polygon Code</h3>
 <div class="codeTable">
 <p><a href="http://karlbenedict.com/GEOG485-585/sample-files/GoogleMaps/gmaps09.html">gmaps09.html</a></p>
@@ -769,12 +742,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <a class="sourceLine" id="cb19-44" data-line-number="44"><span class="op">}</span></a>
 <a class="sourceLine" id="cb19-45" data-line-number="45"></a></code></pre></div>
 </div>
-</section>
-<section id="adding-an-info-window" class="slide level3 module02a02a">
+</section><section id="adding-an-info-window" class="slide level3 module02a02a">
 <h3>Adding an Info Window</h3>
 <p><img src="images/gmaps10.png" alt="gmaps10.html preview" /> </p>
-</section>
-<section id="adding-an-info-window-code" class="slide level3 module02a02a">
+</section><section id="adding-an-info-window-code" class="slide level3 module02a02a">
 <h3>Adding an Info Window Code</h3>
 <div class="codeTable">
 <p><a href="http://karlbenedict.com/GEOG485-585/sample-files/GoogleMaps/gmaps10.html">gmaps10.html</a></p>

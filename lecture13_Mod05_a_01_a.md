@@ -1,5 +1,4 @@
 ---
-title: Week 13 - Module 5 - Platforms and GeoServer Introduction
 ...
 
 
@@ -10,6 +9,8 @@ title: Week 13 - Module 5 - Platforms and GeoServer Introduction
 <!-- Developing and Hosting OGC Services-------------------------------------->
 <!-- Platforms and GeoServer Introduction------------------------------------->
 <!---------------------------------------------------------------------------->
+
+# Week 13 - Module 5 - Platforms and GeoServer Introduction
 
 
 ###Overview ###{.module05a01a}

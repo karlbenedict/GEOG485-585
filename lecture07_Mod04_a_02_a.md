@@ -1,5 +1,4 @@
 ---
-title: Week 7 - Module 4a - Interoperability Standards. WFS & WCS
 ...
 
 <!---------------------------------------------------------------------------->
@@ -9,6 +8,7 @@ title: Week 7 - Module 4a - Interoperability Standards. WFS & WCS
 <!-- WFS and WCS ------------------------------------------------------------->
 <!---------------------------------------------------------------------------->
 
+# Week 7 - Module 4a - Interoperability Standards. WFS & WCS
 
 ### Overview ###  {.module04a02a}
 

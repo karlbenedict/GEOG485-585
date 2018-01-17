@@ -1,5 +1,4 @@
 ---
-title: Week 10 - Module 2b - OpenLayers 4 Javascript Framework
 ...
 
 <!---------------------------------------------------------------------------->
@@ -8,6 +7,8 @@ title: Week 10 - Module 2b - OpenLayers 4 Javascript Framework
 <!-- Web-based Mapping Clients------------------------------------------------>
 <!-- OpenLayers Javascript Framework------------------------------------------>
 <!---------------------------------------------------------------------------->
+ 
+# Week 10 - Module 2b - OpenLayers 4 Javascript Framework 
  
 
 ### Overview ###  {.module02b01a}

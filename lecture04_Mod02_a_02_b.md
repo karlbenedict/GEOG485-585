@@ -1,5 +1,4 @@
 ---
-title: Week 4 - Module 2a - Web-based Mapping Clients. Google Maps API (pt. 2)
 ...
 
 
@@ -9,6 +8,8 @@ title: Week 4 - Module 2a - Web-based Mapping Clients. Google Maps API (pt. 2)
 <!-- Web-based Mapping Clients------------------------------------------------>
 <!-- Google Maps API---------------------------------------------------------->
 <!---------------------------------------------------------------------------->
+
+# Week 4 - Module 2a - Web-based Mapping Clients. Google Maps API (pt. 2)
 
 ### Overview ###  {.module02a02b}
 

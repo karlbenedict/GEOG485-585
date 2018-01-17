@@ -3,7 +3,7 @@
   <meta charset="utf-8">
   <meta name="generator" content="pandoc">
   <meta name="author" content="Karl Benedict">
-  <title>Week 15 - Module 5 - OGC Services and Styling in GeoServer</title>
+  <title>Geography 485L/585L - Internet Mapping</title>
   <style type="text/css">
       code{white-space: pre-wrap;}
       span.smallcaps{font-variant: small-caps;}
@@ -387,13 +387,17 @@ margin-left: 200px;
 margin-right: auto;
 max-height: 70%;
 max-width: 100%;
+}
+section#definitions.slide.level3.module01 ul li {
+font-size: 14px;
+margin-left: 30px;
 }</style>
 </head>
 <body>
 <section class="title">
-  <h1 class="title">Week 15 - Module 5 - OGC Services and Styling in GeoServer</h1>
+  <h1 class="title">Geography 485L/585L - Internet Mapping</h1>
   <footer>
-    <span class="author">Karl Benedict</span> · <span class="date">GEOG 485L/585L - Spring 2018</span>
+    <span class="author">Karl Benedict</span> · <span class="date">Spring 2018</span>
   </footer>
 </section>
 <section class="slide level3">
@@ -405,14 +409,13 @@ max-width: 100%;
 <!-- Integrating GeoServer OGC Services into OpenLayers Clients--------------->
 <!---------------------------------------------------------------------------->
 </section>
-<section id="overview" class="slide level3 module02c01a">
+<section id="week-15---module-5---ogc-services-and-styling-in-geoserver" class="title-slide slide level1"><h1>Week 15 - Module 5 - OGC Services and Styling in GeoServer</h1></section><section id="overview" class="slide level3 module02c01a">
 <h3>Overview</h3>
 <ul>
 <li><p>Review of Raster Styling in GeoServer</p></li>
 <li><p>Raster Styling Demonstration</p></li>
 </ul>
-</section>
-<section id="raster-symbolizer---review" class="slide level3">
+</section><section id="raster-symbolizer---review" class="slide level3">
 <h3>Raster Symbolizer - Review</h3>
 <div class="sourceCode" id="rasterSymbolizerElements"><pre class="sourceCode xml"><code class="sourceCode xml"><a class="sourceLine" id="rasterSymbolizerElements-1" data-line-number="1"><span class="kw">&lt;Opacity&gt;</span></a>
 <a class="sourceLine" id="rasterSymbolizerElements-2" data-line-number="2"><span class="kw">&lt;ColorMap</span><span class="ot"> type=</span><span class="er">ramp|values|intervals</span> <span class="er">extended=true|false</span> <span class="er">/&gt;</span></a>
@@ -426,8 +429,7 @@ max-width: 100%;
 <a class="sourceLine" id="rasterSymbolizerElements-10" data-line-number="10"><span class="kw">&lt;ShadedRelief&gt;</span> (not implemented in ver 2.0)</a>
 <a class="sourceLine" id="rasterSymbolizerElements-11" data-line-number="11"><span class="kw">&lt;OverlapBehavior&gt;</span> (not implemented in ver 2.0)</a>
 <a class="sourceLine" id="rasterSymbolizerElements-12" data-line-number="12"><span class="kw">&lt;ImageOutline&gt;</span> (not implemented in ver 2.0)</a></code></pre></div>
-</section>
-<section id="sample-raster-sld-for-color-map-examples" class="slide level3">
+</section><section id="sample-raster-sld-for-color-map-examples" class="slide level3">
 <h3>Sample Raster SLD for Color Map Examples</h3>
 <div class="sourceCode" id="simpleRasterSymbolizer"><pre class="sourceCode xml"><code class="sourceCode xml"><a class="sourceLine" id="simpleRasterSymbolizer-1" data-line-number="1"><span class="kw">&lt;?xml</span> version=&quot;1.0&quot; encoding=&quot;ISO-8859-1&quot;<span class="kw">?&gt;</span></a>
 <a class="sourceLine" id="simpleRasterSymbolizer-2" data-line-number="2"><span class="kw">&lt;StyledLayerDescriptor</span><span class="ot"> version=</span><span class="st">&quot;1.0.0&quot;</span> </a>
@@ -467,21 +469,18 @@ max-width: 100%;
 <a class="sourceLine" id="simpleRasterSymbolizer-36" data-line-number="36"></a>
 <a class="sourceLine" id="simpleRasterSymbolizer-37" data-line-number="37"><span class="kw">&lt;/NamedLayer&gt;</span></a>
 <a class="sourceLine" id="simpleRasterSymbolizer-38" data-line-number="38"><span class="kw">&lt;/StyledLayerDescriptor&gt;</span></a></code></pre></div>
-</section>
-<section id="colormap-types" class="slide level3">
+</section><section id="colormap-types" class="slide level3">
 <h3>ColorMap Types</h3>
 <pre><code>&lt;ColorMap&gt; or &lt;ColorMap type=&quot;ramp&quot;&gt;
 
 &lt;ColorMap type=&quot;intervals&quot;&gt;
 
 &lt;ColorMap type=&quot;values&quot;&gt;</code></pre>
-</section>
-<section id="extend-or-not-to-extend" class="slide level3">
+</section><section id="extend-or-not-to-extend" class="slide level3">
 <h3>Extend or Not To Extend?</h3>
 <div class="sourceCode" id="extendedRamp"><pre class="sourceCode xml"><code class="sourceCode xml"><a class="sourceLine" id="extendedRamp-1" data-line-number="1"><span class="kw">&lt;ColorMap</span><span class="ot"> type=</span><span class="st">&quot;ramp&quot;</span><span class="ot"> extended=</span><span class="st">&quot;false&quot;</span><span class="kw">&gt;</span>  = 256 colors in ramp (default)</a>
 <a class="sourceLine" id="extendedRamp-2" data-line-number="2"><span class="kw">&lt;ColorMap</span><span class="ot"> type=</span><span class="st">&quot;ramp&quot;</span><span class="ot"> extended=</span><span class="st">&quot;true&quot;</span><span class="kw">&gt;</span> = 65536 colors in ramp</a></code></pre></div>
-</section>
-<section id="opacity" class="slide level3">
+</section><section id="opacity" class="slide level3">
 <h3>Opacity</h3>
 <p>Options for defining <code>opacity</code> appear in two places in the <em>raster symbolizer</em>.</p>
 <p>At the level of the entire raster dataset</p>
@@ -494,8 +493,7 @@ max-width: 100%;
 <a class="sourceLine" id="opacityColorMapEntry-5" data-line-number="5">   ...</a>
 <a class="sourceLine" id="opacityColorMapEntry-6" data-line-number="6">   <span class="kw">&lt;ColorMapEntry</span><span class="ot"> color=</span><span class="st">&quot;#FFFFFF&quot;</span><span class="ot"> quantity=</span><span class="st">&quot;3500&quot;</span><span class="ot"> label=</span><span class="st">&quot;3500&quot;</span> <span class="kw">/&gt;</span></a>
 <a class="sourceLine" id="opacityColorMapEntry-7" data-line-number="7"><span class="kw">&lt;/ColorMap&gt;</span></a></code></pre></div>
-</section>
-<section id="channel-selection" class="slide level3">
+</section><section id="channel-selection" class="slide level3">
 <h3>Channel Selection</h3>
 <p>Many raster datasets contain multiple <em>bands</em> of values which may be viewed individually or assigned to the colors <em>red</em>, <em>green</em>, and <em>blue</em> to generate a color image representing a combination of band values. GeoServer allows for the specification of a single band for display as a <code>GrayChannel</code> or three bands as <code>RedChannel</code>, <code>GreenChannel</code>, and <code>BlueChannel</code>.</p>
 <div class="sourceCode" id="channelSelection"><pre class="sourceCode xml"><code class="sourceCode xml"><a class="sourceLine" id="channelSelection-1" data-line-number="1"><span class="kw">&lt;?xml</span> version=&quot;1.0&quot; encoding=&quot;ISO-8859-1&quot;<span class="kw">?&gt;</span></a>
@@ -534,8 +532,7 @@ max-width: 100%;
 <a class="sourceLine" id="channelSelection-34" data-line-number="34"></a>
 <a class="sourceLine" id="channelSelection-35" data-line-number="35"><span class="kw">&lt;/NamedLayer&gt;</span></a>
 <a class="sourceLine" id="channelSelection-36" data-line-number="36"><span class="kw">&lt;/StyledLayerDescriptor&gt;</span></a></code></pre></div>
-</section>
-<section id="contrast-enhancement" class="slide level3">
+</section><section id="contrast-enhancement" class="slide level3">
 <h3>Contrast Enhancement</h3>
 <p>Some raster data may need adjustment to increase the contrast (the range between the darkest and lightest values) displayed. GeoServer provides three options for contrast enhancement, each of which have a different effect on the resulting image.</p>
 <dl>
@@ -549,8 +546,7 @@ max-width: 100%;
 <dd>The image is brightened or darkened by a specified factor (negative numbers darken, positive numbers brighten)
 </dd>
 </dl>
-</section>
-<section id="sample-contrast-enhancement-sld-for-examples" class="slide level3">
+</section><section id="sample-contrast-enhancement-sld-for-examples" class="slide level3">
 <h3>Sample Contrast Enhancement SLD for Examples</h3>
 <div class="sourceCode" id="contrastEnhancement"><pre class="sourceCode xml"><code class="sourceCode xml"><a class="sourceLine" id="contrastEnhancement-1" data-line-number="1"><span class="kw">&lt;RasterSymbolizer&gt;</span></a>
 <a class="sourceLine" id="contrastEnhancement-2" data-line-number="2">  <span class="kw">&lt;Opacity&gt;</span>1.0<span class="kw">&lt;/Opacity&gt;</span></a>
@@ -584,8 +580,7 @@ max-width: 100%;
 <div class="sourceCode" id="contrastEnhancementGamma"><pre class="sourceCode xml"><code class="sourceCode xml"><a class="sourceLine" id="contrastEnhancementGamma-1" data-line-number="1"><span class="kw">&lt;ContrastEnhancement&gt;</span></a>
 <a class="sourceLine" id="contrastEnhancementGamma-2" data-line-number="2">  <span class="kw">&lt;GammaValue&gt;</span>.5<span class="kw">&lt;/GammaValue&gt;</span></a>
 <a class="sourceLine" id="contrastEnhancementGamma-3" data-line-number="3"><span class="kw">&lt;/ContrastEnhancement&gt;</span></a></code></pre></div>
-</section>
-<section id="geoserver-demoqa" class="slide level3">
+</section><section id="geoserver-demoqa" class="slide level3">
 <h3>GeoServer Demo/Q&amp;A</h3>
 <p>Class GeoServer Instance: <a href="http://mapper.internetmapping.net:8081/geoserver/web/" class="uri">http://mapper.internetmapping.net:8081/geoserver/web/</a></p>
 </section>
