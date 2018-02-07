@@ -10,4 +10,6 @@ find . -name "lecture*.md" -exec /usr/local/bin/pandoc --template default.latex 
 
 /usr/local/bin/pandoc --toc -c page.css --filter pandoc-fignos --self-contained --standalone lecture*.md -o lecture_all.html
 
+/usr/local/bin/pandoc --toc -c page.css --filter pandoc-fignos --standalone lecture*.md -o lecture_all_linked.html
+
 /usr/local/bin/pandoc --toc --filter pandoc-fignos --top-level-division=section --template default.latex --self-contained --standalone --pdf-engine=xelatex lecture*.md -o lecture_all.pdf

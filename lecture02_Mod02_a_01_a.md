@@ -226,10 +226,3 @@ The most interoperable language for adding dynamic behavior to web sites is _Jav
 
 
 
-<!-- 
-### More Complete Web Page Example ###
-
-![[NAWRS Mapper](http://www.nawrs.net). _HTML_: 39 Lines; _CSS_: 136 Lines; _core.js_: 515 Lines + Google Maps API and JQuery Framework](images/www_nawrs_net.png)
-
- -->
-

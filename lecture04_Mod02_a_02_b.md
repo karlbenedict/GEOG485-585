@@ -19,7 +19,7 @@
 * Bringing it all together in a "real" web page
 
 
-### *Getting Started with Styled Maps* - Video ###
+### *Getting Started with Styled Maps* ###
 
 [Styled Maps Documentation](https://developers.google.com/maps/documentation/javascript/styling) | [Create Map Style wizard](https://mapstyle.withgoogle.com)
 
@@ -123,11 +123,10 @@ function initialize() {
 
 Sample Fusion Table from the previous NAWRS Mapper example: [https://www.google.com/fusiontables/DataSource?docid=1v2IlIFJqat2tTSBA8e4guqlzMGRe8iW4yXP25Kg](https://www.google.com/fusiontables/DataSource?docid=1v2IlIFJqat2tTSBA8e4guqlzMGRe8iW4yXP25Kg)
 
-NAWRS Mapper Javascript File: [https://github.com/nawrs/nawrs-web/blob/master/js/core.js](https://github.com/nawrs/nawrs-web/blob/master/js/core.js)
+[NAWRS Mapper](https://nawrs.github.io/nawrs-google/index.html) Javascript File: [https://github.com/nawrs/nawrs-google/blob/master/core.js](https://github.com/nawrs/nawrs-google/blob/master/core.js)
 
 
 ### Bringing It All Together - [link](http://karlbenedict.com/GEOG485-585/sample-files/GoogleMaps/gmaps_events.html)
- ###
 
 
 <div class="codeTable">
