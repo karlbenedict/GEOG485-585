@@ -784,7 +784,8 @@ ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.or
 		<west>-110.6891149310152</west>
 	</LatLonBox>
 </GroundOverlay>
-</kml>~~~~~~~~~~
+</kml>
+~~~~~~~~~~
 
 [Sample KML File](sample-files/KML/kmlWMS.kml)
 

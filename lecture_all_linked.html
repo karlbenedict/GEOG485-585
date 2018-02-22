@@ -3465,11 +3465,28 @@ services/ogc/wms?
 </ul>
 <h3 id="sample-wms-kml-integration" class="module04a01a">Sample WMS-KML Integration</h3>
 <div class="codeTable">
-
-~~~~~~~~~~ {#sampleKMLwWMS .xml .numberLines}
-<?xml version="1.0" encoding="UTF-8"?>
-<p><kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/
-ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom"> <GroundOverlay> <name>RGIS Counties WMS</name> <Icon> <href>http://gstore.unm.edu/apps/rgis/datasets/ 92403ebf-aec5-404b-ae8a-6db41f388737/services/ogc/wms? VERSION=1.1.1&amp;SERVICE=WMS&amp;REQUEST=GetMap&amp; BBOX=-109,31,-102.9,37.1&amp;LAYERS=g_2007fe_35_county&amp; WIDTH=800&amp;HEIGHT=800&amp;SRS=EPSG:4326&amp; FORMAT=image/png&amp;STYLES=&amp;TRANSPARENT=TRUE</href> <viewRefreshMode>onStop</viewRefreshMode> </Icon> <LatLonBox> <north>37.32753828398865</north> <south>30.86418272137246</south> <east>-101.3630220689848</east> <west>-110.6891149310152</west> </LatLonBox> </GroundOverlay> </kml>~~~~~~~~~~</p>
+<div class="sourceCode" id="sampleKMLwWMS"><pre class="sourceCode numberSource xml numberLines"><code class="sourceCode xml"><a class="sourceLine" id="sampleKMLwWMS-1" data-line-number="1"><span class="kw">&lt;?xml</span> version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;<span class="kw">?&gt;</span></a>
+<a class="sourceLine" id="sampleKMLwWMS-2" data-line-number="2"><span class="kw">&lt;kml</span><span class="ot"> xmlns=</span><span class="st">&quot;http://www.opengis.net/kml/2.2&quot;</span><span class="ot"> xmlns:gx=</span><span class="st">&quot;http://www.google.com/kml/</span></a>
+<a class="sourceLine" id="sampleKMLwWMS-3" data-line-number="3"><span class="st">ext/2.2&quot;</span><span class="ot"> xmlns:kml=</span><span class="st">&quot;http://www.opengis.net/kml/2.2&quot;</span><span class="ot"> xmlns:atom=</span><span class="st">&quot;http://www.w3.org/2005/Atom&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="sampleKMLwWMS-4" data-line-number="4"><span class="kw">&lt;GroundOverlay&gt;</span></a>
+<a class="sourceLine" id="sampleKMLwWMS-5" data-line-number="5">    <span class="kw">&lt;name&gt;</span>RGIS Counties WMS<span class="kw">&lt;/name&gt;</span></a>
+<a class="sourceLine" id="sampleKMLwWMS-6" data-line-number="6">    <span class="kw">&lt;Icon&gt;</span></a>
+<a class="sourceLine" id="sampleKMLwWMS-7" data-line-number="7">        <span class="kw">&lt;href&gt;</span>http://gstore.unm.edu/apps/rgis/datasets/</a>
+<a class="sourceLine" id="sampleKMLwWMS-8" data-line-number="8">        92403ebf-aec5-404b-ae8a-6db41f388737/services/ogc/wms?</a>
+<a class="sourceLine" id="sampleKMLwWMS-9" data-line-number="9">        VERSION=1.1.1<span class="dv">&amp;amp;</span>SERVICE=WMS<span class="dv">&amp;amp;</span>REQUEST=GetMap<span class="dv">&amp;amp;</span></a>
+<a class="sourceLine" id="sampleKMLwWMS-10" data-line-number="10">        BBOX=-109,31,-102.9,37.1<span class="dv">&amp;amp;</span>LAYERS=g_2007fe_35_county<span class="dv">&amp;amp;</span></a>
+<a class="sourceLine" id="sampleKMLwWMS-11" data-line-number="11">        WIDTH=800<span class="dv">&amp;amp;</span>HEIGHT=800<span class="dv">&amp;amp;</span>SRS=EPSG:4326<span class="dv">&amp;amp;</span></a>
+<a class="sourceLine" id="sampleKMLwWMS-12" data-line-number="12">        FORMAT=image/png<span class="dv">&amp;amp;</span>STYLES=<span class="dv">&amp;amp;</span>TRANSPARENT=TRUE<span class="kw">&lt;/href&gt;</span></a>
+<a class="sourceLine" id="sampleKMLwWMS-13" data-line-number="13">        <span class="kw">&lt;viewRefreshMode&gt;</span>onStop<span class="kw">&lt;/viewRefreshMode&gt;</span></a>
+<a class="sourceLine" id="sampleKMLwWMS-14" data-line-number="14">    <span class="kw">&lt;/Icon&gt;</span></a>
+<a class="sourceLine" id="sampleKMLwWMS-15" data-line-number="15">    <span class="kw">&lt;LatLonBox&gt;</span></a>
+<a class="sourceLine" id="sampleKMLwWMS-16" data-line-number="16">        <span class="kw">&lt;north&gt;</span>37.32753828398865<span class="kw">&lt;/north&gt;</span></a>
+<a class="sourceLine" id="sampleKMLwWMS-17" data-line-number="17">        <span class="kw">&lt;south&gt;</span>30.86418272137246<span class="kw">&lt;/south&gt;</span></a>
+<a class="sourceLine" id="sampleKMLwWMS-18" data-line-number="18">        <span class="kw">&lt;east&gt;</span>-101.3630220689848<span class="kw">&lt;/east&gt;</span></a>
+<a class="sourceLine" id="sampleKMLwWMS-19" data-line-number="19">        <span class="kw">&lt;west&gt;</span>-110.6891149310152<span class="kw">&lt;/west&gt;</span></a>
+<a class="sourceLine" id="sampleKMLwWMS-20" data-line-number="20">    <span class="kw">&lt;/LatLonBox&gt;</span></a>
+<a class="sourceLine" id="sampleKMLwWMS-21" data-line-number="21"><span class="kw">&lt;/GroundOverlay&gt;</span></a>
+<a class="sourceLine" id="sampleKMLwWMS-22" data-line-number="22"><span class="kw">&lt;/kml&gt;</span></a></code></pre></div>
 <p><a href="sample-files/KML/kmlWMS.kml">Sample KML File</a></p>
 </div>
 <!---------------------------------------------------------------------------->
