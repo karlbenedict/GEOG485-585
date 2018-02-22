@@ -3,7 +3,7 @@
 <GroundOverlay>
 	<name>RGIS Counties WMS</name>
 	<Icon>
-		<href>http://gstore.unm.edu/apps/rgis/datasets/107046/services/ogc/wms?VERSION=1.1.1&amp;SERVICE=WMS&amp;REQUEST=GetMap&amp;BBOX=-109,31,-102.9,37.1&amp;LAYERS=tl_2010_35_state10&amp;WIDTH=800&amp;HEIGHT=800&amp;SRS=EPSG:4326&amp;FORMAT=image/png&amp;STYLES=</href>
+		<href>http://gstore.unm.edu/apps/rgis/datasets/92403ebf-aec5-404b-ae8a-6db41f388737/services/ogc/wms?VERSION=1.1.1&amp;SERVICE=WMS&amp;REQUEST=GetMap&amp;BBOX=-109,31,-102.9,37.1&amp;LAYERS=g_2007fe_35_county&amp;WIDTH=2000&amp;HEIGHT=2000&amp;SRS=EPSG:4326&amp;FORMAT=image/png&amp;STYLES=&amp;TRANSPARENT=TRUE</href>
 		<viewRefreshMode>onStop</viewRefreshMode>
 	</Icon>
 	<LatLonBox>
