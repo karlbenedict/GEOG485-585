@@ -47,7 +47,6 @@
 
 ### Demonstrations and Examples ###  {.module02b01a}
 
-* [Basic Mapper](http://karlbenedict.com/GEOG485-585/sample-files/OpenLayers/OpenLayers_01.html) (with Open Street Map base map ([source](https://github.com/karlbenedict/GEOG485-585/blob/master/sample-files/OpenLayers/OpenLayers_01.html)))
 
 <div class="codeTable">
 
@@ -58,10 +57,18 @@ OpenLayers_01.html
 
 <head>
 	<link rel="stylesheet" href="css/OpenLayers_01.css" type="text/css">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/
-		openlayers/4.0.1/ol.css" type="text/css">
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/openlayers/4.0.1/ol.js" 
-		type="text/javascript"></script>
+	
+	<!-- these two files are imported from a host that provides a hosted full 
+	build of the OpenLayers package for development as documented here: 
+	https://openlayers.org/download/ -->
+	<link 
+	    rel="stylesheet" 
+	    href="https://cdnjs.cloudflare.com/ajax/libs/openlayers/4.6.4/ol.css" 
+	    type="text/css">
+	<script 
+	    src="https://cdnjs.cloudflare.com/ajax/libs/openlayers/4.6.4/ol.js" 
+	    type="text/javascript">
+	</script>
 </head>
 
 <body>
@@ -122,11 +129,10 @@ body {
 
 
 
-#map div.ol-viewport 
-	div.ol-overlaycontainer-stopevent 
-	div.ol-overviewmap.ol-unselectable.ol-control.ol-uncollapsible {
-		top: 200px;
-		bottom: 300px;
+#map div.ol-viewport div.ol-overlaycontainer-stopevent 
+div.ol-overviewmap.ol-unselectable.ol-control.ol-uncollapsible {
+	top: 200px;
+	bottom: 300px;
 }
 
 ~~~~~~~~~~
@@ -135,6 +141,7 @@ body {
 
 
 ### Demonstration and Examples - Online Resources ###  {.module02b01a}
+* [Basic Mapper](http://karlbenedict.com/GEOG485-585/sample-files/OpenLayers/OpenLayers_01.html) (with Open Street Map base map ([source](https://github.com/karlbenedict/GEOG485-585/blob/master/sample-files/OpenLayers/OpenLayers_01.html)))
 * [Mapper](http://karlbenedict.com/GEOG485-585/sample-files/OpenLayers/OpenLayers_02_basemaps.html) ([source](https://github.com/karlbenedict/GEOG485-585/blob/master/sample-files/OpenLayers/OpenLayers_02_basemaps.html)) with a variety of base maps (Bing, Stamen, OSM) and basic layer selection
 * Basic Mapper with Controls: [No Controls](http://karlbenedict.com/GEOG485-585/sample-files/OpenLayers/OpenLayers_01_noControls.html) ([source](https://github.com/karlbenedict/GEOG485-585/blob/master/sample-files/OpenLayers/OpenLayers_01_noControls.html)), [Customized Controls](http://karlbenedict.com/GEOG485-585/sample-files/OpenLayers/OpenLayers_01_controlArray.html) ([source](https://github.com/karlbenedict/GEOG485-585/blob/master/sample-files/OpenLayers/OpenLayers_01_controlArray.html))
 

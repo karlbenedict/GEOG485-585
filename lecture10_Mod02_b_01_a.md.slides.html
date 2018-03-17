@@ -441,31 +441,36 @@ margin-left: 30px;
 <p><a href="http://openlayers.org/en/latest/examples/">Examples</a></p>
 </section><section id="demonstrations-and-examples" class="slide level3 module02b01a">
 <h3>Demonstrations and Examples</h3>
-<ul>
-<li><a href="http://karlbenedict.com/GEOG485-585/sample-files/OpenLayers/OpenLayers_01.html">Basic Mapper</a> (with Open Street Map base map (<a href="https://github.com/karlbenedict/GEOG485-585/blob/master/sample-files/OpenLayers/OpenLayers_01.html">source</a>))</li>
-</ul>
 <div class="codeTable">
 <p>OpenLayers_01.html</p>
 <div class="sourceCode" id="OpenLayers_01_demo"><pre class="sourceCode numberSource html numberLines"><code class="sourceCode html"><a class="sourceLine" id="OpenLayers_01_demo-1" data-line-number="1"><span class="kw">&lt;html&gt;</span></a>
 <a class="sourceLine" id="OpenLayers_01_demo-2" data-line-number="2"></a>
 <a class="sourceLine" id="OpenLayers_01_demo-3" data-line-number="3"><span class="kw">&lt;head&gt;</span></a>
 <a class="sourceLine" id="OpenLayers_01_demo-4" data-line-number="4">    <span class="kw">&lt;link</span><span class="ot"> rel=</span><span class="st">&quot;stylesheet&quot;</span><span class="ot"> href=</span><span class="st">&quot;css/OpenLayers_01.css&quot;</span><span class="ot"> type=</span><span class="st">&quot;text/css&quot;</span><span class="kw">&gt;</span></a>
-<a class="sourceLine" id="OpenLayers_01_demo-5" data-line-number="5">    <span class="kw">&lt;link</span><span class="ot"> rel=</span><span class="st">&quot;stylesheet&quot;</span><span class="ot"> href=</span><span class="st">&quot;https://cdnjs.cloudflare.com/ajax/libs/</span></a>
-<a class="sourceLine" id="OpenLayers_01_demo-6" data-line-number="6"><span class="st">        openlayers/4.0.1/ol.css&quot;</span><span class="ot"> type=</span><span class="st">&quot;text/css&quot;</span><span class="kw">&gt;</span></a>
-<a class="sourceLine" id="OpenLayers_01_demo-7" data-line-number="7">    <span class="kw">&lt;script</span><span class="ot"> src=</span><span class="st">&quot;https://cdnjs.cloudflare.com/ajax/libs/openlayers/4.0.1/ol.js&quot;</span> </a>
-<a class="sourceLine" id="OpenLayers_01_demo-8" data-line-number="8"><span class="ot">        type=</span><span class="st">&quot;text/javascript&quot;</span><span class="kw">&gt;&lt;/script&gt;</span></a>
-<a class="sourceLine" id="OpenLayers_01_demo-9" data-line-number="9"><span class="kw">&lt;/head&gt;</span></a>
-<a class="sourceLine" id="OpenLayers_01_demo-10" data-line-number="10"></a>
-<a class="sourceLine" id="OpenLayers_01_demo-11" data-line-number="11"><span class="kw">&lt;body&gt;</span></a>
-<a class="sourceLine" id="OpenLayers_01_demo-12" data-line-number="12">    <span class="kw">&lt;h1&gt;</span>This is a very simple OpenLayers 4 sample map page<span class="kw">&lt;/h1&gt;</span></a>
-<a class="sourceLine" id="OpenLayers_01_demo-13" data-line-number="13"></a>
-<a class="sourceLine" id="OpenLayers_01_demo-14" data-line-number="14">    <span class="kw">&lt;div</span><span class="ot"> id=</span><span class="st">'map'</span><span class="kw">&gt;</span><span class="co">&lt;!-- This is where the map will be displayed --&gt;</span><span class="kw">&lt;/div&gt;</span></a>
-<a class="sourceLine" id="OpenLayers_01_demo-15" data-line-number="15"></a>
-<a class="sourceLine" id="OpenLayers_01_demo-16" data-line-number="16">    <span class="co">&lt;!-- import the external Javascript file with the map configuration code --&gt;</span></a>
-<a class="sourceLine" id="OpenLayers_01_demo-17" data-line-number="17">    <span class="kw">&lt;script</span><span class="ot"> src=</span><span class="st">&quot;js/OpenLayers_01.js&quot;</span><span class="ot"> type=</span><span class="st">&quot;text/javascript&quot;</span><span class="kw">&gt;&lt;/script&gt;</span></a>
-<a class="sourceLine" id="OpenLayers_01_demo-18" data-line-number="18"><span class="kw">&lt;/body&gt;</span></a>
-<a class="sourceLine" id="OpenLayers_01_demo-19" data-line-number="19"></a>
-<a class="sourceLine" id="OpenLayers_01_demo-20" data-line-number="20"><span class="kw">&lt;/html&gt;</span></a></code></pre></div>
+<a class="sourceLine" id="OpenLayers_01_demo-5" data-line-number="5">    </a>
+<a class="sourceLine" id="OpenLayers_01_demo-6" data-line-number="6">    <span class="co">&lt;!-- these two files are imported from a host that provides a hosted full </span></a>
+<a class="sourceLine" id="OpenLayers_01_demo-7" data-line-number="7"><span class="co">    build of the OpenLayers package for development as documented here: </span></a>
+<a class="sourceLine" id="OpenLayers_01_demo-8" data-line-number="8"><span class="co">    https://openlayers.org/download/ --&gt;</span></a>
+<a class="sourceLine" id="OpenLayers_01_demo-9" data-line-number="9">    <span class="kw">&lt;link</span> </a>
+<a class="sourceLine" id="OpenLayers_01_demo-10" data-line-number="10"><span class="ot">        rel=</span><span class="st">&quot;stylesheet&quot;</span> </a>
+<a class="sourceLine" id="OpenLayers_01_demo-11" data-line-number="11"><span class="ot">        href=</span><span class="st">&quot;https://cdnjs.cloudflare.com/ajax/libs/openlayers/4.6.4/ol.css&quot;</span> </a>
+<a class="sourceLine" id="OpenLayers_01_demo-12" data-line-number="12"><span class="ot">        type=</span><span class="st">&quot;text/css&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="OpenLayers_01_demo-13" data-line-number="13">    <span class="kw">&lt;script</span> </a>
+<a class="sourceLine" id="OpenLayers_01_demo-14" data-line-number="14"><span class="ot">        src=</span><span class="st">&quot;https://cdnjs.cloudflare.com/ajax/libs/openlayers/4.6.4/ol.js&quot;</span> </a>
+<a class="sourceLine" id="OpenLayers_01_demo-15" data-line-number="15"><span class="ot">        type=</span><span class="st">&quot;text/javascript&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="OpenLayers_01_demo-16" data-line-number="16">    <span class="kw">&lt;/script&gt;</span></a>
+<a class="sourceLine" id="OpenLayers_01_demo-17" data-line-number="17"><span class="kw">&lt;/head&gt;</span></a>
+<a class="sourceLine" id="OpenLayers_01_demo-18" data-line-number="18"></a>
+<a class="sourceLine" id="OpenLayers_01_demo-19" data-line-number="19"><span class="kw">&lt;body&gt;</span></a>
+<a class="sourceLine" id="OpenLayers_01_demo-20" data-line-number="20">    <span class="kw">&lt;h1&gt;</span>This is a very simple OpenLayers 4 sample map page<span class="kw">&lt;/h1&gt;</span></a>
+<a class="sourceLine" id="OpenLayers_01_demo-21" data-line-number="21"></a>
+<a class="sourceLine" id="OpenLayers_01_demo-22" data-line-number="22">    <span class="kw">&lt;div</span><span class="ot"> id=</span><span class="st">'map'</span><span class="kw">&gt;</span><span class="co">&lt;!-- This is where the map will be displayed --&gt;</span><span class="kw">&lt;/div&gt;</span></a>
+<a class="sourceLine" id="OpenLayers_01_demo-23" data-line-number="23"></a>
+<a class="sourceLine" id="OpenLayers_01_demo-24" data-line-number="24">    <span class="co">&lt;!-- import the external Javascript file with the map configuration code --&gt;</span></a>
+<a class="sourceLine" id="OpenLayers_01_demo-25" data-line-number="25">    <span class="kw">&lt;script</span><span class="ot"> src=</span><span class="st">&quot;js/OpenLayers_01.js&quot;</span><span class="ot"> type=</span><span class="st">&quot;text/javascript&quot;</span><span class="kw">&gt;&lt;/script&gt;</span></a>
+<a class="sourceLine" id="OpenLayers_01_demo-26" data-line-number="26"><span class="kw">&lt;/body&gt;</span></a>
+<a class="sourceLine" id="OpenLayers_01_demo-27" data-line-number="27"></a>
+<a class="sourceLine" id="OpenLayers_01_demo-28" data-line-number="28"><span class="kw">&lt;/html&gt;</span></a></code></pre></div>
 <p>OpenLayers_01.js</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode numberSource html numberLines"><code class="sourceCode html"><a class="sourceLine" id="cb1-1" data-line-number="1">// OpenLayers_01.js</a>
 <a class="sourceLine" id="cb1-2" data-line-number="2"></a>
@@ -505,16 +510,16 @@ margin-left: 30px;
 <a class="sourceLine" id="cb2-21" data-line-number="21"></a>
 <a class="sourceLine" id="cb2-22" data-line-number="22"></a>
 <a class="sourceLine" id="cb2-23" data-line-number="23"></a>
-<a class="sourceLine" id="cb2-24" data-line-number="24">#map div.ol-viewport </a>
-<a class="sourceLine" id="cb2-25" data-line-number="25">    div.ol-overlaycontainer-stopevent </a>
-<a class="sourceLine" id="cb2-26" data-line-number="26">    div.ol-overviewmap.ol-unselectable.ol-control.ol-uncollapsible {</a>
-<a class="sourceLine" id="cb2-27" data-line-number="27">        top: 200px;</a>
-<a class="sourceLine" id="cb2-28" data-line-number="28">        bottom: 300px;</a>
-<a class="sourceLine" id="cb2-29" data-line-number="29">}</a></code></pre></div>
+<a class="sourceLine" id="cb2-24" data-line-number="24">#map div.ol-viewport div.ol-overlaycontainer-stopevent </a>
+<a class="sourceLine" id="cb2-25" data-line-number="25">div.ol-overviewmap.ol-unselectable.ol-control.ol-uncollapsible {</a>
+<a class="sourceLine" id="cb2-26" data-line-number="26">    top: 200px;</a>
+<a class="sourceLine" id="cb2-27" data-line-number="27">    bottom: 300px;</a>
+<a class="sourceLine" id="cb2-28" data-line-number="28">}</a></code></pre></div>
 </div>
 </section><section id="demonstration-and-examples---online-resources" class="slide level3 module02b01a">
 <h3>Demonstration and Examples - Online Resources</h3>
 <ul>
+<li><a href="http://karlbenedict.com/GEOG485-585/sample-files/OpenLayers/OpenLayers_01.html">Basic Mapper</a> (with Open Street Map base map (<a href="https://github.com/karlbenedict/GEOG485-585/blob/master/sample-files/OpenLayers/OpenLayers_01.html">source</a>))</li>
 <li><a href="http://karlbenedict.com/GEOG485-585/sample-files/OpenLayers/OpenLayers_02_basemaps.html">Mapper</a> (<a href="https://github.com/karlbenedict/GEOG485-585/blob/master/sample-files/OpenLayers/OpenLayers_02_basemaps.html">source</a>) with a variety of base maps (Bing, Stamen, OSM) and basic layer selection</li>
 <li>Basic Mapper with Controls: <a href="http://karlbenedict.com/GEOG485-585/sample-files/OpenLayers/OpenLayers_01_noControls.html">No Controls</a> (<a href="https://github.com/karlbenedict/GEOG485-585/blob/master/sample-files/OpenLayers/OpenLayers_01_noControls.html">source</a>), <a href="http://karlbenedict.com/GEOG485-585/sample-files/OpenLayers/OpenLayers_01_controlArray.html">Customized Controls</a> (<a href="https://github.com/karlbenedict/GEOG485-585/blob/master/sample-files/OpenLayers/OpenLayers_01_controlArray.html">source</a>)</li>
 </ul>
