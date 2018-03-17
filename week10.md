@@ -8,7 +8,7 @@ title: Week 10 - Web-based Mapping Clients - OpenLayers Javascript Framework
 
 # Introduction #{#week10}
 
-The Google Maps API provides one method for presenting an interactive mapping tool within a web browser, but there are restrictions for free use based upon Google's [license](https://developers.google.com/maps/licensing) agreement, and the API is completely controlled by Google - changes are limited to those that Google enables. The [OpenLayers](http://openlayers.org/) Javascript framework which (as quoted from the OpenLayers 2 project home page)
+The Google Maps API provides one method for presenting an interactive mapping tool within a web browser, but there are restrictions for free use based upon Google's [license](https://developers.google.com/maps/licensing) agreement, and the API is completely controlled by Google - changes are limited to those that Google enables. The [OpenLayers](http://openlayers.org/) Javascript framework which (as quoted from the OpenLayers project home page)
 
 > has been developed to further the use of geographic information of all kinds. OpenLayers is completely free, Open Source JavaScript, released under the 2-clause BSD License (also known as the FreeBSD).
 
@@ -69,8 +69,6 @@ Once your have answered the questions in Learn about the map that you wantn to c
 
 Provide the link to your new OpenLayers map in response to the last question in the assignment in Learn. 
 
-# Peer Review #
 
-This week's assignment includes a peer review component that is provided in the Learn environment's assignments area. 
 
 
