@@ -111,7 +111,7 @@ map.setView()
 // the target DOM object for the map object can be set or changed using 
 // the following command
 
-map.setTarget
+map.setTarget()
 
 ~~~~~~~~~~	
 
@@ -126,11 +126,19 @@ Layer Types and a subset of sources for each type
 	* `ol.source.ImageStatic` - [API](http://openlayers.org/en/latest/apidoc/ol.source.ImageStatic.html) source renders a specified static image file within a specified extent within the map.
 	* `ol.source.ImageWMS` - [API](http://openlayers.org/en/latest/apidoc/ol.source.ImageWMS.html) source retrieves a single map image from the specified OGC Web Map Service (WMS). 
 	* `ol.source.ImageArcGISRest` - [API](http://openlayers.org/en/latest/apidoc/ol.source.ImageArcGISRest.html) source retrieves a single map image from the specified ArcGIS REST service. 
+    * `ol.source.ImageCanvas` - [API](http://openlayers.org/en/latest/apidoc/ol.source.ImageCanvas.html) source places the result of a `canvasFunction` within the defined layer element. 
+    * `ol.source.Raster` - [API](http://openlayers.org/en/latest/apidoc/ol.source.Raster.html) source places the result of a raster `operation` within the defined layer element. 
 
 * `ol.layer.Tile` - map images in a tiled grid are rendered for this layer type
+	* `ol.source.BingMaps` - [API](http://openlayers.org/en/latest/apidoc/ol.source.BingMaps.html) source is Bing map or image service
+	* `ol.source.Stamen` - [API](http://openlayers.org/en/latest/apidoc/ol.source.Stamen.html) source is one of the layer types supported by the Stamen image service
+	* `ol.source.CartoDB` - [API](http://openlayers.org/en/latest/apidoc/ol.source.CartoDB.html) source is the [CartoDB](https://carto.com) API
 	* `ol.source.TileArcGISRest` - [API](http://openlayers.org/en/latest/apidoc/ol.source.TileArcGISRest.html) source is an ArcGIS REST map or image service
 	* `ol.source.TileWMS` - [API](http://openlayers.org/en/latest/apidoc/ol.source.TileWMS.html) source is an OGC Web Map Service (WMS)
+	* `ol.source.TileJSON` - [API](http://openlayers.org/en/latest/apidoc/ol.source.TileJSON.html) source is the TileJSON format
 	* `ol.source.WMTS` - [API](http://openlayers.org/en/latest/apidoc/ol.source.WMTS.html) source is an OGC Web Map Tile Service ([WMTS](http://www.opengeospatial.org/standards/wmts))
+	* `ol.source.XYZ` - [API](http://openlayers.org/en/latest/apidoc/ol.source.XYZ.html) source is a collection of tiles that are referenced by URLs that follow a template for specifying x-, y-, and z-locations. 
+	* `ol.source.Zoomify` - [API](http://openlayers.org/en/latest/apidoc/ol.source.Zoomify.html) source is a collection of tiles in the [Zoomify](http://www.zoomify.com/index.html) format.  
 
 * `ol.layer.VectorTile` - map content is delivered vector data that has been divided into a tile grid and cannot be edited
 	* `ol.source.VectorTile` - [API](http://openlayers.org/en/latest/apidoc/ol.layer.VectorTile.html) source delivers vector data tiles for rendering in the client
@@ -179,20 +187,22 @@ Sample WMS Layer Object Creation
 ~~~~~~~~~~  {#OpenLayers_02_WmsLayer_options .html .numberLines}
 // OpenLayers_03_wms.js
 
+// OpenLayers_03_wms.js
+
 ///////////////////////////////////////////////////////////////////////////////
 // define layer objects
 
 var basemap_tiled = new ol.layer.Tile({
 	source: new ol.source.TileWMS({
-	url: 'https://basemap.nationalmap.gov/arcgis/services/USGSTopo/MapServer/WmsServer?',
+	url: 'http://internetmapping.net:8080/geoserver/wms?',
 	  params: {
-		LAYERS: 0,
+		LAYERS: 'kbene:BMNG_west',
 		FORMAT: 'image/png',
 		TRANSPARENT: true
 	  },
 	  attributions: [
 	    new ol.Attribution({
-		  html: 'Data provided by the <a href="http://basemap.nationalmap.gov">National Map</a>.'
+		  html: 'Data provided by the GEOG x85 GeoServer.'
 		})
 	  ]
 	})
@@ -200,15 +210,15 @@ var basemap_tiled = new ol.layer.Tile({
 
 var basemap_single = new ol.layer.Image({
 	source: new ol.source.ImageWMS({
-		url: 'https://basemap.nationalmap.gov/arcgis/services/USGSTopo/MapServer/WmsServer?',
+		url: 'http://internetmapping.net:8080/geoserver/wms?',
 	  	params: {
-			LAYERS: 0,
+			LAYERS: 'kbene:BMNG_west',
 			FORMAT: 'image/png',
 			TRANSPARENT: true
 	  	},
 	  	attributions: [
 	    	new ol.Attribution({
-		  		html: 'Data provided by the <a href="http://basemap.nationalmap.gov">National Map</a>.'
+		  		html: 'Data provided by the GEOG x85 GeoServer.'
 			})
 	  	]
 	})
@@ -217,10 +227,10 @@ var basemap_single = new ol.layer.Image({
 var states_single = new ol.layer.Image({
 	source: new ol.source.ImageWMS({
 		attributions: new ol.Attribution({
-			html: 'State Boundary Restructured - USGS, National Atlas Release 5-14-12'
+			html: 'Data provided by the GEOG x85 GeoServer.'
 		}),
-		params: {'LAYERS':'global:statep010'},
-		url: 'http://mapper.internetmapping.net:8081/geoserver/global/wms?',
+		params: {'LAYERS':'kbene:statep010'},
+		url: 'http://internetmapping.net:8080/geoserver/wms?',
 		serverType: 'geoserver'
 	})
 })
@@ -230,8 +240,8 @@ var states_tiled = new ol.layer.Tile({
 		attributions: new ol.Attribution({
 			html: 'State Boundary Restructured - USGS, National Atlas Release 5-14-12'
 		}),
-		params: {'LAYERS':'global:statep010'},
-		url: 'http://mapper.internetmapping.net:8081/geoserver/global/wms?',
+		params: {'LAYERS':'kbene:statep010'},
+		url: 'http://internetmapping.net:8080/geoserver/wms?',
 		serverType: 'geoserver'
 	})
 })
@@ -244,8 +254,7 @@ var singleMap = new ol.Map({
 	target: 'map_image',
 	layers: [basemap_single,states_single], //[basemap_single,states_single]
 	view: new ol.View({
-		// the approximate geographic center of the continental US
-		center: ol.proj.fromLonLat([-98.58,39.83]),
+		center: ol.proj.fromLonLat([-98.58,39.83]), // the approximate geographic center of the continental US
 		zoom: 3,
 		projection: 'EPSG:3857'
 		})
@@ -256,8 +265,7 @@ var tiledMap = new ol.Map({
 	target: 'map_tiled',
 	layers: [basemap_tiled,states_tiled], //[basemap_tiled,states_tiled]
 	view: new ol.View({
-		// the approximate geographic center of the continental US
-		center: ol.proj.fromLonLat([-98.58,39.83]),
+		center: ol.proj.fromLonLat([-98.58,39.83]), // the approximate geographic center of the continental US
 		zoom: 3,
 		projection: 'EPSG:3857'
 		})
@@ -267,14 +275,14 @@ var mixedMap = new ol.Map({
 	target: 'map_mixed',
 	layers: [basemap_tiled,states_single], //[basemap_tiled,states_single]
 	view: new ol.View({
-		// the approximate geographic center of the continental US
-		center: ol.proj.fromLonLat([-98.58,39.83]), 
+		center: ol.proj.fromLonLat([-98.58,39.83]), // the approximate geographic center of the continental US
 		zoom: 3,
 		projection: 'EPSG:3857'
 		})
 	});
 
 ///////////////////////////////////////////////////////////////////////////////
+
 
 ~~~~~~~~~~
 

@@ -5,15 +5,15 @@
 
 var basemap_tiled = new ol.layer.Tile({
 	source: new ol.source.TileWMS({
-	url: 'https://basemap.nationalmap.gov/arcgis/services/USGSTopo/MapServer/WmsServer?',
+	url: 'http://internetmapping.net:8080/geoserver/wms?',
 	  params: {
-		LAYERS: 0,
+		LAYERS: 'kbene:BMNG_west',
 		FORMAT: 'image/png',
 		TRANSPARENT: true
 	  },
 	  attributions: [
 	    new ol.Attribution({
-		  html: 'Data provided by the <a href="http://basemap.nationalmap.gov">National Map</a>.'
+		  html: 'Data provided by the GEOG x85 GeoServer.'
 		})
 	  ]
 	})
@@ -21,15 +21,15 @@ var basemap_tiled = new ol.layer.Tile({
 
 var basemap_single = new ol.layer.Image({
 	source: new ol.source.ImageWMS({
-		url: 'https://basemap.nationalmap.gov/arcgis/services/USGSTopo/MapServer/WmsServer?',
+		url: 'http://internetmapping.net:8080/geoserver/wms?',
 	  	params: {
-			LAYERS: 0,
+			LAYERS: 'kbene:BMNG_west',
 			FORMAT: 'image/png',
 			TRANSPARENT: true
 	  	},
 	  	attributions: [
 	    	new ol.Attribution({
-		  		html: 'Data provided by the <a href="http://basemap.nationalmap.gov">National Map</a>.'
+		  		html: 'Data provided by the GEOG x85 GeoServer.'
 			})
 	  	]
 	})
@@ -38,10 +38,10 @@ var basemap_single = new ol.layer.Image({
 var states_single = new ol.layer.Image({
 	source: new ol.source.ImageWMS({
 		attributions: new ol.Attribution({
-			html: 'State Boundary Restructured - USGS, National Atlas Release 5-14-12'
+			html: 'Data provided by the GEOG x85 GeoServer.'
 		}),
-		params: {'LAYERS':'global:statep010'},
-		url: 'http://mapper.internetmapping.net:8081/geoserver/global/wms?',
+		params: {'LAYERS':'kbene:statep010'},
+		url: 'http://internetmapping.net:8080/geoserver/wms?',
 		serverType: 'geoserver'
 	})
 })
@@ -51,8 +51,8 @@ var states_tiled = new ol.layer.Tile({
 		attributions: new ol.Attribution({
 			html: 'State Boundary Restructured - USGS, National Atlas Release 5-14-12'
 		}),
-		params: {'LAYERS':'global:statep010'},
-		url: 'http://mapper.internetmapping.net:8081/geoserver/global/wms?',
+		params: {'LAYERS':'kbene:statep010'},
+		url: 'http://internetmapping.net:8080/geoserver/wms?',
 		serverType: 'geoserver'
 	})
 })

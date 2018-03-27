@@ -37,7 +37,7 @@ At the end of this class students will understand that
 
 Gratier, T., Spencer, P., & Hazzard, E. (2015). *Openlayers 3 beginner's guide : Get started with openlayers 3 and enhance your web pages by creating and displaying dynamic maps*. Birmingham, England: Packt Publishing. [eBook](https://unm-on-worldcat-org.libproxy.unm.edu/oclc/903963849?databaseList=1271,143,1487,1533,1540,1672,1708,173,1925,2006,2007,203,2201,2237,2259,2260,2261,2262,2263,2264,2267,2268,2281,2328,3036,3201,638) Chapters 4-6. **Read for concepts - the framework has changed enough since the publication of this book that much of the code doesn't work as you would expect**
 
-OpenLayers 3 Examples:
+OpenLayers 4 Examples:
 
 * [*Single Image WMS Example*](http://openlayers.org/en/latest/examples/wms-image.html)
 * [*Tiled WMS Exmaple*](http://openlayers.org/en/latest/examples/wms-tiled.html)

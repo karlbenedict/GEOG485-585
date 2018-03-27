@@ -505,7 +505,7 @@ margin-left: 30px;
 <a class="sourceLine" id="OpenLayers_02_Map_options-71" data-line-number="71">// the target DOM object for the map object can be set or changed using </a>
 <a class="sourceLine" id="OpenLayers_02_Map_options-72" data-line-number="72">// the following command</a>
 <a class="sourceLine" id="OpenLayers_02_Map_options-73" data-line-number="73"></a>
-<a class="sourceLine" id="OpenLayers_02_Map_options-74" data-line-number="74">map.setTarget</a></code></pre></div>
+<a class="sourceLine" id="OpenLayers_02_Map_options-74" data-line-number="74">map.setTarget()</a></code></pre></div>
 </div>
 </section><section id="layer-object-options" class="slide level3">
 <h3>Layer Object Options</h3>
@@ -517,12 +517,20 @@ margin-left: 30px;
 <li><code>ol.source.ImageStatic</code> - <a href="http://openlayers.org/en/latest/apidoc/ol.source.ImageStatic.html">API</a> source renders a specified static image file within a specified extent within the map.</li>
 <li><code>ol.source.ImageWMS</code> - <a href="http://openlayers.org/en/latest/apidoc/ol.source.ImageWMS.html">API</a> source retrieves a single map image from the specified OGC Web Map Service (WMS).</li>
 <li><code>ol.source.ImageArcGISRest</code> - <a href="http://openlayers.org/en/latest/apidoc/ol.source.ImageArcGISRest.html">API</a> source retrieves a single map image from the specified ArcGIS REST service.</li>
+<li><code>ol.source.ImageCanvas</code> - <a href="http://openlayers.org/en/latest/apidoc/ol.source.ImageCanvas.html">API</a> source places the result of a <code>canvasFunction</code> within the defined layer element.</li>
+<li><code>ol.source.Raster</code> - <a href="http://openlayers.org/en/latest/apidoc/ol.source.Raster.html">API</a> source places the result of a raster <code>operation</code> within the defined layer element.</li>
 </ul></li>
 <li><code>ol.layer.Tile</code> - map images in a tiled grid are rendered for this layer type
 <ul>
+<li><code>ol.source.BingMaps</code> - <a href="http://openlayers.org/en/latest/apidoc/ol.source.BingMaps.html">API</a> source is Bing map or image service</li>
+<li><code>ol.source.Stamen</code> - <a href="http://openlayers.org/en/latest/apidoc/ol.source.Stamen.html">API</a> source is one of the layer types supported by the Stamen image service</li>
+<li><code>ol.source.CartoDB</code> - <a href="http://openlayers.org/en/latest/apidoc/ol.source.CartoDB.html">API</a> source is the <a href="https://carto.com">CartoDB</a> API</li>
 <li><code>ol.source.TileArcGISRest</code> - <a href="http://openlayers.org/en/latest/apidoc/ol.source.TileArcGISRest.html">API</a> source is an ArcGIS REST map or image service</li>
 <li><code>ol.source.TileWMS</code> - <a href="http://openlayers.org/en/latest/apidoc/ol.source.TileWMS.html">API</a> source is an OGC Web Map Service (WMS)</li>
+<li><code>ol.source.TileJSON</code> - <a href="http://openlayers.org/en/latest/apidoc/ol.source.TileJSON.html">API</a> source is the TileJSON format</li>
 <li><code>ol.source.WMTS</code> - <a href="http://openlayers.org/en/latest/apidoc/ol.source.WMTS.html">API</a> source is an OGC Web Map Tile Service (<a href="http://www.opengeospatial.org/standards/wmts">WMTS</a>)</li>
+<li><code>ol.source.XYZ</code> - <a href="http://openlayers.org/en/latest/apidoc/ol.source.XYZ.html">API</a> source is a collection of tiles that are referenced by URLs that follow a template for specifying x-, y-, and z-locations.</li>
+<li><code>ol.source.Zoomify</code> - <a href="http://openlayers.org/en/latest/apidoc/ol.source.Zoomify.html">API</a> source is a collection of tiles in the <a href="http://www.zoomify.com/index.html">Zoomify</a> format.</li>
 </ul></li>
 <li><code>ol.layer.VectorTile</code> - map content is delivered vector data that has been divided into a tile grid and cannot be edited
 <ul>
@@ -564,85 +572,85 @@ margin-left: 30px;
 <div class="codeTable inflow">
 <div class="sourceCode" id="OpenLayers_02_WmsLayer_options"><pre class="sourceCode numberSource html numberLines"><code class="sourceCode html"><a class="sourceLine" id="OpenLayers_02_WmsLayer_options-1" data-line-number="1">// OpenLayers_03_wms.js</a>
 <a class="sourceLine" id="OpenLayers_02_WmsLayer_options-2" data-line-number="2"></a>
-<a class="sourceLine" id="OpenLayers_02_WmsLayer_options-3" data-line-number="3">///////////////////////////////////////////////////////////////////////////////</a>
-<a class="sourceLine" id="OpenLayers_02_WmsLayer_options-4" data-line-number="4">// define layer objects</a>
-<a class="sourceLine" id="OpenLayers_02_WmsLayer_options-5" data-line-number="5"></a>
-<a class="sourceLine" id="OpenLayers_02_WmsLayer_options-6" data-line-number="6">var basemap_tiled = new ol.layer.Tile({</a>
-<a class="sourceLine" id="OpenLayers_02_WmsLayer_options-7" data-line-number="7">    source: new ol.source.TileWMS({</a>
-<a class="sourceLine" id="OpenLayers_02_WmsLayer_options-8" data-line-number="8">    url: 'https://basemap.nationalmap.gov/arcgis/services/USGSTopo/MapServer/WmsServer?',</a>
-<a class="sourceLine" id="OpenLayers_02_WmsLayer_options-9" data-line-number="9">      params: {</a>
-<a class="sourceLine" id="OpenLayers_02_WmsLayer_options-10" data-line-number="10">        LAYERS: 0,</a>
-<a class="sourceLine" id="OpenLayers_02_WmsLayer_options-11" data-line-number="11">        FORMAT: 'image/png',</a>
-<a class="sourceLine" id="OpenLayers_02_WmsLayer_options-12" data-line-number="12">        TRANSPARENT: true</a>
-<a class="sourceLine" id="OpenLayers_02_WmsLayer_options-13" data-line-number="13">      },</a>
-<a class="sourceLine" id="OpenLayers_02_WmsLayer_options-14" data-line-number="14">      attributions: [</a>
-<a class="sourceLine" id="OpenLayers_02_WmsLayer_options-15" data-line-number="15">        new ol.Attribution({</a>
-<a class="sourceLine" id="OpenLayers_02_WmsLayer_options-16" data-line-number="16">          html: 'Data provided by the <span class="kw">&lt;a</span><span class="ot"> href=</span><span class="st">&quot;http://basemap.nationalmap.gov&quot;</span><span class="kw">&gt;</span>National Map<span class="kw">&lt;/a&gt;</span>.'</a>
-<a class="sourceLine" id="OpenLayers_02_WmsLayer_options-17" data-line-number="17">        })</a>
-<a class="sourceLine" id="OpenLayers_02_WmsLayer_options-18" data-line-number="18">      ]</a>
-<a class="sourceLine" id="OpenLayers_02_WmsLayer_options-19" data-line-number="19">    })</a>
-<a class="sourceLine" id="OpenLayers_02_WmsLayer_options-20" data-line-number="20">})</a>
-<a class="sourceLine" id="OpenLayers_02_WmsLayer_options-21" data-line-number="21"></a>
-<a class="sourceLine" id="OpenLayers_02_WmsLayer_options-22" data-line-number="22">var basemap_single = new ol.layer.Image({</a>
-<a class="sourceLine" id="OpenLayers_02_WmsLayer_options-23" data-line-number="23">    source: new ol.source.ImageWMS({</a>
-<a class="sourceLine" id="OpenLayers_02_WmsLayer_options-24" data-line-number="24">        url: 'https://basemap.nationalmap.gov/arcgis/services/USGSTopo/MapServer/WmsServer?',</a>
-<a class="sourceLine" id="OpenLayers_02_WmsLayer_options-25" data-line-number="25">        params: {</a>
-<a class="sourceLine" id="OpenLayers_02_WmsLayer_options-26" data-line-number="26">            LAYERS: 0,</a>
-<a class="sourceLine" id="OpenLayers_02_WmsLayer_options-27" data-line-number="27">            FORMAT: 'image/png',</a>
-<a class="sourceLine" id="OpenLayers_02_WmsLayer_options-28" data-line-number="28">            TRANSPARENT: true</a>
-<a class="sourceLine" id="OpenLayers_02_WmsLayer_options-29" data-line-number="29">        },</a>
-<a class="sourceLine" id="OpenLayers_02_WmsLayer_options-30" data-line-number="30">        attributions: [</a>
-<a class="sourceLine" id="OpenLayers_02_WmsLayer_options-31" data-line-number="31">            new ol.Attribution({</a>
-<a class="sourceLine" id="OpenLayers_02_WmsLayer_options-32" data-line-number="32">                html: 'Data provided by the <span class="kw">&lt;a</span><span class="ot"> href=</span><span class="st">&quot;http://basemap.nationalmap.gov&quot;</span><span class="kw">&gt;</span>National Map<span class="kw">&lt;/a&gt;</span>.'</a>
-<a class="sourceLine" id="OpenLayers_02_WmsLayer_options-33" data-line-number="33">            })</a>
-<a class="sourceLine" id="OpenLayers_02_WmsLayer_options-34" data-line-number="34">        ]</a>
-<a class="sourceLine" id="OpenLayers_02_WmsLayer_options-35" data-line-number="35">    })</a>
-<a class="sourceLine" id="OpenLayers_02_WmsLayer_options-36" data-line-number="36">})</a>
-<a class="sourceLine" id="OpenLayers_02_WmsLayer_options-37" data-line-number="37"></a>
-<a class="sourceLine" id="OpenLayers_02_WmsLayer_options-38" data-line-number="38">var states_single = new ol.layer.Image({</a>
-<a class="sourceLine" id="OpenLayers_02_WmsLayer_options-39" data-line-number="39">    source: new ol.source.ImageWMS({</a>
-<a class="sourceLine" id="OpenLayers_02_WmsLayer_options-40" data-line-number="40">        attributions: new ol.Attribution({</a>
-<a class="sourceLine" id="OpenLayers_02_WmsLayer_options-41" data-line-number="41">            html: 'State Boundary Restructured - USGS, National Atlas Release 5-14-12'</a>
-<a class="sourceLine" id="OpenLayers_02_WmsLayer_options-42" data-line-number="42">        }),</a>
-<a class="sourceLine" id="OpenLayers_02_WmsLayer_options-43" data-line-number="43">        params: {'LAYERS':'global:statep010'},</a>
-<a class="sourceLine" id="OpenLayers_02_WmsLayer_options-44" data-line-number="44">        url: 'http://mapper.internetmapping.net:8081/geoserver/global/wms?',</a>
-<a class="sourceLine" id="OpenLayers_02_WmsLayer_options-45" data-line-number="45">        serverType: 'geoserver'</a>
-<a class="sourceLine" id="OpenLayers_02_WmsLayer_options-46" data-line-number="46">    })</a>
-<a class="sourceLine" id="OpenLayers_02_WmsLayer_options-47" data-line-number="47">})</a>
-<a class="sourceLine" id="OpenLayers_02_WmsLayer_options-48" data-line-number="48"></a>
-<a class="sourceLine" id="OpenLayers_02_WmsLayer_options-49" data-line-number="49">var states_tiled = new ol.layer.Tile({</a>
-<a class="sourceLine" id="OpenLayers_02_WmsLayer_options-50" data-line-number="50">    source: new ol.source.TileWMS({</a>
-<a class="sourceLine" id="OpenLayers_02_WmsLayer_options-51" data-line-number="51">        attributions: new ol.Attribution({</a>
-<a class="sourceLine" id="OpenLayers_02_WmsLayer_options-52" data-line-number="52">            html: 'State Boundary Restructured - USGS, National Atlas Release 5-14-12'</a>
-<a class="sourceLine" id="OpenLayers_02_WmsLayer_options-53" data-line-number="53">        }),</a>
-<a class="sourceLine" id="OpenLayers_02_WmsLayer_options-54" data-line-number="54">        params: {'LAYERS':'global:statep010'},</a>
-<a class="sourceLine" id="OpenLayers_02_WmsLayer_options-55" data-line-number="55">        url: 'http://mapper.internetmapping.net:8081/geoserver/global/wms?',</a>
-<a class="sourceLine" id="OpenLayers_02_WmsLayer_options-56" data-line-number="56">        serverType: 'geoserver'</a>
-<a class="sourceLine" id="OpenLayers_02_WmsLayer_options-57" data-line-number="57">    })</a>
-<a class="sourceLine" id="OpenLayers_02_WmsLayer_options-58" data-line-number="58">})</a>
-<a class="sourceLine" id="OpenLayers_02_WmsLayer_options-59" data-line-number="59"></a>
-<a class="sourceLine" id="OpenLayers_02_WmsLayer_options-60" data-line-number="60"></a>
+<a class="sourceLine" id="OpenLayers_02_WmsLayer_options-3" data-line-number="3">// OpenLayers_03_wms.js</a>
+<a class="sourceLine" id="OpenLayers_02_WmsLayer_options-4" data-line-number="4"></a>
+<a class="sourceLine" id="OpenLayers_02_WmsLayer_options-5" data-line-number="5">///////////////////////////////////////////////////////////////////////////////</a>
+<a class="sourceLine" id="OpenLayers_02_WmsLayer_options-6" data-line-number="6">// define layer objects</a>
+<a class="sourceLine" id="OpenLayers_02_WmsLayer_options-7" data-line-number="7"></a>
+<a class="sourceLine" id="OpenLayers_02_WmsLayer_options-8" data-line-number="8">var basemap_tiled = new ol.layer.Tile({</a>
+<a class="sourceLine" id="OpenLayers_02_WmsLayer_options-9" data-line-number="9">    source: new ol.source.TileWMS({</a>
+<a class="sourceLine" id="OpenLayers_02_WmsLayer_options-10" data-line-number="10">    url: 'http://internetmapping.net:8080/geoserver/wms?',</a>
+<a class="sourceLine" id="OpenLayers_02_WmsLayer_options-11" data-line-number="11">      params: {</a>
+<a class="sourceLine" id="OpenLayers_02_WmsLayer_options-12" data-line-number="12">        LAYERS: 'kbene:BMNG_west',</a>
+<a class="sourceLine" id="OpenLayers_02_WmsLayer_options-13" data-line-number="13">        FORMAT: 'image/png',</a>
+<a class="sourceLine" id="OpenLayers_02_WmsLayer_options-14" data-line-number="14">        TRANSPARENT: true</a>
+<a class="sourceLine" id="OpenLayers_02_WmsLayer_options-15" data-line-number="15">      },</a>
+<a class="sourceLine" id="OpenLayers_02_WmsLayer_options-16" data-line-number="16">      attributions: [</a>
+<a class="sourceLine" id="OpenLayers_02_WmsLayer_options-17" data-line-number="17">        new ol.Attribution({</a>
+<a class="sourceLine" id="OpenLayers_02_WmsLayer_options-18" data-line-number="18">          html: 'Data provided by the GEOG x85 GeoServer.'</a>
+<a class="sourceLine" id="OpenLayers_02_WmsLayer_options-19" data-line-number="19">        })</a>
+<a class="sourceLine" id="OpenLayers_02_WmsLayer_options-20" data-line-number="20">      ]</a>
+<a class="sourceLine" id="OpenLayers_02_WmsLayer_options-21" data-line-number="21">    })</a>
+<a class="sourceLine" id="OpenLayers_02_WmsLayer_options-22" data-line-number="22">})</a>
+<a class="sourceLine" id="OpenLayers_02_WmsLayer_options-23" data-line-number="23"></a>
+<a class="sourceLine" id="OpenLayers_02_WmsLayer_options-24" data-line-number="24">var basemap_single = new ol.layer.Image({</a>
+<a class="sourceLine" id="OpenLayers_02_WmsLayer_options-25" data-line-number="25">    source: new ol.source.ImageWMS({</a>
+<a class="sourceLine" id="OpenLayers_02_WmsLayer_options-26" data-line-number="26">        url: 'http://internetmapping.net:8080/geoserver/wms?',</a>
+<a class="sourceLine" id="OpenLayers_02_WmsLayer_options-27" data-line-number="27">        params: {</a>
+<a class="sourceLine" id="OpenLayers_02_WmsLayer_options-28" data-line-number="28">            LAYERS: 'kbene:BMNG_west',</a>
+<a class="sourceLine" id="OpenLayers_02_WmsLayer_options-29" data-line-number="29">            FORMAT: 'image/png',</a>
+<a class="sourceLine" id="OpenLayers_02_WmsLayer_options-30" data-line-number="30">            TRANSPARENT: true</a>
+<a class="sourceLine" id="OpenLayers_02_WmsLayer_options-31" data-line-number="31">        },</a>
+<a class="sourceLine" id="OpenLayers_02_WmsLayer_options-32" data-line-number="32">        attributions: [</a>
+<a class="sourceLine" id="OpenLayers_02_WmsLayer_options-33" data-line-number="33">            new ol.Attribution({</a>
+<a class="sourceLine" id="OpenLayers_02_WmsLayer_options-34" data-line-number="34">                html: 'Data provided by the GEOG x85 GeoServer.'</a>
+<a class="sourceLine" id="OpenLayers_02_WmsLayer_options-35" data-line-number="35">            })</a>
+<a class="sourceLine" id="OpenLayers_02_WmsLayer_options-36" data-line-number="36">        ]</a>
+<a class="sourceLine" id="OpenLayers_02_WmsLayer_options-37" data-line-number="37">    })</a>
+<a class="sourceLine" id="OpenLayers_02_WmsLayer_options-38" data-line-number="38">})</a>
+<a class="sourceLine" id="OpenLayers_02_WmsLayer_options-39" data-line-number="39"></a>
+<a class="sourceLine" id="OpenLayers_02_WmsLayer_options-40" data-line-number="40">var states_single = new ol.layer.Image({</a>
+<a class="sourceLine" id="OpenLayers_02_WmsLayer_options-41" data-line-number="41">    source: new ol.source.ImageWMS({</a>
+<a class="sourceLine" id="OpenLayers_02_WmsLayer_options-42" data-line-number="42">        attributions: new ol.Attribution({</a>
+<a class="sourceLine" id="OpenLayers_02_WmsLayer_options-43" data-line-number="43">            html: 'Data provided by the GEOG x85 GeoServer.'</a>
+<a class="sourceLine" id="OpenLayers_02_WmsLayer_options-44" data-line-number="44">        }),</a>
+<a class="sourceLine" id="OpenLayers_02_WmsLayer_options-45" data-line-number="45">        params: {'LAYERS':'kbene:statep010'},</a>
+<a class="sourceLine" id="OpenLayers_02_WmsLayer_options-46" data-line-number="46">        url: 'http://internetmapping.net:8080/geoserver/wms?',</a>
+<a class="sourceLine" id="OpenLayers_02_WmsLayer_options-47" data-line-number="47">        serverType: 'geoserver'</a>
+<a class="sourceLine" id="OpenLayers_02_WmsLayer_options-48" data-line-number="48">    })</a>
+<a class="sourceLine" id="OpenLayers_02_WmsLayer_options-49" data-line-number="49">})</a>
+<a class="sourceLine" id="OpenLayers_02_WmsLayer_options-50" data-line-number="50"></a>
+<a class="sourceLine" id="OpenLayers_02_WmsLayer_options-51" data-line-number="51">var states_tiled = new ol.layer.Tile({</a>
+<a class="sourceLine" id="OpenLayers_02_WmsLayer_options-52" data-line-number="52">    source: new ol.source.TileWMS({</a>
+<a class="sourceLine" id="OpenLayers_02_WmsLayer_options-53" data-line-number="53">        attributions: new ol.Attribution({</a>
+<a class="sourceLine" id="OpenLayers_02_WmsLayer_options-54" data-line-number="54">            html: 'State Boundary Restructured - USGS, National Atlas Release 5-14-12'</a>
+<a class="sourceLine" id="OpenLayers_02_WmsLayer_options-55" data-line-number="55">        }),</a>
+<a class="sourceLine" id="OpenLayers_02_WmsLayer_options-56" data-line-number="56">        params: {'LAYERS':'kbene:statep010'},</a>
+<a class="sourceLine" id="OpenLayers_02_WmsLayer_options-57" data-line-number="57">        url: 'http://internetmapping.net:8080/geoserver/wms?',</a>
+<a class="sourceLine" id="OpenLayers_02_WmsLayer_options-58" data-line-number="58">        serverType: 'geoserver'</a>
+<a class="sourceLine" id="OpenLayers_02_WmsLayer_options-59" data-line-number="59">    })</a>
+<a class="sourceLine" id="OpenLayers_02_WmsLayer_options-60" data-line-number="60">})</a>
 <a class="sourceLine" id="OpenLayers_02_WmsLayer_options-61" data-line-number="61"></a>
-<a class="sourceLine" id="OpenLayers_02_WmsLayer_options-62" data-line-number="62">///////////////////////////////////////////////////////////////////////////////</a>
-<a class="sourceLine" id="OpenLayers_02_WmsLayer_options-63" data-line-number="63">// create our base map objects </a>
-<a class="sourceLine" id="OpenLayers_02_WmsLayer_options-64" data-line-number="64">var singleMap = new ol.Map({</a>
-<a class="sourceLine" id="OpenLayers_02_WmsLayer_options-65" data-line-number="65">    target: 'map_image',</a>
-<a class="sourceLine" id="OpenLayers_02_WmsLayer_options-66" data-line-number="66">    layers: [basemap_single,states_single], //[basemap_single,states_single]</a>
-<a class="sourceLine" id="OpenLayers_02_WmsLayer_options-67" data-line-number="67">    view: new ol.View({</a>
-<a class="sourceLine" id="OpenLayers_02_WmsLayer_options-68" data-line-number="68">        // the approximate geographic center of the continental US</a>
-<a class="sourceLine" id="OpenLayers_02_WmsLayer_options-69" data-line-number="69">        center: ol.proj.fromLonLat([-98.58,39.83]),</a>
-<a class="sourceLine" id="OpenLayers_02_WmsLayer_options-70" data-line-number="70">        zoom: 3,</a>
-<a class="sourceLine" id="OpenLayers_02_WmsLayer_options-71" data-line-number="71">        projection: 'EPSG:3857'</a>
-<a class="sourceLine" id="OpenLayers_02_WmsLayer_options-72" data-line-number="72">        })</a>
-<a class="sourceLine" id="OpenLayers_02_WmsLayer_options-73" data-line-number="73">    });</a>
-<a class="sourceLine" id="OpenLayers_02_WmsLayer_options-74" data-line-number="74"></a>
+<a class="sourceLine" id="OpenLayers_02_WmsLayer_options-62" data-line-number="62"></a>
+<a class="sourceLine" id="OpenLayers_02_WmsLayer_options-63" data-line-number="63"></a>
+<a class="sourceLine" id="OpenLayers_02_WmsLayer_options-64" data-line-number="64">///////////////////////////////////////////////////////////////////////////////</a>
+<a class="sourceLine" id="OpenLayers_02_WmsLayer_options-65" data-line-number="65">// create our base map objects </a>
+<a class="sourceLine" id="OpenLayers_02_WmsLayer_options-66" data-line-number="66">var singleMap = new ol.Map({</a>
+<a class="sourceLine" id="OpenLayers_02_WmsLayer_options-67" data-line-number="67">    target: 'map_image',</a>
+<a class="sourceLine" id="OpenLayers_02_WmsLayer_options-68" data-line-number="68">    layers: [basemap_single,states_single], //[basemap_single,states_single]</a>
+<a class="sourceLine" id="OpenLayers_02_WmsLayer_options-69" data-line-number="69">    view: new ol.View({</a>
+<a class="sourceLine" id="OpenLayers_02_WmsLayer_options-70" data-line-number="70">        center: ol.proj.fromLonLat([-98.58,39.83]), // the approximate geographic center of the continental US</a>
+<a class="sourceLine" id="OpenLayers_02_WmsLayer_options-71" data-line-number="71">        zoom: 3,</a>
+<a class="sourceLine" id="OpenLayers_02_WmsLayer_options-72" data-line-number="72">        projection: 'EPSG:3857'</a>
+<a class="sourceLine" id="OpenLayers_02_WmsLayer_options-73" data-line-number="73">        })</a>
+<a class="sourceLine" id="OpenLayers_02_WmsLayer_options-74" data-line-number="74">    });</a>
 <a class="sourceLine" id="OpenLayers_02_WmsLayer_options-75" data-line-number="75"></a>
-<a class="sourceLine" id="OpenLayers_02_WmsLayer_options-76" data-line-number="76">var tiledMap = new ol.Map({</a>
-<a class="sourceLine" id="OpenLayers_02_WmsLayer_options-77" data-line-number="77">    target: 'map_tiled',</a>
-<a class="sourceLine" id="OpenLayers_02_WmsLayer_options-78" data-line-number="78">    layers: [basemap_tiled,states_tiled], //[basemap_tiled,states_tiled]</a>
-<a class="sourceLine" id="OpenLayers_02_WmsLayer_options-79" data-line-number="79">    view: new ol.View({</a>
-<a class="sourceLine" id="OpenLayers_02_WmsLayer_options-80" data-line-number="80">        // the approximate geographic center of the continental US</a>
-<a class="sourceLine" id="OpenLayers_02_WmsLayer_options-81" data-line-number="81">        center: ol.proj.fromLonLat([-98.58,39.83]),</a>
+<a class="sourceLine" id="OpenLayers_02_WmsLayer_options-76" data-line-number="76"></a>
+<a class="sourceLine" id="OpenLayers_02_WmsLayer_options-77" data-line-number="77">var tiledMap = new ol.Map({</a>
+<a class="sourceLine" id="OpenLayers_02_WmsLayer_options-78" data-line-number="78">    target: 'map_tiled',</a>
+<a class="sourceLine" id="OpenLayers_02_WmsLayer_options-79" data-line-number="79">    layers: [basemap_tiled,states_tiled], //[basemap_tiled,states_tiled]</a>
+<a class="sourceLine" id="OpenLayers_02_WmsLayer_options-80" data-line-number="80">    view: new ol.View({</a>
+<a class="sourceLine" id="OpenLayers_02_WmsLayer_options-81" data-line-number="81">        center: ol.proj.fromLonLat([-98.58,39.83]), // the approximate geographic center of the continental US</a>
 <a class="sourceLine" id="OpenLayers_02_WmsLayer_options-82" data-line-number="82">        zoom: 3,</a>
 <a class="sourceLine" id="OpenLayers_02_WmsLayer_options-83" data-line-number="83">        projection: 'EPSG:3857'</a>
 <a class="sourceLine" id="OpenLayers_02_WmsLayer_options-84" data-line-number="84">        })</a>
@@ -652,14 +660,14 @@ margin-left: 30px;
 <a class="sourceLine" id="OpenLayers_02_WmsLayer_options-88" data-line-number="88">    target: 'map_mixed',</a>
 <a class="sourceLine" id="OpenLayers_02_WmsLayer_options-89" data-line-number="89">    layers: [basemap_tiled,states_single], //[basemap_tiled,states_single]</a>
 <a class="sourceLine" id="OpenLayers_02_WmsLayer_options-90" data-line-number="90">    view: new ol.View({</a>
-<a class="sourceLine" id="OpenLayers_02_WmsLayer_options-91" data-line-number="91">        // the approximate geographic center of the continental US</a>
-<a class="sourceLine" id="OpenLayers_02_WmsLayer_options-92" data-line-number="92">        center: ol.proj.fromLonLat([-98.58,39.83]), </a>
-<a class="sourceLine" id="OpenLayers_02_WmsLayer_options-93" data-line-number="93">        zoom: 3,</a>
-<a class="sourceLine" id="OpenLayers_02_WmsLayer_options-94" data-line-number="94">        projection: 'EPSG:3857'</a>
-<a class="sourceLine" id="OpenLayers_02_WmsLayer_options-95" data-line-number="95">        })</a>
-<a class="sourceLine" id="OpenLayers_02_WmsLayer_options-96" data-line-number="96">    });</a>
-<a class="sourceLine" id="OpenLayers_02_WmsLayer_options-97" data-line-number="97"></a>
-<a class="sourceLine" id="OpenLayers_02_WmsLayer_options-98" data-line-number="98">///////////////////////////////////////////////////////////////////////////////</a></code></pre></div>
+<a class="sourceLine" id="OpenLayers_02_WmsLayer_options-91" data-line-number="91">        center: ol.proj.fromLonLat([-98.58,39.83]), // the approximate geographic center of the continental US</a>
+<a class="sourceLine" id="OpenLayers_02_WmsLayer_options-92" data-line-number="92">        zoom: 3,</a>
+<a class="sourceLine" id="OpenLayers_02_WmsLayer_options-93" data-line-number="93">        projection: 'EPSG:3857'</a>
+<a class="sourceLine" id="OpenLayers_02_WmsLayer_options-94" data-line-number="94">        })</a>
+<a class="sourceLine" id="OpenLayers_02_WmsLayer_options-95" data-line-number="95">    });</a>
+<a class="sourceLine" id="OpenLayers_02_WmsLayer_options-96" data-line-number="96"></a>
+<a class="sourceLine" id="OpenLayers_02_WmsLayer_options-97" data-line-number="97">///////////////////////////////////////////////////////////////////////////////</a>
+<a class="sourceLine" id="OpenLayers_02_WmsLayer_options-98" data-line-number="98"></a></code></pre></div>
 </div>
 <p>Example: <a href="https://github.com/karlbenedict/GEOG485-585/blob/master/sample-files/OpenLayers/OpenLayers_03_wms.html">HTML</a>, <a href="https://github.com/karlbenedict/GEOG485-585/blob/master/sample-files/OpenLayers/js/OpenLayers_03_wms.js">Javascript</a></p>
 </section><section id="vector-layer-configuration" class="slide level3">

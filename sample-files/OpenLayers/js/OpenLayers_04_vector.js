@@ -98,17 +98,17 @@ var basemap_tiled = new ol.layer.Tile({
 	})
 })
 
-var basemap_bern_tiled = new ol.layer.Tile({
-	source: new ol.source.TileWMS({
-		attributions: new ol.Attribution({
-			html: 'Bernalillo County NAIP (2014) imagery'
-		}),
-		params: {'LAYERS':'global:naip_2015_bernalillo'},
-		url: 'http://mapper.internetmapping.net:8081/geoserver/global/wms?',
-		serverType: 'geoserver',
-		projection: projection
-	})
-})
+// var basemap_bern_tiled = new ol.layer.Tile({
+// 	source: new ol.source.TileWMS({
+// 		attributions: new ol.Attribution({
+// 			html: 'Bernalillo County NAIP (2014) imagery'
+// 		}),
+// 		params: {'LAYERS':'global:naip_2015_bernalillo'},
+// 		url: 'http://mapper.internetmapping.net:8081/geoserver/global/wms?',
+// 		serverType: 'geoserver',
+// 		projection: projection
+// 	})
+// })
 
 var states_single = new ol.layer.Image({
 	source: new ol.source.ImageWMS({
@@ -199,7 +199,7 @@ var kmlMapStyled = new ol.Map({
 
 var localFeatures = new ol.Map({
 	target: 'map_local',
-	layers: [basemap_bern_tiled,basemap_tiled,counties_kml,local_geoms], //[basemap_tiled,basemap_bern_tiled,counties_kml,local_geoms]
+	layers: [basemap_tiled,counties_kml,local_geoms], //[basemap_tiled,basemap_bern_tiled,counties_kml,local_geoms]
 	view: new ol.View({
 		center: ol.proj.fromLonLat([-106.6224,35.0849]), // duck pond
 		zoom:14,
