@@ -56,11 +56,11 @@
 <h3 id="full-getcapabilities-request" class="module04b01a">Full GetCapabilities Request</h3>
 <p>NASA Earth Observations (NEO) Imagery WMS</p>
 <p><a href="http://neowms.sci.gsfc.nasa.gov/wms/wms?version=1.3.0&amp;service=WMS&amp;request=GetCapabilities"><code>http://neowms.sci.gsfc.nasa.gov/wms/wms?version=1.3.0&amp;service=WMS&amp;request=GetCapabilities</code></a></p>
-<p>USGS <a href="http://viewer.nationalmap.gov/services/">Service Endpoints</a> - <a href="http://services.nationalmap.gov/arcgis/services/USGSTopoLarge/MapServer/WMSServer?request=GetCapabilities&amp;service=WMS" class="uri">http://services.nationalmap.gov/arcgis/services/USGSTopoLarge/MapServer/WMSServer?request=GetCapabilities&amp;service=WMS</a></p>
+<p>USGS <a href="http://viewer.nationalmap.gov/services/">Service Endpoints</a> - <a href="https://basemap.nationalmap.gov/arcgis/services/USGSTopo/MapServer/WMSServer?request=GetCapabilities&amp;service=WMS"><code>https://basemap.nationalmap.gov/arcgis/services/USGSTopo/MapServer/WMSServer?request=GetCapabilities&amp;service=WMS</code></a></p>
 <h3 id="base-url-for-getcapabilities" class="module04b01a">Base URL for GetCapabilities</h3>
 <p>NASA Earth Observations (NEO) Imagery WMS</p>
 <p><a href="http://neowms.sci.gsfc.nasa.gov/wms/wms?"><code>http://neowms.sci.gsfc.nasa.gov/wms/wms?</code></a></p>
-<p>USGS <a href="http://viewer.nationalmap.gov/services/">Service Endpoints</a> - <a href="http://services.nationalmap.gov/arcgis/services/USGSTopoLarge/MapServer/WMSServer?"><code>http://services.nationalmap.gov/arcgis/services/USGSTopoLarge/MapServer/WMSServer?</code></a></p>
+<p>USGS <a href="http://viewer.nationalmap.gov/services/">Service Endpoints</a> - <a href="https://basemap.nationalmap.gov/arcgis/services/USGSTopo/MapServer/WMSServer?"><code>https://basemap.nationalmap.gov/arcgis/services/USGSTopo/MapServer/WMSServer?</code></a></p>
 <h3 id="quantum-gis-qgis" class="module04b01a">Quantum GIS (QGIS)</h3>
 <p>QGIS uses the Base URL approach for adding WMS, WFS or WCS layers to a project.</p>
 <p>The General Process:</p>
@@ -71,7 +71,11 @@
 <li>Modify settings for layer(s)</li>
 <li>Add layer(s)</li>
 </ol>
-<p><a href="http://docs.qgis.org/2.14/en/docs/user_manual/working_with_ogc/index.html">QGIS OGC Documentation</a></p>
+<p>QGIS OGC Documentation</p>
+<ul>
+<li><a href="http://docs.qgis.org/2.18/en/docs/user_manual">Version 2.18</a></li>
+<li><a href="http://docs.qgis.org/testing">testing</a></li>
+</ul>
 <h3 id="qgis---adding-services-and-layers---start" class="module04b01a twoUp">QGIS - Adding Services and Layers - start</h3>
 <figure>
 <img src="images/QGIS-AddLayer-OGC.png" alt="OGC Options in the Add Layer menu options" /><figcaption>OGC Options in the <em>Add Layer</em> menu options</figcaption>
@@ -80,9 +84,9 @@
 <img src="images/QGIS-AddOGC-Buttons.png" alt="OGC Options in the left-side icon list" /><figcaption>OGC Options in the left-side icon list</figcaption>
 </figure>
 <p>You need to know the GetCapabilities request for the service you want to add, for example one of the USGS WMS services</p>
-<pre><code>http://services.nationalmap.gov/arcgis/services/USGSTopoLarge/MapServer/WMSServer?request=GetCapabilities&amp;service=WMS</code></pre>
+<pre><code>https://basemap.nationalmap.gov/arcgis/services/USGSTopo/MapServer/WMSServer?request=GetCapabilities&amp;service=WMS</code></pre>
 <p>determine the base URL -</p>
-<p><code>http://services.nationalmap.gov/arcgis/services/USGSTopoLarge/MapServer/WMSServer</code></p>
+<p><code>https://basemap.nationalmap.gov/arcgis/services/USGSTopo/MapServer/WMSServer?</code></p>
 <p>in this case</p>
 <p>If in doubt, check the information in the metadata</p>
 <p>Select the layer type you would like to from “Layer” menu, or click the button in the interface to add a specific layer type.</p>

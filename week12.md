@@ -34,8 +34,8 @@ At the end of this class students will understand that
 
 # Class Prep # {#week12-prep}
 
-* Quantum GIS [documentation](http://docs.qgis.org/2.14/en/docs/user_manual/), especially
-	* [Working with OGC Data](http://docs.qgis.org/2.14/en/docs/user_manual/working_with_ogc/index.html)
+* Quantum GIS [documentation](https://docs.qgis.org/2.18/en/docs/user_manual/index.html), especially
+	* [Working with OGC Data](https://docs.qgis.org/2.18/en/docs/user_manual/working_with_ogc/index.html)
 * ArcGIS [](), especially
 	* [About using OGC service layers](http://desktop.arcgis.com/en/arcmap/10.4/map/web-maps-and-services/about-using-ogc-service-layers.htm)
 	* [Connecting to GIS servers](http://desktop.arcgis.com/en/arcmap/10.4/map/working-with-arcmap/connecting-to-gis-servers.htm)
@@ -53,13 +53,13 @@ Some things to keep an eye out for:
 * Layer names can sometimes be a bit confusing
 * You can double-check the base URL advertised for the service by reviewing the content of the `GetCapabilities` area of the `service` metadata provided as part of the `GetCapabilities` request. If you can't manually request and review the GetCapabilities XML file for the service, your desktop client may not be able to connect to and retrieve the file for its configuration. 
 
-_USGS's National Maps *Small-Scale Web Services* Page_: [http://nationalmap.gov/small_scale/infodocs/webservices.html](http://nationalmap.gov/small_scale/infodocs/webservices.html)
+_USGS's National Maps *Small-Scale Web Services* Page_: [http://basemap.nationalmap.gov/arcgis/services/USGSTopo/MapServer/WMSServer?request=GetCapabilities&service=WMS](http://basemap.nationalmap.gov/arcgis/services/USGSTopo/MapServer/WMSServer?request=GetCapabilities&service=WMS)
 
-_NASA Earth Observation System_: [http://neowms.sci.gsfc.nasa.gov/wms/wms?version=1.3.0&service=WMS&request=GetCapabilities](http://neowms.sci.gsfc.nasa.gov/wms/wms?version=1.3.0&service=WMS&request=GetCapabilities) [NOTE: the service was down for maintenance on Sunday night - if you run into problems accessing this service try the WMS services from RGIS - see below for connection information]
+_NASA Earth Observation System_: [https://neowms.sci.gsfc.nasa.gov/wms/wms?version=1.3.0&service=WMS&request=GetCapabilities]https://neowms.sci.gsfc.nasa.gov/wms/wms?version=1.3.0&service=WMS&request=GetCapabilities)
 
 In your write-up include the names of the layers you added, which service they came from, and screen shots (one for for each of the added layers) showing each of them in the QGIS client interface.
 
-Add three WFS layers to the same QGIS project, with at least two based upon data available from the RGIS data browser ([http://rgis.unm.edu/getdata/](http://rgis.unm.edu/getdata/)), and one based on the GeoServer sample WFS service ([http://mapper.internetmapping.net:8081/geoserver/ows?service=wfs&version=1.1.0&request=GetCapabilities](http://mapper.internetmapping.net:8081/geoserver/ows?service=wfs&version=1.1.0&request=GetCapabilities).   In RGIS you can see the available services for a specific data layer by 
+Add three WFS layers to the same QGIS project, with at least two based upon data available from the RGIS data browser ([http://rgis.unm.edu/getdata/](http://rgis.unm.edu/getdata/)), and one based on the GeoServer sample WFS service ([http://internetmapping.net:8080/geoserver/ows?service=wfs&version=1.1.0&request=GetCapabilities](http://internetmapping.net:8080/geoserver/ows?service=wfs&version=1.1.0&request=GetCapabilities).   In RGIS you can see the available services for a specific data layer by 
 
 1. Selecting the collection you want to view by selecting from the directory tree on the left side of the page; 
 
