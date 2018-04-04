@@ -61,7 +61,7 @@ Sample Open Source
 
 * MapServer ([info](http://mapserver.org/))
 * GeoServer ([info](http://geoserver.org/))
-* QGIS ([info](http://docs.qgis.org/2.14/en/docs/user_manual/working_with_ogc/ogc_server_support.html))
+* QGIS ([info](http://docs.qgis.org/2.18/en/docs/user_manual/working_with_ogc/ogc_server_support.html))
 
 
 ### What is GeoServer ###{.module05a01a}
@@ -89,7 +89,7 @@ OS-Specific Installers are also Available
 * Include an integrated HTTP server
 * Windows and Mac OS X
 
-[Installation Information]    (http://docs.geoserver.org/stable/en/user/installation/)
+[Installation Information](http://docs.geoserver.org/stable/en/user/installation/)
 
 
 ### What is Happening Behind the Scenes ###{.module05a01a .oneup}
@@ -173,7 +173,7 @@ Options specific to individual services
 
 ### Demonstration of GeoServer Interface ###{.module05a01a .oneup}
 
-[Class GeoServer Instance](http://mapper.internetmapping.net:8081/geoserver/web/)
+[Class GeoServer Instance](http://internetmapping.net:8080/geoserver/web/)
 
 ![GeoServer Home Page](images/GeoServer_Home.jpg)
 

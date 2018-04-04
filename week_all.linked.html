@@ -985,14 +985,11 @@ SRS=EPSG:4326&amp;WIDTH=600&amp;HEIGHT=400</code></pre>
 </ul>
 <h1 id="week13-reference">Reference Materials</h1>
 <ul>
-<li>Lynda.com <a href="http://www.lynda.com/Linux-tutorials/Learn-Linux-Command-Line-Basics/435539-2.html?org=unm.edu"><em>Learn the Linux Command Line: The Basics</em></a> - particularly:
+<li>Safari Books Online <a href="https://www.safaribooksonline.com/library/view/fundamentals-of-linux/9781788293945/"><em>Fundamentals of Linux: Learn important command-line tools and utilities with real-world examples.</em></a> - particularly:
 <ul>
-<li>Introduction</li>
+<li><a href="https://www.safaribooksonline.com/library/view/fundamentals-of-linux/9781788293945/video2_1.html">Chapter 2: Getting to Know the Command Line</a></li>
 <li><ol type="1">
-<li>Command-Line Basics</li>
-</ol></li>
-<li><ol start="2" type="1">
-<li>Files, Folders, and Permissions</li>
+<li><a href="https://www.safaribooksonline.com/library/view/fundamentals-of-linux/9781788293945/video3_1.html">Chapter 3: It’s All About the Files</a></li>
 </ol></li>
 </ul></li>
 <li>GeoServer <a href="http://docs.geoserver.org/stable/en/user/index.html">Online Documentation</a>: sections <a href="http://docs.geoserver.org/stable/en/user/introduction/index.html">Introduction</a>, <a href="http://docs.geoserver.org/stable/en/user/gettingstarted/index.html">Getting Started</a>, and <a href="http://docs.geoserver.org/stable/en/user/webadmin/index.html">Web Administration Interface</a></li>
@@ -1001,7 +998,7 @@ SRS=EPSG:4326&amp;WIDTH=600&amp;HEIGHT=400</code></pre>
 <h2 id="working-on-the-class-server">Working on the Class Server</h2>
 <p>For the GeoServer portion of our work, you will be working on a Linux server that has been created for the class. While we won’t be doing a lot of Linux work, some basic familiarity with moving around, copying files, and working with files is needed. The class server is running Ubuntu Linux which is a broadly deployed, well supported operating system and computing platform that has excellent support for many Open Source geospatial applications, including those that we will be using in this class.</p>
 <p>The first set of exercises relate to learning some basics about working with the Linux Operating system, applicable on just about any Linux server including the class server.</p>
-<p>Review (but don’t worry about memorizing) the following materials (in addition to watching the Lynda.com video tutorial sections listed above):</p>
+<p>Review (but don’t worry about memorizing) the following materials (in addition to watching the video tutorial sections listed above):</p>
 <p><a href="http://www.webmonkey.com/2010/02/unix-guide/">Webmonkey “Unix Guide”</a></p>
 <p><a href="http://www.cheatography.com/davechild/cheat-sheets/linux-command-line/">Linux Command Line Cheatsheet</a></p>
 <dl>
@@ -1012,41 +1009,37 @@ SRS=EPSG:4326&amp;WIDTH=600&amp;HEIGHT=400</code></pre>
 <dd>What command would you use to read the “manual page” for a specific command?
 </dd>
 </dl>
-<p>Log into the class Linux server - <code>mapper.internetmapping.net</code>. <em>This is different from the address referenced in the below linked videos</em> The rest of the process is the same as demonstrated in the videos. The class username and password are posted in Learn in an announcement to the class.</p>
+<p>Log into the class Linux server - <a href="http://internetmapping.net:8080/geoserver/web"><code>internetmapping.net:8080/geoserver/web</code></a>. <em>This is different from the address referenced in the below linked videos</em> The rest of the process is the same as demonstrated in the videos. Your username and password for both the class linux server and the GeoServer have been sent to you via email.</p>
 <p><em>Windows</em>: Open PuTTY on your computer and connect using the SSH protocol (see video demonstration)</p>
 <p><a href="http://youtu.be/GdO_n89mey8">Link to the YouTube video demonstration for Windows</a></p>
 <p><em>Mac</em>: Open the Terminal Application and connect using SSH (see video)</p>
 <p><a href="http://youtu.be/Gu_ij6HxTWo">Link to the YouTube video demonstration for Mac OS X</a></p>
-<p>Start a session on the class Linux server, which is located at at the hostname <code>mapper.internetmapping.net</code> (you will use your class server username and password [provided in an announcement in Learn] to open the connection)</p>
-<dl>
-<dt>Task</dt>
-<dd>Use the <code>mkdir &lt;your netid&gt;</code> command (replacing the <code>&lt;your netid&gt;</code> element with your UNM netid [the username you use when logging into UNM’s email system]) to create a directory called <code>&lt;your netid&gt;</code> in the shared class home directory (the directory that you are in when you login, and where you go when you type the <code>cd</code> command with no options, located at <code>/shared-data/classdata</code> on the class server).
-</dd>
-</dl>
+<p>Start a session on the class Linux server, which is located at at the hostname <code>internetmapping.net</code> (you will use your class server username and password you received through email to open the connection). <strong>NOTE: the class server is accessed through a non-standard network port. Enter the port number <code>23</code> in the connection dialog boxes where there is an option to specify the port. When using the SSH commmand [i.e. on the Mac] include the port number in the connection command.</strong></p>
+<p>For example:</p>
+<pre><code>ssh -p 23 user001@internetmapping.net</code></pre>
+<p>After logging in you are in your <code>home directory</code> - the directory that is linked to your account on the system, and the directory that you are taken to when you type the <code>cd</code> command without any additional arguments.</p>
 <h2 id="adding-data-to-geoserver">Adding data to GeoServer</h2>
-<p>To add data to GeoServer you must have a file location on the server where data files must be stored and accessible by the GeoServer.</p>
+<p>To add data to GeoServer you must have a file location on the server where data files are stored and accessible by the GeoServer.</p>
 <dl>
 <dt>Task</dt>
-<dd>Change into the <code>&lt;your netid&gt;</code> directory that you created above using the <code>cd /shared-data/classdata/&lt;your netid&gt;</code> command. For example <code>cd /shared-data/classdata/kbene</code>
+<dd>Change into your home directory using the <code>cd</code> command without any additional arguments.
 </dd>
 <dt>Task</dt>
-<dd><p>Copy all of the data files located in the <code>/shared-data/classdata/wk13Data</code> directory by executing the following command from <em>inside your <code>&lt;your netid&gt;</code> directory</em>.</p>
-<p>cp -r ../wk13data/* . (make sure to include final ‘.’)</p>
+<dd><p>Copy the folder of sample data files located at <code>/opt/geoserver/data_dir/general/user000/GeoserverSampleData</code> by executing the following command from <em>inside your home directory</em>.</p>
+<p>cp -r ../user000/GeoserverSampleData . (make sure to include final ‘.’)</p>
 </dd>
 </dl>
-<p>This will place a copy of these data files in your <code>&lt;your netid&gt;</code> directory. Rename (using the linux <code>mv</code> command) each of the copied files and directories (and their contents) to replace my initials at the beginning of each file and directory name with yours. For example, rename <code>kb_m_3510659_ne_13_1_20110523.tif</code> as <code>xy_m_3510659_ne_13_1_20110523.tif</code>. This will help avoid some issues with layers based on source files with the same name later in our work.</p>
+<p>This will place a copy of folder of data files in your home directory. Rename (using the linux <code>mv</code> command) each of the copied files and directories (and their contents) to prepend (and replace mine) your initials at the beginning of each file and directory name. For example, rename <code>kb_m_3510659_ne_13_1_20110523.tif</code> as <code>xy_m_3510659_ne_13_1_20110523.tif</code>. This will help avoid some issues with layers based on source files with the same name later in our work. <strong>You might find this a faster task using the WinSCP [Windows] or CyberDuck [Mac] utilities instead of the command line</strong></p>
 <dl>
 <dt>Task</dt>
-<dd>Log into the Geoserver on the class server (<a href="http://mapper.internetmapping.net:8081/geoserver/web/" class="uri">http://mapper.internetmapping.net:8081/geoserver/web/</a>) using the username and password provided for the class server through the announcement in Learn.
+<dd>Log into the Geoserver on the class server (<a href="http://internetmapping.net:8080/geoserver/web/" class="uri">http://internetmapping.net:8080/geoserver/web/</a>) using the username and password provided by email.
 </dd>
 </dl>
 <p>Create a new <em>workspace</em> based on your net id. For example <code>ws_&lt;your netid&gt;</code></p>
-<p>Create a new <em>store</em> for each of the datasets added to your <code>&lt;your netid&gt;</code> directory above (4 .tif files and 3 shape files). Assign the new store to the workspace that you created above. When specifying the the <code>Connection Parameters</code> for pointing to the file, the format is: <code>file:data/shared-data/classdata/&lt;your netid&gt;/&lt;filename including any additional directories&gt;</code> </p>
-<p>for example file:data/shared-data/classdata/wk13data/kb_2007fe_35_county00_shp/kb_2007fe_35_county00.shp</p>
-<p>You can also browse to the file by clicking on the “Browse …” link next to the location field, for example for a shapefile:</p>
+<p>Create a new <em>store</em> for each of the datasets added to your home directory above (<strong>4 .tif files and 3 shape files</strong>). Assign the new store to the workspace that you created above. When specifying the the <code>Connection Parameters</code> for pointing to the file you can browse to the location in the server’s file system by using the <code>browse...</code> link next to the URL field under the <code>Connection Parameters</code> section of the store creation page. All of the home directories are in the <code>general</code> folder under the <code>data_dir</code> in the file browser.</p>
+<p>for example</p>
+<pre><code>file:general/user000/GeoserverSampleData/kb_m_3510659_ne_13_1_20110523.tif</code></pre>
 <p><img src="images/GeoServer_Browse.jpg" /> </p>
-<p>and navigating to your data directory (data_dir/data/shared-data/classdata/&lt;your username&gt;) to see the data to select from.</p>
-<p><img src="images/GeoServer_SelectData.jpg" /> </p>
 <p>Create a new <em>layer</em> for each of the <em>stores</em> added above. Here are some things to keep in mind:</p>
 <p>You may need to designate the SRS for a layer if it can’t be read directly from the dataset. Your specify the <em>designated</em> SRS using the standard EPSG:XXXX format.</p>
 <p>The EPSG code for <code>GCS_North_American_1983</code> is EPSG:4269</p>
