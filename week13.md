@@ -33,7 +33,7 @@ By the end of this class, students should understand:
 
 * Safari Books Online [*Fundamentals of Linux: Learn important command-line tools and utilities with real-world examples.*](https://www.safaribooksonline.com/library/view/fundamentals-of-linux/9781788293945/) - particularly:
 	* [Chapter 2: Getting to Know the Command Line](https://www.safaribooksonline.com/library/view/fundamentals-of-linux/9781788293945/video2_1.html)
-	* 1. [Chapter 3: It's All About the Files](https://www.safaribooksonline.com/library/view/fundamentals-of-linux/9781788293945/video3_1.html)
+	* [Chapter 3: It's All About the Files](https://www.safaribooksonline.com/library/view/fundamentals-of-linux/9781788293945/video3_1.html)
 
 
 * GeoServer [Online Documentation](http://docs.geoserver.org/stable/en/user/index.html): sections [Introduction](http://docs.geoserver.org/stable/en/user/introduction/index.html), [Getting Started](http://docs.geoserver.org/stable/en/user/gettingstarted/index.html), and [Web Administration Interface](http://docs.geoserver.org/stable/en/user/webadmin/index.html)
