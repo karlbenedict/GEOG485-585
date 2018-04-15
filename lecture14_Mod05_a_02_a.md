@@ -580,8 +580,8 @@ The only change needed to introduce scale-dependencies into styles is to include
 
 ### Demonstrations ###
 
-Class GeoServer Instance: [http://mapper.internetmapping.net:8081/geoserver/web/](http://mapper.internetmapping.net:8081/geoserver/web/)
+Class GeoServer Instance: [http://internetmapping.net:8080/geoserver/web/](http://internetmapping.net:8080/geoserver/web/)
 
 SLD Creation Using QGIS:
-Link to the [QGIS Vector Properties Dialog](http://docs.qgis.org/2.8/en/docs/user_manual/working_with_vector/vector_properties.html#style-menu) Documentation. 
+Link to the [QGIS Vector Properties Dialog](https://docs.qgis.org/2.18/en/docs/user_manual/introduction/general_tools.html?highlight=sld#storing-style-in-a-file-or-a-database) Documentation. 
 
