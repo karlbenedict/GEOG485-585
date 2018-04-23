@@ -229,7 +229,7 @@ Gamma
 ### GeoServer Demo/Q&A ###
 
 
-Class GeoServer Instance: [http://mapper.internetmapping.net:8081/geoserver/web/](http://mapper.internetmapping.net:8081/geoserver/web/)
+Class GeoServer Instance: [http://internetmapping.net:8080/geoserver/web/](http://internetmapping.net:8080/geoserver/web/)
 
 
 # Epilogue - Geography 485L/585L Closing Comments and Next Steps #
